@@ -14,7 +14,7 @@
                 <thead>
                 <tr>
                     <th>
-                        <div class="th-head-1">id</div>
+                        <div class="th-head-1">{{__('public.id')}}</div>
                     </th>
                     <th>
                         <div class="th-head-2">Name</div>
