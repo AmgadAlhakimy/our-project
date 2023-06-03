@@ -31,7 +31,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         Route::get('/', function () {
         return view('empty');
     });
-
     Route::resource('subjects', SubjectController::class);
     Route::resource('classes', ClasssController::class);
     Route::resource('semesters', SemesterController::class);
@@ -64,8 +63,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         ->name('educational_levels.restore');
     Route::get('educational_levels/forceDelete/{id}', [EducationalLevelController::class, 'forceDelete'])
         ->name('educational_levels.forceDelete');
-
-
 });
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
