@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    <div class="my-table">
+    <div class="my-table mt-5">
         <!-- table-hover table-striped -->
-        <div class="card table-section mt-5">
+        <div class="card table-section ">
             <table class=" ">
                 <thead>
                 <tr>
@@ -34,7 +34,7 @@
                         <div class="th-head-2">{{__('public.processes')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-1"></div>
+                        <div class="th-head-2"></div>
                     </th>
                     <th>
                         <div class="th-head-1"></div>
@@ -54,11 +54,11 @@
                         <td>{{$activity->updated_at}}</td>
                         <td>
                             <a href="{{route('activities.edit',$activity->id)}}"
-                               class="btn save-button btn-success w-100">
+                               class="btn my-save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                         </td>
                         <td>
-                            <button class="clear-button btn-danger w-100" data-bs-toggle="modal"
+                            <button class="btn my-clear-button btn-danger w-100" data-bs-toggle="modal"
                                     data-bs-target="#delete{{$activity->id}}">
                                 <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
                             </button>
@@ -72,7 +72,7 @@
                                             <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
                                         </div>
                                         <div class="modal-body">
-                                            {{__('public.are you sure you want to delete')}}
+                                            {{__('public.are you sure you want to delete').$activity->name}}
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

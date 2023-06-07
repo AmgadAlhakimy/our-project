@@ -13,8 +13,12 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $subjects = Subject::all();
-        return view('subjects.index', compact('subjects'));
+        try {
+            $subjects = Subject::all();
+            return view('subjects.index', compact('subjects'));
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -22,7 +26,11 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        return view('subjects.create');
+        try {
+            return view('subjects.create');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -30,8 +38,17 @@ class SubjectController extends Controller
      */
     public function store(StoreSubjectRequest $request)
     {
-        Subject::create($request->all());
-        return redirect()->back()->with(['success' => 'saved successfully']);
+        try {
+            Subject::create([
+                'name' => [
+                    'en' => $request->name,
+                    'ar' => $request->name_ar,
+                ]
+            ]);
+            return redirect()->back()->with(['success' => 'saved successfully']);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -39,8 +56,13 @@ class SubjectController extends Controller
      */
     public function show()
     {
-        $subjects=Subject::onlyTrashed()->get();
-        return view('subjects.deleted',compact('subjects'));
+        try {
+
+            $subjects = Subject::onlyTrashed()->get();
+            return view('subjects.deleted', compact('subjects'));
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -48,8 +70,12 @@ class SubjectController extends Controller
      */
     public function edit($id)
     {
-        $subject = Subject::findorFail($id);
-        return view('subjects.edit', compact('subject'));
+        try {
+            $subject = Subject::findorFail($id);
+            return view('subjects.edit', compact('subject'));
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -57,10 +83,20 @@ class SubjectController extends Controller
      */
     public function update(UpdateSubjectRequest $request, $id)
     {
-        $subject = Subject::findorFail($id);
-        $subject->update($request->all());
+        try {
 
-        return redirect()->route('subjects.index');
+            $subject = Subject::findorFail($id);
+            $subject->update([
+                'name' => [
+                    'en' => $request->name,
+                    'ar' => $request->name_ar,
+                ],
+            ]);
+            return redirect()->route('subjects.index');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+
     }
 
     /**
@@ -68,8 +104,13 @@ class SubjectController extends Controller
      */
     public function destroy($id)
     {
-        Subject::destroy($id);
-        return redirect()->route('subjects.index');
+        try {
+
+            Subject::destroy($id);
+            return redirect()->route('subjects.index');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -77,8 +118,13 @@ class SubjectController extends Controller
      */
     public function restore($id)
     {
-        Subject::withTrashed()->where('id',$id)->restore();
-        return redirect()->route('subjects.index');
+        try {
+
+            Subject::withTrashed()->where('id', $id)->restore();
+            return redirect()->route('subjects.index');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -86,10 +132,15 @@ class SubjectController extends Controller
      */
     public function forceDelete($id)
     {
-        Subject::withTrashed()
-            ->where('id',$id)
-            ->forceDelete();
-        return redirect()->back();
+        try {
+
+            Subject::withTrashed()
+                ->where('id', $id)
+                ->forceDelete();
+            return redirect()->back();
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
 

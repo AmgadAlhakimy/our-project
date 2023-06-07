@@ -23,5 +23,5 @@ return [
     'activity location contact'=>'رقم الهاتف الخاص بالموقع',
     'date of activity'=>'تاريخ النشاط',
     'other info'=>'معلومات أخرى',
-    'note'=>'ملاحظة',
+    'update activity'=>'تعديل النشاط: '
 ];

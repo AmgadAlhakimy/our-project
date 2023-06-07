@@ -13,12 +13,15 @@ return new class extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100)->unique();
-            $table->string('sex',6);
-            $table->string('address',100);
-            $table->bigInteger('contact1');
-            $table->bigInteger('contact2')->nullable();
-            $table->string('speciality',50);
+            $table->json('name')->unique();
+            $table->string('photo')->nullable();
+            $table->json('sex');
+            $table->bigInteger('contact');
+            $table->json('address');
+            $table->json('qualification');
+            $table->json('major');
+            $table->double('salary');
+            $table->text('note')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

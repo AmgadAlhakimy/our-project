@@ -22,7 +22,22 @@ class StoreStudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'max:100'],
+            'photo'=>['image','mimes:jpg,jpeg,png,gif,svg'],
+            'name_ar' => ['required', 'max:100'],
+            'address' => ['required', 'max:100'],
+            'address_ar' => ['required', 'max:100'],
+            'birthdate' => ['required'],
+            'place_of_birth' => ['required'],
+            'place_of_birth_ar' => ['required'],
+            'class' => ['required'],
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+
+            'class.required' => __('student.first you have to add classes'),
         ];
     }
 }

@@ -23,10 +23,9 @@ return [
     'home'=>'Home',
     'search'=>'Search',
     'navbar'=>'Navbar',
-
     'id'=>'Id',
     'name'=>'Name',
-    'note'=>'note',
+    'note'=>'Note',
     'created at'=>'Created at',
     'updated at'=>'Updated at',
     'deleted at'=>'Deleted at',
@@ -36,9 +35,19 @@ return [
     'location'=>'Location',
     'contact'=>'Contact',
     'date'=>'date',
-
-
-    'are you sure you want to delete'=>'Are you sure you want to delete',
+    'cost'=>'Cost',
+    'educational level'=>'Educational Level',
+    'are you sure you want to delete'=>'Are you sure you want to delete: ',
+    'sex'=>'Sex',
+    'male'=>'Male',
+    'female'=>'Female',
+    'male_ar'=>'ذكر',
+    'female_ar'=>'انثى',
+    'photo'=>'Photo',
+    'address'=>'Address',
+    'qualification'=>'Qualification',
+    'salary'=>'Salary',
+    'major'=>'Major',
 
 
 ];

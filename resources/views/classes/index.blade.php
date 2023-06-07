@@ -1,11 +1,11 @@
 @extends('layouts.master')
 @section('content')
-    <div class="my-table">
+    <div class="my-table mt-5">
         <div class="table-header">
-            <h3>Classes Info</h3>
+            <h3>{{__('class.class info')}}</h3>
             <div>
-                <input class="" placeholder="SEARCH">
-                <button class="add-new">Search</button>
+                <input class="" placeholder="{{__('public.search')}}">
+                <button class="add-new">{{__('public.search')}}</button>
             </div>
         </div>
         <!-- table-hover table-striped -->
@@ -14,25 +14,25 @@
                 <thead>
                 <tr>
                     <th>
-                        <div class="th-head-1">Id</div>
+                        <div class="th-head-1">{{__('public.id')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-2">Name</div>
+                        <div class="th-head-2">{{__('public.name')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-2">Cost</div>
+                        <div class="th-head-2">{{__('public.cost')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-3">Education Level</div>
+                        <div class="th-head-3">{{__('public.educational level')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-3">Created at</div>
+                        <div class="th-head-3">{{__('public.created at')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-3">Updated at</div>
+                        <div class="th-head-3">{{__('public.updated at')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-2">Processes</div>
+                        <div class="th-head-2">{{__('public.processes')}}</div>
                     </th>
                     <th>
                         <div class="th-head-1"></div>
@@ -53,16 +53,37 @@
                         <td>{{$class->updated_at}}</td>
                         <td>
                             <a href="{{route('classes.edit',$class->id)}}" class="btn my-save-button btn-success w-100">
-                                <i class="fa-solid fa-pen-to-square"></i> Edit </a>
+                                <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                         </td>
                         <td>
-                            <form method="post" action="{{route('classes.destroy',$class->id)}}">
-                                @method('DELETE')
-                                @csrf
-                                <button class="my-clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i>
-                                    Delete
-                                </button>
-                            </form>
+                            <button class="btn my-clear-button btn-danger w-100" data-bs-toggle="modal"
+                                    data-bs-target="#delete{{$class->id}}">
+                                <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="delete{{$class->id}}"
+                                 tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{__('public.are you sure you want to delete').$class->name}}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                {{__('public.cancel')}}</button>
+                                            <form method="post" action="{{route('classes.destroy',$class->id)}}">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                         <td></td>
                     </tr>

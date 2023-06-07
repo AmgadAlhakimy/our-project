@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->json('name');
             $table->string('photo')->nullable();
-            $table->json('address1');
-            $table->json('address2')->nullable();
+            $table->json('address');
             $table->json('sex');
             $table->date('birthdate');
             $table->json('place_of_birth');
@@ -27,7 +26,7 @@ return new class extends Migration
             $table->json('have_health_problem')->default(__('student.no'));
             $table->json('health_problem_desc')->nullable();
             $table->string('note')->nullable();
-            $table->foreignId('classs_id')->constrained('classses')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('class_id')->constrained('classses')->cascadeOnUpdate()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

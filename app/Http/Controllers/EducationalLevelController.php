@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\EducationalLevel;
 use App\Http\Requests\StoreEducationalLevelRequest;
 use App\Http\Requests\UpdateEducationalLevelRequest;
-use Illuminate\Database\Eloquent\Model;
+use App\Models\EducationalLevel;
 
 class EducationalLevelController extends Controller
 {
@@ -14,8 +13,12 @@ class EducationalLevelController extends Controller
      */
     public function index()
     {
-        $levels=EducationalLevel::all();
-        return view('educational_levels.index',compact('levels'));
+        try {
+            $levels = EducationalLevel::all();
+            return view('educational_levels.index', compact('levels'));
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -23,7 +26,11 @@ class EducationalLevelController extends Controller
      */
     public function create()
     {
+        try {
         return view('educational_levels.create');
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -31,11 +38,17 @@ class EducationalLevelController extends Controller
      */
     public function store(StoreEducationalLevelRequest $request)
     {
-        return 'help';
-        $level= new EducationalLevel();
-        $level->name = ['en' => $request->name, 'ar' => $request->name_ar];
-        $level->save();
-        return redirect()->back()->with(['success'=> __('message.success')]);
+        try {
+         EducationalLevel::create([
+             'name' => [
+                 'en' => $request->name,
+                 'ar' => $request->name_ar
+             ],
+         ]);
+        return redirect()->back()->with(['success' => __('message.success')]);
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -43,8 +56,11 @@ class EducationalLevelController extends Controller
      */
     public function show()
     {
-        $levels=EducationalLevel::onlyTrashed()->get();
-        return view('educational_levels.deleted',compact('levels'));
+        try {
+        return 'show text and method';
+        }catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -52,18 +68,27 @@ class EducationalLevelController extends Controller
      */
     public function edit($id)
     {
-        $level=EducationalLevel::findorFail($id);
-        return view('educational_levels.edit',compact('level'));
+        try {
+        $level = EducationalLevel::findorFail($id);
+        return view('educational_levels.edit', compact('level'));
+        }catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEducationalLevelRequest $request,$id)
+    public function update(UpdateEducationalLevelRequest $request, $id)
     {
-        $level=EducationalLevel::findorFail($id);
-        $level->update($request->all());
+        try {
+        $level = EducationalLevel::findorFail($id);
+            $level->name = ['en' => $request->name, 'ar' => $request->name_ar];
+            $level->update();
         return redirect()->route('educational_levels.index');
+        }catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -71,27 +96,11 @@ class EducationalLevelController extends Controller
      */
     public function destroy($id)
     {
+        try {
         EducationalLevel::destroy($id);
         return redirect()->route('educational_levels.index');
-    }
-    /**
-     * Display a listing of deleted classes.
-     */
-    public function restore($id)
-    {
-        EducationalLevel::withTrashed()
-            ->where('id',$id)
-            ->restore();
-        return redirect()->back();
-    }
-    /**
-     * delete from database.
-     */
-    public function forceDelete($id)
-    {
-        EducationalLevel::withTrashed()
-            ->where('id',$id)
-            ->forceDelete();
-        return redirect()->back();
+        }catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

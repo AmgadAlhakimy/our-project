@@ -37,8 +37,19 @@ return [
     'location'=>'موقع',
     'contact'=>'الهاتف',
     'date'=>'التاريخ',
-
-    'are you sure you want to delete'=>'هل أنت متأكد من الحذف',
+    'cost'=>'التكلفة',
+    'sex'=>'النوع',
+    'male'=>'ذكر',
+    'female'=>'أنثى',
+    'male_ar'=>'Male',
+    'female_ar'=>'Female',
+    'photo'=>'الصورة',
+    'address'=>'العنوان',
+    'qualification'=>'المؤهل',
+    'salary'=>'الراتب',
+    'major'=>'التخصص',
+    'educational level'=>'المرحلة الدراسية',
+    'are you sure you want to delete'=>'هل أنت متأكد من حذف: ',
 
 
 

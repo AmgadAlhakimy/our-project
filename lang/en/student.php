@@ -56,4 +56,5 @@ return [
     'have any health problem ?'=>'Have any Health Problem ?',
     'other info'=>'Other Info',
     'note'=>'NOTE:',
+    'first you have to add classes'=>'first you have to add classes',
 ];

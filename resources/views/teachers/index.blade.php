@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
-    <div class="my-table">
+    <div class="my-table mt-5">
         <!-- table-hover table-striped -->
-        <div class="card table-section mt-5">
+        <div class="card table-section">
             <table class=" ">
                 <thead>
                 <tr>
@@ -13,19 +13,28 @@
                         <div class="th-head-2">{{__('public.name')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-2">{{__('public.location')}}</div>
+                        <div class="th-head-2">{{__('public.photo')}}</div>
                     </th>
                     <th>
                         <div class="th-head-2">{{__('public.contact')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-2">{{__('public.date')}}</div>
+                        <div class="th-head-2">{{__('public.sex')}}</div>
+                    </th>
+                    <th>
+                        <div class="th-head-2">{{__('public.address')}}</div>
+                    </th>
+                    <th>
+                        <div class="th-head-2">{{__('public.qualification')}}</div>
+                    </th>
+                    <th>
+                        <div class="th-head-2">{{__('public.salary')}}</div>
+                    </th>
+                    <th>
+                        <div class="th-head-2">{{__('public.major')}}</div>
                     </th>
                     <th>
                         <div class="th-head-3">{{__('public.note')}}</div>
-                    </th>
-                    <th>
-                        <div class="th-head-3">{{__('public.deleted at')}}</div>
                     </th>
                     <th>
                         <div class="th-head-3">{{__('public.created at')}}</div>
@@ -37,37 +46,40 @@
                         <div class="th-head-2">{{__('public.processes')}}</div>
                     </th>
                     <th>
-                        <div class="th-head-1"></div>
+                        <div class="th-head-2"></div>
                     </th>
                     <th>
                         <div class="th-head-1"></div>
                     </th>
                 </tr>
                 </thead>
-                @foreach($activities  as $activity )
+                @foreach($teachers  as $teacher )
                     <tbody>
                     <tr>
-                        <td>{{$activity->id}}</td>
-                        <td>{{$activity->name}}</td>
-                        <td>{{$activity->location}}</td>
-                        <td>{{$activity->contact}}</td>
-                        <td>{{$activity->date}}</td>
-                        <td>{{$activity->note}}</td>
-                        <td>{{$activity->deleted_at}}</td>
-                        <td>{{$activity->created_at}}</td>
-                        <td>{{$activity->updated_at}}</td>
+                        <td>{{$teacher->id}}</td>
+                        <td>{{$teacher->name}}</td>
+                        <td><img src="{{URL::asset('assets/images/teachers/'.$teacher->photo)}}" alt="image"></td>
+                        <td>{{$teacher->contact}}</td>
+                        <td>{{$teacher->sex}}</td>
+                        <td>{{$teacher->address}}</td>
+                        <td>{{$teacher->qualification}}</td>
+                        <td>{{$teacher->salary}}</td>
+                        <td>{{$teacher->major}}</td>
+                        <td>{{$teacher->note}}</td>
+                        <td>{{$teacher->created_at}}</td>
+                        <td>{{$teacher->updated_at}}</td>
                         <td>
-                            <a href="{{route('activities.edit',$activity->id)}}"
-                               class="btn save-button btn-success w-100">
+                            <a href="{{route('teachers.edit',$teacher->id)}}"
+                               class="btn my-save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                         </td>
                         <td>
-                            <button class="clear-button btn-danger w-100" data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$activity->id}}">
+                            <button class="btn my-clear-button btn-danger w-100" data-bs-toggle="modal"
+                                    data-bs-target="#delete{{$teacher->id}}">
                                 <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="delete{{$activity->id}}"
+                            <div class="modal fade" id="delete{{$teacher->id}}"
                                  tabindex="-1" aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
                                 <div class="modal-dialog">
@@ -76,12 +88,12 @@
                                             <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
                                         </div>
                                         <div class="modal-body">
-                                            {{__('public.are you sure you want to delete')}}
+                                            {{__('public.are you sure you want to delete').$teacher->name}}
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
-                                            <form method="post" action="{{route('activities.destroy',$activity->id)}}">
+                                            <form method="post" action="{{route('teachers.destroy',$teacher->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>

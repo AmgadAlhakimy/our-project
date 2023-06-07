@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -37,6 +38,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
     Route::resource('employees', EmployeeController::class);
     Route::resource('students', StudentController::class);
     Route::resource('activities', ActivityController::class);
+    Route::resource('teachers', TeacherController::class);
     Route::resource('educational_levels', EducationalLevelController::class);
 
 

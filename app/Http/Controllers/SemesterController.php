@@ -41,7 +41,7 @@ class SemesterController extends Controller
             $Semester->save();
             return redirect()->back()->with(['success' => __('message.success')]);
         }
-        catch (Exception $e){
+        catch (\Exception $e){
             return $e->getMessage();
         }
     }
@@ -51,8 +51,12 @@ class SemesterController extends Controller
      */
     public function show()
     {
+        try {
         $semesters = Semester::onlyTrashed()->get();
         return view('semesters.deleted', compact('semesters'));
+        }  catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -60,8 +64,12 @@ class SemesterController extends Controller
      */
     public function edit($id)
     {
+        try {
         $semester = Semester::findorFail($id);
         return view('semesters.edit', compact('semester'));
+        }  catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -86,7 +94,6 @@ class SemesterController extends Controller
     public function destroy($id)
     {
         try {
-
         Semester::destroy($id);
         return redirect()->route('semesters.index')->with(['success' => trans('message.delete')]);
         } catch (Exception $e){
@@ -100,7 +107,6 @@ class SemesterController extends Controller
     public function restore($id)
     {
         try {
-
         Semester::withTrashed()->where('id', $id)->restore();
         return redirect()->back();
         } catch (Exception $e){

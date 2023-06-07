@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'CREATE NEW CLASS'=>'CREATE NEW CLASS',
-    'Class Name'=>'Class Name',
-    'Education Level'=>'Education Level',
-    'Class Cost'=>'Class Cost',
-    'Save'=>'Save',
-    'Clear'=>'Clear',
+    //create educational level
+    'create new subject'=>'CREATE NEW SUBJECT',
+    'update subject'=>'Update Subject',
+    'subject name in english'=>'Subject Name in English',
+    'subject name in arabic'=>'Subject Name in Arabic',
+    'subject info'=>'Subject Info',
 ];

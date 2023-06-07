@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\class;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -23,18 +23,15 @@ class StoreClasssRequest extends FormRequest
     {
         return [
             'name'=>['required', 'unique:classses', 'max:100'],
+            'name_ar'=>['required', 'max:100'],
             'cost'=>'required',
-            'edu_id'=>'required',
+            'level'=>'required',
         ];
     }
-//    public function messages(): array
-//    {
-//        return [
-//            'name.required'=>'This filed is required',
-//            'name.unique'=>'You have already saved this class',
-//            'name.max'=>'The maximum length is 100',
-//            'cost.required'=>'This filed is required',
-//            'edu_id.required'=>'Sorry! you have to create Educational level first',
-//        ];
-//    }
+    public function messages(): array
+    {
+        return [
+            'level.required'=>__('eduLevel.Sorry! you have to create Educational level first'),
+        ];
+    }
 }

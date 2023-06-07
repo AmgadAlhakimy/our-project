@@ -15,8 +15,7 @@ class Student extends Model
 
     public $translatable = [
         'name',
-        'address1',
-        'address2',
+        'address',
         'sex',
         'place_of_birth',
         'take_medicine',
@@ -25,14 +24,11 @@ class Student extends Model
         'allergy_desc',
         'have_health_problem',
         'health_problem_desc',
-        'note',
-        'classs_id'
     ];
     protected $fillable = [
         'name',
         'photo',
-        'address1',
-        'address2',
+        'address',
         'sex',
         'birthdate',
         'place_of_birth',
@@ -43,6 +39,6 @@ class Student extends Model
         'have_health_problem',
         'health_problem_desc',
         'note',
-        'classs_id'
+        'class_id'
     ];
 }

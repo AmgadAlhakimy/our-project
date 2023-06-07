@@ -1,0 +1,33 @@
+<?php
+
+return [
+
+    /*
+    |--------------------------------------------------------------------------
+    | Validation Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines contain the default error messages used by
+    | the validator class. Some of these rules have multiple versions such
+    | as the size rules. Feel free to tweak each of these messages here.
+    |
+    */
+
+    'teachers info'=>'معلومات المدرس',
+    'teachers name in english'=>'اسم المدرس بالإنجليزية',
+    'teachers name in arabic'=>'اسم المدرس بالعربية',
+    'photo'=>'الصورة',
+    'phone'=>'الهاتف',
+    'address'=>'العنوان',
+    'functional data'=>'المعلومات الوظيفية',
+    'qualification'=>'المؤهل',
+    'high school'=>'ثانوية عامة',
+    'diploma'=>'دبلوم',
+    'bachelor'=>'بكالوريوس',
+    'high school_ar'=>'High School',
+    'diploma_ar'=>'Diploma',
+    'bachelor_ar'=>'Bachelor',
+    'salary'=>'الراتب',
+    'major'=>'التخصص',
+    'other info'=>'معلومات أخرى',
+];

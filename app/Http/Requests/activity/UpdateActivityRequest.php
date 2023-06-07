@@ -22,7 +22,10 @@ class UpdateActivityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'max:100'],
+            'name_ar' => ['required', 'max:100'],
+            'location' => ['required', 'max:100'],
+            'location_ar' => ['required', 'max:100'],
         ];
     }
 }

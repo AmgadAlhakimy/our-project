@@ -12,10 +12,11 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-    'CREATE NEW CLASS'=>'إنشاء فصل جديد',
-    'Class Name'=>'اسم الفصل',
-    'Education Level'=>'المرحلة الدراسية',
-    'Class Cost'=>'تكلفة الفصل',
-    'Save'=>'حفظ',
-    'Clear'=>'إفارغ',
+
+    //create educational level
+    'create new subject'=>'إنشاء مادة جديدة',
+    'update subject'=>'تعديل مادة',
+    'subject name in english'=>'اسم المادة بالإنجليزية',
+    'subject name in arabic'=>'اسم المادة بالعربية',
+    'subject info'=>'معلومات المادة',
 ];

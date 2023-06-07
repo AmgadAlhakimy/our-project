@@ -23,5 +23,5 @@ return [
     'activity location contact'=>'Activity Location Contact',
     'date of activity'=>'Date of Activity',
     'other info'=>'Other Info',
-    'note'=>'NOTE',
+    'update activity'=>'Update Activity: '
 ];

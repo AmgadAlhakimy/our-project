@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('classses', function (Blueprint $table) {
             $table->id();
-            $table->string('name',50)->unique();
+            $table->json('name');
             $table->double('cost', 8, 2);
             $table->foreignId('edu_id')->constrained('educational_levels')->cascadeOnUpdate()->cascadeOnDelete();
             $table->softDeletes();

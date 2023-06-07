@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\class\StoreClasssRequest;
-use App\Http\Requests\class\UpdateClasssRequest;
+use App\Http\Requests\StoreClasssRequest;
+use App\Http\Requests\UpdateClasssRequest;
 use App\Models\Classs;
 use App\Models\EducationalLevel;
 
@@ -14,8 +14,12 @@ class ClasssController extends Controller
      */
     public function index()
     {
-        $classes = Classs::all();
-        return view('classes.index', compact('classes'));
+        try {
+            $classes = Classs::all();
+            return view('classes.index', compact('classes'));
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -23,8 +27,12 @@ class ClasssController extends Controller
      */
     public function create()
     {
+        try {
         $levels = EducationalLevel::all();
         return view('classes.create', compact('levels'));
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -32,8 +40,19 @@ class ClasssController extends Controller
      */
     public function store(StoreClasssRequest $request)
     {
-        Classs::create($request->all());
+        try {
+        Classs::create([
+           'name' => [
+               'en' => $request->name,
+               'ar' => $request->name_ar
+           ],
+            'edu_id'=>$request->level,
+            'cost'=>$request->cost,
+       ]);
         return redirect()->back()->with(['success'=>'saved successfully']);
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -41,8 +60,13 @@ class ClasssController extends Controller
      */
     public function show()
     {
+        try {
+
         $classes = Classs::onlyTrashed()->get();
         return view('classes.deleted', compact('classes'));
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -50,9 +74,14 @@ class ClasssController extends Controller
      */
     public function edit($id)
     {
+        try {
+
         $class = Classs::findorFail($id);
         $levels = EducationalLevel::all();
         return view('classes.edit', compact('class', 'levels'));
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -60,9 +89,21 @@ class ClasssController extends Controller
      */
     public function update(UpdateClasssRequest $request, $id)
     {
-        $classs = Classs::findorFail($id);
-        $classs->update($request->all());
+        try {
+
+        $class = Classs::findorFail($id);
+        $class->update([
+            'name' => [
+                'en' => $request->name,
+                'ar' => $request->name_ar
+            ],
+            'edu_id'=>$request->level,
+            'cost'=>$request->cost,
+        ]);
         return redirect()->route('classes.index');
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -70,8 +111,12 @@ class ClasssController extends Controller
      */
     public function destroy($id)
     {
-        Classs::destroy($id);
-        return redirect()->route('classes.index');
+        try {
+            Classs::destroy($id);
+            return redirect()->route('classes.index');
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -79,10 +124,15 @@ class ClasssController extends Controller
      */
     public function restore($id)
     {
+        try {
+
         Classs::withTrashed()
             ->where('id', $id)
             ->restore();
         return redirect()->back();
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -90,9 +140,14 @@ class ClasssController extends Controller
      */
     public function forceDelete($id)
     {
+        try {
+
         Classs::withTrashed()
             ->where('id', $id)
             ->forceDelete();
         return redirect()->back();
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 }
