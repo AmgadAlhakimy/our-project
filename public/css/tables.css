@@ -26,7 +26,6 @@ body {
 /* R$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 
 .my-table {
-  /* border: 2px solid #8493a5; */
   /* border-top-left-radius: 20px;
   border-top-right-radius: 20px; */
   position: absolute;
@@ -101,7 +100,7 @@ thead th {
   background-color: #f6f9fc;
   color: #8493a5;
   font-size: 15px;
-  padding: 5px;
+  padding: 15px;
 }
 
 th , td {
@@ -110,6 +109,7 @@ th , td {
   word-break: break-all;
   text-align: center;
 }
+
 
 td img {
   height: 60px;
