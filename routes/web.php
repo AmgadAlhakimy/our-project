@@ -23,6 +23,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 */
 
 // routes/web.php
+
     Route::group(
         [
             'prefix' => LaravelLocalization::setLocale(),
@@ -30,7 +31,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         ], function(){
 
         Route::get('/', function () {
-        return view('empty');
+        return view('welcome');
     });
     Route::resource('subjects', SubjectController::class);
     Route::resource('classes', ClasssController::class);

@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use App\Traits\EmployeeTrait;
 
 
@@ -52,11 +50,9 @@ class EmployeeController extends Controller
             'contact1' => $request->contact1,
             'contact2' => $request->contact2,
             'note' => $request->note,
-
         ]);
         return redirect()->back()->with(['success' => 'saved successfully']);
     }
-
 
     /**
      * Display the specified resource.

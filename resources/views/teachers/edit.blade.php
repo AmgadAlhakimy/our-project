@@ -9,7 +9,7 @@
             @endif
             <!-- Start personal info  -->
             <h3 class="container-title">{{__('teacher.teachers info')}}</h3>
-            <form method="post" action="{{route('teachers.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('teachers.update',$teacher->id)}}" enctype="multipart/form-data">
                 @csrf
                 <div class="container containers-style">
                     <div class="row">
@@ -17,7 +17,7 @@
                         <div class="box col-lg-6 col-md-12  ">
                             <label for="teacher-name-a">{{__('teacher.teachers name in english')}}</label>
                             <input type="text" class="form-control " id='teacher-name-a' name="name"
-                                   placeholder="in english" value="{{old('name')}}">
+                                   placeholder="in english" value="{{$teacher->getTranslation('name','en')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -25,7 +25,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="teacher-name-e">{{__('teacher.teachers name in arabic')}}</label>
                             <input type="text" class="form-control " id='teacher-name-e' name="name_ar"
-                                   placeholder="in arabic" value="{{old('name_ar')}}">
+                                   placeholder="in arabic" value="{{$teacher->getTranslation('name','ar')}}">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -35,6 +35,8 @@
                             <label for="photo">{{__('teacher.photo')}}</label>
                             <input type="file" class="form-control"
                                    id="photo" name="photo" value="{{old('photo')}}">
+                            <img class="mt-3" src="{{URL::asset('assets/images/teachers/'.$teacher->photo)}}"
+                                 width="200" height="150" alt="Does not have image">
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -43,8 +45,8 @@
                         <div class="box col-lg-6 col-md-12 ">
                             <label for="sex">{{__('public.sex')}}</label>
                             <select class="col form-select form-control" id="sex" name="sex">
-                                <option  value="{{__('public.male')}}">{{__('public.male')}}</option>
-                                <option value="{{__('public.female')}}">{{__('public.female')}}</option>
+                                <option  value="{{__('public.male')}}" @if($teacher->sex == __('public.male')) selected @endif>{{__('public.male')}}</option>
+                                <option value="{{__('public.female')}}" @if($teacher->sex == __('public.female')) selected @endif>>{{__('public.female')}}</option>
                             </select>
                             @error('sex')
                             <small class="form-text text-danger">{{$message}}</small>

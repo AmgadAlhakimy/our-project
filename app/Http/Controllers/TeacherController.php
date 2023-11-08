@@ -41,20 +41,13 @@ class TeacherController extends Controller
      */
     public function store(StoreTeacherRequest $request)
     {
-        if ($request->hasFile('photo')) {
-            $file_name = $this->saveImage($request->photo, 'assets/images/employees/');
-            return $request;
-        } else {
-            $file_name = NULL;
-
-            return $request->photo;
-        }
 
         try {
 
             if ($request->sex == __('public.male')) {
                 $sex_ar = __('public.male_ar');
-            } else {
+            }
+            if ($request->sex == __('public.female')) {
                 $sex_ar = __('public.female_ar');
             }
 
@@ -66,6 +59,11 @@ class TeacherController extends Controller
                 $qualification_ar = __('teacher.bachelor_ar');
             }
 
+            if ($request->hasFile('photo')) {
+                $file_name = $this->saveImage($request->photo, 'assets/images/teachers/');
+            } else {
+                $file_name = NULL;
+            }
 
             Teacher::create([
                 'name' => [
@@ -110,9 +108,14 @@ class TeacherController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Teacher $teacher)
+    public function edit($id)
     {
-        //
+        try {
+            $teacher = Teacher::findorFail($id);
+            return view('teachers.edit', compact('teacher'));
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**

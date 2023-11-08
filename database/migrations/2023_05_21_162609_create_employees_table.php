@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',100)->unique();
             $table->string('sex',6);
-            $table->string('photo',100)->nullable();
+            $table->string('photo')->nullable();
             $table->dateTime('birthdate');
             $table->string('qualification',50);
             $table->string('address',100);
