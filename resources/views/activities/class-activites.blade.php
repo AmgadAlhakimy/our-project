@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>class and activites</title>
-    <link rel="stylesheet" href="../../css/all.min.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css.map">
-    <link rel="stylesheet" href="../../css/framework.css">
-    <link rel="stylesheet" href="../../css/style-bottuns.css">
+    <link rel="stylesheet" href="../../../public/css/all.min.css">
+    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="../../../public/css/framework.css">
+    <link rel="stylesheet" href="../../../public/css/style-bottuns.css">
     <!-- <link rel="stylesheet" href="../../css/master.css"> -->
 </head>
 <body>

@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sidevar</title>
-    <link rel="stylesheet" href="check.css" />
-    <link rel="stylesheet" href="all.min.css" />
-    <link rel="stylesheet" href="bootstrap.min.css" />
-    <link rel="stylesheet" href="framework.css" />
-    <link rel="stylesheet" href="sidebar-style.css" />
+    {{-- <link rel="stylesheet" href="../../../public/css/check.css" /> --}}
+    <link rel="stylesheet" href="../../../public/css/all.min.css" />
+    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../../public/css/framework.css" />
+    <link rel="stylesheet" href="../../../public/css/sidebar-style.css" />
     <!-- box icons -->
     <!-- box icons -->
     <!-- styles -->
