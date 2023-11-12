@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add new teacher</title>
+    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/css/all.min.css">
+    <link rel="stylesheet" href="../../../public/css/framework.css">
+    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css.map">
+    <!-- <link rel="stylesheet" href="../../css/master.css"> -->
+</head>
+<body>
+    </header> 
+    <main class="main ">
+        <section class="section ">
+            <h1 data-text="اضافة مدرس" class="p-relative title-1">اضافة مدرس</h1>
+
+            <!-- Start personal info  --> 
+            <h3 class="container-tilte">teacher info</h3>
+            <div class="container containers-style" >
+                <div class="row"> 
+                    <!-- 1 -->
+                    <div class="box col-lg-6 col-md-12  ">
+                        <label for="teacher-name-a">teacher name in english </label>
+                        <input type="text" class="form-control " id='teacher-name-a' required placeholder="in english">
+                    </div> 
+                    <div class="box col-lg-6 col-md-12">
+                        <label for="teacher-name-e">teacher name in arabic </label>
+                        <input type="text" class="form-control " id='teacher-name-e' required placeholder="in arabic">
+                    </div> 
+                    <!-- 2 -->
+                    <div class="box col-lg-6 col-md-12 ">
+                        <label for="photo">Photo</label>
+                        <input type="file" class="form-control " id="photo" placeholder="Obtional">
+                    </div>
+                    <!-- 3 -->
+                    <div class="box col-lg-6 col-md-12 ">
+                        <label for="sex">sex</label col-lg-6 col-md-12>
+                        <select class="col form-select form-control" id="sex"> 
+                            <option  value="">male</option>
+                            <option  value="">female</option>
+                            </select>
+                    </div>
+                    <!-- 4 -->
+                    <div class="box ">
+                        <label for="t-numbers">phone numbers</label>
+                        <div class="row ">
+                            <input type="number" class="col form-control ms-2 me-2" id='t-numbers' placeholder="number 1" min="99999" max="99999999999999">
+                            <input type="number" class="col form-control me-2 ms-2" id='t-numbers' placeholder="number 2" min="99999" max="99999999999999">
+                        </div>
+                    </div>
+                    <!-- 5 -->
+                    <div class="box row">
+                        <label for="t-addtess">address</label>
+                        <div class="col-lg-6 col-md-6 ">
+                            <input type="text" class=" form-control ms-2 me-2" id='t-addtess' required placeholder="arabic">
+                        </div>
+                        <div class="col-lg-6 col-md-6 ">
+                            <input type="text" class=" form-control ms-2 me-2" id='' required placeholder="english">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End personal info  -->
+            <!-- Start functional info  -->
+            <h3 class="container-tilte">functional data</h3>
+            <div class="container containers-style">
+                <div class="row"> 
+                    <!-- 1 -->
+                    <div class="box col-lg-6 col-md-12 ">
+                        <label for="t-qualificatiion">Qualificatiion</label>
+                        <select class="col form-select form-control" id="t-qualificatiion"> 
+                            <option  value="">high school</option>
+                            <option  value="">diploma</option>
+                            <option  value="">bachelor's degree</option>
+                        </select>
+                    </div>
+                    <!-- 2 -->
+                    
+                    <div class="box  col-lg-6 col-md-12">
+                        <label for="t-salary">salary</label>
+                        <input type="number" class="form-control" id='t-salary' placeholder="in dollars $">
+                    </div>
+                    <!-- 3 -->
+                    <div class="box col ">
+                        <label for="t-major">major</label>
+                        <select class="col form-select form-control" id="t-major"> 
+                            <option  value="">مهندس</option>
+                            <option  value="">مدرس</option>
+                            <option  value="">مهندس حواسيب</option>
+                            <option  value="">فنان</option>
+                            <option  value="">ملوي عام</option>
+                            <option  value="">متهبش</option>
+                        </select>
+                    </div>
+                
+                </div>
+            </div>
+                <!-- End functional info  -->
+            <!-- Start final box -->
+            <h3 class="container-tilte">other info</h3>
+            <div class="container containers-style">
+                    <div class="row"> 
+                        <div class="notes col-lg-12 col-md-12">
+                            <label class="form-label" for="st_dNote">NOTE:</label>
+                            <textarea class="form-control" id="st_dNote" cols="50" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="box ">
+                        <input class="save-button " type="submit" value="Save " >
+                        <input class="clear-button " type="reset" value="clear" >
+                    </div>
+                </div>
+            <!-- End final box -->
+        </div>
+    </main>
+</body>
+
+</html>
+
+
+<!-- 
+
+<div class="box col-lg-6 col-md-12 ">
+    <label for="t-subject">subject</label>
+    <select class="col form-select form-control" id="t-subject"> 
+        <option  value="1">math</option>
+        <option  value="2">quraan</option>
+        <option  value="3">3</option>
+        <option  value="4">4</option>
+    </select>
+</div>
+
+<div class="box  col-lg-6 col-md-12 ">
+    <label for="t-class">class</label>
+    <select class=" form-select form-control" id="t-class"> 
+        <option  value="1">frist grade</option>
+        <option  value="2">second grade</option>
+        <option  value="3">3</option>
+        <option  value="4">4</option>
+    </select>
+</div> -->
+                    <!-- 5 -->
+                    <!-- start permanence
+                    <div class="box mb-0  col-12">
+                        <label class="col-12" for="t-permanence">permanence</label>
+                    </div> 
+                    <div class="box  col-lg-6 col-md-6 col-sm-6">
+                        <label class="col " >FROM</label>
+                        <input type="time" class=" col- form-control  " id='t-permanence' placeholder="the end of time" >
+                    </div> 
+                    <div class="box  col-lg-6 col-md-6 col-sm-6 ">
+                        <label class="col" >TO</label>
+                        <input type="time" class=" form-control  col-4" id='t-permanence' placeholder="the beginning of permanence ">
+                    </div> 
+                    end permanence -->
