@@ -31,8 +31,9 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         ], function(){
 
         Route::get('/', function () {
-        return view('welcome');
+        return view('layouts/sidebar');
     });
+
     Route::resource('subjects', SubjectController::class);
     Route::resource('classes', ClasssController::class);
     Route::resource('semesters', SemesterController::class);

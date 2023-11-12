@@ -59,7 +59,7 @@
 {{--    </main>--}}
 {{--@endsection--}}
 
-@extends('layouts.master')
+@extends('layouts.sidebar')
 @section('content')
     <main class="main ">
         <section class="section card-body">

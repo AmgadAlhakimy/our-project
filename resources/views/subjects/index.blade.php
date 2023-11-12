@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
         <div class="table-header">
