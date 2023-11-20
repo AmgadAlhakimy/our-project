@@ -1,27 +1,10 @@
 
 body {
   /* overflow: hidden; */
-  background-color: #ced0d2;
+  /* background-color: #ced0d2; */
 }
 
-:root {
-  --blue-color: #0075ff;
-  --blue-alt-color: #0d69d5;
-  --o-title-1: #f59e0b;
-  --orange2-color: #eeb149;
-  --green-color: #22c55e;
-  --red-color: #f44336;
-  --grey-color: #888;
-  --section-bg-1: #ebeef1;
-  --S-Color-1: #60b2bf;
-  --S-Color-2: #d12c5c;
-  --S-Color-3: #60b2bf;
-  --S-Color-4: #e6799c;
-  --S-Color-5: #a585bc;
-  --S-Color-6: #f7cf28;
-  --text-color-1: #488bb3;
-  --S-Color-8: #3dbbc8;
-}
+
 
 /* R$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 
@@ -35,15 +18,13 @@ body {
 }
 
 .table-header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   padding: 20px;
-  background-color: var(--section-bg-1);
+  background-color: var(--container-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   /* border-top-left-radius: 20px;
   border-top-right-radius: 20px; */
   border-radius: 20px;
-
 }
 
 /* .my-table button {
@@ -64,34 +45,15 @@ td button:nth-child(2){
   background-color: #f80000;
 } */
 
-.table-header .add-new {
-  padding: 10px 20px;
-  color: #ffffff;
-  background-color: #0298cf;
-  /* outline: none; */
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  padding: 10px;
-  color: #ffffff;
-}
-
-.table-header input {
-  padding: 10px 20px;
-  margin: 0 10px;
-  outline: none;
-  border: 1px solid #0298cf;
-  border-radius: 6px;
-  color: #0298cf;
-  background-color: white;
-}
-
 .table-section {
   height: 100%;
   overflow: auto;
-  margin-top: 5px;
+  margin-top: 10px;
   border-radius: 20px;
-
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.table-head{
+  position: sticky;
 }
 
 thead th {
@@ -137,6 +99,7 @@ tr:hover img {
 /* Start table style  */
 .th-head-1 {
   width: 50px;
+  white-space: nowrap;
 }
 .th-head-2 {
   width: 100px;
@@ -152,8 +115,58 @@ tr:hover img {
     font-size: 18px;
 }
 .my-card {
-  border: 1px solid var(--grey-color);
+  /* border: 1px solid var(--grey-color); */
   margin: 20px;
   padding: 20px;
 }
 /* end table style  */
+.card-info{
+  background-color: var(--S-Color-1);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 10px ;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* cards style */
+/* Start topic names */
+.Names {
+  color: var(--grey-color);
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: px;
+}
+.card-info:hover .Names {
+  color: var(--school-color-6);
+  font-weight: bold;
+  font-size: px;
+}
+/* End topic names */
+/* Start media */
+@media (max-width: 670px) {
+  .container-title {
+    font-size: px;
+    margin-top: 0px;
+    }
+    .table-header .frist-card{
+      display: flex;
+      flex-direction: column;
+    }
+    .frist-card .row {
+      margin: 0px 0px;
+        }
+    .frist-card .row .col-1 {
+      padding: 0px 0px;
+        }
+    .second-card{
+      margin: 10px 0px;
+    }
+    .table-header .third-card{
+      /* background-color: red; */
+    }
+    .card-info h4{
+      font-size: 18px;
+    }
+}

@@ -17,7 +17,7 @@
         <section class="section" >
             <!-- <h1 class="p-relative title-1">اضافة كلاس</h1> -->
             <form action="">
-                <h3 class="container-tilte">اضف مواد للفصول</h3>
+                <h3 class="container-title">اضف مواد للفصول</h3>
                 <div class="container containers-style">
                     <div class=""> 
                         <div class="row">

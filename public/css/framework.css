@@ -17,7 +17,9 @@ ul {
   padding: 0;
 }
 :root {
+  --container-color: #00000008;
   --blue-color: #0075ff;
+  --color_blue: #3f93f1;
   --blue-alt-color: #0d69d5;
   --o-title-1: #f59e0b;
   --orange2-color: #eeb149;
@@ -34,6 +36,39 @@ ul {
   --text-color-1: #488bb3;
   --S-Color-8: #3dbbc8;
   --body-color:#fff;
+  --color_dark1: #10960c;
+  --color_dark2: #757575;
+  --color_light1: #dfdfdf;
+  --color_light2: #c4c4c4;
+  --orange-color: #f59e0b;
+  --orange-color-2: #d34909;
+  --greene-color: #22c55e;
+  --School-color-1: #60b2bf;
+  --school-color-2: #d12c5c;
+  --school-color-3: #60b2bf;
+  --school-color-4: #e6799c;
+  --school-color-5: #a585bc;
+  --school-color-6: #f7cf28;
+  --school-color-7: #488bb3;
+  --school-color-8: #3dbbc8;
+  --sidebar-bg:#fff;
+  --sidebar-head-bg:#fff;
+  --border-color: #eee;
+
+  --blue-alt-color: #0d69d5;
+  --o-title-1: #f59e0b;
+  --orange2-color: #eeb149;
+  --green-color: #22c55e;
+  --grey-color: #888;
+  --section-bg-1: #ebeef1;
+  --S-Color-1: #60b2bf;
+  --S-Color-2: #d12c5c;
+  --S-Color-3: #60b2bf;
+  --S-Color-4: #e6799c;
+  --S-Color-5: #a585bc;
+  --S-Color-6: #f7cf28;
+  --text-color-1: #488bb3;
+  --S-Color-8: #3dbbc8;
 }
 
 
@@ -59,6 +94,7 @@ ul {
   color: var(--blue-alt-color);
   margin: 20px 100px;
   text-align: center;
+  /* font-size: 0px; */
 
 }
 
@@ -85,25 +121,30 @@ ul {
 .section {
   flex: 1 1 auto;
   padding:1rem 3rem;
+  margin-top: 90px; 
+  /* المارجن الاخير خاص بتنزيل الكونتنت تحت الهيد حق السايد بار */
 }
 .containers-style {
   padding: .5rem 1rem;
-    background-color: rgba(0,0,0,.03);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    margin-bottom: 50px;
+  background-color: var(--container-color);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: .25rem;
+  margin-bottom: 50px;
 }
-.container-tilte {
+.container-title {
   color: var(--o-title-1);
   font-weight: bold;
   text-shadow: 2px 2px 2px rgb(16, 16, 16, 0.5);
   text-align: center;
+  font-size: 30px;
+  white-space: nowrap;
 }
 .container label {
   color: var(--text-color-1);
@@ -219,6 +260,9 @@ ul {
   position: relative;
 }
 /* start checkbox */
+.mb-100{
+  margin-bottom: 100px;
+}
 
 .checkb {
   position: absolute;
@@ -261,9 +305,18 @@ left: 20px;
   font-weight: bold;
 }
 /* end checkbox */
-
-
-
+/* cards style */
+.cards-container{
+  display: flex;
+  justify-content: space-around;
+  /* background-color: var(--S-Color-1); */
+  /* border-radius: 20px; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* padding: 5px 10px ; */
+}
 /* Works for Firfox */
 /* اخر التعديلات من تاريخ 18 مايو */
 /* 
