@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>sidevar</title>
         {{--
-        <link rel="stylesheet" href="../../../public/css/check.css" />
-        --}}
+            <link rel="stylesheet" href="../../../public/css/check.css" />
+            --}}
         
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
@@ -39,7 +39,8 @@
                     <span class="notification p-relative">
                         <i class="fa-regular fa-bell fa-fw"></i>
                     </span>
-                    <img src="images/skills-02.jpg" alt="" />
+                    <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" alt="" />
+
                 </div>
 
 
@@ -486,6 +487,7 @@
         <!-- link js -->
         
     @yield('content')
+    
     <script src="{{URL::asset('js/all.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.js')}}"></script>

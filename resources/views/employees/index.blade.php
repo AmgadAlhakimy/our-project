@@ -77,7 +77,7 @@
                         <td>{{$employee->updated_at}}</td>
                         <td>
                             <a href="{{route('employees.edit',$employee->id)}}"
-                               class="btn my-save-button btn-success w-100">
+                                class="btn my-save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i> Edit </a>
                         </td>
                         <td>
