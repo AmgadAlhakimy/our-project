@@ -25,13 +25,13 @@
         <!-- styles -->
     </head>
 
-    <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
+    <body @if(LaravelLocalization::setLocale()=='ar') dir="" @endif>
         
         <!-- start sidebar -->
         <!-- Start head  -->
         <!-- Start content  -->
         <div class="content">
-            <div class="head">
+            <div class="head ">
                 <div class="search p-relative">
                     <input type="search" placeholder="Search" id="" />
                 </div>
@@ -39,8 +39,12 @@
                     <span class="notification p-relative">
                         <i class="fa-regular fa-bell fa-fw"></i>
                     </span>
+<<<<<<< HEAD
                     <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" alt="" />
 
+=======
+                    <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
+>>>>>>> 7c0178097a31a8c08c9345bd4b9fd19eb95a4021
                 </div>
 
 
@@ -82,7 +86,7 @@
                     <div class="my-menu-btn">
                         <!-- <img src="images/logo2.png" class="logo-img-1" alt="">
                     <img src="images/logo2.png" class="logo-img-2" alt=""> -->
-                        <img src="images/logo2.png" class="logo-img" alt="" />
+                        <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" class="logo-img" alt="" />
                         <div class="sidebar-icon">
                             <i class="logo-text fa-solid fa-caret-left"></i>
                             <i class="logo-text-1 fa-solid fa-list"></i>
@@ -105,7 +109,7 @@
                                         <span class="menu-name">
                                             القسم الاكاديمي
                                         </span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -138,7 +142,7 @@
                                         <span class="menu-name">
                                             الحسابات
                                         </span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -172,7 +176,7 @@
                                             class="icon-1 fa-solid fa-window-restore"
                                         ></i>
                                         <span class="menu-name">كنترول</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -196,7 +200,7 @@
                                             class="icon-1 fa-solid fa-window-restore"
                                         ></i>
                                         <span class="menu-name">الاباء</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -221,7 +225,7 @@
                                         <span class="menu-name"
                                             >شؤون الموظفين</span
                                         >
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -250,7 +254,7 @@
                                         <span class="menu-name"
                                             >السكرتارية</span
                                         >
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -272,7 +276,7 @@
                                         <span class="menu-name"
                                             >شؤون الطلاب</span
                                         >
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -294,7 +298,7 @@
                                             class="icon-1 fa-solid fa-window-restore"
                                         ></i>
                                         <span class="menu-name"> المعلمين</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -316,7 +320,7 @@
                                             class="icon-1 fa-solid fa-window-restore"
                                         ></i>
                                         <span class="menu-name"> قسم 1</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -336,7 +340,7 @@
                                             class="icon-1 fa-solid fa-window-restore"
                                         ></i>
                                         <span class="menu-name"> قسم 2</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -356,7 +360,7 @@
                                             class="icon-1 fa-solid fa-window-restore"
                                         ></i>
                                         <span class="menu-name"> قسم 3</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -376,7 +380,7 @@
                                             class="icon-1 fa-solid fa-window-restore"
                                         ></i>
                                         <span class="menu-name"> قسم 4</span>
-                                        <i class="fa-solid fa-chevron-down"></i>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
@@ -479,8 +483,8 @@
         <!-- ============= home section ================= -->
         <section class="section-home">
             <div class="toggle-sidebar">
-                <!-- <i class="fa-solid fa-list"></i> -->
-                <!-- <div class="t-text">tootle</div> -->
+                {{-- <i class="fa-solid fa-list"></i> 
+                <div class="t-text">Lorem ipsum ea.</div>  --}}
             </div>
         </section>
 

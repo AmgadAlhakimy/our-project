@@ -17,7 +17,7 @@
         <section class="section" >
             <!-- <h2 class="p-relative title-1">اختر فصول المدرس</h2> -->
             <form action="">
-                <h3 class="container-tilte">اضف فصول للمدرس</h3>
+                <h3 class="container-title">اضف فصول للمدرس</h3>
                 <div class="container containers-style">
                     <div class=""> 
                         <div class="row">

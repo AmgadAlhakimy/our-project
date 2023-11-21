@@ -9,17 +9,35 @@
     <link rel="stylesheet" href="../../../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../public/css/framework.css">
     <link rel="stylesheet" href="../../../public/css/tables.css">
+    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="../../../public/css/normalize.css">
 </head>
 <body>
     <div class="my-table">
         <div class="table-header">
-            <h3>student information</h3>
-            <div class="row">
-                <input class=" col form-control" placeholder="SEARCH">
-                <button class="col-3 add-new">Search</button>
+            <div class="row frist-card me-1">
+                <h4 class="col container-title mt-2">student information</h4>
+                <div class="row col">
+                    <input class=" col form-control me-2 search-input" placeholder="SEARCH">
+                    <button class="col-1 save-button search-button">Search</button>
+                </div>
+            </div>
+            <div class="card-info second-card mb-4 mt-4 p-4 ">
+                <h3 class="fw-bolder  Names">Quran Karem</h3>
+            </div>
+            <div class="cards-container  third-card">
+                <div class="card-info col me-2">
+                    <h4 class=" me-2 ms-2">Techer</h4>
+                    <h4 class=" Names">mohammad mohsen</h4>
+                </div>
+                <div class="card-info  col ms-2">
+                    <h4 class=" me-2 ms-2">Month</h4>
+                    <h4 class=" Names">10</h4>
+                </div>
             </div>
         </div>
         <!-- table-hover table-striped -->
+        <div class="table-section">
         <div class="card table-section ">
             <table class=" " >
                 <thead>
@@ -69,7 +87,7 @@
                         <td>he can't preth verey will</td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        <td><button class="save-button btn-info me-5">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
+                        <td><button class="btn save-button btn-info me-5 w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
@@ -92,7 +110,7 @@
                         <td>he can't preth verey will</td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        <td><button class="btn save-button btn-info me-5">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
+                        <td><button class="btn save-button btn-info me-5 w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
                         <td><button class="btn save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="btn clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
@@ -100,6 +118,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
 </body>
 </html>
