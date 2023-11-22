@@ -73,7 +73,7 @@ th , td {
 }
 
 
-td img {
+td .student-img {
   height: 60px;
   width: 60px;
   object-fit: cover;
@@ -116,6 +116,7 @@ tr:hover img {
 }
 .my-card {
   /* border: 1px solid var(--grey-color); */
+  background-color: red;
   margin: 20px;
   padding: 20px;
 }
@@ -130,20 +131,7 @@ tr:hover img {
   padding: 5px 10px ;
   box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
 }
-/* cards style */
-/* Start topic names */
-.Names {
-  color: var(--grey-color);
-  white-space: nowrap;
-  font-weight: bold;
-  font-size: px;
-}
-.card-info:hover .Names {
-  color: var(--school-color-6);
-  font-weight: bold;
-  font-size: px;
-}
-/* End topic names */
+
 /* Start media */
 @media (max-width: 670px) {
   .container-title {
