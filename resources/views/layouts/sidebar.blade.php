@@ -39,12 +39,11 @@
                     <span class="notification p-relative">
                         <i class="fa-regular fa-bell fa-fw"></i>
                     </span>
-<<<<<<< HEAD
+
                     <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" alt="" />
 
-=======
                     <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
->>>>>>> 7c0178097a31a8c08c9345bd4b9fd19eb95a4021
+
                 </div>
 
 
@@ -306,7 +305,7 @@
                                         <a href="#" class="li-link"
                                             >دفتر المتابعة</a
                                         >
-                                        <a href="#" class="li-link">2</a>
+                                        <a href="/marks" class="li-link">Marks</a>
                                         <a href="#" class="li-link">3</a>
                                         <a href="#" class="li-link">4</a>
                                     </div>
@@ -325,8 +324,7 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a href="#" class="li-link">1</a>
-                                        <a href="#" class="li-link">2</a>
+                                        <a href="#" class="li-link">1</a>                                <a href="#" class="li-link">2</a>
                                         <a href="#" class="li-link">3</a>
                                         <a href="#" class="li-link">4</a>
                                     </div>

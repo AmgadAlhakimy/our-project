@@ -34,6 +34,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         return view('layouts/sidebar');
     });
 
+        Route::get('marks', function () {
+        return view('marks/add');
+    });
+
     Route::resource('subjects', SubjectController::class);
     Route::resource('classes', ClasssController::class);
     Route::resource('semesters', SemesterController::class);
