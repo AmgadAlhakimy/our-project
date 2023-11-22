@@ -39,15 +39,7 @@
                     <span class="notification p-relative">
                         <i class="fa-regular fa-bell fa-fw"></i>
                     </span>
-<<<<<<< HEAD
-
-                    <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" alt="" />
-
                     <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
-
-=======
-                    <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
->>>>>>> 57bda93ffa13c6ddaae299f7b9a4531be0af6f8e
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
