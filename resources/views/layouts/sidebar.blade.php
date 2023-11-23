@@ -107,22 +107,11 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a
-                                            href="{{route('activities.create')}}"
-                                            class="li-link" >اضافة نشاط</a>
-                                        <a
-                                            href="{{route('classes.create')}}"
-                                            class="li-link">اضافة فصل</a
-                                        >
-                                        <a href="{{route('semesters.create')}}" class="li-link"
-                                            >اضافة مرحلة دراسية</a
-                                        >
-                                        <a
-                                            href="{{route('subjects.create')}}"
-                                            class="li-link"
-                                            >اضافة مواد</a
-                                        >
-                                    </div>
+                                        <a href="{{route('semesters.create')}}" class="li-link">اضافة مرحلة دراسية</a>
+                                        <a href="{{route('classes.create')}}"class="li-link">اضافة فصل دراسي</a>
+                                        <a href="{{route('subjects.create')}}"class="li-link">اضافة مواد</a>
+                                        <a href="{{route('activities.create')}}"class="li-link" >اضافة نشاط</a>
+                                        <a href="/relations-page"class="li-link">الربط بين العلاقات</a>                                    </div>
                                 </div>
                             </li>
                             <li class="dropdown">

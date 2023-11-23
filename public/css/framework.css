@@ -42,7 +42,6 @@ ul {
   --color_light2: #c4c4c4;
   --orange-color: #f59e0b;
   --orange-color-2: #d34909;
-  --greene-color: #22c55e;
   --School-color-1: #60b2bf;
   --school-color-2: #d12c5c;
   --school-color-3: #60b2bf;
@@ -55,38 +54,10 @@ ul {
   --sidebar-head-bg:#fff;
   --border-color: #eee;
 
-  --blue-alt-color: #0d69d5;
   --o-title-1: #f59e0b;
-  --orange2-color: #eeb149;
   --green-color: #22c55e;
-  --grey-color: #888;
-  --section-bg-1: #ebeef1;
-  --S-Color-1: #60b2bf;
-  --S-Color-2: #d12c5c;
-  --S-Color-3: #60b2bf;
-  --S-Color-4: #e6799c;
-  --S-Color-5: #a585bc;
-  --S-Color-6: #f7cf28;
-  --text-color-1: #488bb3;
-  --S-Color-8: #3dbbc8;
   /* ----------------------- bottuns colors */
-  --section-bg-1: #ebeef1;
   --section-bg-2: #d5d7da;
-  --S-Color-4: #e6799c;
-  --S-Color-5: rgb(165, 133, 188);
-  --S-Color-3: rgb(96, 178, 191);
-  --S-Color-1: #60b2bf;
-  --S-Color-8: #3dbbc8;
-  --text-color-1: #488bb3;
-  --blue-color: #0075ff;
-  --blue-alt-color: #0d69d5;
-  --green-color: rgb(34, 197, 94);
-  --S-Color-6: #f7cf28;
-  --orange2-color: #eeb149;
-  --o-title-1: #f59e0b;
-  --S-Color-2: #d12c5c;
-  --red-color: #f44336;
-  --grey-color: #888;
   --buttons-bg: #222;
 }
 
@@ -199,6 +170,19 @@ ul {
   font-weight: bold;
   font-size: px;
 }
+.relation-title{
+  color: var(--school-color-5);
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(107, 107, 107, 0.5);
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.relation-button:hover .relation-title{
+  color: var(--school-color-4);
+  font-weight: bold;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
 /* End topic names */
 /* End section  */
 /* --------------------------------------------------------------------- */
@@ -222,7 +206,7 @@ ul {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  /* color: #212529; */
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgb(165, 133, 188, 0.5);
@@ -295,6 +279,22 @@ ul {
   box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
     inset -5px -5px 5px -1px rgba(255, 255, 255, 0.7);
 }
+.relation-button{
+  width: 100%;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid rgb(165, 133, 188, 0.5);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),-10px -10px 10px -1px 
+    rgba(255, 255, 255, 0.7);
+}
+.relation-button:active, .relation-button:focus{
+  transition: 1s;
+  border: none;
+  box-shadow: inset 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+    inset -5px -5px 5px -1px rgba(255, 255, 255, 0.7);}
 /* End button  */
 /* --------------------------------------------------------------------- */
 

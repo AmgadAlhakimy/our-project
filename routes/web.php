@@ -38,8 +38,24 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         return view('marks/add');
     });
 
-    Route::get('class_activ', function () {
+    Route::get('class-activites', function () {
         return view('academic_dep/relations/class-activites');
+    });
+
+    Route::get('class-subjects', function () {
+        return view('academic_dep/relations/class-subjects');
+    });
+
+    Route::get('class-teatcher', function () {
+        return view('academic_dep/relations/class-teatcher');
+    });
+
+    Route::get('teacher-subjects', function () {
+        return view('academic_dep/relations/teacher-subjects');
+    });
+
+    Route::get('relations-page', function () {
+        return view('academic_dep/relations/relations-page');
     });
 
     Route::resource('subjects', SubjectController::class);
