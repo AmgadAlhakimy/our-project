@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a href="{{route('semesters.create')}}" class="li-link">اضافة مرحلة دراسية</a>
+                                        <a href="{{route('educational_levels.create')}}" class="li-link">اضافة مرحلة دراسية</a>
                                         <a href="{{route('classes.create')}}"class="li-link">اضافة فصل دراسي</a>
                                         <a href="{{route('subjects.create')}}"class="li-link">اضافة مواد</a>
                                         <a href="{{route('activities.create')}}"class="li-link" >اضافة نشاط</a>

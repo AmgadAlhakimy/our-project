@@ -23,7 +23,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="c-name_ar">{{__('class.class name in arabic')}}</label>
                             <input type="text" id="c-name_ar" class="form-control" name="name_ar"
-                                   value="{{old('name_ar')}}">
+                                    value="{{old('name_ar')}}">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -36,15 +36,15 @@
                                     <option class="text-center" value="{{$level->id}}">{{$level->name}}</option>
                                 @endforeach
                             </select>
-                            @error('levels')
+                            @error('level')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box col-lg-6 col-md-12 ">
                             <label for="cost">{{__('class.class cost')}}</label>
                             <input type="number" id="cost" class="form-control" name="cost" minlength="0"
-                                   placeholder="$"
-                                   value="{{old('cost')}}">
+                                    placeholder="$"
+                                    value="{{old('cost')}}">
                             @error('cost')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
