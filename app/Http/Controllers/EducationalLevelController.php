@@ -15,7 +15,7 @@ class EducationalLevelController extends Controller
     {
         try {
             $levels = EducationalLevel::all();
-            return view('educational_levels.index', compact('levels'));
+            return view('academic_dep/educational_levels.index', compact('levels'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -27,7 +27,7 @@ class EducationalLevelController extends Controller
     public function create()
     {
         try {
-        return view('educational_levels.create');
+        return view('academic_dep/educational_levels.create');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -70,7 +70,7 @@ class EducationalLevelController extends Controller
     {
         try {
         $level = EducationalLevel::findorFail($id);
-        return view('educational_levels.edit', compact('level'));
+        return view('academic_dep/educational_levels.edit', compact('level'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -85,7 +85,7 @@ class EducationalLevelController extends Controller
         $level = EducationalLevel::findorFail($id);
             $level->name = ['en' => $request->name, 'ar' => $request->name_ar];
             $level->update();
-        return redirect()->route('educational_levels.index');
+        return redirect()->route('academic_dep/educational_levels.index');
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -98,7 +98,7 @@ class EducationalLevelController extends Controller
     {
         try {
         EducationalLevel::destroy($id);
-        return redirect()->route('educational_levels.index');
+        return redirect()->route('academic_dep/educational_levels.index');
         }catch (\Exception $e) {
             return $e->getMessage();
         }

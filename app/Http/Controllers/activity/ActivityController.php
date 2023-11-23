@@ -16,7 +16,7 @@ class ActivityController extends Controller
     {
         try {
             $activities=Activity::all();
-            return view('activities.index',compact('activities'));
+            return view('academic_dep/activities.index',compact('activities'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -26,9 +26,9 @@ class ActivityController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
+    { 
         try {
-        return view('activities.create');
+        return view('academic_dep/activities.create');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -69,7 +69,7 @@ class ActivityController extends Controller
     {
         try {
             $activity=Activity::findorFail($id);
-            return view('activities.edit',compact('activity'));
+            return view('academic_dep/activities.edit',compact('activity'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -87,7 +87,7 @@ class ActivityController extends Controller
             $activity->date = $request->date;
             $activity->note = $request->note;
             $activity->update();
-            return redirect()->route('activities.index')->with(['success' => __('message.update')]);
+            return redirect()->route('academic_dep/activities.index')->with(['success' => __('message.update')]);
         }
         catch (\Exception $e){
             return $e->getMessage();
@@ -101,7 +101,7 @@ class ActivityController extends Controller
         try {
             $activity=Activity::findorFail($id);
             $activity::destroy($id);
-            return redirect()->route('activities.index')->with(['success' => trans('message.delete')]);
+            return redirect()->route('academic_dep/activities.index')->with(['success' => trans('message.delete')]);
         } catch (\Exception $e){
             return $e->getMessage();
         }

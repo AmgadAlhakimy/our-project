@@ -16,7 +16,7 @@ class ClasssController extends Controller
     {
         try {
             $classes = Classs::all();
-            return view('classes.index', compact('classes'));
+            return view('academic_dep/classes.index', compact('classes'));
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -29,11 +29,11 @@ class ClasssController extends Controller
     {
         try {
         $levels = EducationalLevel::all();
-        return view('classes.create', compact('levels'));
+        return view('academic_dep/classes.create', compact('levels'));
         }catch (\Exception $e){
-            return $e->getMessage();
+                return $e->getMessage();
+            }
         }
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -63,7 +63,7 @@ class ClasssController extends Controller
         try {
 
         $classes = Classs::onlyTrashed()->get();
-        return view('classes.deleted', compact('classes'));
+        return view('academic_dep/classes.deleted', compact('classes'));
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -78,7 +78,7 @@ class ClasssController extends Controller
 
         $class = Classs::findorFail($id);
         $levels = EducationalLevel::all();
-        return view('classes.edit', compact('class', 'levels'));
+        return view('academic_dep/classes.edit', compact('class', 'levels'));
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -100,7 +100,7 @@ class ClasssController extends Controller
             'edu_id'=>$request->level,
             'cost'=>$request->cost,
         ]);
-        return redirect()->route('classes.index');
+        return redirect()->route('academic_dep/classes.index');
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -113,7 +113,7 @@ class ClasssController extends Controller
     {
         try {
             Classs::destroy($id);
-            return redirect()->route('classes.index');
+            return redirect()->route('academic_dep/classes.index');
         }catch (\Exception $e){
             return $e->getMessage();
         }

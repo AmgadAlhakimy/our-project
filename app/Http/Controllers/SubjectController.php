@@ -15,7 +15,7 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::all();
-            return view('subjects.index', compact('subjects'));
+            return view('academic_dep/subjects.index', compact('subjects'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -27,7 +27,7 @@ class SubjectController extends Controller
     public function create()
     {
         try {
-            return view('subjects.create');
+            return view('academic_dep/subjects.create');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -59,7 +59,7 @@ class SubjectController extends Controller
         try {
 
             $subjects = Subject::onlyTrashed()->get();
-            return view('subjects.deleted', compact('subjects'));
+            return view('academic_dep/subjects.deleted', compact('subjects'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -72,7 +72,7 @@ class SubjectController extends Controller
     {
         try {
             $subject = Subject::findorFail($id);
-            return view('subjects.edit', compact('subject'));
+            return view('academic_dep/subjects.edit', compact('subject'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -92,7 +92,7 @@ class SubjectController extends Controller
                     'ar' => $request->name_ar,
                 ],
             ]);
-            return redirect()->route('subjects.index');
+            return redirect()->route('academic_dep/subjects.index');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -107,7 +107,7 @@ class SubjectController extends Controller
         try {
 
             Subject::destroy($id);
-            return redirect()->route('subjects.index');
+            return redirect()->route('academic_dep/subjects.index');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -121,7 +121,7 @@ class SubjectController extends Controller
         try {
 
             Subject::withTrashed()->where('id', $id)->restore();
-            return redirect()->route('subjects.index');
+            return redirect()->route('academic_dep/subjects.index');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
