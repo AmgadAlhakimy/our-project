@@ -38,6 +38,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         return view('marks/add');
     });
 
+    Route::get('class_activ', function () {
+        return view('academic_dep/relations/class-activites');
+    });
+
     Route::resource('subjects', SubjectController::class);
     Route::resource('classes', ClasssController::class);
     Route::resource('semesters', SemesterController::class);

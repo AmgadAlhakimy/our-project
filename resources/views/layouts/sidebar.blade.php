@@ -277,7 +277,7 @@
                                         <a href="#" class="li-link"
                                             >اضافة طالب</a
                                         >
-                                        <a href="#" class="li-link">2</a>
+                                        <a href='/class_activ' class="li-link">2</a>
                                         <a href="#" class="li-link">3</a>
                                         <a href="#" class="li-link">4</a>
                                     </div>
