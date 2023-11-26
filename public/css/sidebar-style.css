@@ -296,7 +296,10 @@ body {
 /* 999999999999999999999999999999999999999999999999999 */
 
 /* Start content */
-
+.navbar-toggler{
+  background-color: green;
+  color: black;
+}
 .content .head {
   position: fixed;
   z-index: 9998;

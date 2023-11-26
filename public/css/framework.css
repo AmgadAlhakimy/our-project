@@ -170,6 +170,10 @@ ul {
   font-weight: bold;
   font-size: px;
 }
+.navbar-collapse{
+  display: flex;
+  background-color: red;
+}
 .relation-title{
   color: var(--school-color-5);
   font-weight: bold;
