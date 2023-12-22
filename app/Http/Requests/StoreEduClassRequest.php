@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreEducationalLevelRequest extends FormRequest
+class StoreEduClassRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,8 +22,7 @@ class StoreEducationalLevelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required', 'unique:educational_levels', 'max:100'],
-            'name_ar'=>['required',  'max:100'],
+            //
         ];
     }
 }
