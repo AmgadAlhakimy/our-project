@@ -26,6 +26,7 @@ class StoreActivityRequest extends FormRequest
             'name_ar' => ['required', 'max:100'],
             'location' => ['required', 'max:100'],
             'location_ar' => ['required', 'max:100'],
+            'date' => ['required'],
         ];
     }
 }

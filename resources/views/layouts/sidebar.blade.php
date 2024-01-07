@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,7 +8,7 @@
         {{--
             <link rel="stylesheet" href="../../../public/css/check.css" />
             --}}
-        
+
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
@@ -25,8 +25,8 @@
         <!-- styles -->
     </head>
 
-    <body @if(LaravelLocalization::setLocale()=='ar') dir="" @endif>
-        
+    <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
+
         <!-- start sidebar -->
         <!-- Start head  -->
         <!-- Start content  -->
@@ -111,7 +111,7 @@
                                         <a href="{{route('classes.create')}}"class="li-link">اضافة فصل دراسي</a>
                                         <a href="{{route('subjects.create')}}"class="li-link">اضافة مواد</a>
                                         <a href="{{route('activities.create')}}"class="li-link" >اضافة نشاط</a>
-                                        <a href="/relations-page"class="li-link">الربط بين العلاقات</a>                                    </div>
+                                        <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
                                 </div>
                             </li>
                             <li class="dropdown">
@@ -409,7 +409,7 @@
                 </div>
 
                 <!-- ========== THE LAST MENU ============ -->
-                <div class="my-menu menu-footer">
+                {{-- <div class="my-menu menu-footer">
                     <ul class="list-ul">
                         <!--  dropdown list item -->
                         <p class="title">admin</p>
@@ -434,7 +434,7 @@
                                     <span class="menu-name"> خروج </span>
                                 </a>
                             </div>
-                        </li>
+                        </li> --}}
                         <!-- ====================== -->
                     </ul>
                 </div>
@@ -447,7 +447,7 @@
         <div class="head " >
             <div class="search p-relative">
                 <input
-                class="p-10 border-1s rad-10" type="search" 
+                class="p-10 border-1s rad-10" type="search"
                 placeholder="type A keyowrd" id=""/>
             </div>
             <div class="icons ">
@@ -464,15 +464,15 @@
         <!-- ============= home section ================= -->
         <section class="section-home">
             <div class="toggle-sidebar">
-                {{-- <i class="fa-solid fa-list"></i> 
+                {{-- <i class="fa-solid fa-list"></i>
                 <div class="t-text">Lorem ipsum ea.</div>  --}}
             </div>
         </section>
 
         <!-- link js -->
-        
+
     @yield('content')
-    
+
     <script src="{{URL::asset('js/all.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.js')}}"></script>

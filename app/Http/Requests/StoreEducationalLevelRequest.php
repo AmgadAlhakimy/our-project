@@ -23,7 +23,7 @@ class StoreEducationalLevelRequest extends FormRequest
     {
         return [
             'name'=>['required', 'unique:educational_levels', 'max:100'],
-            'name_ar'=>['required', 'unique:educational_levels', 'max:100'],
+            'name_ar'=>['required',  'max:100'],
         ];
     }
 }
