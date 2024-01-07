@@ -299,15 +299,15 @@
                                 <div class="sidebar-title">
                                     <a href="#" class="li-link title-4">
                                         <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
+                                            class="icon-1 fa-solid fa-window-restore"></i>
                                         <span class="menu-name"> قسم 1</span>
                                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                                     </a>
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a href="#" class="li-link">1</a>                                <a href="#" class="li-link">2</a>
+                                        <a href="#" class="li-link">1</a>                                
+                                        <a href="#" class="li-link">2</a>
                                         <a href="#" class="li-link">3</a>
                                         <a href="#" class="li-link">4</a>
                                     </div>

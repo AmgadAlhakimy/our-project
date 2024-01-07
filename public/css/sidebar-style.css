@@ -297,8 +297,10 @@ body {
 
 /* Start content */
 .navbar-toggler{
-  background-color: green;
-  color: black;
+  /* background-color: green; */
+  border: 1px solid var(--border-color);
+
+  
 }
 .content .head {
   position: fixed;
