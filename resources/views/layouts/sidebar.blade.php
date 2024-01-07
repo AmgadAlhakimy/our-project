@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,7 +25,7 @@
         <!-- styles -->
     </head>
 
-    <body @if(LaravelLocalization::setLocale()=='ar') dir="" @endif>
+    <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
         <!-- start sidebar -->
         <!-- Start head  -->

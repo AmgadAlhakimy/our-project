@@ -33,8 +33,11 @@ Route::group(
     ],
     function () {
 
+//        Route::get('/', function () {
+//            return view('layouts/sidebar');
+//        });
         Route::get('/', function () {
-            return view('layouts/sidebar');
+            return view('welcome');
         });
 
         Route::get('marks', function () {
@@ -104,3 +107,13 @@ Route::group(
 );
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('layouts\sidebar');
+    })->name('dashboard');
+});
