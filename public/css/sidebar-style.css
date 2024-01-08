@@ -297,11 +297,17 @@ body {
 
 /* Start content */
 .navbar-toggler{
-  /* background-color: green; */
+  /* background-color: black; */
   border: 1px solid var(--border-color);
-
-  
 }
+.navbar-toggler.{
+  /* background-color: black; */
+}
+.navbar-toggler-icon {
+  color: red;
+}
+
+
 .content .head {
   position: fixed;
   z-index: 9998;

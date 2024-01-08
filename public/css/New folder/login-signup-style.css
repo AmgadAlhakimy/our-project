@@ -11,13 +11,13 @@ body {
 .section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
 }
 .section .imgBx {
     position: relative;
     width: 50%;
-    /* height: 100%; */
+    height: 100%;
 }
 .section .imgBx:before {
     content: "";
@@ -62,7 +62,7 @@ body {
 .section .contentBx .formBx .inputBx {
     margin-bottom: 10px;
 }
-.section .contentBx .formBx .inputBx span {
+.section .contentBx  .textBX {
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -70,19 +70,23 @@ body {
     font-weight: 300;
     letter-spacing: 1px;
 }
-.section .contentBx .formBx .inputBx input {
+.section .contentBx .textBX:hover{
+    color: #ff4584;
+}
+
+.section .contentBx .input-x {
     width: 100%;
     padding: 10px 20px;
     outline: none;
     font-weight: 400;
-    border: 1px solid #607d8b;
+    border: 2px solid #607d8b;
     font-size: 16px;
     letter-spacing: 1px;
     color: #607d8b;
     background: transparent;
     border-radius: 30px;
 }
-.section .contentBx .formBx .inputBx input[type="submit"] {
+.section .contentBx .input-x {
     background-color: #ff4584;
     color: #fff;
     border: none;
@@ -90,8 +94,8 @@ body {
     font-weight: 500;
     cursor: pointer;
 }
-.section .contentBx .formBx .inputBx input[type="submit"]:hover {
-    background-color: #f53677;
+.section .contentBx .input-x:hover {
+    background-color: #000000;
 }
 .section .contentBx .formBx .remember {
     margin-bottom: 10px;
@@ -102,10 +106,10 @@ body {
 .section .contentBx .formBx .inputBx p {
     color: #607d8b;
 }
-.section .contentBx .formBx .inputBx p a {
+.section .contentBx  .text-href {
     color: #ff4584;
 }
-.section .contentBx .formBx h3 {
+.section .contentBx .formBx .textBxInfo {
     color: #607d8b;
     text-align: center;
     margin: 80px 0 10px;
@@ -175,3 +179,5 @@ body {
         align-items: center;
     }
 }
+
+/*  */
