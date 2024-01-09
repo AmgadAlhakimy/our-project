@@ -1,48 +1,111 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- ********** *********** --}}
+    <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/New folder/login-signup-style.css')}}" rel="stylesheet">
 
-        <x-validation-errors class="mb-4" />
+    <title>Document</title>
+</head>
+<body>
+    <section class="section">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
-                {{ session('status') }}
-            </div>
-        @endif
+        <div class="imgBx">
+            {{-- <img src="../../../public/assets/images/layouts/2.jpg" alt=""> --}}
+            <img src="{{('../../../public/assets/images/layouts/1.jpg')}}" alt="">
+        </div>
+    
+        <div class="contentBx" >
+            <div name="logo">
+                {{-- <x-authentication-card-logo /> --}}
+            </div> 
+    
+            <x-validation-errors class="" />
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+            <div class="formBx">
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
-
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
+                @if (session('status'))
+                    <div class="">
+                        {{ session('status') }}
+                    </div>
                 @endif
 
-                <x-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-button>
+                <h1>Login</h1>
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <div class="inputBx">
+                        <x-label class="textBX" for="id" value="{{ __('ID') }}" />
+                        <x-input id="name" class="form-control " type="number" name="id" :value="old('id')" required autofocus autocomplete="id" />
+                    </div>
+                    {{-- -- --}}
+
+                    <div class="inputBx">
+                        <x-label class="textBX" for="password" value="{{ __('Password') }}" />
+                        <x-input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
+                    </div>
+        
+                    <div class="remember">
+                        <label for="remember_me" class="flex items-center">
+                            <x-checkbox id="remember_me" name="remember" />
+                            <span class="textBX">{{ __('Remember me') }}</span>
+                        </label>
+                    </div>
+                    
+                    <x-button class="input-x">
+                        {{ __('Login') }}
+                    </x-button>
+
+                    <div class="inputBx">
+                        @if (Route::has('password.request'))
+                            <a class="textBxInfo ml-5" href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                        @endif
+        
+                    </div>
+                    {{-- -- --}}
+        
+
+        
+                    @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+                        <div class="mt-4 ">
+                            <x-label for="terms">
+                                <div class="flex items-center">
+                                    <x-checkbox name="terms" id="terms" required />
+        
+                                    <div class="ml-2">
+                                        {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">'.__('Terms of Service').'</a>',
+                                                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">'.__('Privacy Policy').'</a>',
+                                        ]) !!}
+                                    </div>
+                                </div>
+                            </x-label>
+                        </div>
+                    @endif
+        
+                    <div class="">
+                    
+                        
+                        <h3 class="textBxInfo">Login with social media</h3>
+                        <ul class="sci">
+                            <a href=""></a>
+                            <li><a href="https://m.facebook.com/login/?locale=ar_AR&refsrc=deprecated"><img src="../../../public/assets/images/layouts/f.jpg" alt=""></a></li>
+                            <li><a href="https://web.whatsapp.com"><img src="../../../public/assets/images/layouts/w.jpg"  alt=""></a></li>
+                            <li><a href="https://www.instagram.com/accounts/login/?hl=ar"><img src="../../../public/assets/images/layouts/insta.jpg" alt=""></a></li>
+                            {{-- <li><img src="X" alt=""></li>
+                            <li><img src="telegram" alt=""></li> --}}
+                        </ul>
+        
+                    </div>
+                </form>
             </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+        </div>
+    </section>
+</body>
+</html>
+

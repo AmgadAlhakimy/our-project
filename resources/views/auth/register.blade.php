@@ -8,7 +8,7 @@
     <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/New folder/login-signup-style.css')}}" rel="stylesheet">
 
-    <title>Document</title>
+
 </head>
 <body>
     <section class="section">
@@ -25,7 +25,7 @@
             <x-validation-errors class="mb-4" />
 
             <div class="formBx">
-                <h2>sign up</h2>
+                <h1>sign up</h1>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
         
@@ -79,7 +79,7 @@
 
                         <div class="inputBx">
                             <p class="">Don't have an account?<a class="text-href" href="{{ route('login') }}">
-                                {{ __(' SignUp') }}
+                                {{ __(' login') }}
                             </a></p>
                         </div>
                         
@@ -89,8 +89,8 @@
                             <li><a href="https://m.facebook.com/login/?locale=ar_AR&refsrc=deprecated"><img src="../../../public/assets/images/layouts/f.jpg" alt=""></a></li>
                             <li><a href="https://web.whatsapp.com"><img src="../../../public/assets/images/layouts/w.jpg"  alt=""></a></li>
                             <li><a href="https://www.instagram.com/accounts/login/?hl=ar"><img src="../../../public/assets/images/layouts/insta.jpg" alt=""></a></li>
-                            <li><img src="X" alt=""></li>
-                            <li><img src="telegram" alt=""></li>
+                            {{-- <li><img src="X" alt=""></li>
+                            <li><img src="telegram" alt=""></li> --}}
                         </ul>
         
                     </div>
