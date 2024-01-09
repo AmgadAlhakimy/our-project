@@ -11,7 +11,7 @@
 
 </head>
 <body>
-    <section class="section">
+    <section class="x-section">
 
         <div class="imgBx">
             <img src="../../../public/assets/images/layouts/2.jpg" alt="">

@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
 }
@@ -8,18 +8,18 @@ body {
     /* overflow-y: hidden; */
     background: rgb(255 255 255 / 0.8);
 }
-.section {
+.x-section {
     position: relative;
     width: 100%;
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
 }
-.section .imgBx {
+.x-section .imgBx {
     position: relative;
     width: 50%;
     height: 100%;
 }
-.section .imgBx:before {
+.x-section .imgBx:before {
     content: "";
     position: absolute;
     top: 0;
@@ -30,7 +30,7 @@ body {
     z-index: 1;
     mix-blend-mode: screen;
 }
-.section .imgBx img {
+.x-section .imgBx img {
     position: absolute;
     top: 0;
     left: 0;
@@ -38,19 +38,15 @@ body {
     height: 100%;
     object-fit: cover;
 }
-.section .contentBx {
+.x-section .contentBx {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50%;
     height: 100%;
 }
-.section .contentBx .formBx {
-    /* width: 50%; */
-    /* background: rgb(255 255 255 / 0.8);
-    background-color: red; */
-}
-.section .contentBx .formBx h1 {
+
+.x-section .contentBx .formBx h1 {
     color: #607d8b;
     font-weight: 600;
     text-transform: uppercase;
@@ -61,10 +57,10 @@ body {
     display: flex;
     justify-content: center;
 }
-.section .contentBx .formBx .inputBx {
+.x-section .contentBx .formBx .inputBx {
     margin-bottom: 10px;
 }
-.section .contentBx  .textBX {
+.x-section .contentBx  .textBX {
     font-size: 16px;
     margin-bottom: 5px;
     display: inline-block;
@@ -72,11 +68,11 @@ body {
     font-weight: 300;
     letter-spacing: 1px;
 }
-.section .contentBx .textBX:hover{
+.x-section .contentBx .textBX:hover{
     color: #ff4584;
 }
 
-.section .contentBx .input-x {
+.x-section .contentBx .input-x {
     width: 100%;
     padding: 10px 20px;
     outline: none;
@@ -89,7 +85,7 @@ body {
     border-radius: 30px;
     margin: 10px 0px 0px 0px ;
 }
-.section .contentBx .input-x {
+.x-section .contentBx .input-x {
     background-color: #ff4584;
     color: #fff;
     border: none;
@@ -97,36 +93,36 @@ body {
     font-weight: 500;
     cursor: pointer;
 }
-.section .contentBx .input-x:hover {
+.x-section .contentBx .input-x:hover {
     background-color: #000000;
 }
-.section .contentBx .formBx .remember {
+.x-section .contentBx .formBx .remember {
     margin-bottom: 10px;
     color: #607d8b;
     font-weight: 400;
     font-size: 14x;
 }
-.section .contentBx .formBx .inputBx p {
+.x-section .contentBx .formBx .inputBx p {
     color: #607d8b;
 }
-.section .contentBx  .text-href {
+.x-section .contentBx  .text-href {
     color: #ff4584;
 }
-.section .contentBx  .textBxInfo {
+.x-section .contentBx  .textBxInfo {
     color: #607d8b;
     text-align: center;
-    margin: 60px 0 10px;
+    margin: 20px 0 10px;
     font-weight: 500;
 }
-.section .contentBx  .textBxInfo:hover {
+.x-section .contentBx  .textBxInfo:hover {
     color: #ff4584;
 }
-.section .contentBx .formBx .sci {
+.x-section .contentBx .formBx .sci {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.section .contentBx .formBx .sci li {
+.x-section .contentBx .formBx .sci li {
     list-style: none;
     width: 50px;
     height: 50px;
@@ -138,26 +134,31 @@ body {
     margin: 0 7px;
     cursor: pointer;
 }
-.section .contentBx .formBx .sci li img {
+.x-section .contentBx .formBx .sci li img {
     transform: scale(0.5);
     filter: invert(1);
     width: 50px;
     border-radius: 50%;
 }
-.section .contentBx .formBx .sci li:hover {
+.x-section .contentBx .formBx .sci li:hover {
     background: #ff4584;
 }
 
 /* medial for phons */
 @media (max-width: 768px) {
-    .section .imgBx {
+    .x-section .imgBx {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
     }
-    .section .contentBx {
+    .x-section .contentBx .formBx h1 {
+        margin-bottom: 20px;
+        display: inline-block;
+        justify-content: start;
+    }
+    .x-section .contentBx {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -165,20 +166,20 @@ body {
         height: 100%;
         z-index: 1;
     }
-    .section .contentBx .formBx {
+    .x-section .contentBx .formBx {
         width: 100%;
         padding: 40px;
         background: rgb(255 255 255 / 0.8);
         margin: 50px;
     }
-    .section .contentBx .formBx h3 {
+    .x-section .contentBx .formBx h3 {
         color: #607d8b;
         text-align: center;
         margin: 30px 0 10px;
         font-weight: 500;
     }
-    .section .contentBx .formBx .inputBx p,
-    .section .contentBx .formBx .inputBx p a {
+    .x-section .contentBx .formBx .inputBx p,
+    .x-section .contentBx .formBx .inputBx p a {
         /* font-size: 12px; */
         display: flex;
         justify-content: center;

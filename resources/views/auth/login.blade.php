@@ -8,10 +8,9 @@
     <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/New folder/login-signup-style.css')}}" rel="stylesheet">
 
-    <title>Document</title>
 </head>
 <body>
-    <section class="section">
+    <section class="x-section">
 
         <div class="imgBx">
             {{-- <img src="../../../public/assets/images/layouts/2.jpg" alt=""> --}}
