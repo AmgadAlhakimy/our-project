@@ -33,12 +33,12 @@ Route::group(
     ],
     function () {
 
-//        Route::get('/', function () {
-//            return view('layouts/sidebar');
-//        });
         Route::get('/', function () {
-            return view('welcome');
+            return view('layouts/sidebar');
         });
+//        Route::get('/', function () {
+//            return view('welcome');
+//        });
 
         Route::get('marks', function () {
             return view('marks/add');
@@ -114,6 +114,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('layouts\sidebar');
+        return view('dashboard');
     })->name('dashboard');
 });

@@ -13,53 +13,49 @@
 <body>
     <section class="x-section">
 
-        <div class="imgBx">
+        <div class="imgBx ">
             <img src="../../../public/assets/images/layouts/2.jpg" alt="">
         </div>
-    
+
         <div class="contentBx" >
             <div name="logo">
                 {{-- <x-authentication-card-logo /> --}}
-            </div> 
-    
+            </div>
+
             <x-validation-errors class="mb-4" />
 
             <div class="formBx">
                 <h1>sign up</h1>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
-        
+
                     <div class="inputBx">
                         <x-label class="textBX" for="name" value="{{ __('Name') }}" />
                         <x-input id="name" class="form-control " type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     </div>
 
-                    <div class="inputBx">
-                        <x-label class="textBX" for="id" value="{{ __('ID') }}" />
-                        <x-input id="name" class="form-control " type="number" name="id" :value="old('id')" required autofocus autocomplete="id" />
-                    </div>
-        
+
                     <div class="inputBx">
                         <x-label class="textBX" for="email" value="{{ __('Email') }}" />
                         <x-input id="email" class="form-control " type="email" name="email" :value="old('email')" required autocomplete="username" />
                     </div>
-        
+
                     <div class="inputBx">
                         <x-label class="textBX" for="password" value="{{ __('Password') }}" />
                         <x-input id="password" class="form-control " type="password" name="password" required autocomplete="new-password" />
                     </div>
-        
+
                     <div class="inputBx">
                         <x-label class="textBX" for="password_confirmation" value="{{ __('Confirm Password') }}" />
                         <x-input id="password_confirmation" class="form-control " type="password" name="password_confirmation" required autocomplete="new-password" />
                     </div>
-        
+
                     @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                         <div class="mt-4 ">
                             <x-label for="terms">
                                 <div class="flex items-center">
                                     <x-checkbox name="terms" id="terms" required />
-        
+
                                     <div class="ml-2">
                                         {!! __('I agree to the :terms_of_service and :privacy_policy', [
                                                 'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">'.__('Terms of Service').'</a>',
@@ -70,19 +66,19 @@
                             </x-label>
                         </div>
                     @endif
-        
+
                     <div class="">
-                        
+
                         <button class="input-x">
                             {{ __('Register') }}
                         </button>
 
                         <div class="inputBx">
-                            <p class="">Don't have an account?<a class="text-href" href="{{ route('login') }}">
+                            <p class="">{{__("auth.Don't have an account?")}}<a class="text-href" href="{{ route('login') }}">
                                 {{ __(' login') }}
                             </a></p>
                         </div>
-                        
+
                         <h3 class="textBxInfo">Login with social media</h3>
                         <ul class="sci">
                             <a href=""></a>
@@ -92,21 +88,21 @@
                             {{-- <li><img src="X" alt=""></li>
                             <li><img src="telegram" alt=""></li> --}}
                         </ul>
-        
+
                     </div>
                 </form>
             </div>
         </div>
     </section>
-    
+
 </body>
 </html>
 
 
 
-{{-- 
+{{--
 <x-guest-layout>
-    
+
     <x-authentication-card class="contentBx">
         <x-slot name="logo">
             <x-authentication-card-logo />

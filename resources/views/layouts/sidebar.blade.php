@@ -41,7 +41,7 @@
                     </span>
                     <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -73,7 +73,7 @@
         </div>
         <!-- end head  -->
         <!-- End content  -->
-        <div class="side-container">
+        <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
             <div class="sidebar">
                 <!-- ============= logo ============================ -->
                 <div class="my-head">
@@ -92,7 +92,7 @@
                     <div class="sidebar-nav">
                         <ul class="list-ul my-scroll">
                             <!--  dropdown list item -->
-                            <p class="title">Admin</p>
+                            <p class="title">{{__('sidebar.Admin')}}</p>
                             <li class="dropdown">
                                 <!-- ========== 1 ============ -->
                                 <div class="sidebar-title">
@@ -109,7 +109,7 @@
                                 <div class="submenu">
                                     <div class="line-black">
                                         <a href="{{route('educational_levels.create')}}" class="li-link">اضافة مرحلة دراسية</a>
-                                        <a href="{{route('classes.create')}}"class="li-link">اضافة فصل دراسي</a>
+                                        <a href="{{route('classes.create')}}" class="li-link">اضافة فصل دراسي</a>
                                         <a href="{{route('subjects.create')}}"class="li-link">اضافة مواد</a>
                                         <a href="{{route('activities.create')}}"class="li-link" >اضافة نشاط</a>
                                         <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
@@ -168,8 +168,7 @@
                                             >اضافة الدرجات الشهرية</a
                                         >
                                         <a href="#" class="li-link"
-                                            >جاول الغياب</a
-                                        >
+                                            >جاول الغياب</a>
                                         <a href="#" class="li-link">المحصلة</a>
                                         <a href="#" class="li-link">تقارير</a>
                                     </div>
@@ -216,12 +215,8 @@
                                         <a href="#" class="li-link"
                                             >اضافة مدرس</a
                                         >
-                                        <a href="#" class="li-link"
-                                            >اضافة موظف</a
-                                        >
-                                        <a href="#" class="li-link"
-                                            >جدول الغياب</a
-                                        >
+                                        <a href="#" class="li-link">اضافة موظف</a>
+                                        <a href="#" class="li-link">جدول الغياب</a>
                                         <a href="#" class="li-link">1</a>
                                         <a href="#" class="li-link">2</a>
                                     </div>
@@ -307,7 +302,7 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a href="#" class="li-link">1</a>                                
+                                        <a href="#" class="li-link">1</a>
                                         <a href="#" class="li-link">2</a>
                                         <a href="#" class="li-link">3</a>
                                         <a href="#" class="li-link">4</a>
@@ -477,7 +472,7 @@
     <script src="{{URL::asset('js/all.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{URL::asset('js/bootstrap.js')}}"></script>
-    <script src="{{URL::asset('js/bootsstrap.min.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
     <script src="{{URL::asset('js/jquery.js')}}"></script>
     <script src="{{URL::asset('js/main.js')}}"></script>
     <script src="{{URL::asset('js/script.js')}}"></script>

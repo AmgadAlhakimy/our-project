@@ -13,6 +13,6 @@ return [
     |
     */
 
-    'Admin' => 'المدير'
+    'Admin' => 'Admin'
 
 ];
