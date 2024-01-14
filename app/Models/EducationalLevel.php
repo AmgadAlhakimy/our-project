@@ -13,6 +13,6 @@ class EducationalLevel extends Model
     use SoftDeletes;
     use HasTranslations;
 
-    public $translatable = ['name'];
+    public array $translatable = ['name'];
     protected $fillable=['name'];
 }

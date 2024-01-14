@@ -50,6 +50,8 @@ return [
     'major'=>'التخصص',
     'educational level'=>'المرحلة الدراسية',
     'are you sure you want to delete'=>'هل أنت متأكد من حذف: ',
+    'restore'=>'إستعادة',
+    'force delete'=>'حذف نهائي',
 
 
 

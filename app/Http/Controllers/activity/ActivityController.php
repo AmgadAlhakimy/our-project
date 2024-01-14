@@ -5,7 +5,7 @@ namespace App\Http\Controllers\activity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\activity\StoreActivityRequest;
 use App\Http\Requests\activity\UpdateActivityRequest;
-use App\Models\activity\Activity;
+use App\Models\Activity\Activity;
 
 class ActivityController extends Controller
 {
@@ -15,8 +15,8 @@ class ActivityController extends Controller
     public function index()
     {
         try {
-            $activities=Activity::all();
-            return view('academic_dep/activities.index',compact('activities'));
+            $activities= Activity::all();
+            return view('academic_dep/activities.index_activities',compact('activities'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -26,9 +26,9 @@ class ActivityController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    { 
+    {
         try {
-        return view('academic_dep/activities.create');
+        return view('academic_dep/activities.create_activities');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -57,9 +57,15 @@ class ActivityController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Activity $activity)
+    public function show()
     {
-        //
+        try {
+            $activities = Activity::onlyTrashed()->get();
+            return view('academic_dep/activities.deleted_activities', compact('activities'));
+
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -69,7 +75,7 @@ class ActivityController extends Controller
     {
         try {
             $activity=Activity::findorFail($id);
-            return view('academic_dep/activities.edit',compact('activity'));
+            return view('academic_dep/activities.edit_activities',compact('activity'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -80,14 +86,14 @@ class ActivityController extends Controller
     public function update(UpdateActivityRequest $request, $id)
     {
         try {
-            $activity=Activity::findorFail($id);
+            $activity= Activity::findorFail($id);
             $activity->name = ['en' => $request->name,'ar' => $request->name_ar];
             $activity->location = ['en' => $request->location, 'ar' => $request-> location_ar];
             $activity->contact = $request->contact;
             $activity->date = $request->date;
             $activity->note = $request->note;
             $activity->update();
-            return redirect()->route('academic_dep/activities.index')->with(['success' => __('message.update')]);
+            return redirect()->route('activities.index')->with(['success' => __('message.update')]);
         }
         catch (\Exception $e){
             return $e->getMessage();
@@ -99,10 +105,35 @@ class ActivityController extends Controller
     public function destroy($id)
     {
         try {
-            $activity=Activity::findorFail($id);
+            $activity= Activity::findorFail($id);
             $activity::destroy($id);
-            return redirect()->route('academic_dep/activities.index')->with(['success' => trans('message.delete')]);
+            return redirect()->route('activities.index')->with(['success' => trans('message.delete')]);
         } catch (\Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function restore($id)
+    {
+        try {
+            Activity::withTrashed()->where('id', $id)->restore();
+            return redirect()->back();
+
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function forceDelete($id)
+    {
+        try {
+            Activity::withTrashed()->where('id', $id)->forceDelete();
+            return redirect()->back();
+
+        } catch (\Exception $e) {
             return $e->getMessage();
         }
     }

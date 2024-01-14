@@ -6,6 +6,7 @@ use App\Http\Requests\StoreClasssRequest;
 use App\Http\Requests\UpdateClasssRequest;
 use App\Models\Classs;
 use App\Models\EducationalLevel;
+use Exception;
 
 class ClasssController extends Controller
 {
@@ -16,8 +17,8 @@ class ClasssController extends Controller
     {
         try {
             $classes = Classs::all();
-            return view('academic_dep/classes.index', compact('classes'));
-        }catch (\Exception $e){
+            return view('academic_dep/classes.index_classes', compact('classes'));
+        }catch (Exception $e){
             return $e->getMessage();
         }
     }
@@ -29,7 +30,7 @@ class ClasssController extends Controller
     {
         try {
         $levels = EducationalLevel::all();
-        return view('academic_dep/classes.create', compact('levels'));
+        return view('academic_dep/classes.create_classes', compact('levels'));
         }catch (\Exception $e){
                 return $e->getMessage();
             }
@@ -61,9 +62,8 @@ class ClasssController extends Controller
     public function show()
     {
         try {
-
         $classes = Classs::onlyTrashed()->get();
-        return view('academic_dep/classes.deleted', compact('classes'));
+        return view('academic_dep/classes.deleted_classes', compact('classes'));
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -78,7 +78,7 @@ class ClasssController extends Controller
 
         $class = Classs::findorFail($id);
         $levels = EducationalLevel::all();
-        return view('academic_dep/classes.edit', compact('class', 'levels'));
+        return view('academic_dep/classes.edit_classes', compact('class', 'levels'));
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -100,7 +100,7 @@ class ClasssController extends Controller
             'edu_id'=>$request->level,
             'cost'=>$request->cost,
         ]);
-        return redirect()->route('academic_dep/classes.index');
+        return redirect()->route('classes.index');
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -113,7 +113,7 @@ class ClasssController extends Controller
     {
         try {
             Classs::destroy($id);
-            return redirect()->route('academic_dep/classes.index');
+            return redirect()->route('classes.index');
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -125,11 +125,9 @@ class ClasssController extends Controller
     public function restore($id)
     {
         try {
-
-        Classs::withTrashed()
-            ->where('id', $id)
-            ->restore();
+        Classs::withTrashed()->where('id', $id)->restore();
         return redirect()->back();
+
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -141,11 +139,9 @@ class ClasssController extends Controller
     public function forceDelete($id)
     {
         try {
-
-        Classs::withTrashed()
-            ->where('id', $id)
-            ->forceDelete();
+        Classs::withTrashed()->where('id', $id)->forceDelete();
         return redirect()->back();
+
         }catch (\Exception $e){
             return $e->getMessage();
         }

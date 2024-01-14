@@ -33,12 +33,12 @@ Route::group(
     ],
     function () {
 
-//        Route::get('/', function () {
-//            return view('layouts/sidebar');
-//        });
         Route::get('/', function () {
-            return view('welcome');
+            return view('layouts/sidebar');
         });
+//        Route::get('/', function () {
+//            return view('welcome');
+//        });
 
         Route::get('marks', function () {
             return view('marks/add');
@@ -76,18 +76,30 @@ Route::group(
         Route::resource('class_activity', ActivityClassController::class);
 
 
-        Route::get('classes/restore/{id}', [ClasssController::class, 'restore'])
+        Route::get('classes/restore/{id}',
+            [ClasssController::class, 'restore'])
             ->name('classes.restore');
-        Route::get('classes/forceDelete/{id}', [ClasssController::class, 'forceDelete'])
+        Route::get('classes/forceDelete/{id}',
+            [ClasssController::class, 'forceDelete'])
             ->name('classes.forceDelete');
-        Route::get('classes/cost', [ClasssController::class, 'cost'])
+        Route::get('classes/cost',
+            [ClasssController::class, 'cost'])
             ->name('classes.cost');
 
 
-        Route::get('subjects/restore/{id}', [SubjectController::class, 'restore'])
+        Route::get('subjects/restore/{id}',
+            [SubjectController::class, 'restore'])
             ->name('subjects.restore');
-        Route::get('subjects/forceDelete/{id}', [SubjectController::class, 'forceDelete'])
+        Route::get('subjects/forceDelete/{id}',
+            [SubjectController::class, 'forceDelete'])
             ->name('subjects.forceDelete');
+
+        Route::get('activities/restore/{id}',
+            [ActivityController::class, 'restore'])
+            ->name('activities.restore');
+        Route::get('activities/forceDelete/{id}',
+            [ActivityController::class, 'forceDelete'])
+            ->name('activities.forceDelete');
 
 
         Route::get('semesters/restore/{id}',
@@ -114,6 +126,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('layouts\sidebar');
+        return view('dashboard');
     })->name('dashboard');
 });

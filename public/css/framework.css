@@ -71,6 +71,11 @@ ul {
 ::-webkit-scrollbar-track {
   background-color: #ddd;
 }
+/* This is a to hide the arrows in number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
 ::-webkit-scrollbar-thumb {
   background-color: var(--orange2-color);
 }
@@ -101,7 +106,7 @@ ul {
 .section {
   flex: 1 1 auto;
   padding:1rem 3rem;
-  margin-top: 90px; 
+  margin-top: 90px;
   /* المارجن الاخير خاص بتنزيل الكونتنت تحت الهيد حق السايد بار */
 }
 .containers-style {
@@ -218,7 +223,7 @@ ul {
   -moz-appearance: none;
   appearance: none;
   border-radius: 0.5rem;
-  transition: border-color 0.5s ease-in-out, 
+  transition: border-color 0.5s ease-in-out,
   box-shadow 0.5s ease-in-out;
   font-weight: bold;
   text-align: center;
@@ -250,11 +255,11 @@ ul {
   color: var(--green-color);
   font-weight: bold;
   border-radius: 50px;
-  box-shadow: 10px 10px 10px -1px 
+  box-shadow: 10px 10px 10px -1px
       rgba(10, 99, 169, 0.16),
-    -10px -10px 10px -1px 
+    -10px -10px 10px -1px
     rgba(255, 255, 255, 0.7);
-}          
+}
 .save-button:hover {
   transition: 1s;
   /* background-image: linear-gradient(180deg, var(--S-Color-5), var(--S-Color-4));
@@ -291,7 +296,7 @@ ul {
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: bold;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),-10px -10px 10px -1px 
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),-10px -10px 10px -1px
     rgba(255, 255, 255, 0.7);
 }
 .relation-button:active, .relation-button:focus{
@@ -367,8 +372,8 @@ left: 20px;
 }
 /* Works for Firfox */
 /* اخر التعديلات من تاريخ 18 مايو */
-/* 
-ظل للنص الرئيسي 
+/*
+ظل للنص الرئيسي
 تنسيق الزرار
 
 /* test chick boxes */
@@ -413,7 +418,7 @@ left: 20px;
     font-size: 20px;
     margin-top: 0px;
     }
-    
+
     .student-img{
       height: 80px;
       width: 60px;
@@ -440,7 +445,7 @@ left: 20px;
   font-family: 'poppins', sans-serif;
   margin: 10px 10px ;
   border-radius: 30px;
-  padding: 15px 15px; 
+  padding: 15px 15px;
 }
 .btnl-container{
   --bs-gutter-x: .5rem;
@@ -479,60 +484,60 @@ left: 20px;
   background-color: rgba(255, 255, 255, .1);
 }
 /* ******** bottuns colors ******** */
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 1) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 1) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--section-bg-1);
   box-shadow: 0 2px 20px var(--section-bg-1);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 5) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 5) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--green-color);
   color: #fff;
   box-shadow: 0 2px 20px var(--green-color);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 3) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 3) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--orange2-color);
   color: #fff;
   box-shadow: 0 2px 20px var(--orange2-color);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 6) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 6) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--o-title-1);
   color: #fff;
   box-shadow: 0 2px 20px var(--o-title-1);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 2) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 2) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--blue-alt-color);
   color: #fff;
   box-shadow: 0 2px 20px var(--blue-alt-color);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 4) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 4) input[type="checkbox"]:checked ~ .btnl-text
 {
   background:#e91e64;
   color: #fff;
   box-shadow: 0 2px 20px #e91e64;
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 7) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 7) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--S-Color-2);
   color: #fff;
   box-shadow: 0 2px 20px var(--S-Color-2);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 8) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 8) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--S-Color-4);
   color: #fff;
   box-shadow: 0 2px 20px var(--S-Color-4);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 9) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 9) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--S-Color-5);
   color: #fff;
   box-shadow: 0 2px 20px var(--S-Color-5);
 }
-.btn-container .btnl-container .btnl-lable:nth-child(10n + 10) input[type="checkbox"]:checked ~ .btnl-text 
+.btn-container .btnl-container .btnl-lable:nth-child(10n + 10) input[type="checkbox"]:checked ~ .btnl-text
 {
   background: var(--S-Color-6);
   color: #fff;

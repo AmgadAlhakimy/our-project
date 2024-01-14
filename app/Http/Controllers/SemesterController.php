@@ -53,7 +53,7 @@ class SemesterController extends Controller
     {
         try {
         $semesters = Semester::onlyTrashed()->get();
-        return view('semesters.deleted', compact('semesters'));
+        return view('semesters.deleted_classes', compact('semesters'));
         }  catch (\Exception $e){
             return $e->getMessage();
         }
