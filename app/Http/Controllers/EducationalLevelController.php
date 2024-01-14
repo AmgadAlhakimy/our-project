@@ -15,7 +15,7 @@ class EducationalLevelController extends Controller
     {
         try {
             $levels = EducationalLevel::all();
-            return view('academic_dep/educational_levels.index', compact('levels'));
+            return view('academic_dep/educational_levels.index_education_levels', compact('levels'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -27,7 +27,7 @@ class EducationalLevelController extends Controller
     public function create()
     {
         try {
-        return view('academic_dep/educational_levels.create');
+        return view('academic_dep/educational_levels.create_education_levels');
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -57,7 +57,8 @@ class EducationalLevelController extends Controller
     public function show()
     {
         try {
-        return 'show text and method';
+            $levels = EducationalLevel::onlyTrashed()->get();
+            return view('academic_dep/educational_levels.deleted_education_levels', compact('levels'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -70,7 +71,8 @@ class EducationalLevelController extends Controller
     {
         try {
         $level = EducationalLevel::findorFail($id);
-        return view('academic_dep/educational_levels.edit', compact('level'));
+        return view('academic_dep/educational_levels.edit_education_levels',
+            compact('level'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -85,7 +87,7 @@ class EducationalLevelController extends Controller
         $level = EducationalLevel::findorFail($id);
             $level->name = ['en' => $request->name, 'ar' => $request->name_ar];
             $level->update();
-        return redirect()->route('academic_dep/educational_levels.index');
+        return redirect()->route('educational_levels.index');
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -98,8 +100,27 @@ class EducationalLevelController extends Controller
     {
         try {
         EducationalLevel::destroy($id);
-        return redirect()->route('academic_dep/educational_levels.index');
+        return redirect()->route('educational_levels.index');
         }catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function restore($id){
+        try {
+            EducationalLevel::withTrashed()->where('id', $id)->restore();
+            return redirect()->back();
+        } catch (\Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function forceDelete($id)
+    {
+        try {
+            EducationalLevel::withTrashed()->where('id', $id)->forceDelete();
+            return redirect()->back();
+        } catch (\Exception $e){
             return $e->getMessage();
         }
     }

@@ -48,6 +48,8 @@ return [
     'qualification'=>'Qualification',
     'salary'=>'Salary',
     'major'=>'Major',
+    'restore'=>'Restore',
+    'force delete'=>'Force Delete',
 
 
 ];

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\activity\Activity;
-use App\Models\ActivityClass;
 use App\Http\Requests\StoreActivityClassRequest;
 use App\Http\Requests\UpdateActivityClassRequest;
+use App\Models\Activity\Activity;
+use App\Models\ActivityClass;
 use App\Models\Classs;
 
 class ActivityClassController extends Controller

@@ -4,7 +4,9 @@
         <div class="table-header">
             <h3 class="container-title">{{__('eduLevel.educational level info')}}</h3>
             <div>
-                <input class="" placeholder="{{__('public.search')}}">
+                <label>
+                    <input class="" placeholder="{{__('public.search')}}">
+                </label>
                 <button class="add-new">{{__('public.search')}}</button>
             </div>
         </div>
@@ -68,10 +70,12 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
-                                            <form method="post" action="{{route('educational_levels.destroy',$level->id)}}">
+                                            <form method="post"
+                                                  action="{{route('educational_levels.destroy',$level->id)}}">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
+                                                <button type="submit"
+                                                        class="btn btn-primary">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>

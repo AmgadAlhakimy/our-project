@@ -13,13 +13,22 @@
 <body>
     <section class="x-section">
 
+<<<<<<< HEAD
         <div class="imgBx ">
             <img src="../../../public/assets/images/layouts/2.jpg" alt="">
+=======
+        <div class="imgBx">
+            <img src="{{URL::asset('assets/images/layouts/2.jpg')}}" alt="">
+>>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
         </div>
 
         <div class="contentBx" >
             <div name="logo">
+<<<<<<< HEAD
                 {{-- <x-authentication-card-logo /> --}}
+=======
+                 <x-authentication-card-logo />
+>>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
             </div>
 
             <x-validation-errors class="mb-4" />
@@ -34,6 +43,13 @@
                         <x-input id="name" class="form-control " type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     </div>
 
+<<<<<<< HEAD
+=======
+                    <div class="inputBx">
+                        <x-label class="textBX" for="id" value="{{ __('ID') }}" />
+                        <x-input id="name" class="form-control " type="number" name="id" :value="old('id')" required autofocus autocomplete="id" />
+                    </div>
+>>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
 
                     <div class="inputBx">
                         <x-label class="textBX" for="email" value="{{ __('Email') }}" />

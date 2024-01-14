@@ -13,6 +13,7 @@ class Classs extends Model
     use HasFactory;
     use SoftDeletes;
     use HasTranslations;
+
     public $translatable=['name'];
     protected $fillable=['name','cost','edu_id'];
 

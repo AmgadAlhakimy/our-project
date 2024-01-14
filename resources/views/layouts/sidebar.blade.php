@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>sidevar</title>
+        <title> sidebar </title>
         {{--
             <link rel="stylesheet" href="../../../public/css/check.css" />
             --}}
@@ -53,15 +53,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">{{__('public.link')}}</a>
                         </li>
-                        <ul>
-                            @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                                <li>
-                                    <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                        {{ $properties['native'] }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                            <li>
+                                <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                    {{ $properties['native'] }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="{{__('public.search')}}" aria-label="Search">
@@ -115,6 +113,7 @@
                                         <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
                                 </div>
                             </li>
+<<<<<<< HEAD
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -290,6 +289,188 @@
                                     </div>
                                 </div>
                             </li>
+=======
+{{--                            <li class="dropdown">--}}
+{{--                                <!-- ========== 2 ============ -->--}}
+{{--                                <div class="sidebar-title">--}}
+{{--                                    <a href="#" class="li-link title-4">--}}
+{{--                                        <i--}}
+{{--                                            class="icon-1 fa-solid fa-window-restore"--}}
+{{--                                        ></i>--}}
+{{--                                        <span class="menu-name">--}}
+{{--                                            الحسابات--}}
+{{--                                        </span>--}}
+{{--                                        <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <div class="submenu">--}}
+{{--                                    <div class="line-black">--}}
+{{--                                        <a href="#" class="li-link">--}}
+{{--                                            رسوم دراسية</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link">--}}
+{{--                                            رسوم تسجيل</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >تقرير نصف السنة الحالي</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >تقارير الرواتب--}}
+{{--                                        </a>--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >تقارير السنة المالية--}}
+{{--                                        </a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <div>--}}
+{{--                                <p class="title">test</p>--}}
+{{--                            </div>--}}
+{{--                            <li class="dropdown">--}}
+{{--                                <!-- ========== 2 ============ -->--}}
+{{--                                <div class="sidebar-title">--}}
+{{--                                    <a href="#" class="li-link title-4">--}}
+{{--                                        <i--}}
+{{--                                            class="icon-1 fa-solid fa-window-restore"--}}
+{{--                                        ></i>--}}
+{{--                                        <span class="menu-name">كنترول</span>--}}
+{{--                                        <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <div class="submenu">--}}
+{{--                                    <div class="line-black">--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >اضافة الدرجات الشهرية</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >جاول الغياب</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link">المحصلة</a>--}}
+{{--                                        <a href="#" class="li-link">تقارير</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="dropdown">--}}
+{{--                                <!-- ========== 2 ============ -->--}}
+{{--                                <div class="sidebar-title">--}}
+{{--                                    <a href="#" class="li-link title-4">--}}
+{{--                                        <i--}}
+{{--                                            class="icon-1 fa-solid fa-window-restore"--}}
+{{--                                        ></i>--}}
+{{--                                        <span class="menu-name">الاباء</span>--}}
+{{--                                        <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <div class="submenu">--}}
+{{--                                    <div class="line-black">--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >معلومات اولياء الامور</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link">2</a>--}}
+{{--                                        <a href="#" class="li-link">3</a>--}}
+{{--                                        <a href="#" class="li-link">4</a>--}}
+{{--                                        <a href="#" class="li-link">5</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="dropdown">--}}
+{{--                                <!-- ========== 2 ============ -->--}}
+{{--                                <div class="sidebar-title">--}}
+{{--                                    <a href="#" class="li-link title-4">--}}
+{{--                                        <i--}}
+{{--                                            class="icon-1 fa-solid fa-window-restore"--}}
+{{--                                        ></i>--}}
+{{--                                        <span class="menu-name"--}}
+{{--                                            >شؤون الموظفين</span--}}
+{{--                                        >--}}
+{{--                                        <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <div class="submenu">--}}
+{{--                                    <div class="line-black">--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >اضافة مدرس</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >اضافة موظف</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >جدول الغياب</a--}}
+{{--                                        >--}}
+{{--                                        <a href="#" class="li-link">1</a>--}}
+{{--                                        <a href="#" class="li-link">2</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="dropdown">--}}
+{{--                                <!-- ========== 2 ============ -->--}}
+{{--                                <div class="sidebar-title">--}}
+{{--                                    <a href="#" class="li-link title-4">--}}
+{{--                                        <i--}}
+{{--                                            class="icon-1 fa-solid fa-window-restore"--}}
+{{--                                        ></i>--}}
+{{--                                        <span class="menu-name"--}}
+{{--                                            >السكرتارية</span--}}
+{{--                                        >--}}
+{{--                                        <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <div class="submenu">--}}
+{{--                                    <div class="line-black">--}}
+{{--                                        <a href="#" class="li-link">1</a>--}}
+{{--                                        <a href="#" class="li-link">2</a>--}}
+{{--                                        <a href="#" class="li-link">3</a>--}}
+{{--                                        <a href="#" class="li-link">4</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="dropdown">--}}
+{{--                                <!-- ========== 2 ============ -->--}}
+{{--                                <div class="sidebar-title">--}}
+{{--                                    <a href="#" class="li-link title-4">--}}
+{{--                                        <i--}}
+{{--                                            class="icon-1 fa-solid fa-window-restore"--}}
+{{--                                        ></i>--}}
+{{--                                        <span class="menu-name"--}}
+{{--                                            >شؤون الطلاب</span--}}
+{{--                                        >--}}
+{{--                                        <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <div class="submenu">--}}
+{{--                                    <div class="line-black">--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >اضافة طالب</a--}}
+{{--                                        >--}}
+{{--                                        <a href='/class_activ' class="li-link">2</a>--}}
+{{--                                        <a href="#" class="li-link">3</a>--}}
+{{--                                        <a href="#" class="li-link">4</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li class="dropdown">--}}
+{{--                                <!-- ========== 2 ============ -->--}}
+{{--                                <div class="sidebar-title">--}}
+{{--                                    <a href="#" class="li-link title-4">--}}
+{{--                                        <i--}}
+{{--                                            class="icon-1 fa-solid fa-window-restore"--}}
+{{--                                        ></i>--}}
+{{--                                        <span class="menu-name"> المعلمين</span>--}}
+{{--                                        <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                                <div class="submenu">--}}
+{{--                                    <div class="line-black">--}}
+{{--                                        <a href="#" class="li-link"--}}
+{{--                                            >دفتر المتابعة</a--}}
+{{--                                        >--}}
+{{--                                        <a href="/marks" class="li-link">Marks</a>--}}
+{{--                                        <a href="#" class="li-link">3</a>--}}
+{{--                                        <a href="#" class="li-link">4</a>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+>>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -302,10 +483,17 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
+<<<<<<< HEAD
                                         <a href="#" class="li-link">1</a>
                                         <a href="#" class="li-link">2</a>
                                         <a href="#" class="li-link">3</a>
                                         <a href="#" class="li-link">4</a>
+=======
+                                        <a href="{{route('educational_levels.index')}}" class="li-link">عرض المراحل الدراسية</a>
+                                        <a href="{{route('classes.index')}}" class="li-link">عرض الفصول الدراسية</a>
+                                        <a href="{{route('subjects.index')}}" class="li-link"> عرض المواد الدراسية</a>
+                                        <a href="{{route('activities.index')}}" class="li-link">عرض الأنشطة الدراسية</a>
+>>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
                                     </div>
                                 </div>
                             </li>
@@ -322,10 +510,10 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a href="#" class="li-link">5</a>
-                                        <a href="#" class="li-link">6</a>
-                                        <a href="#" class="li-link">7</a>
-                                        <a href="#" class="li-link">8</a>
+                                        <a href="{{route('educational_levels.show',0)}}" class="li-link">عرض المراحل الدراسية المحذوفة</a>
+                                        <a href="{{route('classes.show',0)}}" class="li-link">عرض الفصول الدراسية المحذوفة</a>
+                                        <a href="{{route('subjects.show',0)}}" class="li-link"> عرض المواد الدراسية المحذوفة</a>
+                                        <a href="{{route('activities.show',0)}}" class="li-link">عرض الأنشطة الدراسية المحذوفة</a>
                                     </div>
                                 </div>
                             </li>
