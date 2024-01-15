@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> sidebar </title>
-        
 
     <link href="<?php echo e(URL::asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(URL::asset('css/all.min.css')); ?>" rel="stylesheet">
@@ -23,7 +22,7 @@
         <!-- styles -->
     </head>
 
-    <body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
+    <body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="" <?php endif; ?>>
 
         <!-- start sidebar -->
         <!-- Start head  -->
@@ -31,7 +30,7 @@
         <div class="content">
             <div class="head ">
                 <div class="search p-relative">
-                    <input type="search" placeholder="Search" id="" />
+                    <input type="search" placeholder="Search" id="rtl" />
                 </div>
                 <div class="icons">
                     <span class="notification p-relative">
@@ -40,23 +39,28 @@
                     <img src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>"/>
                 </div>
                 
-
                 <div class="dropdownlang">
                     <div class="select">
-                        <span class="selected">Languages</span>
+                        <span class="selected">Lang</span>
                         <div class="caret"></div>
                     </div>
+
                     <ul class="menulang">
+                        
+                        <li class="active"><a class="" aria-current="page" href="#"><?php echo e(__('public.home')); ?></a></li>
+                        
 
-                        <li class="active">English</li>
-                        <li>Arabic</li>
+                        <?php $__currentLoopData = LaravelLocalization::getSupportedLocales(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $localeCode => $properties): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li>
+                            <a rel="alternate" hreflang="<?php echo e($localeCode); ?>" href="<?php echo e(LaravelLocalization::getLocalizedURL($localeCode, null, [], true)); ?>">
+                                <?php echo e($properties['native']); ?>
 
+                            </a>
+                        </li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                 </div>
-
                 
-
-
 
             </div>
         </div>
@@ -67,8 +71,7 @@
                 <!-- ============= logo ============================ -->
                 <div class="my-head">
                     <div class="my-menu-btn">
-                        <!-- <img src="images/logo2.png" class="logo-img-1" alt="">
-                    <img src="images/logo2.png" class="logo-img-2" alt=""> -->
+                        
                         <img src="<?php echo e(URL::asset('assets/images/layouts/logo2.png')); ?>" class="logo-img" alt="" />
                         <div class="sidebar-icon">
                             <i class="logo-text fa-solid fa-caret-left"></i>
@@ -104,43 +107,19 @@
                                         <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
                                 </div>
                             </li>
-<<<<<<< HEAD
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name">
-                                            الحسابات
-                                        </span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link">
-                                            رسوم دراسية</a
-                                        >
-                                        <a href="#" class="li-link">
-                                            رسوم تسجيل</a
-                                        >
-                                        <a href="#" class="li-link"
-                                            >تقرير نصف السنة الحالي</a
-                                        >
-                                        <a href="#" class="li-link"
-                                            >تقارير الرواتب
-                                        </a>
-                                        <a href="#" class="li-link"
-                                            >تقارير السنة المالية
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
+
+                            
+        <!-- ======================== ACOUNTENT ========================== -->
+                            
+                    
                             <div>
                                 <p class="title">test</p>
                             </div>
+                    
+
+
+                            
+        <!-- ======================== CONTROLE ========================== -->
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -164,6 +143,9 @@
                                     </div>
                                 </div>
                             </li>
+
+                            
+        <!-- ======================== PARENTS ========================== -->
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -187,281 +169,21 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"
-                                            >شؤون الموظفين</span
-                                        >
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link"
-                                            >اضافة مدرس</a
-                                        >
-                                        <a href="#" class="li-link">اضافة موظف</a>
-                                        <a href="#" class="li-link">جدول الغياب</a>
-                                        <a href="#" class="li-link">1</a>
-                                        <a href="#" class="li-link">2</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"
-                                            >السكرتارية</span
-                                        >
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link">1</a>
-                                        <a href="#" class="li-link">2</a>
-                                        <a href="#" class="li-link">3</a>
-                                        <a href="#" class="li-link">4</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"
-                                            >شؤون الطلاب</span
-                                        >
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link"
-                                            >اضافة طالب</a
-                                        >
-                                        <a href='/class_activ' class="li-link">2</a>
-                                        <a href="#" class="li-link">3</a>
-                                        <a href="#" class="li-link">4</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"> المعلمين</span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link"
-                                            >دفتر المتابعة</a
-                                        >
-                                        <a href="/marks" class="li-link">Marks</a>
-                                        <a href="#" class="li-link">3</a>
-                                        <a href="#" class="li-link">4</a>
-                                    </div>
-                                </div>
-                            </li>
-=======
 
+                            
+        <!-- ======================== ACOUNTENT ========================== -->
+                            
 
+                            
+                            
 
+                            
+                            
 
+                            
+                            
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -474,17 +196,12 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-<<<<<<< HEAD
-                                        <a href="#" class="li-link">1</a>
-                                        <a href="#" class="li-link">2</a>
-                                        <a href="#" class="li-link">3</a>
-                                        <a href="#" class="li-link">4</a>
-=======
+
                                         <a href="<?php echo e(route('educational_levels.index')); ?>" class="li-link">عرض المراحل الدراسية</a>
                                         <a href="<?php echo e(route('classes.index')); ?>" class="li-link">عرض الفصول الدراسية</a>
                                         <a href="<?php echo e(route('subjects.index')); ?>" class="li-link"> عرض المواد الدراسية</a>
                                         <a href="<?php echo e(route('activities.index')); ?>" class="li-link">عرض الأنشطة الدراسية</a>
->>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
+
                                     </div>
                                 </div>
                             </li>
@@ -508,46 +225,12 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"> قسم 3</span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link">9</a>
-                                        <a href="#" class="li-link">10</a>
-                                        <a href="#" class="li-link">11</a>
-                                        <a href="#" class="li-link">12</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"> قسم 4</span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link">13</a>
-                                        <a href="#" class="li-link">14</a>
-                                        <a href="#" class="li-link">15</a>
-                                        <a href="#" class="li-link">16</a>
-                                    </div>
-                                </div>
-                            </li>
+
+                            
+                            
+
+                            
+                            
                             <li class=" ">
                                 <!-- ========== 2 ============ -->
                                 <!-- <div class="sidebar-title"> -->
@@ -568,13 +251,7 @@
                                         <a href="#" class="li-link">400000</a>
                                         <a href="#" class="li-link">200000</a>
                                         <a href="#" class="li-link">100000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">400000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">100000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">400000</a>
-                                        <a href="#" class="li-link">200000</a>
+                                        
                                     </div>
                                 </div>
                             </li>
@@ -590,32 +267,9 @@
                 </div>
             </div>
         </div>
-
-        <!-- Start head  -->
-        <!-- Start content  -->
-        <!-- <div class="content "  >
-        <div class="head " >
-            <div class="search p-relative">
-                <input
-                class="p-10 border-1s rad-10" type="search"
-                placeholder="type A keyowrd" id=""/>
-            </div>
-            <div class="icons ">
-                <span class="notification p-relative">
-                <i class="fa-regular fa-bell fa-fw"></i>
-                </span>
-                <img src="images/skills-02.jpg" alt="" />
-            </div>
-        </div>
-    </div> -->
-        <!-- end head  -->
-        <!-- End content  -->
-
         <!-- ============= home section ================= -->
         <section class="section-home">
             <div class="toggle-sidebar">
-
-                
             </div>
         </section>
 
@@ -632,4 +286,204 @@
     <script src="<?php echo e(URL::asset('js/script.js')); ?>"></script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php /**PATH E:\My-Github\our-project\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

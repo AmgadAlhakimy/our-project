@@ -7,10 +7,6 @@
   list-style: none;
   text-decoration: none;
 }
-body {
-  /* background-color: black; */
-}
-
 /* varibels */
 
 /* ============ start sidebar footer */
@@ -19,8 +15,6 @@ body {
   bottom: -.5px;
   margin: 0px;
   margin-left: 1px ;
-
-  /* mb-5 ms-3 me-3 */
   background-color: var(--sidebar-bg);
   width: 245px;
   margin-bottom: 0;
@@ -159,7 +153,7 @@ body {
   direction: rtl;
   /* justify-content: end; */
   padding: 5px 6px;
-  /* background-color: #8b0985; */
+  background-color: #8b0985;
 }
 .submenu .li-link {
   color: var(--color_dark2);
@@ -242,8 +236,7 @@ body {
   background-color: #fff;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
-
-.my-menu-btn .sidebar-icon:hover{
+.sidebar-icon:hover{
   color: var(--orange-color-2);
 }
 
@@ -253,8 +246,6 @@ body {
   left: 10px;
   top: 25px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-
-
   }
 /* -------- start icons styles --------- */
 .logo-text {
@@ -291,93 +282,88 @@ body {
 .my-menu-btn {
   cursor: pointer;
 }
-/* 999999999999999999999999999999999999999999999999999 */
-/* 999999999999999999999999999999999999999999999999999 */
-/* 999999999999999999999999999999999999999999999999999 */
-
-/* Start content */
-
-/* )))))))) */
+/* ____________________________ dropdown lang _____________________________________________ */
+/* start dropdown language */
 .dropdownlang{
-  min-width: 150px;
   position: relative;
-  margin: 0px 20px;
-
+  margin: 0 10px;
 }
 .dropdownlang * {
   box-sizing: border-box;
-  /* background-color: red; */
 }
-.select {
-  background: var(--sidebar-head-bg);
+.select{
   color: var(--grey-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px var(--border-color) solid;
-  border-radius: 0.5em;
   padding: 1em;
-  cursor: pointer;
   transition: background 0.3s;
-
-  padding-left: 30px;
-  padding-right: 10px;
-  margin-left: 5px;
-  width: 150px;
-  transition: width 0.3s;
+  width: 100px;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   height: 50px;
+  transition: all .5s ease;
+}
+.select-clicked {
+  box-shadow: 0 0 0.2em var(--orange-color);
+  outline: auto;
+  outline-color: var(--orange-color);
+  width: 150px;
+  border: none;
   transition: all 1s ease;
 }
 .select:hover{
-  background: var(--color_light1);
-  color: var(--color_dark2);
-  border-color: var(--grey-color);
-}
-.select-clicked {
-  border: 2px #26489a solid;
-  box-shadow: 0 0 0.8em #26489a;
+  color: var(--orange-color);
 }
 .caret {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 6px solid #fff;
+  border-top: 6px solid var(--grey-color);
   transition: 0.3s;
+}
+.caret:hover{
+  color: red;
 }
 .caret-rotate {
   transform: rotate(180deg);
 }
-.head .menulang{
+.caret-rotate{
+  color: red;
+}
+.menulang{
   list-style: none;
   padding: 0.2em 0.5em;
-  background: #323741;
-  border: 1px #323741 solid;
-  box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.2);
+  border: 1px var(--border-color) solid;
   border-radius: 0.5em;
-  color: #9fa5b5;
   position: absolute;
-  top: 3.78em;
+  top: 3em;
   left: 50%;
   width: 100%;
   transform: translatex(-50%);
   opacity: 0;
+  display: none;
   transition: 0.2s;
   z-index: 1;
+  transition: all 0.5s ease;
+  text-align: center;
+  margin: 10px 0px;
+  box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.2);
+  background-color: var(--sidebar-bg);
 }
-.head .menulang li {
+.menulang li {
   padding: 0.7em 0.5em;
+  margin: 0.3em 0;
   border-radius: 0.5em;
+  width: 90%;
   cursor: pointer;
+  transition: all 0.5s ease;
 }
-.head .menulang li:hover {
-  background: #2a2d35;
-}
-.active {
-  background: #23242a;
+.menulang li:hover {
+  background-color: var(--orange-color);
+  margin-left: 10px;
 }
 .menulang-open{
   display: block;
@@ -385,9 +371,7 @@ body {
 }
 
 
-/* )))))))) */
-
-
+/* Start content */
 .content .head {
   position: fixed;
   z-index: 9998;
@@ -429,12 +413,9 @@ body {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   height: 50px;
   transition: all 1s ease;
-
-
 }
 .content .head .search {
   right: 2%;
-
 }
 .content .head .search input:focus {
   outline: auto;

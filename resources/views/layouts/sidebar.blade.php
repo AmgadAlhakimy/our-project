@@ -5,9 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> sidebar </title>
-        {{--
-            <link rel="stylesheet" href="../../../public/css/check.css" />
-            --}}
 
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
@@ -25,7 +22,7 @@
         <!-- styles -->
     </head>
 
-    <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
+    <body @if(LaravelLocalization::setLocale()=='ar') dir="" @endif>
 
         <!-- start sidebar -->
         <!-- Start head  -->
@@ -33,7 +30,7 @@
         <div class="content">
             <div class="head ">
                 <div class="search p-relative">
-                    <input type="search" placeholder="Search" id="" />
+                    <input type="search" placeholder="Search" id="rtl" />
                 </div>
                 <div class="icons">
                     <span class="notification p-relative">
@@ -42,20 +39,26 @@
                     <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
                 </div>
                 {{-- *************************** --}}
-
                 <div class="dropdownlang">
                     <div class="select">
-                        <span class="selected">Languages</span>
+                        <span class="selected">Lang</span>
                         <div class="caret"></div>
                     </div>
+
                     <ul class="menulang">
+                        
+                        <li class="active"><a class="" aria-current="page" href="#">{{__('public.home')}}</a></li>
+                        {{-- <li class=""><a class="" href="#">{{__('public.link')}}</a></li> --}}
 
-                        <li class="active">English</li>
-                        <li>Arabic</li>
-
+                        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                        @endforeach
                     </ul>
                 </div>
-
                 {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -82,8 +85,6 @@
                     </form>
                 </div> --}}
 
-
-
             </div>
         </div>
         <!-- end head  -->
@@ -93,8 +94,7 @@
                 <!-- ============= logo ============================ -->
                 <div class="my-head">
                     <div class="my-menu-btn">
-                        <!-- <img src="images/logo2.png" class="logo-img-1" alt="">
-                    <img src="images/logo2.png" class="logo-img-2" alt=""> -->
+                        {{-- ___________ the main logo in the sidebar --}}
                         <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" class="logo-img" alt="" />
                         <div class="sidebar-icon">
                             <i class="logo-text fa-solid fa-caret-left"></i>
@@ -130,8 +130,10 @@
                                         <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
                                 </div>
                             </li>
-<<<<<<< HEAD
-                            <li class="dropdown">
+
+                            {{-- ---الحسابات--- --}}
+        <!-- ======================== ACOUNTENT ========================== -->
+                            {{-- <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
                                     <a href="#" class="li-link title-4">
@@ -163,10 +165,16 @@
                                         </a>
                                     </div>
                                 </div>
-                            </li>
+                            </li> --}}
+                    {{--  START the second section --}}
                             <div>
                                 <p class="title">test</p>
                             </div>
+                    {{--  END the second section --}}
+
+
+                            {{-- ---الكنترول--- --}}
+        <!-- ======================== CONTROLE ========================== -->
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -190,6 +198,9 @@
                                     </div>
                                 </div>
                             </li>
+
+                            {{-- ---الآباء--- --}}
+        <!-- ======================== PARENTS ========================== -->
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -213,7 +224,10 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="dropdown">
+
+                            {{-- ---شؤون الموظفين--- --}}
+        <!-- ======================== EMB ========================== -->
+                            {{-- <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
                                     <a href="#" class="li-link title-4">
@@ -237,8 +251,11 @@
                                         <a href="#" class="li-link">2</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="dropdown">
+                            </li> --}}
+
+                            {{-- ---السكرتارية--- --}}
+        <!-- ======================== SECURTARY ========================== -->
+                            {{-- <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
                                     <a href="#" class="li-link title-4">
@@ -259,8 +276,11 @@
                                         <a href="#" class="li-link">4</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="dropdown">
+                            </li> --}}
+
+                            {{-- ---شؤون الطلاب--- --}}
+        <!-- ======================== STUDENTS ========================== -->
+                            {{-- <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
                                     <a href="#" class="li-link title-4">
@@ -283,8 +303,11 @@
                                         <a href="#" class="li-link">4</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="dropdown">
+                            </li> --}}
+
+                            {{-- ---المعلمين--- --}}
+        <!-- ======================== TEACHERS ========================== -->
+                            {{-- <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
                                     <a href="#" class="li-link title-4">
@@ -305,9 +328,202 @@
                                         <a href="#" class="li-link">4</a>
                                     </div>
                                 </div>
+                            </li> --}}
+
+
+                            <li class="dropdown">
+                                <!-- ========== 2 ============ -->
+                                <div class="sidebar-title">
+                                    <a href="#" class="li-link title-4">
+                                        <i
+                                            class="icon-1 fa-solid fa-window-restore"></i>
+                                        <span class="menu-name"> قسم 1</span>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                    </a>
+                                </div>
+                                <div class="submenu">
+                                    <div class="line-black">
+
+                                        <a href="{{route('educational_levels.index')}}" class="li-link">عرض المراحل الدراسية</a>
+                                        <a href="{{route('classes.index')}}" class="li-link">عرض الفصول الدراسية</a>
+                                        <a href="{{route('subjects.index')}}" class="li-link"> عرض المواد الدراسية</a>
+                                        <a href="{{route('activities.index')}}" class="li-link">عرض الأنشطة الدراسية</a>
+
+                                    </div>
+                                </div>
                             </li>
-=======
-{{--                            <li class="dropdown">--}}
+                            <li class="dropdown">
+                                <!-- ========== 2 ============ -->
+                                <div class="sidebar-title">
+                                    <a href="#" class="li-link title-4">
+                                        <i
+                                            class="icon-1 fa-solid fa-window-restore"
+                                        ></i>
+                                        <span class="menu-name"> قسم 2</span>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                    </a>
+                                </div>
+                                <div class="submenu">
+                                    <div class="line-black">
+                                        <a href="{{route('educational_levels.show',0)}}" class="li-link">عرض المراحل الدراسية المحذوفة</a>
+                                        <a href="{{route('classes.show',0)}}" class="li-link">عرض الفصول الدراسية المحذوفة</a>
+                                        <a href="{{route('subjects.show',0)}}" class="li-link"> عرض المواد الدراسية المحذوفة</a>
+                                        <a href="{{route('activities.show',0)}}" class="li-link">عرض الأنشطة الدراسية المحذوفة</a>
+                                    </div>
+                                </div>
+                            </li>
+
+                            {{-- ---قسم 3--- --}}
+                            {{-- <li class="dropdown">
+                                <!-- ========== 2 ============ -->
+                                <div class="sidebar-title">
+                                    <a href="#" class="li-link title-4">
+                                        <i
+                                            class="icon-1 fa-solid fa-window-restore"
+                                        ></i>
+                                        <span class="menu-name"> قسم 3</span>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                    </a>
+                                </div>
+                                <div class="submenu">
+                                    <div class="line-black">
+                                        <a href="#" class="li-link">9</a>
+                                        <a href="#" class="li-link">10</a>
+                                        <a href="#" class="li-link">11</a>
+                                        <a href="#" class="li-link">12</a>
+                                    </div>
+                                </div>
+                            </li> --}}
+
+                            {{-- ---قسم 4--- --}}
+                            {{-- <li class="dropdown">
+                                <!-- ========== 2 ============ -->
+                                <div class="sidebar-title">
+                                    <a href="#" class="li-link title-4">
+                                        <i
+                                            class="icon-1 fa-solid fa-window-restore"
+                                        ></i>
+                                        <span class="menu-name"> قسم 4</span>
+                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                    </a>
+                                </div>
+                                <div class="submenu">
+                                    <div class="line-black">
+                                        <a href="#" class="li-link">13</a>
+                                        <a href="#" class="li-link">14</a>
+                                        <a href="#" class="li-link">15</a>
+                                        <a href="#" class="li-link">16</a>
+                                    </div>
+                                </div>
+                            </li> --}}
+                            <li class=" ">
+                                <!-- ========== 2 ============ -->
+                                <!-- <div class="sidebar-title"> -->
+                                <!-- <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-window-restore"></i>
+                                    <span class="menu-name"> من نحن</span>
+                                    <i class=" fa-solid fa-chevron-down"></i>
+                            </a> -->
+                                <!-- </div> -->
+                                <div class="submenu">
+                                    <div class="">
+                                        <a href="#" class="li-link">100000</a>
+                                        <a href="#" class="li-link">200000</a>
+                                        <a href="#" class="li-link">400000</a>
+                                        <a href="#" class="li-link">200000</a>
+                                        <a href="#" class="li-link">100000</a>
+                                        <a href="#" class="li-link">200000</a>
+                                        <a href="#" class="li-link">400000</a>
+                                        <a href="#" class="li-link">200000</a>
+                                        <a href="#" class="li-link">100000</a>
+                                        {{-- <a href="#" class="li-link">200000</a>
+                                        <a href="#" class="li-link">400000</a>
+                                        <a href="#" class="li-link">200000</a>
+                                        <a href="#" class="li-link">100000</a>
+                                        <a href="#" class="li-link">200000</a>
+                                        <a href="#" class="li-link">400000</a>
+                                        <a href="#" class="li-link">200000</a> --}}
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- ====================== -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ========== THE LAST MENU ============ -->
+                {{-- <div class="my-menu menu-footer">
+                    <ul class="list-ul">
+                        <!--  dropdown list item -->
+                        <p class="title">admin</p>
+                        <li class="dropdown">
+                            <!-- ========== 1 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i
+                                        class="icon-1 fa-solid fa-window-restore"
+                                    ></i>
+                                    <span class="menu-name"> من نحن </span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <!-- ========== 2 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i
+                                        class="icon-1 fa-solid fa-window-restore"
+                                    ></i>
+                                    <span class="menu-name"> خروج </span>
+                                </a>
+                            </div>
+                        </li> --}}
+                        <!-- ====================== -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- ============= home section ================= -->
+        <section class="section-home">
+            <div class="toggle-sidebar">
+            </div>
+        </section>
+
+        <!-- link js -->
+
+    @yield('content')
+
+    <script src="{{URL::asset('js/all.min.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap.js')}}"></script>
+    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('js/jquery.js')}}"></script>
+    <script src="{{URL::asset('js/main.js')}}"></script>
+    <script src="{{URL::asset('js/script.js')}}"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- <li class="dropdown">--}}
 {{--                                <!-- ========== 2 ============ -->--}}
 {{--                                <div class="sidebar-title">--}}
 {{--                                    <a href="#" class="li-link title-4">--}}
@@ -486,201 +702,4 @@
 {{--                                        <a href="#" class="li-link">4</a>--}}
 {{--                                    </div>--}}
 {{--                                </div>--}}
-{{--                            </li>--}}
->>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"></i>
-                                        <span class="menu-name"> قسم 1</span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-<<<<<<< HEAD
-                                        <a href="#" class="li-link">1</a>
-                                        <a href="#" class="li-link">2</a>
-                                        <a href="#" class="li-link">3</a>
-                                        <a href="#" class="li-link">4</a>
-=======
-                                        <a href="{{route('educational_levels.index')}}" class="li-link">عرض المراحل الدراسية</a>
-                                        <a href="{{route('classes.index')}}" class="li-link">عرض الفصول الدراسية</a>
-                                        <a href="{{route('subjects.index')}}" class="li-link"> عرض المواد الدراسية</a>
-                                        <a href="{{route('activities.index')}}" class="li-link">عرض الأنشطة الدراسية</a>
->>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"> قسم 2</span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="{{route('educational_levels.show',0)}}" class="li-link">عرض المراحل الدراسية المحذوفة</a>
-                                        <a href="{{route('classes.show',0)}}" class="li-link">عرض الفصول الدراسية المحذوفة</a>
-                                        <a href="{{route('subjects.show',0)}}" class="li-link"> عرض المواد الدراسية المحذوفة</a>
-                                        <a href="{{route('activities.show',0)}}" class="li-link">عرض الأنشطة الدراسية المحذوفة</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"> قسم 3</span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link">9</a>
-                                        <a href="#" class="li-link">10</a>
-                                        <a href="#" class="li-link">11</a>
-                                        <a href="#" class="li-link">12</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="dropdown">
-                                <!-- ========== 2 ============ -->
-                                <div class="sidebar-title">
-                                    <a href="#" class="li-link title-4">
-                                        <i
-                                            class="icon-1 fa-solid fa-window-restore"
-                                        ></i>
-                                        <span class="menu-name"> قسم 4</span>
-                                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                    </a>
-                                </div>
-                                <div class="submenu">
-                                    <div class="line-black">
-                                        <a href="#" class="li-link">13</a>
-                                        <a href="#" class="li-link">14</a>
-                                        <a href="#" class="li-link">15</a>
-                                        <a href="#" class="li-link">16</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class=" ">
-                                <!-- ========== 2 ============ -->
-                                <!-- <div class="sidebar-title"> -->
-                                <!-- <a href="#" class="li-link title-4">
-                                    <i class="icon-1 fa-solid fa-window-restore"></i>
-                                    <span class="menu-name"> من نحن</span>
-                                    <i class=" fa-solid fa-chevron-down"></i>
-                            </a> -->
-                                <!-- </div> -->
-                                <div class="submenu">
-                                    <div class="">
-                                        <a href="#" class="li-link">100000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">400000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">100000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">400000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">100000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">400000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">100000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                        <a href="#" class="li-link">400000</a>
-                                        <a href="#" class="li-link">200000</a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- ====================== -->
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ========== THE LAST MENU ============ -->
-                {{-- <div class="my-menu menu-footer">
-                    <ul class="list-ul">
-                        <!--  dropdown list item -->
-                        <p class="title">admin</p>
-                        <li class="dropdown">
-                            <!-- ========== 1 ============ -->
-                            <div class="sidebar-title">
-                                <a href="#" class="li-link title-4">
-                                    <i
-                                        class="icon-1 fa-solid fa-window-restore"
-                                    ></i>
-                                    <span class="menu-name"> من نحن </span>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <!-- ========== 2 ============ -->
-                            <div class="sidebar-title">
-                                <a href="#" class="li-link title-4">
-                                    <i
-                                        class="icon-1 fa-solid fa-window-restore"
-                                    ></i>
-                                    <span class="menu-name"> خروج </span>
-                                </a>
-                            </div>
-                        </li> --}}
-                        <!-- ====================== -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Start head  -->
-        <!-- Start content  -->
-        <!-- <div class="content "  >
-        <div class="head " >
-            <div class="search p-relative">
-                <input
-                class="p-10 border-1s rad-10" type="search"
-                placeholder="type A keyowrd" id=""/>
-            </div>
-            <div class="icons ">
-                <span class="notification p-relative">
-                <i class="fa-regular fa-bell fa-fw"></i>
-                </span>
-                <img src="images/skills-02.jpg" alt="" />
-            </div>
-        </div>
-    </div> -->
-        <!-- end head  -->
-        <!-- End content  -->
-
-        <!-- ============= home section ================= -->
-        <section class="section-home">
-            <div class="toggle-sidebar">
-
-                {{-- <i class="fa-solid fa-list"></i>
-                <div class="t-text">Lorem ipsum ea.</div>  --}}
-            </div>
-        </section>
-
-        <!-- link js -->
-
-    @yield('content')
-
-    <script src="{{URL::asset('js/all.min.js')}}"></script>
-    <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{URL::asset('js/bootstrap.js')}}"></script>
-    <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{URL::asset('js/jquery.js')}}"></script>
-    <script src="{{URL::asset('js/main.js')}}"></script>
-    <script src="{{URL::asset('js/script.js')}}"></script>
-    </body>
-</html>
+{{--                            </li> --}}

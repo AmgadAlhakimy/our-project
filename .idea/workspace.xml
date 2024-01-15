@@ -6,21 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0e50a439-ca8b-45ef-8182-f61b1f80af6d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documents/main-deco.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/main-deco.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/framework.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/framework.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/sidebar-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/sidebar-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/4f/c4/4fc4c31e1ca45960480179b10be70239ccc40b94" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/4f/c4/4fc4c31e1ca45960480179b10be70239ccc40b94" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/ca/72/ca72dd6219b474ddb096a46bec953a06fde140fd" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/ca/72/ca72dd6219b474ddb096a46bec953a06fde140fd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/1WCV55Xwlk6InaVAx2B7qCUsMoC9VA78Bdn2GLv1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/hYEOvrLVsiJ4Rx7GVBYM1BSjNREfA3VyeeqOgViX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/kXht0UyC5VXiDozIHUVMLgR38yUXbGRPBZKnb2co" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/sessions/lPjpTfnYDoPZRBoLdDwBK3mrlwQThaQyNxc80gXX" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/e65479e56bf0c504a1c5ea41f9f4bd22.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/e65479e56bf0c504a1c5ea41f9f4bd22.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/ff535799109f60995ab93d6d22cbf4b4.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/ff535799109f60995ab93d6d22cbf4b4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +196,7 @@
       <updated>1705070131705</updated>
       <workItem from="1705070132377" duration="7284000" />
       <workItem from="1705255723096" duration="985000" />
-      <workItem from="1705305498109" duration="1495000" />
+      <workItem from="1705305498109" duration="2115000" />
     </task>
     <servers />
   </component>
