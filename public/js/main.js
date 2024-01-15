@@ -24,3 +24,46 @@ toggleSidebar.addEventListener("click", () => {
 logo.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
+// the lunguage bottun
+const dropdownlang = document.querySelectorAll('.dropdownlang');
+
+dropdownlang.forEach(dropdownlang => {
+    const select = dropdownlang.querySelector('.select');
+    const caret = dropdownlang.querySelector('.caret');
+    const menulang = dropdownlang.querySelector('.menulang');
+    const options = dropdownlang.querySelectorAll('.menulang li'); //check
+    const selected = dropdownlang.querySelector('.selected');
+
+
+    // add a click event to the select element
+    select.addEventListener('click', () =>{
+        // add the cliked select style to the secect element
+        select.classList.toggle('select-clicked');
+        // add the torare style to the caret element
+        caret.classList.toggle('caret-rotate');
+        // add the open style to the menulang element
+        menulang.classList.toggle('menulang-open');
+    });
+
+    // loop through all option elements
+    options.forEach(option =>
+        // add a click event to the option element
+        option.addEventListener('click', () => {
+            // chang selected inner text to clicked option inner text
+            selected.innerText = option.innerText;
+            // add the cliched select styles to the select element
+            select.classList.remove('select-clicked');
+            // add the rotate styles to the caret element
+            caret.classList.remove('caret-rotate');
+            // add the opent style to the menulang elemnt 
+            menulang.classList.remove('menulang-open');
+            // Remove active class from all option element
+            options.forEach(option => {
+                option.classList.remove('active');
+            });
+            // add active class to cliched option element
+            option.classList.add('active');
+        })
+        )
+
+})

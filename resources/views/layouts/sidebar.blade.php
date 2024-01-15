@@ -41,7 +41,22 @@
                     </span>
                     <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                {{-- *************************** --}}
+
+                <div class="dropdownlang">
+                    <div class="select">
+                        <span class="selected">Languages</span>
+                        <div class="caret"></div>
+                    </div>
+                    <ul class="menulang">
+
+                        <li class="active">English</li>
+                        <li>Arabic</li>
+
+                    </ul>
+                </div>
+
+                {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -65,7 +80,9 @@
                         <input class="form-control me-2" type="search" placeholder="{{__('public.search')}}" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">{{__('public.search')}}</button>
                     </form>
-                </div>
+                </div> --}}
+
+
 
             </div>
         </div>
@@ -648,6 +665,7 @@
         <!-- ============= home section ================= -->
         <section class="section-home">
             <div class="toggle-sidebar">
+
                 {{-- <i class="fa-solid fa-list"></i>
                 <div class="t-text">Lorem ipsum ea.</div>  --}}
             </div>

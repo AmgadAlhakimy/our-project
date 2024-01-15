@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>sidevar</title>
+        <title> sidebar </title>
         
 
     <link href="<?php echo e(URL::asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
@@ -39,34 +39,24 @@
                     </span>
                     <img src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>"/>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto me-auto qmb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"><?php echo e(__('public.home')); ?></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><?php echo e(__('public.link')); ?></a>
-                        </li>
-                        <ul>
-                            <?php $__currentLoopData = LaravelLocalization::getSupportedLocales(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $localeCode => $properties): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <li>
-                                    <a rel="alternate" hreflang="<?php echo e($localeCode); ?>" href="<?php echo e(LaravelLocalization::getLocalizedURL($localeCode, null, [], true)); ?>">
-                                        <?php echo e($properties['native']); ?>
+                
 
-                                    </a>
-                                </li>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </ul>
+                <div class="dropdownlang">
+                    <div class="select">
+                        <span class="selected">Languages</span>
+                        <div class="caret"></div>
+                    </div>
+                    <ul class="menulang">
+
+                        <li class="active">English</li>
+                        <li>Arabic</li>
+
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="<?php echo e(__('public.search')); ?>" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit"><?php echo e(__('public.search')); ?></button>
-                    </form>
                 </div>
+
+                
+
+
 
             </div>
         </div>
@@ -114,6 +104,7 @@
                                         <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
                                 </div>
                             </li>
+<<<<<<< HEAD
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -289,6 +280,188 @@
                                     </div>
                                 </div>
                             </li>
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
                             <li class="dropdown">
                                 <!-- ========== 2 ============ -->
                                 <div class="sidebar-title">
@@ -301,10 +474,17 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
+<<<<<<< HEAD
                                         <a href="#" class="li-link">1</a>
                                         <a href="#" class="li-link">2</a>
                                         <a href="#" class="li-link">3</a>
                                         <a href="#" class="li-link">4</a>
+=======
+                                        <a href="<?php echo e(route('educational_levels.index')); ?>" class="li-link">عرض المراحل الدراسية</a>
+                                        <a href="<?php echo e(route('classes.index')); ?>" class="li-link">عرض الفصول الدراسية</a>
+                                        <a href="<?php echo e(route('subjects.index')); ?>" class="li-link"> عرض المواد الدراسية</a>
+                                        <a href="<?php echo e(route('activities.index')); ?>" class="li-link">عرض الأنشطة الدراسية</a>
+>>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
                                     </div>
                                 </div>
                             </li>
@@ -321,10 +501,10 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a href="#" class="li-link">5</a>
-                                        <a href="#" class="li-link">6</a>
-                                        <a href="#" class="li-link">7</a>
-                                        <a href="#" class="li-link">8</a>
+                                        <a href="<?php echo e(route('educational_levels.show',0)); ?>" class="li-link">عرض المراحل الدراسية المحذوفة</a>
+                                        <a href="<?php echo e(route('classes.show',0)); ?>" class="li-link">عرض الفصول الدراسية المحذوفة</a>
+                                        <a href="<?php echo e(route('subjects.show',0)); ?>" class="li-link"> عرض المواد الدراسية المحذوفة</a>
+                                        <a href="<?php echo e(route('activities.show',0)); ?>" class="li-link">عرض الأنشطة الدراسية المحذوفة</a>
                                     </div>
                                 </div>
                             </li>
@@ -434,6 +614,7 @@
         <!-- ============= home section ================= -->
         <section class="section-home">
             <div class="toggle-sidebar">
+
                 
             </div>
         </section>
