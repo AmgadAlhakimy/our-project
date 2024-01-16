@@ -1,3 +1,4 @@
+{{-- اضافة طالب جديد --}}
 @extends('layouts.sidebar')
 @section('content')
     <main class="main">
@@ -9,14 +10,13 @@
             @endif
             <form method="post" action="{{route('students.store')}}">
                 @csrf
-                <h1 class="p-relative ">{{__('student.Register a new student')}}</h1>
                 <!-- Start personal info  -->
                 <h3 class="container-title">{{__('student.student info')}}</h3>
                 <div class="container containers-style ">
                     <div class="row">
                         <div class="box col-lg-6 col-md-12">
                             <label class="text-center"
-                                   for="arab-name">{{__("student.student's name in english")}}</label>
+                                for="arab-name">{{__("student.student's name in english")}}</label>
                             <input type="text" class="form-control " id='arab-name' name="name">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -24,7 +24,7 @@
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label class="  title-3 "
-                                   for="english-name">{{__("student.student's name in arabic")}}</label>
+                                for="english-name">{{__("student.student's name in arabic")}}</label>
                             <input type="text" class="form-control " id='english-name' name="name_ar">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -92,11 +92,11 @@
                         <div class="box ">
                             <label for="className " class="form-label">{{__('student.class')}}</label>
                             <select id="className " class="form-control" name="class">
-                                @foreach($classes as $class)
+                                {{-- @foreach($classes as $class)
                                     <option value="{{$class->id}}">
                                         {{$class->name}}
                                     </option>
-                                @endforeach
+                                @endforeach --}}
                             </select>
                             @error('class')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -203,10 +203,10 @@
                                     <label class="form-label col ms-5" for="takeMedicine">{{__('student.yes')}}</label>
                                 </div>
                                 <input type="text" name="medicine_desc" id="std_medicine_desc" class="form-control"
-                                       aria-label="Text input with radio button" placeholder="desc in english">
+                                    aria-label="Text input with radio button" placeholder="desc in english">
 
                                 <input type="text" name="medicine_desc_ar" id="std_medicine_desc" class="form-control"
-                                       aria-label="Text input with radio button" placeholder="desc in arabic">
+                                    aria-label="Text input with radio button" placeholder="desc in arabic">
                             </div>
                             <label class="mt-3">{{__('student.have an allergy ?')}}</label>
                             <div class="input-group mt-2 mb-2">
@@ -216,26 +216,26 @@
                                     <label class="form-label col ms-5" for="takeMedicine">{{__('student.yes')}}</label>
                                 </div>
                                 <input type="text" name="allergy_desc" id="std_medicine_desc" class="form-control"
-                                       aria-label="Text input with radio button" placeholder="desc in english">
+                                    aria-label="Text input with radio button" placeholder="desc in english">
 
                                 <input type="text" name="allergy_desc_ar" id="std_medicine_desc" class="form-control"
-                                       aria-label="Text input with radio button" placeholder="desc in arabic">
+                                    aria-label="Text input with radio button" placeholder="desc in arabic">
                             </div>
                             <label class="mt-3">{{__('student.have any health problem ?')}}</label>
                             <div class="input-group mt-2 mb-2">
                                 <div class="mt-3 col-lg-2 col-md-3">
                                     <label class="form-label col me-2" for="takeMedicine ">{{__('student.no')}}</label>
                                     <input class="checkbox col" type="checkbox" name="have_health_problem"
-                                           id="takeMedicine">
+                                        id="takeMedicine">
                                     <label class="form-label col ms-5" for="takeMedicine">{{__('student.yes')}}</label>
                                 </div>
                                 <input type="text" name="health_problem_desc" id="std_medicine_desc"
-                                       class="form-control"
-                                       aria-label="Text input with radio button" placeholder="desc in english">
+                                    class="form-control"
+                                    aria-label="Text input with radio button" placeholder="desc in english">
 
                                 <input type="text" name="health_problem_desc_ar" id="std_medicine_desc"
-                                       class="form-control"
-                                       aria-label="Text input with radio button" placeholder="desc in arabic">
+                                    class="form-control"
+                                    aria-label="Text input with radio button" placeholder="desc in arabic">
                             </div>
                         </div>
                     </div>

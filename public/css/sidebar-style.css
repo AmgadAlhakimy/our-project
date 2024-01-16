@@ -153,7 +153,7 @@
   direction: rtl;
   /* justify-content: end; */
   padding: 5px 6px;
-  background-color: #8b0985;
+  /*background-color: #8b0985;*/
 }
 .submenu .li-link {
   color: var(--color_dark2);
@@ -402,7 +402,7 @@
   font-size: 14px;
   color: var(--grey-color);
 }
-.content .head .search input {
+.content .head .search .search1 {
   padding-left: 30px;
   padding-right: 10px;
   margin-left: 5px;
@@ -417,7 +417,7 @@
 .content .head .search {
   right: 2%;
 }
-.content .head .search input:focus {
+.content .head .search .search1:focus {
   outline: auto;
   outline-color: var(--orange-color);
   width: 250px;

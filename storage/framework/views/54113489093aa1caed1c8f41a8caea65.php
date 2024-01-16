@@ -1,0 +1,56 @@
+
+
+<?php $__env->startSection('content'); ?>
+    <div class="my-table">
+        <div class="table-header">
+            <div class="row frist-card me-1">
+                <h4 class="col container-title mt-2">student information</h4>
+                <div class="row col">
+                    <input class=" col form-control me-2 search-input" placeholder="SEARCH">
+                    <button class="col-1 save-button search-button">Search</button>
+                </div>
+            </div>
+            <div class="card-info second-card mb-4 mt-4 p-4 ">
+                <h3 class="fw-bolder  Names">Quran Karem</h3>
+            </div>
+            <div class="cards-container  third-card">
+                <div class="card-info col me-2">
+                    <h4 class=" me-2 ms-2">Techer</h4>
+                    <h4 class=" Names">mohammad mohsen</h4>
+                </div>
+                <div class="card-info  col ms-2">
+                    <h4 class=" me-2 ms-2">Class</h4>
+                    <h4 class=" Names">KG1</h4>
+                </div>
+            </div>
+        </div>
+        <!-- table-hover table-striped -->
+        <div class=" table-section ">
+            <div class="card table-section ">
+            <table class=" " >
+                <thead>
+                    <tr class="">
+                        <th scope="col"><div class="th-head-1 " >id</div></th>
+                        <th scope="col"><div class="th-head-3" >Name</div></th>
+                        <th scope="col"><div class="th-head-2" >photo</div></th>
+                        <th scope="col"><div class="th-head-3" >student info </div></th>
+                        <th scope="col"><div class="th-head-3" >Daily follow-up</div></th>
+                        <th scope="col"><div class="th-head-1" ></div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-bolder">130</td>
+                        <td>mohanad naser mansour</td>
+                        <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
+                        <td><button class="save-button btn-light w-100">Student info <i class="fa-solid fa-pen-to-square"></i></button></td>
+                        <td><button class="btn save-button btn-light me-5 w-100">Follow-up notbook<i class="ms-3 fa-solid fa-print"></i></button></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </div>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teatchers/daily/student-list.blade.php ENDPATH**/ ?>

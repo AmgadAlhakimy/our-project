@@ -63,8 +63,53 @@ Route::group(
         Route::get('relations-page', function () {
             return view('academic_dep/relations/relations-page');
         });
+// ------------------- شؤون الطلاب ---------------------
+        // صفحة اضافة طالب
+        Route::get('student-info', function () {
+            return view('students/create');
+        });
+        // استعراض الطلاب 
+        Route::get('students-info', function () {
+            return view('students/student-info-table');
+        });
+        //  الطلاب الغائبين 
+        Route::get('absence', function () {
+            return view('students/absence/absent_students');
+        });
+// --------------------------------------------------------
+// ------------------- شؤون الموظفين ---------------------
+//  اضافة مدرس 
+Route::get('add-teacher', function () {
+    return view('emp_dep/add_teachers/create');
+});
+//  اضافة موظف 
+Route::get('add-emp', function () {
+    return view('emp_dep/add_employees/create');
+});
+// --------------------------------------------------------
+// ------------------- المدرسين---------------------
+//  اضافة الدرجات 
+Route::get('add-marks', function () {
+    return view('teatchers/marks/add');
+});
+//  دفتر متابعة روضة
+Route::get('follow-up_nersory', function () {
+    return view('teatchers/daily/children-follow-up');
+});
+//  دفتر متابعة مدرسة
+Route::get('follow-up_school', function () {
+    return view('teatchers/daily/school-follow-up');
+});
+//  دفتر متابعة مدرسة
+Route::get('follow-up_schoo', function () {
+    return view('teatchers/daily/student-list');
+});
+// --------------------------------------------------------
+// --------------------------------------------------------
+// --------------------------------------------------------
 
-        Route::resource('subjects', SubjectController::class);
+
+Route::resource('subjects', SubjectController::class);
         Route::resource('classes', ClasssController::class);
         Route::resource('semesters', SemesterController::class);
         Route::resource('employees', EmployeeController::class);
