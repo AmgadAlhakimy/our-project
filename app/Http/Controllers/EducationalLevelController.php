@@ -16,6 +16,7 @@ class EducationalLevelController extends Controller
         try {
             $levels = EducationalLevel::all();
             return view('academic_dep/educational_levels.index_education_levels', compact('levels'));
+
         } catch (\Exception $e) {
             return $e->getMessage();
         }

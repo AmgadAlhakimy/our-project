@@ -21,4 +21,7 @@ class Classs extends Model
 
         return $query->where('cost',100);
     }
+    public function level(){
+        return $this->belongsTo(EducationalLevel::class,'edu_id');
+    }
 }
