@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0e50a439-ca8b-45ef-8182-f61b1f80af6d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documents/main-deco.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/main-deco.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +200,9 @@
       <updated>1705070131705</updated>
       <workItem from="1705070132377" duration="7284000" />
       <workItem from="1705255723096" duration="985000" />
-      <workItem from="1705305498109" duration="2115000" />
+      <workItem from="1705305498109" duration="2167000" />
+      <workItem from="1705392041066" duration="1022000" />
+      <workItem from="1705393489492" duration="3006000" />
     </task>
     <servers />
   </component>
