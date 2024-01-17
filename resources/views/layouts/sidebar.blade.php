@@ -99,6 +99,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
+                                <a href="#" class="li-link"> سلة المهملات </a>
                                 <a href="{{route('educational_levels.create')}}" class="li-link">اضافة مرحلة دراسية</a>
                                 <a href="{{route('classes.create')}}" class="li-link">اضافة فصل دراسي</a>
                                 <a href="{{route('subjects.create')}}" class="li-link">اضافة مواد</a>
@@ -275,8 +276,8 @@
                                 <a href="/students-info" class="li-link">عرض الطلاب</a>
                                 <a href="#" class="li-link"> عرض المحذوف</a>
                                 <a href="#" class="li-link">تعديل الطالب </a>
-                                <a href='/class_activ' class="li-link">2</a>
                                 <a href='/absence' class="li-link">الغياب</a>
+                                <a href="#" class="li-link">2</a>
                                 {{-- تجربة --}}
                                 {{-- <a href="#" class="">
                                     <ul class="list-ul">

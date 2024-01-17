@@ -6,20 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="0e50a439-ca8b-45ef-8182-f61b1f80af6d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Documents/main-deco.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/main-deco.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/sidebar-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/sidebar-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EducationalLevelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EducationalLevelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEducationalLevelRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreEducationalLevelRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Classs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Classs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/EducationalLevel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EducationalLevel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/php-flasher/flasher" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/php-flasher/flasher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/yoeunes/toastr" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yoeunes/toastr" afterDir="false" />
->>>>>>> c1a1efa0da56d89420f0da5e803ca960ff2e7516
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,9 +160,6 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2arIAXZw3UEIcgo0HxigaWk9fCI" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -214,7 +203,7 @@
       <workItem from="1705255723096" duration="985000" />
       <workItem from="1705305498109" duration="2167000" />
       <workItem from="1705392041066" duration="1022000" />
-      <workItem from="1705393489492" duration="3006000" />
+      <workItem from="1705393489492" duration="3247000" />
     </task>
     <servers />
   </component>
