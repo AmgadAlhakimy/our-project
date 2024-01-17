@@ -11,8 +11,18 @@
       <change beforePath="$PROJECT_DIR$/.idea/our-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/our-project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityClassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityClassController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClasssController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClassController.php" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/Documents/main-deco.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documents/main-deco.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+=======
+>>>>>>> b51642fc883f21c4e0e2e7a0e261cecd5b98617d
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EducationalLevelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EducationalLevelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GuardianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GuardianController.php" afterDir="false" />
@@ -52,6 +62,7 @@
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/php-flasher/flasher" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/php-flasher/flasher" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/yoeunes/toastr" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yoeunes/toastr" afterDir="false" />
+>>>>>>> c1a1efa0da56d89420f0da5e803ca960ff2e7516
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,6 +262,7 @@
       <updated>1705070131705</updated>
       <workItem from="1705070132377" duration="7284000" />
       <workItem from="1705255723096" duration="985000" />
+<<<<<<< HEAD
       <workItem from="1705305498109" duration="2115000" />
       <workItem from="1705384333078" duration="3761000" />
       <workItem from="1705416280482" duration="5059000" />
@@ -261,6 +273,11 @@
       <workItem from="1705465195933" duration="313000" />
       <workItem from="1705468786718" duration="2197000" />
       <workItem from="1705477299746" duration="286000" />
+=======
+      <workItem from="1705305498109" duration="2167000" />
+      <workItem from="1705392041066" duration="1022000" />
+      <workItem from="1705393489492" duration="3006000" />
+>>>>>>> b51642fc883f21c4e0e2e7a0e261cecd5b98617d
     </task>
     <servers />
   </component>

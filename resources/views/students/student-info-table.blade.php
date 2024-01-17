@@ -1,36 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../public/css/all.min.css">
-    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../public/css/framework.css">
-    <link rel="stylesheet" href="../../../public/css/tables.css">
-    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css.map">
-    <link rel="stylesheet" href="../../../public/css/normalize.css">
-</head>
-<body>
+{{-- واجهة استعراض بيانات الطلاب العامة --}}
+@extends('layouts.sidebar')
+@section('content')
     <div class="my-table">
         <div class="table-header">
             <div class="row frist-card me-1">
-                <h4 class="col container-title mt-2">student information</h4>
+                <h4 class="col container-title mt-2">Student Information</h4>
                 <div class="row col">
-                    <input class=" col form-control me-2 search-input" placeholder="SEARCH">
+                    <input class=" col   search2" placeholder="SEARCH">
                     <button class="col-1 save-button search-button">Search</button>
                 </div>
             </div>
-            <div class="card-info second-card mb-4 mt-4 p-4 ">
+            <div class="card-info second-card mb-4 mt-4 ms-2 me-2 ">
                 <h3 class="fw-bolder  Names">Quran Karem</h3>
             </div>
             <div class="cards-container  third-card">
-                <div class="card-info col me-2">
+                <div class="card-info col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Techer</h4>
                     <h4 class=" Names">mohammad mohsen</h4>
                 </div>
-                <div class="card-info  col ms-2">
+                <div class="card-info  col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Month</h4>
                     <h4 class=" Names">10</h4>
                 </div>
@@ -120,8 +108,7 @@
         </div>
     </div>
     </div>
-</body>
-</html>
+@endsection
 
 <!-- <th scope="col"><div class="th-head-3" >father name</div></th>
 <th scope="col"><div class="th-head-3" >father work</div></th>
@@ -137,13 +124,9 @@
 <th scope="col"><div class="th-head-4" >note</div></th>
 <th scope="col"><div class="th-head-2" >processes</div></th>
 <th scope="col"><div class="th-head" > </div></th>
- -->
-
-
+-->
 
 <!-- 
-
-
 <main class=" m-3">
 <table class="table my-card table-hover table-striped ">
     <thead>
@@ -210,10 +193,15 @@
             <td>uncle</td>
             <td>3209409432</td>
             <td>Lorem ipsum dolor, sit amet </td>
-            <td><a href="{{route('classes.edit',$class->id)}}" class="save-button btn w-100 mt-1">Edit</a></td>
+
+
+            {{-- <td><a href="{{route('classes.edit',$class->id)}}" class="save-button btn w-100 mt-1">Edit</a></td>
                 <form method="post" action="{{route('classes.destroy',$class->id)}}">
             <td><button class="btn clear-button w-100 mt-1">Delete</button></td>
-                </form>
+                </form> --}}
+
+
+
         </tr>
     </tbody>
 </table>

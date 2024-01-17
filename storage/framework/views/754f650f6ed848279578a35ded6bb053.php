@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add new teacher</title>
-    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../public/css/all.min.css">
-    <link rel="stylesheet" href="../../../public/css/framework.css">
-    <link rel="stylesheet" href="../../../public/css/bootstrap.min.css.map">
-    <link rel="stylesheet" href="../../../public/css/style-bottuns.css">
-    <link rel="stylesheet" href="../../../public/css/tables.css">
-    <!-- <link rel="stylesheet" href="../../css/master.css"> -->
-</head>
-<body>
+<?php $__env->startSection('content'); ?>
     </header>
     <main class="main ">
         <section class="section ">
-            <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1>
+            <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP SCHOOL</h1>
             <!-- Start personal info  -->
             <div class="container containers-style mb-3   head-name" >
                 <div class="test-2  col-lg-8 col-md-8 col-sm-9 ">
@@ -137,9 +122,7 @@
             <!-- End final box -->
         </div>
     </main>
-</body>
-
-</html>
+    <?php $__env->stopSection(); ?>
 
 
 
@@ -159,3 +142,5 @@
                     </div>
                     end permanence -->
 
+
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teatchers/daily/school-follow-up.blade.php ENDPATH**/ ?>
