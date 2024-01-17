@@ -92,11 +92,11 @@
                         <div class="box ">
                             <label for="className " class="form-label">{{__('student.class')}}</label>
                             <select id="className " class="form-control" name="class">
-                                @foreach($classes as $class)
-                                    <option value="{{$class->id}}">
-                                        {{$class->name}}
-                                    </option>
-                                @endforeach
+{{--                                @foreach($classes as $class)--}}
+{{--                                    <option value="{{$class->id}}">--}}
+{{--                                        {{$class->name}}--}}
+{{--                                    </option>--}}
+{{--                                @endforeach--}}
                             </select>
                             @error('class')
                             <small class="form-text text-danger">{{$message}}</small>

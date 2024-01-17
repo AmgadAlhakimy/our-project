@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -22,7 +22,7 @@
         <!-- styles -->
     </head>
 
-    <body @if(LaravelLocalization::setLocale()=='ar') dir="" @endif>
+    <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
         <!-- start sidebar -->
         <!-- Start head  -->
@@ -30,13 +30,13 @@
         <div class="content">
             <div class="head ">
                 <div class="search p-relative">
-                    <input type="search" placeholder="Search" id="rtl" />
+                    <label for="rtl"></label><input type="search" placeholder="Search" id="rtl" />
                 </div>
                 <div class="icons">
                     <span class="notification p-relative">
                         <i class="fa-regular fa-bell fa-fw"></i>
                     </span>
-                    <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}"/>
+                    <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills" />
                 </div>
                 {{-- *************************** --}}
                 <div class="dropdownlang">
@@ -46,7 +46,7 @@
                     </div>
 
                     <ul class="menulang">
-                        
+
                         <li class="active"><a class="" aria-current="page" href="#">{{__('public.home')}}</a></li>
                         {{-- <li class=""><a class="" href="#">{{__('public.link')}}</a></li> --}}
 
@@ -125,13 +125,14 @@
                                     <div class="line-black">
                                         <a href="{{route('educational_levels.create')}}" class="li-link">اضافة مرحلة دراسية</a>
                                         <a href="{{route('classes.create')}}" class="li-link">اضافة فصل دراسي</a>
-                                        <a href="{{route('subjects.create')}}"class="li-link">اضافة مواد</a>
-                                        <a href="{{route('activities.create')}}"class="li-link" >اضافة نشاط</a>
+                                        <a href="{{route('subjects.create')}}" class="li-link">اضافة مواد</a>
+                                        <a href="{{route('activities.create')}}" class="li-link" >اضافة نشاط</a>
                                         <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
-                                </div>
-                            </li>
+                                                                          </div>
 
-                            {{-- ---الحسابات--- --}}
+
+
+                    {{-- ---الحسابات--- --}}
         <!-- ======================== ACOUNTENT ========================== -->
                             {{-- <li class="dropdown">
                                 <!-- ========== 2 ============ -->
@@ -369,7 +370,7 @@
                                         <a href="{{route('classes.show',0)}}" class="li-link">عرض الفصول الدراسية المحذوفة</a>
                                         <a href="{{route('subjects.show',0)}}" class="li-link"> عرض المواد الدراسية المحذوفة</a>
                                         <a href="{{route('activities.show',0)}}" class="li-link">عرض الأنشطة الدراسية المحذوفة</a>
-                                    </div>
+                                   </div>
                                 </div>
                             </li>
 
@@ -479,11 +480,8 @@
                             </div>
                         </li> --}}
                         <!-- ====================== -->
-                    </ul>
-                </div>
             </div>
-        </div>
-        <!-- ============= home section ================= -->
+            </div>
         <section class="section-home">
             <div class="toggle-sidebar">
             </div>

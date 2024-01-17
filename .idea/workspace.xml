@@ -5,11 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e50a439-ca8b-45ef-8182-f61b1f80af6d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/routes/force_delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/resources.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/restore.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/our-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/our-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityClassController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityClassController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClasssController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClassController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EducationalLevelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EducationalLevelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEducationalLevelRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreEducationalLevelRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Classs.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Classs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/EducationalLevel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/EducationalLevel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GuardianController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GuardianController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SemesterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SemesterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SubjectController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TeacherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/activity/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreActivityClassRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/activity_class/StoreActivityClassRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreClasssRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/classs/StoreClasssRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEduClassRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEducationalLevelRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/level/StoreEducationalLevelRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreEmployeeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/employee/StoreEmployeeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreGuardianRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/guardian/StoreGuardianRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreSemesterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/semester/StoreSemesterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreStudentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/student/StoreStudentRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreSubjectRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/subject/StoreSubjectRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreTeacherRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/teacher/StoreTeacherRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateActivityClassRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/activity_class/UpdateActivityClassRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateClasssRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/classs/UpdateClasssRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateEduClassRequest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateEducationalLevelRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/level/UpdateEducationalLevelRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateEmployeeRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/employee/UpdateEmployeeRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateGuardianRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/guardian/UpdateGuardianRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateSemesterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/semester/UpdateSemesterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateStudentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/student/UpdateStudentRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateSubjectRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/subject/UpdateSubjectRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UpdateTeacherRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/teacher/UpdateTeacherRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Activity/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/ActivityPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ActivityPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ActivityFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ActivityFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/academic_dep/classes/create_classes.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/academic_dep/classes/create_classes.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/students/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/students/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/php-flasher/flasher" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/php-flasher/flasher" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/yoeunes/toastr" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/yoeunes/toastr" afterDir="false" />
     </list>
@@ -194,6 +234,13 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-php-predefined-ba97393d7c68-74080bdb84d3-com.jetbrains.php.sharedIndexes-PS-233.11799.232" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -205,6 +252,15 @@
       <workItem from="1705070132377" duration="7284000" />
       <workItem from="1705255723096" duration="985000" />
       <workItem from="1705305498109" duration="2115000" />
+      <workItem from="1705384333078" duration="3761000" />
+      <workItem from="1705416280482" duration="5059000" />
+      <workItem from="1705422016649" duration="46000" />
+      <workItem from="1705422149919" duration="267000" />
+      <workItem from="1705423562193" duration="1401000" />
+      <workItem from="1705425376963" duration="761000" />
+      <workItem from="1705465195933" duration="313000" />
+      <workItem from="1705468786718" duration="2197000" />
+      <workItem from="1705477299746" duration="286000" />
     </task>
     <servers />
   </component>

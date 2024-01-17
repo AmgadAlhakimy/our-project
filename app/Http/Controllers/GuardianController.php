@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\guardian\StoreGuardianRequest;
+use App\Http\Requests\guardian\UpdateGuardianRequest;
 use App\Models\Guardian;
-use App\Http\Requests\StoreGuardianRequest;
-use App\Http\Requests\UpdateGuardianRequest;
 
 class GuardianController extends Controller
 {

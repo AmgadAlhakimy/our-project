@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSemesterRequest;
-use App\Http\Requests\UpdateSemesterRequest;
+use App\Http\Requests\semester\StoreSemesterRequest;
+use App\Http\Requests\semester\UpdateSemesterRequest;
 use App\Models\Semester;
 use Exception;
 

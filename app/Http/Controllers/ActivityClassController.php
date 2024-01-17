@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreActivityClassRequest;
-use App\Http\Requests\UpdateActivityClassRequest;
-use App\Models\Activity\Activity;
+use App\Http\Requests\activity_class\StoreActivityClassRequest;
+use App\Http\Requests\activity_class\UpdateActivityClassRequest;
+use App\Models\Activity;
 use App\Models\ActivityClass;
 use App\Models\Classs;
 
