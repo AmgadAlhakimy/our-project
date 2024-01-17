@@ -134,7 +134,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Start final box -->
                 <h3 class="text-center">EXTRA NOTES</h3>
                 <div class="container card card-header mb-5">
@@ -154,10 +154,10 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
-                        
-                        
-                        
+
+
+
+
                         <div class="box mb-3  ">
                             <button type="submit" class="my-save-button"><i class="fa-solid fa-floppy-disk"></i>
                                 Save
@@ -173,4 +173,4 @@ unset($__errorArgs, $__bag); ?>
     </main>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/emp_dep/add_employees/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/emp_dep/add_employees/create_student.blade.php ENDPATH**/ ?>

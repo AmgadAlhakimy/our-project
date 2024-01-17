@@ -27,9 +27,11 @@ Route::group(
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
-//        Route::get('/', function () {
-//            return view('welcome');
-//        });
+
+        require __DIR__.'/resources.php';
+        require __DIR__.'/restore.php';
+        require __DIR__.'/force_delete.php';
+
 
         Route::get('marks', function () {
             return view('marks/add');
@@ -55,14 +57,6 @@ Route::group(
             return view('academic_dep/relations/relations-page');
         });
 // ------------------- شؤون الطلاب ---------------------
-        // صفحة اضافة طالب
-        Route::get('student-info', function () {
-            return view('students/create');
-        });
-        // استعراض الطلاب
-        Route::get('students-info', function () {
-            return view('students/student-info-table');
-        });
         //  الطلاب الغائبين
         Route::get('absence', function () {
             return view('students/absence/absent_students');
@@ -95,6 +89,8 @@ Route::get('follow-up_school', function () {
 Route::get('follow-up_schoo', function () {
     return view('teatchers/daily/student-list');
 });
+    }
+);
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
 

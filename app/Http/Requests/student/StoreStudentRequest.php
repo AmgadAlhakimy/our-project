@@ -23,7 +23,8 @@ class StoreStudentRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:100'],
-            'photo'=>['image','mimes:jpg,jpeg,png,gif,svg'],
+//            'photo'=> 'required|mimes:jpg,png,jpeg,gif,svg|max:2048|dimensions:min_width=100,min_height=100,max_width=1000,max_height=1000',
+            'photo'=>['required' ],
             'name_ar' => ['required', 'max:100'],
             'address' => ['required', 'max:100'],
             'address_ar' => ['required', 'max:100'],

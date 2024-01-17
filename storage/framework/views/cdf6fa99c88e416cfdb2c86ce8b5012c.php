@@ -49,7 +49,7 @@
                         <th scope="col"><div class="th-head-2" >processes</div></th>
                         <th scope="col"><div class="th-head-1" ></div></th>
                         <th scope="col"><div class="th-head-1" ></div></th>
-                        
+
 
 
                     </tr>
@@ -124,7 +124,7 @@
 <th scope="col"><div class="th-head" > </div></th>
 -->
 
-<!-- 
+<!--
 <main class=" m-3">
 <table class="table my-card table-hover table-striped ">
     <thead>
@@ -144,7 +144,7 @@
         <th scope="col"><div class="th-head-3" >allergy description</div></th>
         <th scope="col"><div class="th-head-3" >health problem</div></th>
         <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
-        
+
         <th scope="col"><div class="th-head-3" >father name</div></th>
         <th scope="col"><div class="th-head-3" >father work</div></th>
         <th scope="col"><div class="th-head-3" >father contact 1</div></th>
@@ -193,7 +193,7 @@
             <td>Lorem ipsum dolor, sit amet </td>
 
 
-            
+
 
 
 
@@ -201,4 +201,4 @@
     </tbody>
 </table>
 </main> -->
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students/student-info-table.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students/show_students.blade.php ENDPATH**/ ?>
