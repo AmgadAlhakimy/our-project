@@ -8,7 +8,7 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-            <form method="post" action="{{route('students.store')}}">
+            <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">
                 @csrf
                 <!-- Start personal info  -->
                 <h3 class="container-title">{{__('student.student info')}}</h3>
@@ -248,8 +248,8 @@
                             <label class="mt-3">{{__('student.take any medicine ?')}}</label>
                             <div class="input-group mt-2 mb-2">
                                 <div class="mt-3 col-lg-2 col-md-3">
-                                    <label class="form-label col me-2" for="takeMedicine ">{{__('student.no')}}</label>
-                                    <input class="checkbox col" type="checkbox" name="take_medicine" id="takeMedicine" value="{{old('take_medicine')}}">
+                                    <label class="form-label col me-2" for="takeMedicine" >{{__('student.no')}}</label>
+                                    <input class="checkbox col" type="checkbox" name="take_medicine" id="takeMedicine" value="{{old('take_medicine')}}" checked>
                                     @error('take_medicine')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -271,7 +271,7 @@
                             <div class="input-group mt-2 mb-2">
                                 <div class="mt-3 col-lg-2 col-md-3">
                                     <label class="form-label col me-2" for="takeMedicine ">{{__('student.no')}}</label>
-                                    <input class="checkbox col" type="checkbox" name="have_allergy" id="takeMedicine "  value="{{old('have_allergy')}}">
+                                    <input class="checkbox col" checked type="checkbox" name="have_allergy" id="takeMedicine "  value="{{old('have_allergy')}}">
                                     @error('have_allergy')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -293,7 +293,7 @@
                             <div class="input-group mt-2 mb-2">
                                 <div class="mt-3 col-lg-2 col-md-3">
                                     <label class="form-label col me-2" for="takeMedicine ">{{__('student.no')}}</label>
-                                    <input class="checkbox col" type="checkbox" name="have_health_problem"
+                                    <input class="checkbox col" type="checkbox" name="have_health_problem" checked
                                         id="takeMedicine" value="{{old('have_health_problem')}}">
                                     @error('have_health_problem')
                                     <small class="form-text text-danger">{{$message}}</small>

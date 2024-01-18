@@ -106,9 +106,9 @@ class SubjectController extends Controller
     public function destroy($id)
     {
         try {
-
             Subject::destroy($id);
             return redirect()->route('subjects.index');
+
         } catch (\Exception $e) {
             return $e->getMessage();
         }

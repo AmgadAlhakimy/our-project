@@ -33,12 +33,10 @@
                         <th scope="col"><div class="th-head-1  " >id</div></th>
                         <th scope="col"><div class="th-head-3" >Name</div></th>
                         <th scope="col"><div class="th-head-2" >photo</div></th>
-                        <th scope="col"><div class="th-head-4" >address 1</div></th>
-                        <th scope="col"><div class="th-head-4" >address 2</div></th>
+                        <th scope="col"><div class="th-head-4" >address</div></th>
                         <th scope="col"><div class="th-head-1" >sex</div></th>
                         <th scope="col"><div class="th-head-2" >birth date</div></th>
                         <th scope="col"><div class="th-head-3 " >place of birth</div></th>
-                        <th scope="col"><div class="th-head-3" >date of joining</div></th>
                         <th scope="col"><div class="th-head-3" >take medicine</div></th>
                         <th scope="col"><div class="th-head-3" >medicine description</div></th>
                         <th scope="col"><div class="th-head-3" >have allergy</div></th>
@@ -47,60 +45,73 @@
                         <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
                         <th scope="col"><div class="th-head-2" >class</div></th>
                         <th scope="col"><div class="th-head-4" >note</div></th>
-                        <th scope="col"><div class="th-head-3" >parent</div></th>
+                        <th scope="col"><div class="th-head-3" >Created at</div></th>
+                        <th scope="col"><div class="th-head-3" >Updated at</div></th>
                         <th scope="col"><div class="th-head-2" >processes</div></th>
                         <th scope="col"><div class="th-head-1" ></div></th>
                         <th scope="col"><div class="th-head-1" ></div></th>
                     </tr>
                 </thead>
-                <tbody>
+                    <tbody>
+                @foreach($students  as $student )
                     <tr>
-                        <td>130</td>
-                        <td>mohanad naser mansour</td>
-                        <td><img src="../../images/skills-01.jpg" alt=""></td>
-                        <td>darsalm after the aljaady hosbital</td>
-                        <td>alsafia after the alkhateb resturant</td>
-                        <td>male</td>
-                        <td>12-10-2004</td>
-                        <td>sana'a</td>
-                        <td>12-2-2020</td>
-                        <td>no</td>
-                        <td>none</td>
-                        <td>yes</td>
-                        <td>from same frouts</td>
-                        <td>yes</td>
-                        <td>he can't preth verey will</td>
-                        <td>frist gride</td>
-                        <td>PAKHI GUPTA</td>
-                        <td><button class="btn save-button btn-info me-5 w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
-                        <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                        <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
+                        <td>{{$student->id}}</td>
+                        <td>{{$student->name}}</td>
+                        <td><img src="{{asset($student->photo)}}"
+                            width="50" height="50" alt="student's photo"></td>
+                        <td>{{$student->address}}</td>
+                        <td>{{$student->sex}}</td>
+                        <td>{{$student->birthdate}}</td>
+                        <td>{{$student->place_of_birth}}</td>
+                        <td>{{$student->take_medicine}}</td>
+                        <td>{{$student->medicine_desc}}</td>
+                        <td>{{$student->have_allergy}}</td>
+                        <td>{{$student->allergy_desc}}</td>
+                        <td>{{$student->have_health_problem}}</td>
+                        <td>{{$student->health_problem_desc}}</td>
+                        <td>{{$student->class_id}}</td>
+                        <td>{{$student->note}}</td>
+                        <td>{{$student->created_at}}</td>
+                        <td>{{$student->updated_at}}</td>
+                        <td>
+                            <a href="{{route('students.edit',$student->id)}}"
+                               class="btn my-save-button btn-success w-100">
+                                <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
+                        </td>
+                        <td>
+                            <button class="btn my-clear-button btn-danger w-100" data-bs-toggle="modal"
+                                    data-bs-target="#delete{{$student->id}}">
+                                <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="delete{{$student->id}}"
+                                 tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{__('public.are you sure you want to delete').$student->name}}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                {{__('public.cancel')}}</button>
+                                            <form method="post" action="{{route('students.destroy',$student->id)}}">
+                                                @method('DELETE')
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td>130</td>
-                        <td>mohanad naser mansour</td>
-                        <td><img src="../../images/skills-01.jpg" alt=""></td>
-                        <td>darsalm after the aljaady hosbital</td>
-                        <td>alsafia after the alkhateb resturant</td>
-                        <td>male</td>
-                        <td>12-10-2004</td>
-                        <td>sana'a</td>
-                        <td>12-2-2020</td>
-                        <td>no</td>
-                        <td>none</td>
-                        <td>yes</td>
-                        <td>from same frouts</td>
-                        <td>yes</td>
-                        <td>he can't preth verey will</td>
-                        <td>frist gride</td>
-                        <td>PAKHI GUPTA</td>
-                        <td><button class="btn save-button btn-info me-5 w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
-                        <td><button class="btn save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                        <td><button class="btn clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
-                        <td></td>
-                    </tr>
-                </tbody>
+                    @endforeach
+                    </tbody>
             </table>
         </div>
     </div>

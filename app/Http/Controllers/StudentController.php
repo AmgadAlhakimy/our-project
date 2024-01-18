@@ -24,9 +24,14 @@ class StudentController extends Controller
      */
     public function create()
     {
+        try {
         $classes=Classs::all();
         return view('students_affairs/students.create_student',
             compact('classes'));
+
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -35,38 +40,13 @@ class StudentController extends Controller
     public function store(StoreStudentRequest $request)
     {
         try {
-            Student::create([
-                'name' => ['en' => $request->name, 'ar' => $request->name_ar],
-                'photo'=>$request->photo,
-                'address' => ['en' => $request->address, 'ar' => $request->address_ar],
-                'sex' => ['en' => $request->sex, 'ar' => $request->sex_ar],
-                'birthdate' => $request->birthdate,
-                'place_of_birth' => ['en' => $request->place_of_birth, 'ar' => $request->place_of_birth_ar],
-                'take_medicine' => ['en' => $request->take_medicine, 'ar' => $request->take_medicine_ar],
-                'medicine_desc' => ['en' => $request->medicine_desc, 'ar' => $request->medicine_desc_ar],
-                'have_allergy' => ['en' => $request->have_allergy, 'ar' => $request->have_allergy_ar],
-                'allergy_desc' => ['en' => $request->allergy_desc, 'ar' => $request->allergy_desc_ar],
-                'have_health_problem' => ['en' => $request->have_health_problem, 'ar' => $request->have_health_problem_ar],
-                'health_problem_desc' => ['en' => $request->health_problem_desc, 'ar' => $request->health_problem_desc_ar],
-                'note' => $request->note,
-                'class_id' => $request->class,
-            ]);
+        $requestData = $request->all();
+        $filename = time().$request->file('photo')->getClientOriginalName();
+        $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
+        $requestData["photo"] = '/storage/'.$path;
+        $requestData["class_id"] = $request->class;
+        Student::create($requestData);
 
-//            $student = new Student();
-//            $student->name = ['en' => $request->name, 'ar' => $request->name_ar];
-//            $student->address1 = ['en' => $request->address1, 'ar'
-//            => $request->address1_ar];
-//            $student->address2 = ['en' => $request->address2, 'ar'
-//            => $request->address2_ar];
-//            $student->sex = ['en' => $request->sex, 'ar' => $request->sex_ar];
-//            $student->place_of_birth = ['en' => $request->place_of_birth, 'ar'
-//            => $request->place_of_birth_ar];
-//            $student->take_medicine = ['en' => $request->take_medicine, 'ar'
-//            => $request->take_medicine_ar];
-//            $student->photo = $request->photo;
-//            $student->birthdate = $request->birthdate;
-//            $student->class = $request->class;
-//            $student->save();
             return redirect()->back()->with(['success' => __('message.success')]);
         }
         catch (Exception $e){
@@ -101,8 +81,14 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        //
+        try {
+            Student::destroy($id);
+            return redirect()->route('students.index');
+
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

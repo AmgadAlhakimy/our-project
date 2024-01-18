@@ -20,7 +20,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
-            $table->foreignId('role_id')->constrained('role', 'id')->onDelete('cascade');
+            $table->foreignId('role_id')->constrained('roles', 'id')->onDelete('cascade');
             $table->timestamp('last_seen')->nullable();
             $table->softDeletes();
             $table->timestamps();
