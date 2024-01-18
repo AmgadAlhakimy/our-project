@@ -1,3 +1,4 @@
+
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">

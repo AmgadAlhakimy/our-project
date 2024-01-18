@@ -51,10 +51,15 @@ td button:nth-child(2){
 .table-head{
   position: sticky;
 }
+.frist-card{
+/* margin-top: -10px; */
+}
+.search-button{
+  margin-right: 15px;
+  margin-left: 10px;
+}
 .search2 {
-  padding-left: 30px;
-  padding-right: 10px;
-  margin-left: 5px;
+  margin-right: 10px;
   width: 120px;
   transition: width 0.3s;
   border: 1px solid var(--border-color);
@@ -143,7 +148,7 @@ tr:hover img {
 /* Start media */
 @media (max-width: 670px) {
   .container-title {
-    font-size: px;
+    /* font-size: px; */
     margin-top: 0px;
     }
     .table-header .frist-card{

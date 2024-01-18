@@ -1,3 +1,4 @@
+{{-- اضافة فصل دراسي (كلاس) جديد  --}}
 @extends('layouts.sidebar')
 @section('content')
     <main class="main ">
@@ -14,17 +15,18 @@
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label for="c-name">{{__('class.class name in english')}}</label>
-                            <input type="text" id="c-name" class="form-control " name="name" value="{{old('name')}}">
-                            @error('name')
+                            <label for="c-name_ar">{{__('class.class name in arabic')}}</label>
+                            <input type="text" id="c-name_ar" class="form-control" name="name_ar"
+                            value="{{old('name_ar')}}">
+                            @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
+                        {{-- ************* --}}
                         <div class="box col-lg-6 col-md-12">
-                            <label for="c-name_ar">{{__('class.class name in arabic')}}</label>
-                            <input type="text" id="c-name_ar" class="form-control" name="name_ar"
-                                    value="{{old('name_ar')}}">
-                            @error('name_ar')
+                            <label for="c-name">{{__('class.class name in english')}}</label>
+                            <input type="text" id="c-name" class="form-control " name="name" value="{{old('name')}}">
+                            @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
@@ -40,6 +42,7 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
+                        {{-- 3 --}}
                         <div class="box col-lg-6 col-md-12 ">
                             <label for="cost">{{__('class.class cost')}}</label>
                             <input type="number" id="cost" class="form-control" name="cost" minlength="0"
@@ -49,15 +52,16 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <div class="row mt-2">
-                            <div class=" row">
-                                <div class="box col ">
-                                    <input class="save-button " type="submit" value="{{__('public.save')}}">
-                                </div>
-                                <div class="box  col">
-                                    <input class="clear-button " type="reset" value="{{__('public.clear')}}">
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                {{-- 4 --}}
+                <div class="row mt-2">
+                    <div class=" row">
+                        <div class="box col ">
+                            <input class="save-button " type="submit" value="{{__('public.save')}}">
+                        </div>
+                        <div class="box  col">
+                            <input class="clear-button " type="reset" value="{{__('public.clear')}}">
                         </div>
                     </div>
                 </div>
