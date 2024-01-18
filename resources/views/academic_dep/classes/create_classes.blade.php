@@ -1,7 +1,7 @@
 {{-- اضافة فصل دراسي (كلاس) جديد  --}}
 @extends('layouts.sidebar')
 @section('content')
-    <main class="main ">
+    <main class="main">
         <section class="section">
             @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">

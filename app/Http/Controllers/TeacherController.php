@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTeacherRequest;
-use App\Http\Requests\UpdateTeacherRequest;
+use App\Http\Requests\teacher\StoreTeacherRequest;
+use App\Http\Requests\teacher\UpdateTeacherRequest;
 use App\Models\Teacher;
 use App\Traits\EmployeeTrait;
 

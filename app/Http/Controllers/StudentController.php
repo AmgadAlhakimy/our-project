@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreStudentRequest;
-use App\Http\Requests\UpdateStudentRequest;
+use App\Http\Requests\student\StoreStudentRequest;
+use App\Http\Requests\student\UpdateStudentRequest;
 use App\Models\Classs;
 use App\Models\Student;
 use Exception;
@@ -15,7 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-
+        $students = Student::all();
+        return view('students_affairs/students.show_students',compact('students'));
     }
 
     /**
@@ -23,8 +24,14 @@ class StudentController extends Controller
      */
     public function create()
     {
+        try {
         $classes=Classs::all();
-        return view('students.create',compact('classes'));
+        return view('students_affairs/students.create_student',
+            compact('classes'));
+
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
@@ -33,17 +40,13 @@ class StudentController extends Controller
     public function store(StoreStudentRequest $request)
     {
         try {
-            $student = new Student();
-            $student->name = ['en' => $request->name, 'ar' => $request->name_ar];
-            $student->address1 = ['en' => $request->address1, 'ar' => $request->address1_ar];
-            $student->address2 = ['en' => $request->address2, 'ar' => $request->address2_ar];
-            $student->sex = ['en' => $request->sex, 'ar' => $request->sex_ar];
-            $student->place_of_birth = ['en' => $request->place_of_birth, 'ar' => $request->place_of_birth_ar];
-            $student->take_medicine = ['en' => $request->take_medicine, 'ar' => $request->take_medicine_ar];
-            $student->photo = $request->photo;
-            $student->birthdate = $request->birthdate;
-            $student->class = $request->class;
-            $student->save();
+        $requestData = $request->all();
+        $filename = time().$request->file('photo')->getClientOriginalName();
+        $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
+        $requestData["photo"] = '/storage/'.$path;
+        $requestData["class_id"] = $request->class;
+        Student::create($requestData);
+
             return redirect()->back()->with(['success' => __('message.success')]);
         }
         catch (Exception $e){
@@ -78,8 +81,14 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        //
+        try {
+            Student::destroy($id);
+            return redirect()->route('students.index');
+
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 }

@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+=======
+<html lang="">
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> sidebar </title>
 
+<<<<<<< HEAD
         <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
         <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
@@ -19,6 +24,23 @@
         <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
 </head>
 
+=======
+    <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/tables.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/normalize.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/sidebar-header.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
+    <!-- box icons -->
+    <!-- box icons -->
+    <!-- styles -->
+    <!-- styles -->
+</head>
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
 
@@ -351,6 +373,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
+<<<<<<< HEAD
                                 <a href='/student-info' class="li-link">اضافة طالب</a>
                                 <a href="/students-info" class="li-link">عرض الطلاب</a>
                                 <a href="#" class="li-link">حذف طالب</a>
@@ -369,6 +392,35 @@
                                         <a href="#" class="li-link_2">3</a>
                                         <a href='#' class="li-link_2">4</a>
                                         <a href="#" class="li-link_2">5</a>
+=======
+                                <a href='{{route('students.create')}}' class="li-link">اضافة طالب</a>
+                                <a href="{{route('students.index')}}" class="li-link">عرض الطلاب</a>
+                                <a href="#" class="li-link"> عرض المحذوف</a>
+                                <a href="#" class="li-link">تعديل الطالب </a>
+                                <a href='/absence' class="li-link">الغياب</a>
+                                <a href="#" class="li-link">2</a>
+                                {{-- تجربة --}}
+                                {{-- <a href="#" class="">
+                                    <ul class="list-ul">
+                                        <li class="dropdown">
+                                            <div class="sidebar-title">
+                                                <a href="#" class="li-link title-4">
+
+                                                    <span class="menu-name">تجربـــــه </span>
+                                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                                </a>
+                                            </div>
+                                            <div class="submenu">
+                                                <div class="line-black">
+                                                    <a href="#" class="li-link">1</a>
+                                                    <a href="#" class="li-link">2</a>
+                                                    <a href="#" class="li-link">3</a>
+                                                </div>
+                                            </div>
+
+                                        </li>
+
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
                                     </ul>
                                 </div>
                                 {{-- END THE SECOND DROPDOWN --}}
@@ -572,4 +624,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1min.js"></script>
 </body>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 </html>

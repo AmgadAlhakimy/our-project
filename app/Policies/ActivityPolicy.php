@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Activity\Activity;
+use App\Models\Activity;
 use App\Models\User;
 
 class ActivityPolicy

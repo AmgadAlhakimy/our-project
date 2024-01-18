@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEducationalLevelRequest;
-use App\Http\Requests\UpdateEducationalLevelRequest;
+use App\Http\Requests\level\StoreEducationalLevelRequest;
+use App\Http\Requests\level\UpdateEducationalLevelRequest;
 use App\Models\EducationalLevel;
 
 class EducationalLevelController extends Controller

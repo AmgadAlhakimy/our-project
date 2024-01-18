@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\subject\StoreSubjectRequest;
+use App\Http\Requests\subject\UpdateSubjectRequest;
 use App\Models\Subject;
-use App\Http\Requests\StoreSubjectRequest;
-use App\Http\Requests\UpdateSubjectRequest;
 
 class SubjectController extends Controller
 {
@@ -106,9 +106,9 @@ class SubjectController extends Controller
     public function destroy($id)
     {
         try {
-
             Subject::destroy($id);
             return redirect()->route('subjects.index');
+
         } catch (\Exception $e) {
             return $e->getMessage();
         }

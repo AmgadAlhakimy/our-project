@@ -163,7 +163,7 @@ unset($__errorArgs, $__bag); ?>
                         <div class="box ">
                             <label for="className " class="form-label"><?php echo e(__('student.class')); ?></label>
                             <select id="className " class="form-control" name="class">
-                                
+
                             </select>
                             <?php $__errorArgs = ['class'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -343,4 +343,4 @@ unset($__errorArgs, $__bag); ?>
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students/create_student.blade.php ENDPATH**/ ?>

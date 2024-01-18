@@ -32,6 +32,7 @@
             <table class=" " >
                 <thead>
                     <tr>
+<<<<<<< HEAD
                         <th ><div class="th-head-1  " >id</div></th>
                         <th ><div class="th-head-3" >Name</div></th>
                         <th ><div class="th-head-2" >photo</div></th>
@@ -54,6 +55,30 @@
                         <th ><div class="th-head-2 " ></div></th>
                         <th ><div class="th-head-1" ></div></th>
                         
+=======
+                        <th scope="col"><div class="th-head-1  " >id</div></th>
+                        <th scope="col"><div class="th-head-3" >Name</div></th>
+                        <th scope="col"><div class="th-head-2" >photo</div></th>
+                        <th scope="col"><div class="th-head-4" >address 1</div></th>
+                        <th scope="col"><div class="th-head-4" >address 2</div></th>
+                        <th scope="col"><div class="th-head-1" >sex</div></th>
+                        <th scope="col"><div class="th-head-2" >birth date</div></th>
+                        <th scope="col"><div class="th-head-3 " >place of birth</div></th>
+                        <th scope="col"><div class="th-head-3" >date of joining</div></th>
+                        <th scope="col"><div class="th-head-3" >take medicine</div></th>
+                        <th scope="col"><div class="th-head-3" >medicine description</div></th>
+                        <th scope="col"><div class="th-head-3" >have allergy</div></th>
+                        <th scope="col"><div class="th-head-3" >allergy description</div></th>
+                        <th scope="col"><div class="th-head-3" >health problem</div></th>
+                        <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
+                        <th scope="col"><div class="th-head-2" >class</div></th>
+                        <th scope="col"><div class="th-head-4" >note</div></th>
+                        <th scope="col"><div class="th-head-3" >parent</div></th>
+                        <th scope="col"><div class="th-head-2" >processes</div></th>
+                        <th scope="col"><div class="th-head-1" ></div></th>
+                        <th scope="col"><div class="th-head-1" ></div></th>
+
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 
 
                     </tr>
@@ -128,11 +153,12 @@
 <th ><div class="th-head" > </div></th>
 -->
 
-<!-- 
+<!--
 <main class=" m-3">
 <table class="table my-card table-hover table-striped ">
     <thead>
     <tr>
+<<<<<<< HEAD
         <th ><div class="th-head-1  " >id</div></th>
         <th ><div class="th-head-3" >Name</div></th>
         <th ><div class="th-head-2" >photo</div></th>
@@ -163,6 +189,38 @@
         <th ><div class="th-head-4" >note</div></th>
         <th ><div class="th-head-2" >processes</div></th>
         <th ><div class="th-head" > </div></th>
+=======
+        <th scope="col"><div class="th-head-1  " >id</div></th>
+        <th scope="col"><div class="th-head-3" >Name</div></th>
+        <th scope="col"><div class="th-head-2" >photo</div></th>
+        <th scope="col"><div class="th-head-4" >address 1</div></th>
+        <th scope="col"><div class="th-head-4" >address 2</div></th>
+        <th scope="col"><div class="th-head-1" >sex</div></th>
+        <th scope="col"><div class="th-head-2" >birth date</div></th>
+        <th scope="col"><div class="th-head-3 " >place of birth</div></th>
+        <th scope="col"><div class="th-head-3" >date of joining</div></th>
+        <th scope="col"><div class="th-head-3" >take medicine</div></th>
+        <th scope="col"><div class="th-head-3" >medicine description</div></th>
+        <th scope="col"><div class="th-head-3" >have allergy</div></th>
+        <th scope="col"><div class="th-head-3" >allergy description</div></th>
+        <th scope="col"><div class="th-head-3" >health problem</div></th>
+        <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
+
+        <th scope="col"><div class="th-head-3" >father name</div></th>
+        <th scope="col"><div class="th-head-3" >father work</div></th>
+        <th scope="col"><div class="th-head-3" >father contact 1</div></th>
+        <th scope="col"><div class="th-head-3" >father contact 2</div></th>
+        <th scope="col"><div class="th-head-3" >mother name</div></th>
+        <th scope="col"><div class="th-head-3" >mother work</div></th>
+        <th scope="col"><div class="th-head-3" >mother contact 1</div></th>
+        <th scope="col"><div class="th-head-3" >mother contact 2</div></th>
+        <th scope="col"><div class="th-head-3" >next to kin</div></th>
+        <th scope="col"><div class="th-head-3" >next to kin relationship</div></th>
+        <th scope="col"><div class="th-head-3" >next to kin contact</div></th>
+        <th scope="col"><div class="th-head-4" >note</div></th>
+        <th scope="col"><div class="th-head-2" >processes</div></th>
+        <th scope="col"><div class="th-head" > </div></th>
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 
     </tr>
     </thead>
@@ -197,7 +255,7 @@
             <td>Lorem ipsum dolor, sit amet </td>
 
 
-            
+
 
 
 
@@ -205,4 +263,4 @@
     </tbody>
 </table>
 </main> -->
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students/student-info-table.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students/show_students.blade.php ENDPATH**/ ?>
