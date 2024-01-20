@@ -14,13 +14,13 @@ listItems.forEach((item) => {
     });
 });
 
-// const toggleSidebar = document.querySelector(".toggle-sidebar");
+const toggleSidebar = document.querySelector(".toggle-sidebar");
 const logo = document.querySelector(".my-menu-btn");
 const sidebar = document.querySelector(".sidebar");
 
-// toggleSidebar.addEventListener("click", () => {
-//     sidebar.classList.toggle("close");
-// });
+toggleSidebar.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+});
 logo.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });

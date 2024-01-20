@@ -32,18 +32,8 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-<<<<<<< HEAD:resources/views/students/create.blade.php
                         {{-- 3 --}}
-=======
-                        <div class="box col-lg-6 col-md-12">
-                            <label class="  title-3 "
-                                for="english-name">{{__("student.student's name in arabic")}}</label>
-                            <input type="text" class="form-control " id='english-name' name="name_ar" value="{{old('name_ar')}}">
-                            @error('name_ar')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
->>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619:resources/views/students_affairs/students/create_student.blade.php
+
                         <div class="box col">
                             <label class="" for="photo">{{__('student.photo')}}</label>
                             <input type="file" class="form-control " id="photo" name="photo" value="{{old('photo')}}">
@@ -70,16 +60,6 @@
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
-<<<<<<< HEAD:resources/views/students/create.blade.php
-=======
-                            <div class="col-lg-6 col-md-6">
-                                <span class=" text-center title-3 ">{{__("student.student's address in arabic")}}</span>
-                                <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="{{old('address_ar')}}">
-                                @error('address_ar')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-                            </div>
->>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619:resources/views/students_affairs/students/create_student.blade.php
                         </div>
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
@@ -102,17 +82,7 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-<<<<<<< HEAD:resources/views/students/create.blade.php
                         {{-- 7 --}}
-=======
-                        <div class="box col-lg-6 col-md-6">
-                            <label for="arabic-birth-place">{{__('student.place of birth in english')}}</label>
-                            <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth" value="{{old('place_of_birth')}}">
-                            @error('place_of_birth')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
->>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619:resources/views/students_affairs/students/create_student.blade.php
                         <div class="box col-lg-6 col-md-6">
                             <label for="english-birth-place">{{__('student.place of birth in arabic')}}</label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="{{old('place_of_birth_ar')}}">
@@ -278,57 +248,57 @@
                     </div>
                 </div>
                 <!-- End parent info  -->
-                
+
                 <!-- Start health info  -->
                 <h3 class="container-title">{{__('student.health info')}}</h3>
                 <div class="container containers-style mb-5">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
                             <h4 class="p-2">{{__('student.does the student')}}</h4>
-<<<<<<< HEAD:resources/views/students/create.blade.php
-                            <label class="mt-4">{{__('student.take any medicine ?')}}</label>
-                            {{-- 1 --}}
-                            {{-- <div class=" "> --}}                                
-                                <div class="row ">
-                                    <div class="col-lg-1 col-md-2 col-ms-1 mt-3 ">
-                                        <input class=" col" type="checkbox" name="take_medicine" id="myCheckbox" onchange="toggleInput()">
-                                        <label class="form-label col " for="takeMedicine">{{__('student.yes')}}</label>
-                                    </div>
-                                    <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id=" myInput" 
-                                        placeholder="desc in english" >
-    
-                                    <input type="text" class=" form-control ms-3 me-3 col" name="medicine_desc_ar" id=" myInput" 
-                                        placeholder="desc in arabic"  >
-                                </div>
-                            {{-- </div> --}}
-                            {{-- 2 --}}
-                            <label class="mt-4">{{__('student.have an allergy ?')}}</label>
-                            {{--  --}}
-                            <div class="row ">
-                                <div class="col-lg-1 col-md-2 col-ms-1 mt-3 ">
-                                    <input class=" col" type="checkbox" name="take_medicine" id="myCheckbox" onchange="toggleInput()">
-                                    <label class="form-label col " for="takeMedicine">{{__('student.yes')}}</label>
-                                </div>
-                                <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id=" myInput" 
-                                    placeholder="desc in english" >
+{{--<<<<<<< HEAD:resources/views/students/create.blade.php--}}
+{{--                            <label class="mt-4">{{__('student.take any medicine ?')}}</label>--}}
+{{--                             1--}}
+{{--                             <div class=" ">--}}
+{{--                                <div class="row ">--}}
+{{--                                    <div class="col-lg-1 col-md-2 col-ms-1 mt-3 ">--}}
+{{--                                        <input class=" col" type="checkbox" name="take_medicine" id="myCheckbox" onchange="toggleInput()">--}}
+{{--                                        <label class="form-label col " for="takeMedicine">{{__('student.yes')}}</label>--}}
+{{--                                    </div>--}}
+{{--                                    <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id=" myInput"--}}
+{{--                                        placeholder="desc in english" >--}}
 
-                                <input type="text" class=" form-control ms-3 me-3 col" name="medicine_desc_ar" id=" myInput" 
-                                    placeholder="desc in arabic"  >
-                            </div>
-                            {{-- 3 --}}
-                            <label class="mt-4">{{__('student.have any health problem ?')}}</label>
-                            {{--  --}}
-                            <div class="row ">
-                                <div class="col-lg-1 col-md-2 col-ms-1 mt-3 ">
-                                    <input class=" col" type="checkbox" name="take_medicine" id="myCheckbox" onchange="toggleInput()">
-                                    <label class="form-label col " for="takeMedicine">{{__('student.yes')}}</label>
-                                </div>
-                                <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id=" myInput" 
-                                    placeholder="desc in english" >
+{{--                                    <input type="text" class=" form-control ms-3 me-3 col" name="medicine_desc_ar" id=" myInput"--}}
+{{--                                        placeholder="desc in arabic"  >--}}
+{{--                                </div>--}}
+{{--                             </div>--}}
+{{--                             2--}}
+{{--                            <label class="mt-4">{{__('student.have an allergy ?')}}</label>--}}
 
-                                <input type="text" class=" form-control ms-3 me-3 col" name="medicine_desc_ar" id=" myInput" 
-                                    placeholder="desc in arabic"  >
-=======
+{{--                            <div class="row ">--}}
+{{--                                <div class="col-lg-1 col-md-2 col-ms-1 mt-3 ">--}}
+{{--                                    <input class=" col" type="checkbox" name="take_medicine" id="myCheckbox" onchange="toggleInput()">--}}
+{{--                                    <label class="form-label col " for="takeMedicine">{{__('student.yes')}}</label>--}}
+{{--                                </div>--}}
+{{--                                <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id=" myInput"--}}
+{{--                                    placeholder="desc in english" >--}}
+
+{{--                                <input type="text" class=" form-control ms-3 me-3 col" name="medicine_desc_ar" id=" myInput"--}}
+{{--                                    placeholder="desc in arabic"  >--}}
+{{--                            </div>--}}
+{{--                             3--}}
+{{--                            <label class="mt-4">{{__('student.have any health problem ?')}}</label>--}}
+
+{{--                            <div class="row ">--}}
+{{--                                <div class="col-lg-1 col-md-2 col-ms-1 mt-3 ">--}}
+{{--                                    <input class=" col" type="checkbox" name="take_medicine" id="myCheckbox" onchange="toggleInput()">--}}
+{{--                                    <label class="form-label col " for="takeMedicine">{{__('student.yes')}}</label>--}}
+{{--                                </div>--}}
+{{--                                <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id=" myInput"--}}
+{{--                                    placeholder="desc in english" >--}}
+
+{{--                                <input type="text" class=" form-control ms-3 me-3 col" name="medicine_desc_ar" id=" myInput"--}}
+{{--                                    placeholder="desc in arabic"  >--}}
+{{--=======--}}
                             <label class="mt-3">{{__('student.take any medicine ?')}}</label>
                             <div class="input-group mt-2 mb-2">
                                 <div class="mt-3 col-lg-2 col-md-3">
@@ -426,6 +396,6 @@
         </section>
     </main>
     <script>
-        
+
     </script>
 @endsection

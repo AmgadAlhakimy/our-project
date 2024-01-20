@@ -49,7 +49,7 @@
   width: 250px;
   transition: all 0.5s ease;
   z-index: 9999;
-  color: var();
+  /*color: var();*/
   border-radius: 15px;
   background-color: var(--sidebar-bg);
   box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.1);
@@ -208,7 +208,7 @@
   border: 1px var(--border-color) solid;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   background-color: var(--sidebar-bg);
-  
+
 }
 .li-link_2:hover{
   background-color: var(--orange-color);

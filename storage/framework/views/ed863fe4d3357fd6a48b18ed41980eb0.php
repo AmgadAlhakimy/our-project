@@ -1,5 +1,5 @@
 <?php $__env->startSection('content'); ?>
-    <main class="main ">
+    <main class="main">
         <section class="section">
             <?php if(Session::has('success')): ?>
                 <div class="alert alert-success" role="alert">

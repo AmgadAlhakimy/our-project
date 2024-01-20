@@ -17,6 +17,7 @@ class StudentController extends Controller
     {
         $students = Student::all();
         return view('students_affairs/students.show_students',compact('students'));
+//        return view('students.student-info-table',compact('students'));
     }
 
     /**

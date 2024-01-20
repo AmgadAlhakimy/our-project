@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
+<html lang="">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> sidebar </title>
 
-        <link href="<?php echo e(URL::asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/all.min.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/framework.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/sidebar-style.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/style.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/tables.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/normalize.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/sidebar-header.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/sidebar-style.css')); ?>" rel="stylesheet">
-        <link href="<?php echo e(URL::asset('css/sidebar-bottuns.css')); ?>" rel="stylesheet">
-</head>
 
+    <link href="<?php echo e(URL::asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/all.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/framework.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/sidebar-style.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/style.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/tables.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/normalize.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/sidebar-header.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/sidebar-style.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(URL::asset('css/sidebar-bottuns.css')); ?>" rel="stylesheet">
+    <!-- box icons -->
+    <!-- box icons -->
+    <!-- styles -->
+    <!-- styles -->
+</head>
 <body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
 
 
@@ -178,7 +182,7 @@
                                 <a href="#" class="li-link">معلومات اولياء الامور</a>
                                 <a href="#" class="li-link">2</a>
                                 
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropdownlang my-element">
                                     <div class="select">
                                         <span class="selected">Lang</span>
                                         <div class="caret"></div>
@@ -254,8 +258,8 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/student-info' class="li-link">اضافة طالب</a>
-                                <a href="/students-info" class="li-link">عرض الطلاب</a>
+                                <a href='<?php echo e(route('students.create')); ?>' class="li-link">اضافة طالب</a>
+                                <a href="<?php echo e(route('students.index')); ?>" class="li-link">عرض الطلاب</a>
                                 <a href="#" class="li-link">حذف طالب</a>
                                 <a href="#" class="li-link">تعديل طالب </a>
                                 <a href='/absence' class="li-link">الغياب</a>
@@ -272,8 +276,8 @@
                                         <a href="#" class="li-link_2">3</a>
                                         <a href='#' class="li-link_2">4</a>
                                         <a href="#" class="li-link_2">5</a>
-                                    </ul>
-                                </div>
+
+                                
                                 
                             </div>
                         </div>
@@ -375,7 +379,7 @@
                     </li>
                     <!-- ====================== -->
                 </ul>
-                
+
             </div>
         </div>
 
@@ -401,8 +405,7 @@
 <script src="<?php echo e(URL::asset('js/jquery.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('js/main.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('js/script.js')); ?>"></script>
-<script src="https://code.jquery.com/jquery-3.5.1min.js"></script>
-</body>
 
+</body>
 </html>
 <?php /**PATH E:\My-Github\our-project\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

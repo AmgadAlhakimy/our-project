@@ -1,30 +1,13 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-=======
 <html lang="">
->>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> sidebar </title>
 
-<<<<<<< HEAD
-        <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/tables.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/normalize.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/sidebar-header.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
-        <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
-</head>
 
-=======
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
@@ -40,7 +23,6 @@
     <!-- styles -->
     <!-- styles -->
 </head>
->>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
 
@@ -276,7 +258,7 @@
                                 <a href="#" class="li-link">معلومات اولياء الامور</a>
                                 <a href="#" class="li-link">2</a>
                                 {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropdownlang my-element">
                                     <div class="select">
                                         <span class="selected">Lang</span>
                                         <div class="caret"></div>
@@ -373,9 +355,8 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-<<<<<<< HEAD
-                                <a href='/student-info' class="li-link">اضافة طالب</a>
-                                <a href="/students-info" class="li-link">عرض الطلاب</a>
+                                <a href='{{route('students.create')}}' class="li-link">اضافة طالب</a>
+                                <a href="{{route('students.index')}}" class="li-link">عرض الطلاب</a>
                                 <a href="#" class="li-link">حذف طالب</a>
                                 <a href="#" class="li-link">تعديل طالب </a>
                                 <a href='/absence' class="li-link">الغياب</a>
@@ -392,13 +373,7 @@
                                         <a href="#" class="li-link_2">3</a>
                                         <a href='#' class="li-link_2">4</a>
                                         <a href="#" class="li-link_2">5</a>
-=======
-                                <a href='{{route('students.create')}}' class="li-link">اضافة طالب</a>
-                                <a href="{{route('students.index')}}" class="li-link">عرض الطلاب</a>
-                                <a href="#" class="li-link"> عرض المحذوف</a>
-                                <a href="#" class="li-link">تعديل الطالب </a>
-                                <a href='/absence' class="li-link">الغياب</a>
-                                <a href="#" class="li-link">2</a>
+
                                 {{-- تجربة --}}
                                 {{-- <a href="#" class="">
                                     <ul class="list-ul">
@@ -419,8 +394,6 @@
                                             </div>
 
                                         </li>
-
->>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
                                     </ul>
                                 </div>
                                 {{-- END THE SECOND DROPDOWN --}}
@@ -568,7 +541,7 @@
                     </li>
                     <!-- ====================== -->
                 </ul>
-                
+
             </div>
         </div>
 
@@ -621,11 +594,6 @@
 <script src="{{URL::asset('js/jquery.js')}}"></script>
 <script src="{{URL::asset('js/main.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
-<script src="https://code.jquery.com/jquery-3.5.1min.js"></script>
+{{--<script src="https://code.jquery.com/jquery-3.5.1min.js"></script>--}}
 </body>
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
 </html>
