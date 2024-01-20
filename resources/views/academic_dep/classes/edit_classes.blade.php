@@ -35,8 +35,8 @@
                             <select class="form-control" id="level" name="level">
                                 @foreach($levels as $level)
                                     <option class="text-center" value="{{$level->id}}"
-                                    @if($level->id==$class->edu_id) selected @endif
-                                    >{{$level->name}}</option>
+                                    @if($level->id==$class->edu_id) selected @endif>
+                                        {{$level->name}}</option>
                                 @endforeach
                             </select>
                             @error('levels')

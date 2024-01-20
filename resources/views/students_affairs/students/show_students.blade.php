@@ -2,58 +2,69 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table">
-        {{-- the tavle header with bottuns and search input --}}
+        {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
+        {{-- the table header with bottuns and search input --}}
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row frist-card ">
                 <h4 class="col container-title mt-2">Student Information</h4>
                 <div class="row col ">
-                    <input class=" col   search2" placeholder="SEARCH">
-                    <button class="col-1 save-button search-button">Search</button>
+                    <input class="col search2" placeholder="{{__('public.search')}}">
+                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
                 </div>
             </div>
-            {{-- the subject name --}}
-            <div class="card-info second-card mb-4 mt-4 ms-2 me-2 ">
-                <h3 class="fw-bolder  Names">Quran Karem</h3>
+            {{--  --}}
+            <div class="box col-lg-12 col-md-12 ">
+                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
+                    <option class="text-center"
+                            value="{{__('student.male')}}">{{__('student.male')}}</option>
+                    <option class="text-center"
+                            value="{{__('student.female')}}">{{__('student.female')}}</option>
+                </select>
+                @error('sex')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
             </div>
             {{-- the thacher name and the month --}}
+
             <div class="cards-container  third-card">
-                <div class="card-info col ms-2 me-2">
+                <div class="card-info card-info_2 col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Techer</h4>
                     <h4 class=" Names">mohammad mohsen</h4>
                 </div>
-                <div class="card-info  col ms-2 me-2">
+
+                <div class="card-info card-info_2 col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Month</h4>
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
         </div>
+        {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">
                 <table class=" " >
                     <thead>
                     <tr>
-                        <th scope="col"><div class="th-head-1  " >id</div></th>
-                        <th scope="col"><div class="th-head-3" >Name</div></th>
-                        <th scope="col"><div class="th-head-2" >photo</div></th>
-                        <th scope="col"><div class="th-head-4" >address</div></th>
-                        <th scope="col"><div class="th-head-1" >sex</div></th>
-                        <th scope="col"><div class="th-head-2" >birth date</div></th>
-                        <th scope="col"><div class="th-head-3 " >place of birth</div></th>
-                        <th scope="col"><div class="th-head-3" >take medicine</div></th>
-                        <th scope="col"><div class="th-head-3" >medicine description</div></th>
-                        <th scope="col"><div class="th-head-3" >have allergy</div></th>
-                        <th scope="col"><div class="th-head-3" >allergy description</div></th>
-                        <th scope="col"><div class="th-head-3" >health problem</div></th>
-                        <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
-                        <th scope="col"><div class="th-head-2" >class</div></th>
-                        <th scope="col"><div class="th-head-4" >note</div></th>
-                        <th scope="col"><div class="th-head-3" >Created at</div></th>
-                        <th scope="col"><div class="th-head-3" >Updated at</div></th>
-                        <th scope="col"><div class="th-head-2" >processes</div></th>
-                        <th scope="col"><div class="th-head-1" ></div></th>
-                        <th scope="col"><div class="th-head-1" ></div></th>
+                        <th ><div class="th-head-1  " >id</div></th>
+                        <th ><div class="th-head-3" >Name</div></th>
+                        <th ><div class="th-head-2" >photo</div></th>
+                        <th ><div class="th-head-4" >address</div></th>
+                        <th ><div class="th-head-1" >sex</div></th>
+                        <th ><div class="th-head-2" >birth date</div></th>
+                        <th ><div class="th-head-3 " >place of birth</div></th>
+                        <th ><div class="th-head-3" >take medicine</div></th>
+                        <th ><div class="th-head-3" >medicine description</div></th>
+                        <th ><div class="th-head-3" >have allergy</div></th>
+                        <th ><div class="th-head-3" >allergy description</div></th>
+                        <th ><div class="th-head-3" >health problem</div></th>
+                        <th ><div class="th-head-4 ">health problem description</div> </th>
+                        <th ><div class="th-head-2" >class</div></th>
+                        <th ><div class="th-head-4" >note</div></th>
+                        <th ><div class="th-head-3" >Created at</div></th>
+                        <th ><div class="th-head-3" >Updated at</div></th>
+                        <th ><div class="th-head-2" >parents</div></th>
+                        <th colspan="2"><div class="th-head-4" >processes</div></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -62,7 +73,7 @@
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
                             <td><img src="{{asset($student->photo)}}"
-                                     width="50" height="50" alt="student's photo"></td>
+                                class="student-img" alt="student's photo"></td>
                             <td>{{$student->address}}</td>
                             <td>{{$student->sex}}</td>
                             <td>{{$student->birthdate}}</td>
@@ -73,7 +84,7 @@
                             <td>{{$student->allergy_desc}}</td>
                             <td>{{$student->have_health_problem}}</td>
                             <td>{{$student->health_problem_desc}}</td>
-                            <td>{{$student->class_id}}</td>
+                            <td>{{App\Models\Classs::findorfail($student->class_id)->name}}</td>
                             <td>{{$student->note}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
@@ -113,10 +124,8 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                     @endforeach
                     </tbody>

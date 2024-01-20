@@ -2,8 +2,10 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
+        
+        {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
+        {{-- the table header with bottuns and search input --}}
         <div class="table-header">
-
             {{-- the title and search --}}
             <div class="row frist-card ">
                 <h4 class="col container-title mt-2">{{__('eduLevel.educational level info')}}</h4>
@@ -13,6 +15,8 @@
                 </div>
             </div>
         </div>
+        {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
+
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section">

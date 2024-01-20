@@ -1,57 +1,75 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
         
+        
         <div class="table-header">
             
             <div class="row frist-card ">
                 <h4 class="col container-title mt-2">Student Information</h4>
                 <div class="row col ">
-                    <input class=" col   search2" placeholder="SEARCH">
-                    <button class="col-1 save-button search-button">Search</button>
+                    <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
+                    <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
                 </div>
             </div>
             
-            <div class="card-info second-card mb-4 mt-4 ms-2 me-2 ">
-                <h3 class="fw-bolder  Names">Quran Karem</h3>
+            <div class="box col-lg-12 col-md-12 ">
+                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
+                    <option class="text-center"
+                            value="<?php echo e(__('student.male')); ?>"><?php echo e(__('student.male')); ?></option>
+                    <option class="text-center"
+                            value="<?php echo e(__('student.female')); ?>"><?php echo e(__('student.female')); ?></option>
+                </select>
+                <?php $__errorArgs = ['sex'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <small class="form-text text-danger"><?php echo e($message); ?></small>
+                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             </div>
             
+
             <div class="cards-container  third-card">
-                <div class="card-info col ms-2 me-2">
+                <div class="card-info card-info_2 col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Techer</h4>
                     <h4 class=" Names">mohammad mohsen</h4>
                 </div>
-                <div class="card-info  col ms-2 me-2">
+
+                <div class="card-info card-info_2 col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Month</h4>
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
         </div>
+        
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">
                 <table class=" " >
                     <thead>
                     <tr>
-                        <th scope="col"><div class="th-head-1  " >id</div></th>
-                        <th scope="col"><div class="th-head-3" >Name</div></th>
-                        <th scope="col"><div class="th-head-2" >photo</div></th>
-                        <th scope="col"><div class="th-head-4" >address</div></th>
-                        <th scope="col"><div class="th-head-1" >sex</div></th>
-                        <th scope="col"><div class="th-head-2" >birth date</div></th>
-                        <th scope="col"><div class="th-head-3 " >place of birth</div></th>
-                        <th scope="col"><div class="th-head-3" >take medicine</div></th>
-                        <th scope="col"><div class="th-head-3" >medicine description</div></th>
-                        <th scope="col"><div class="th-head-3" >have allergy</div></th>
-                        <th scope="col"><div class="th-head-3" >allergy description</div></th>
-                        <th scope="col"><div class="th-head-3" >health problem</div></th>
-                        <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
-                        <th scope="col"><div class="th-head-2" >class</div></th>
-                        <th scope="col"><div class="th-head-4" >note</div></th>
-                        <th scope="col"><div class="th-head-3" >Created at</div></th>
-                        <th scope="col"><div class="th-head-3" >Updated at</div></th>
-                        <th scope="col"><div class="th-head-2" >processes</div></th>
-                        <th scope="col"><div class="th-head-1" ></div></th>
-                        <th scope="col"><div class="th-head-1" ></div></th>
+                        <th ><div class="th-head-1  " >id</div></th>
+                        <th ><div class="th-head-3" >Name</div></th>
+                        <th ><div class="th-head-2" >photo</div></th>
+                        <th ><div class="th-head-4" >address</div></th>
+                        <th ><div class="th-head-1" >sex</div></th>
+                        <th ><div class="th-head-2" >birth date</div></th>
+                        <th ><div class="th-head-3 " >place of birth</div></th>
+                        <th ><div class="th-head-3" >take medicine</div></th>
+                        <th ><div class="th-head-3" >medicine description</div></th>
+                        <th ><div class="th-head-3" >have allergy</div></th>
+                        <th ><div class="th-head-3" >allergy description</div></th>
+                        <th ><div class="th-head-3" >health problem</div></th>
+                        <th ><div class="th-head-4 ">health problem description</div> </th>
+                        <th ><div class="th-head-2" >class</div></th>
+                        <th ><div class="th-head-4" >note</div></th>
+                        <th ><div class="th-head-3" >Created at</div></th>
+                        <th ><div class="th-head-3" >Updated at</div></th>
+                        <th ><div class="th-head-2" >parents</div></th>
+                        <th colspan="2"><div class="th-head-4" >processes</div></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -60,7 +78,7 @@
                             <td><?php echo e($student->id); ?></td>
                             <td><?php echo e($student->name); ?></td>
                             <td><img src="<?php echo e(asset($student->photo)); ?>"
-                                     width="50" height="50" alt="student's photo"></td>
+                                class="student-img" alt="student's photo"></td>
                             <td><?php echo e($student->address); ?></td>
                             <td><?php echo e($student->sex); ?></td>
                             <td><?php echo e($student->birthdate); ?></td>
@@ -71,7 +89,7 @@
                             <td><?php echo e($student->allergy_desc); ?></td>
                             <td><?php echo e($student->have_health_problem); ?></td>
                             <td><?php echo e($student->health_problem_desc); ?></td>
-                            <td><?php echo e($student->class_id); ?></td>
+                            <td><?php echo e(App\Models\Classs::findorfail($student->class_id)->name); ?></td>
                             <td><?php echo e($student->note); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
@@ -113,10 +131,8 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>

@@ -1,17 +1,21 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
+        
+        {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
+        {{-- the table header with bottuns and search input --}}
         <div class="table-header">
-
-                {{-- the title and search --}}
-                <div class="row frist-card ">
-                    <h4 class="col container-title mt-2">{{__('subject.subject info')}}</h4>
-                    <div class="row col ">
-                        <input class="col search2" placeholder="{{__('public.search')}}">
-                        <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
-                    </div>
+            {{-- the title and search --}}
+            <div class="row frist-card ">
+                <h4 class="col container-title mt-2">{{__('subject.subject info')}}</h4>
+                <div class="row col ">
+                    <input class="col search2" placeholder="{{__('public.search')}}">
+                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
                 </div>
+            </div>
+            {{--  --}}
         </div>
+        {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         
         <!-- table-hover table-striped -->
         <div class="table-section">
@@ -51,7 +55,7 @@
                             <td>{{$subject->updated_at}}</td>
                             <td>
                                 <a href="{{route('subjects.edit',$subject->id)}}"
-                                   class="btn save-button btn-success w-100">
+                                class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                             <td>
@@ -61,8 +65,8 @@
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$subject->id}}"
-                                     tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
+                                    tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">

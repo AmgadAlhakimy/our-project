@@ -33,7 +33,7 @@
                             <div class="th-head-2"><?php echo e(__('public.processes')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-2"></div>
+                            <div class="th-head-3"></div>
                         </th>
                         <th>
                             <div class="th-head-1"></div>

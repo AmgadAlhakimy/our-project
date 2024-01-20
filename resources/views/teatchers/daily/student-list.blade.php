@@ -2,40 +2,57 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table">
+
+        {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
+        {{-- the table header with bottuns and search input --}}
         <div class="table-header">
-            <div class="row frist-card me-1">
-                <h4 class="col container-title mt-2">student information</h4>
-                <div class="row col">
-                    <input class=" col form-control me-2 search-input" placeholder="SEARCH">
-                    <button class="col-1 save-button search-button">Search</button>
+            {{-- the title and search --}}
+            <div class="row frist-card ">
+                <h4 class="col container-title mt-2">Student class</h4>
+                <div class="row col ">
+                    <input class="col search2" placeholder="{{__('public.search')}}">
+                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
                 </div>
             </div>
-            <div class="card-info second-card mb-4 mt-4 p-4 ">
-                <h3 class="fw-bolder  Names">Quran Karem</h3>
+            {{--  --}}
+            <div class="box col-lg-12 col-md-12 ">
+                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
+                    <option class="text-center"
+                            value="{{__('student.male')}}">{{__('student.male')}}</option>
+                    <option class="text-center"
+                            value="{{__('student.female')}}">{{__('student.female')}}</option>
+                </select>
+                @error('sex')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
             </div>
+            {{-- the thacher name and the month --}}
+
             <div class="cards-container  third-card">
-                <div class="card-info col me-2">
+                <div class="card-info card-info_2 col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Techer</h4>
                     <h4 class=" Names">mohammad mohsen</h4>
                 </div>
-                <div class="card-info  col ms-2">
-                    <h4 class=" me-2 ms-2">Class</h4>
-                    <h4 class=" Names">KG1</h4>
+
+                <div class="card-info card-info_2 col ms-2 me-2">
+                    <h4 class=" me-2 ms-2">Month</h4>
+                    <h4 class=" Names">10</h4>
                 </div>
             </div>
         </div>
+        {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class=" table-section ">
             <div class="card table-section ">
             <table class=" " >
                 <thead>
                     <tr class="">
-                        <th scope="col"><div class="th-head-1 " >id</div></th>
-                        <th scope="col"><div class="th-head-3" >Name</div></th>
-                        <th scope="col"><div class="th-head-2" >photo</div></th>
-                        <th scope="col"><div class="th-head-3" >student info </div></th>
-                        <th scope="col"><div class="th-head-3" >Daily follow-up</div></th>
-                        <th scope="col"><div class="th-head-1" ></div></th>
+                        <th ><div class="th-head-1 " >id</div></th>
+                        <th ><div class="th-head-3" >Name</div></th>
+                        <th ><div class="th-head-2" >photo</div></th>
+                        <th ><div class="th-head-3" >student info </div></th>
+                        <th ><div class="th-head-3" >Daily follow-up</div></th>
+                        <th ><div class="th-head-1" ></div></th>
                     </tr>
                 </thead>
                 <tbody>

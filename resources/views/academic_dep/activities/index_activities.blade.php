@@ -1,17 +1,47 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
+        
+        {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
+        {{-- the table header with bottuns and search input --}}
         <div class="table-header">
-
             {{-- the title and search --}}
             <div class="row frist-card ">
-                <h4 class="col container-title mt-2">{{__('subject.')}}</h4>
+                <h4 class="col container-title mt-2">{{__('activites')}}</h4>
                 <div class="row col ">
                     <input class="col search2" placeholder="{{__('public.search')}}">
                     <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
                 </div>
             </div>
-    </div>
+            {{-- the subject name --}}
+            {{--  --}}
+            {{-- <div class="box col-lg-12 col-md-12 ">
+                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
+                    <option class="text-center"
+                            value="{{__('student.male')}}">{{__('student.male')}}</option>
+                    <option class="text-center"
+                            value="{{__('student.female')}}">{{__('student.female')}}</option>
+                </select>
+                @error('sex')
+                <small class="form-text text-danger">{{$message}}</small>
+                @enderror
+            </div> --}}
+            {{-- the thacher name and the month --}}
+
+            {{-- <div class="cards-container  third-card">
+                <div class="card-info card-info_2 col ms-2 me-2">
+                    <h4 class=" me-2 ms-2">Techer</h4>
+                    <h4 class=" Names">mohammad mohsen</h4>
+                </div>
+
+                <div class="card-info card-info_2 col ms-2 me-2">
+                    <h4 class=" me-2 ms-2">Month</h4>
+                    <h4 class=" Names">10</h4>
+                </div>
+            </div> --}}
+        </div>
+        {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
+
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">

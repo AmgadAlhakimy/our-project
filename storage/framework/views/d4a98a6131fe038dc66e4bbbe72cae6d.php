@@ -1,7 +1,9 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
+        
+        
+        
         <div class="table-header">
-
             
             <div class="row frist-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('eduLevel.educational level info')); ?></h4>
@@ -11,6 +13,8 @@
                 </div>
             </div>
         </div>
+        
+
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section">

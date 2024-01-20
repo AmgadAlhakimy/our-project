@@ -71,7 +71,7 @@ td button:nth-child(2){
 .search2:focus {
   outline: auto;
   outline-color: var(--orange-color);
-  width: 180px;
+  width: 120px;
   border-radius: 20px;
   border: none;
   transition: all 1s ease;
@@ -135,15 +135,24 @@ tr:hover img {
 }
 /* end table style  */
 .card-info{
-  background-color: var(--S-Color-1);
-  border-radius: 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   padding: 5px 10px ;
-  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.2);
 }
+.card-info_2{
+  margin-right: 10px;
+  width: 120px;
+  transition: width 0.3s;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  /* height: 50px; */
+  transition: all 1s ease;
+  background-color: #fff;
+}
+
 
 /* Start media */
 @media (max-width: 670px) {

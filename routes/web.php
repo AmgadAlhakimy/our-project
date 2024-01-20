@@ -59,7 +59,10 @@ Route::group(
 // ------------------- شؤون الطلاب ---------------------
         //  الطلاب الغائبين
         Route::get('absence', function () {
-            return view('students/absence/absent_students');
+            return view('students_affairs/absence/absent_students');
+        });
+        Route::get('parent_into', function () {
+            return view('students_affairs/students/parent');
         });
 // --------------------------------------------------------
 // ------------------- شؤون الموظفين ---------------------
@@ -89,8 +92,7 @@ Route::get('follow-up_school', function () {
 Route::get('follow-up_schoo', function () {
     return view('teatchers/daily/student-list');
 });
-    }
-);
+});
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
 

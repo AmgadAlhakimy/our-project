@@ -1,16 +1,20 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
+        
+        
+        
         <div class="table-header">
-
-                
-                <div class="row frist-card ">
-                    <h4 class="col container-title mt-2"><?php echo e(__('subject.subject info')); ?></h4>
-                    <div class="row col ">
-                        <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
-                        <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
-                    </div>
+            
+            <div class="row frist-card ">
+                <h4 class="col container-title mt-2"><?php echo e(__('subject.subject info')); ?></h4>
+                <div class="row col ">
+                    <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
+                    <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
                 </div>
+            </div>
+            
         </div>
+        
         
         <!-- table-hover table-striped -->
         <div class="table-section">
@@ -50,7 +54,7 @@
                             <td><?php echo e($subject->updated_at); ?></td>
                             <td>
                                 <a href="<?php echo e(route('subjects.edit',$subject->id)); ?>"
-                                   class="btn save-button btn-success w-100">
+                                class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> <?php echo e(__('public.edit')); ?> </a>
                             </td>
                             <td>
@@ -61,8 +65,8 @@
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete<?php echo e($subject->id); ?>"
-                                     tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
+                                    tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">

@@ -243,8 +243,9 @@ input::-webkit-inner-spin-button {
 /* --------------------------------------------------------------------- */
 /* Start button  */
 .save-button {
-  padding: 15px 0px;
+  padding: 10px 0px;
   width: 120px;
+  /* height: 30px; */
   /* margin: 2px; */
   background: var(--section-bg-1);
   /* background-image: linear-gradient
@@ -254,7 +255,7 @@ input::-webkit-inner-spin-button {
   color: var(--green-color);
   font-weight: bold;
   border-radius: 50px;
-  box-shadow: 10px 10px 10px -1px
+  box-shadow: 5px 5px 5px -1px
       rgba(10, 99, 169, 0.16),
     -10px -10px 10px -1px
     rgba(255, 255, 255, 0.7);
@@ -267,7 +268,7 @@ input::-webkit-inner-spin-button {
     inset -5px -5px 5px -1px rgba(255, 255, 255, 0.7);
 }
 .clear-button {
-  padding: 15px 0px;
+  padding: 10px 0px;
   width: 120px;
   /* margin: 2px; */
   background: var(--section-bg-1);
@@ -277,8 +278,10 @@ input::-webkit-inner-spin-button {
   color: var(--S-Color-2);
   font-weight: bold;
   border-radius: 50px;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-    -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 5px 5px 5px -1px
+  rgba(10, 99, 169, 0.16),
+-10px -10px 10px -1px
+rgba(255, 255, 255, 0.7);
 }
 .clear-button:hover {
   /* background-image: linear-gradient(180deg, var(--S-Color-5), var(--S-Color-4));
@@ -543,6 +546,53 @@ left: 20px;
   box-shadow: 0 2px 20px var(--S-Color-6);
 }
 /* test */
-
 /* End Check box Styles */
+/* Start student checkbox */
+.stu_check{
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #1e1e1e;
+  outline: none;
+  transition: 0.25s;
+}
+.stu_check::before,
+.stu_check::after{
+  z-index: 2;
+  position: absolute;
+  top: 77%;
+  transform: translateY(-50%);
+  font-weight: bolder;
+}
+.stu_check::before{
+  content: "ON";
+  left: 270px;
+}
+.stu_check::after{
+  content: "OFF";
+  right: 290px;
+}
+.stu_check:checked{
+  background-color: var(--o-title-1);
+}
+.stu_check label{
+  z-index: 5;
+  position: absolute;
+  top: 10px;
+  bottom: 4px;
+  border-radius: 20px;
+}
+.stu_check:checked::after,
+.stu_check:checked::before{
+  color: #fff;
+  transition: color 0.5s;
+}
+.stu_check:checked+label{
+  left: 100px;
+  right: 1000px;
+  background-color: #1e1e1e;
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+/* End student checkbox */
 
