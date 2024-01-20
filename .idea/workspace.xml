@@ -5,6 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e50a439-ca8b-45ef-8182-f61b1f80af6d" name="Changes" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/8faa3a719829322c7ff0c653abe7dff1.php" afterDir="false" />
+=======
       <change afterPath="$PROJECT_DIR$/routes/force_delete.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/routes/resources.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/routes/restore.php" afterDir="false" />
@@ -70,6 +74,7 @@
 >>>>>>> c1a1efa0da56d89420f0da5e803ca960ff2e7516
 =======
 >>>>>>> 57c2aab0216707e6899559ea70838805d0bbbd02
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -285,7 +290,11 @@
 >>>>>>> b51642fc883f21c4e0e2e7a0e261cecd5b98617d
 =======
       <workItem from="1705393489492" duration="3247000" />
+<<<<<<< HEAD
+      <workItem from="1705493485861" duration="165000" />
+=======
 >>>>>>> 57c2aab0216707e6899559ea70838805d0bbbd02
+>>>>>>> 6ccd1e70704e27a92d759972606401f0dc718619
     </task>
     <servers />
   </component>

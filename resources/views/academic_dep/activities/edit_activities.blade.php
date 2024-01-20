@@ -22,7 +22,7 @@
                     <div class="box col-lg-6 col-md-12">
                         <label class="" for="activity-name-e">{{__('activity.activity name in arabic')}}</label>
                         <input type="text" class="form-control " id='activity-name-e'  placeholder="in arabic"  name="name_ar"
-                               value="{{$activity->getTranslation('name','ar')}}">
+                            value="{{$activity->getTranslation('name','ar')}}">
                         @error('name_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -31,7 +31,7 @@
                     <div class="box col-lg-6 col-md-12">
                         <label class="" for="area-name-a">{{__('activity.activity location in english')}}</label>
                         <input type="text" class="form-control " id='area-name-a' name="location"  placeholder="in english"
-                               value="{{$activity->getTranslation('location','en')}}">
+                            value="{{$activity->getTranslation('location','en')}}">
                         @error('location')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -39,7 +39,7 @@
                     <div class="box col-lg-6 col-md-12">
                         <label class="" for="area-name-e">{{__('activity.activity location in arabic')}}</label>
                         <input type="text" class="form-control " id='area-name-e' name="location_ar"  placeholder="in arabic"
-                               value="{{$activity->getTranslation('location','ar')}}">
+                            value="{{$activity->getTranslation('location','ar')}}">
                         @error('location_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror

@@ -16,9 +16,9 @@
                             <div class=" col-md-1"></div>
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name"
-                                       for="c-name"><?php echo e(__('eduLevel.educational Level name in english')); ?></label>
+                                    for="c-name"><?php echo e(__('eduLevel.educational Level name in english')); ?></label>
                                 <input type="text" id="edu_name" class="form-control" name="name"
-                                       value="<?php echo e(old('name')); ?>">
+                                    value="<?php echo e(old('name')); ?>">
                                 <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -34,7 +34,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name_ar"><?php echo e(__('eduLevel.educational Level name in arabic')); ?></label>
                                 <input type="text" id="edu_name_ar" class="form-control" name="name_ar"
-                                       value="<?php echo e(old('name_ar')); ?>">
+                                    value="<?php echo e(old('name_ar')); ?>">
                                 <?php $__errorArgs = ['name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -48,15 +48,15 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-1"></div>
                         </div>
-                        <div class="row mt-2">
-                            <div class=" row">
-                                <div class="box col ">
-                                    <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
-                                </div>
-                                <div class="box  col">
-                                    <input class="clear-button " type="reset" value="<?php echo e(__('public.clear')); ?>">
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class=" row">
+                        <div class="box col ">
+                            <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
+                        </div>
+                        <div class="box  col">
+                            <input class="clear-button " type="reset" value="<?php echo e(__('public.clear')); ?>">
                         </div>
                     </div>
                 </div>
