@@ -8,7 +8,9 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-            <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">
+                <h3 class="container-title">{{__('class.update class').$student->name}}</h3>
+                <form method="post" action="{{route('students.update', $student->id)}}" enctype="multipart/form-data">
+                @method('PUT')
                 @csrf
                 <!-- Start personal info  -->
                 <h3 class="container-title">{{__('student.student info')}}</h3>
@@ -18,7 +20,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label class="  title-3 "
                             for="english-name">{{__("student.student's name in arabic")}}</label>
-                            <input type="text" class="form-control " id='english-name' name="name_ar" value="{{old('name_ar')}}">
+                            <input type="text" class="form-control " id='english-name' name="name_ar" value="{{$student->getTranslation('name','ar')}}">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -27,7 +29,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label class="text-center"
                                 for="arab-name">{{__("student.student's name in english")}}</label>
-                            <input type="text" class="form-control " id='arab-name' name="name" value="{{old('name')}}">
+                            <input type="text" class="form-control " id='arab-name' name="name"  value="{{$student->getTranslation('name','en')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -36,7 +38,7 @@
 
                         <div class="box col">
                             <label class="" for="photo">{{__('student.photo')}}</label>
-                            <input type="file" class="form-control " id="photo" name="photo" value="{{old('photo')}}">
+                            <input type="file" class="form-control " id="photo" name="photo" value="{{$student->photo}}">
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -46,7 +48,7 @@
                             <label for="address">{{__('student.addresses')}}</label>
                             <div class="col-lg-6 col-md-6">
                                 <span class=" text-center title-3 ">{{__("student.student's address in arabic")}}</span>
-                                <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="{{old('address_ar')}}">
+                                <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar"  value="{{$student->getTranslation('address','ar')}}">
                                 @error('address_ar')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -55,7 +57,7 @@
                             <div class="col-lg-6 col-md-6 ">
                                 <span
                                     class=" text-center title-3 ">{{__("student.student's address in english")}}</span>
-                                <input type="text" class=" form-control ms-2 me-2" id="address" name="address" value="{{old('address')}}">
+                                <input type="text" class=" form-control ms-2 me-2" id="address" name="address"  value="{{$student->getTranslation('address','en')}}">
                                 @error('address')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -64,7 +66,7 @@
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="sex">{{__('student.sex')}}</label>
-                            <select class="col form-select form-control" id="sex" name="sex" value="{{old('sex')}}">
+                            <select class="col form-select form-control" id="sex" name="sex"  value="{{$student->getTranslation('sex','en')}}">
                                 <option class="text-center"
                                         value="{{__('student.male')}}">{{__('student.male')}}</option>
                                 <option class="text-center"
@@ -77,7 +79,7 @@
                         {{-- 6 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="age">{{__('student.birthdate')}}</label>
-                            <input type="date" class="form-control" id="age" name="birthdate" value="{{old('birthdate')}}">
+                            <input type="date" class="form-control" id="age" name="birthdate" value="{{$student->birthdate}}">
                             @error('birthdate')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -85,7 +87,7 @@
                         {{-- 7 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="english-birth-place">{{__('student.place of birth in arabic')}}</label>
-                            <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="{{old('place_of_birth_ar')}}">
+                            <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar"  value="{{$student->getTranslation('place_of_birth','ar')}}">
                             @error('place_of_birth_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -93,7 +95,7 @@
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="arabic-birth-place">{{__('student.place of birth in english')}}</label>
-                            <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth" value="{{old('place_of_birth')}}">
+                            <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth"  value="{{$student->getTranslation('place_of_birth','en')}}">
                             @error('place_of_birth')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -101,12 +103,14 @@
                         {{-- 8 --}}
                         <div class="box ">
                             <label for="className " class="form-label">{{__('student.class')}}</label>
-                            <select id="className " class="form-control" name="class_id" value="{{old('class_id')}}">
+                            <select id="className " class="form-control" name="class">
                                 @foreach($classes as $class)
-                                    <option class="text-center" value="{{$class->id}}">{{$class->name}}</option>
+                                    <option class="text-center" value="{{$class->id}}"
+                                    @if($class->id == $student->class_id) selected @endif>
+                                        {{$class->name}}</option>
                                 @endforeach
                             </select>
-                            @error('class_id')
+                            @error('class')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
@@ -385,10 +389,11 @@
                 </div>
                 <div class=" row">
                     <div class="box col ">
-                        <input class="save-button " type="submit" value="{{__('public.save')}}">
+                        <input class="save-button " type="submit" value="{{__('public.update')}}">
                     </div>
                     <div class="box  col">
-                        <input class="clear-button " type="reset" value="{{__('public.clear')}}">
+                        <a href="{{route('students.index')}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                     </div>
                 </div>
                 <!-- End final box -->

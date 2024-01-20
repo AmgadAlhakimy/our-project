@@ -73,7 +73,7 @@
                             <td>{{$student->allergy_desc}}</td>
                             <td>{{$student->have_health_problem}}</td>
                             <td>{{$student->health_problem_desc}}</td>
-                            <td>{{$student->class_id}}</td>
+                            <td>{{App\Models\Classs::findorfail($student->class_id)->name}}</td>
                             <td>{{$student->note}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>

@@ -75,10 +75,10 @@ class ClassController extends Controller
     public function edit($id)
     {
         try {
-
         $class = Classs::findorFail($id);
         $levels = EducationalLevel::all();
         return view('academic_dep/classes.edit_classes', compact('class', 'levels'));
+
         }catch (Exception $e){
             return $e->getMessage();
         }
