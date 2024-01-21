@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\EducationalLevelController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -32,66 +33,10 @@ Route::group(
         require __DIR__.'/restore.php';
         require __DIR__.'/force_delete.php';
 
+        Route::get('educational_levels/search/',
+            [EducationalLevelController::class, 'restore'])
+            ->name('educational_levels.search');
 
-        Route::get('marks', function () {
-            return view('marks/add');
-        });
-
-        Route::get('class-activities', function () {
-            return view('academic_dep/relations/class-activities');
-        });
-
-//        Route::get('class-subjects', function () {
-//            return view('academic_dep/relations/class-subjects');
-//        });
-
-        Route::get('class-teacher', function () {
-            return view('academic_dep/relations/class-teacher');
-        });
-
-        Route::get('teacher-subjects', function () {
-            return view('academic_dep/relations/teacher-subjects');
-        });
-
-        Route::get('relations-page', function () {
-            return view('academic_dep/relations/relations-page');
-        });
-// ------------------- شؤون الطلاب ---------------------
-        //  الطلاب الغائبين
-        Route::get('absence', function () {
-            return view('students_affairs/absence/absent_students');
-        });
-        Route::get('parent_into', function () {
-            return view('students_affairs/students/parent');
-        });
-// --------------------------------------------------------
-// ------------------- شؤون الموظفين ---------------------
-//  اضافة مدرس
-Route::get('add-teacher', function () {
-    return view('emp_dep/add_teachers/create');
-});
-//  اضافة موظف
-Route::get('add-emp', function () {
-    return view('emp_dep/add_employees/create');
-});
-// --------------------------------------------------------
-// ------------------- المدرسين---------------------
-//  اضافة الدرجات
-Route::get('add-marks', function () {
-    return view('teatchers/marks/add');
-});
-//  دفتر متابعة روضة
-Route::get('follow-up_nersory', function () {
-    return view('teatchers/daily/children-follow-up');
-});
-//  دفتر متابعة مدرسة
-Route::get('follow-up_school', function () {
-    return view('teatchers/daily/school-follow-up');
-});
-//  دفتر متابعة مدرسة
-Route::get('follow-up_schoo', function () {
-    return view('teatchers/daily/student-list');
-});
 });
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/

@@ -31,9 +31,10 @@ class ClassController extends Controller
         try {
         $levels = EducationalLevel::all();
         return view('academic_dep/classes.create_classes', compact('levels'));
+
         }catch (Exception $e){
                 return $e->getMessage();
-            }
+          }
         }
 
     /**

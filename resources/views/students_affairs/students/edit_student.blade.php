@@ -8,7 +8,7 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-                <h3 class="container-title">{{__('class.update class').$student->name}}</h3>
+                <h3 class="container-title">{{__('student.update student: ').$student->name}}</h3>
                 <form method="post" action="{{route('students.update', $student->id)}}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf

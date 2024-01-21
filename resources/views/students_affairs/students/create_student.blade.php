@@ -122,7 +122,7 @@
                         <div class="box ">
                             <label for="father">{{__('student.parent info')}}</label>
                             <div class="w-100 mt-5">
-                                <a href='/parent_into'class=" save-button  w-full mt-3 p-3">{{__('student.parent info')}}</a>
+                                <a href="{{route('relatives.create')}}" class=" save-button  w-full mt-3 p-3">{{__('student.parent info')}}</a>
                             </div>
                         </div>
                         <!-- garden number  -->
@@ -149,7 +149,7 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-                                <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id="std_medicine_desc" 
+                                <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id="std_medicine_desc"
                                     aria-label="Text input with radio button" placeholder="desc in english">
                                 @error('medicine_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
@@ -175,7 +175,7 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-                                <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc" id="std_medicine_desc" 
+                                <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc" id="std_medicine_desc"
                                     aria-label="Text input with radio button" value="{{old('allergy_desc')}}" placeholder="desc in english">
                                 @error('allergy_desc')
                                     <small class="form-text text-danger">{{$message}}</small>

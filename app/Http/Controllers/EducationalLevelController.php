@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\level\StoreEducationalLevelRequest;
 use App\Http\Requests\level\UpdateEducationalLevelRequest;
 use App\Models\EducationalLevel;
+use http\Env\Request;
 
 class EducationalLevelController extends Controller
 {
@@ -39,6 +40,7 @@ class EducationalLevelController extends Controller
      */
     public function store(StoreEducationalLevelRequest $request)
     {
+
         try {
          EducationalLevel::create([
              'name' => [
@@ -124,5 +126,15 @@ class EducationalLevelController extends Controller
         } catch (\Exception $e){
             return $e->getMessage();
         }
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $levels = EducationalLevel::where(function ($query) use ($search){
+            $query->where('id','like',"%$search%")
+                ->orwhere('name','like',"%$search%");
+        })->get();
+        return view('academic_dep/educational_levels.create_education_levels',compact('search','levels'));
     }
 }

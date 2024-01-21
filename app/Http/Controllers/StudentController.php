@@ -17,7 +17,8 @@ class StudentController extends Controller
     {
         try {
         $students = Student::all();
-        return view('students_affairs/students.show_students',compact('students'));
+        $classes= Classs::all();
+        return view('students_affairs/students.show_students',compact('students', 'classes'));
 
         }catch (\Exception  $e){
             return $e->getMessage();
@@ -81,7 +82,7 @@ class StudentController extends Controller
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
-            'class_id'=>$request->class
+            'class_id'=>$request->class_id
 
         ]);
         return redirect()->back()->with(['success' => __('message.success')]);

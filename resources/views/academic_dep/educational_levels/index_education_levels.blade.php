@@ -2,17 +2,19 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-        
+
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row frist-card ">
                 <h4 class="col container-title mt-2">{{__('eduLevel.educational level info')}}</h4>
-                <div class="row col ">
-                    <input class="col search2" placeholder="{{__('public.search')}}">
-                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
-                </div>
+                <form method="get" action="{{route('educational_levels.search')}}">
+                    <div class="row col ">
+                        <input class="col search2" placeholder="{{__('public.search')}}" name="search">
+                        <button type="submit" class="col-1 save-button search-button ">{{__('public.search')}}</button>
+                    </div>
+                </form>
             </div>
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}

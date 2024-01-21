@@ -15,7 +15,8 @@
         "livewire/livewire": "^2.11",
         "mcamara/laravel-localization": "^1.8",
         "spatie/laravel-translatable": "^6.5",
-        "yoeunes/toastr": "^2.3"
+        "yoeunes/toastr": "^2.3",
+      "ext-http": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

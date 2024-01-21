@@ -16,10 +16,9 @@
             {{--  --}}
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
-                    <option class="text-center"
-                            value="{{__('student.male')}}">{{__('student.male')}}</option>
-                    <option class="text-center"
-                            value="{{__('student.female')}}">{{__('student.female')}}</option>
+                    @foreach($classes as $class)
+                        <option class="text-center" value="{{$class->id}}">{{$class->name}}</option>
+                    @endforeach
                 </select>
                 @error('sex')
                 <small class="form-text text-danger">{{$message}}</small>

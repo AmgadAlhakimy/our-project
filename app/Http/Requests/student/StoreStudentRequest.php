@@ -30,7 +30,7 @@ class StoreStudentRequest extends FormRequest
             'birthdate' => ['required'],
             'place_of_birth' => ['required'],
             'place_of_birth_ar' => ['required'],
-            'class' => ['required'],
+            'class_id' => ['required'],
         ];
     }
     public function messages(): array
