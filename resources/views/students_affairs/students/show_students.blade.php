@@ -14,15 +14,20 @@
                 </div>
             </div>
             {{--  --}}
+                    <form method="get" action="{{route('students.create')}}">
             <div class="box col-lg-12 col-md-12 ">
-                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
-                    @foreach($classes as $class)
-                        <option class="text-center" value="{{$class->id}}">{{$class->name}}</option>
-                    @endforeach
+                <label for="sex"></label><select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" >
+                        @foreach($classes as $class)
+                                    <button class="" type="submit">
+                                <option class="text-center" value="{{$class->id}}">{{$class->name}}
+                                </option>
+                                    </button>
+                        @endforeach
                 </select>
                 @error('sex')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
+                </form>
             </div>
             {{-- the thacher name and the month --}}
 

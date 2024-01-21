@@ -12,12 +12,16 @@
                 </div>
             </div>
             
+                    <form method="get" action="<?php echo e(route('students.create')); ?>">
             <div class="box col-lg-12 col-md-12 ">
-                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
-                    <option class="text-center"
-                            value="<?php echo e(__('student.male')); ?>"><?php echo e(__('student.male')); ?></option>
-                    <option class="text-center"
-                            value="<?php echo e(__('student.female')); ?>"><?php echo e(__('student.female')); ?></option>
+                <label for="sex"></label><select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" >
+                        <?php $__currentLoopData = $classes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $class): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <button class="" type="submit">
+                                <option class="text-center" value="<?php echo e($class->id); ?>"><?php echo e($class->name); ?>
+
+                                </option>
+                                    </button>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </select>
                 <?php $__errorArgs = ['sex'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -29,6 +33,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                </form>
             </div>
             
 

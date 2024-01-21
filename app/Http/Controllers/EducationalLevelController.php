@@ -130,11 +130,12 @@ class EducationalLevelController extends Controller
 
     public function search(Request $request)
     {
+        return 'hello';
         $search = $request->search;
         $levels = EducationalLevel::where(function ($query) use ($search){
             $query->where('id','like',"%$search%")
                 ->orwhere('name','like',"%$search%");
         })->get();
-        return view('academic_dep/educational_levels.create_education_levels',compact('search','levels'));
+        return view('academic_dep/educational_levels.index_education_levels',compact('search','levels'));
     }
 }

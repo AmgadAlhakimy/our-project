@@ -33,8 +33,8 @@ Route::group(
         require __DIR__.'/restore.php';
         require __DIR__.'/force_delete.php';
 
-        Route::get('educational_levels/search/',
-            [EducationalLevelController::class, 'restore'])
+        Route::get('educational_levels/search',
+            [EducationalLevelController::class, 'search'])
             ->name('educational_levels.search');
 
 });

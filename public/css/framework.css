@@ -548,51 +548,59 @@ left: 20px;
 /* test */
 /* End Check box Styles */
 /* Start student checkbox */
-.stu_check{
-  appearance: none;
-  width: 200px;
-  height: 50px;
-  border-radius: 25px;
-  background-color: #1e1e1e;
-  outline: none;
-  transition: 0.25s;
+.toggle[type=checkbox].toggle {
+  display: none;
 }
-.stu_check::before,
-.stu_check::after{
-  z-index: 2;
+input[type=checkbox].toggle + label{
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--sidebar-bg);
+  
+}
+input[type=checkbox].toggle + label::before{
   position: absolute;
-  top: 77%;
-  transform: translateY(-50%);
-  font-weight: bolder;
+  top: 4px;
+  height: 10px;
+  width: 10px;
+  content: '';
+  transition: all 0.5s ease;
+  z-index: 3;
 }
-.stu_check::before{
-  content: "ON";
-  left: 270px;
+input[type=checkbox].toggle + label.rounded{
+  height: 10px;
+  border-radius: 30px;
+  width: 60px;
+  border-width: 0;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
-.stu_check::after{
-  content: "OFF";
-  right: 290px;
+input[type=checkbox].toggle + label.rounded::before{
+  border-radius: 50%;
+  top: -10px;
+  height: 30px;
+  width: 30px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
-.stu_check:checked{
-  background-color: var(--o-title-1);
+
+input[type=checkbox].toggle:not(:checked) + label::before{
+  left: -10px;
 }
-.stu_check label{
-  z-index: 5;
-  position: absolute;
-  top: 10px;
-  bottom: 4px;
-  border-radius: 20px;
+input[type=checkbox].toggle:not(:checked) + label.rounded::before{
+  background-color: var(--sidebar-bg);
 }
-.stu_check:checked::after,
-.stu_check:checked::before{
-  color: #fff;
-  transition: color 0.5s;
+input[type=checkbox].toggle:checked + label.rounded::before{
+  background-color: var(--orange-color);
 }
-.stu_check:checked+label{
-  left: 100px;
-  right: 1000px;
-  background-color: #1e1e1e;
-  transition: left 0.5s, right 0.4s 0.2s;
+input[type=checkbox].toggle:checked + label::before{
+  background-color: var(--sidebar-bg);
 }
+input[type=checkbox].toggle:checked + label.rounded::before{
+  right: auto;
+  left: 40px;
+}
+
 /* End student checkbox */
 

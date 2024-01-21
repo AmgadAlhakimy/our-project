@@ -43,9 +43,8 @@
                         </div>
                         {{-- 4 --}}
                         <div class="box row">
-                            <label for="address">{{__('student.addresses')}}</label>
                             <div class="col-lg-6 col-md-6">
-                                <span class=" text-center title-3 ">{{__("student.student's address in arabic")}}</span>
+                                <label for="address">{{__("student.student's address in arabic")}}</label>
                                 <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="{{old('address_ar')}}">
                                 @error('address_ar')
                                 <small class="form-text text-danger">{{$message}}</small>
@@ -53,8 +52,7 @@
                             </div>
                             {{-- -- --}}
                             <div class="col-lg-6 col-md-6 ">
-                                <span
-                                    class=" text-center title-3 ">{{__("student.student's address in english")}}</span>
+                                <label for="address">{{__("student.student's address in english")}}</label>
                                 <input type="text" class=" form-control ms-2 me-2" id="address" name="address" value="{{old('address')}}">
                                 @error('address')
                                 <small class="form-text text-danger">{{$message}}</small>
@@ -141,19 +139,19 @@
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                                    <input class=" col" type="checkbox" name="take_medicine" id="takeMedicine" value="{{old('take_medicine')}}" checked>
-                                    <label class="form-label col" for="takeMedicine">{{__('student.yes')}}</label>
+                                    <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="{{old('take_medicine')}}" nochecked>
+                                    <label class="form-label col rounded" for="takeMedicineE" ></label>
                                 </div>
                                 {{-- -*- --}}
                                 @error('take_medicine')
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-                                <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc" id="std_medicine_desc"
-                                    aria-label="Text input with radio button" placeholder="desc in english">
-                                @error('medicine_desc')
-                                    <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
+                                    <input type="  text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc"
+                                        aria-label="Text input with radio button" placeholder="desc in english" >
+                                    @error('medicine_desc')
+                                        <small class="form-text text-danger">{{$message}}</small>
+                                    @enderror
                                 {{-- -*- --}}
                                 <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc_ar" id="std_medicine_desc" value="{{old('medicine_desc_ar')}}"
                                     aria-label="Text input with radio button" placeholder="desc in arabic">
@@ -167,8 +165,8 @@
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                                    <input class=" col" type="checkbox" name="have_allergy" id="takeMedicine "  value="{{old('have_allergy')}}" checked>
-                                    <label class="form-label col" for="takeMedicine">{{__('student.yes')}}</label>
+                                    <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="{{old('have_allergy')}}" >
+                                    <label class="form-label col rounded" for="haveAllergy" ></label>
                                 </div>
                                 {{-- -*- --}}
                                 @error('have_allergy')
@@ -193,8 +191,8 @@
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                                    <input class=" col" type="checkbox" name="have_health_problem"  id="takeMedicine" value="{{old('have_health_problem')}}" checked>
-                                    <label class="form-label col" for="takeMedicine" id="takeMedicine">{{__('student.yes')}}</label>
+                                    <input class="toggle col" type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" >
+                                    <label class="form-label col rounded" for="healthProblem" id="healthProblem"></label>
                                 </div>
                                 {{-- -*- --}}
                                 @error('have_health_problem')
