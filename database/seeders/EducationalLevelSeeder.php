@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\EducationalLevel;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,13 @@ class EducationalLevelSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        for($i = 1; $i<=20; $i++ ){
+        EducationalLevel::create([
+            'name'=> [
+                'en'=>"level $i",
+                'ar'=>" المرحلة  $i",
+            ]
+        ]);
+        }
     }
 }

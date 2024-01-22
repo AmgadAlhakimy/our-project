@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\level\StoreEducationalLevelRequest;
 use App\Http\Requests\level\UpdateEducationalLevelRequest;
 use App\Models\EducationalLevel;
-use http\Env\Request;
+use Illuminate\Http\Request;
 
 class EducationalLevelController extends Controller
 {
@@ -130,11 +130,9 @@ class EducationalLevelController extends Controller
 
     public function search(Request $request)
     {
-        return 'hello';
         $search = $request->search;
         $levels = EducationalLevel::where(function ($query) use ($search){
-            $query->where('id','like',"%$search%")
-                ->orwhere('name','like',"%$search%");
+            $query->where('name','like',"%$search%");
         })->get();
         return view('academic_dep/educational_levels.index_education_levels',compact('search','levels'));
     }

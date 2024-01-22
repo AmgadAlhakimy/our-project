@@ -8,12 +8,12 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row frist-card ">
-                <h4 class="col container-title mt-2">{{__('eduLevel.educational level info')}}</h4>
-                <form method="get" action="/educational_levels/search">
+                <h4 class="form-group">{{__('eduLevel.educational level info')}}</h4>
+                <form method="get" action="/search">
                     @csrf
-                    <div class="row col ">
+                    <div class="input-group">
                         <label>
-                            <input type= "text" class="col search2" placeholder="{{__('public.search')}}" name="search">
+                            <input type= "text" required class="form-control"  name="search" value="{{isset($search) ? $search : ''}}">
                         </label>
                         <button type="submit" class="col-1 save-button search-button ">{{__('public.search')}}</button>
                     </div>
