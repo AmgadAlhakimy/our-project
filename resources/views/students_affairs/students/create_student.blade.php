@@ -137,7 +137,7 @@
                             {{-- 1 --}}
                             <label class="mt-4">{{__('student.take any medicine ?')}}</label>
                             {{-- ---- --}}
-                            <div class="row">
+                            <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="{{old('take_medicine')}}" nochecked>
                                     <label class="form-label col rounded" for="takeMedicineE" ></label>

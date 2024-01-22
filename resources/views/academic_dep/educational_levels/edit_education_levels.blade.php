@@ -36,16 +36,16 @@
                             </div>
                             <div class="col-md-1"></div>
                         </div>
-                        <div class="row mt-2">
-                            <div class=" row">
-                                <div class="box col ">
-                                    <input class="save-button" type="submit" value="{{__('public.update')}}">
-                                </div>
-                                <div class="box  col">
-                                    <a href="{{route('educational_levels.index')}}" class="btn clear-button"><i
-                                            class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class=" row">
+                        <div class="box col ">
+                            <input class="save-button" type="submit" value="{{__('public.update')}}">
+                        </div>
+                        <div class="box  col">
+                            <a href="{{route('educational_levels.index')}}" class="btn clear-button"><i
+                                    class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                         </div>
                     </div>
                 </div>

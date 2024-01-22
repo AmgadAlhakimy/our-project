@@ -349,7 +349,7 @@
   align-items: center;
   padding: 1em;
   transition: background 0.3s;
-  width: 100px;
+  width: 120px;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);

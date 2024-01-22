@@ -8,9 +8,16 @@
             {{-- the title and search --}}
             <div class="row frist-card ">
                 <h4 class="col container-title mt-2">Student Information</h4>
-                <div class="row col ">
-                    <input class="col search2" placeholder="{{__('public.search')}}">
-                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
+                <div class="row frist-card mt-4 ">
+                    <form method="get" action="/search">
+                        @csrf
+                        <div class="row">
+                            <label class="col-10">
+                                <input type= "text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
+                            </label>
+                            <button type="submit" class="col save-button ">{{__('public.search')}}</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             {{--  --}}
@@ -33,12 +40,12 @@
 
             <div class="cards-container  third-card">
                 <div class="card-info card-info_2 col ms-2 me-2">
-                    <h4 class=" me-2 ms-2">Techer</h4>
+                    <h4 class=" me-2 ms-2">{{__('public.teacher')}}</h4>
                     <h4 class=" Names">mohammad mohsen</h4>
                 </div>
 
                 <div class="card-info card-info_2 col ms-2 me-2">
-                    <h4 class=" me-2 ms-2">Month</h4>
+                    <h4 class=" me-2 ms-2">{{__("public.month")}}</h4>
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
@@ -50,25 +57,19 @@
                 <table class=" " >
                     <thead>
                     <tr>
-                        <th ><div class="th-head-1  " >id</div></th>
-                        <th ><div class="th-head-3" >Name</div></th>
-                        <th ><div class="th-head-2" >photo</div></th>
-                        <th ><div class="th-head-4" >address</div></th>
+                        <th ><div class="th-head-1  " >{{__('public.id')}}</div></th>
+                        <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
+                        <th ><div class="th-head-1" >photo</div></th>
+                        <th ><div class="th-head-3" >{{__('public.address')}}</div></th>
                         <th ><div class="th-head-1" >sex</div></th>
                         <th ><div class="th-head-2" >birth date</div></th>
-                        <th ><div class="th-head-3 " >place of birth</div></th>
-                        <th ><div class="th-head-3" >take medicine</div></th>
-                        <th ><div class="th-head-3" >medicine description</div></th>
-                        <th ><div class="th-head-3" >have allergy</div></th>
-                        <th ><div class="th-head-3" >allergy description</div></th>
-                        <th ><div class="th-head-3" >health problem</div></th>
-                        <th ><div class="th-head-4 ">health problem description</div> </th>
-                        <th ><div class="th-head-2" >class</div></th>
-                        <th ><div class="th-head-4" >note</div></th>
-                        <th ><div class="th-head-3" >Created at</div></th>
-                        <th ><div class="th-head-3" >Updated at</div></th>
-                        <th ><div class="th-head-2" >parents</div></th>
-                        <th colspan="2"><div class="th-head-4" >processes</div></th>
+                        <th ><div class="th-head-2" >birth place</div></th>
+                        <th ><div class="th-head-2" >{{__('public.class')}}</div></th>
+                        <th ><div class="th-head-2" >{{__('public.created at')}}</div></th>
+                        <th ><div class="th-head-2" >{{__('public.updated at')}}</div></th>
+                        <th ><div class="th-head-3" >{{__('student.parents')}}</div></th>
+                        <th colspan="2"><div class="th-head-4" >{{__('public.processes')}}</div></th>
+                        <th ><div class="th-head-2" >more info</div></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -82,21 +83,14 @@
                             <td>{{$student->sex}}</td>
                             <td>{{$student->birthdate}}</td>
                             <td>{{$student->place_of_birth}}</td>
-                            <td>{{$student->take_medicine}}</td>
-                            <td>{{$student->medicine_desc}}</td>
-                            <td>{{$student->have_allergy}}</td>
-                            <td>{{$student->allergy_desc}}</td>
-                            <td>{{$student->have_health_problem}}</td>
-                            <td>{{$student->health_problem_desc}}</td>
                             <td>{{App\Models\Classs::findorfail($student->class_id)->name}}</td>
-                            <td>{{$student->note}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
                             <td><button class="btn save-button btn-info  w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
 
                             <td>
                                 <a href="{{route('students.edit',$student->id)}}"
-                                   class="btn save-button btn-success w-100">
+                                    class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                             <td>
@@ -107,8 +101,8 @@
                                 <!-- Modal -->
 
                                 <div class="modal fade" id="delete{{$student->id}}"
-                                     tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
+                                        tabindex="-1" aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -129,6 +123,12 @@
                                         </div>
                                     </div>
                                 </div>
+                            </td>
+                            {{-- واجهة المعلومات او الاستمارة الكاملة الخاصة بالطالب --}}
+                            <td>
+                                <a href="{{route('students.edit',$student->id)}}"
+                                    class="btn save-button btn-info w-100">
+                                    <i class="fa-solid fa-info-circle"></i> {{__('public.edit')}} </a>
                             </td>
                         </tr>
                     @endforeach

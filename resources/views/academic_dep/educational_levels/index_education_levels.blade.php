@@ -40,14 +40,8 @@
                         <th>
                             <div class="th-head-3">{{__('public.updated at')}}</div>
                         </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.processes')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-2"></div>
-                        </th>
-                        <th>
-                            <div class="th-head-1"></div>
+                        <th colspan="2">
+                            <div class="th-head-4" >{{__('public.processes')}}</div>
                         </th>
                     </tr>
                     </thead>
@@ -92,7 +86,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                     @endforeach
                     </tbody>

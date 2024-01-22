@@ -51,5 +51,11 @@ return [
     'restore'=>'Restore',
     'force delete'=>'Force Delete',
 
+    'class'=>'CLASS',
+    'month'=>'Month',
+    'teacher'=>'Teacher',
+
+
+
 
 ];
