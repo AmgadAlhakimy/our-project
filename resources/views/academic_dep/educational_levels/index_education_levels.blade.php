@@ -7,15 +7,15 @@
         {{-- the table header with bottuns and search input --}}
         <div class="table-header">
             {{-- the title and search --}}
-            <div class="row frist-card ">
-                <h4 class="form-group">{{__('eduLevel.educational level info')}}</h4>
+            <h4 class="form-group container-title">{{__('eduLevel.educational level info')}}</h4>
+            <div class="row frist-card mt-4 ">
                 <form method="get" action="/search">
                     @csrf
-                    <div class="input-group">
-                        <label>
-                            <input type= "text" required class="form-control"  name="search" value="{{isset($search) ? $search : ''}}">
+                    <div class="row">
+                        <label class="col-10">
+                            <input type= "text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
                         </label>
-                        <button type="submit" class="col-1 save-button search-button ">{{__('public.search')}}</button>
+                        <button type="submit" class="col save-button ">{{__('public.search')}}</button>
                     </div>
                 </form>
             </div>

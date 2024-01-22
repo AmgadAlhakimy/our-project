@@ -5,15 +5,15 @@
         
         <div class="table-header">
             
+            <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational level info')); ?></h4>
             <div class="row frist-card ">
-                <h4 class="col container-title mt-2"><?php echo e(__('eduLevel.educational level info')); ?></h4>
-                <form method="get" action="/educational_levels/search">
+                <form method="get" action="/search">
                     <?php echo csrf_field(); ?>
-                    <div class="row col ">
-                        <label>
-                            <input type= "text" class="col search2" placeholder="<?php echo e(__('public.search')); ?>" name="search">
+                    <div class="row">
+                        <label class="col-10">
+                            <input type= "text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
                         </label>
-                        <button type="submit" class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
+                        <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
                     </div>
                 </form>
             </div>
