@@ -49,16 +49,16 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-1"></div>
                         </div>
-                        <div class="row mt-2">
-                            <div class=" row">
-                                <div class="box col ">
-                                    <input class="save-button" type="submit" value="<?php echo e(__('public.update')); ?>">
-                                </div>
-                                <div class="box  col">
-                                    <a href="<?php echo e(route('educational_levels.index')); ?>" class="btn clear-button"><i
-                                            class="fa-solid fa-ban"></i> <?php echo e(__('public.cancel')); ?></a>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class=" row">
+                        <div class="box col ">
+                            <input class="save-button" type="submit" value="<?php echo e(__('public.update')); ?>">
+                        </div>
+                        <div class="box  col">
+                            <a href="<?php echo e(route('educational_levels.index')); ?>" class="btn clear-button"><i
+                                    class="fa-solid fa-ban"></i> <?php echo e(__('public.cancel')); ?></a>
                         </div>
                     </div>
                 </div>

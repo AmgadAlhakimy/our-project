@@ -57,4 +57,7 @@ return [
     'other info'=>'معلومات أخرى',
     'note'=>'ملاحظة',
     'first you have to add classes'=>'يجب إضافة فصول أولا',
+
+    'parents'=>'الآباء',
+
 ];

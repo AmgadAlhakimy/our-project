@@ -53,6 +53,11 @@ return [
     'restore'=>'إستعادة',
     'force delete'=>'حذف نهائي',
 
+    'class'=>'الفصل',
+    'month'=>'الشهر',
+    'teacher'=>'الاستاذ',
+
+
 
 
 ];

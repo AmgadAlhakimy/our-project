@@ -6,7 +6,11 @@
         <div class="table-header">
 
             <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational level info')); ?></h4>
+<<<<<<< HEAD
             <div class="row first-card ">
+=======
+            <div class="row frist-card mt-4 ">
+>>>>>>> 1be2e7756e298cd3aa6cea6a98fbd6f90dbcddfc
                 <form method="get" action="/search">
                     <?php echo csrf_field(); ?>
                     <div class="row">
@@ -38,14 +42,8 @@
                         <th>
                             <div class="th-head-3"><?php echo e(__('public.updated at')); ?></div>
                         </th>
-                        <th>
-                            <div class="th-head-2"><?php echo e(__('public.processes')); ?></div>
-                        </th>
-                        <th>
-                            <div class="th-head-2"></div>
-                        </th>
-                        <th>
-                            <div class="th-head-1"></div>
+                        <th colspan="2">
+                            <div class="th-head-4" ><?php echo e(__('public.processes')); ?></div>
                         </th>
                     </tr>
                     </thead>
@@ -92,7 +90,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>

@@ -23,7 +23,7 @@
     <!-- styles -->
     <!-- styles -->
 </head>
-<body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
+<body >
 
 
 <!-- Start head  -->
@@ -32,7 +32,7 @@
     <div class="head ">
         {{-- THE MAIN SEARCH OF SIDEBAR --}}
         <div class="search p-relative">
-            <label for="rtl"></label> <input class="search1" type="search" placeholder="Search" id="rtl" />
+            <label for="rtl"></label> <input class="search1" type="search" placeholder="{{__('sidebare.search')}}" id="rtl" />
         </div>
         <div class="icons">
                     <span class="notification p-relative">
@@ -43,13 +43,12 @@
         {{-- THE DROPDOWN LUNGUAGE --}}
         <div class="dropdownlang">
             <div class="select">
-                <span class="selected">Lang</span>
+                <span class="selected">{{__('sidebar.Lang')}}</span>
                 <div class="caret"></div>
             </div>
 
             <ul class="menulang">
 
-                <li class="active"><a class="" aria-current="page" href="#">{{__('public.home')}}</a></li>
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
                         <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
@@ -59,6 +58,10 @@
                 @endforeach
             </ul>
         </div>
+        
+        {{-- <div class=""> --}}
+            <a class=" me-2 ms-2 card-info" aria-current="page" href="#"><i class="fab-regular fa-home fa-fw"></i></a>
+        {{-- </div> --}}
         {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -114,7 +117,7 @@
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
                                 <i class="icon-1 fa-solid fa-window-restore"></i>
-                                <span class="menu-name">القسم الاكاديمي</span>
+                                <span class="menu-name">{{__('sidebar.academic department')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
@@ -124,15 +127,15 @@
                                 {{-- START THE SECOND DROPDOWN --}}
                                 <div class="dropdownlang my-element" onclick="cancelclick(event)" id="">
                                     <div class="select">
-                                        <span class="selected">الإضافات الأكاديمية</span>
+                                        <span class="selected"> {{__('sidebar.addition')}}</span>
                                         <div class="caret"></div>
                                     </div>
                                     {{-- onclick="propagateClick(event)" --}}
                                     <ul class="menulang " id="childElement">
-                                        <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">اضافة مرحلة دراسية</a>
-                                        <a id="" href="{{route('classes.create')}}" class="li-link_2">اضافة فصل دراسي</a>
-                                        <a href="{{route('subjects.create')}}" class="li-link_2">اضافة مواد</a>
-                                        <a href="{{route('activities.create')}}" class="li-link_2" >اضافة نشاط</a>
+                                        <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">{{__('sidebar.add educational level')}}</a>
+                                        <a id="" href="{{route('classes.create')}}" class="li-link_2">  {{__('sidebar.add a class')}}</a>
+                                        <a href="{{route('subjects.create')}}" class="li-link_2"> {{__('sidebar.add subject')}}</a>
+                                        <a href="{{route('activities.create')}}" class="li-link_2" > {{__('sidebar.add activity')}}</a>
                                     </ul>
                                 </div>
                                 {{-- END THE SECOND DROPDOWN --}}
@@ -140,14 +143,14 @@
                                 {{-- START THE SECOND DROPDOWN --}}
                                 <div class="dropdownlang my-element" onclick="cancelclick(event)">
                                     <div class="select">
-                                        <span class="selected"> استعراض المراحل الأكاديمية</span>
+                                        <span class="selected"> {{__('sidebar.academic department review')}} </span>
                                         <div class="caret"></div>
                                     </div>
                                     <ul class="menulang">
-                                        <a href="{{route('educational_levels.index')}}" class="li-link_2">عرض المراحل الدراسية</a>
-                                        <a href="{{route('classes.index')}}" class="li-link_2">عرض الفصول الدراسية</a>
-                                        <a href="{{route('subjects.index')}}" class="li-link_2"> عرض المواد الدراسية</a>
-                                        <a href="{{route('activities.index')}}" class="li-link_2">عرض الأنشطة الدراسية</a>
+                                        <a href="{{route('educational_levels.index')}}" class="li-link_2">{{__('sidebar.review of educational level')}}</a>
+                                        <a href="{{route('classes.index')}}" class="li-link_2">{{__('sidebar.review of classes')}}</a>
+                                        <a href="{{route('subjects.index')}}" class="li-link_2"> {{__('sidebar.review of subjects')}}</a>
+                                        <a href="{{route('activities.index')}}" class="li-link_2">{{__('sidebar.review activites')}}</a>
                                     </ul>
                                 </div>
                                 {{-- END THE SECOND DROPDOWN --}}
@@ -155,14 +158,14 @@
                                 {{-- START THE SECOND DROPDOWN --}}
                                 <div class="dropdownlang my-element" onclick="cancelclick(event)">
                                     <div class="select">
-                                        <span class="selected">سلة المهملات</span>
+                                        <span class="selected">{{__('sidebar.trash')}}</span>
                                         <div class="caret"></div>
                                     </div>
                                     <ul class="menulang">
-                                        <a href="{{route('educational_levels.show',0)}}" class="li-link_2">المراحل الدراسية المحذوفة</a>
-                                        <a href="{{route('classes.show',0)}}" class="li-link_2">الفصول الدراسية المحذوفة</a>
-                                        <a href="{{route('subjects.show',0)}}" class="li-link_2"> المواد الدراسية المحذوفة</a>
-                                        <a href="{{route('activities.show',0)}}" class="li-link_2">الأنشطة الدراسية المحذوفة</a>
+                                        <a href="{{route('educational_levels.show',0)}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
+                                        <a href="{{route('classes.show',0)}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
+                                        <a href="{{route('subjects.show',0)}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
+                                        <a href="{{route('activities.show',0)}}" class="li-link_2">{{__('sidebar.deleted activites')}}</a>
                                         {{-- <a href="#" class="li-link_2">1</a> --}}
                                     </ul>
                                 </div>
@@ -349,17 +352,16 @@
                                 <i
                                     class="icon-1 fa-solid fa-window-restore"
                                 ></i>
-                                <span class="menu-name">شؤون الطلاب</span>
+                                <span class="menu-name">{{__('sidebar.students affairs')}}</span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='{{route('students.create')}}' class="li-link">اضافة طالب</a>
-                                <a href="{{route('students.index')}}" class="li-link">عرض الطلاب</a>
-                                <a href="#" class="li-link">حذف طالب</a>
-                                <a href="#" class="li-link">تعديل طالب </a>
-                                <a href='/absence' class="li-link">الغياب</a>
+                                <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a student')}}</a>
+                                <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
+                                <a href="#" class="li-link">{{__('sidebar.deleted student')}}</a>
+                                <a href='/absence' class="li-link">{{__('sidebar.student absence')}}</a>
                                 <a href="#" class="li-link">2</a>
                                 {{-- START THE SECOND DROPDOWN --}}
                                 <div class="dropdownlang my-element" onclick="cancelclick(event)">

@@ -57,4 +57,5 @@ return [
     'other info'=>'Other Info',
     'note'=>'NOTE:',
     'first you have to add classes'=>'first you have to add classes',
+    'parents'=>'Parents',
 ];
