@@ -1,20 +1,20 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
-        
+
         <div class="table-header">
-            
-            <div class="row frist-card ">
+
+            <div class="row first-card ">
                 <h4 class="col container-title mt-2">Student Information</h4>
                 <div class="row col ">
                     <input class=" col   search2" placeholder="SEARCH">
                     <button class="col-1 save-button search-button">Search</button>
                 </div>
             </div>
-            
+
             <div class="card-info second-card mb-4 mt-4 ms-2 me-2 ">
                 <h3 class="fw-bolder  Names">Quran Karem</h3>
             </div>
-            
+
             <div class="cards-container  third-card">
                 <div class="card-info col ms-2 me-2">
                     <h4 class=" me-2 ms-2">Techer</h4>

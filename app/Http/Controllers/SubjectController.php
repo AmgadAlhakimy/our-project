@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\subject\StoreSubjectRequest;
 use App\Http\Requests\subject\UpdateSubjectRequest;
 use App\Models\Subject;
+use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display subjects.
      */
     public function index()
     {
@@ -23,7 +24,7 @@ class SubjectController extends Controller
 
 
     /**
-     * Show the form for creating a new resource.
+     * Show creating new subject page.
      */
     public function create()
     {
@@ -35,7 +36,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new subject.
      */
     public function store(StoreSubjectRequest $request)
     {
@@ -53,7 +54,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display deleted subjects.
      */
     public function show()
     {
@@ -67,7 +68,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing subject page.
      */
     public function edit($id)
     {
@@ -80,7 +81,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified subject.
      */
     public function update(UpdateSubjectRequest $request, $id)
     {
@@ -101,7 +102,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified subject.
      */
     public function destroy($id)
     {
@@ -115,7 +116,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Restore the specified subject.
      */
     public function restore($id)
     {
@@ -129,7 +130,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove by force the specified subject.
      */
     public function forceDelete($id)
     {
@@ -141,6 +142,25 @@ class SubjectController extends Controller
             return $e->getMessage();
         }
     }
+    /**
+     * show subjects according to the search.
+     */
+    public function search(Request $request)
+    {
+        try {
+            $search = $request->search;
+            if(strtolower($search) == 'all' or $search == 'الكل')
+                return $this->index();
+            $subjects = Subject::where(function ($query) use ($search){
+                $query->where('name->en','like',"%$search%")
+                    ->orwhere('name->ar','like',"%$search%");
+            })->get();
+            return view('academic_dep/subjects.index_subjects',
+                compact('search','subjects'));
 
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
+    }
 
 }

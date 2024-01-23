@@ -13,11 +13,11 @@ class EducationalLevelSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i = 1; $i<=20; $i++ ){
+        for($i = 1; $i<=10; $i++ ){
         EducationalLevel::create([
             'name'=> [
                 'en'=>"level $i",
-                'ar'=>" المرحلة  $i",
+                'ar'=>"المرحلة $i",
             ]
         ]);
         }

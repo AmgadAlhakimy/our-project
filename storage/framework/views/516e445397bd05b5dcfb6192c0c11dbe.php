@@ -1,17 +1,17 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
-        
-        
+
+
         <div class="table-header">
-            
-            <div class="row frist-card ">
+
+            <div class="row first-card ">
                 <h4 class="col container-title mt-2">Student Information</h4>
                 <div class="row col ">
                     <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
                     <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
                 </div>
             </div>
-            
+
                     <form method="get" action="<?php echo e(route('students.create')); ?>">
             <div class="box col-lg-12 col-md-12 ">
                 <label for="sex"></label><select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" >
@@ -35,7 +35,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                 </form>
             </div>
-            
+
 
             <div class="cards-container  third-card">
                 <div class="card-info card-info_2 col ms-2 me-2">
@@ -49,7 +49,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
             </div>
         </div>
-        
+
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">

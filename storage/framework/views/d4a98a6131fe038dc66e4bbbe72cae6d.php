@@ -1,12 +1,12 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
 
-        
-        
+
+
         <div class="table-header">
-            
+
             <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational level info')); ?></h4>
-            <div class="row frist-card ">
+            <div class="row first-card ">
                 <form method="get" action="/search">
                     <?php echo csrf_field(); ?>
                     <div class="row">
@@ -18,7 +18,7 @@
                 </form>
             </div>
         </div>
-        
+
 
         <!-- table-hover table-striped -->
         <div class="table-section">

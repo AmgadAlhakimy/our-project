@@ -2,8 +2,8 @@
     <div class="my-table mt-5">
         <div class="table-header">
 
-            
-            <div class="row frist-card ">
+
+            <div class="row first-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('DELETED CLASSES')); ?></h4>
                 <div class="row col ">
                     <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">

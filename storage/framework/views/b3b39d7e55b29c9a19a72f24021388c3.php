@@ -1,17 +1,17 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
-        
-        
+
+
         <div class="table-header">
-            
-            <div class="row frist-card ">
+
+            <div class="row first-card ">
                 <h4 class="col container-title mt-2">Absect Students</h4>
                 <div class="row col ">
                     <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
                     <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
                 </div>
             </div>
-            
+
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
                     <option class="text-center"
@@ -31,7 +31,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
             </div>
         </div>
-        
+
         <!-- table-hover table-striped -->
         <div class="table-section">
         <div class="card table-section ">
@@ -46,102 +46,102 @@ unset($__errorArgs, $__bag); ?>
                         <th scope="col"><div class="th-head-2" >processes</div></th>
                         <th scope="col"><div class="th-head-1" ></div></th>
                         <th scope="col"><div class="th-head-1" ></div></th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
                     </tr>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
                     </tr>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
                     </tr>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
                     </tr>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
                     </tr>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
                     </tr>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
                     </tr>
-            
+
                     <tr>
                         <td>130</td>
                         <td>mohanad naser mansour</td>
                         <td><img src="../../images/skills-01.jpg" alt=""></td>
                         <td>frist gride</td>
                         <td>PAKHI GUPTA</td>
-                        
+
                         <td><button class="save-button btn-success w-100"><i class="fa-solid fa-pen-to-square"></i></button></td>
                         <td><button class="clear-button btn-danger w-100"><i class="fa-solid fa-trash"></i></button></td>
                         <td></td>
@@ -170,7 +170,7 @@ unset($__errorArgs, $__bag); ?>
 <th scope="col"><div class="th-head" > </div></th>
 -->
 
-<!-- 
+<!--
 <main class=" m-3">
 <table class="table my-card table-hover table-striped ">
     <thead>
@@ -190,7 +190,7 @@ unset($__errorArgs, $__bag); ?>
         <th scope="col"><div class="th-head-3" >allergy description</div></th>
         <th scope="col"><div class="th-head-3" >health problem</div></th>
         <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
-        
+
         <th scope="col"><div class="th-head-3" >father name</div></th>
         <th scope="col"><div class="th-head-3" >father work</div></th>
         <th scope="col"><div class="th-head-3" >father contact 1</div></th>
@@ -239,7 +239,7 @@ unset($__errorArgs, $__bag); ?>
             <td>Lorem ipsum dolor, sit amet </td>
 
 
-            
+
 
 
 

@@ -10,13 +10,14 @@ use Illuminate\Http\Request;
 class EducationalLevelController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display Educational levels.
      */
     public function index()
     {
         try {
             $levels = EducationalLevel::all();
-            return view('academic_dep/educational_levels.index_education_levels', compact('levels'));
+            return view('academic_dep/educational_levels.index_education_levels',
+                compact('levels'));
 
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -24,7 +25,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show creating new educational level page.
      */
     public function create()
     {
@@ -36,7 +37,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new Educational level.
      */
     public function store(StoreEducationalLevelRequest $request)
     {
@@ -55,20 +56,21 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display deleted Educational levels.
      */
     public function show()
     {
         try {
             $levels = EducationalLevel::onlyTrashed()->get();
-            return view('academic_dep/educational_levels.deleted_education_levels', compact('levels'));
+            return view('academic_dep/educational_levels.deleted_education_levels',
+                compact('levels'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing Educational level page.
      */
     public function edit($id)
     {
@@ -82,7 +84,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Educational level.
      */
     public function update(UpdateEducationalLevelRequest $request, $id)
     {
@@ -97,7 +99,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Educational level.
      */
     public function destroy($id)
     {
@@ -108,7 +110,9 @@ class EducationalLevelController extends Controller
             return $e->getMessage();
         }
     }
-
+    /**
+     * Restore the specified Educational level.
+     */
     public function restore($id){
         try {
             EducationalLevel::withTrashed()->where('id', $id)->restore();
@@ -117,7 +121,9 @@ class EducationalLevelController extends Controller
             return $e->getMessage();
         }
     }
-
+    /**
+     * Remove by force the specified Educational level.
+     */
     public function forceDelete($id)
     {
         try {
@@ -128,12 +134,24 @@ class EducationalLevelController extends Controller
         }
     }
 
+    /**
+     * show Educational levels according to the search.
+     */
     public function search(Request $request)
     {
+        try {
         $search = $request->search;
+        if(strtolower($search) == 'all' or $search == 'الكل')
+            return $this->index();
         $levels = EducationalLevel::where(function ($query) use ($search){
-            $query->where('name','like',"%$search%");
+            $query->where('name->en','like',"%$search%")
+            ->orwhere('name->ar','like',"%$search%");
         })->get();
-        return view('academic_dep/educational_levels.index_education_levels',compact('search','levels'));
+        return view('academic_dep/educational_levels.index_education_levels',
+            compact('search','levels'));
+
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
     }
 }

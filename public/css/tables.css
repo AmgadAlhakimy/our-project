@@ -30,7 +30,7 @@ body {
   cursor: pointer;
   padding: 10px;
   color: #ffffff;
-  
+
 }  */
 
 /* td button:nth-child(1){
@@ -51,7 +51,7 @@ td button:nth-child(2){
 .table-head{
   position: sticky;
 }
-.frist-card{
+.first-card{
 /* margin-top: -10px; */
 }
 .search-button{
@@ -160,14 +160,14 @@ tr:hover img {
     /* font-size: px; */
     margin-top: 0px;
     }
-    .table-header .frist-card{
+    .table-header .first-card{
       display: flex;
       flex-direction: column;
     }
-    .frist-card .row {
+    .first-card .row {
       margin: 0px 0px;
         }
-    .frist-card .row .col-1 {
+    .first-card .row .col-1 {
       padding: 0px 0px;
         }
     .second-card{

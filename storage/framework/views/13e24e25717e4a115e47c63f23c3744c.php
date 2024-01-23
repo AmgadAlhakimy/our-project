@@ -1,25 +1,25 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
-        
-        
-        
+
+
+
         <div class="table-header">
-            
-            <div class="row frist-card ">
+
+            <div class="row first-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('activites')); ?></h4>
                 <div class="row col ">
                     <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
                     <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
                 </div>
             </div>
-            
-            
-            
-            
 
-            
+
+
+
+
+
         </div>
-        
+
 
         <!-- table-hover table-striped -->
         <div class="table-section">

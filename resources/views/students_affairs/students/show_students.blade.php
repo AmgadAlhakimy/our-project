@@ -6,7 +6,7 @@
         {{-- the table header with bottuns and search input --}}
         <div class="table-header">
             {{-- the title and search --}}
-            <div class="row frist-card ">
+            <div class="row first-card ">
                 <h4 class="col container-title mt-2">Student Information</h4>
                 <div class="row col ">
                     <input class="col search2" placeholder="{{__('public.search')}}">

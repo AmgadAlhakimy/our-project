@@ -1,18 +1,23 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-        
+
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
         <div class="table-header">
             {{-- the title and search --}}
-            <div class="row frist-card ">
-                <h4 class="col container-title mt-2">{{__('class.class info')}}</h4>
-                <div class="row col ">
-                    <input class="col search2" placeholder="{{__('public.search')}}">
-                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
-                </div>
-        </div>
+            <div class="row first-card mt-4">
+                <form method="post" action="{{route('classes.search')}}">
+                    @method('GET')
+                    @csrf
+                    <div class="row">
+                        <label class="col-10">
+                            <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
+                        </label>
+                        <button type="submit" class="col save-button ">{{__('public.search')}}</button>
+                    </div>
+                </form>
+            </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
 
         </div>
@@ -57,7 +62,7 @@
                             <td>{{$class->id}}</td>
                             <td>{{$class->name}}</td>
                             <td>{{$class->cost}}</td>
-                            <td>{{\App\Models\EducationalLevel::findorFail($class->edu_id)->name}}</td>
+                            <td>{{$class->level->name}}</td>
                             <td>{{$class->created_at}}</td>
                             <td>{{$class->updated_at}}</td>
                             <td>

@@ -14,6 +14,6 @@ class Activity extends Model
     use HasTranslations;
 
 
-    protected $fillable=['name','location','phone','date'];
+    protected $fillable=['name','location','contact','date'];
     public array $translatable = ['name','location'];
 }

@@ -2,7 +2,7 @@
 <body>
     <div class="my-table">
         <div class="table-header">
-            <div class="row frist-card me-1">
+            <div class="row first-card me-1">
                 <h4 class="col container-title mt-2">Outcame for the month</h4>
                 <div class="row col">
                     <input class=" col form-control me-2 search-input" placeholder="SEARCH">

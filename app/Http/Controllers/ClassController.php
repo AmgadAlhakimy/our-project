@@ -7,11 +7,12 @@ use App\Http\Requests\classs\UpdateClasssRequest;
 use App\Models\Classs;
 use App\Models\EducationalLevel;
 use Exception;
+use Illuminate\Http\Request;
 
 class ClassController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display classes.
      */
     public function index()
     {
@@ -24,7 +25,7 @@ class ClassController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show creating new class page.
      */
     public function create()
     {
@@ -38,7 +39,7 @@ class ClassController extends Controller
         }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new class.
      */
     public function store(StoreClasssRequest $request)
     {
@@ -58,7 +59,7 @@ class ClassController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display deleted classes.
      */
     public function show()
     {
@@ -71,7 +72,7 @@ class ClassController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing class page.
      */
     public function edit($id)
     {
@@ -86,7 +87,7 @@ class ClassController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified class.
      */
     public function update(UpdateClasssRequest $request, $id)
     {
@@ -108,7 +109,7 @@ class ClassController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified class.
      */
     public function destroy($id)
     {
@@ -121,7 +122,7 @@ class ClassController extends Controller
     }
 
     /**
-     * Display a listing of deleted classes.
+     * Restore the specified class.
      */
     public function restore($id)
     {
@@ -135,7 +136,7 @@ class ClassController extends Controller
     }
 
     /**
-     * delete from database.
+     * Remove by force the specified class.
      */
     public function forceDelete($id)
     {
@@ -144,6 +145,32 @@ class ClassController extends Controller
         return redirect()->back();
 
         }catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+
+    /**
+     * show classes according to the search.
+     */
+    public function search(Request $request)
+    {
+        try {
+            $search = $request->search;
+            if(strtolower($search) == 'all' or $search == 'الكل')
+                return $this->index();
+            $classes = Classs::where(function ($query) use ($search){
+                $query->where('name->en','like',"%$search%")
+                    ->orwhere('name->ar','like',"%$search%")
+                    ->orwhere('cost','like',"%$search%");
+            })->orWhereHas('level',function ($query) use ($search){
+                $query->where('name->en','like',"%$search%")
+                    ->orwhere('name->ar','like',"%$search%");
+            })->get();
+            return view('academic_dep/classes.index_classes',
+                compact('search','classes'));
+
+        }catch (\Exception $e){
             return $e->getMessage();
         }
     }

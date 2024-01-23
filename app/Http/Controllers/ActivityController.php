@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\activity\StoreActivityRequest;
 use App\Http\Requests\activity\UpdateActivityRequest;
 use App\Models\Activity;
+use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display activities.
      */
     public function index()
     {
@@ -22,7 +23,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show creating new activity page.
      */
     public function create()
     {
@@ -34,7 +35,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new activity.
      */
     public function store(StoreActivityRequest $request)
     {
@@ -54,7 +55,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display deleted activities.
      */
     public function show()
     {
@@ -68,7 +69,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing activity page.
      */
     public function edit($id)
     {
@@ -80,7 +81,7 @@ class ActivityController extends Controller
         }
     }
     /**
-     * Update the specified resource in storage.
+     * Update the specified activity.
      */
     public function update(UpdateActivityRequest $request, $id)
     {
@@ -99,7 +100,7 @@ class ActivityController extends Controller
         }
     }
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified activity.
      */
     public function destroy($id)
     {
@@ -111,7 +112,9 @@ class ActivityController extends Controller
             return $e->getMessage();
         }
     }
-
+    /**
+     * Restore the specified activity.
+     */
     public function restore($id)
     {
         try {
@@ -124,7 +127,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove by force the specified activity.
      */
     public function forceDelete($id)
     {
@@ -133,6 +136,31 @@ class ActivityController extends Controller
             return redirect()->back();
 
         } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    /**
+     * show activities according to the search.
+     */
+    public function search(Request $request)
+    {
+        try {
+            $search = $request->search;
+            if(strtolower($search) == 'all' or $search == 'الكل')
+                return $this->index();
+            $activities = Activity::where(function ($query) use ($search){
+                $query->where('name->en','like',"%$search%")
+                    ->orwhere('name->ar','like',"%$search%")
+                    ->orwhere('location->en','like',"%$search%")
+                    ->orwhere('location->ar','like',"%$search%")
+                    ->orwhere('contact','like',"%$search%")
+                    ->orwhere('date','like',"%$search%");
+            })->get();
+            return view('academic_dep/activities.index_activities',
+                compact('search','activities'));
+
+        }catch (\Exception $e){
             return $e->getMessage();
         }
     }
