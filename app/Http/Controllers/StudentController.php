@@ -7,6 +7,7 @@ use App\Http\Requests\student\UpdateStudentRequest;
 use App\Models\Classs;
 use App\Models\Student;
 use Exception;
+use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
@@ -43,13 +44,18 @@ class StudentController extends Controller
     /**
      * store image.
      */
-    private function image($request)
+    private function image($request, $id)
     {
+        if ($request->photo != NULL){
         $requestData = $request->all();
         $filename = time().$request->file('photo')->getClientOriginalName();
         $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
         $requestData["photo"] = '/storage/'.$path;
         return $requestData['photo'];
+        }else{
+             $student = Student::findorFail($id);
+             return  $student->photo;
+        }
     }
     /**
      * translate the gender.
@@ -93,7 +99,7 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request),
+            'photo'=>$this->image($request,0),
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
@@ -166,7 +172,7 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request),
+            'photo'=>$this->image($request, $id),
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
@@ -212,6 +218,39 @@ class StudentController extends Controller
             return redirect()->route('students.index');
 
         } catch (\Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+
+
+    /**
+     * show classes according to the search.
+     */
+    public function search(Request $request)
+    {
+        try {
+            $search = $request->search;
+            if(strtolower($search) == 'all' or $search == 'الكل')
+                return $this->index();
+            $students = Student::where(function ($query) use ($search){
+                $query->where('name->en','like',"%$search%")
+                    ->orwhere('name->ar','like',"%$search%")
+                    ->orwhere('address->en','like',"%$search%")
+                    ->orwhere('address->ar','like',"%$search%")
+                    ->orwhere('gender->en','like',"%$search%")
+                    ->orwhere('gender->ar','like',"%$search%")
+                    ->orwhere('place_of_birth->en','like',"%$search%")
+                    ->orwhere('place_of_birth->ar','like',"%$search%")
+                    ->orwhere('birthdate','like',"%$search%");
+            })->orWhereHas('classes',function ($query) use ($search){
+                $query->where('name->en','like',"%$search%")
+                    ->orwhere('name->ar','like',"%$search%");
+            })->get();
+            return view('students_affairs/students.show_students',
+                compact('search','students'));
+
+        }catch (\Exception $e){
             return $e->getMessage();
         }
     }

@@ -37,7 +37,7 @@
                         {{-- 3 --}}
                         <div class="box mb-3 col-lg-6 col-md-12 ">
                             <label class="" for="photo">{{__('change students photo')}}</label>
-                            <input type="file" class="form-control " id="photo" name="photo" value="{{old('photo')}}">
+                            <input type="file" class="form-control " id="photo" name="photo" value="{{$student->photo}}">
                             <img src="{{asset($student->photo)}}"
                                  class="student-img" alt="photo">
                             @error('photo')

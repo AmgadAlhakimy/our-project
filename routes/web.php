@@ -28,11 +28,6 @@ Route::group(
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
-//        Route::get('/search', [EducationalLevelController::class, 'search']);
-
-//        Route::get('/educational_levels/search',
-//            [EducationalLevelController::class, 'search'])
-//            ->name('educational_levels.search');
 
         require __DIR__.'/search.php';
         require __DIR__.'/resources.php';
