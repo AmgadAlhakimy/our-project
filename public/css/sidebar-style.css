@@ -162,7 +162,7 @@
   margin-right: 5px;
 }
 .submenu .li-link,
-.line-black .dropdownlang .select {
+.line-black .dropDownLang .select {
   color: var(--color_dark2);
   width: 200px;
   font-weight: bold;
@@ -175,17 +175,17 @@
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   background-color: var(--sidebar-bg);
 }
-.line-black .dropdownlang .select{
+.line-black .dropDownLang .select{
   margin: 0px -10px 0px 0px;
 }
 
 .submenu .li-link:hover,
-.line-black .dropdownlang .select:hover{
+.line-black .dropDownLang .select:hover{
   background-color: var(--orange-color);
   margin-right: 10px;
   color: #fff;
 }
-.line-black .dropdownlang{
+.line-black .dropDownLang{
   margin-top: 7px;
 
 }
@@ -215,7 +215,7 @@
   margin-right: 10px;
   color: #fff;
 }
-.line-black .menulang {
+.line-black .menuLang {
   /* background-color: rgba(0, 0, 0, 0.1); */
   margin-left: 10px;
   width: 110%;
@@ -335,11 +335,11 @@
 }
 /* ____________________________ dropdown lang _____________________________________________ */
 /* start dropdown language */
-.dropdownlang{
+.dropDownLang{
   position: relative;
   margin: 0 10px;
 }
-.dropdownlang * {
+.dropDownLang * {
   box-sizing: border-box;
 }
 .select{
@@ -384,7 +384,7 @@
 .caret-rotate{
   color: red;
 }
-.menulang{
+.menuLang{
   list-style: none;
   padding: 0.2em 0.5em;
   border: 1px var(--border-color) solid;
@@ -404,7 +404,7 @@
   box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.2);
   background-color: var(--sidebar-bg);
 }
-.menulang li {
+.menuLang li {
   padding: 0.7em 0.5em;
   margin: 0.3em 0;
   border-radius: 0.5em;
@@ -412,7 +412,7 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.menulang li:hover {
+.menuLang li:hover {
   background-color: var(--orange-color);
   margin-left: 10px;
 }

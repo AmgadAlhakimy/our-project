@@ -23,13 +23,13 @@
     <!-- styles -->
     <!-- styles -->
 </head>
-<body >
+<body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
 
 <!-- Start head  -->
 <!-- Start content  -->
 <div class="content">
-    <div class="head ">
+    <div class="head " dir="ltr">
         {{-- THE MAIN SEARCH OF SIDEBAR --}}
         <div class="search p-relative">
             <label for="rtl"></label> <input class="search1" type="search" placeholder="{{__('sidebare.search')}}" id="rtl" />
@@ -41,13 +41,13 @@
             <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
         </div>
         {{-- THE DROPDOWN LUNGUAGE --}}
-        <div class="dropdownlang">
+        <div class="dropDownLang">
             <div class="select">
                 <span class="selected">{{__('sidebar.Lang')}}</span>
                 <div class="caret"></div>
             </div>
 
-            <ul class="menulang">
+            <ul class="menuLang">
 
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
@@ -58,36 +58,11 @@
                 @endforeach
             </ul>
         </div>
-        
-        {{-- <div class=""> --}}
-            <a class=" me-2 ms-2 card-info" aria-current="page" href="#"><i class="fab-regular fa-home fa-fw"></i></a>
-        {{-- </div> --}}
-        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-auto qmb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">{{__('public.home')}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{__('public.link')}}</a>
-                </li>
-                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <li>
-                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                            {{ $properties['native'] }}
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="{{__('public.search')}}" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">{{__('public.search')}}</button>
-            </form>
-        </div> --}}
 
+        <div class="row">
+            <i class="col-1 fab-regular fa-home fa-fw"></i>
+            <a class="col me-2 ms-2 card-info" aria-current="page" href="#">home</a>
+        </div>
     </div>
 </div>
 <!-- end head  -->
@@ -125,13 +100,13 @@
                             <div class="line-black">
                                 {{-- -------------- --}}
                                 {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)" id="">
+                                <div class="dropDownLang my-element" onclick="cancelclick(event)" id="">
                                     <div class="select">
                                         <span class="selected"> {{__('sidebar.addition')}}</span>
                                         <div class="caret"></div>
                                     </div>
                                     {{-- onclick="propagateClick(event)" --}}
-                                    <ul class="menulang " id="childElement">
+                                    <ul class="menuLang " id="childElement">
                                         <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">{{__('sidebar.add educational level')}}</a>
                                         <a id="" href="{{route('classes.create')}}" class="li-link_2">  {{__('sidebar.add a class')}}</a>
                                         <a href="{{route('subjects.create')}}" class="li-link_2"> {{__('sidebar.add subject')}}</a>
@@ -141,12 +116,12 @@
                                 {{-- END THE SECOND DROPDOWN --}}
                                 {{-- -------------- --}}
                                 {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                     <div class="select">
                                         <span class="selected"> {{__('sidebar.academic department review')}} </span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="{{route('educational_levels.index')}}" class="li-link_2">{{__('sidebar.review of educational level')}}</a>
                                         <a href="{{route('classes.index')}}" class="li-link_2">{{__('sidebar.review of classes')}}</a>
                                         <a href="{{route('subjects.index')}}" class="li-link_2"> {{__('sidebar.review of subjects')}}</a>
@@ -156,12 +131,12 @@
                                 {{-- END THE SECOND DROPDOWN --}}
                                 {{-- -------------- --}}
                                 {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                     <div class="select">
                                         <span class="selected">{{__('sidebar.trash')}}</span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="{{route('educational_levels.show',0)}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
                                         <a href="{{route('classes.show',0)}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
                                         <a href="{{route('subjects.show',0)}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
@@ -261,12 +236,12 @@
                                 <a href="#" class="li-link">معلومات اولياء الامور</a>
                                 <a href="#" class="li-link">2</a>
                                 {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropdownlang my-element">
+                                <div class="dropDownLang my-element">
                                     <div class="select">
                                         <span class="selected">Lang</span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="#" class="li-link_2">1</a>
                                         <a href="#" class="li-link_2">2</a>
                                         <a href="#" class="li-link_2">3</a>
@@ -276,12 +251,12 @@
                                 </div>
                                 {{-- END THE SECOND DROPDOWN --}}
                                 {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropDownLang my-element" >
                                     <div class="select">
                                         <span class="selected">Lang</span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="#" class="li-link_2">1</a>
                                         <a href="#" class="li-link_2">2</a>
                                         <a href="#" class="li-link_2">3</a>
@@ -346,36 +321,36 @@
                             {{-- -------------شؤون الطلاب---------------  --}}
                     <!-- ======================== STUDENTS ========================== -->
                     <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name">{{__('sidebar.students affairs')}}</span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a student')}}</a>
-                                <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
-                                <a href="#" class="li-link">{{__('sidebar.deleted student')}}</a>
-                                <a href='/absence' class="li-link">{{__('sidebar.student absence')}}</a>
-                                <a href="#" class="li-link">2</a>
-                                {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
-                                    <div class="select">
-                                        <span class="selected">Lang</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menulang">
-                                        <a href="#" class="li-link_2">1</a>
-                                        <a href="#" class="li-link_2">2</a>
-                                        <a href="#" class="li-link_2">3</a>
-                                        <a href='#' class="li-link_2">4</a>
-                                        <a href="#" class="li-link_2">5</a>
-
+                    <!-- ========== 2 ============ -->
+                    <div class="sidebar-title">
+                        <a href="#" class="li-link title-4">
+                            <i
+                                class="icon-1 fa-solid fa-window-restore"
+                            ></i>
+                            <span class="menu-name">{{__('sidebar.students affairs')}}</span>
+                            <i class="icon-1 fa-solid fa-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class="submenu">
+                        <div class="line-black">
+                            <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a student')}}</a>
+                            <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
+                            <a href="#" class="li-link">{{__('sidebar.deleted student')}}</a>
+                            <a href='/absence' class="li-link">{{__('sidebar.student absence')}}</a>
+                            <a href="#" class="li-link">2</a>
+                            {{-- START THE SECOND DROPDOWN --}}
+                            <div class="dropDownLang my-element" onclick="cancelclick(event)">
+                                <div class="select">
+                                    <span class="selected">Lang</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul class="menuLang">
+                                    <a href="#" class="li-link_2">1</a>
+                                    <a href="#" class="li-link_2">2</a>
+                                    <a href="#" class="li-link_2">3</a>
+                                    <a href='#' class="li-link_2">4</a>
+                                    <a href="#" class="li-link_2">5</a>
+                                </ul>
                                 {{-- تجربة --}}
                                 {{-- <a href="#" class="">
                                     <ul class="list-ul">
@@ -401,9 +376,8 @@
                                 {{-- END THE SECOND DROPDOWN --}}
                             </div>
                         </div>
-                    </li>
 
-                    {{-- ---المعلمين--- --}}
+                        {{-- ---المعلمين--- --}}
                     <!-- ======================== TEACHERS ========================== -->
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
@@ -418,7 +392,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/add-marks' class="li-link">الدرجات</a>
+                                <a href='/marks' class="li-link">الدرجات</a>
                                 <a href='/follow-up_nersory' class="li-link"> دفتر المتابعة الروضة</a>
                                 <a href='/follow-up_school' class="li-link">دفتر المتابعة المدرسة</a>
                                 <a href='/follow-up_schoo' class="li-link">قائمة بطلاب الفصل الفلاني</a>
@@ -542,6 +516,8 @@
                         </div>
                     </li>
                     <!-- ====================== -->
+                    </div>
+                    </li>
                 </ul>
 
             </div>

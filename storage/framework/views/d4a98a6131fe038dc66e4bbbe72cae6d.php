@@ -1,28 +1,25 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
 
-
-
+        
+        
         <div class="table-header">
-
+            
             <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational level info')); ?></h4>
-<<<<<<< HEAD
-            <div class="row first-card ">
-=======
-            <div class="row frist-card mt-4 ">
->>>>>>> 1be2e7756e298cd3aa6cea6a98fbd6f90dbcddfc
-                <form method="get" action="/search">
+            <div class="row first-card mt-4">
+                <form method="post" action="<?php echo e(route('educational_levels.search')); ?>">
+                    <?php echo method_field('GET'); ?>
                     <?php echo csrf_field(); ?>
                     <div class="row">
                         <label class="col-10">
-                            <input type= "text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
+                            <input type="text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
                         </label>
                         <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
                     </div>
                 </form>
             </div>
         </div>
-
+        
 
         <!-- table-hover table-striped -->
         <div class="table-section">

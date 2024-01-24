@@ -27,13 +27,13 @@ logo.addEventListener("click", () => {
 
 // --------------------------------------------------------------------------------
 //  the dropdown of language
-const dropdowns = document.querySelectorAll(".dropdownlang");
+const dropdowns = document.querySelectorAll(".dropDownLang");
 
 dropdowns.forEach((dropdownlang) => {
     const select = dropdownlang.querySelector(".select");
     const caret = dropdownlang.querySelector(".caret");
-    const menulang = dropdownlang.querySelector(".menulang");
-    const options = dropdownlang.querySelectorAll(".menulang li"); //check
+    const menulang = dropdownlang.querySelector(".menuLang");
+    const options = dropdownlang.querySelectorAll(".menuLang li"); //check
     const selected = dropdownlang.querySelector(".selected");
 
     // add a click event to the select element
@@ -87,4 +87,44 @@ function disableInput() {
     input.disabled = true;
     input.classList.add("disabled");
     input.classList.remove("enabled");
+}
+
+// ---------------------
+function toggleInput() {
+    var checkbox1 = document.getElementById("takeMedicineE");
+    var checkbox2 = document.getElementById("haveAllergy");
+    var checkbox3 = document.getElementById("healthProblem");
+    // 
+    var input1 = document.getElementById("std_medicine_desc_1")
+    var input2 = document.getElementById("std_medicine_desc_2")
+    // 
+    var input3 = document.getElementById("std_allergy_desc_1")
+    var input4 = document.getElementById("std_allergy_desc_2")
+    // 
+    var input5 = document.getElementById("std_helth_desc_1")
+    var input6 = document.getElementById("std_helth_desc_2")
+
+    if(checkbox1.checked) {
+        input1.disabled=false;
+        input2.disabled=false;
+    }else{
+        input1.disabled=true;
+        input2.disabled=true;
+    }
+    // 
+    if(checkbox2.checked) {
+        input3.disabled=false;
+        input4.disabled=false;
+    }else{
+        input3.disabled=true;
+        input4.disabled=true;
+    }
+    // 
+    if(checkbox3.checked) {
+        input5.disabled=false;
+        input6.disabled=false;
+    }else{
+        input5.disabled=true;
+        input6.disabled=true;
+    }
 }

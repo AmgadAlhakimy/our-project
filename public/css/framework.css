@@ -594,12 +594,19 @@ input[type=checkbox].toggle:not(:checked) + label.rounded::before{
 input[type=checkbox].toggle:checked + label.rounded::before{
   background-color: var(--orange-color);
 }
+input[type=checkbox].toggle:checked + .test2 {
+  background-color: var(--orange-color);
+}
 input[type=checkbox].toggle:checked + label::before{
   background-color: var(--sidebar-bg);
 }
 input[type=checkbox].toggle:checked + label.rounded::before{
   right: auto;
   left: 40px;
+  
+}
+input[type=checkbox].toggle:checked + input.test1{
+  background-color: red;
 }
 
 /* End student checkbox */

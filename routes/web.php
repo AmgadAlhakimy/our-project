@@ -25,21 +25,20 @@ Route::group(
     ],
     function () {
 
+
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
-//        Route::get('/search', [EducationalLevelController::class, 'search']);
-
-//        Route::get('/educational_levels/search',
-//            [EducationalLevelController::class, 'search'])
-//            ->name('educational_levels.search');
+        Route::get('marks', function () {
+            return view('teatchers/marks/add');
+        });
 
         require __DIR__.'/search.php';
         require __DIR__.'/resources.php';
         require __DIR__.'/restore.php';
         require __DIR__.'/force_delete.php';
-
 });
+
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
 

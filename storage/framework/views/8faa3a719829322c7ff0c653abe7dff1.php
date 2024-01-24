@@ -23,13 +23,13 @@
     <!-- styles -->
     <!-- styles -->
 </head>
-<body >
+<body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
 
 
 <!-- Start head  -->
 <!-- Start content  -->
 <div class="content">
-    <div class="head ">
+    <div class="head " dir="ltr">
         
         <div class="search p-relative">
             <label for="rtl"></label> <input class="search1" type="search" placeholder="<?php echo e(__('sidebare.search')); ?>" id="rtl" />
@@ -41,13 +41,13 @@
             <img src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>" alt="skills"/>
         </div>
         
-        <div class="dropdownlang">
+        <div class="dropDownLang">
             <div class="select">
                 <span class="selected"><?php echo e(__('sidebar.Lang')); ?></span>
                 <div class="caret"></div>
             </div>
 
-            <ul class="menulang">
+            <ul class="menuLang">
 
                 <?php $__currentLoopData = LaravelLocalization::getSupportedLocales(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $localeCode => $properties): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <li>
@@ -59,12 +59,11 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
-        
-        
-            <a class=" me-2 ms-2 card-info" aria-current="page" href="#"><i class="fab-regular fa-home fa-fw"></i></a>
-        
-        
 
+        <div class="row">
+            <i class="col-1 fab-regular fa-home fa-fw"></i>
+            <a class="col me-2 ms-2 card-info" aria-current="page" href="#">home</a>
+        </div>
     </div>
 </div>
 <!-- end head  -->
@@ -102,13 +101,13 @@
                             <div class="line-black">
                                 
                                 
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)" id="">
+                                <div class="dropDownLang my-element" onclick="cancelclick(event)" id="">
                                     <div class="select">
                                         <span class="selected"> <?php echo e(__('sidebar.addition')); ?></span>
                                         <div class="caret"></div>
                                     </div>
                                     
-                                    <ul class="menulang " id="childElement">
+                                    <ul class="menuLang " id="childElement">
                                         <a id="" href="<?php echo e(route('educational_levels.create')); ?>" class="li-link_2 "><?php echo e(__('sidebar.add educational level')); ?></a>
                                         <a id="" href="<?php echo e(route('classes.create')); ?>" class="li-link_2">  <?php echo e(__('sidebar.add a class')); ?></a>
                                         <a href="<?php echo e(route('subjects.create')); ?>" class="li-link_2"> <?php echo e(__('sidebar.add subject')); ?></a>
@@ -118,12 +117,12 @@
                                 
                                 
                                 
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                     <div class="select">
                                         <span class="selected"> <?php echo e(__('sidebar.academic department review')); ?> </span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="<?php echo e(route('educational_levels.index')); ?>" class="li-link_2"><?php echo e(__('sidebar.review of educational level')); ?></a>
                                         <a href="<?php echo e(route('classes.index')); ?>" class="li-link_2"><?php echo e(__('sidebar.review of classes')); ?></a>
                                         <a href="<?php echo e(route('subjects.index')); ?>" class="li-link_2"> <?php echo e(__('sidebar.review of subjects')); ?></a>
@@ -133,12 +132,12 @@
                                 
                                 
                                 
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                     <div class="select">
                                         <span class="selected"><?php echo e(__('sidebar.trash')); ?></span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="<?php echo e(route('educational_levels.show',0)); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted educational level')); ?></a>
                                         <a href="<?php echo e(route('classes.show',0)); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted classes')); ?></a>
                                         <a href="<?php echo e(route('subjects.show',0)); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted subjects')); ?></a>
@@ -185,12 +184,12 @@
                                 <a href="#" class="li-link">معلومات اولياء الامور</a>
                                 <a href="#" class="li-link">2</a>
                                 
-                                <div class="dropdownlang my-element">
+                                <div class="dropDownLang my-element">
                                     <div class="select">
                                         <span class="selected">Lang</span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="#" class="li-link_2">1</a>
                                         <a href="#" class="li-link_2">2</a>
                                         <a href="#" class="li-link_2">3</a>
@@ -200,12 +199,12 @@
                                 </div>
                                 
                                 
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
+                                <div class="dropDownLang my-element" >
                                     <div class="select">
                                         <span class="selected">Lang</span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menulang">
+                                    <ul class="menuLang">
                                         <a href="#" class="li-link_2">1</a>
                                         <a href="#" class="li-link_2">2</a>
                                         <a href="#" class="li-link_2">3</a>
@@ -249,43 +248,42 @@
                             
                     <!-- ======================== STUDENTS ========================== -->
                     <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name"><?php echo e(__('sidebar.students affairs')); ?></span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href='<?php echo e(route('students.create')); ?>' class="li-link"><?php echo e(__('sidebar.add a student')); ?></a>
-                                <a href="<?php echo e(route('students.index')); ?>" class="li-link"><?php echo e(__('sidebar.review students')); ?></a>
-                                <a href="#" class="li-link"><?php echo e(__('sidebar.deleted student')); ?></a>
-                                <a href='/absence' class="li-link"><?php echo e(__('sidebar.student absence')); ?></a>
-                                <a href="#" class="li-link">2</a>
-                                
-                                <div class="dropdownlang my-element" onclick="cancelclick(event)">
-                                    <div class="select">
-                                        <span class="selected">Lang</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menulang">
-                                        <a href="#" class="li-link_2">1</a>
-                                        <a href="#" class="li-link_2">2</a>
-                                        <a href="#" class="li-link_2">3</a>
-                                        <a href='#' class="li-link_2">4</a>
-                                        <a href="#" class="li-link_2">5</a>
-
+                    <!-- ========== 2 ============ -->
+                    <div class="sidebar-title">
+                        <a href="#" class="li-link title-4">
+                            <i
+                                class="icon-1 fa-solid fa-window-restore"
+                            ></i>
+                            <span class="menu-name"><?php echo e(__('sidebar.students affairs')); ?></span>
+                            <i class="icon-1 fa-solid fa-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class="submenu">
+                        <div class="line-black">
+                            <a href='<?php echo e(route('students.create')); ?>' class="li-link"><?php echo e(__('sidebar.add a student')); ?></a>
+                            <a href="<?php echo e(route('students.index')); ?>" class="li-link"><?php echo e(__('sidebar.review students')); ?></a>
+                            <a href="#" class="li-link"><?php echo e(__('sidebar.deleted student')); ?></a>
+                            <a href='/absence' class="li-link"><?php echo e(__('sidebar.student absence')); ?></a>
+                            <a href="#" class="li-link">2</a>
+                            
+                            <div class="dropDownLang my-element" onclick="cancelclick(event)">
+                                <div class="select">
+                                    <span class="selected">Lang</span>
+                                    <div class="caret"></div>
+                                </div>
+                                <ul class="menuLang">
+                                    <a href="#" class="li-link_2">1</a>
+                                    <a href="#" class="li-link_2">2</a>
+                                    <a href="#" class="li-link_2">3</a>
+                                    <a href='#' class="li-link_2">4</a>
+                                    <a href="#" class="li-link_2">5</a>
+                                </ul>
                                 
                                 
                             </div>
                         </div>
-                    </li>
 
-                    
+                        
                     <!-- ======================== TEACHERS ========================== -->
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
@@ -300,7 +298,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/add-marks' class="li-link">الدرجات</a>
+                                <a href='/marks' class="li-link">الدرجات</a>
                                 <a href='/follow-up_nersory' class="li-link"> دفتر المتابعة الروضة</a>
                                 <a href='/follow-up_school' class="li-link">دفتر المتابعة المدرسة</a>
                                 <a href='/follow-up_schoo' class="li-link">قائمة بطلاب الفصل الفلاني</a>
@@ -380,6 +378,8 @@
                         </div>
                     </li>
                     <!-- ====================== -->
+                    </div>
+                    </li>
                 </ul>
 
             </div>
