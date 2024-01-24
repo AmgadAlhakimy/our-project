@@ -35,11 +35,11 @@
                             @enderror
                         </div>
                         {{-- 3 --}}
-                        <div class="box mb-3 col-lg-6 col-md-12 ">
+                        <div class="box row me-2 mb-3 col-lg-6 col-md-12 ">
                             <label class="" for="photo">{{__('change students photo')}}</label>
-                            <input type="file" class="form-control " id="photo" name="photo" value="{{$student->photo}}">
+                            <input type="file" class="form-control col-8" id="photo" name="photo" value="{{$student->photo}}">
                             <img src="{{asset($student->photo)}}"
-                                 class="student-img" alt="photo">
+                                 class="student-img col-4" alt="photo">
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -66,11 +66,13 @@
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender">{{__('student.gender')}}</label>
-                            <select class="col form-select form-control" id="gender" name="gender"  value="{{$student->getTranslation('gender','en')}}">
+                            <select class="col form-select form-control" id="gender" name="gender"  >
                                 <option class="text-center"
-                                        value="{{__('student.male')}}">{{__('student.male')}}</option>
+                                        value="{{__('student.male')}}" @if($student->getTranslation('address','en') == 'male') selected @endif>
+                                    {{__('student.male')}}</option>
                                 <option class="text-center"
-                                        value="{{__('student.female')}}">{{__('student.female')}}</option>
+                                        value="{{__('student.female')}}"  @if($student->getTranslation('address','en') == 'male') selected @endif>
+                                    {{__('student.female')}}</option>
                             </select>
                             @error('gender')
                             <small class="form-text text-danger">{{$message}}</small>

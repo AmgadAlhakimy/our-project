@@ -6,12 +6,13 @@
             
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">Student Information</h4>
-                <div class="row frist-card mt-4 ">
-                    <form method="get" action="/search">
+                <div class="row first-card mt-4">
+                    <form method="post" action="<?php echo e(route('students.search')); ?>">
+                        <?php echo method_field('GET'); ?>
                         <?php echo csrf_field(); ?>
                         <div class="row">
                             <label class="col-10">
-                                <input type= "text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
+                                <input type="text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
                             </label>
                             <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
                         </div>
@@ -19,43 +20,35 @@
                 </div>
             </div>
             
-                    <form method="get" action="<?php echo e(route('students.create')); ?>">
-            <div class="box col-lg-12 col-md-12 ">
-                <label for="sex"></label><select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" >
-                        <?php $__currentLoopData = $classes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $class): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <button class="" type="submit">
-                                <option class="text-center" value="<?php echo e($class->id); ?>"><?php echo e($class->name); ?>
 
-                                </option>
-                                    </button>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </select>
-                <?php $__errorArgs = ['sex'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                <small class="form-text text-danger"><?php echo e($message); ?></small>
-                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                </form>
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
 
-            <div class="cards-container  third-card">
-                <div class="card-info card-info_2 col ms-2 me-2">
-                    <h4 class=" me-2 ms-2"><?php echo e(__('public.teacher')); ?></h4>
-                    <h4 class=" Names">mohammad mohsen</h4>
-                </div>
 
-                <div class="card-info card-info_2 col ms-2 me-2">
-                    <h4 class=" me-2 ms-2"><?php echo e(__("public.month")); ?></h4>
-                    <h4 class=" Names">10</h4>
-                </div>
-            </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
         
         <!-- table-hover table-striped -->
         <div class="table-section">
@@ -67,7 +60,7 @@ unset($__errorArgs, $__bag); ?>
                         <th ><div class="th-head-3" ><?php echo e(__('public.name')); ?></div></th>
                         <th ><div class="th-head-1" >photo</div></th>
                         <th ><div class="th-head-3" ><?php echo e(__('public.address')); ?></div></th>
-                        <th ><div class="th-head-1" >sex</div></th>
+                        <th ><div class="th-head-1" >gender</div></th>
                         <th ><div class="th-head-2" >birth date</div></th>
                         <th ><div class="th-head-2" >birth place</div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.class')); ?></div></th>
@@ -84,12 +77,12 @@ unset($__errorArgs, $__bag); ?>
                             <td><?php echo e($student->id); ?></td>
                             <td><?php echo e($student->name); ?></td>
                             <td><img src="<?php echo e(asset($student->photo)); ?>"
-                                class="student-img" alt="student's photo"></td>
+                                class="student-img" alt="photo"></td>
                             <td><?php echo e($student->address); ?></td>
-                            <td><?php echo e($student->sex); ?></td>
+                            <td><?php echo e($student->gender); ?></td>
                             <td><?php echo e($student->birthdate); ?></td>
                             <td><?php echo e($student->place_of_birth); ?></td>
-                            <td><?php echo e(App\Models\Classs::findorfail($student->class_id)->name); ?></td>
+                            <td><?php echo e($student->classes->name); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
                             <td><button class="btn save-button btn-info  w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>

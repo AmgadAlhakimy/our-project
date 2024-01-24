@@ -48,10 +48,11 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-
-                        <div class="box col">
-                            <label class="" for="photo"><?php echo e(__('student.photo')); ?></label>
-                            <input type="file" class="form-control " id="photo" name="photo" value="<?php echo e($student->photo); ?>">
+                        <div class="box row me-2 mb-3 col-lg-6 col-md-12 ">
+                            <label class="" for="photo"><?php echo e(__('change students photo')); ?></label>
+                            <input type="file" class="form-control col-8" id="photo" name="photo" value="<?php echo e($student->photo); ?>">
+                            <img src="<?php echo e(asset($student->photo)); ?>"
+                                 class="student-img col-4" alt="photo">
                             <?php $__errorArgs = ['photo'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -63,7 +64,6 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
                         <div class="box row">
                             <label for="address"><?php echo e(__('student.addresses')); ?></label>
                             <div class="col-lg-6 col-md-6">
@@ -99,14 +99,16 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="sex"><?php echo e(__('student.sex')); ?></label>
-                            <select class="col form-select form-control" id="sex" name="sex"  value="<?php echo e($student->getTranslation('sex','en')); ?>">
+                            <label for="gender"><?php echo e(__('student.gender')); ?></label>
+                            <select class="col form-select form-control" id="gender" name="gender"  >
                                 <option class="text-center"
-                                        value="<?php echo e(__('student.male')); ?>"><?php echo e(__('student.male')); ?></option>
+                                        value="<?php echo e(__('student.male')); ?>" <?php if($student->getTranslation('address','en') == 'male'): ?> selected <?php endif; ?>>
+                                    <?php echo e(__('student.male')); ?></option>
                                 <option class="text-center"
-                                        value="<?php echo e(__('student.female')); ?>"><?php echo e(__('student.female')); ?></option>
+                                        value="<?php echo e(__('student.female')); ?>"  <?php if($student->getTranslation('address','en') == 'male'): ?> selected <?php endif; ?>>
+                                    <?php echo e(__('student.female')); ?></option>
                             </select>
-                            <?php $__errorArgs = ['sex'];
+                            <?php $__errorArgs = ['gender'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -187,210 +189,16 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <!-- End personal info  -->
 
-                <!-- Start parent info  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- End parent info  -->
-
                 <!-- Start health info  -->
                 <h3 class="container-title"><?php echo e(__('student.health info')); ?></h3>
                 <div class="container containers-style mb-5">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
                             <h4 class="p-2"><?php echo e(__('student.does the student')); ?></h4>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <label class="mt-3"><?php echo e(__('student.take any medicine ?')); ?></label>
                             <div class="input-group mt-2 mb-2">
-                                <div class="mt-3 col-lg-2 col-md-3">
-                                    <label class="form-label col me-2" for="takeMedicine" ><?php echo e(__('student.no')); ?></label>
-                                    <input class="checkbox col" type="checkbox" name="take_medicine" id="takeMedicine" value="<?php echo e(old('take_medicine')); ?>" checked>
-                                    <?php $__errorArgs = ['take_medicine'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <small class="form-text text-danger"><?php echo e($message); ?></small>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                    <label class="form-label col ms-5" for="takeMedicine"><?php echo e(__('student.yes')); ?></label>
-                                </div>
                                 <input type="text" name="medicine_desc" id="std_medicine_desc" class="form-control"
-                                    aria-label="Text input with radio button" placeholder="desc in english">
+                                    aria-label="Text input with radio button"  value="<?php echo e($student->getTranslation('medicine_desc','en')); ?>">
                                 <?php $__errorArgs = ['medicine_desc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -402,8 +210,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
 
-                                <input type="text" name="medicine_desc_ar" id="std_medicine_desc" class="form-control" value="<?php echo e(old('medicine_desc_ar')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic">
+                                <input type="text" name="medicine_desc_ar" id="std_medicine_desc" class="form-control" value="<?php echo e($student->getTranslation('medicine_desc','ar')); ?>"
+                                    aria-label="Text input with radio button">
                                 <?php $__errorArgs = ['medicine_desc_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -417,24 +225,8 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <label class="mt-3"><?php echo e(__('student.have an allergy ?')); ?></label>
                             <div class="input-group mt-2 mb-2">
-                                <div class="mt-3 col-lg-2 col-md-3">
-                                    <label class="form-label col me-2" for="takeMedicine "><?php echo e(__('student.no')); ?></label>
-
-                                    <input class="checkbox col" checked type="checkbox" name="have_allergy" id="takeMedicine "  value="<?php echo e(old('have_allergy')); ?>">
-                                    <?php $__errorArgs = ['have_allergy'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <small class="form-text text-danger"><?php echo e($message); ?></small>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                    <label class="form-label col ms-5" for="takeMedicine"><?php echo e(__('student.yes')); ?></label>
-                                </div>
-                                <input type="text" name="allergy_desc" id="std_medicine_desc" class="form-control" value="<?php echo e(old('allergy_desc')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in english">
+                                <input type="text" name="allergy_desc" id="std_medicine_desc" class="form-control" value="<?php echo e($student->getTranslation('allergy_desc','en')); ?>"
+                                    aria-label="Text input with radio button" >
                                 <?php $__errorArgs = ['allergy_desc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -446,8 +238,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
 
-                                <input type="text" name="allergy_desc_ar" id="std_medicine_desc" class="form-control" value="<?php echo e(old('allergy_desc_ar')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic">
+                                <input type="text" name="allergy_desc_ar" id="std_medicine_desc" class="form-control" value="<?php echo e($student->getTranslation('allergy_desc','ar')); ?>"
+                                    aria-label="Text input with radio button" >
                                 <?php $__errorArgs = ['allergy_desc_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -461,25 +253,10 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <label class="mt-3"><?php echo e(__('student.have any health problem ?')); ?></label>
                             <div class="input-group mt-2 mb-2">
-                                <div class="mt-3 col-lg-2 col-md-3">
-                                    <label class="form-label col me-2" for="takeMedicine "><?php echo e(__('student.no')); ?></label>
-                                    <input class="checkbox col" type="checkbox" name="have_health_problem" checked
-                                        id="takeMedicine" value="<?php echo e(old('have_health_problem')); ?>">
-                                    <?php $__errorArgs = ['have_health_problem'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                                    <small class="form-text text-danger"><?php echo e($message); ?></small>
-                                    <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-                                    <label class="form-label col ms-5" for="takeMedicine"><?php echo e(__('student.yes')); ?></label>
-                                </div>
+
                                 <input type="text" name="health_problem_desc" id="std_medicine_desc"
-                                    class="form-control" value="<?php echo e(old('health_problem_desc')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in english">
+                                    class="form-control" value="<?php echo e($student->getTranslation('health_problem_desc','en')); ?>"
+                                    aria-label="Text input with radio button" >
                                 <?php $__errorArgs = ['health_problem_desc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -492,8 +269,8 @@ endif;
 unset($__errorArgs, $__bag); ?>
 
                                 <input type="text" name="health_problem_desc_ar" id="std_medicine_desc"
-                                    class="form-control" value="<?php echo e(old('health_problem_desc_ar')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic">
+                                    class="form-control" value="<?php echo e($student->getTranslation('health_problem_desc','ar')); ?>"
+                                    aria-label="Text input with radio button">
                                 <?php $__errorArgs = ['health_problem_desc_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -515,7 +292,7 @@ unset($__errorArgs, $__bag); ?>
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
                             <label class="form-label" for="std_Note"><?php echo e(__('student.note')); ?></label>
-                            <textarea name="note" class="form-control" id="std_Note" cols="50" rows="5"><?php echo e(old('note')); ?></textarea>
+                            <textarea name="note" class="form-control" id="std_Note" cols="50" rows="5"><?php echo e($student->note); ?></textarea>
                         </div>
                     </div>
                 </div>

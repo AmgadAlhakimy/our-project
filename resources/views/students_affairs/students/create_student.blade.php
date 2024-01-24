@@ -141,11 +141,7 @@
                             {{-- ---- --}}
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-<<<<<<< HEAD
                                     <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="{{old('take_medicine')}}" onchange="toggleInput()">
-=======
-                                    <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="yes">
->>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
                                     <label class="form-label col rounded" for="takeMedicineE" ></label>
                                 </div>
                                 {{-- -*- --}}
@@ -153,38 +149,27 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-<<<<<<< HEAD
-                                <input type="  text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1"
-                                    aria-label="Text input with radio button" placeholder="desc in english" disabled >
+                                <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1"value="{{old('medicine_desc')}}"
+                                    aria-label="Text input with radio button" placeholder="desc in english" hidden >
                                 @error('medicine_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
-=======
-                                    <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc"
-                                        aria-label="Text input with radio button" placeholder="desc in english" >
-                                    @error('medicine_desc')
-                                        <small class="form-text text-danger">{{$message}}</small>
-                                    @enderror
->>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
                                 {{-- -*- --}}
                                 <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc_ar" id="std_medicine_desc_2" value="{{old('medicine_desc_ar')}}"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic" disabled>
+                                    aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 @error('medicine_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
-                            
+
                             {{-- 2 --}}
                             {{-- -------------------------------- --}}
                             <label class="mt-4">{{__('student.have an allergy ?')}}</label>
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-<<<<<<< HEAD
                                     <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="{{old('have_allergy')}}" onchange="toggleInput()">
-=======
-                                    <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="yes" >
->>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
+
                                     <label class="form-label col rounded" for="haveAllergy" ></label>
                                 </div>
                                 {{-- -*- --}}
@@ -193,13 +178,13 @@
                                 @enderror
                                 {{-- -*- --}}
                                 <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc" id="std_allergy_desc_1"
-                                    aria-label="Text input with radio button" value="{{old('allergy_desc')}}" placeholder="desc in english" disabled>
+                                    aria-label="Text input with radio button" value="{{old('allergy_desc')}}" placeholder="desc in english" hidden>
                                 @error('allergy_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
                                 <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc_ar" id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic" disabled>
+                                    aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 @error('allergy_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -210,11 +195,7 @@
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-<<<<<<< HEAD
                                     <input class="toggle col" type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" >
-=======
-                                    <input class="toggle col" type="checkbox" name="have_health_problem"  id="healthProblem" value="yes" >
->>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
                                     <label class="form-label col rounded" for="healthProblem" id="healthProblem"></label>
                                 </div>
                                 {{-- -*- --}}
@@ -222,14 +203,15 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc" id="std_helth_desc_1"
-                                    aria-label="Text input with radio button" value="{{old('health_problem_desc')}}" placeholder="desc in english" disabled>
+                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc" id="std_health_desc_1"
+                                    aria-label="Text input with radio button" value="{{old('health_problem_desc')}}" placeholder="desc in english" hidden>
                                 @error('health_problem_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc_ar" id="std_helth_desc_2" value="{{old('health_problem_desc_ar')}}"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic" disabled>
+                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc_ar" id="std_health_desc_2"
+                                       value="{{old('health_problem_desc_ar')}}"
+                                       aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 @error('health_problem_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror

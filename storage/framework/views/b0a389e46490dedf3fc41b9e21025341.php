@@ -10,7 +10,7 @@
             <form method="post" action="<?php echo e(route('students.store')); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <!-- Start personal info  -->
-                <h3 class="container-title"><?php echo e(__('student.student info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('create student')); ?></h3>
                 <div class="container containers-style ">
                     <div class="row">
                         
@@ -95,14 +95,14 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="sex"><?php echo e(__('student.sex')); ?></label>
-                            <select class="col form-select form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
+                            <label for="gender"><?php echo e(__('student.gender')); ?></label>
+                            <select class="col form-select form-control" id="gender" name="gender" value="<?php echo e(old('gender')); ?>">
                                 <option class="text-center"
                                         value="<?php echo e(__('student.male')); ?>"><?php echo e(__('student.male')); ?></option>
                                 <option class="text-center"
                                         value="<?php echo e(__('student.female')); ?>"><?php echo e(__('student.female')); ?></option>
                             </select>
-                            <?php $__errorArgs = ['sex'];
+                            <?php $__errorArgs = ['gender'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -113,6 +113,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
+                        <input type="hidden" name="gender_ar_m" value="<?php echo e(__('student.male_ar')); ?>">
+                        <input type="hidden" name="gender_ar_f" value="<?php echo e(__('student.female_ar')); ?>">
                         
                         <div class="box col-lg-6 col-md-6">
                             <label for="age"><?php echo e(__('student.birthdate')); ?></label>
@@ -223,8 +225,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 
-                                <input type="  text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1"
-                                    aria-label="Text input with radio button" placeholder="desc in english" disabled >
+                                <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1"value="<?php echo e(old('medicine_desc')); ?>"
+                                    aria-label="Text input with radio button" placeholder="desc in english" hidden >
                                 <?php $__errorArgs = ['medicine_desc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -237,7 +239,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                 
                                 <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc_ar" id="std_medicine_desc_2" value="<?php echo e(old('medicine_desc_ar')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic" disabled>
+                                    aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 <?php $__errorArgs = ['medicine_desc_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -249,7 +251,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            
+
                             
                             
                             <label class="mt-4"><?php echo e(__('student.have an allergy ?')); ?></label>
@@ -257,6 +259,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="<?php echo e(old('have_allergy')); ?>" onchange="toggleInput()">
+
                                     <label class="form-label col rounded" for="haveAllergy" ></label>
                                 </div>
                                 
@@ -272,7 +275,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                 
                                 <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc" id="std_allergy_desc_1"
-                                    aria-label="Text input with radio button" value="<?php echo e(old('allergy_desc')); ?>" placeholder="desc in english" disabled>
+                                    aria-label="Text input with radio button" value="<?php echo e(old('allergy_desc')); ?>" placeholder="desc in english" hidden>
                                 <?php $__errorArgs = ['allergy_desc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -285,7 +288,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                                 
                                 <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc_ar" id="std_allergy_desc_2" value="<?php echo e(old('allergy_desc_ar')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic" disabled>
+                                    aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 <?php $__errorArgs = ['allergy_desc_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -318,8 +321,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 
-                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc" id="std_helth_desc_1"
-                                    aria-label="Text input with radio button" value="<?php echo e(old('health_problem_desc')); ?>" placeholder="desc in english" disabled>
+                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc" id="std_health_desc_1"
+                                    aria-label="Text input with radio button" value="<?php echo e(old('health_problem_desc')); ?>" placeholder="desc in english" hidden>
                                 <?php $__errorArgs = ['health_problem_desc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -331,8 +334,9 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 
-                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc_ar" id="std_helth_desc_2" value="<?php echo e(old('health_problem_desc_ar')); ?>"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic" disabled>
+                                <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc_ar" id="std_health_desc_2"
+                                       value="<?php echo e(old('health_problem_desc_ar')); ?>"
+                                       aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 <?php $__errorArgs = ['health_problem_desc_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -348,9 +352,6 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-
-
-
                 <!-- End health info  -->
                 <!-- Start final box -->
                 <h3 class="container-title"><?php echo e(__('student.other info')); ?></h3>

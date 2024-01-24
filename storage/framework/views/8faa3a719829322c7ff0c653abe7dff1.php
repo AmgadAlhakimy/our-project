@@ -59,11 +59,9 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
+            <a class=" me-2 ms-2 card-info" aria-current="page" href="#">  <i class="icon-1 fa-solid fa-home-lg-alt"></i>HOME</a>
 
-        <div class="row">
-            <i class="col-1 fab-regular fa-home fa-fw"></i>
-            <a class="col me-2 ms-2 card-info" aria-current="page" href="#">home</a>
-        </div>
+
     </div>
 </div>
 <!-- end head  -->
@@ -126,7 +124,7 @@
                                         <a href="<?php echo e(route('educational_levels.index')); ?>" class="li-link_2"><?php echo e(__('sidebar.review of educational level')); ?></a>
                                         <a href="<?php echo e(route('classes.index')); ?>" class="li-link_2"><?php echo e(__('sidebar.review of classes')); ?></a>
                                         <a href="<?php echo e(route('subjects.index')); ?>" class="li-link_2"> <?php echo e(__('sidebar.review of subjects')); ?></a>
-                                        <a href="<?php echo e(route('activities.index')); ?>" class="li-link_2"><?php echo e(__('sidebar.review activites')); ?></a>
+                                        <a href="<?php echo e(route('activities.index')); ?>" class="li-link_2"><?php echo e(__('sidebar.review activities')); ?></a>
                                     </ul>
                                 </div>
                                 
@@ -137,11 +135,12 @@
                                         <span class="selected"><?php echo e(__('sidebar.trash')); ?></span>
                                         <div class="caret"></div>
                                     </div>
-                                    <ul class="menuLang">
-                                        <a href="<?php echo e(route('educational_levels.show',0)); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted educational level')); ?></a>
-                                        <a href="<?php echo e(route('classes.show',0)); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted classes')); ?></a>
-                                        <a href="<?php echo e(route('subjects.show',0)); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted subjects')); ?></a>
-                                        <a href="<?php echo e(route('activities.show',0)); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted activites')); ?></a>
+
+                                    <ul class="menulang">
+                                        <a href="<?php echo e(route('educational_levels.show','deleted')); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted educational level')); ?></a>
+                                        <a href="<?php echo e(route('classes.show','deleted')); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted classes')); ?></a>
+                                        <a href="<?php echo e(route('subjects.show','deleted')); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted subjects')); ?></a>
+                                        <a href="<?php echo e(route('activities.show','deleted')); ?>" class="li-link_2"><?php echo e(__('sidebar.deleted activities')); ?></a>
                                         
                                     </ul>
                                 </div>
@@ -373,7 +372,6 @@
                                 <a href="#" class="li-link">400000</a>
                                 <a href="#" class="li-link">200000</a>
                                 <a href="#" class="li-link">100000</a>
-                                
                             </div>
                         </div>
                     </li>
@@ -407,7 +405,6 @@
 <script src="<?php echo e(URL::asset('js/jquery.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('js/main.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('js/script.js')); ?>"></script>
-
 </body>
 </html>
 <?php /**PATH E:\My-Github\our-project\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

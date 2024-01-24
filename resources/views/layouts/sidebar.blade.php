@@ -58,43 +58,9 @@
                 @endforeach
             </ul>
         </div>
-<<<<<<< HEAD
-=======
+            <a class=" me-2 ms-2 card-info" aria-current="page" href="#">  <i class="icon-1 fa-solid fa-home-lg-alt"></i>HOME</a>
 
-        {{-- <div class=""> --}}
-            <a class=" me-2 ms-2 card-info" aria-current="page" href="#"><i class="fab-regular fa-home fa-fw"></i></a>
-        {{-- </div> --}}
-        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto me-auto qmb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">{{__('public.home')}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{__('public.link')}}</a>
-                </li>
-                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                    <li>
-                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                            {{ $properties['native'] }}
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="{{__('public.search')}}" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">{{__('public.search')}}</button>
-            </form>
-        </div> --}}
->>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
 
-        <div class="row">
-            <i class="col-1 fab-regular fa-home fa-fw"></i>
-            <a class="col me-2 ms-2 card-info" aria-current="page" href="#">home</a>
-        </div>
     </div>
 </div>
 <!-- end head  -->
@@ -168,19 +134,12 @@
                                         <span class="selected">{{__('sidebar.trash')}}</span>
                                         <div class="caret"></div>
                                     </div>
-<<<<<<< HEAD
-                                    <ul class="menuLang">
-                                        <a href="{{route('educational_levels.show',0)}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
-                                        <a href="{{route('classes.show',0)}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
-                                        <a href="{{route('subjects.show',0)}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
-                                        <a href="{{route('activities.show',0)}}" class="li-link_2">{{__('sidebar.deleted activites')}}</a>
-=======
+
                                     <ul class="menulang">
                                         <a href="{{route('educational_levels.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
                                         <a href="{{route('classes.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
                                         <a href="{{route('subjects.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
                                         <a href="{{route('activities.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted activities')}}</a>
->>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
                                         {{-- <a href="#" class="li-link_2">1</a> --}}
                                     </ul>
                                 </div>
@@ -545,13 +504,6 @@
                                 <a href="#" class="li-link">400000</a>
                                 <a href="#" class="li-link">200000</a>
                                 <a href="#" class="li-link">100000</a>
-                                {{-- <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">400000</a>
-                                <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">100000</a>
-                                <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">400000</a>
-                                <a href="#" class="li-link">200000</a> --}}
                             </div>
                         </div>
                     </li>
@@ -612,6 +564,5 @@
 <script src="{{URL::asset('js/jquery.js')}}"></script>
 <script src="{{URL::asset('js/main.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
-{{--<script src="https://code.jquery.com/jquery-3.5.1min.js"></script>--}}
 </body>
 </html>
