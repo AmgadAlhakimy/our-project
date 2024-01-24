@@ -58,6 +58,38 @@
                 @endforeach
             </ul>
         </div>
+<<<<<<< HEAD
+=======
+
+        {{-- <div class=""> --}}
+            <a class=" me-2 ms-2 card-info" aria-current="page" href="#"><i class="fab-regular fa-home fa-fw"></i></a>
+        {{-- </div> --}}
+        {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto me-auto qmb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">{{__('public.home')}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{__('public.link')}}</a>
+                </li>
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li>
+                        <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="{{__('public.search')}}" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">{{__('public.search')}}</button>
+            </form>
+        </div> --}}
+>>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
 
         <div class="row">
             <i class="col-1 fab-regular fa-home fa-fw"></i>
@@ -125,7 +157,7 @@
                                         <a href="{{route('educational_levels.index')}}" class="li-link_2">{{__('sidebar.review of educational level')}}</a>
                                         <a href="{{route('classes.index')}}" class="li-link_2">{{__('sidebar.review of classes')}}</a>
                                         <a href="{{route('subjects.index')}}" class="li-link_2"> {{__('sidebar.review of subjects')}}</a>
-                                        <a href="{{route('activities.index')}}" class="li-link_2">{{__('sidebar.review activites')}}</a>
+                                        <a href="{{route('activities.index')}}" class="li-link_2">{{__('sidebar.review activities')}}</a>
                                     </ul>
                                 </div>
                                 {{-- END THE SECOND DROPDOWN --}}
@@ -136,11 +168,19 @@
                                         <span class="selected">{{__('sidebar.trash')}}</span>
                                         <div class="caret"></div>
                                     </div>
+<<<<<<< HEAD
                                     <ul class="menuLang">
                                         <a href="{{route('educational_levels.show',0)}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
                                         <a href="{{route('classes.show',0)}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
                                         <a href="{{route('subjects.show',0)}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
                                         <a href="{{route('activities.show',0)}}" class="li-link_2">{{__('sidebar.deleted activites')}}</a>
+=======
+                                    <ul class="menulang">
+                                        <a href="{{route('educational_levels.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
+                                        <a href="{{route('classes.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
+                                        <a href="{{route('subjects.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
+                                        <a href="{{route('activities.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted activities')}}</a>
+>>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
                                         {{-- <a href="#" class="li-link_2">1</a> --}}
                                     </ul>
                                 </div>

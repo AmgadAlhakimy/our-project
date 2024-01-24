@@ -22,7 +22,7 @@ return [
     'addresses'=>'Addresses',
     "student's address in arabic"=>"student's address in Arabic",
     "student's address in english"=>"student's address in English",
-    'sex'=>'Sex',
+    'gender'=>'gender',
     'male'=>'male',
     'female'=>'female',
     'male_ar'=>'ذكر',

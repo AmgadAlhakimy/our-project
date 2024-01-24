@@ -3,6 +3,17 @@
 @section('content')
     <div class="my-table mt-5">
         <!-- table-hover table-striped -->
+        <div class="table-header">
+
+            {{-- the title and search --}}
+            <div class="row first-card ">
+                <h4 class="col container-title mt-2">{{__('DELETED ACTIVITIES')}}</h4>
+                <div class="row col ">
+                    <input class="col search2" placeholder="{{__('public.search')}}">
+                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
+                </div>
+            </div>
+        </div>
         <div class="card table-section ">
             <table class=" ">
                 <thead>

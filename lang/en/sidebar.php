@@ -21,19 +21,19 @@ return [
     'add educational level' => 'Add Educational Level',
     'add a class' => 'Add A Class',
     'add subject' => 'Add Subfects',
-    'add activity' => 'Add Activites',
+    'add activity' => 'Add activities',
 
     'academic department review'=>' Academic Department Review',
     'review of educational level'=>'Review Of Educational Level',
     'review of classes'=>'Review Of Classes ',
     'review of subjects'=>'Review Of Subjects',
-    'review activites'=>'Review Of Activites',
+    'review activities'=>'Review Of activities',
 
     'trash'=>'trash',
     'deleted educational level'=>'Deleted Educational Level ',
     'deleted classes'=>'Deleted Class',
     'deleted subjects'=>'Deleted Subfects',
-    'deleted activites'=>'Deleted Activites',
+    'deleted activities'=>'Deleted activities',
 
     'students affairs'=>'Students Affairs',
     'add a student'=>'Add A Student',

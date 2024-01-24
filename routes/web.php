@@ -29,9 +29,12 @@ Route::group(
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
+<<<<<<< HEAD
         Route::get('marks', function () {
             return view('teatchers/marks/add');
         });
+=======
+>>>>>>> 9fc40a64f7e161029c45f74a926fe81d35c316a1
 
         require __DIR__.'/search.php';
         require __DIR__.'/resources.php';

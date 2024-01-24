@@ -16,14 +16,11 @@ return new class extends Migration
             $table->json('name');
             $table->string('photo')->nullable();
             $table->json('address');
-            $table->json('sex');
+            $table->json('gender');
             $table->date('birthdate');
             $table->json('place_of_birth');
-            $table->json('take_medicine')->default(__('student.no'));
             $table->json('medicine_desc')->nullable();
-            $table->json('have_allergy')->default(__('student.no'));
             $table->json('allergy_desc')->nullable();
-            $table->json('have_health_problem')->default(__('student.no'));
             $table->json('health_problem_desc')->nullable();
             $table->string('note')->nullable();
             $table->foreignId('class_id')->constrained('classses')->cascadeOnUpdate()->cascadeOnDelete();
