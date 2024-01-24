@@ -18,7 +18,8 @@ class StudentController extends Controller
         try {
         $students = Student::all();
         $classes= Classs::all();
-        return view('students_affairs/students.show_students',compact('students', 'classes'));
+        return view('students_affairs/students.show_students',
+            compact('students', 'classes'));
 
         }catch (\Exception  $e){
             return $e->getMessage();
@@ -39,44 +40,81 @@ class StudentController extends Controller
             return $e->getMessage();
         }
     }
+    /**
+     * store image.
+     */
+    private function image($request)
+    {
+        $requestData = $request->all();
+        $filename = time().$request->file('photo')->getClientOriginalName();
+        $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
+        $requestData["photo"] = '/storage/'.$path;
+        return $requestData['photo'];
+    }
+    /**
+     * translate the gender.
+     */
+    private function gender($request,$lang)
+    {
+        if($request->gender == 'ذكر')
+        {
+            $gender_en = $request->gender_ar_m;
+            $gender_ar = $request->gender;
+        }
+        elseif (strtolower($request->gender )== 'male')
+        {
+            $gender_en = $request->gender;
+            $gender_ar = $request->gender_ar_m;
+        }
+        elseif ($request->gender == 'أنثى')
+        {
+            $gender_en = $request->gender_ar_f;
+            $gender_ar = $request->gender;
+        }
+        elseif (strtolower($request->gender )== 'female')
+        {
+            $gender_en = $request->gender;
+            $gender_ar = $request->gender_ar_f;
+        }
 
+        if($lang == 'en')
+            return $gender_en;
+        elseif($lang == 'ar')
+            return  $gender_ar;
+    }
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreStudentRequest $request)
     {
         try {
-        $requestData = $request->all();
-        $filename = time().$request->file('photo')->getClientOriginalName();
-        $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
-        $requestData["photo"] = '/storage/'.$path;
         Student::create([
             'name' => [
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$requestData["photo"],
+            'photo'=>$this->image($request),
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
             ],
-            'sex'=>$request->sex,
+            'gender'=>[
+                'en'=>$this->gender($request,'en'),
+                'ar'=>$this->gender($request,'ar'),
+            ],
             'birthdate'=>$request->birthdate,
             'place_of_birth'=>[
               'en'=>$request->place_of_birth,
               'ar'=>$request->place_of_birth_ar,
             ],
-            'take_medicine'=>$request->take_medicine,
             'medicine_desc'=>[
                 'en'=>$request->medicine_desc,
                 'ar'=>$request->medicine_desc_ar,
             ],
-            'have_allergy'=>$request->have_allergy,
             'allergy_desc' =>[
                 'en'=>$request->allergy_desc,
                 'ar'=>$request->allergy_desc_ar,
             ],
-            'have_health_problem'=>$request->have_health_problem,
             'health_problem_desc'=>[
                 'en'=>$request->health_problem_desc,
                 'ar'=>$request->health_problem_desc,
@@ -108,7 +146,9 @@ class StudentController extends Controller
         try {
             $student = Student::findorFail($id);
             $classes = Classs::all();
-            return view('students_affairs/students.edit_student', compact('student','classes'));
+            return view('students_affairs/students.edit_student',
+                compact('student','classes'));
+
         }catch (\Exception $e){
             return $e->getMessage();
         }
@@ -121,44 +161,39 @@ class StudentController extends Controller
     {
         try {
         $student = Student::findorFail($id);
-        $requestData = $request;
-        $filename = time().$request->file('photo')->getClientOriginalName();
-        $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
-        $requestData["photo"] = '/storage/'.$path;
         $student->update([
             'name' => [
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$requestData["photo"],
+            'photo'=>$this->image($request),
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
             ],
-            'sex'=>$request->sex,
+            'gender'=>[
+                'en'=>$this->gender($request,'en'),
+                'ar'=>$this->gender($request,'ar'),
+            ],
             'birthdate'=>$request->birthdate,
             'place_of_birth'=>[
                 'en'=>$request->place_of_birth,
                 'ar'=>$request->place_of_birth_ar,
             ],
-            'take_medicine'=>$request->take_medicine,
             'medicine_desc'=>[
                 'en'=>$request->medicine_desc,
                 'ar'=>$request->medicine_desc_ar,
             ],
-            'have_allergy'=>$request->have_allergy,
             'allergy_desc' =>[
                 'en'=>$request->allergy_desc,
                 'ar'=>$request->allergy_desc_ar,
             ],
-            'have_health_problem'=>$request->have_health_problem,
             'health_problem_desc'=>[
                 'en'=>$request->health_problem_desc,
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
             'class_id'=>$request->class
-
         ]);
         return redirect()->route('students.index');
 

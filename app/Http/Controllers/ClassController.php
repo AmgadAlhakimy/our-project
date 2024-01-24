@@ -18,7 +18,8 @@ class ClassController extends Controller
     {
         try {
             $classes = Classs::all();
-            return view('academic_dep/classes.index_classes', compact('classes'));
+            return view('academic_dep/classes.index_classes',
+                compact('classes'));
         }catch (Exception $e){
             return $e->getMessage();
         }
@@ -31,7 +32,8 @@ class ClassController extends Controller
     {
         try {
         $levels = EducationalLevel::all();
-        return view('academic_dep/classes.create_classes', compact('levels'));
+        return view('academic_dep/classes.create_classes',
+            compact('levels'));
 
         }catch (Exception $e){
                 return $e->getMessage();
@@ -79,7 +81,8 @@ class ClassController extends Controller
         try {
         $class = Classs::findorFail($id);
         $levels = EducationalLevel::all();
-        return view('academic_dep/classes.edit_classes', compact('class', 'levels'));
+        return view('academic_dep/classes.edit_classes',
+            compact('class', 'levels'));
 
         }catch (Exception $e){
             return $e->getMessage();
@@ -92,7 +95,6 @@ class ClassController extends Controller
     public function update(UpdateClasssRequest $request, $id)
     {
         try {
-
         $class = Classs::findorFail($id);
         $class->update([
             'name' => [
@@ -103,6 +105,7 @@ class ClassController extends Controller
             'cost'=>$request->cost,
         ]);
         return redirect()->route('classes.index');
+
         }catch (Exception $e){
             return $e->getMessage();
         }

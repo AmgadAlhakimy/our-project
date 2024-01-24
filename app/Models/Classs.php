@@ -24,4 +24,7 @@ class Classs extends Model
     public function level(){
         return $this->belongsTo(EducationalLevel::class,'edu_id');
     }
+    public function students(){
+        return $this->hasMany(Student::class,'class_id');
+    }
 }

@@ -13,32 +13,15 @@ class Student extends Model
     use SoftDeletes;
     use HasTranslations;
 
-    public $translatable = [
-        'name',
-        'address',
-        'sex',
-        'place_of_birth',
-        'take_medicine',
-        'medicine_desc',
-        'have_allergy',
-        'allergy_desc',
-        'have_health_problem',
-        'health_problem_desc',
-    ];
-    protected $fillable = [
-        'name',
-        'photo',
-        'address',
-        'sex',
-        'birthdate',
-        'place_of_birth',
-        'take_medicine',
-        'medicine_desc',
-        'have_allergy',
-        'allergy_desc',
-        'have_health_problem',
-        'health_problem_desc',
-        'note',
-        'class_id'
-    ];
+    protected $fillable = ['name', 'photo', 'address', 'gender',
+                            'birthdate', 'place_of_birth',
+                            'medicine_desc', 'allergy_desc',
+                            'health_problem_desc', 'note', 'class_id'];
+
+    public array $translatable = ['name', 'address', 'gender',
+                                  'place_of_birth', 'medicine_desc',
+                                  'allergy_desc', 'health_problem_desc',];
+    public function classes(){
+        return $this->belongsTo(Classs::class,'class_id');
+    }
 }

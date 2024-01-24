@@ -11,7 +11,7 @@
             <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">
                 @csrf
                 <!-- Start personal info  -->
-                <h3 class="container-title">{{__('student.student info')}}</h3>
+                <h3 class="container-title">{{__('create student')}}</h3>
                 <div class="container containers-style ">
                     <div class="row">
                         {{-- 1 --}}
@@ -61,17 +61,19 @@
                         </div>
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="sex">{{__('student.sex')}}</label>
-                            <select class="col form-select form-control" id="sex" name="sex" value="{{old('sex')}}">
+                            <label for="gender">{{__('student.gender')}}</label>
+                            <select class="col form-select form-control" id="gender" name="gender" value="{{old('gender')}}">
                                 <option class="text-center"
                                         value="{{__('student.male')}}">{{__('student.male')}}</option>
                                 <option class="text-center"
                                         value="{{__('student.female')}}">{{__('student.female')}}</option>
                             </select>
-                            @error('sex')
+                            @error('gender')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
+                        <input type="hidden" name="gender_ar_m" value="{{__('student.male_ar')}}">
+                        <input type="hidden" name="gender_ar_f" value="{{__('student.female_ar')}}">
                         {{-- 6 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="age">{{__('student.birthdate')}}</label>
@@ -139,7 +141,7 @@
                             {{-- ---- --}}
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                                    <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="{{old('take_medicine')}}" nochecked>
+                                    <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="yes">
                                     <label class="form-label col rounded" for="takeMedicineE" ></label>
                                 </div>
                                 {{-- -*- --}}
@@ -147,7 +149,7 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-                                    <input type="  text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc"
+                                    <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc"
                                         aria-label="Text input with radio button" placeholder="desc in english" >
                                     @error('medicine_desc')
                                         <small class="form-text text-danger">{{$message}}</small>
@@ -165,7 +167,7 @@
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                                    <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="{{old('have_allergy')}}" >
+                                    <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="yes" >
                                     <label class="form-label col rounded" for="haveAllergy" ></label>
                                 </div>
                                 {{-- -*- --}}
@@ -191,7 +193,7 @@
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                                    <input class="toggle col" type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" >
+                                    <input class="toggle col" type="checkbox" name="have_health_problem"  id="healthProblem" value="yes" >
                                     <label class="form-label col rounded" for="healthProblem" id="healthProblem"></label>
                                 </div>
                                 {{-- -*- --}}
@@ -215,9 +217,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <!-- End health info  -->
                 <!-- Start final box -->
                 <h3 class="container-title">{{__('student.other info')}}</h3>

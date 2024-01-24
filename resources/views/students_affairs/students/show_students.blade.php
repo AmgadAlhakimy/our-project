@@ -23,7 +23,7 @@
             {{--  --}}
                     <form method="get" action="{{route('students.create')}}">
             <div class="box col-lg-12 col-md-12 ">
-                <label for="sex"></label><select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" >
+                <label for="gender"></label><select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="gender" name="gender" >
                         @foreach($classes as $class)
                                     <button class="" type="submit">
                                 <option class="text-center" value="{{$class->id}}">{{$class->name}}
@@ -31,7 +31,7 @@
                                     </button>
                         @endforeach
                 </select>
-                @error('sex')
+                @error('gender')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
                 </form>
@@ -61,7 +61,7 @@
                         <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
                         <th ><div class="th-head-1" >photo</div></th>
                         <th ><div class="th-head-3" >{{__('public.address')}}</div></th>
-                        <th ><div class="th-head-1" >sex</div></th>
+                        <th ><div class="th-head-1" >gender</div></th>
                         <th ><div class="th-head-2" >birth date</div></th>
                         <th ><div class="th-head-2" >birth place</div></th>
                         <th ><div class="th-head-2" >{{__('public.class')}}</div></th>
@@ -78,12 +78,12 @@
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
                             <td><img src="{{asset($student->photo)}}"
-                                class="student-img" alt="student's photo"></td>
+                                class="student-img" alt="photo"></td>
                             <td>{{$student->address}}</td>
-                            <td>{{$student->sex}}</td>
+                            <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>
                             <td>{{$student->place_of_birth}}</td>
-                            <td>{{App\Models\Classs::findorfail($student->class_id)->name}}</td>
+                            <td>{{$student->classes->name}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
                             <td><button class="btn save-button btn-info  w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>

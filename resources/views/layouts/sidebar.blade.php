@@ -23,7 +23,7 @@
     <!-- styles -->
     <!-- styles -->
 </head>
-<body >
+<body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
 
 <!-- Start head  -->
@@ -58,7 +58,7 @@
                 @endforeach
             </ul>
         </div>
-        
+
         {{-- <div class=""> --}}
             <a class=" me-2 ms-2 card-info" aria-current="page" href="#"><i class="fab-regular fa-home fa-fw"></i></a>
         {{-- </div> --}}
@@ -150,7 +150,7 @@
                                         <a href="{{route('educational_levels.index')}}" class="li-link_2">{{__('sidebar.review of educational level')}}</a>
                                         <a href="{{route('classes.index')}}" class="li-link_2">{{__('sidebar.review of classes')}}</a>
                                         <a href="{{route('subjects.index')}}" class="li-link_2"> {{__('sidebar.review of subjects')}}</a>
-                                        <a href="{{route('activities.index')}}" class="li-link_2">{{__('sidebar.review activites')}}</a>
+                                        <a href="{{route('activities.index')}}" class="li-link_2">{{__('sidebar.review activities')}}</a>
                                     </ul>
                                 </div>
                                 {{-- END THE SECOND DROPDOWN --}}
@@ -162,10 +162,10 @@
                                         <div class="caret"></div>
                                     </div>
                                     <ul class="menulang">
-                                        <a href="{{route('educational_levels.show',0)}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
-                                        <a href="{{route('classes.show',0)}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
-                                        <a href="{{route('subjects.show',0)}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
-                                        <a href="{{route('activities.show',0)}}" class="li-link_2">{{__('sidebar.deleted activites')}}</a>
+                                        <a href="{{route('educational_levels.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
+                                        <a href="{{route('classes.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
+                                        <a href="{{route('subjects.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
+                                        <a href="{{route('activities.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted activities')}}</a>
                                         {{-- <a href="#" class="li-link_2">1</a> --}}
                                     </ul>
                                 </div>

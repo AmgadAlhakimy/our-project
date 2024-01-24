@@ -26,13 +26,13 @@ return [
     'review of educational level'=>'عرض المراحل الدراسية',
     'review of classes'=>'عرض الفصول ',
     'review of subjects'=>'عرض المواد الدراسية',
-    'review activites'=>'عرض الأنشطة',
+    'review activities'=>'عرض الأنشطة',
 
     'trash'=>'سهلة المهملات',
     'deleted educational level'=>'حذف مرحلة دراسية',
     'deleted classes'=>'حذف فصل دراسي',
     'deleted subjects'=>'حذف مادة',
-    'deleted activites'=>'حذف نشاط',
+    'deleted activities'=>'حذف نشاط',
 
     'students affairs'=>'شؤون الطلاب',
     'add a student'=>'إضافة طالب',
