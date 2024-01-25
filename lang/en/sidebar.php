@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'search'=>'SEARCH',
     'Lang' => 'English',
 
     'Admin' => 'Admin',

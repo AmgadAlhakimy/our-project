@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'search'=>'بحث',
     'Lang' => 'العربية',
 
     'Admin' => 'الأدارة',
@@ -39,7 +40,6 @@ return [
     'review students'=>'عرض الطلاب',
     'deleted student'=>'سلة المهملات (الطلاب)',
     'student absence'=>'تحضير الطلاب',
-    'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',

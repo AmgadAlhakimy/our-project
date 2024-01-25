@@ -3,7 +3,7 @@ const listItems = document.querySelectorAll(".list-ul li ");
 listItems.forEach((item) => {
     item.addEventListener("click", () => {
         // حدث الضغط على الرابط الثاني
-        let isActive = item.classList.contains("");
+        let isActive = item.classList.contains("active");
 
         listItems.forEach((el) => {
             el.classList.remove("active");

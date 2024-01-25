@@ -54,7 +54,6 @@ ul {
   --sidebar-head-bg:#fff;
   --border-color: #eee;
 
-  --o-title-1: #f59e0b;
   --green-color: #22c55e;
   /* ----------------------- bottuns colors */
   --section-bg-2: #d5d7da;
@@ -141,7 +140,7 @@ input::-webkit-inner-spin-button {
 .topic-name{
   color: var(--o-title-1);
   font-weight: bold;
-   text-shadow: 2px 2px 2px rgb(16, 16, 16, 0.5);
+  text-shadow: 2px 2px 2px rgb(16, 16, 16, 0.5);
   /*font-size: px;*/
   white-space: nowrap;
     display: flex;
@@ -154,7 +153,7 @@ input::-webkit-inner-spin-button {
   /* display: flex; */
   align-items: center;
 }
-.container label {
+ .form-label {
   color: var(--text-color-1);
   font-weight: bold;
   text-align: center;

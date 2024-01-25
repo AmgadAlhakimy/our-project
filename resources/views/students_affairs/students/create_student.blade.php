@@ -83,7 +83,7 @@
                             @enderror
                         </div>
                         {{-- 7 --}}
-                        <div class="box col-lg-6 col-md-6">
+                        <div class="box col-lg-6 col-md-6 ">
                             <label for="english-birth-place">{{__('student.place of birth in arabic')}}</label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="{{old('place_of_birth_ar')}}">
                             @error('place_of_birth_ar')
