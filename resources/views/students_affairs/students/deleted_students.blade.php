@@ -4,41 +4,26 @@
     <div class="my-table">
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
+        
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">Deleted students</h4>
+                <div class="row first-card mt-4">
+                    <form method="post" action="{{route('students.search')}}">
+                        @method('GET')
+                        @csrf
+                        <div class="row">
+                            <label class="col-10">
+                                <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
+                            </label>
+                            <button type="submit" class="col save-button ">{{__('public.search')}}</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            {{--  --}}
-{{--                    <form method="get" action="{{route('students.create')}}">--}}
-{{--            <div class="box col-lg-12 col-md-12 ">--}}
-{{--                <label for="gender"></label><select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="gender" name="gender" >--}}
-{{--                        @foreach($classes as $class)--}}
-{{--                                    <button class="" type="submit">--}}
-{{--                                <option class="text-center" value="{{$class->id}}">{{$class->name}}--}}
-{{--                                </option>--}}
-{{--                                    </button>--}}
-{{--                        @endforeach--}}
-{{--                </select>--}}
-{{--                @error('gender')--}}
-{{--                <small class="form-text text-danger">{{$message}}</small>--}}
-{{--                @enderror--}}
-{{--                </form>--}}
-{{--            </div>--}}
-            {{-- the thacher name and the month --}}
+        </div>   
 
-{{--            <div class="cards-container  third-card">--}}
-{{--                <div class="card-info card-info_2 col ms-2 me-2">--}}
-{{--                    <h4 class=" me-2 ms-2">{{__('public.teacher')}}</h4>--}}
-{{--                    <h4 class=" Names">mohammad mohsen</h4>--}}
-{{--                </div>--}}
-
-{{--                <div class="card-info card-info_2 col ms-2 me-2">--}}
-{{--                    <h4 class=" me-2 ms-2">{{__("public.month")}}</h4>--}}
-{{--                    <h4 class=" Names">10</h4>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class="table-section">
@@ -56,7 +41,6 @@
                         <th ><div class="th-head-2" >{{__('public.class')}}</div></th>
                         <th ><div class="th-head-2" >{{__('public.created at')}}</div></th>
                         <th ><div class="th-head-2" >{{__('public.updated at')}}</div></th>
-                        <th ><div class="th-head-3" >{{__('student.parents')}}</div></th>
                         <th colspan="2"><div class="th-head-4" >{{__('public.processes')}}</div></th>
                     </tr>
                     </thead>
@@ -74,8 +58,6 @@
                             <td>{{$student->classes->name}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
-                            <td><button class="btn save-button btn-info  w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
-
                             <td>
                                 <a href="{{route('students.restore',$student->id)}}"
                                     class="btn save-button btn-success w-100">

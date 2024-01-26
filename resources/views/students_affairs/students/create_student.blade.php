@@ -88,7 +88,7 @@
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="{{old('place_of_birth_ar')}}">
                             @error('place_of_birth_ar')
                             <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
+                            @enderror 
                         </div>
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6">

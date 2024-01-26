@@ -1,6 +1,4 @@
 @extends('layouts.sidebar')
-
-
 @section('content')
     <main class="main">
         <section class="section">
@@ -8,7 +6,7 @@
             <form method="post" action="{{route('activities.update',$activity->id)}}">
                 @method('PUT')
                 @csrf
-                <h3 class="container-title">{{__('activity.activity info')}}</h3>
+                <h3 class="container-title">{{__('activity.update activity')}}</h3>
             <div class="container containers-style ">
                 <div class="row">
                     <!-- 1 -->

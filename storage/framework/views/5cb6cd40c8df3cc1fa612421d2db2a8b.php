@@ -3,15 +3,17 @@
 
         
         
+        
         <div class="table-header">
             
+            <h4 class="col container-title mt-2">classes Information</h4>
             <div class="row first-card mt-4">
                 <form method="post" action="<?php echo e(route('classes.search')); ?>">
                     <?php echo method_field('GET'); ?>
                     <?php echo csrf_field(); ?>
                     <div class="row">
                         <label class="col-10">
-                            <input type="text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
+                            <input type="text" required class="form-control"  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
                         </label>
                         <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
                     </div>
@@ -30,28 +32,22 @@
                             <div class="th-head-1"><?php echo e(__('public.id')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-2"><?php echo e(__('public.name')); ?></div>
+                            <div class="th-head-3"><?php echo e(__('public.name')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-2"><?php echo e(__('public.cost')); ?></div>
+                            <div class="th-head-1"><?php echo e(__('public.cost')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-3"><?php echo e(__('public.educational level')); ?></div>
+                            <div class="th-head-4"><?php echo e(__('public.educational level')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-3"><?php echo e(__('public.created at')); ?></div>
+                            <div class="th-head-2"><?php echo e(__('public.created at')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-3"><?php echo e(__('public.updated at')); ?></div>
+                            <div class="th-head-2"><?php echo e(__('public.updated at')); ?></div>
                         </th>
-                        <th>
-                            <div class="th-head-2"><?php echo e(__('public.processes')); ?></div>
-                        </th>
-                        <th>
-                            <div class="th-head-2"></div>
-                        </th>
-                        <th>
-                            <div class="th-head-1"></div>
+                        <th colspan="2">
+                            <div class="th-head-4"><?php echo e(__('public.processes')); ?></div>
                         </th>
                     </tr>
                     </thead>
@@ -100,7 +96,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>

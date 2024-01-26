@@ -7,6 +7,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card mt-4">
+                <h4 class="col container-title mt-2">Activity Information</h4>
                 <form method="post" action="{{route('activities.search')}}">
                     @method('GET')
                     @csrf
@@ -32,7 +33,7 @@
                             <div class="th-head-1">{{__('public.id')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.name')}}</div>
+                            <div class="th-head-3">{{__('public.name')}}</div>
                         </th>
                         <th>
                             <div class="th-head-2">{{__('public.location')}}</div>
@@ -47,16 +48,13 @@
                             <div class="th-head-3">{{__('public.note')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.created at')}}</div>
+                            <div class="th-head-2">{{__('public.created at')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.updated at')}}</div>
+                            <div class="th-head-2">{{__('public.updated at')}}</div>
                         </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.processes')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-2"></div>
+                        <th colspan="2">
+                            <div class="th-head-4">{{__('public.processes')}}</div>
                         </th>
                         <th>
                             <div class="th-head-1"></div>
@@ -76,7 +74,7 @@
                             <td>{{$activity->updated_at}}</td>
                             <td>
                                 <a href="{{route('activities.edit',$activity->id)}}"
-                                   class="btn save-button btn-success w-100">
+                                    class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                             <td>
@@ -86,8 +84,8 @@
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$activity->id}}"
-                                     tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
+                                        tabindex="-1" aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">

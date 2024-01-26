@@ -4,8 +4,10 @@
 
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
+        
         <div class="table-header">
             {{-- the title and search --}}
+            <h4 class="col container-title mt-2">classes Information</h4>
             <div class="row first-card mt-4">
                 <form method="post" action="{{route('classes.search')}}">
                     @method('GET')
@@ -31,28 +33,22 @@
                             <div class="th-head-1">{{__('public.id')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.name')}}</div>
+                            <div class="th-head-3">{{__('public.name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.cost')}}</div>
+                            <div class="th-head-1">{{__('public.cost')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.educational level')}}</div>
+                            <div class="th-head-4">{{__('public.educational level')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.created at')}}</div>
+                            <div class="th-head-2">{{__('public.created at')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.updated at')}}</div>
+                            <div class="th-head-2">{{__('public.updated at')}}</div>
                         </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.processes')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-2"></div>
-                        </th>
-                        <th>
-                            <div class="th-head-1"></div>
+                        <th colspan="2">
+                            <div class="th-head-4">{{__('public.processes')}}</div>
                         </th>
                     </tr>
                     </thead>
@@ -99,7 +95,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                         @endforeach
                         </tbody>

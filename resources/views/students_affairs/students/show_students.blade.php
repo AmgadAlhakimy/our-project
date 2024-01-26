@@ -7,7 +7,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">Student Information</h4>
+                <h4 class="col container-title mt-2">Students Information</h4>
                 <div class="row first-card mt-4">
                     <form method="post" action="{{route('students.search')}}">
                         @method('GET')
@@ -21,6 +21,7 @@
                     </form>
                 </div>
             </div>
+        </div>
             {{--  --}}
 {{--                    <form method="get" action="{{route('students.create')}}">--}}
 {{--            <div class="box col-lg-12 col-md-12 ">--}}
@@ -74,7 +75,7 @@
                     </thead>
                     <tbody>
                     @foreach($students  as $student )
-                        <tr>
+                        <tr class="test_1">
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
                             <td><img src="{{asset($student->photo)}}"

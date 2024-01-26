@@ -131,7 +131,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box col-lg-6 col-md-6">
+                        <div class="box col-lg-6 col-md-6 ">
                             <label for="english-birth-place"><?php echo e(__('student.place of birth in arabic')); ?></label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="<?php echo e(old('place_of_birth_ar')); ?>">
                             <?php $__errorArgs = ['place_of_birth_ar'];

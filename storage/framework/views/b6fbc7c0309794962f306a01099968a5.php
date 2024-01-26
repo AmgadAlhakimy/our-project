@@ -52,7 +52,7 @@ unset($__errorArgs, $__bag); ?>
                             <label class="" for="photo"><?php echo e(__('change students photo')); ?></label>
                             <input type="file" class="form-control col-8" id="photo" name="photo" value="<?php echo e($student->photo); ?>">
                             <img src="<?php echo e(asset($student->photo)); ?>"
-                                 class="student-img col-4" alt="photo">
+                                 class="student-img col-4" alt="no photo">
                             <?php $__errorArgs = ['photo'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -100,12 +100,12 @@ unset($__errorArgs, $__bag); ?>
                         
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender"><?php echo e(__('student.gender')); ?></label>
-                            <select class="col form-select form-control" id="gender" name="gender"  >
+                            <select class="col form-select form-control" id="gender" name="gender">
                                 <option class="text-center"
-                                        value="<?php echo e(__('student.male')); ?>" <?php if($student->getTranslation('address','en') == 'male'): ?> selected <?php endif; ?>>
+                                        value="<?php echo e(__('student.male')); ?>" <?php if($student->getTranslation('gender','en') == 'male'): ?> selected <?php endif; ?>>
                                     <?php echo e(__('student.male')); ?></option>
                                 <option class="text-center"
-                                        value="<?php echo e(__('student.female')); ?>"  <?php if($student->getTranslation('address','en') == 'male'): ?> selected <?php endif; ?>>
+                                        value="<?php echo e(__('student.female')); ?>"  <?php if($student->getTranslation('gender','en') == 'female'): ?> selected <?php endif; ?>>
                                     <?php echo e(__('student.female')); ?></option>
                             </select>
                             <?php $__errorArgs = ['gender'];

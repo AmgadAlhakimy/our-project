@@ -5,7 +5,7 @@
         <div class="table-header">
             
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">Student Information</h4>
+                <h4 class="col container-title mt-2">Students Information</h4>
                 <div class="row first-card mt-4">
                     <form method="post" action="<?php echo e(route('students.search')); ?>">
                         <?php echo method_field('GET'); ?>
@@ -19,6 +19,7 @@
                     </form>
                 </div>
             </div>
+        </div>
             
 
 
@@ -72,7 +73,7 @@
                     </thead>
                     <tbody>
                     <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <tr>
+                        <tr class="test_1">
                             <td><?php echo e($student->id); ?></td>
                             <td><?php echo e($student->name); ?></td>
                             <td><img src="<?php echo e(asset($student->photo)); ?>"

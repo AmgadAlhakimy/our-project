@@ -34,10 +34,10 @@
                             <div class="th-head-3"><?php echo e(__('public.name')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-3"><?php echo e(__('public.created at')); ?></div>
+                            <div class="th-head-2"><?php echo e(__('public.created at')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-3"><?php echo e(__('public.updated at')); ?></div>
+                            <div class="th-head-2"><?php echo e(__('public.updated at')); ?></div>
                         </th>
                         <th colspan="2">
                             <div class="th-head-4" ><?php echo e(__('public.processes')); ?></div>

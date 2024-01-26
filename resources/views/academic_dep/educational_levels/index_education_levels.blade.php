@@ -36,10 +36,10 @@
                             <div class="th-head-3">{{__('public.name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.created at')}}</div>
+                            <div class="th-head-2">{{__('public.created at')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.updated at')}}</div>
+                            <div class="th-head-2">{{__('public.updated at')}}</div>
                         </th>
                         <th colspan="2">
                             <div class="th-head-4" >{{__('public.processes')}}</div>

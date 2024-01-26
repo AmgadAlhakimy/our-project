@@ -1,14 +1,23 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-        <div class="table-header">
 
+        
+        <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">{{__('DELETED CLASSES')}}</h4>
-                <div class="row col ">
-                    <input class="col search2" placeholder="{{__('public.search')}}">
-                    <button class="col-1 save-button search-button ">{{__('public.search')}}</button>
+                <div class="row first-card mt-4">
+                    <form method="post" action="{{route('students.search')}}">
+                        @method('GET')
+                        @csrf
+                        <div class="row">
+                            <label class="col-10">
+                                <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
+                            </label>
+                            <button type="submit" class="col save-button ">{{__('public.search')}}</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -22,28 +31,22 @@
                             <div class="th-head-1">{{__('public.id')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.name')}}</div>
+                            <div class="th-head-3">{{__('public.name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.cost')}}</div>
+                            <div class="th-head-1">{{__('public.cost')}}</div>
                         </th>
                         <th>
                             <div class="th-head-3">{{__('public.educational level')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.created at')}}</div>
+                            <div class="th-head-2">{{__('public.created at')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.updated at')}}</div>
+                            <div class="th-head-2">{{__('public.updated at')}}</div>
                         </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.processes')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-3"></div>
-                        </th>
-                        <th>
-                            <div class="th-head-1"></div>
+                        <th colspan="2">
+                            <div class="th-head-4">{{__('public.processes')}}</div>
                         </th>
                     </tr>
                     </thead>
@@ -90,7 +93,6 @@
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                         @endforeach
                         </tbody>

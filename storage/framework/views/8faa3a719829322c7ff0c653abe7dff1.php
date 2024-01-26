@@ -101,7 +101,7 @@
                             </a>
                         </div>
                         <div class="submenu">
-                            <div class="line-black">                                        
+                            <div class="line-black">
                                 <a id="" href="<?php echo e(route('educational_levels.create')); ?>" class="li-link_2 "><?php echo e(__('sidebar.add educational level')); ?></a>
                                 <a id="" href="<?php echo e(route('classes.create')); ?>" class="li-link_2">  <?php echo e(__('sidebar.add a class')); ?></a>
                                 <a href="<?php echo e(route('subjects.create')); ?>" class="li-link_2"> <?php echo e(__('sidebar.add subject')); ?></a>
@@ -123,7 +123,7 @@
                             </a>
                         </div>
                         <div class="submenu">
-                            <div class="line-black">                                
+                            <div class="line-black">
                                 <a href="<?php echo e(route('educational_levels.index')); ?>" class="li-link"><?php echo e(__('sidebar.review of educational level')); ?></a>
                                 <a href="<?php echo e(route('classes.index')); ?>" class="li-link"><?php echo e(__('sidebar.review of classes')); ?></a>
                                 <a href="<?php echo e(route('subjects.index')); ?>" class="li-link"> <?php echo e(__('sidebar.review of subjects')); ?></a>
@@ -145,7 +145,7 @@
                             </a>
                         </div>
                         <div class="submenu">
-                            <div class="line-black">                                
+                            <div class="line-black">
                                 <a href="<?php echo e(route('educational_levels.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted educational level')); ?></a>
                                 <a href="<?php echo e(route('classes.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted classes')); ?></a>
                                 <a href="<?php echo e(route('subjects.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted subjects')); ?></a>
@@ -182,9 +182,9 @@
                     <!-- ======================== ACOUNTENT ========================== -->
                     
                     
-                    
+
                         <p class="title">قسم الكنترول</p>
-                    
+
                     
                     
                     <!-- ======================== CONTROLE ========================== -->
@@ -258,8 +258,8 @@
                             <a href='<?php echo e(route('students.create')); ?>' class="li-link"><?php echo e(__('sidebar.add a student')); ?></a>
                             
                             <a href="<?php echo e(route('students.index')); ?>" class="li-link"><?php echo e(__('sidebar.review students')); ?></a>
+                            <a href="<?php echo e(route('students.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted student')); ?></a>
                             
-                            <a href="#" class="li-link"><?php echo e(__('sidebar.deleted student')); ?></a>
                             
                             <a href='/absence' class="li-link"><?php echo e(__('sidebar.student absence')); ?></a>
                             <a href='/student_form' class="li-link">معلومات الطلاب</a>
@@ -283,7 +283,7 @@
 
                         
                     <!-- ======================== TEACHERS ========================== -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">

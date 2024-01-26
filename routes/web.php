@@ -38,6 +38,10 @@ Route::group(
         Route::get('student_form', function () {
             return view('students_affairs/students/student_form_info');
         });
+        // absence
+        Route::get('absence', function () {
+            return view('students_affairs/absence/absent_students');
+        });
     });
 
 
