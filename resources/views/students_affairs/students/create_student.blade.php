@@ -125,6 +125,18 @@
                                 <a href="{{route('relatives.create')}}" class=" save-button  w-full mt-3 p-3">{{__('student.parent info')}}</a>
                             </div>
                         </div>
+                        <div class="box ">
+                            <label for="className " class="form-label">{{__('student.class')}}</label>
+                            <select id="className " class="form-control" name="relative_id" value="{{old('relative_id')}}">
+                                @foreach($relatives as $relative)
+                                    <option class="text-center" value="{{$relative->id}}">{{$relative->father_name}}</option>
+                                @endforeach
+                            </select>
+                            @error('relative_id')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
+                        <input type="text" name="relative_id" id="" disabled required value="{{old('relative_id')}}">
                         <!-- garden number  -->
                     </div>
                 </div>

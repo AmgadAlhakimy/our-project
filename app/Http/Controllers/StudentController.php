@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\student\StoreStudentRequest;
 use App\Http\Requests\student\UpdateStudentRequest;
 use App\Models\Classs;
+use App\Models\Relative;
 use App\Models\Student;
 use Exception;
 use Illuminate\Http\Request;
@@ -33,9 +34,10 @@ class StudentController extends Controller
     public function create()
     {
         try {
-        $classes=Classs::all();
+        $classes = Classs::all();
+        $relatives = Relative::all();
         return view('students_affairs/students.create_student',
-            compact('classes'));
+            compact('classes','relatives'));
 
         }catch (Exception $e){
             return $e->getMessage();
@@ -126,7 +128,8 @@ class StudentController extends Controller
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
-            'class_id'=>$request->class_id
+            'class_id'=>$request->class_id,
+            'relative_id'=>$request->relative_id,
 
         ]);
         return redirect()->back()->with(['success' => __('message.success')]);
@@ -206,7 +209,8 @@ class StudentController extends Controller
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
-            'class_id'=>$request->class
+            'class_id'=>$request->class_id,
+            'relative_id'=>$request->relative_id,
         ]);
         return redirect()->route('students.index');
 
@@ -277,12 +281,27 @@ class StudentController extends Controller
                     ->orwhere('place_of_birth->en','like',"%$search%")
                     ->orwhere('place_of_birth->ar','like',"%$search%")
                     ->orwhere('birthdate','like',"%$search%");
-            })->orWhereHas('classes',function ($query) use ($search){
+            })->orWhereHas('class',function ($query) use ($search){
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
             return view('students_affairs/students.show_students',
                 compact('search','students'));
+
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    /**
+     * show student according to the search.
+     */
+    public function more($id)
+    {
+        try {
+            $student = Student::findorFail($id);
+            return view('students_affairs/students.student_more_info',
+                compact('student',));
 
         }catch (\Exception $e){
             return $e->getMessage();

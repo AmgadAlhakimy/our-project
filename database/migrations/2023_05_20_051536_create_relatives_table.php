@@ -24,7 +24,6 @@ return new class extends Migration
             $table->json('kin_name');
             $table->json('kin_relationship');
             $table->bigInteger('kin_contact');
-            $table->foreignId('student_id')->constrained('students')->cascadeOnUpdate()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

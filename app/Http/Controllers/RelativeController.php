@@ -73,6 +73,7 @@ class RelativeController extends Controller
                 ],
                 'kin_contact'=>$request->kin_contact,
             ]);
+            return redirect()->back()->with(['success' => __('message.success')]);
 
         }catch (\Exception $e){
             return $e->getMessage();

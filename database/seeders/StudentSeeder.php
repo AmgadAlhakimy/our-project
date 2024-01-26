@@ -18,6 +18,7 @@ class StudentSeeder extends Seeder
         $gender_ar = ['ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى'];
 
         $classes = Classs::all();
+        $relatives = Classs::all();
         for($i = 1; $i<=10; $i++ ){
             Student::create([
                 'name'=> [
@@ -39,6 +40,7 @@ class StudentSeeder extends Seeder
                     'ar'=>"مكان $i",
                 ],
                 'class_id'=>$classes->random()->id,
+                'relative_id'=>$relatives->random()->id,
             ]);
         }
     }

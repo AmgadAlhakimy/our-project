@@ -83,7 +83,7 @@
                             <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>
                             <td>{{$student->place_of_birth}}</td>
-                            <td>{{$student->classes->name}}</td>
+                            <td>{{$student->class->name}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
 
@@ -125,9 +125,9 @@
                             </td>
                             {{-- واجهة المعلومات او الاستمارة الكاملة الخاصة بالطالب --}}
                             <td>
-                                <a href="{{route('students.edit',$student->id)}}"
+                                <a href="{{route('students.more',$student->id)}}"
                                     class="btn save-button btn-info w-100">
-                                    <i class="fa-solid fa-info-circle"></i> {{__('public.edit')}} </a>
+                                    <i class="fa-solid fa-info-circle"></i> {{__('student.more info')}} </a>
                             </td>
                         </tr>
                     @endforeach
