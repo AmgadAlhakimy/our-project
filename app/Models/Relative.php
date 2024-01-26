@@ -18,8 +18,8 @@ class Relative extends Model
         'father_work',
         'mother_name',
         'mother_work',
-        'nik_name',
-        'nik_relationship',
+        'kin_name',
+        'kin_relationship',
     ];
     protected $fillable = [
         'father_name',
@@ -30,9 +30,9 @@ class Relative extends Model
         'mother_work',
         'mother_contact1',
         'mother_contact2',
-        'nik_name',
-        'nik_relationship',
-        'nik_contact',
+        'kin_name',
+        'kin_relationship',
+        'kin_contact',
         'student_id',
     ];
 }

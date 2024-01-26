@@ -20,6 +20,7 @@ class ClassController extends Controller
             $classes = Classs::all();
             return view('academic_dep/classes.index_classes',
                 compact('classes'));
+
         }catch (Exception $e){
             return $e->getMessage();
         }
@@ -47,10 +48,10 @@ class ClassController extends Controller
     {
         try {
         Classs::create([
-           'name' => [
-               'en' => $request->name,
-               'ar' => $request->name_ar
-           ],
+            'name' => [
+                'en' => $request->name,
+                'ar' => $request->name_ar
+            ],
             'edu_id'=>$request->level,
             'cost'=>$request->cost,
        ]);
@@ -67,7 +68,8 @@ class ClassController extends Controller
     {
         try {
         $classes = Classs::onlyTrashed()->get();
-        return view('academic_dep/classes.deleted_classes', compact('classes'));
+        return view('academic_dep/classes.deleted_classes',
+            compact('classes'));
         }catch (Exception $e){
             return $e->getMessage();
         }

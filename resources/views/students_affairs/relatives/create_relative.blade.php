@@ -8,7 +8,7 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-            <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('relatives.store')}}">
                 @csrf
 
                 {{-- <!-- Start parent info  --> --}}
@@ -18,15 +18,15 @@
                         <!-- father name  -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="father">{{__("student.father's name in english")}}</label>
-                            <input type="text" class="form-control" id='father' name="father" value="{{old('father')}}">
-                            @error('father')
+                            <input type="text" class="form-control" id='father' name="father_name" value="{{old('father_name')}}">
+                            @error('father_name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label for="father_ar">{{__("student.father's name in arabic")}}</label>
-                            <input type="text" class="form-control" id='father_ar' name="father_ar" value="{{old('father_ar')}}">
-                            @error('father_ar')
+                            <input type="text" class="form-control" id='father_ar' name="father_name_ar" value="{{old('father_name_ar')}}">
+                            @error('father_name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
@@ -49,12 +49,12 @@
                         <div class="box ">
                             <label for="f-numbers">{{__("student.father's contacts")}}</label>
                             <div class="row ">
-                                <input type="number" class="col form-control ms-2 me-2" id='f-numbers' name="father_num_1" value="{{old('father_num_1')}}">
-                                @error('father_num_1')
+                                <input type="number" class="col form-control ms-2 me-2" id='f-numbers' name="father_contact1" value="{{old('father_contact1')}}">
+                                @error('father_contact1')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
-                                <input type="number" class="col form-control me-2 ms-2" id='f-numbers' name="father_num_2" value="{{old('father_num_2')}}">
-                                @error('father_num_2')
+                                <input type="number" class="col form-control me-2 ms-2" id='f-numbers' name="father_contact2" value="{{old('father_contact2')}}">
+                                @error('father_contact2')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
@@ -62,15 +62,15 @@
                         <!-- mother name  -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="arab-mother-name">{{__("student.mother's name in english")}}</label>
-                            <input type="text" class="form-control" id='arab-mother-name' name="mother" value="{{old('mother')}}">
-                            @error('mother')
+                            <input type="text" class="form-control" id='arab-mother-name' name="mother_name" value="{{old('mother_name')}}">
+                            @error('mother_name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label for="english-mother-name">{{__("student.mother's name in arabic")}}</label>
-                            <input type="text" class="form-control" id='english-mother-name' name="mother_ar" value="{{old('mother_ar')}}">
-                            @error('mother_ar')
+                            <input type="text" class="form-control" id='english-mother-name' name="mother_name_ar" value="{{old('mother_name_ar')}}">
+                            @error('mother_name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
@@ -93,12 +93,12 @@
                         <div class="box ">
                             <label for="m-numbers">{{__("student.mother's contacts")}}</label>
                             <div class="row ">
-                                <input type="number" class="col form-control ms-2 me-2" id='m-numbers' name="mother_num_1" value="{{old('mother_num_1')}}">
-                                @error('mother_num_1')
+                                <input type="number" class="col form-control ms-2 me-2" id='m-numbers' name="mother_contact1" value="{{old('mother_contact1')}}">
+                                @error('mother_contact1')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
-                                <input type="number" class="col form-control me-2 ms-2" id='m-numbers' name="mother_num_2" value="{{old('mother_num_2')}}">
-                                @error('mother_num_2')
+                                <input type="number" class="col form-control me-2 ms-2" id='m-numbers' name="mother_contact2" value="{{old('mother_contact2')}}">
+                                @error('mother_contact2')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
@@ -106,15 +106,15 @@
                         <!-- garden name  -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="name-a">{{__('student.kin name in english')}}</label>
-                            <input type="text" class="form-control" id='name-a' name="kin"  value="{{old('kin')}}">
-                            @error('kin')
+                            <input type="text" class="form-control" id='name-a' name="kin_name"  value="{{old('kin_name')}}">
+                            @error('kin_name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label for="name-e">{{__('student.kin name in arabic')}}</label>
-                            <input type="text" class="form-control" id='name-e' name="kin_ar"  value="{{old('kin_ar')}}">
-                            @error('kin_ar')
+                            <input type="text" class="form-control" id='name-e' name="kin_name_ar"  value="{{old('kin_name_ar')}}">
+                            @error('kin_name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
@@ -136,7 +136,7 @@
                         <!-- garden number  -->
                         <div class="box col">
                             <label for="number">{{__('student.kin contact')}}</label>
-                            <input type="number" class="form-control mb-5" id='number' name="kin_contact" value="{{old('kin_contact')}}">
+                            <input type="number" class="form-control " id='number' name="kin_contact" value="{{old('kin_contact')}}">
                             @error('kin_contact')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 {{-- --- --}}
-                
+
                 <div class=" row">
                     <div class="box col ">
                         <input class="save-button " type="submit" value="{{__('public.save')}}">

@@ -53,7 +53,7 @@
                             <td>{{$class->id}}</td>
                             <td>{{$class->name}}</td>
                             <td>{{$class->cost}}</td>
-                            <td>{{\App\Models\EducationalLevel::findorFail($class->edu_id)->name}}</td>
+                            <td>{{$class->level->name}}</td>
                             <td>{{$class->created_at}}</td>
                             <td>{{$class->updated_at}}</td>
                             <td>
@@ -75,7 +75,7 @@
                                                 <h5 class="modal-title" id="exampleModalLabel">{{__('public.force delete')}}</h5>
                                             </div>
                                             <div class="modal-body">
-                                                {{__('public.are you sure you want to delete').$class->name}}
+                                                {{__('public.are you sure you want to completely delete').$class->name}}
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

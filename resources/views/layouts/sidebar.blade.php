@@ -334,7 +334,7 @@
                         <div class="line-black">
                             <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a student')}}</a>
                             <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
-                            <a href="#" class="li-link">{{__('sidebar.deleted student')}}</a>
+                            <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted student')}}</a>
                             <a href='/absence' class="li-link">{{__('sidebar.student absence')}}</a>
                             <a href="#" class="li-link">2</a>
                             {{-- START THE SECOND DROPDOWN --}}

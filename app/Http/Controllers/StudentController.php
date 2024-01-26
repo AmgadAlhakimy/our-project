@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display students.
      */
     public function index()
     {
@@ -28,7 +28,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show creating new student page.
      */
     public function create()
     {
@@ -89,7 +89,7 @@ class StudentController extends Controller
             return  $gender_ar;
     }
     /**
-     * Store a newly created resource in storage.
+     * Store a new student.
      */
     public function store(StoreStudentRequest $request)
     {
@@ -137,15 +137,22 @@ class StudentController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display deleted students.
      */
-    public function show(Student $student)
+    public function show()
     {
-        //
+        try {
+            $students = Student::onlyTrashed()->get();
+            return view('students_affairs/students.deleted_students',
+                compact('students', ));
+
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing student page.
      */
     public function edit($id)
     {
@@ -161,7 +168,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified student.
      */
     public function update(UpdateStudentRequest $request, $id)
     {
@@ -209,7 +216,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified student.
      */
     public function destroy($id)
     {
@@ -223,9 +230,36 @@ class StudentController extends Controller
     }
 
 
+    /**
+     * Restore the specified student.
+     */
+    public function restore($id)
+    {
+        try {
+            Student::withTrashed()->where('id', $id)->restore();
+            return redirect()->back();
+
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
 
     /**
-     * show classes according to the search.
+     * Remove by force the specified student.
+     */
+    public function forceDelete($id)
+    {
+        try {
+            Student::withTrashed()->where('id', $id)->forceDelete();
+            return redirect()->back();
+
+        }catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    /**
+     * show student according to the search.
      */
     public function search(Request $request)
     {

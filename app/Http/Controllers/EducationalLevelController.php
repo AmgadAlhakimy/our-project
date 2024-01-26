@@ -51,7 +51,8 @@ class EducationalLevelController extends Controller
          ]);
         return redirect()->back()->with(['success' => __('message.success')]);
         } catch (\Exception $e) {
-            return $e->getMessage();
+        return redirect()->back()->with(['error' => $e->getMessage()]);
+//            return redirect()->back()-with(['error'=> $e->getMessage()]);
         }
     }
 

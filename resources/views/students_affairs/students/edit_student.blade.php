@@ -39,7 +39,7 @@
                             <label class="" for="photo">{{__('change students photo')}}</label>
                             <input type="file" class="form-control col-8" id="photo" name="photo" value="{{$student->photo}}">
                             <img src="{{asset($student->photo)}}"
-                                 class="student-img col-4" alt="photo">
+                                 class="student-img col-4" alt="no photo">
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -66,12 +66,12 @@
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender">{{__('student.gender')}}</label>
-                            <select class="col form-select form-control" id="gender" name="gender"  >
+                            <select class="col form-select form-control" id="gender" name="gender">
                                 <option class="text-center"
-                                        value="{{__('student.male')}}" @if($student->getTranslation('address','en') == 'male') selected @endif>
+                                        value="{{__('student.male')}}" @if($student->getTranslation('gender','en') == 'male') selected @endif>
                                     {{__('student.male')}}</option>
                                 <option class="text-center"
-                                        value="{{__('student.female')}}"  @if($student->getTranslation('address','en') == 'male') selected @endif>
+                                        value="{{__('student.female')}}"  @if($student->getTranslation('gender','en') == 'female') selected @endif>
                                     {{__('student.female')}}</option>
                             </select>
                             @error('gender')
