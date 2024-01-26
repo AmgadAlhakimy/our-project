@@ -18,6 +18,7 @@
     <link href="{{URL::asset('css/sidebar-header.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/cards_info.css')}}" rel="stylesheet">
     <!-- box icons -->
     <!-- box icons -->
     <!-- styles -->
@@ -32,7 +33,7 @@
     <div class="head " dir="ltr">
         {{-- THE MAIN SEARCH OF SIDEBAR --}}
         <div class="search p-relative">
-            <label for="rtl"></label> <input class="search1" type="search" placeholder="{{__('sidebare.search')}}" id="rtl" />
+            <label for="rtl"></label> <input class="search1" type="search" placeholder="{{__('sidebar.search')}}" id="rtl" />
         </div>
         <div class="icons">
                     <span class="notification p-relative">
@@ -58,7 +59,7 @@
                 @endforeach
             </ul>
         </div>
-            <a class=" me-2 ms-2 card-info" aria-current="page" href="#">  <i class="icon-1 fa-solid fa-home-lg-alt"></i>HOME</a>
+            <a class="cards_info_style me-1 ms-1 card-info " aria-current="page" href='/'>  <i class="h2 icon-1 fa-solid fa-home-lg-alt"></i></a>
 
 
     </div>
@@ -83,73 +84,99 @@
         <div class="my-menu">
             <div class="sidebar-nav">
                 <ul class="list-ul my-scroll">
-                    <!--  dropdown list item -->
-                    <p class="title">{{__('sidebar.Admin')}}</p>
+                    <!--  dropdown list item عنوان القسم-->
+                    <p class="title">{{__('sidebar.academic department')}}</p>
+                    {{-- القسم الأكاديمي --}}
+                    {{-- اضافة الاقسام الأكاديمية --}}
                     <li class="dropdown">
                         <!-- ========== 1 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i class="icon-1 fa-solid fa-window-restore"></i>
-                                <span class="menu-name">{{__('sidebar.academic department')}} </span>
+                                <i
+                                    class="icon-1 fa-solid fa-window-restore"
+                                ></i>
+                                <span class="menu-name"> {{__('sidebar.addition')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                {{-- -------------- --}}
-                                {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropDownLang my-element" onclick="cancelclick(event)" id="">
-                                    <div class="select">
-                                        <span class="selected"> {{__('sidebar.addition')}}</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    {{-- onclick="propagateClick(event)" --}}
-                                    <ul class="menuLang " id="childElement">
-                                        <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">{{__('sidebar.add educational level')}}</a>
-                                        <a id="" href="{{route('classes.create')}}" class="li-link_2">  {{__('sidebar.add a class')}}</a>
-                                        <a href="{{route('subjects.create')}}" class="li-link_2"> {{__('sidebar.add subject')}}</a>
-                                        <a href="{{route('activities.create')}}" class="li-link_2" > {{__('sidebar.add activity')}}</a>
-                                    </ul>
-                                </div>
-                                {{-- END THE SECOND DROPDOWN --}}
-                                {{-- -------------- --}}
-                                {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropDownLang my-element" onclick="cancelclick(event)">
-                                    <div class="select">
-                                        <span class="selected"> {{__('sidebar.academic department review')}} </span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menuLang">
-                                        <a href="{{route('educational_levels.index')}}" class="li-link_2">{{__('sidebar.review of educational level')}}</a>
-                                        <a href="{{route('classes.index')}}" class="li-link_2">{{__('sidebar.review of classes')}}</a>
-                                        <a href="{{route('subjects.index')}}" class="li-link_2"> {{__('sidebar.review of subjects')}}</a>
-                                        <a href="{{route('activities.index')}}" class="li-link_2">{{__('sidebar.review activities')}}</a>
-                                    </ul>
-                                </div>
-                                {{-- END THE SECOND DROPDOWN --}}
-                                {{-- -------------- --}}
-                                {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropDownLang my-element" onclick="cancelclick(event)">
-                                    <div class="select">
-                                        <span class="selected">{{__('sidebar.trash')}}</span>
-                                        <div class="caret"></div>
-                                    </div>
-
-                                    <ul class="menulang">
-                                        <a href="{{route('educational_levels.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted educational level')}}</a>
-                                        <a href="{{route('classes.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted classes')}}</a>
-                                        <a href="{{route('subjects.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted subjects')}}</a>
-                                        <a href="{{route('activities.show','deleted')}}" class="li-link_2">{{__('sidebar.deleted activities')}}</a>
-                                        {{-- <a href="#" class="li-link_2">1</a> --}}
-                                    </ul>
-                                </div>
-                                {{-- END THE SECOND DROPDOWN --}}
-
-                                <a href='/relations-page' class="li-link">الربط بين العلاقات</a>
+                                <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">{{__('sidebar.add educational level')}}</a>
+                                <a id="" href="{{route('classes.create')}}" class="li-link_2">  {{__('sidebar.add a class')}}</a>
+                                <a href="{{route('subjects.create')}}" class="li-link_2"> {{__('sidebar.add subject')}}</a>
+                                <a href="{{route('activities.create')}}" class="li-link_2" > {{__('sidebar.add activity')}}</a>
                             </div>
                         </div>
                     </li>
-
+                    <!-- ========== 2 ============ -->
+                    {{-- عرض الاقسام الأكاديمية --}}
+                    <li class="dropdown">
+                        <!-- ========== 2 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i
+                                    class="icon-1 fa-solid fa-window-restore"
+                                ></i>
+                                <span class="menu-name"> {{__('sidebar.academic department review')}} </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href="{{route('educational_levels.index')}}" class="li-link">{{__('sidebar.review of educational level')}}</a>
+                                <a href="{{route('classes.index')}}" class="li-link">{{__('sidebar.review of classes')}}</a>
+                                <a href="{{route('subjects.index')}}" class="li-link"> {{__('sidebar.review of subjects')}}</a>
+                                <a href="{{route('activities.index')}}" class="li-link">{{__('sidebar.review activities')}}</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ========== 3 ============ -->
+                    {{-- سلة المهملات --}}
+                    <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i
+                                    class="icon-1 fa-solid fa-window-restore"
+                                ></i>
+                                <span class="menu-name">{{__('sidebar.trash')}} </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href="{{route('educational_levels.show','deleted')}}" class="li-link">{{__('sidebar.deleted educational level')}}</a>
+                                <a href="{{route('classes.show','deleted')}}" class="li-link">{{__('sidebar.deleted classes')}}</a>
+                                <a href="{{route('subjects.show','deleted')}}" class="li-link">{{__('sidebar.deleted subjects')}}</a>
+                                <a href="{{route('activities.show','deleted')}}" class="li-link">{{__('sidebar.deleted activities')}}</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ========== 4 ============ -->
+                    {{--  عرض التقارير --}}
+                    <li class="dropdown">
+                        <!-- ========== 4 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i
+                                    class="icon-1 fa-solid fa-window-restore"
+                                ></i>
+                                <span class="menu-name">{{__('عرض التقارير')}} </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href="#" class="li-link">1</a>
+                                <a href="#" class="li-link">1</a>
+                                <a href="#" class="li-link">1</a>
+                                <a href="#" class="li-link">1</a>
+                                <a href="#" class="li-link">1</a>
+                                <a href="#" class="li-link">1</a>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ========== 5 ============ -->
                     {{-- ---الحسابات--- --}}
                     <!-- ======================== ACOUNTENT ========================== -->
                     {{-- <li class="dropdown">
@@ -186,12 +213,10 @@
                         </div>
                     </li> --}}
                     {{--  START the second section --}}
-                    <div>
-                        <p class="title">test</p>
-                    </div>
+
+                        <p class="title">قسم الكنترول</p>
+
                     {{--  END the second section --}}
-
-
                     {{-- ---الكنترول--- --}}
                     <!-- ======================== CONTROLE ========================== -->
                     {{-- <li class="dropdown">
@@ -219,6 +244,8 @@
 
                     {{-- ---الآباء--- --}}
                     <!-- ======================== PARENTS ========================== -->
+                    <p class="title">قسم اولياء الأمور</p>
+
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
@@ -234,36 +261,6 @@
                             <div class="line-black">
                                 <a href="#" class="li-link">معلومات اولياء الامور</a>
                                 <a href="#" class="li-link">2</a>
-                                {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropDownLang my-element">
-                                    <div class="select">
-                                        <span class="selected">Lang</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menuLang">
-                                        <a href="#" class="li-link_2">1</a>
-                                        <a href="#" class="li-link_2">2</a>
-                                        <a href="#" class="li-link_2">3</a>
-                                        <a href='#' class="li-link_2">4</a>
-                                        <a href="#" class="li-link_2">5</a>
-                                    </ul>
-                                </div>
-                                {{-- END THE SECOND DROPDOWN --}}
-                                {{-- START THE SECOND DROPDOWN --}}
-                                <div class="dropDownLang my-element" >
-                                    <div class="select">
-                                        <span class="selected">Lang</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menuLang">
-                                        <a href="#" class="li-link_2">1</a>
-                                        <a href="#" class="li-link_2">2</a>
-                                        <a href="#" class="li-link_2">3</a>
-                                        <a href='#' class="li-link_2">4</a>
-                                        <a href="#" class="li-link_2">5</a>
-                                    </ul>
-                                </div>
-                                {{-- END THE SECOND DROPDOWN --}}
                                 <a href="#" class="li-link">3</a>
                                 <a href="#" class="li-link">4</a>
                                 <a href="#" class="li-link">5</a>
@@ -292,33 +289,10 @@
                             </div>
                         </div>
                     </li>
-
-                    {{-- ---السكرتارية--- --}}
-                    <!-- ======================== SECURTARY ========================== -->
-                    {{-- <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name"
-                                    >السكرتارية</span
-                                >
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">2</a>
-                                <a href="#" class="li-link">3</a>
-                                <a href="#" class="li-link">4</a>
-                            </div>
-                        </div>
-                    </li> --}}
                             {{-- -------------شؤون الطلاب---------------  --}}
                     <!-- ======================== STUDENTS ========================== -->
+                    <p class="title">{{__('sidebar.students affairs')}}</p>
+
                     <li class="dropdown">
                     <!-- ========== 2 ============ -->
                     <div class="sidebar-title">
@@ -332,11 +306,17 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
+                            {{-- Add student --}}
                             <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a student')}}</a>
+                            {{-- review students --}}
                             <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
                             <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted student')}}</a>
+                            {{-- deleted students --}}
+                            {{-- student avsence --}}
                             <a href='/absence' class="li-link">{{__('sidebar.student absence')}}</a>
-                            <a href="#" class="li-link">2</a>
+                            <a href='/student_form' class="li-link">معلومات الطلاب</a>
+                            <a href="#" class="li-link">الطلاب الأوائل</a>
+
                             {{-- START THE SECOND DROPDOWN --}}
                             <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                 <div class="select">
@@ -349,35 +329,13 @@
                                     <a href="#" class="li-link_2">3</a>
                                     <a href='#' class="li-link_2">4</a>
                                     <a href="#" class="li-link_2">5</a>
-                                </ul>
-                                {{-- تجربة --}}
-                                {{-- <a href="#" class="">
-                                    <ul class="list-ul">
-                                        <li class="dropdown">
-                                            <div class="sidebar-title">
-                                                <a href="#" class="li-link title-4">
-
-                                                    <span class="menu-name">تجربـــــه </span>
-                                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
-                                                </a>
-                                            </div>
-                                            <div class="submenu">
-                                                <div class="line-black">
-                                                    <a href="#" class="li-link">1</a>
-                                                    <a href="#" class="li-link">2</a>
-                                                    <a href="#" class="li-link">3</a>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                    </ul>
-                                </div>
-                                {{-- END THE SECOND DROPDOWN --}}
+                                </ul>  {{-- END THE SECOND DROPDOWN --}}
                             </div>
                         </div>
 
                         {{-- ---المعلمين--- --}}
                     <!-- ======================== TEACHERS ========================== -->
+
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
@@ -504,6 +462,14 @@
                                 <a href="#" class="li-link">400000</a>
                                 <a href="#" class="li-link">200000</a>
                                 <a href="#" class="li-link">100000</a>
+                                <a href="#" class="li-link">200000</a>
+                                <a href="#" class="li-link">400000</a>
+                                <a href="#" class="li-link">200000</a>
+                                <a href="#" class="li-link">100000</a>
+                                <a href="#" class="li-link">200000</a>
+                                <a href="#" class="li-link">400000</a>
+                                <a href="#" class="li-link">200000</a>
+                                <a href="#" class="li-link">100000</a>
                             </div>
                         </div>
                     </li>
@@ -566,3 +532,34 @@
 <script src="{{URL::asset('js/script.js')}}"></script>
 </body>
 </html>
+
+
+{{-- تصميم الدروبداون الثانوي --}}
+
+                                {{-- <div class="dropDownLang my-element">
+                                    <div class="select">
+                                        <span class="selected">Lang</span>
+                                        <div class="caret"></div>
+                                    </div>
+                                    <ul class="menuLang">
+                                        <a href="#" class="li-link_2">1</a>
+                                        <a href="#" class="li-link_2">2</a>
+                                        <a href="#" class="li-link_2">3</a>
+                                        <a href='#' class="li-link_2">4</a>
+                                        <a href="#" class="li-link_2">5</a>
+                                    </ul>
+                                </div>
+
+                                <div class="dropDownLang my-element" >
+                                    <div class="select">
+                                        <span class="selected">Lang</span>
+                                        <div class="caret"></div>
+                                    </div>
+                                    <ul class="menuLang">
+                                        <a href="#" class="li-link_2">1</a>
+                                        <a href="#" class="li-link_2">2</a>
+                                        <a href="#" class="li-link_2">3</a>
+                                        <a href='#' class="li-link_2">4</a>
+                                        <a href="#" class="li-link_2">5</a>
+                                    </ul>
+                                </div> --}}

@@ -33,7 +33,12 @@ Route::group(
         require __DIR__.'/resources.php';
         require __DIR__.'/restore.php';
         require __DIR__.'/force_delete.php';
-});
+
+        // testing
+        Route::get('student_form', function () {
+            return view('students_affairs/students/student_form_info');
+        });
+    });
 
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/

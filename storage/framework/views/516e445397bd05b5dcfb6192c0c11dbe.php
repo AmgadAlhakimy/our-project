@@ -66,7 +66,6 @@
                         <th ><div class="th-head-2" ><?php echo e(__('public.class')); ?></div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.created at')); ?></div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.updated at')); ?></div></th>
-                        <th ><div class="th-head-3" ><?php echo e(__('student.parents')); ?></div></th>
                         <th colspan="2"><div class="th-head-4" ><?php echo e(__('public.processes')); ?></div></th>
                         <th ><div class="th-head-2" >more info</div></th>
                     </tr>
@@ -85,7 +84,6 @@
                             <td><?php echo e($student->classes->name); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
-                            <td><button class="btn save-button btn-info  w-100">Parent<i class="ms-5 fa-solid fa-male"></i><i class=" fa-solid fa-female"></i></button></td>
 
                             <td>
                                 <a href="<?php echo e(route('students.edit',$student->id)); ?>"

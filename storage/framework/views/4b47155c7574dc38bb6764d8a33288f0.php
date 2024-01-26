@@ -1,6 +1,17 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
         <!-- table-hover table-striped -->
+        <div class="table-header">
+
+            
+            <div class="row first-card ">
+                <h4 class="col container-title mt-2"><?php echo e(__('DELETED ACTIVITIES')); ?></h4>
+                <div class="row col ">
+                    <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
+                    <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
+                </div>
+            </div>
+        </div>
         <div class="card table-section ">
             <table class=" ">
                 <thead>
