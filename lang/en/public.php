@@ -38,7 +38,7 @@ return [
     'cost'=>'Cost',
     'educational level'=>'Educational Level',
     'are you sure you want to delete'=>'Are you sure you want to delete: ',
-    'sex'=>'Sex',
+    'gender'=>'gender',
     'male'=>'Male',
     'female'=>'Female',
     'male_ar'=>'ذكر',

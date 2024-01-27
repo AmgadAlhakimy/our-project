@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->json('name')->unique();
             $table->string('photo')->nullable();
-            $table->json('sex');
+            $table->json('gender');
             $table->bigInteger('contact');
             $table->json('address');
             $table->json('qualification');

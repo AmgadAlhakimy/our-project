@@ -24,10 +24,15 @@ class StoreTeacherRequest extends FormRequest
     {
         return [
             'name' => ['required', 'max:100'],
+            'name_ar' => ['required', 'max:100'],
             'contact' => ['required', 'numeric'],
             'address' => ['required', 'max:100'],
+            'address_ar' => ['required', 'max:100'],
+            'qualification' => ['required', 'max:100'],
+            'qualification_ar' => ['required', 'max:100'],
             'salary' => ['required', 'numeric'],
             'major' => ['required', 'max:100'],
+            'major_ar' => ['required', 'max:100'],
         ];
     }
 }

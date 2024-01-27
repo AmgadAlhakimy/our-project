@@ -19,7 +19,7 @@ class SubjectController extends Controller
             return view('academic_dep/subjects.index_subjects',
                 compact('subjects'));
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -32,7 +32,7 @@ class SubjectController extends Controller
         try {
             return view('academic_dep/subjects.create_subjects');
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -50,7 +50,7 @@ class SubjectController extends Controller
             ]);
             return redirect()->back()->with(['success' => 'saved successfully']);
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -65,7 +65,7 @@ class SubjectController extends Controller
                 compact('subjects'));
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -79,7 +79,7 @@ class SubjectController extends Controller
             return view('academic_dep/subjects.edit_subjects',
                 compact('subject'));
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -100,7 +100,7 @@ class SubjectController extends Controller
             return redirect()->route('subjects.index')
                 ->with(['success' => __('message.update')]);
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
 
     }
@@ -116,7 +116,7 @@ class SubjectController extends Controller
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -131,7 +131,7 @@ class SubjectController extends Controller
                 ->with(['success' => trans('message.restore')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -146,7 +146,7 @@ class SubjectController extends Controller
                 ->with(['warning' => trans('message.force delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
@@ -166,7 +166,7 @@ class SubjectController extends Controller
                 compact('search','subjects'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

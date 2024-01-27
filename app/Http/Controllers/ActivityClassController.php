@@ -29,7 +29,7 @@ class ActivityClassController extends Controller
             return view('academic_dep/relations.class_activities',
                 compact('classses','activities'));
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

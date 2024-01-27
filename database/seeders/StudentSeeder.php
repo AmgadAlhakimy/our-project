@@ -41,6 +41,7 @@ class StudentSeeder extends Seeder
                 ],
                 'class_id'=>$classes->random()->id,
                 'relative_id'=>$relatives->random()->id,
+                'note'=>'no note',
             ]);
         }
     }

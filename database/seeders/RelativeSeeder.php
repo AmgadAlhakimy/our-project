@@ -13,7 +13,6 @@ class RelativeSeeder extends Seeder
      */
     public function run(): void
     {
-        $student = Student::all();
         for($i = 1; $i<=10; $i++ ){
             Relative::create([
                 'father_name'=> [

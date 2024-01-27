@@ -8,6 +8,7 @@ use App\Http\Controllers\EducationalLevelController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,4 +33,8 @@ Route::get('activities/search',
 Route::get('students/search',
     [StudentController::class, 'search'])
     ->name('students.search');
+
+Route::get('teachers/search',
+    [TeacherController::class, 'search'])
+    ->name('teachers.search');
 

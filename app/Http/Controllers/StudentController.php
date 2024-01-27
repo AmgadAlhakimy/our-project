@@ -7,11 +7,16 @@ use App\Http\Requests\student\UpdateStudentRequest;
 use App\Models\Classs;
 use App\Models\Relative;
 use App\Models\Student;
+use App\Traits\GenderTrait;
+use App\Traits\PhotoTrait;
 use Exception;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    use PhotoTrait;
+    use GenderTrait;
+
     /**
      * Display students.
      */
@@ -24,7 +29,7 @@ class StudentController extends Controller
             compact('students', 'classes'));
 
         }catch (\Exception  $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -40,56 +45,10 @@ class StudentController extends Controller
             compact('classes','relatives'));
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
-    /**
-     * store image.
-     */
-    private function image($request, $id)
-    {
-        if ($request->photo != NULL){
-        $requestData = $request->all();
-        $filename = time().$request->file('photo')->getClientOriginalName();
-        $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
-        $requestData["photo"] = '/storage/'.$path;
-        return $requestData['photo'];
-        }else{
-             $student = Student::findorFail($id);
-             return  $student->photo;
-        }
-    }
-    /**
-     * translate the gender.
-     */
-    private function gender($request,$lang)
-    {
-        if($request->gender == 'ذكر')
-        {
-            $gender_en = $request->gender_ar_m;
-            $gender_ar = $request->gender;
-        }
-        elseif (strtolower($request->gender )== 'male')
-        {
-            $gender_en = $request->gender;
-            $gender_ar = $request->gender_ar_m;
-        }
-        elseif ($request->gender == 'أنثى')
-        {
-            $gender_en = $request->gender_ar_f;
-            $gender_ar = $request->gender;
-        }
-        elseif (strtolower($request->gender )== 'female')
-        {
-            $gender_en = $request->gender;
-            $gender_ar = $request->gender_ar_f;
-        }
 
-        if($lang == 'en')
-            return $gender_en;
-        elseif($lang == 'ar')
-            return  $gender_ar;
-    }
     /**
      * Store a new student.
      */
@@ -101,7 +60,8 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request,0),
+            'photo'=>$this->image($request,0,
+                "\App\Models\Student",'images/students'),
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
@@ -135,7 +95,7 @@ class StudentController extends Controller
         return redirect()->back()->with(['success' => __('message.success')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -150,7 +110,7 @@ class StudentController extends Controller
                 compact('students', ));
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -166,7 +126,7 @@ class StudentController extends Controller
                 compact('student','classes'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -182,7 +142,9 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request, $id),
+            'photo'=>$this->image($request,$id,
+                "\App\Models\Student",'images/students'),
+
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
@@ -216,7 +178,7 @@ class StudentController extends Controller
             ->with(['success' => __('message.update')]);
 
         }catch (\Exception $e){
-         return $e->getMessage();
+         return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -231,7 +193,7 @@ class StudentController extends Controller
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -247,7 +209,7 @@ class StudentController extends Controller
                 ->with(['success' => trans('message.restore')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -262,7 +224,7 @@ class StudentController extends Controller
                 ->with(['warning' => trans('message.force delete')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -293,7 +255,7 @@ class StudentController extends Controller
                 compact('search','students'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -308,7 +270,7 @@ class StudentController extends Controller
                 compact('student',));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }

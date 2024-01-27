@@ -89,7 +89,8 @@
                         {{-- 7 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="english-birth-place">{{__('student.place of birth in arabic')}}</label>
-                            <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar"  value="{{$student->getTranslation('place_of_birth','ar')}}">
+                            <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar"
+                                   value="{{$student->getTranslation('place_of_birth','ar')}}">
                             @error('place_of_birth_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -97,7 +98,8 @@
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="arabic-birth-place">{{__('student.place of birth in english')}}</label>
-                            <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth"  value="{{$student->getTranslation('place_of_birth','en')}}">
+                            <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth"
+                                   value="{{$student->getTranslation('place_of_birth','en')}}">
                             @error('place_of_birth')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror

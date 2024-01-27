@@ -27,7 +27,7 @@ class ClassSubjectController extends Controller
             return view('academic_dep/relations.class_subjects',
                 compact('classses','subjects'));
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -48,7 +48,7 @@ class ClassSubjectController extends Controller
             ]);
             return redirect()->back()->with(['success'=>'saved successfully']);
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

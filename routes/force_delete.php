@@ -6,6 +6,7 @@ use App\Http\Controllers\EducationalLevelController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,3 +33,7 @@ Route::get('students/forceDelete/{id}',
 Route::get('semesters/forceDelete/{id}',
     [SemesterController::class, 'forceDelete'])
     ->name('semesters.forceDelete');
+
+Route::get('teachers/forceDelete/{id}',
+    [TeacherController::class, 'forceDelete'])
+    ->name('teachers.forceDelete');

@@ -4,14 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 
 class Teacher extends Model
 {
-    use HasTranslations;
     use HasFactory;
+    use SoftDeletes;
+    use HasTranslations;
 
-    public $translatable=['name','sex','address','qualification','major'];
-    protected $fillable= ['name','photo','sex','contact','address','qualification',
-        'salary','major','note'];
+    protected $fillable= ['name','photo','gender','contact','address',
+                          'qualification','salary','major','note'];
+
+    public $translatable=['name','gender','address','qualification','major'];
+
+
 }

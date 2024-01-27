@@ -29,7 +29,7 @@ class EduClassController extends Controller
             return view('academic_dep/relations.',
                 compact('classses','levels'));
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

@@ -22,7 +22,7 @@ class ClassController extends Controller
                 compact('classes'));
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -37,7 +37,7 @@ class ClassController extends Controller
             compact('levels'));
 
         }catch (Exception $e){
-                return $e->getMessage();
+                return redirect()->back()->with(['error' => $e->getMessage()]);
           }
         }
 
@@ -57,7 +57,7 @@ class ClassController extends Controller
        ]);
         return redirect()->back()->with(['success'=>'saved successfully']);
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -71,7 +71,7 @@ class ClassController extends Controller
         return view('academic_dep/classes.deleted_classes',
             compact('classes'));
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -87,7 +87,7 @@ class ClassController extends Controller
             compact('class', 'levels'));
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -110,7 +110,7 @@ class ClassController extends Controller
             ->with(['success' => __('message.update')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -125,7 +125,7 @@ class ClassController extends Controller
                 ->with(['warning' => trans('message.delete')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -140,7 +140,7 @@ class ClassController extends Controller
             ->with(['success' => trans('message.restore')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -155,7 +155,7 @@ class ClassController extends Controller
             ->with(['warning' => trans('message.force delete')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -181,7 +181,7 @@ class ClassController extends Controller
                 compact('search','classes'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }

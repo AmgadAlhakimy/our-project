@@ -19,7 +19,7 @@ class RelativeController extends Controller
                 compact('relatives'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -32,7 +32,7 @@ class RelativeController extends Controller
             return view('students_affairs/relatives.create_relative');
         }catch (\Exception $e)
         {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -76,7 +76,7 @@ class RelativeController extends Controller
             return redirect()->back()->with(['success' => __('message.success')]);
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

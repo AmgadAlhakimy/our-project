@@ -38,7 +38,7 @@ return [
     'contact'=>'الهاتف',
     'date'=>'التاريخ',
     'cost'=>'التكلفة',
-    'sex'=>'النوع',
+    'gender'=>'النوع',
     'male'=>'ذكر',
     'female'=>'أنثى',
     'male_ar'=>'Male',

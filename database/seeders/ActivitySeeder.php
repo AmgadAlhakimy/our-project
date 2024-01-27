@@ -25,6 +25,7 @@ class ActivitySeeder extends Seeder
                 ],
                 'contact'=>772546950+$i,
                 'date'=>"2024-02-$i",
+                'note'=>'no note',
 
             ]);
         }

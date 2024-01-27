@@ -18,7 +18,7 @@ class ActivityController extends Controller
             $activities= Activity::all();
             return view('academic_dep/activities.index_activities',compact('activities'));
         }catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -30,7 +30,7 @@ class ActivityController extends Controller
         try {
         return view('academic_dep/activities.create_activities');
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -50,7 +50,7 @@ class ActivityController extends Controller
             return redirect()->back()->with(['success' => __('message.success')]);
         }
         catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -64,7 +64,7 @@ class ActivityController extends Controller
             return view('academic_dep/activities.deleted_activities', compact('activities'));
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -78,7 +78,7 @@ class ActivityController extends Controller
             return view('academic_dep/activities.edit_activities'
                 ,compact('activity'));
         }catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
@@ -98,7 +98,7 @@ class ActivityController extends Controller
                 ->with(['success' => __('message.update')]);
         }
         catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
@@ -113,7 +113,7 @@ class ActivityController extends Controller
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
@@ -127,7 +127,7 @@ class ActivityController extends Controller
                 ->with(['success' => trans('message.restore')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -142,7 +142,7 @@ class ActivityController extends Controller
                 ->with(['warning' => trans('message.force delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -167,7 +167,7 @@ class ActivityController extends Controller
                 compact('search','activities'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }

@@ -281,7 +281,9 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/add-teacher' class="li-link">اضافة مدرس</a>
+                                <a href="{{route('teachers.create')}}" class="li-link">اضافة مدرس</a>
+                                <a href="{{route('teachers.index')}}" class="li-link">عرض المدرسين</a>
+                                <a href="{{route('teachers.show','deleted')}}" class="li-link">عرض المدرسين المحذوفين</a>
                                 <a href='/add-emp' class="li-link">اضافة موظف</a>
                                 <a href="#" class="li-link">جدول الغياب</a>
                                 <a href="#" class="li-link">1</a>
