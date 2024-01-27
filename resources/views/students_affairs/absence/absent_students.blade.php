@@ -33,14 +33,14 @@
             <table class=" " >
                 <thead>
                     <tr>
-                        <th scope="col"><div class="th-head-1  " >id</div></th>
-                        <th scope="col"><div class="th-head-3" >Name</div></th>
-                        <th scope="col"><div class="th-head-2" >photo</div></th>
-                        <th scope="col"><div class="th-head-2" >class</div></th>
-                        <th scope="col"><div class="th-head-4" >note</div></th>
-                        <th scope="col"><div class="th-head-2" >processes</div></th>
-                        <th scope="col"><div class="th-head-1" ></div></th>
-                        <th scope="col"><div class="th-head-1" ></div></th>
+                        <th ><div class="th-head-1  " >id</div></th>
+                        <th ><div class="th-head-3" >Name</div></th>
+                        <th ><div class="th-head-2" >photo</div></th>
+                        <th ><div class="th-head-2" >class</div></th>
+                        <th ><div class="th-head-4" >note</div></th>
+                        <th ><div class="th-head-2" >processes</div></th>
+                        <th ><div class="th-head-1" ></div></th>
+                        <th ><div class="th-head-1" ></div></th>
 
                     </tr>
                 </thead>
@@ -149,20 +149,20 @@
     </div>
 @endsection
 
-<!-- <th scope="col"><div class="th-head-3" >father name</div></th>
-<th scope="col"><div class="th-head-3" >father work</div></th>
-<th scope="col"><div class="th-head-3" >father contact 1</div></th>
-<th scope="col"><div class="th-head-3" >father contact 2</div></th>
-<th scope="col"><div class="th-head-3" >mother name</div></th>
-<th scope="col"><div class="th-head-3" >mother work</div></th>
-<th scope="col"><div class="th-head-3" >mother contact 1</div></th>
-<th scope="col"><div class="th-head-3" >mother contact 2</div></th>
-<th scope="col"><div class="th-head-3" >next to kin</div></th>
-<th scope="col"><div class="th-head-3" >next to kin relationship</div></th>
-<th scope="col"><div class="th-head-3" >next to kin contact</div></th>
-<th scope="col"><div class="th-head-4" >note</div></th>
-<th scope="col"><div class="th-head-2" >processes</div></th>
-<th scope="col"><div class="th-head" > </div></th>
+<!-- <th ><div class="th-head-3" >father name</div></th>
+<th ><div class="th-head-3" >father work</div></th>
+<th ><div class="th-head-3" >father contact 1</div></th>
+<th ><div class="th-head-3" >father contact 2</div></th>
+<th ><div class="th-head-3" >mother name</div></th>
+<th ><div class="th-head-3" >mother work</div></th>
+<th ><div class="th-head-3" >mother contact 1</div></th>
+<th ><div class="th-head-3" >mother contact 2</div></th>
+<th ><div class="th-head-3" >next to kin</div></th>
+<th ><div class="th-head-3" >next to kin relationship</div></th>
+<th ><div class="th-head-3" >next to kin contact</div></th>
+<th ><div class="th-head-4" >note</div></th>
+<th ><div class="th-head-2" >processes</div></th>
+<th ><div class="th-head" > </div></th>
 -->
 
 <!--
@@ -170,36 +170,36 @@
 <table class="table my-card table-hover table-striped ">
     <thead>
     <tr>
-        <th scope="col"><div class="th-head-1  " >id</div></th>
-        <th scope="col"><div class="th-head-3" >Name</div></th>
-        <th scope="col"><div class="th-head-2" >photo</div></th>
-        <th scope="col"><div class="th-head-4" >address 1</div></th>
-        <th scope="col"><div class="th-head-4" >address 2</div></th>
-        <th scope="col"><div class="th-head-1" >sex</div></th>
-        <th scope="col"><div class="th-head-2" >birth date</div></th>
-        <th scope="col"><div class="th-head-3 " >place of birth</div></th>
-        <th scope="col"><div class="th-head-3" >date of joining</div></th>
-        <th scope="col"><div class="th-head-3" >take medicine</div></th>
-        <th scope="col"><div class="th-head-3" >medicine description</div></th>
-        <th scope="col"><div class="th-head-3" >have allergy</div></th>
-        <th scope="col"><div class="th-head-3" >allergy description</div></th>
-        <th scope="col"><div class="th-head-3" >health problem</div></th>
-        <th scope="col"><div class="th-head-4 ">health problem description</div> </th>
+        <th ><div class="th-head-1  " >id</div></th>
+        <th ><div class="th-head-3" >Name</div></th>
+        <th ><div class="th-head-2" >photo</div></th>
+        <th ><div class="th-head-4" >address 1</div></th>
+        <th ><div class="th-head-4" >address 2</div></th>
+        <th ><div class="th-head-1" >sex</div></th>
+        <th ><div class="th-head-2" >birth date</div></th>
+        <th ><div class="th-head-3 " >place of birth</div></th>
+        <th ><div class="th-head-3" >date of joining</div></th>
+        <th ><div class="th-head-3" >take medicine</div></th>
+        <th ><div class="th-head-3" >medicine description</div></th>
+        <th ><div class="th-head-3" >have allergy</div></th>
+        <th ><div class="th-head-3" >allergy description</div></th>
+        <th ><div class="th-head-3" >health problem</div></th>
+        <th ><div class="th-head-4 ">health problem description</div> </th>
 
-        <th scope="col"><div class="th-head-3" >father name</div></th>
-        <th scope="col"><div class="th-head-3" >father work</div></th>
-        <th scope="col"><div class="th-head-3" >father contact 1</div></th>
-        <th scope="col"><div class="th-head-3" >father contact 2</div></th>
-        <th scope="col"><div class="th-head-3" >mother name</div></th>
-        <th scope="col"><div class="th-head-3" >mother work</div></th>
-        <th scope="col"><div class="th-head-3" >mother contact 1</div></th>
-        <th scope="col"><div class="th-head-3" >mother contact 2</div></th>
-        <th scope="col"><div class="th-head-3" >next to kin</div></th>
-        <th scope="col"><div class="th-head-3" >next to kin relationship</div></th>
-        <th scope="col"><div class="th-head-3" >next to kin contact</div></th>
-        <th scope="col"><div class="th-head-4" >note</div></th>
-        <th scope="col"><div class="th-head-2" >processes</div></th>
-        <th scope="col"><div class="th-head" > </div></th>
+        <th ><div class="th-head-3" >father name</div></th>
+        <th ><div class="th-head-3" >father work</div></th>
+        <th ><div class="th-head-3" >father contact 1</div></th>
+        <th ><div class="th-head-3" >father contact 2</div></th>
+        <th ><div class="th-head-3" >mother name</div></th>
+        <th ><div class="th-head-3" >mother work</div></th>
+        <th ><div class="th-head-3" >mother contact 1</div></th>
+        <th ><div class="th-head-3" >mother contact 2</div></th>
+        <th ><div class="th-head-3" >next to kin</div></th>
+        <th ><div class="th-head-3" >next to kin relationship</div></th>
+        <th ><div class="th-head-3" >next to kin contact</div></th>
+        <th ><div class="th-head-4" >note</div></th>
+        <th ><div class="th-head-2" >processes</div></th>
+        <th ><div class="th-head" > </div></th>
 
     </tr>
     </thead>

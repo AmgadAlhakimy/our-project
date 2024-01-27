@@ -1,7 +1,6 @@
 <?php
 
 
-use App\Http\Controllers\EducationalLevelController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -35,11 +34,36 @@ Route::group(
         require __DIR__.'/restore.php';
         require __DIR__.'/force_delete.php';
 
+        // absence
+        Route::get('children', function () {
+            return view('teatchers/daily/children-follow-up');
+        });
 
         // absence
+        Route::get('school', function () {
+            return view('teatchers/daily/school-follow-up');
+        });
+
+        // absence
+        Route::get('student-list', function () {
+            return view('teatchers/daily/student-list');
+        });
+
+        // absence
+        Route::get('add_marks', function () {
+            return view('teatchers/marks/add');
+        });
+        // absence
+        Route::get('absence_class', function () {
+            return view('teatchers/absence/absent_student_class');
+        });
+
+        // absence
+
         Route::get('absence', function () {
             return view('students_affairs/absence/absent_students');
         });
+
         // a route to show more info about a student
         Route::get('students/more/{id}',
             [StudentController::class, 'more'])

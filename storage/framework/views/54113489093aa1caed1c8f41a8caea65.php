@@ -1,20 +1,47 @@
-
-
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
 
-
-
+        
+        
+        
         <div class="table-header">
-
+            
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">Student class</h4>
-                <div class="row col ">
-                    <input class="col search2" placeholder="<?php echo e(__('public.search')); ?>">
-                    <button class="col-1 save-button search-button "><?php echo e(__('public.search')); ?></button>
+                <h4 class="col container-title mt-2">Students Information</h4>
+                <div class="row first-card mt-4">
+                    <form method="post" action="<?php echo e(route('students.search')); ?>">
+                        <?php echo method_field('GET'); ?>
+                        <?php echo csrf_field(); ?>
+                        <div class="row">
+                            <label class="col-10">
+                                <input type="text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
+                            </label>
+                            <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
+                        </div>
+                    </form>
                 </div>
             </div>
+            
 
+            <div class="cards-container mt-4 third-card row">
+                <div class="card-info card-info_2 col ">
+                    <h4 class=" text-center">frist grade</h4>
+                    <h4 class=" Names"> MATH</h4>
+                </div>
+
+                <a class="card-info card-info_2  col  save-button"
+                    href='/children'>
+                    <h4 class="text-center">لكل الفصل</h4>
+                    <h4 class=" Names"> MATH</h4>
+                </a>
+
+                <div class="card-info card-info_2 col ">
+                    <h4 class="text-center ">Month</h4>
+                    <h4 class=" Names">10</h4>
+                </div>
+            </div>
+            
+            
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
                     <option class="text-center"
@@ -33,32 +60,18 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
             </div>
-
-
-            <div class="cards-container  third-card">
-                <div class="card-info card-info_2 col ms-2 me-2">
-                    <h4 class=" me-2 ms-2">Techer</h4>
-                    <h4 class=" Names">mohammad mohsen</h4>
-                </div>
-
-                <div class="card-info card-info_2 col ms-2 me-2">
-                    <h4 class=" me-2 ms-2">Month</h4>
-                    <h4 class=" Names">10</h4>
-                </div>
-            </div>
         </div>
-
+        
         <!-- table-hover table-striped -->
         <div class=" table-section ">
             <div class="card table-section ">
             <table class=" " >
                 <thead>
                     <tr class="">
-                        <th ><div class="th-head-1 " >id</div></th>
-                        <th ><div class="th-head-3" >Name</div></th>
-                        <th ><div class="th-head-2" >photo</div></th>
-                        <th ><div class="th-head-3" >student info </div></th>
-                        <th ><div class="th-head-3" >Daily follow-up</div></th>
+                        <th ><div class="th-head-1  " ><?php echo e(__('public.id')); ?></div></th>
+                        <th ><div class="th-head-3" ><?php echo e(__('public.name')); ?></div></th>
+                        <th ><div class="th-head-1" ><?php echo e(__('public.photo')); ?></div></th>
+                        <th ><div class="th-head-3" ><?php echo e(__('student.Daily Follow-Up')); ?></div></th>
                         <th ><div class="th-head-1" ></div></th>
                     </tr>
                 </thead>
@@ -67,8 +80,8 @@ unset($__errorArgs, $__bag); ?>
                         <td class="fw-bolder">130</td>
                         <td>mohanad naser mansour</td>
                         <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
-                        <td><button class="save-button btn-light w-100">Student info <i class="fa-solid fa-pen-to-square"></i></button></td>
-                        <td><button class="btn save-button btn-light me-5 w-100">Follow-up notbook<i class="ms-3 fa-solid fa-print"></i></button></td>
+                        <td>
+                            <a href='/children' class="btn save-button btn-light me-5 w-100"><?php echo e(__('student.Daily Follow-Up')); ?> (icon)<i class="ms-3 fa-solid fab-pen"></i></a></td>
                         <td></td>
                     </tr>
                 </tbody>

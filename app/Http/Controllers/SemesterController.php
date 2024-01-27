@@ -81,7 +81,8 @@ class SemesterController extends Controller
             $semester = Semester::findorFail($id);
             $semester->name = ['en' => $request->name, 'ar' => $request->name_ar];
             $semester->update();
-            return redirect()->route('semesters.index')->with(['success' => trans('message.update')]);
+            return redirect()->route('semesters.index')
+                ->with(['success' => trans('message.update')]);
         }
         catch (Exception $e){
             return $e->getMessage();
@@ -95,7 +96,9 @@ class SemesterController extends Controller
     {
         try {
         Semester::destroy($id);
-        return redirect()->route('semesters.index')->with(['success' => trans('message.delete')]);
+        return redirect()->route('semesters.index')
+            ->with(['warning' => trans('message.delete')]);
+
         } catch (Exception $e){
             return $e->getMessage();
         }
@@ -108,7 +111,9 @@ class SemesterController extends Controller
     {
         try {
         Semester::withTrashed()->where('id', $id)->restore();
-        return redirect()->back();
+        return redirect()->back()
+            ->with(['success' => trans('message.restore')]);
+
         } catch (Exception $e){
             return $e->getMessage();
         }
@@ -121,7 +126,9 @@ class SemesterController extends Controller
     {
         try {
         Semester::withTrashed()->where('id', $id)->forceDelete();
-        return redirect()->back();
+        return redirect()->back()
+            ->with(['warning' => trans('message.force delete')]);
+
         } catch (Exception $e){
             return $e->getMessage();
         }

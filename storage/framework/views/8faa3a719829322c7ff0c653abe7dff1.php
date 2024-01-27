@@ -183,6 +183,69 @@
                     
                     
 
+                        <p class="title">قسم المعلمين</p>
+                            
+                    <!-- ======================== TEACHERS ========================== -->
+
+                    <li class="dropdown">
+                        <!-- ========== 1 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i class="icon-1 fa-solid fa-window-restore"></i>
+                                <span class="menu-name"> دفتر المتابعة</span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href='/student-list' class="li-link">رياضيات \ سادس </a>
+                                <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <!-- ========== 2 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i class="icon-1 fa-solid fa-window-restore"></i>
+                                <span class="menu-name"> اضافة الدرجات </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href='/add_marks' class="li-link">رياضيات \ ثالث</a>
+                                <a href='#' class="li-link">علوم الحاسوب \ اول</a>
+                                <a href='#' class="li-link">علوم الحاسوب \ ثاني</a>
+                                <a href='#' class="li-link">علوم الحاسوب \ ثالث</a>
+                                <a href="#" class="li-link"> تقارير </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i class="icon-1 fa-solid fa-window-restore"></i>
+                                <span class="menu-name"> التحضير والغياب  </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href='/absence_class' class="li-link">اول</a>
+                                <a href='#' class="li-link">ثاني</a>
+                                <a href='#' class="li-link">ثالث</a>
+                                <a href='#' class="li-link">رابع</a>
+                                <a href='#' class="li-link">تقارير الغياب</a>
+                            </div>
+                        </div>
+                    </li>
+
+
+
+
+
+
                         <p class="title">قسم الكنترول</p>
 
                     
@@ -280,32 +343,6 @@
                                 </ul>  
                             </div>
                         </div>
-
-                        
-                    <!-- ======================== TEACHERS ========================== -->
-
-                    <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name"> المعلمين</span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href='/marks' class="li-link">الدرجات</a>
-                                <a href='/follow-up_nersory' class="li-link"> دفتر المتابعة الروضة</a>
-                                <a href='/follow-up_school' class="li-link">دفتر المتابعة المدرسة</a>
-                                <a href='/follow-up_schoo' class="li-link">قائمة بطلاب الفصل الفلاني</a>
-                                <a href="#" class="li-link"> 5 </a>
-                            </div>
-                        </div>
-                    </li>
-
 
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->

@@ -83,7 +83,7 @@ interface FieldsInterface extends BaseFieldsInterface
     /**
      * Returns the variant
      *
-     * The variant number describes the layouts of the UUID. The variant
+     * The variant number describes the layout of the UUID. The variant
      * number has the following meaning:
      *
      * - 0 - Reserved for NCS backward compatibility

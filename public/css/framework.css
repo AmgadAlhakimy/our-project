@@ -259,7 +259,7 @@ input::-webkit-inner-spin-button {
     -10px -10px 10px -1px
     rgba(255, 255, 255, 0.7);
 }
-.save-button:hover {
+.save-button:active {
   transition: 1s;
   /* background-image: linear-gradient(180deg, var(--S-Color-5), var(--S-Color-4));
   color: var(--S-Color-2); */
@@ -282,7 +282,7 @@ input::-webkit-inner-spin-button {
 -10px -10px 10px -1px
 rgba(255, 255, 255, 0.7);
 }
-.clear-button:hover {
+.clear-button:active {
   /* background-image: linear-gradient(180deg, var(--S-Color-5), var(--S-Color-4));
   color: var(--S-Color-2); */
   transition: 1s;

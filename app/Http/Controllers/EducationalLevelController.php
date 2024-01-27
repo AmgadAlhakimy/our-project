@@ -93,7 +93,9 @@ class EducationalLevelController extends Controller
         $level = EducationalLevel::findorFail($id);
             $level->name = ['en' => $request->name, 'ar' => $request->name_ar];
             $level->update();
-        return redirect()->route('educational_levels.index');
+
+            return redirect()->route('educational_levels.index')
+                ->with(['success' => __('message.update')]);
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -106,7 +108,9 @@ class EducationalLevelController extends Controller
     {
         try {
         EducationalLevel::destroy($id);
-        return redirect()->route('educational_levels.index');
+        return redirect()->route('educational_levels.index')
+            ->with(['warning' => trans('message.delete')]);
+
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -117,7 +121,9 @@ class EducationalLevelController extends Controller
     public function restore($id){
         try {
             EducationalLevel::withTrashed()->where('id', $id)->restore();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['success' => trans('message.restore')]);
+
         } catch (\Exception $e){
             return $e->getMessage();
         }
@@ -129,7 +135,9 @@ class EducationalLevelController extends Controller
     {
         try {
             EducationalLevel::withTrashed()->where('id', $id)->forceDelete();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['warning' => trans('message.force delete')]);
+
         } catch (\Exception $e){
             return $e->getMessage();
         }

@@ -95,8 +95,6 @@ function toggleInput() {
     var input5 = document.getElementById("std_health_desc_1")
     var input6 = document.getElementById("std_health_desc_2")
 
-
-
     check_test(checkbox1,input1,input2);
     check_test(checkbox2,input3,input4);
     check_test(checkbox3,input5,input6);

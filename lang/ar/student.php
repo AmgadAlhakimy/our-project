@@ -59,5 +59,8 @@ return [
     'first you have to add classes'=>'يجب إضافة فصول أولا',
     'parents'=>'الآباء',
     'more info'=>'المزيد',
+    'birth date'=> 'تاريخ الميلاد',
+    'birth place'=> 'مكان الميلاد',
+    'Daily Follow-Up' => 'دفتر المتابعة',
 
 ];

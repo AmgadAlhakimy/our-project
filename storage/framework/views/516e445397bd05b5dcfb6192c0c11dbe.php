@@ -59,16 +59,16 @@
                     <tr>
                         <th ><div class="th-head-1  " ><?php echo e(__('public.id')); ?></div></th>
                         <th ><div class="th-head-3" ><?php echo e(__('public.name')); ?></div></th>
-                        <th ><div class="th-head-1" >photo</div></th>
+                        <th ><div class="th-head-1" ><?php echo e(__('public.photo')); ?></div></th>
                         <th ><div class="th-head-3" ><?php echo e(__('public.address')); ?></div></th>
-                        <th ><div class="th-head-1" >gender</div></th>
-                        <th ><div class="th-head-2" >birth date</div></th>
-                        <th ><div class="th-head-2" >birth place</div></th>
+                        <th ><div class="th-head-1" ><?php echo e(__('student.gender')); ?></div></th>
+                        <th ><div class="th-head-2" ><?php echo e(__('student.birth date')); ?></div></th>
+                        <th ><div class="th-head-2" ><?php echo e(__('student.birth place')); ?></div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.class')); ?></div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.created at')); ?></div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.updated at')); ?></div></th>
                         <th colspan="2"><div class="th-head-4" ><?php echo e(__('public.processes')); ?></div></th>
-                        <th ><div class="th-head-2" >more info</div></th>
+                        <th ><div class="th-head-2" ><?php echo e(__('student.more info')); ?></div></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -82,7 +82,7 @@
                             <td><?php echo e($student->gender); ?></td>
                             <td><?php echo e($student->birthdate); ?></td>
                             <td><?php echo e($student->place_of_birth); ?></td>
-                            <td><?php echo e($student->classes->name); ?></td>
+                            <td><?php echo e($student->class->name); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
 
@@ -126,9 +126,9 @@
                             </td>
                             
                             <td>
-                                <a href="<?php echo e(route('students.edit',$student->id)); ?>"
+                                <a href="<?php echo e(route('students.more',$student->id)); ?>"
                                     class="btn save-button btn-info w-100">
-                                    <i class="fa-solid fa-info-circle"></i> <?php echo e(__('public.edit')); ?> </a>
+                                    <i class="fa-solid fa-info-circle"></i> <?php echo e(__('student.more info')); ?> </a>
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

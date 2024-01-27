@@ -18,7 +18,7 @@ use Serializable;
 
 /**
  * UUIDs are comprised of unsigned integers, the bytes of which are separated
- * into fields and arranged in a particular layouts defined by the specification
+ * into fields and arranged in a particular layout defined by the specification
  * for the variant
  *
  * @psalm-immutable

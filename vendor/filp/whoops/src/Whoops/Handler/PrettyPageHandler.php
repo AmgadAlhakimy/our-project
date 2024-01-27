@@ -199,7 +199,7 @@ class PrettyPageHandler extends Handler
             }
         }
 
-        $templateFile = $this->getResource("views/layouts.html.php");
+        $templateFile = $this->getResource("views/layout.html.php");
         $cssFile      = $this->getResource("css/whoops.base.css");
         $zeptoFile    = $this->getResource("js/zepto.min.js");
         $prismJs = $this->getResource("js/prism.js");
@@ -219,7 +219,7 @@ class PrettyPageHandler extends Handler
         $frames = $this->getExceptionFrames();
         $code = $this->getExceptionCode();
 
-        // List of variables that will be passed to the layouts template.
+        // List of variables that will be passed to the layout template.
         $vars = [
             "page_title" => $this->getPageTitle(),
 

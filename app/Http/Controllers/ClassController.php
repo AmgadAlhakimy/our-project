@@ -106,7 +106,8 @@ class ClassController extends Controller
             'edu_id'=>$request->level,
             'cost'=>$request->cost,
         ]);
-        return redirect()->route('classes.index');
+        return redirect()->route('classes.index')
+            ->with(['success' => __('message.update')]);
 
         }catch (Exception $e){
             return $e->getMessage();
@@ -120,7 +121,9 @@ class ClassController extends Controller
     {
         try {
             Classs::destroy($id);
-            return redirect()->route('classes.index');
+            return redirect()->route('classes.index')
+                ->with(['warning' => trans('message.delete')]);
+
         }catch (Exception $e){
             return $e->getMessage();
         }
@@ -133,7 +136,8 @@ class ClassController extends Controller
     {
         try {
         Classs::withTrashed()->where('id', $id)->restore();
-        return redirect()->back();
+        return redirect()->back()
+            ->with(['success' => trans('message.restore')]);
 
         }catch (Exception $e){
             return $e->getMessage();
@@ -147,7 +151,8 @@ class ClassController extends Controller
     {
         try {
         Classs::withTrashed()->where('id', $id)->forceDelete();
-        return redirect()->back();
+        return redirect()->back()
+            ->with(['warning' => trans('message.force delete')]);
 
         }catch (Exception $e){
             return $e->getMessage();

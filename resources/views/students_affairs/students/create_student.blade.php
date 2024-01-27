@@ -88,7 +88,7 @@
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="{{old('place_of_birth_ar')}}">
                             @error('place_of_birth_ar')
                             <small class="form-text text-danger">{{$message}}</small>
-                            @enderror 
+                            @enderror
                         </div>
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6">
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div class="box ">
-                            <label for="className " class="form-label">{{__('student.class')}}</label>
+                            <label for="className " class="form-label">{{__('student.parent info')}}</label>
                             <select id="className " class="form-control" name="relative_id" value="{{old('relative_id')}}">
                                 @foreach($relatives as $relative)
                                     <option class="text-center" value="{{$relative->id}}">{{$relative->father_name}}</option>
@@ -141,6 +141,7 @@
                     </div>
                 </div>
                 <!-- End parent info  -->
+                
                 <!-- Start health info  -->
                 <h3 class="container-title ">{{__('student.health info')}}</h3>
                 <div class="container containers-style mb-5">

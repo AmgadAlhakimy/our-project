@@ -101,7 +101,7 @@ class Uuid implements UuidInterface
     public const RESERVED_NCS = 0;
 
     /**
-     * Variant: the UUID layouts specified in RFC 4122
+     * Variant: the UUID layout specified in RFC 4122
      *
      * @link http://tools.ietf.org/html/rfc4122#section-4.1.1 RFC 4122, § 4.1.1: Variant
      */
