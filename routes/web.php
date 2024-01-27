@@ -35,21 +35,15 @@ Route::group(
         require __DIR__.'/restore.php';
         require __DIR__.'/force_delete.php';
 
-<<<<<<< HEAD
-        // testing
-        Route::get('student_form', function () {
-            return view('students_affairs/students/student_form_info');
-        });
+
         // absence
         Route::get('absence', function () {
             return view('students_affairs/absence/absent_students');
         });
-=======
         // a route to show more info about a student
         Route::get('students/more/{id}',
             [StudentController::class, 'more'])
             ->name('students.more');
->>>>>>> e0512e35d213e1b0b3210a25bbf1989e15944131
     });
 
 
