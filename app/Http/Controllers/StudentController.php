@@ -212,7 +212,8 @@ class StudentController extends Controller
             'class_id'=>$request->class_id,
             'relative_id'=>$request->relative_id,
         ]);
-        return redirect()->route('students.index');
+        return redirect()->route('students.index')
+            ->with(['success' => __('message.update')]);
 
         }catch (\Exception $e){
          return $e->getMessage();
@@ -226,7 +227,8 @@ class StudentController extends Controller
     {
         try {
             Student::destroy($id);
-            return redirect()->route('students.index');
+            return redirect()->route('students.index')
+                ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -241,7 +243,8 @@ class StudentController extends Controller
     {
         try {
             Student::withTrashed()->where('id', $id)->restore();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['success' => trans('message.restore')]);
 
         }catch (Exception $e){
             return $e->getMessage();
@@ -255,7 +258,8 @@ class StudentController extends Controller
     {
         try {
             Student::withTrashed()->where('id', $id)->forceDelete();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['warning' => trans('message.force delete')]);
 
         }catch (Exception $e){
             return $e->getMessage();

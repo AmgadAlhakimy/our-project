@@ -134,7 +134,9 @@ class TeacherController extends Controller
         try {
             $teacher = Teacher::findorFail($id);
             $teacher::destroy($id);
-            return redirect()->route('teachers.index')->with(['success' => trans('message.delete')]);
+            return redirect()->route('teachers.index')
+                ->with(['warning' => trans('message.delete')]);
+
         } catch (\Exception $e) {
             return $e->getMessage();
         }

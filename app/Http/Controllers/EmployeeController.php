@@ -107,7 +107,8 @@ class EmployeeController extends Controller
             'note' => $request->note,
 
         ]);
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')
+            ->with(['success' => __('message.update')]);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\level;
 
+use App\Models\EducationalLevel;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEducationalLevelRequest extends FormRequest
@@ -22,10 +23,9 @@ class StoreEducationalLevelRequest extends FormRequest
     public function rules(): array
     {
 
-
         return [
-            'name' => "required|unique:educational_levels,name,en",
-            "name_ar"=>["name->ar"=>["required", "unique:educational_levels", "max:100"]],
+            'name' => "required|unique_translation:educational_levels",
+            "name_ar"=>["name->ar"=>["required","unique:educational_levels", "max:100"]],
         ];
     }
     public function messages(): array

@@ -16,7 +16,8 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::all();
-            return view('academic_dep/subjects.index_subjects', compact('subjects'));
+            return view('academic_dep/subjects.index_subjects',
+                compact('subjects'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -60,7 +61,8 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::onlyTrashed()->get();
-            return view('academic_dep/subjects.deleted_subjects', compact('subjects'));
+            return view('academic_dep/subjects.deleted_subjects',
+                compact('subjects'));
 
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -74,7 +76,8 @@ class SubjectController extends Controller
     {
         try {
             $subject = Subject::findorFail($id);
-            return view('academic_dep/subjects.edit_subjects', compact('subject'));
+            return view('academic_dep/subjects.edit_subjects',
+                compact('subject'));
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -94,7 +97,8 @@ class SubjectController extends Controller
                     'ar' => $request->name_ar,
                 ],
             ]);
-            return redirect()->route('subjects.index');
+            return redirect()->route('subjects.index')
+                ->with(['success' => __('message.update')]);
         } catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -108,7 +112,8 @@ class SubjectController extends Controller
     {
         try {
             Subject::destroy($id);
-            return redirect()->route('subjects.index');
+            return redirect()->route('subjects.index')
+                ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -122,7 +127,8 @@ class SubjectController extends Controller
     {
         try {
             Subject::withTrashed()->where('id', $id)->restore();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['success' => trans('message.restore')]);
 
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -136,7 +142,8 @@ class SubjectController extends Controller
     {
         try {
             Subject::withTrashed()->where('id', $id)->forceDelete();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['warning' => trans('message.force delete')]);
 
         } catch (\Exception $e) {
             return $e->getMessage();

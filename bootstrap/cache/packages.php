@@ -1,4 +1,11 @@
 <?php return array (
+  'codezero/laravel-unique-translation' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'CodeZero\\UniqueTranslation\\UniqueTranslationServiceProvider',
+    ),
+  ),
   'jenssegers/agent' => 
   array (
     'providers' => 

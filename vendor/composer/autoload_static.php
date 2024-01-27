@@ -180,6 +180,7 @@ class ComposerStaticInitc458bb0c41a2ebbee454884c7a747508
         'C' => 
         array (
             'Cron\\' => 5,
+            'CodeZero\\UniqueTranslation\\' => 27,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -559,6 +560,10 @@ class ComposerStaticInitc458bb0c41a2ebbee454884c7a747508
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+        'CodeZero\\UniqueTranslation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src',
+        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -867,6 +872,9 @@ class ComposerStaticInitc458bb0c41a2ebbee454884c7a747508
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'Carbon\\TranslatorImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorImmutable.php',
         'Carbon\\TranslatorStrongTypeInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/TranslatorStrongTypeInterface.php',
+        'CodeZero\\UniqueTranslation\\UniqueTranslationRule' => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src/UniqueTranslationRule.php',
+        'CodeZero\\UniqueTranslation\\UniqueTranslationServiceProvider' => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src/UniqueTranslationServiceProvider.php',
+        'CodeZero\\UniqueTranslation\\UniqueTranslationValidator' => __DIR__ . '/..' . '/codezero/laravel-unique-translation/src/UniqueTranslationValidator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
@@ -915,7 +923,6 @@ class ComposerStaticInitc458bb0c41a2ebbee454884c7a747508
         'Database\\Seeders\\GuardianSeeder' => __DIR__ . '/../..' . '/database/seeders/GuardianSeeder.php',
         'Database\\Seeders\\PermissionSeeder' => __DIR__ . '/../..' . '/database/seeders/PermissionSeeder.php',
         'Database\\Seeders\\RelativeSeeder' => __DIR__ . '/../..' . '/database/seeders/RelativeSeeder.php',
-        'Database\\Seeders\\RelativesSeeder' => __DIR__ . '/../..' . '/database/seeders/RelativesSeeder.php',
         'Database\\Seeders\\RoleSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleSeeder.php',
         'Database\\Seeders\\SemesterSeeder' => __DIR__ . '/../..' . '/database/seeders/SemesterSeeder.php',
         'Database\\Seeders\\StudentSeeder' => __DIR__ . '/../..' . '/database/seeders/StudentSeeder.php',

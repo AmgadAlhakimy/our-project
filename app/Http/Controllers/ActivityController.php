@@ -75,7 +75,8 @@ class ActivityController extends Controller
     {
         try {
             $activity=Activity::findorFail($id);
-            return view('academic_dep/activities.edit_activities',compact('activity'));
+            return view('academic_dep/activities.edit_activities'
+                ,compact('activity'));
         }catch (\Exception $e) {
             return $e->getMessage();
         }
@@ -93,7 +94,8 @@ class ActivityController extends Controller
             $activity->date = $request->date;
             $activity->note = $request->note;
             $activity->update();
-            return redirect()->route('activities.index')->with(['success' => __('message.update')]);
+            return redirect()->route('activities.index')
+                ->with(['success' => __('message.update')]);
         }
         catch (\Exception $e){
             return $e->getMessage();
@@ -107,7 +109,9 @@ class ActivityController extends Controller
         try {
             $activity= Activity::findorFail($id);
             $activity::destroy($id);
-            return redirect()->route('activities.index')->with(['success' => trans('message.delete')]);
+            return redirect()->route('activities.index')
+                ->with(['warning' => trans('message.delete')]);
+
         } catch (\Exception $e){
             return $e->getMessage();
         }
@@ -119,7 +123,8 @@ class ActivityController extends Controller
     {
         try {
             Activity::withTrashed()->where('id', $id)->restore();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['success' => trans('message.restore')]);
 
         } catch (\Exception $e) {
             return $e->getMessage();
@@ -133,7 +138,8 @@ class ActivityController extends Controller
     {
         try {
             Activity::withTrashed()->where('id', $id)->forceDelete();
-            return redirect()->back();
+            return redirect()->back()
+                ->with(['warning' => trans('message.force delete')]);
 
         } catch (\Exception $e) {
             return $e->getMessage();
