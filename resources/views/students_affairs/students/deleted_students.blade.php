@@ -55,7 +55,7 @@
                             <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>
                             <td>{{$student->place_of_birth}}</td>
-                            <td>{{$student->classes->name}}</td>
+                            <td>{{$student->class->name}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
                             <td>

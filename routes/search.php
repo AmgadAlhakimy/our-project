@@ -21,17 +21,15 @@ Route::get('classes/search',
     [ClassController::class, 'search'])
     ->name('classes.search');
 
-
 Route::get('subjects/search',
     [SubjectController::class, 'search'])
     ->name('subjects.search');
-
 
 Route::get('activities/search',
     [ActivityController::class, 'search'])
     ->name('activities.search');
 
-
 Route::get('students/search',
     [StudentController::class, 'search'])
     ->name('students.search');
+

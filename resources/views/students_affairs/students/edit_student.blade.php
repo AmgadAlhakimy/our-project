@@ -105,17 +105,19 @@
                         {{-- 8 --}}
                         <div class="box ">
                             <label for="className " class="form-label">{{__('student.class')}}</label>
-                            <select id="className " class="form-control" name="class">
+                            <select id="className " class="form-control" name="class_id">
                                 @foreach($classes as $class)
                                     <option class="text-center" value="{{$class->id}}"
                                     @if($class->id == $student->class_id) selected @endif>
                                         {{$class->name}}</option>
                                 @endforeach
                             </select>
-                            @error('class')
+                            @error('class_id')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
+                            <input type="text" value="{{$student->relative->id}}" name="relative_id">
                         </div>
+
                     </div>
                 </div>
                 <!-- End personal info  -->

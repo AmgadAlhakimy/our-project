@@ -16,12 +16,18 @@ class Student extends Model
     protected $fillable = ['name', 'photo', 'address', 'gender',
                             'birthdate', 'place_of_birth',
                             'medicine_desc', 'allergy_desc',
-                            'health_problem_desc', 'note', 'class_id'];
+                            'health_problem_desc', 'note',
+                            'class_id','relative_id'];
 
     public array $translatable = ['name', 'address', 'gender',
                                   'place_of_birth', 'medicine_desc',
                                   'allergy_desc', 'health_problem_desc',];
-    public function classes(){
+    public function class()
+    {
         return $this->belongsTo(Classs::class,'class_id');
+    }
+    public function relative()
+    {
+        return $this->belongsTo(Relative::class,'relative_id');
     }
 }

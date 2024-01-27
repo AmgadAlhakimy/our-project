@@ -13,26 +13,18 @@ class Relative extends Model
     use SoftDeletes;
     use HasTranslations;
 
-    public $translatable = [
-        'father_name',
-        'father_work',
-        'mother_name',
-        'mother_work',
-        'kin_name',
-        'kin_relationship',
-    ];
-    protected $fillable = [
-        'father_name',
-        'father_work',
-        'father_contact1',
-        'father_contact2',
-        'mother_name',
-        'mother_work',
-        'mother_contact1',
-        'mother_contact2',
-        'kin_name',
-        'kin_relationship',
-        'kin_contact',
-        'student_id',
-    ];
+    public $translatable = ['father_name', 'father_work',
+                            'mother_name', 'mother_work',
+                            'kin_name', 'kin_relationship',];
+
+    protected $fillable = ['father_name', 'father_work',
+                            'father_contact1', 'father_contact2',
+                            'mother_name', 'mother_work', 'mother_contact1',
+                            'mother_contact2', 'kin_name',
+                            'kin_relationship', 'kin_contact'];
+
+    public function students()
+    {
+        return $this->hasMany(Student::class,'relative_id');
+    }
 }
