@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\subject\StoreSubjectRequest;
-use App\Http\Requests\subject\UpdateSubjectRequest;
+use App\Http\Requests\Subject\StoreSubjectRequest;
+use App\Http\Requests\Subject\UpdateSubjectRequest;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -25,7 +25,7 @@ class SubjectController extends Controller
 
 
     /**
-     * Show creating new subject page.
+     * Show creating new Subject page.
      */
     public function create()
     {
@@ -37,7 +37,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Store a new subject.
+     * Store a new Subject.
      */
     public function store(StoreSubjectRequest $request)
     {
@@ -70,7 +70,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Show the form for editing subject page.
+     * Show the form for editing Subject page.
      */
     public function edit($id)
     {
@@ -84,7 +84,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Update the specified subject.
+     * Update the specified Subject.
      */
     public function update(UpdateSubjectRequest $request, $id)
     {
@@ -106,7 +106,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Remove the specified subject.
+     * Remove the specified Subject.
      */
     public function destroy($id)
     {
@@ -121,7 +121,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Restore the specified subject.
+     * Restore the specified Subject.
      */
     public function restore($id)
     {
@@ -136,7 +136,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Remove by force the specified subject.
+     * Remove by force the specified Subject.
      */
     public function forceDelete($id)
     {

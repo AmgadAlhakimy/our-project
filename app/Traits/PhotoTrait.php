@@ -8,7 +8,7 @@ trait PhotoTrait
     /**
      * store image.
      */
-    public function image($request,$id,$model,$folder)
+    public function insertImage($request, $id, $model, $folder)
     {
         if ($request->photo != NULL){
             $requestData = $request->all();
@@ -20,5 +20,15 @@ trait PhotoTrait
             $element = $model::findorFail($id);
             return  $element->photo;
         }
+    }
+    public function deleteImage($id, $model)
+    {
+
+        $image = $model::withTrashed()->findorFail($id);
+        $image_path = public_path($image->photo);
+        if (file_exists($image_path)){
+            unlink($image_path);
+        }
+
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Relative\StoreRelativeRequest;
+use App\Http\Requests\Relative\UpdateRelativeRequest;
 use App\Models\Relative;
-use App\Http\Requests\StoreRelativeRequest;
-use App\Http\Requests\UpdateRelativeRequest;
 
 class RelativeController extends Controller
 {

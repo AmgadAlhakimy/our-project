@@ -13,10 +13,10 @@ return [
     |
     */
 
-    // create semester
-    'create new semester'=>'CREATE NEW SEMESTER',
-    'update semester'=>'UPDATE SEMESTER',
-    'semester name in english'=>'Semester Name in English',
-    'semester name in arabic'=>'Semester Name in Arabic',
-    'semester info'=>'SEMESTER INFO',
+    // create Semester
+    'create new Semester'=>'CREATE NEW SEMESTER',
+    'update Semester'=>'UPDATE SEMESTER',
+    'Semester name in english'=>'Semester Name in English',
+    'Semester name in arabic'=>'Semester Name in Arabic',
+    'Semester info'=>'SEMESTER INFO',
 ];

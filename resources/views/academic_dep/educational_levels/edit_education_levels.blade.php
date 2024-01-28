@@ -8,10 +8,10 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-                <form method="post" action="{{route('educational_levels.update',$level->id)}}">
+                <form method="post" action="{{route('educational_levels.update',$Level->id)}}">
                 @method('PUT')
                 @csrf
-                <h3 class="container-title">{{__('eduLevel.update educational level')}}</h3>
+                <h3 class="container-title">{{__('eduLevel.update educational Level')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="row mt-2">
@@ -20,7 +20,7 @@
                                 <label for="edu_name"
                                        for="c-name">{{__('eduLevel.educational Level name in english')}}</label>
                                 <input type="text" id="edu_name" class="form-control" name="name"
-                                       value="{{$level->getTranslation('name','en')}}">
+                                       value="{{$Level->getTranslation('name','en')}}">
                                 @error('name')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -29,7 +29,7 @@
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name_ar">{{__('eduLevel.educational Level name in arabic')}}</label>
                                 <input type="text" id="edu_name_ar" class="form-control" name="name_ar"
-                                       value="{{$level->getTranslation('name','ar')}}">
+                                       value="{{$Level->getTranslation('name','ar')}}">
                                 @error('name_ar')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror

@@ -48,14 +48,14 @@ return [
     'qualification'=>'المؤهل',
     'salary'=>'الراتب',
     'major'=>'التخصص',
-    'educational level'=>'المرحلة الدراسية',
+    'educational Level'=>'المرحلة الدراسية',
     'are you sure you want to delete'=>'هل أنت متأكد من حذف: ',
     'restore'=>'إستعادة',
     'force delete'=>'حذف نهائي',
 
     'class'=>'الفصل',
     'month'=>'الشهر',
-    'teacher'=>'الاستاذ',
+    'Teacher'=>'الاستاذ',
 
 
 

@@ -14,14 +14,14 @@ return [
     */
 
     //shared in many pages
-    'create new activity'=>'Create New Activity',
-    'activity info'=>'Activity Info',
-    'activity name in english'=>'Activity Name in English',
-    'activity name in arabic'=>'Activity Name in Arabic',
-    'activity location in english'=>'Activity Location in English',
-    'activity location in arabic'=>'Activity Location in Arabic',
-    'activity location contact'=>'Activity Location Contact',
-    'date of activity'=>'Date of Activity',
+    'create new Activity'=>'Create New Activity',
+    'Activity info'=>'Activity Info',
+    'Activity name in english'=>'Activity Name in English',
+    'Activity name in arabic'=>'Activity Name in Arabic',
+    'Activity location in english'=>'Activity Location in English',
+    'Activity location in arabic'=>'Activity Location in Arabic',
+    'Activity location contact'=>'Activity Location Contact',
+    'date of Activity'=>'Date of Activity',
     'other info'=>'Other Info',
-    'update activity'=>'Update Activity: '
+    'update Activity'=>'Update Activity: '
 ];

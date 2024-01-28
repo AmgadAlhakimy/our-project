@@ -18,9 +18,9 @@
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
                     <option class="text-center"
-                            value="{{__('student.male')}}">{{__('student.male')}}</option>
+                            value="{{__('Student.male')}}">{{__('Student.male')}}</option>
                     <option class="text-center"
-                            value="{{__('student.female')}}">{{__('student.female')}}</option>
+                            value="{{__('Student.female')}}">{{__('Student.female')}}</option>
                 </select>
                 @error('sex')
                 <small class="form-text text-danger">{{$message}}</small>
@@ -50,7 +50,7 @@
                         <th ><div class="th-head-1 " >id</div></th>
                         <th ><div class="th-head-3" >Name</div></th>
                         <th ><div class="th-head-2" >photo</div></th>
-                        <th ><div class="th-head-3" >student info </div></th>
+                        <th ><div class="th-head-3" >Student info </div></th>
                         <th ><div class="th-head-3" >Daily follow-up</div></th>
                         <th ><div class="th-head-1" ></div></th>
                     </tr>

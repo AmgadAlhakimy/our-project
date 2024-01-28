@@ -13,15 +13,15 @@ return [
     |
     */
 
-    //create student
-    'Register a new student'=>'تسجيل طالب جديد',
-    'student info'=>'معلومات الطالب',
-    "student's name in arabic"=>"اسم الطالب بالعربي",
-    "student's name in english"=>"اسم الطالب بالإنجليزية",
+    //create Student
+    'Register a new Student'=>'تسجيل طالب جديد',
+    'Student info'=>'معلومات الطالب',
+    "Student's name in arabic"=>"اسم الطالب بالعربي",
+    "Student's name in english"=>"اسم الطالب بالإنجليزية",
     'photo'=>'صورة',
     'addresses'=>'العناوين',
-    "student's address in arabic"=>"عنوان الطالب بالعربي",
-    "student's address in english"=>"عنوان الطالب بالإنجليزية",
+    "Student's address in arabic"=>"عنوان الطالب بالعربي",
+    "Student's address in english"=>"عنوان الطالب بالإنجليزية",
     'gender'=>'النوع',
     'male'=>'ذكر',
     'female'=>'أنثى',
@@ -48,7 +48,7 @@ return [
     'kin relationship in english'=>'علاقة هذا القريب بالطالب بالإنجليزية',
     "kin contact"=>"رقم هذا القريب",
     'health info'=>'المعلومات الصحية',
-    'does the student'=>'هل الطالب',
+    'does the Student'=>'هل الطالب',
     'take any medicine ?'=>'يأخذ علاج؟',
     'no'=>'لا',
     'yes'=>'نعم',
@@ -56,7 +56,7 @@ return [
     'have any health problem ?'=>'لديه مشاكل صحية؟',
     'other info'=>'معلومات أخرى',
     'note'=>'ملاحظة',
-    'first you have to add classes'=>'يجب إضافة فصول أولا',
+    'first you have to add classrooms'=>'يجب إضافة فصول أولا',
     'parents'=>'الآباء',
     'more info'=>'المزيد',
 

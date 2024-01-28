@@ -31,7 +31,7 @@
 <!-- Start content  -->
 <div class="content">
     <div class="head " dir="ltr">
-        
+
         <div class="search p-relative">
             <label for="rtl"></label> <input class="search1" type="search" placeholder="<?php echo e(__('sidebar.search')); ?>" id="rtl" />
         </div>
@@ -41,7 +41,7 @@
                     </span>
             <img src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>" alt="skills"/>
         </div>
-        
+
         <div class="dropDownLang">
             <div class="select">
                 <span class="selected"><?php echo e(__('sidebar.Lang')); ?></span>
@@ -73,7 +73,7 @@
         <!-- ============= logo ================== -->
         <div class="my-head">
             <div class="my-menu-btn">
-                
+
                 <img src="<?php echo e(URL::asset('assets/images/layouts/logo2.png')); ?>" class="logo-img" alt="" />
                 <div class="sidebar-icon">
                     <i class="logo-text fa-solid fa-caret-left"></i>
@@ -87,8 +87,8 @@
                 <ul class="list-ul my-scroll">
                     <!--  dropdown list item عنوان القسم-->
                     <p class="title"><?php echo e(__('sidebar.academic department')); ?></p>
-                    
-                    
+
+
                     <li class="dropdown">
                         <!-- ========== 1 ============ -->
                         <div class="sidebar-title">
@@ -102,15 +102,15 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a id="" href="<?php echo e(route('educational_levels.create')); ?>" class="li-link_2 "><?php echo e(__('sidebar.add educational level')); ?></a>
-                                <a id="" href="<?php echo e(route('classes.create')); ?>" class="li-link_2">  <?php echo e(__('sidebar.add a class')); ?></a>
-                                <a href="<?php echo e(route('subjects.create')); ?>" class="li-link_2"> <?php echo e(__('sidebar.add subject')); ?></a>
-                                <a href="<?php echo e(route('activities.create')); ?>" class="li-link_2" > <?php echo e(__('sidebar.add activity')); ?></a>
+                                <a id="" href="<?php echo e(route('educational_levels.create')); ?>" class="li-link_2 "><?php echo e(__('sidebar.add educational Level')); ?></a>
+                                <a id="" href="<?php echo e(route('classrooms.create')); ?>" class="li-link_2">  <?php echo e(__('sidebar.add a class')); ?></a>
+                                <a href="<?php echo e(route('subjects.create')); ?>" class="li-link_2"> <?php echo e(__('sidebar.add Subject')); ?></a>
+                                <a href="<?php echo e(route('activities.create')); ?>" class="li-link_2" > <?php echo e(__('sidebar.add Activity')); ?></a>
                             </div>
                         </div>
                     </li>
                     <!-- ========== 2 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
@@ -124,15 +124,15 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="<?php echo e(route('educational_levels.index')); ?>" class="li-link"><?php echo e(__('sidebar.review of educational level')); ?></a>
-                                <a href="<?php echo e(route('classes.index')); ?>" class="li-link"><?php echo e(__('sidebar.review of classes')); ?></a>
+                                <a href="<?php echo e(route('educational_levels.index')); ?>" class="li-link"><?php echo e(__('sidebar.review of educational Level')); ?></a>
+                                <a href="<?php echo e(route('classrooms.index')); ?>" class="li-link"><?php echo e(__('sidebar.review of classrooms')); ?></a>
                                 <a href="<?php echo e(route('subjects.index')); ?>" class="li-link"> <?php echo e(__('sidebar.review of subjects')); ?></a>
                                 <a href="<?php echo e(route('activities.index')); ?>" class="li-link"><?php echo e(__('sidebar.review activities')); ?></a>
                             </div>
                         </div>
                     </li>
                     <!-- ========== 3 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 3 ============ -->
                         <div class="sidebar-title">
@@ -146,15 +146,15 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="<?php echo e(route('educational_levels.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted educational level')); ?></a>
-                                <a href="<?php echo e(route('classes.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted classes')); ?></a>
+                                <a href="<?php echo e(route('educational_levels.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted educational Level')); ?></a>
+                                <a href="<?php echo e(route('classrooms.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted classrooms')); ?></a>
                                 <a href="<?php echo e(route('subjects.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted subjects')); ?></a>
                                 <a href="<?php echo e(route('activities.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted activities')); ?></a>
                             </div>
                         </div>
                     </li>
                     <!-- ========== 4 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 4 ============ -->
                         <div class="sidebar-title">
@@ -178,19 +178,19 @@
                         </div>
                     </li>
                     <!-- ========== 5 ============ -->
-                    
+
                     <!-- ======================== ACOUNTENT ========================== -->
-                    
-                    
+
+
 
                         <p class="title">قسم الكنترول</p>
 
-                    
-                    
-                    <!-- ======================== CONTROLE ========================== -->
-                    
 
-                    
+
+                    <!-- ======================== CONTROLE ========================== -->
+
+
+
                     <!-- ======================== PARENTS ========================== -->
                     <p class="title">قسم اولياء الأمور</p>
 
@@ -216,7 +216,7 @@
                         </div>
                     </li>
 
-                    
+
                     <!-- ======================== EMB ========================== -->
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
@@ -237,7 +237,7 @@
                             </div>
                         </div>
                     </li>
-                            
+
                     <!-- ======================== STUDENTS ========================== -->
                     <p class="title"><?php echo e(__('sidebar.students affairs')); ?></p>
 
@@ -254,18 +254,18 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
-                            
-                            <a href='<?php echo e(route('students.create')); ?>' class="li-link"><?php echo e(__('sidebar.add a student')); ?></a>
-                            
+
+                            <a href='<?php echo e(route('students.create')); ?>' class="li-link"><?php echo e(__('sidebar.add a Student')); ?></a>
+
                             <a href="<?php echo e(route('students.index')); ?>" class="li-link"><?php echo e(__('sidebar.review students')); ?></a>
-                            <a href="<?php echo e(route('students.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted student')); ?></a>
-                            
-                            
-                            <a href='/absence' class="li-link"><?php echo e(__('sidebar.student absence')); ?></a>
+                            <a href="<?php echo e(route('students.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted Student')); ?></a>
+
+
+                            <a href='/absence' class="li-link"><?php echo e(__('sidebar.Student absence')); ?></a>
                             <a href='/student_form' class="li-link">معلومات الطلاب</a>
                             <a href="#" class="li-link">الطلاب الأوائل</a>
 
-                            
+
                             <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                 <div class="select">
                                     <span class="selected">Lang</span>
@@ -277,11 +277,11 @@
                                     <a href="#" class="li-link_2">3</a>
                                     <a href='#' class="li-link_2">4</a>
                                     <a href="#" class="li-link_2">5</a>
-                                </ul>  
+                                </ul>
                             </div>
                         </div>
 
-                        
+
                     <!-- ======================== TEACHERS ========================== -->
 
                     <li class="dropdown">
@@ -328,7 +328,7 @@
 
 
 
-                    
+
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
@@ -347,11 +347,11 @@
                         </div>
                     </li>
 
-                    
-                    
 
-                    
-                    
+
+
+
+
                     <li class=" ">
                         <!-- ========== 2 ============ -->
                         <!-- <div class="sidebar-title"> -->
@@ -392,7 +392,7 @@
         </div>
 
         <!-- ========== THE LAST MENU ============ -->
-        
+
         <!-- ====================== -->
 </div>
 </div>
@@ -419,5 +419,5 @@
 
 
 
-                                
+
 <?php /**PATH E:\My-Github\our-project\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

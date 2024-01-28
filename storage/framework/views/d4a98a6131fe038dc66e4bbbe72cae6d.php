@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
 
-        
-        
+
+
         <div class="table-header">
-            
-            <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational level info')); ?></h4>
+
+            <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational Level info')); ?></h4>
             <div class="row first-card mt-4">
                 <form method="post" action="<?php echo e(route('educational_levels.search')); ?>">
                     <?php echo method_field('GET'); ?>
@@ -19,7 +19,7 @@
                 </form>
             </div>
         </div>
-        
+
 
         <!-- table-hover table-striped -->
         <div class="table-section">

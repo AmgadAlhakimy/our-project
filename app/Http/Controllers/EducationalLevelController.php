@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\level\StoreEducationalLevelRequest;
-use App\Http\Requests\level\UpdateEducationalLevelRequest;
+use App\Http\Requests\Level\StoreEducationalLevelRequest;
+use App\Http\Requests\Level\UpdateEducationalLevelRequest;
 use App\Models\EducationalLevel;
 use App\Traits\UniqueTrait;
 use Illuminate\Http\Request;
@@ -28,7 +28,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Show creating new educational level page.
+     * Show creating new educational Level page.
      */
     public function create()
     {
@@ -40,7 +40,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Store a new Educational level.
+     * Store a new Educational Level.
      */
     public function store(StoreEducationalLevelRequest $request)
     {
@@ -79,7 +79,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Show the form for editing Educational level page.
+     * Show the form for editing Educational Level page.
      */
     public function edit($id)
     {
@@ -93,7 +93,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Update the specified Educational level.
+     * Update the specified Educational Level.
      */
     public function update(UpdateEducationalLevelRequest $request, $id)
     {
@@ -111,7 +111,7 @@ class EducationalLevelController extends Controller
     }
 
     /**
-     * Remove the specified Educational level.
+     * Remove the specified Educational Level.
      */
     public function destroy($id)
     {
@@ -125,7 +125,7 @@ class EducationalLevelController extends Controller
         }
     }
     /**
-     * Restore the specified Educational level.
+     * Restore the specified Educational Level.
      */
     public function restore($id){
         try {
@@ -138,7 +138,7 @@ class EducationalLevelController extends Controller
         }
     }
     /**
-     * Remove by force the specified Educational level.
+     * Remove by force the specified Educational Level.
      */
     public function forceDelete($id)
     {

@@ -2,18 +2,18 @@
 @section('content')
     <main class="main ">
         <section class="section card-body">
-            <form method="post" action="{{route('semesters.update',$semester->id)}}">
+            <form method="post" action="{{route('semesters.update',$Semester->id)}}">
                 @method('PUT')
                 @csrf
                 <h3 class="text-center">
-                    {{__('semester.update semester')}} <span class="text-danger">
-                        {{$semester->name}}</span></h3>
+                    {{__('Semester.update Semester')}} <span class="text-danger">
+                        {{$Semester->name}}</span></h3>
                 <div class="container card col-md-10 section-color mb-5 text-center">
                     <div class="row">
                         <div class=" col-md-1"></div>
                         <div class="box col-md-10 text-center">
-                            <label for="c-name">{{__('semester.semester name in english')}}</label>
-                            <input type="text" class="form-control " name="name" value="{{$semester->getTranslation('name','en')}}">
+                            <label for="c-name">{{__('Semester.Semester name in english')}}</label>
+                            <input type="text" class="form-control " name="name" value="{{$Semester->getTranslation('name','en')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -21,8 +21,8 @@
                         <div class=" col-md-1"></div>
                         <div class=" col-md-1"></div>
                         <div class="box col-md-10 text-center">
-                            <label for="c-name">{{__('semester.semester name in arabic')}}</label>
-                            <input type="text" class="form-control " name="name_ar" value="{{$semester->getTranslation('name','ar')}}">
+                            <label for="c-name">{{__('Semester.Semester name in arabic')}}</label>
+                            <input type="text" class="form-control " name="name_ar" value="{{$Semester->getTranslation('name','ar')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror

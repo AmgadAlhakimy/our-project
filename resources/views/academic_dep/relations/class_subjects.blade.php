@@ -34,12 +34,12 @@
                                         <div class="btnl-container  row">
                                             <!-- -------- start buttons  -->
                                                 {{$i=1}}
-                                            @foreach($subjects as $subject)
+                                            @foreach($subjects as $Subject)
 
                                                 <label class="btnl-lable col ">
                                                     <input class="light-btn" type="checkbox" name="subject_id_{{$i++}}"
-                                                           value="{{$subject->id}}" >
-                                                    <span class="btnl-text">{{$subject->name}} </span>
+                                                           value="{{$Subject->id}}" >
+                                                    <span class="btnl-text">{{$Subject->name}} </span>
                                                 </label>
                                             @endforeach
                                             <!-- -------- end buttons  -->

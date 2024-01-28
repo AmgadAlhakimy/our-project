@@ -52,12 +52,12 @@
                         <td>{{$class->created_at}}</td>
                         <td>{{$class->updated_at}}</td>
                         <td>
-                            <a href="{{route('classes.restore',$class->id)}}"
+                            <a href="{{route('classrooms.restore',$class->id)}}"
                                class="btn my-save-button btn-success w-100">
                                 <i class="fa-solid fa-trash-can-arrow-up"></i> Restore</a>
                         </td>
                         <td>
-                            <form method="get" action="{{route('classes.forceDelete',$class->id)}}">
+                            <form method="get" action="{{route('classrooms.forceDelete',$class->id)}}">
                                 @csrf
                                 <button class="my-clear-button btn-danger w-100">
                                     <i class="fa-solid fa-trash"></i> By Force

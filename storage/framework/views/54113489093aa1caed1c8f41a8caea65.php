@@ -18,9 +18,9 @@
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
                     <option class="text-center"
-                            value="<?php echo e(__('student.male')); ?>"><?php echo e(__('student.male')); ?></option>
+                            value="<?php echo e(__('Student.male')); ?>"><?php echo e(__('Student.male')); ?></option>
                     <option class="text-center"
-                            value="<?php echo e(__('student.female')); ?>"><?php echo e(__('student.female')); ?></option>
+                            value="<?php echo e(__('Student.female')); ?>"><?php echo e(__('Student.female')); ?></option>
                 </select>
                 <?php $__errorArgs = ['sex'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -77,4 +77,4 @@ unset($__errorArgs, $__bag); ?>
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teatchers/daily/student-list.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teatchers/daily/Student-list.blade.php ENDPATH**/ ?>

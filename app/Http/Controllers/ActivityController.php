@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\activity\StoreActivityRequest;
-use App\Http\Requests\activity\UpdateActivityRequest;
+use App\Http\Requests\Activity\StoreActivityRequest;
+use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Models\Activity;
 use Illuminate\Http\Request;
 
@@ -23,7 +23,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Show creating new activity page.
+     * Show creating new Activity page.
      */
     public function create()
     {
@@ -35,7 +35,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Store a new activity.
+     * Store a new Activity.
      */
     public function store(StoreActivityRequest $request)
     {
@@ -69,7 +69,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Show the form for editing activity page.
+     * Show the form for editing Activity page.
      */
     public function edit($id)
     {
@@ -82,7 +82,7 @@ class ActivityController extends Controller
         }
     }
     /**
-     * Update the specified activity.
+     * Update the specified Activity.
      */
     public function update(UpdateActivityRequest $request, $id)
     {
@@ -102,7 +102,7 @@ class ActivityController extends Controller
         }
     }
     /**
-     * Remove the specified activity.
+     * Remove the specified Activity.
      */
     public function destroy($id)
     {
@@ -117,7 +117,7 @@ class ActivityController extends Controller
         }
     }
     /**
-     * Restore the specified activity.
+     * Restore the specified Activity.
      */
     public function restore($id)
     {
@@ -132,7 +132,7 @@ class ActivityController extends Controller
     }
 
     /**
-     * Remove by force the specified activity.
+     * Remove by force the specified Activity.
      */
     public function forceDelete($id)
     {

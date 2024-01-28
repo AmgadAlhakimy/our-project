@@ -2,69 +2,69 @@
 @section('content')
     <main class="main">
         <section class="section">
-            <h1 class="p-relative title-1">{{__('activity.update activity'). $activity->name}}</h1>
-            <form method="post" action="{{route('activities.update',$activity->id)}}">
+            <h1 class="p-relative title-1">{{__('Activity.update Activity'). $Activity->name}}</h1>
+            <form method="post" action="{{route('activities.update',$Activity->id)}}">
                 @method('PUT')
                 @csrf
-                <h3 class="container-title">{{__('activity.update activity')}}</h3>
+                <h3 class="container-title">{{__('Activity.update Activity')}}</h3>
             <div class="container containers-style ">
                 <div class="row">
                     <!-- 1 -->
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="activity-name-a">{{__('activity.activity name in english')}} </label>
-                        <input type="text" class="form-control" id='activity-name-a'  required  name="name" value="{{$activity->getTranslation('name','en')}}">
+                        <label class="" for="activity-name-a">{{__('Activity.Activity name in english')}} </label>
+                        <input type="text" class="form-control" id='activity-name-a'  required  name="name" value="{{$Activity->getTranslation('name','en')}}">
                         @error('name')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="activity-name-e">{{__('activity.activity name in arabic')}}</label>
+                        <label class="" for="activity-name-e">{{__('Activity.Activity name in arabic')}}</label>
                         <input type="text" class="form-control " id='activity-name-e'  placeholder="in arabic"  name="name_ar"
-                            value="{{$activity->getTranslation('name','ar')}}">
+                            value="{{$Activity->getTranslation('name','ar')}}">
                         @error('name_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <!-- 2 -->
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="area-name-a">{{__('activity.activity location in english')}}</label>
+                        <label class="" for="area-name-a">{{__('Activity.Activity location in english')}}</label>
                         <input type="text" class="form-control " id='area-name-a' name="location"  placeholder="in english"
-                            value="{{$activity->getTranslation('location','en')}}">
+                            value="{{$Activity->getTranslation('location','en')}}">
                         @error('location')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="area-name-e">{{__('activity.activity location in arabic')}}</label>
+                        <label class="" for="area-name-e">{{__('Activity.Activity location in arabic')}}</label>
                         <input type="text" class="form-control " id='area-name-e' name="location_ar"  placeholder="in arabic"
-                            value="{{$activity->getTranslation('location','ar')}}">
+                            value="{{$Activity->getTranslation('location','ar')}}">
                         @error('location_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <div class="box col-lg-6 col-md-6">
-                        <label class="" for="area-number">{{__('activity.activity location contact')}}</label>
-                        <input type="number" class="form-control " id='area-number' value="{{$activity->contact}}" name="contact"  placeholder="">
+                        <label class="" for="area-number">{{__('Activity.Activity location contact')}}</label>
+                        <input type="number" class="form-control " id='area-number' value="{{$Activity->contact}}" name="contact"  placeholder="">
                         @error('contact')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                     <!-- 5 -->
                     <div class="box col-lg-6 col-md-6">
-                        <label class="" for="date-activities">{{__('activity.date of activity')}}</label>
-                        <input type="date" class="form-control " id='date-activities' value="{{$activity->date}}" name="date">
+                        <label class="" for="date-activities">{{__('Activity.date of Activity')}}</label>
+                        <input type="date" class="form-control " id='date-activities' value="{{$Activity->date}}" name="date">
                         @error('date')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                     </div>
                 </div>
             </div>
-                <h3 class="container-title">{{__('activity.other info')}}</h3>
+                <h3 class="container-title">{{__('Activity.other info')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="form-label" for="std_Note">{{__('activity.note')}}</label>
-                    <textarea class="form-control" id="std_Note" cols="50" rows="5"  name="note">{{$activity->note}}</textarea>
+                            <label class="form-label" for="std_Note">{{__('Activity.note')}}</label>
+                    <textarea class="form-control" id="std_Note" cols="50" rows="5"  name="note">{{$Activity->note}}</textarea>
                             @error('note')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror

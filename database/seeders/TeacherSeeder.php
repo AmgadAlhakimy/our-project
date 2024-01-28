@@ -19,7 +19,7 @@ class TeacherSeeder extends Seeder
         for($i = 1; $i<=10; $i++ ){
             Teacher::create([
                 'name'=> [
-                    'en'=>"teacher $i",
+                    'en'=>"Teacher $i",
                     'ar'=>"مدرس $i",
                 ],
                 'photo'=>'photo',

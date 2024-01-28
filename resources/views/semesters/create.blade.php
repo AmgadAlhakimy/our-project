@@ -9,12 +9,12 @@
             @endif
             <form method="post" action="{{route('semesters.store')}}">
                 @csrf
-                <h3 class="text-center">{{__('semester.create new semester')}}</h3>
+                <h3 class="text-center">{{__('Semester.create new Semester')}}</h3>
                 <div class="container card col-md-10 section-color mb-5 text-center">
                     <div class="row">
                         <div class=" col-md-1"></div>
                         <div class="box col-md-10 text-center">
-                            <label for="c-name">{{__('semester.semester name in english')}}</label>
+                            <label for="c-name">{{__('Semester.Semester name in english')}}</label>
                             <input type="text" id="c-name" class="form-control" name="name" value="{{old('name')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -23,7 +23,7 @@
                         <div class="col-md-1"></div>
                         <div class="col-md-1"></div>
                         <div class="box col-md-10 text-center">
-                            <label for="cname">{{__('semester.semester name in arabic')}}</label>
+                            <label for="cname">{{__('Semester.Semester name in arabic')}}</label>
                             <input type="text" id="cname" class="form-control" name="name_ar" value="{{old('name_ar')}}">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>

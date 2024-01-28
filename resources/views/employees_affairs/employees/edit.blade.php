@@ -2,19 +2,19 @@
 {{--@section('content')--}}
 {{--    <main class="main ">--}}
 {{--        <section class="section card-body">--}}
-{{--            <form method="post" action="{{route('employees.update',$employee->id)}}">--}}
+{{--            <form method="post" action="{{route('employees.update',$Employee->id)}}">--}}
 {{--                @method('PUT')--}}
 {{--                @csrf--}}
 {{--                <h3 class="text-center">--}}
 {{--                    UPDATE <span class="text-danger">--}}
-{{--                        {{$employee->name}}</span> CLASS</h3>--}}
+{{--                        {{$Employee->name}}</span> CLASS</h3>--}}
 {{--                <div class="container card col-md-10 section-color mb-5 text-center">--}}
 {{--                    <div class="row">--}}
 {{--                        <div class="row">--}}
 {{--                            <div class=" col-md-1"></div>--}}
 {{--                            <div class="box col-md-10 text-center">--}}
 {{--                                <label for="c-name">Class Name:</label>--}}
-{{--                                <input type="text" class="my-form-control " name="name" value="{{$employee->name}}">--}}
+{{--                                <input type="text" class="my-form-control " name="name" value="{{$Employee->name}}">--}}
 {{--                                @error('name')--}}
 {{--                                <small class="form-text text-danger">{{$message}}</small>--}}
 {{--                                @enderror--}}
@@ -26,10 +26,10 @@
 {{--                            <div class="box mb-3 col-md-5  ">--}}
 {{--                                <label for="sex">Education Level:</label>--}}
 {{--                                <select class="form-select my-form-control" name="edu_id">--}}
-{{--                                    @foreach($levels as $level)--}}
-{{--                                        <option class="text-center" value="{{$level->id}}"--}}
-{{--                                                @if(\App\Models\EducationalLevel::findorFail($employee->edu_id)->name==$level->name)--}}
-{{--                                                    selected @endif>{{$level->name}}</option>--}}
+{{--                                    @foreach($levels as $Level)--}}
+{{--                                        <option class="text-center" value="{{$Level->id}}"--}}
+{{--                                                @if(\App\Models\EducationalLevel::findorFail($Employee->edu_id)->name==$Level->name)--}}
+{{--                                                    selected @endif>{{$Level->name}}</option>--}}
 {{--                                    @endforeach--}}
 {{--                                </select>--}}
 {{--                                @error('edu_id')--}}
@@ -39,7 +39,7 @@
 {{--                            <div class="box mb-3 col-md-5 ">--}}
 {{--                                <label for="age">Class Cost: $$</label>--}}
 {{--                                <input type="number" class="my-form-control" name="cost" minlength="0"--}}
-{{--                                       value="{{$employee->cost}}">--}}
+{{--                                       value="{{$Employee->cost}}">--}}
 {{--                                @error('cost')--}}
 {{--                                <small class="form-text text-danger">{{$message}}</small>--}}
 {{--                                @enderror--}}
@@ -63,7 +63,7 @@
 @section('content')
     <main class="main ">
         <section class="section card-body">
-            <form method="post" action="{{route('employees.update',$employee->id)}}">
+            <form method="post" action="{{route('employees.update',$Employee->id)}}">
                 @method('PUT')
                 @csrf
                 <!-- Start personal info  -->
@@ -72,7 +72,7 @@
                     <div class="row">
                         <div class="box mb-3 col-lg-12 col-md-12">
                             <label for="name">name</label>
-                            <input type="text" class="my-form-control" name="name" value="{{$employee->name}}">
+                            <input type="text" class="my-form-control" name="name" value="{{$Employee->name}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -80,7 +80,7 @@
                         <div class="box mb-3 col-lg-6 col-md-12 ">
                             <label for="photo">Photo</label>
                             <input type="file" class="form-control" name="photo">
-                            <img src="{{URL::asset('images/employees/'.$employee->photo)}}" width="70"
+                            <img src="{{URL::asset('images/employees/'.$Employee->photo)}}" width="70"
                                  height="70" alt="Does not have image">
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -99,7 +99,7 @@
                         <div class="box mb-3 col-lg-6 col-md-6 ">
                             <label for="age">birthdate</label>
                             <input type="date" class="my-form-control" name="birthdate"
-                                   value="{{$employee->birthdate}}">
+                                   value="{{$Employee->birthdate}}">
                             @error('birthdate')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -107,7 +107,7 @@
                         <div class="box mb-3 col-lg-6 col-md-6 ">
                             <label for="e-qualification">Qualification</label>
                             <input type="text" class="my-form-control" name="qualification"
-                                   value="{{$employee->qualification}}">
+                                   value="{{$Employee->qualification}}">
                             @error('qualification')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -115,7 +115,7 @@
                         <div class="box mb-3 col-lg-6 col-md-6 ">
                             <label for="e-number">Contact 1</label>
                             <input type="number" class="col my-form-control ms-2 me-2" name="contact1"
-                                   value="{{$employee->contact1}}">
+                                   value="{{$Employee->contact1}}">
                             @error('contact1')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -123,7 +123,7 @@
                         <div class="box mb-3 col-lg-6 col-md-6 ">
                             <label for="e-number">Contact 2</label>
                             <input type="number" class="col my-form-control ms-2 me-2" name="contact2"
-                                   value="{{$employee->contact2}}">
+                                   value="{{$Employee->contact2}}">
                             @error('contact2')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -131,7 +131,7 @@
                         <div class="box mb-3  ">
                             <label for="e-address">address</label>
                             <input type="text" class="col my-form-control ms-2 me-2" name="address"
-                                   value="{{$employee->address}}">
+                                   value="{{$Employee->address}}">
                             @error('address')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -151,9 +151,9 @@
                 {{--                    <div class="row">--}}
                 {{--                        <div class="box mb-3 col-lg-12 col-md-12">--}}
                 {{--                            <label class="form-label" for="stdNote">NOTE:</label>--}}
-                {{--                            <textarea class="my-form-control text-start" name="note" id="" cols="50" value="{{$employee->note}}"--}}
+                {{--                            <textarea class="my-form-control text-start" name="note" id="" cols="50" value="{{$Employee->note}}"--}}
                 {{--                                                            rows="5"></textarea>--}}
-                {{--                            {{$employee->note}}--}}
+                {{--                            {{$Employee->note}}--}}
                 {{--                            @error('note')--}}
                 {{--                            <small class="form-text text-danger">{{$message}}</small>--}}
                 {{--                            @enderror--}}

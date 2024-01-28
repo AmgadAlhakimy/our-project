@@ -5,12 +5,12 @@
             <form method="post" action="<?php echo e(route('activities.update',$activity->id)); ?>">
                 <?php echo method_field('PUT'); ?>
                 <?php echo csrf_field(); ?>
-                <h3 class="container-title"><?php echo e(__('activity.update activity')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('Activity.update Activity')); ?></h3>
             <div class="container containers-style ">
                 <div class="row">
                     <!-- 1 -->
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="activity-name-a"><?php echo e(__('activity.activity name in english')); ?> </label>
+                        <label class="" for="activity-name-a"><?php echo e(__('Activity.Activity name in english')); ?> </label>
                         <input type="text" class="form-control" id='activity-name-a'  required  name="name" value="<?php echo e($activity->getTranslation('name','en')); ?>">
                         <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -24,7 +24,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="activity-name-e"><?php echo e(__('activity.activity name in arabic')); ?></label>
+                        <label class="" for="activity-name-e"><?php echo e(__('Activity.Activity name in arabic')); ?></label>
                         <input type="text" class="form-control " id='activity-name-e'  placeholder="in arabic"  name="name_ar"
                             value="<?php echo e($activity->getTranslation('name','ar')); ?>">
                         <?php $__errorArgs = ['name_ar'];
@@ -40,7 +40,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <!-- 2 -->
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="area-name-a"><?php echo e(__('activity.activity location in english')); ?></label>
+                        <label class="" for="area-name-a"><?php echo e(__('Activity.Activity location in english')); ?></label>
                         <input type="text" class="form-control " id='area-name-a' name="location"  placeholder="in english"
                             value="<?php echo e($activity->getTranslation('location','en')); ?>">
                         <?php $__errorArgs = ['location'];
@@ -55,7 +55,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="box col-lg-6 col-md-12">
-                        <label class="" for="area-name-e"><?php echo e(__('activity.activity location in arabic')); ?></label>
+                        <label class="" for="area-name-e"><?php echo e(__('Activity.Activity location in arabic')); ?></label>
                         <input type="text" class="form-control " id='area-name-e' name="location_ar"  placeholder="in arabic"
                             value="<?php echo e($activity->getTranslation('location','ar')); ?>">
                         <?php $__errorArgs = ['location_ar'];
@@ -70,7 +70,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="box col-lg-6 col-md-6">
-                        <label class="" for="area-number"><?php echo e(__('activity.activity location contact')); ?></label>
+                        <label class="" for="area-number"><?php echo e(__('Activity.Activity location contact')); ?></label>
                         <input type="number" class="form-control " id='area-number' value="<?php echo e($activity->contact); ?>" name="contact"  placeholder="">
                         <?php $__errorArgs = ['contact'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -85,7 +85,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                     <!-- 5 -->
                     <div class="box col-lg-6 col-md-6">
-                        <label class="" for="date-activities"><?php echo e(__('activity.date of activity')); ?></label>
+                        <label class="" for="date-activities"><?php echo e(__('Activity.date of Activity')); ?></label>
                         <input type="date" class="form-control " id='date-activities' value="<?php echo e($activity->date); ?>" name="date">
                         <?php $__errorArgs = ['date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -100,11 +100,11 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                 </div>
             </div>
-                <h3 class="container-title"><?php echo e(__('activity.other info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('Activity.other info')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="form-label" for="std_Note"><?php echo e(__('activity.note')); ?></label>
+                            <label class="form-label" for="std_Note"><?php echo e(__('Activity.note')); ?></label>
                     <textarea class="form-control" id="std_Note" cols="50" rows="5"  name="note"><?php echo e($activity->note); ?></textarea>
                             <?php $__errorArgs = ['note'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

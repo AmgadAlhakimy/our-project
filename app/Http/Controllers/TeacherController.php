@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\teacher\StoreTeacherRequest;
-use App\Http\Requests\teacher\UpdateTeacherRequest;
+use App\Http\Requests\Teacher\StoreTeacherRequest;
+use App\Http\Requests\Teacher\UpdateTeacherRequest;
 use App\Models\Teacher;
 use App\Traits\EmployeeTrait;
 use App\Traits\GenderTrait;
@@ -54,7 +54,7 @@ class TeacherController extends Controller
                     'en' => $request->name,
                     'ar' => $request->name_ar,
                 ],
-                'photo'=>$this->image($request,0,
+                'photo'=>$this->insertImage($request,0,
                     "\App\Models\Teacher",'images/teachers'),
                 'gender'=>[
                     'en'=>$this->gender($request,'en'),
@@ -114,7 +114,7 @@ class TeacherController extends Controller
     }
 
     /**
-     * Update the specified teacher.
+     * Update the specified Teacher.
      */
     public function update(UpdateTeacherRequest $request, $id)
     {
@@ -125,7 +125,7 @@ class TeacherController extends Controller
                         'en' => $request->name,
                         'ar' => $request->name_ar,
                     ],
-                    'photo'=>$this->image($request,$id,
+                    'photo'=>$this->insertImage($request,$id,
                         "\App\Models\Teacher",'images/teachers'),
                     'gender'=>[
                         'en'=>$this->gender($request,'en'),
@@ -155,7 +155,7 @@ class TeacherController extends Controller
         }
     }
     /**
-     * Remove the specified teacher.
+     * Remove the specified Teacher.
      */
     public function destroy($id)
     {
@@ -169,7 +169,7 @@ class TeacherController extends Controller
         }
     }
     /**
-     * Restore the specified teacher.
+     * Restore the specified Teacher.
      */
     public function restore($id)
     {
@@ -184,7 +184,7 @@ class TeacherController extends Controller
     }
 
     /**
-     * Remove by force the specified teacher.
+     * Remove by force the specified Teacher.
      */
     public function forceDelete($id)
     {

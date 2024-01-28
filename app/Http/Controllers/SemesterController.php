@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\semester\StoreSemesterRequest;
-use App\Http\Requests\semester\UpdateSemesterRequest;
+use App\Http\Requests\Semester\StoreSemesterRequest;
+use App\Http\Requests\Semester\UpdateSemesterRequest;
 use App\Models\Semester;
 use Exception;
 
@@ -53,7 +53,7 @@ class SemesterController extends Controller
     {
         try {
         $semesters = Semester::onlyTrashed()->get();
-        return view('semesters.deleted_classes', compact('semesters'));
+        return view('semesters.deleted_classroom', compact('semesters'));
         }  catch (\Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

@@ -3,7 +3,7 @@
 
 
 use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\EducationalLevelController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
@@ -18,9 +18,9 @@ Route::get('educational_levels/search',
     [EducationalLevelController::class, 'search'])
     ->name('educational_levels.search');
 
-Route::get('classes/search',
-    [ClassController::class, 'search'])
-    ->name('classes.search');
+Route::get('classrooms/search',
+    [ClassroomController::class, 'search'])
+    ->name('classrooms.search');
 
 Route::get('subjects/search',
     [SubjectController::class, 'search'])

@@ -2,7 +2,7 @@
 @section('content')
     <div class="table">
         <div class="table-header">
-            <h3>{{__('semester.semester info')}}</h3>
+            <h3>{{__('Semester.Semester info')}}</h3>
             <div>
                 <label>
                     <input type="text" class="" placeholder="{{__('public.search')}}">
@@ -45,24 +45,24 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($semesters as $semester)
+                @foreach($semesters as $Semester)
                     <tr>
-                        <td>{{$semester->id}}</td>
-                        <td>{{$semester->name}}</td>
-                        <td>{{$semester->created_at}}</td>
-                        <td>{{$semester->updated_at}}</td>
+                        <td>{{$Semester->id}}</td>
+                        <td>{{$Semester->name}}</td>
+                        <td>{{$Semester->created_at}}</td>
+                        <td>{{$Semester->updated_at}}</td>
                         <td>
-                            <a href="{{route('semesters.edit',$semester->id)}}"
+                            <a href="{{route('semesters.edit',$Semester->id)}}"
                                class="btn save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                         </td>
                         <td>
                             <button class="clear-button btn-danger w-100" data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$semester->id}}">
+                                    data-bs-target="#delete{{$Semester->id}}">
                                 <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="delete{{$semester->id}}"
+                            <div class="modal fade" id="delete{{$Semester->id}}"
                                  tabindex="-1" aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
                                 <div class="modal-dialog">
@@ -76,7 +76,7 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
-                                            <form method="post" action="{{route('semesters.destroy',$semester->id)}}">
+                                            <form method="post" action="{{route('semesters.destroy',$Semester->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit"  class="btn btn-primary">{{__('public.ok')}}</button>

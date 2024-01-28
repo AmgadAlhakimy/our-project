@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\EducationalLevelController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
@@ -14,9 +14,9 @@ Route::get('educational_levels/restore/{id}',
     [EducationalLevelController::class, 'restore'])
     ->name('educational_levels.restore');
 
-Route::get('classes/restore/{id}',
-    [ClassController::class, 'restore'])
-    ->name('classes.restore');
+Route::get('classrooms/restore/{id}',
+    [ClassroomController::class, 'restore'])
+    ->name('classrooms.restore');
 
 Route::get('subjects/restore/{id}',
     [SubjectController::class, 'restore'])

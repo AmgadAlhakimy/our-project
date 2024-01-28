@@ -8,35 +8,35 @@
                 </div>
             @endif
             <!-- Start personal info  -->
-                <h3 class="container-title">{{__('teacher.update teacher: ').$teacher->name}}</h3>
-                <form method="post" action="{{route('teachers.update', $teacher->id)}}" enctype="multipart/form-data">
+                <h3 class="container-title">{{__('Teacher.update Teacher: ').$Teacher->name}}</h3>
+                <form method="post" action="{{route('teachers.update', $Teacher->id)}}" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
                 <div class="container containers-style">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12  ">
-                            <label for="teacher-name-a">{{__('teacher.teachers name in english')}}</label>
+                            <label for="teacher-name-a">{{__('Teacher.teachers name in english')}}</label>
                             <input type="text" class="form-control " id='teacher-name-a' name="name"
-                                    value="{{$teacher->getTranslation('name','en')}}">
+                                    value="{{$Teacher->getTranslation('name','en')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label for="teacher-name-e">{{__('teacher.teachers name in arabic')}}</label>
+                            <label for="teacher-name-e">{{__('Teacher.teachers name in arabic')}}</label>
                             <input type="text" class="form-control " id='teacher-name-e' name="name_ar"
-                                   value="{{$teacher->getTranslation('name','ar')}}">
+                                   value="{{$Teacher->getTranslation('name','ar')}}">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <!-- 2 -->
                         <div class="box row me-2 mb-3 col-lg-6 col-md-12 ">
-                            <label class="" for="photo">{{__('change teacher photo')}}</label>
+                            <label class="" for="photo">{{__('change Teacher photo')}}</label>
                             <input type="file" class="form-control col-8" id="photo" name="photo"
-                                   value="{{$teacher->photo}}">
-                            <img src="{{asset($teacher->photo)}}"
+                                   value="{{$Teacher->photo}}">
+                            <img src="{{asset($Teacher->photo)}}"
                                  class="student-img col-4" alt="no photo">
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -47,10 +47,10 @@
                             <label for="gender">{{__('public.gender')}}</label>
                             <select class="col form-select form-control" id="gender" name="gender">
                                 <option class="text-center"
-                                        value="{{__('public.male')}}" @if($teacher->getTranslation('gender','en') == 'male') selected @endif>
+                                        value="{{__('public.male')}}" @if($Teacher->getTranslation('gender','en') == 'male') selected @endif>
                                     {{__('public.male')}}</option>
                                 <option class="text-center"
-                                        value="{{__('public.female')}}"  @if($teacher->getTranslation('gender','en') == 'female') selected @endif>
+                                        value="{{__('public.female')}}"  @if($Teacher->getTranslation('gender','en') == 'female') selected @endif>
                                     {{__('public.female')}}</option>
                             </select>
                             @error('gender')
@@ -59,10 +59,10 @@
                         </div>
                         <!-- 4 -->
                         <div class="box ">
-                            <label for="t-numbers">{{__('teacher.contact')}}</label>
+                            <label for="t-numbers">{{__('Teacher.contact')}}</label>
                             <div class="row">
                                 <input type="number" class="col form-control ms-2 me-2" id='t-numbers'
-                                       placeholder="only numbers" name="contact" value="{{$teacher->contact}}">
+                                       placeholder="only numbers" name="contact" value="{{$Teacher->contact}}">
                                 @error('contact')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -70,17 +70,17 @@
                         </div>
                         <!-- 5 -->
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.address in english')}}</label>
+                            <label for="t-address">{{__('Teacher.address in english')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address'
-                                   name="address"value="{{$teacher->getTranslation('address','en')}}">
+                                   name="address"value="{{$Teacher->getTranslation('address','en')}}">
                             @error('address')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.address in arabic')}}</label>
+                            <label for="t-address">{{__('Teacher.address in arabic')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address_ar'
-                                   name="address_ar" value="{{$teacher->getTranslation('address','ar')}}">
+                                   name="address_ar" value="{{$Teacher->getTranslation('address','ar')}}">
                             @error('address_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -89,22 +89,22 @@
                 </div>
                 <!-- End personal info  -->
                 <!-- Start functional info  -->
-                <h3 class="container-title">{{__('teacher.functional data')}}</h3>
+                <h3 class="container-title">{{__('Teacher.functional data')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box  col-lg-6 col-md-12">
-                            <label for="t-qualification">{{__('teacher.qualification in english')}}</label>
+                            <label for="t-qualification">{{__('Teacher.qualification in english')}}</label>
                             <input type="text" class="form-control" id='t-qualification' name="qualification"
-                                   value="{{$teacher->getTranslation('qualification','en')}}">
+                                   value="{{$Teacher->getTranslation('qualification','en')}}">
                             @error('qualification')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box  col-lg-6 col-md-12">
-                            <label for="t-qualification_ar">{{__('teacher.qualification in arabic')}}</label>
+                            <label for="t-qualification_ar">{{__('Teacher.qualification in arabic')}}</label>
                             <input type="text" class="form-control" id='t-qualification_ar' name="qualification_ar"
-                                   value="{{$teacher->getTranslation('qualification','ar')}}">
+                                   value="{{$Teacher->getTranslation('qualification','ar')}}">
                             @error('qualification_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -112,26 +112,26 @@
                         <!-- 2 -->
 
                         <div class="box  col-lg-6 col-md-12">
-                            <label for="t-salary">{{__('teacher.salary')}}</label>
+                            <label for="t-salary">{{__('Teacher.salary')}}</label>
                             <input type="number" class="form-control" id='t-salary' name="salary"
-                                   placeholder="in dollars $" value="{{$teacher->salary}}">
+                                   placeholder="in dollars $" value="{{$Teacher->salary}}">
                             @error('salary')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <!-- 3 -->
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.major in english')}}</label>
+                            <label for="t-address">{{__('Teacher.major in english')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address' name="major"
-                                   value="{{$teacher->getTranslation('major','en')}}">
+                                   value="{{$Teacher->getTranslation('major','en')}}">
                             @error('major')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.major in arabic')}}</label>
+                            <label for="t-address">{{__('Teacher.major in arabic')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address'
-                                   name="major_ar"  value="{{$teacher->getTranslation('major','ar')}}">
+                                   name="major_ar"  value="{{$Teacher->getTranslation('major','ar')}}">
                             @error('major_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -140,13 +140,13 @@
                 </div>
                 <!-- End functional info  -->
                 <!-- Start final box -->
-                <h3 class="container-title">{{__('teacher.other info')}}</h3>
+                <h3 class="container-title">{{__('Teacher.other info')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="notes col-lg-12 col-md-12">
                             <label class="form-label" for="st_dNote">{{__('public.note')}}</label>
                             <textarea name="note" class="form-control" id="st_dNote" cols="50"
-                                      rows="5">{{$teacher->note}}</textarea>
+                                      rows="5">{{$Teacher->note}}</textarea>
                             @error('note')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror

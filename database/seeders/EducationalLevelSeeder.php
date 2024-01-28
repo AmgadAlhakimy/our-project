@@ -16,7 +16,7 @@ class EducationalLevelSeeder extends Seeder
         for($i = 1; $i<=10; $i++ ){
         EducationalLevel::create([
             'name'=> [
-                'en'=>"level $i",
+                'en'=>"Level $i",
                 'ar'=>"المرحلة $i",
             ]
         ]);

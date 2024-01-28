@@ -7,12 +7,12 @@
             <form action="">
                 <h3 class="container-title">اضف فصول للمدرس</h3>
                 <div class="container containers-style">
-                    <div class=""> 
+                    <div class="">
                         <div class="row">
                             <!-- 1 -->
                             <div class="box col-12 ">
-                                <label for="level-class">the teacher</label>
-                                <select class="form-select form-control " id="level-class"> 
+                                <label for="level-class">the Teacher</label>
+                                <select class="form-select form-control " id="level-class">
                                     <option  value="">ahmad</option>
                                     <option  value="">khalid</option>
                                     <option  value="">amgad</option>
@@ -23,7 +23,7 @@
                                 <div class="box mb-1">
                                     <label class="" for="level-class">choose the classes please</label>
                                 </div>
-                                
+
                                 <div class="box ">
                                         <div class="btn-container ">
                                         <!-- <div class="btn-menu "> -->
@@ -57,16 +57,16 @@
                                                 <input class="light-btn" type="checkbox" >
                                                 <span class="btnl-text">reception </span>
                                             </label>
-                                        
+
                                             <!-- -------- end buttons  -->
                                         </div>
                                     </div>
                                 </div>
                             <!-- </div> -->
                         </div>
-                            
 
-                            
+
+
                     </div>
                 </div>
                 <div class=" row">

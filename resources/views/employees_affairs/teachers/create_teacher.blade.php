@@ -8,14 +8,14 @@
                 </div>
             @endif
             <!-- Start personal info  -->
-            <h3 class="container-title">{{__('teacher.teachers info')}}</h3>
+            <h3 class="container-title">{{__('Teacher.teachers info')}}</h3>
             <form method="post" action="{{route('teachers.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="container containers-style">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12  ">
-                            <label for="teacher-name-a">{{__('teacher.teachers name in english')}}</label>
+                            <label for="teacher-name-a">{{__('Teacher.teachers name in english')}}</label>
                             <input type="text" class="form-control " id='teacher-name-a' name="name"
                                    placeholder="in english" value="{{old('name')}}">
                             @error('name')
@@ -23,7 +23,7 @@
                             @enderror
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label for="teacher-name-e">{{__('teacher.teachers name in arabic')}}</label>
+                            <label for="teacher-name-e">{{__('Teacher.teachers name in arabic')}}</label>
                             <input type="text" class="form-control " id='teacher-name-e' name="name_ar"
                                    placeholder="in arabic" value="{{old('name_ar')}}">
                             @error('name_ar')
@@ -32,7 +32,7 @@
                         </div>
                         <!-- 2 -->
                         <div class="box col-lg-6 col-md-12 ">
-                            <label for="photo">{{__('teacher.photo')}}</label>
+                            <label for="photo">{{__('Teacher.photo')}}</label>
                             <input type="file" class="form-control"
                                    id="photo" name="photo" value="{{old('photo')}}">
                             @error('photo')
@@ -49,12 +49,12 @@
                             @error('gender')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
-                            <input type="hidden" name="gender_ar_m" value="{{__('student.male_ar')}}">
-                            <input type="hidden" name="gender_ar_f" value="{{__('student.female_ar')}}">
+                            <input type="hidden" name="gender_ar_m" value="{{__('Student.male_ar')}}">
+                            <input type="hidden" name="gender_ar_f" value="{{__('Student.female_ar')}}">
                         </div>
                         <!-- 4 -->
                         <div class="box ">
-                            <label for="t-numbers">{{__('teacher.contact')}}</label>
+                            <label for="t-numbers">{{__('Teacher.contact')}}</label>
                             <div class="row">
                                 <input type="number" class="col form-control ms-2 me-2" id='t-numbers'
                                        placeholder="only numbers" name="contact" value="{{old('contact')}}">
@@ -65,7 +65,7 @@
                         </div>
                         <!-- 5 -->
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.address in english')}}</label>
+                            <label for="t-address">{{__('Teacher.address in english')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address'
                                    name="address" value="{{old('address')}}">
                             @error('address')
@@ -73,7 +73,7 @@
                             @enderror
                         </div>
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.address in arabic')}}</label>
+                            <label for="t-address">{{__('Teacher.address in arabic')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address_ar'
                                    name="address_ar" value="{{old('address_ar')}}">
                             @error('address_ar')
@@ -84,12 +84,12 @@
                 </div>
                 <!-- End personal info  -->
                 <!-- Start functional info  -->
-                <h3 class="container-title">{{__('teacher.functional data')}}</h3>
+                <h3 class="container-title">{{__('Teacher.functional data')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box  col-lg-6 col-md-12">
-                            <label for="t-qualification">{{__('teacher.qualification in english')}}</label>
+                            <label for="t-qualification">{{__('Teacher.qualification in english')}}</label>
                             <input type="text" class="form-control" id='t-qualification' name="qualification"
                                     value="{{old('qualification')}}">
                             @error('qualification')
@@ -97,7 +97,7 @@
                             @enderror
                         </div>
                         <div class="box  col-lg-6 col-md-12">
-                            <label for="t-qualification_ar">{{__('teacher.qualification in arabic')}}</label>
+                            <label for="t-qualification_ar">{{__('Teacher.qualification in arabic')}}</label>
                             <input type="text" class="form-control" id='t-qualification_ar' name="qualification_ar"
                                     value="{{old('qualification_ar')}}">
                             @error('qualification_ar')
@@ -107,7 +107,7 @@
                         <!-- 2 -->
 
                         <div class="box  col-lg-6 col-md-12">
-                            <label for="t-salary">{{__('teacher.salary')}}</label>
+                            <label for="t-salary">{{__('Teacher.salary')}}</label>
                             <input type="number" class="form-control" id='t-salary' name="salary"
                                    placeholder="in dollars $" value="{{old('salary')}}">
                             @error('salary')
@@ -116,7 +116,7 @@
                         </div>
                         <!-- 3 -->
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.major in english')}}</label>
+                            <label for="t-address">{{__('Teacher.major in english')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address' name="major"
                                    value="{{old('major')}}">
                             @error('major')
@@ -124,7 +124,7 @@
                             @enderror
                         </div>
                         <div class="box row">
-                            <label for="t-address">{{__('teacher.major in arabic')}}</label>
+                            <label for="t-address">{{__('Teacher.major in arabic')}}</label>
                             <input type="text" class=" form-control ms-2 me-2" id='t-address'
                                    name="major_ar" value="{{old('major_ar')}}">
                             @error('major_ar')
@@ -135,7 +135,7 @@
                 </div>
                 <!-- End functional info  -->
                 <!-- Start final box -->
-                <h3 class="container-title">{{__('teacher.other info')}}</h3>
+                <h3 class="container-title">{{__('Teacher.other info')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="notes col-lg-12 col-md-12">

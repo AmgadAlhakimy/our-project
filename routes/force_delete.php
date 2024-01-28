@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\ClassController;
+use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\EducationalLevelController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
@@ -14,9 +14,9 @@ Route::get('educational_levels/forceDelete/{id}',
     [EducationalLevelController::class, 'forceDelete'])
     ->name('educational_levels.forceDelete');
 
-Route::get('classes/forceDelete/{id}',
-    [ClassController::class, 'forceDelete'])
-    ->name('classes.forceDelete');
+Route::get('classrooms/forceDelete/{id}',
+    [ClassroomController::class, 'forceDelete'])
+    ->name('classrooms.forceDelete');
 
 Route::get('subjects/forceDelete/{id}',
     [SubjectController::class, 'forceDelete'])

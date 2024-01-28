@@ -16,9 +16,9 @@
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
                     <option class="text-center d-"
-                            value="{{__('student.male')}}">{{__('student.male')}}</option>
+                            value="{{__('Student.male')}}">{{__('Student.male')}}</option>
                     <option class="text-center d-"
-                            value="{{__('student.female')}}">{{__('student.female')}}</option>
+                            value="{{__('Student.female')}}">{{__('Student.female')}}</option>
                     <option class="d d-" value="male"></option>
                 </select>
                 @error('sex')

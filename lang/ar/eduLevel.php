@@ -13,12 +13,12 @@ return [
     |
     */
 
-    //create educational level
-    'create new educational level'=>'إدخال مرحلة دراسية جديدة',
-    'update educational level'=>'تعديل المرحلة الدراسية',
+    //create educational Level
+    'create new educational Level'=>'إدخال مرحلة دراسية جديدة',
+    'update educational Level'=>'تعديل المرحلة الدراسية',
     'educational Level name in english'=>'اسم المرحلة الدراسية بالإنجليزية',
     'educational Level name in arabic'=>'اسم المرحلة الدراسية بالعربية',
-    'educational level info'=>'معلومات المرحلة الدراسية',
-    'Sorry! you have to create Educational level first'=>'عذرا يجب اولا إنشاء مراحل دراسية',
+    'educational Level info'=>'معلومات المرحلة الدراسية',
+    'Sorry! you have to create Educational Level first'=>'عذرا يجب اولا إنشاء مراحل دراسية',
 
 ];

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\student\StoreStudentRequest;
-use App\Http\Requests\student\UpdateStudentRequest;
-use App\Models\Classs;
+use App\Http\Requests\Student\StoreStudentRequest;
+use App\Http\Requests\Student\UpdateStudentRequest;
+use App\Models\Classroom;
 use App\Models\Relative;
 use App\Models\Student;
 use App\Traits\GenderTrait;
@@ -24,9 +24,9 @@ class StudentController extends Controller
     {
         try {
         $students = Student::all();
-        $classes= Classs::all();
+        $classrooms= Classroom::all();
         return view('students_affairs/students.show_students',
-            compact('students', 'classes'));
+            compact('students', 'classrooms'));
 
         }catch (\Exception  $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -34,15 +34,15 @@ class StudentController extends Controller
     }
 
     /**
-     * Show creating new student page.
+     * Show creating new Student page.
      */
     public function create()
     {
         try {
-        $classes = Classs::all();
+        $classrooms = Classroom::all();
         $relatives = Relative::all();
         return view('students_affairs/students.create_student',
-            compact('classes','relatives'));
+            compact('classrooms','relatives'));
 
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -50,7 +50,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Store a new student.
+     * Store a new Student.
      */
     public function store(StoreStudentRequest $request)
     {
@@ -60,7 +60,7 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request,0,
+            'photo'=>$this->insertImage($request,0,
                 "\App\Models\Student",'images/students'),
             'address'=>[
                 'en'=> $request->address,
@@ -88,7 +88,7 @@ class StudentController extends Controller
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
-            'class_id'=>$request->class_id,
+            'classroom_id'=>$request->classroom_id,
             'relative_id'=>$request->relative_id,
 
         ]);
@@ -115,15 +115,15 @@ class StudentController extends Controller
     }
 
     /**
-     * Show the form for editing student page.
+     * Show the form for editing Student page.
      */
     public function edit($id)
     {
         try {
             $student = Student::findorFail($id);
-            $classes = Classs::all();
+            $classrooms = Classroom::all();
             return view('students_affairs/students.edit_student',
-                compact('student','classes'));
+                compact('student','classrooms'));
 
         }catch (\Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -131,7 +131,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Update the specified student.
+     * Update the specified Student.
      */
     public function update(UpdateStudentRequest $request, $id)
     {
@@ -142,7 +142,7 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request,$id,
+            'photo'=>$this->insertImage($request,$id,
                 "\App\Models\Student",'images/students'),
 
             'address'=>[
@@ -171,7 +171,7 @@ class StudentController extends Controller
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
-            'class_id'=>$request->class_id,
+            'classroom_id'=>$request->classroom_id,
             'relative_id'=>$request->relative_id,
         ]);
         return redirect()->route('students.index')
@@ -183,7 +183,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Remove the specified student.
+     * Remove the specified Student.
      */
     public function destroy($id)
     {
@@ -199,7 +199,7 @@ class StudentController extends Controller
 
 
     /**
-     * Restore the specified student.
+     * Restore the specified Student.
      */
     public function restore($id)
     {
@@ -214,11 +214,12 @@ class StudentController extends Controller
     }
 
     /**
-     * Remove by force the specified student.
+     * Remove by force the specified Student.
      */
     public function forceDelete($id)
     {
         try {
+            $this->deleteImage($id,"App\Models\Student");
             Student::withTrashed()->where('id', $id)->forceDelete();
             return redirect()->back()
                 ->with(['warning' => trans('message.force delete')]);
@@ -229,7 +230,7 @@ class StudentController extends Controller
     }
 
     /**
-     * show student according to the search.
+     * show Student according to the search.
      */
     public function search(Request $request)
     {
@@ -247,7 +248,7 @@ class StudentController extends Controller
                     ->orwhere('place_of_birth->en','like',"%$search%")
                     ->orwhere('place_of_birth->ar','like',"%$search%")
                     ->orwhere('birthdate','like',"%$search%");
-            })->orWhereHas('class',function ($query) use ($search){
+            })->orWhereHas('classroom',function ($query) use ($search){
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
@@ -260,7 +261,7 @@ class StudentController extends Controller
     }
 
     /**
-     * show student according to the search.
+     * show Student according to the search.
      */
     public function more($id)
     {

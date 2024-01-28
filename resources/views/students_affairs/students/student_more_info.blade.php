@@ -79,7 +79,7 @@
                                     <label class=" mb-1 cards_title">الصف  </label>
                                 </div>
                                 <div class="col  s_info_1">
-                                    <label class=" mb-1 cards_sup_title"> {{$student->class->name}} </label>
+                                    <label class=" mb-1 cards_sup_title"> {{$student->classroom->name}} </label>
                                 </div>
                             </div>
                             {{-- 6 --}}
@@ -88,7 +88,7 @@
                                     <label class=" mb-1 cards_title">المرحلة الدراسية</label>
                                 </div>
                                 <div class="col  s_info_1">
-                                    <label class=" mb-1 cards_sup_title"> {{$student->class->level->name}} </label>
+                                    <label class=" mb-1 cards_sup_title"> {{$student->classroom->Level->name}} </label>
                                 </div>
                             </div>
                         </div>

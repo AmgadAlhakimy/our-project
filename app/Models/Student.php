@@ -17,14 +17,14 @@ class Student extends Model
                             'birthdate', 'place_of_birth',
                             'medicine_desc', 'allergy_desc',
                             'health_problem_desc', 'note',
-                            'class_id','relative_id'];
+                            'classroom_id','relative_id'];
 
     public array $translatable = ['name', 'address', 'gender',
                                   'place_of_birth', 'medicine_desc',
                                   'allergy_desc', 'health_problem_desc',];
-    public function class()
+    public function classroom()
     {
-        return $this->belongsTo(Classs::class,'class_id');
+        return $this->belongsTo(Classroom::class,'classroom_id');
     }
     public function relative()
     {

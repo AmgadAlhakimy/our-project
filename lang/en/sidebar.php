@@ -19,28 +19,28 @@ return [
     'Admin' => 'Admin',
     'academic department' => 'Academic Department',
     'addition' => 'Addition',
-    'add educational level' => 'Add Educational Level',
+    'add educational Level' => 'Add Educational Level',
     'add a class' => 'Add A Class',
-    'add subject' => 'Add Subfects',
-    'add activity' => 'Add activities',
+    'add Subject' => 'Add Subfects',
+    'add Activity' => 'Add activities',
 
     'academic department review'=>' Academic Department Review',
-    'review of educational level'=>'Review Of Educational Level',
-    'review of classes'=>'Review Of Classes ',
+    'review of educational Level'=>'Review Of Educational Level',
+    'review of classrooms'=>'Review Of Classes ',
     'review of subjects'=>'Review Of Subjects',
     'review activities'=>'Review Of activities',
 
     'trash'=>'trash',
-    'deleted educational level'=>'Deleted Educational Level ',
-    'deleted classes'=>'Deleted Class',
+    'deleted educational Level'=>'Deleted Educational Level ',
+    'deleted classrooms'=>'Deleted Class',
     'deleted subjects'=>'Deleted Subfects',
     'deleted activities'=>'Deleted activities',
 
     'students affairs'=>'Students Affairs',
-    'add a student'=>'Add A Student',
+    'add a Student'=>'Add A Student',
     'review students'=>'Review Student',
-    'deleted student'=>'Deleted Student',
-    'student absence'=>'Student Absece',
+    'deleted Student'=>'Deleted Student',
+    'Student absence'=>'Student Absece',
 
 
 ];

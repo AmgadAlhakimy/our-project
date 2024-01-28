@@ -36,7 +36,7 @@ return [
     'contact'=>'Contact',
     'date'=>'date',
     'cost'=>'Cost',
-    'educational level'=>'Educational Level',
+    'educational Level'=>'Educational Level',
     'are you sure you want to delete'=>'Are you sure you want to delete: ',
     'gender'=>'gender',
     'male'=>'Male',
@@ -53,7 +53,7 @@ return [
 
     'class'=>'CLASS',
     'month'=>'Month',
-    'teacher'=>'Teacher',
+    'Teacher'=>'Teacher',
 
 
 

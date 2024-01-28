@@ -10,7 +10,7 @@
                 <form method="post" action="<?php echo e(route('educational_levels.update',$level->id)); ?>">
                 <?php echo method_field('PUT'); ?>
                 <?php echo csrf_field(); ?>
-                <h3 class="container-title"><?php echo e(__('eduLevel.update educational level')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('eduLevel.update educational Level')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="row mt-2">

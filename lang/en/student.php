@@ -13,15 +13,15 @@ return [
     |
     */
 
-    //create student
-    'Register a new student'=>'Register a new student',
-    'student info'=>'student info',
-    "student's name in arabic"=>"student's name in Arabic",
-    "student's name in english"=>"student's name in English",
+    //create Student
+    'Register a new Student'=>'Register a new Student',
+    'Student info'=>'Student info',
+    "Student's name in arabic"=>"Student's name in Arabic",
+    "Student's name in english"=>"Student's name in English",
     'photo'=>'Photo',
     'addresses'=>'Addresses',
-    "student's address in arabic"=>"student's address in Arabic",
-    "student's address in english"=>"student's address in English",
+    "Student's address in arabic"=>"Student's address in Arabic",
+    "Student's address in english"=>"Student's address in English",
     'gender'=>'gender',
     'male'=>'male',
     'female'=>'female',
@@ -48,7 +48,7 @@ return [
     'kin relationship in english'=>'kin relationship in English',
     "kin contact"=>"kin Contact",
     'health info'=>'Health Info',
-    'does the student'=>'Does the Student',
+    'does the Student'=>'Does the Student',
     'take any medicine ?'=>'Take any Medicine ?',
     'no'=>'No',
     'yes'=>'Yes',
@@ -56,7 +56,7 @@ return [
     'have any health problem ?'=>'Have any Health Problem ?',
     'other info'=>'Other Info',
     'note'=>'NOTE:',
-    'first you have to add classes'=>'first you have to add classes',
+    'first you have to add classrooms'=>'first you have to add classrooms',
     'parents'=>'Parents',
     'more info'=>'More info',
 ];

@@ -60,28 +60,28 @@
                     </th>
                 </tr>
                 </thead>
-                @foreach($employees  as $employee )
+                @foreach($employees  as $Employee )
                     <tbody>
                     <tr>
-                        <td>{{$employee->id}}</td>
-                        <td>{{$employee->name}}</td>
-                        <td>{{$employee->sex}}</td>
-                        <td><img src="{{URL::asset('assets/images/employees/'.$employee->photo)}}"></td>
-                        <td>{{$employee->birthdate}}</td>
-                        <td>{{$employee->qualification}}</td>
-                        <td>{{$employee->address}}</td>
-                        <td>{{$employee->contact1}}</td>
-                        <td>{{$employee->contact2}}</td>
-                        <td>{{$employee->note}}</td>
-                        <td>{{$employee->created_at}}</td>
-                        <td>{{$employee->updated_at}}</td>
+                        <td>{{$Employee->id}}</td>
+                        <td>{{$Employee->name}}</td>
+                        <td>{{$Employee->sex}}</td>
+                        <td><img src="{{URL::asset('assets/images/employees/'.$Employee->photo)}}"></td>
+                        <td>{{$Employee->birthdate}}</td>
+                        <td>{{$Employee->qualification}}</td>
+                        <td>{{$Employee->address}}</td>
+                        <td>{{$Employee->contact1}}</td>
+                        <td>{{$Employee->contact2}}</td>
+                        <td>{{$Employee->note}}</td>
+                        <td>{{$Employee->created_at}}</td>
+                        <td>{{$Employee->updated_at}}</td>
                         <td>
-                            <a href="{{route('employees.edit',$employee->id)}}"
+                            <a href="{{route('employees.edit',$Employee->id)}}"
                                 class="btn my-save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i> Edit </a>
                         </td>
                         <td>
-                            <form method="post" action="{{route('employees.destroy',$employee->id)}}">
+                            <form method="post" action="{{route('employees.destroy',$Employee->id)}}">
                                 @method('DELETE')
                                 @csrf
                                 <button class="my-clear-button btn-danger"><i class="fa-solid fa-trash"></i>

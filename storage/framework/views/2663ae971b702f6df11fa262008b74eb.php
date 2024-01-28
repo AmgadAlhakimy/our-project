@@ -7,15 +7,15 @@
 
                 </div>
             <?php endif; ?>
-            <h1 class="p-relative title-1"> <?php echo e(__('activity.create new activity')); ?> </h1>
+            <h1 class="p-relative title-1"> <?php echo e(__('Activity.create new Activity')); ?> </h1>
             <form action="<?php echo e(route('activities.store')); ?>" method="post">
                 <?php echo csrf_field(); ?>
-                <h3 class="container-title"><?php echo e(__('activity.activity info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('Activity.Activity info')); ?></h3>
                 <div class="container  containers-style ">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label class="" for="activity-name-a"><?php echo e(__('activity.activity name in english')); ?> </label>
+                            <label class="" for="activity-name-a"><?php echo e(__('Activity.Activity name in english')); ?> </label>
                             <input type="text" class="form-control" id='activity-name-a' placeholder="in english"
                                         name="name" value="<?php echo e(old('name')); ?>">
                             <?php $__errorArgs = ['name'];
@@ -30,7 +30,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label class="form-text" for="activity-name-e"><?php echo e(__('activity.activity name in arabic')); ?></label>
+                            <label class="form-text" for="activity-name-e"><?php echo e(__('Activity.Activity name in arabic')); ?></label>
                             <input type="text" class="form-control" id='activity-name-e' placeholder="in arabic"
                                 name="name_ar" value="<?php echo e(old('name_ar')); ?>">
                             <?php $__errorArgs = ['name_ar'];
@@ -46,7 +46,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- 2 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label class="" for="area-name-a"><?php echo e(__('activity.activity location in english')); ?></label>
+                            <label class="" for="area-name-a"><?php echo e(__('Activity.Activity location in english')); ?></label>
                             <input type="text" class="form-control " id='area-name-a' name="location"
                                 placeholder="in english" value="<?php echo e(old('location')); ?>">
                             <?php $__errorArgs = ['location'];
@@ -61,7 +61,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label class="" for="area-name-e"><?php echo e(__('activity.activity location in arabic')); ?></label>
+                            <label class="" for="area-name-e"><?php echo e(__('Activity.Activity location in arabic')); ?></label>
                             <input type="text" class="form-control " id='area-name-e' name="location_ar"
                                 placeholder="in arabic" value="<?php echo e(old('location_ar')); ?>">
                             <?php $__errorArgs = ['location_ar'];
@@ -76,7 +76,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-6">
-                            <label class="" for="area-number"><?php echo e(__('activity.activity location contact')); ?></label>
+                            <label class="" for="area-number"><?php echo e(__('Activity.Activity location contact')); ?></label>
                             <input type="number" class="form-control " id='area-number' name="contact" placeholder=""
                                 value="<?php echo e(old('contact')); ?>">
                             <?php $__errorArgs = ['contact'];
@@ -92,7 +92,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- 5 -->
                         <div class="box col-lg-6 col-md-6">
-                            <label class="" for="date-activities"><?php echo e(__('activity.date of activity')); ?></label>
+                            <label class="" for="date-activities"><?php echo e(__('Activity.date of Activity')); ?></label>
                                     <input type="date" class="form-control " id='date-activities' name="date"
                                 value="<?php echo e(old('date')); ?>">
                             <?php $__errorArgs = ['date'];
@@ -108,7 +108,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-                <h3 class="container-title"><?php echo e(__('activity.other info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('Activity.other info')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
