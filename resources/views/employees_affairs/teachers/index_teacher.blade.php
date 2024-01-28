@@ -35,34 +35,34 @@
                     <th><div class="th-head-1"></div></th>
                 </tr>
                 </thead>
-                @foreach($teachers  as $Teacher )
+                @foreach($teachers  as $teacher )
                     <tbody>
                     <tr>
-                        <td>{{$Teacher->id}}</td>
-                        <td>{{$Teacher->name}}</td>
-                        <td><img src="{{asset($Teacher->photo)}}"
+                        <td>{{$teacher->id}}</td>
+                        <td>{{$teacher->name}}</td>
+                        <td><img src="{{asset($teacher->photo)}}"
                                  class="student-img" alt="photo"></td>
-                        <td>{{$Teacher->contact}}</td>
-                        <td>{{$Teacher->gender}}</td>
-                        <td>{{$Teacher->address}}</td>
-                        <td>{{$Teacher->qualification}}</td>
-                        <td>{{$Teacher->salary}}</td>
-                        <td>{{$Teacher->major}}</td>
-                        <td>{{$Teacher->note}}</td>
-                        <td>{{$Teacher->created_at}}</td>
-                        <td>{{$Teacher->updated_at}}</td>
+                        <td>{{$teacher->contact}}</td>
+                        <td>{{$teacher->gender}}</td>
+                        <td>{{$teacher->address}}</td>
+                        <td>{{$teacher->qualification}}</td>
+                        <td>{{$teacher->salary}}</td>
+                        <td>{{$teacher->major}}</td>
+                        <td>{{$teacher->note}}</td>
+                        <td>{{$teacher->created_at}}</td>
+                        <td>{{$teacher->updated_at}}</td>
                         <td>
-                            <a href="{{route('teachers.edit',$Teacher->id)}}"
+                            <a href="{{route('teachers.edit',$teacher->id)}}"
                                class="btn my-save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                         </td>
                         <td>
                             <button class="btn my-clear-button btn-danger w-100" data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$Teacher->id}}">
+                                    data-bs-target="#delete{{$teacher->id}}">
                                 <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="delete{{$Teacher->id}}"
+                            <div class="modal fade" id="delete{{$teacher->id}}"
                                  tabindex="-1" aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
                                 <div class="modal-dialog">
@@ -71,12 +71,12 @@
                                             <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
                                         </div>
                                         <div class="modal-body">
-                                            {{__('public.are you sure you want to delete').$Teacher->name}}
+                                            {{__('public.are you sure you want to delete').$teacher->name}}
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
-                                            <form method="post" action="{{route('teachers.destroy',$Teacher->id)}}">
+                                            <form method="post" action="{{route('teachers.destroy',$teacher->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
