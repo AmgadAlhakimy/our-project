@@ -7,7 +7,7 @@
         {{-- the table header with bottuns and search input --}}
         <div class="table-header">
             {{-- the title and search --}}
-            <h4 class="form-group container-title">{{__('eduLevel.educational level info')}}</h4>
+            <h4 class="form-group container-title">{{__('eduLevel.educational Level info')}}</h4>
             <div class="row first-card mt-4">
                 <form method="post" action="{{route('educational_levels.search')}}">
                     @method('GET')
@@ -47,21 +47,21 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($levels as $level)
+                    @foreach($levels as $Level)
                         <tr>
-                            <td>{{$level->id}}</td>
-                            <td>{{$level->name}}</td>
-                            <td>{{$level->created_at}}</td>
-                            <td>{{$level->updated_at}}</td>
-                            <td><a href="{{route('educational_levels.edit',$level->id)}}"class="btn save-button btn-success w-100">
+                            <td>{{$Level->id}}</td>
+                            <td>{{$Level->name}}</td>
+                            <td>{{$Level->created_at}}</td>
+                            <td>{{$Level->updated_at}}</td>
+                            <td><a href="{{route('educational_levels.edit',$Level->id)}}"class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                             <td>
-                                <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"data-bs-target="#delete{{$level->id}}">
+                                <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"data-bs-target="#delete{{$Level->id}}">
                                     <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="delete{{$level->id}}"
+                                <div class="modal fade" id="delete{{$Level->id}}"
                                     tabindex="-1" aria-labelledby="exampleModalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog">
@@ -70,13 +70,13 @@
                                                 <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
                                             </div>
                                             <div class="modal-body">
-                                                {{__('public.are you sure you want to delete').$level->name}}
+                                                {{__('public.are you sure you want to delete').$Level->name}}
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
                                                 <form method="post"
-                                                    action="{{route('educational_levels.destroy',$level->id)}}">
+                                                    action="{{route('educational_levels.destroy',$Level->id)}}">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit"

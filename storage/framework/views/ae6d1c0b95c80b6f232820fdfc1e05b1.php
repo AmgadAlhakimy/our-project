@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
 
-        
+
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('DELETED CLASSES')); ?></h4>
                 <div class="row first-card mt-4">
@@ -36,7 +36,7 @@
                             <div class="th-head-1"><?php echo e(__('public.cost')); ?></div>
                         </th>
                         <th>
-                            <div class="th-head-3"><?php echo e(__('public.educational level')); ?></div>
+                            <div class="th-head-3"><?php echo e(__('public.educational Level')); ?></div>
                         </th>
                         <th>
                             <div class="th-head-2"><?php echo e(__('public.created at')); ?></div>
@@ -59,7 +59,7 @@
                             <td><?php echo e($class->created_at); ?></td>
                             <td><?php echo e($class->updated_at); ?></td>
                             <td>
-                                <a href="<?php echo e(route('classes.restore',$class->id)); ?>" class="btn save-button btn-success w-100">
+                                <a href="<?php echo e(route('classrooms.restore',$class->id)); ?>" class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> <?php echo e(__('public.restore')); ?> </a>
                             </td>
                             <td>
@@ -84,7 +84,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     <?php echo e(__('public.cancel')); ?></button>
-                                                <form method="post" action="<?php echo e(route('classes.forceDelete',$class->id)); ?>">
+                                                <form method="post" action="<?php echo e(route('classrooms.forceDelete',$class->id)); ?>">
                                                     <?php echo method_field('get'); ?>
                                                     <?php echo csrf_field(); ?>
                                                     <button type="submit" class="btn btn-primary"><?php echo e(__('public.ok')); ?></button>
@@ -103,4 +103,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/classes/deleted_classes.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/classrooms/deleted_classroom.blade.php ENDPATH**/ ?>

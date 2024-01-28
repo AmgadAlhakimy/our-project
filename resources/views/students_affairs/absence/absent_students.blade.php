@@ -17,9 +17,9 @@
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
                     <option class="text-center"
-                            value="{{__('student.male')}}">{{__('student.male')}}</option>
+                            value="{{__('Student.male')}}">{{__('Student.male')}}</option>
                     <option class="text-center"
-                            value="{{__('student.female')}}">{{__('student.female')}}</option>
+                            value="{{__('Student.female')}}">{{__('Student.female')}}</option>
                 </select>
                 @error('sex')
                 <small class="form-text text-danger">{{$message}}</small>
@@ -234,8 +234,8 @@
             <td>Lorem ipsum dolor, sit amet </td>
 
 
-            {{-- <td><a href="{{route('classes.edit',$class->id)}}" class="save-button btn w-100 mt-1">Edit</a></td>
-                <form method="post" action="{{route('classes.destroy',$class->id)}}">
+            {{-- <td><a href="{{route('classrooms.edit',$class->id)}}" class="save-button btn w-100 mt-1">Edit</a></td>
+                <form method="post" action="{{route('classrooms.destroy',$class->id)}}">
             <td><button class="btn clear-button w-100 mt-1">Delete</button></td>
                 </form> --}}
 

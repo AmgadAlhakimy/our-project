@@ -9,12 +9,12 @@
             <?php endif; ?>
             <form method="post" action="<?php echo e(route('semesters.store')); ?>">
                 <?php echo csrf_field(); ?>
-                <h3 class="text-center"><?php echo e(__('semester.create new semester')); ?></h3>
+                <h3 class="text-center"><?php echo e(__('Semester.create new Semester')); ?></h3>
                 <div class="container card col-md-10 section-color mb-5 text-center">
                     <div class="row">
                         <div class=" col-md-1"></div>
                         <div class="box col-md-10 text-center">
-                            <label for="c-name"><?php echo e(__('semester.semester name in english')); ?></label>
+                            <label for="c-name"><?php echo e(__('Semester.Semester name in english')); ?></label>
                             <input type="text" id="c-name" class="form-control" name="name" value="<?php echo e(old('name')); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -30,7 +30,7 @@ unset($__errorArgs, $__bag); ?>
                         <div class="col-md-1"></div>
                         <div class="col-md-1"></div>
                         <div class="box col-md-10 text-center">
-                            <label for="cname"><?php echo e(__('semester.semester name in arabic')); ?></label>
+                            <label for="cname"><?php echo e(__('Semester.Semester name in arabic')); ?></label>
                             <input type="text" id="cname" class="form-control" name="name_ar" value="<?php echo e(old('name_ar')); ?>">
                             <?php $__errorArgs = ['name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

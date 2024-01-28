@@ -16,7 +16,7 @@ class SubjectSeeder extends Seeder
         for($i = 1; $i<=10; $i++ ){
             Subject::create([
                 'name'=> [
-                    'en'=>"subject $i",
+                    'en'=>"Subject $i",
                     'ar'=>"المادة $i"
                 ]
             ]);

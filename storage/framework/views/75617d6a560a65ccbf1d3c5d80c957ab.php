@@ -10,14 +10,14 @@
             <form method="post" action="<?php echo e(route('subjects.update',$subject->id)); ?>">
                 <?php echo method_field('PUT'); ?>
                 <?php echo csrf_field(); ?>
-                <h3 class="container-title"><?php echo e(__('subject.update subject')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('Subject.update Subject')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="row mt-2">
                             <div class=" col-md-1"></div>
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name"
-                                       for="c-name"><?php echo e(__('subject.subject name in english')); ?></label>
+                                       for="c-name"><?php echo e(__('Subject.Subject name in english')); ?></label>
                                 <input type="text" id="edu_name" class="form-control" name="name"
                                        value="<?php echo e($subject->getTranslation('name','en')); ?>">
                                 <?php $__errorArgs = ['name'];
@@ -33,7 +33,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-md-1"></div>
                             <div class="box col-lg-12 col-md-12">
-                                <label for="edu_name_ar"><?php echo e(__('subject.subject name in arabic')); ?></label>
+                                <label for="edu_name_ar"><?php echo e(__('Subject.Subject name in arabic')); ?></label>
                                 <input type="text" id="edu_name_ar" class="form-control" name="name_ar"
                                        value="<?php echo e($subject->getTranslation('name','ar')); ?>">
                                 <?php $__errorArgs = ['name_ar'];

@@ -14,14 +14,14 @@ return [
     */
 
     //shared in many pages
-    'create new activity'=>'إنشاء نشاط جديد',
-    'activity info'=>'معلومات النشاط',
-    'activity name in english'=>'اسم النشاط بالإنجليزية',
-    'activity name in arabic'=>'اسم النشاط بالعربية',
-    'activity location in english'=>'موقع النشاط بالإنجليزية',
-    'activity location in arabic'=>'موقع النشاط بالعربية',
-    'activity location contact'=>'رقم الهاتف الخاص بالموقع',
-    'date of activity'=>'تاريخ النشاط',
+    'create new Activity'=>'إنشاء نشاط جديد',
+    'Activity info'=>'معلومات النشاط',
+    'Activity name in english'=>'اسم النشاط بالإنجليزية',
+    'Activity name in arabic'=>'اسم النشاط بالعربية',
+    'Activity location in english'=>'موقع النشاط بالإنجليزية',
+    'Activity location in arabic'=>'موقع النشاط بالعربية',
+    'Activity location contact'=>'رقم الهاتف الخاص بالموقع',
+    'date of Activity'=>'تاريخ النشاط',
     'other info'=>'معلومات أخرى',
-    'update activity'=>'تعديل النشاط: '
+    'update Activity'=>'تعديل النشاط: '
 ];

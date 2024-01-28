@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\subject\StoreSubjectRequest;
-use App\Http\Requests\subject\UpdateSubjectRequest;
+use App\Http\Requests\Subject\StoreSubjectRequest;
+use App\Http\Requests\Subject\UpdateSubjectRequest;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 
@@ -19,25 +19,25 @@ class SubjectController extends Controller
             return view('academic_dep/subjects.index_subjects',
                 compact('subjects'));
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
 
     /**
-     * Show creating new subject page.
+     * Show creating new Subject page.
      */
     public function create()
     {
         try {
             return view('academic_dep/subjects.create_subjects');
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Store a new subject.
+     * Store a new Subject.
      */
     public function store(StoreSubjectRequest $request)
     {
@@ -50,7 +50,7 @@ class SubjectController extends Controller
             ]);
             return redirect()->back()->with(['success' => 'saved successfully']);
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -65,12 +65,12 @@ class SubjectController extends Controller
                 compact('subjects'));
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Show the form for editing subject page.
+     * Show the form for editing Subject page.
      */
     public function edit($id)
     {
@@ -79,12 +79,12 @@ class SubjectController extends Controller
             return view('academic_dep/subjects.edit_subjects',
                 compact('subject'));
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Update the specified subject.
+     * Update the specified Subject.
      */
     public function update(UpdateSubjectRequest $request, $id)
     {
@@ -100,13 +100,13 @@ class SubjectController extends Controller
             return redirect()->route('subjects.index')
                 ->with(['success' => __('message.update')]);
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
 
     }
 
     /**
-     * Remove the specified subject.
+     * Remove the specified Subject.
      */
     public function destroy($id)
     {
@@ -116,12 +116,12 @@ class SubjectController extends Controller
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Restore the specified subject.
+     * Restore the specified Subject.
      */
     public function restore($id)
     {
@@ -131,12 +131,12 @@ class SubjectController extends Controller
                 ->with(['success' => trans('message.restore')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Remove by force the specified subject.
+     * Remove by force the specified Subject.
      */
     public function forceDelete($id)
     {
@@ -146,7 +146,7 @@ class SubjectController extends Controller
                 ->with(['warning' => trans('message.force delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
@@ -166,7 +166,7 @@ class SubjectController extends Controller
                 compact('search','subjects'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

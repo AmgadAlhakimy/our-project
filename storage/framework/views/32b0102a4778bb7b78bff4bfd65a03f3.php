@@ -9,7 +9,7 @@
             <?php endif; ?>
             <form method="post" action="<?php echo e(route('educational_levels.store')); ?>">
                 <?php echo csrf_field(); ?>
-                <h3 class="container-title"><?php echo e(__('eduLevel.create new educational level')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('eduLevel.create new educational Level')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="row mt-2">

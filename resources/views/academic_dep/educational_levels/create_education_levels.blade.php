@@ -9,7 +9,7 @@
             @endif
             <form method="post" action="{{route('educational_levels.store')}}">
                 @csrf
-                <h3 class="container-title">{{__('eduLevel.create new educational level')}}</h3>
+                <h3 class="container-title">{{__('eduLevel.create new educational Level')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="row mt-2">

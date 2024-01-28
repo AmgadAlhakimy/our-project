@@ -40,18 +40,18 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($semesters as $semester)
+                @foreach($semesters as $Semester)
                     <tr>
-                        <td>{{$semester->id}}</td>
-                        <td>{{$semester->name}}</td>
-                        <td>{{$semester->created_at}}</td>
-                        <td>{{$semester->deleted_at}}</td>
-                        <td>{{$semester->updated_at}}</td>
-                        <td><a href="{{route('semesters.restore',$semester->id)}}"
+                        <td>{{$Semester->id}}</td>
+                        <td>{{$Semester->name}}</td>
+                        <td>{{$Semester->created_at}}</td>
+                        <td>{{$Semester->deleted_at}}</td>
+                        <td>{{$Semester->updated_at}}</td>
+                        <td><a href="{{route('semesters.restore',$Semester->id)}}"
                                class="btn save-button btn-success w-100">
                                 <i class="fa-solid fa-trash-can-arrow-up"></i> Restore</a></td>
                         <td>
-                            <form method="get" action="{{route('semesters.forceDelete',$semester->id)}}">
+                            <form method="get" action="{{route('semesters.forceDelete',$Semester->id)}}">
                                 @csrf
                                 <button class="clear-button btn-danger w-100">
                                     <i class="fa-solid fa-trash"></i> By Force

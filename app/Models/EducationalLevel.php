@@ -17,6 +17,6 @@ class EducationalLevel extends Model
     protected $fillable = ['name'];
 
     public function classses(){
-        return $this->hasMany(Classs::class,'edu_id');
+        return $this->hasMany(Classroom::class,'edu_id');
     }
 }

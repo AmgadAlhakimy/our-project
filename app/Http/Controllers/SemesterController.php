@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\semester\StoreSemesterRequest;
-use App\Http\Requests\semester\UpdateSemesterRequest;
+use App\Http\Requests\Semester\StoreSemesterRequest;
+use App\Http\Requests\Semester\UpdateSemesterRequest;
 use App\Models\Semester;
 use Exception;
 
@@ -19,7 +19,7 @@ class SemesterController extends Controller
             return view('semesters.index', compact('semesters'));
         } catch (Exception $e) {
 
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -42,7 +42,7 @@ class SemesterController extends Controller
             return redirect()->back()->with(['success' => __('message.success')]);
         }
         catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -53,9 +53,9 @@ class SemesterController extends Controller
     {
         try {
         $semesters = Semester::onlyTrashed()->get();
-        return view('semesters.deleted_classes', compact('semesters'));
+        return view('semesters.deleted_classroom', compact('semesters'));
         }  catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -68,7 +68,7 @@ class SemesterController extends Controller
         $semester = Semester::findorFail($id);
         return view('semesters.edit', compact('semester'));
         }  catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -85,7 +85,7 @@ class SemesterController extends Controller
                 ->with(['success' => trans('message.update')]);
         }
         catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -100,7 +100,7 @@ class SemesterController extends Controller
             ->with(['warning' => trans('message.delete')]);
 
         } catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -115,7 +115,7 @@ class SemesterController extends Controller
             ->with(['success' => trans('message.restore')]);
 
         } catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -130,7 +130,7 @@ class SemesterController extends Controller
             ->with(['warning' => trans('message.force delete')]);
 
         } catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }

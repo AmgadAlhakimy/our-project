@@ -13,11 +13,11 @@ return [
     |
     */
 
-    //create educational level
-    'create new educational level'=>'CREATE NEW EDUCATIONAL LEVEL',
-    'update educational level'=>'Update Educational Level',
+    //create educational Level
+    'create new educational Level'=>'CREATE NEW EDUCATIONAL LEVEL',
+    'update educational Level'=>'Update Educational Level',
     'educational Level name in english'=>'Educational Level Name in English',
     'educational Level name in arabic'=>'Educational Level Name in Arabic',
-    'educational level info'=>'Educational Level Info',
-    'Sorry! you have to create Educational level first'=>'Sorry! you have to create Educational level first',
+    'educational Level info'=>'Educational Level Info',
+    'Sorry! you have to create Educational Level first'=>'Sorry! you have to create Educational Level first',
 ];

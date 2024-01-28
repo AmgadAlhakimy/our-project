@@ -8,7 +8,7 @@
                 </div>
             <?php endif; ?>
             <h3 class="container-title"><?php echo e(__('class.update class').$class->name); ?></h3>
-                <form method="post" action="<?php echo e(route('classes.update',$class->id)); ?>">
+                <form method="post" action="<?php echo e(route('classrooms.update',$class->id)); ?>">
                     <?php echo method_field('PUT'); ?>
                     <?php echo csrf_field(); ?>
                 <div class="container containers-style">
@@ -45,7 +45,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- 2 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label for="level"><?php echo e(__('class.educational level')); ?></label>
+                            <label for="level"><?php echo e(__('class.educational Level')); ?></label>
                             <select class="form-control" id="level" name="level">
                                 <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option class="text-center" value="<?php echo e($level->id); ?>"
@@ -85,7 +85,7 @@ unset($__errorArgs, $__bag); ?>
                                     <input class="save-button" type="submit" value="<?php echo e(__('public.update')); ?>">
                                 </div>
                                 <div class="box  col">
-                                    <a href="<?php echo e(route('classes.index')); ?>" class="btn clear-button"><i
+                                    <a href="<?php echo e(route('classrooms.index')); ?>" class="btn clear-button"><i
                                             class="fa-solid fa-ban"></i> <?php echo e(__('public.cancel')); ?></a>
                                 </div>
                             </div>
@@ -98,4 +98,4 @@ unset($__errorArgs, $__bag); ?>
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/classes/edit_classes.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/classrooms/edit_classroom.blade.php ENDPATH**/ ?>

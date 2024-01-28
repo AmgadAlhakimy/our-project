@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Relative\StoreRelativeRequest;
+use App\Http\Requests\Relative\UpdateRelativeRequest;
 use App\Models\Relative;
-use App\Http\Requests\StoreRelativeRequest;
-use App\Http\Requests\UpdateRelativeRequest;
 
 class RelativeController extends Controller
 {
@@ -19,7 +19,7 @@ class RelativeController extends Controller
                 compact('relatives'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -32,7 +32,7 @@ class RelativeController extends Controller
             return view('students_affairs/relatives.create_relative');
         }catch (\Exception $e)
         {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -76,7 +76,7 @@ class RelativeController extends Controller
             return redirect()->back()->with(['success' => __('message.success')]);
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 

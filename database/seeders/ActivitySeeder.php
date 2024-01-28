@@ -16,7 +16,7 @@ class ActivitySeeder extends Seeder
         for($i = 1; $i<=10; $i++ ){
             Activity::create([
                 'name'=> [
-                    'en'=>"activity $i",
+                    'en'=>"Activity $i",
                     'ar'=>"النشاط $i",
                 ],
                 'location'=> [
@@ -25,6 +25,7 @@ class ActivitySeeder extends Seeder
                 ],
                 'contact'=>772546950+$i,
                 'date'=>"2024-02-$i",
+                'note'=>'no note',
 
             ]);
         }

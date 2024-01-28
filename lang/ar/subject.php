@@ -13,10 +13,10 @@ return [
     |
     */
 
-    //create educational level
-    'create new subject'=>'إنشاء مادة جديدة',
-    'update subject'=>'تعديل مادة',
-    'subject name in english'=>'اسم المادة بالإنجليزية',
-    'subject name in arabic'=>'اسم المادة بالعربية',
-    'subject info'=>'معلومات المادة',
+    //create educational Level
+    'create new Subject'=>'إنشاء مادة جديدة',
+    'update Subject'=>'تعديل مادة',
+    'Subject name in english'=>'اسم المادة بالإنجليزية',
+    'Subject name in arabic'=>'اسم المادة بالعربية',
+    'Subject info'=>'معلومات المادة',
 ];

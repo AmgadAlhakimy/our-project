@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\employee\StoreEmployeeRequest;
-use App\Http\Requests\employee\UpdateEmployeeRequest;
+use App\Http\Requests\Employee\StoreEmployeeRequest;
+use App\Http\Requests\Employee\UpdateEmployeeRequest;
 use App\Models\Employee;
 use App\Traits\EmployeeTrait;
 
@@ -80,7 +80,7 @@ class EmployeeController extends Controller
 
 
 //        if ($request->hasFile('photo')) {
-//            $destenation='assets/images/employees/'.$employee->photo;
+//            $destenation='assets/images/employees/'.$Employee->photo;
 //            if(File::exists($destenation))
 //            {
 //                File::delete($destenation);

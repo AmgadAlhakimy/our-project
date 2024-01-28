@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>sidevar</title>
-        
+
 
     <link href="<?php echo e(URL::asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(URL::asset('css/all.min.css')); ?>" rel="stylesheet">
@@ -108,7 +108,7 @@
                                 <div class="submenu">
                                     <div class="line-black">
                                         <a href="<?php echo e(route('educational_levels.create')); ?>" class="li-link">اضافة مرحلة دراسية</a>
-                                        <a href="<?php echo e(route('classes.create')); ?>" class="li-link">اضافة فصل دراسي</a>
+                                        <a href="<?php echo e(route('classrooms.create')); ?>" class="li-link">اضافة فصل دراسي</a>
                                         <a href="<?php echo e(route('subjects.create')); ?>"class="li-link">اضافة مواد</a>
                                         <a href="<?php echo e(route('activities.create')); ?>"class="li-link" >اضافة نشاط</a>
                                         <a href='/relations-page' class="li-link">الربط بين العلاقات</a>                                    </div>
@@ -404,7 +404,7 @@
                 </div>
 
                 <!-- ========== THE LAST MENU ============ -->
-                
+
                         <!-- ====================== -->
                     </ul>
                 </div>
@@ -434,7 +434,7 @@
         <!-- ============= home section ================= -->
         <section class="section-home">
             <div class="toggle-sidebar">
-                
+
             </div>
         </section>
 

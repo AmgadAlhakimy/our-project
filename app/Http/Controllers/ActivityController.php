@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\activity\StoreActivityRequest;
-use App\Http\Requests\activity\UpdateActivityRequest;
+use App\Http\Requests\Activity\StoreActivityRequest;
+use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Models\Activity;
 use Illuminate\Http\Request;
 
@@ -18,24 +18,24 @@ class ActivityController extends Controller
             $activities= Activity::all();
             return view('academic_dep/activities.index_activities',compact('activities'));
         }catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Show creating new activity page.
+     * Show creating new Activity page.
      */
     public function create()
     {
         try {
         return view('academic_dep/activities.create_activities');
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Store a new activity.
+     * Store a new Activity.
      */
     public function store(StoreActivityRequest $request)
     {
@@ -50,7 +50,7 @@ class ActivityController extends Controller
             return redirect()->back()->with(['success' => __('message.success')]);
         }
         catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -64,12 +64,12 @@ class ActivityController extends Controller
             return view('academic_dep/activities.deleted_activities', compact('activities'));
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Show the form for editing activity page.
+     * Show the form for editing Activity page.
      */
     public function edit($id)
     {
@@ -78,11 +78,11 @@ class ActivityController extends Controller
             return view('academic_dep/activities.edit_activities'
                 ,compact('activity'));
         }catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
-     * Update the specified activity.
+     * Update the specified Activity.
      */
     public function update(UpdateActivityRequest $request, $id)
     {
@@ -98,11 +98,11 @@ class ActivityController extends Controller
                 ->with(['success' => __('message.update')]);
         }
         catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
-     * Remove the specified activity.
+     * Remove the specified Activity.
      */
     public function destroy($id)
     {
@@ -113,11 +113,11 @@ class ActivityController extends Controller
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
     /**
-     * Restore the specified activity.
+     * Restore the specified Activity.
      */
     public function restore($id)
     {
@@ -127,12 +127,12 @@ class ActivityController extends Controller
                 ->with(['success' => trans('message.restore')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Remove by force the specified activity.
+     * Remove by force the specified Activity.
      */
     public function forceDelete($id)
     {
@@ -142,7 +142,7 @@ class ActivityController extends Controller
                 ->with(['warning' => trans('message.force delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -167,7 +167,7 @@ class ActivityController extends Controller
                 compact('search','activities'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }

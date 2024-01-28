@@ -11,13 +11,13 @@
             <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">
                 @csrf
                 <!-- Start personal info  -->
-                <h3 class="container-title">{{__('create student')}}</h3>
+                <h3 class="container-title">{{__('create Student')}}</h3>
                 <div class="container containers-style ">
                     <div class="row">
                         {{-- 1 --}}
                         <div class="box col-lg-6 col-md-12">
                             <label class="  title-3 "
-                            for="english-name">{{__("student.student's name in arabic")}}</label>
+                            for="english-name">{{__("Student.Student's name in arabic")}}</label>
                             <input type="text" class="form-control " id='english-name' name="name_ar" value="{{old('name_ar')}}">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -26,7 +26,7 @@
                         {{-- 2 --}}
                         <div class="box col-lg-6 col-md-12">
                             <label class="text-center"
-                                for="arab-name">{{__("student.student's name in english")}}</label>
+                                for="arab-name">{{__("Student.Student's name in english")}}</label>
                             <input type="text" class="form-control " id='arab-name' name="name" value="{{old('name')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -35,7 +35,7 @@
                         {{-- 3 --}}
 
                         <div class="box col">
-                            <label class="" for="photo">{{__('student.photo')}}</label>
+                            <label class="" for="photo">{{__('Student.photo')}}</label>
                             <input type="file" class="form-control " id="photo" name="photo" value="{{old('photo')}}">
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -44,7 +44,7 @@
                         {{-- 4 --}}
                         <div class="box row">
                             <div class="col-lg-6 col-md-6">
-                                <label for="address">{{__("student.student's address in arabic")}}</label>
+                                <label for="address">{{__("Student.Student's address in arabic")}}</label>
                                 <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="{{old('address_ar')}}">
                                 @error('address_ar')
                                 <small class="form-text text-danger">{{$message}}</small>
@@ -52,7 +52,7 @@
                             </div>
                             {{-- -- --}}
                             <div class="col-lg-6 col-md-6 ">
-                                <label for="address">{{__("student.student's address in english")}}</label>
+                                <label for="address">{{__("Student.Student's address in english")}}</label>
                                 <input type="text" class=" form-control ms-2 me-2" id="address" name="address" value="{{old('address')}}">
                                 @error('address')
                                 <small class="form-text text-danger">{{$message}}</small>
@@ -61,22 +61,22 @@
                         </div>
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="gender">{{__('student.gender')}}</label>
+                            <label for="gender">{{__('Student.gender')}}</label>
                             <select class="col form-select form-control" id="gender" name="gender" value="{{old('gender')}}">
                                 <option class="text-center"
-                                        value="{{__('student.male')}}">{{__('student.male')}}</option>
+                                        value="{{__('Student.male')}}">{{__('Student.male')}}</option>
                                 <option class="text-center"
-                                        value="{{__('student.female')}}">{{__('student.female')}}</option>
+                                        value="{{__('Student.female')}}">{{__('Student.female')}}</option>
                             </select>
                             @error('gender')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <input type="hidden" name="gender_ar_m" value="{{__('student.male_ar')}}">
-                        <input type="hidden" name="gender_ar_f" value="{{__('student.female_ar')}}">
+                        <input type="hidden" name="gender_ar_m" value="{{__('Student.male_ar')}}">
+                        <input type="hidden" name="gender_ar_f" value="{{__('Student.female_ar')}}">
                         {{-- 6 --}}
                         <div class="box col-lg-6 col-md-6">
-                            <label for="age">{{__('student.birthdate')}}</label>
+                            <label for="age">{{__('Student.birthdate')}}</label>
                             <input type="date" class="form-control" id="age" name="birthdate" value="{{old('birthdate')}}">
                             @error('birthdate')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -84,7 +84,7 @@
                         </div>
                         {{-- 7 --}}
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="english-birth-place">{{__('student.place of birth in arabic')}}</label>
+                            <label for="english-birth-place">{{__('Student.place of birth in arabic')}}</label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="{{old('place_of_birth_ar')}}">
                             @error('place_of_birth_ar')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -92,7 +92,7 @@
                         </div>
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6">
-                            <label for="arabic-birth-place">{{__('student.place of birth in english')}}</label>
+                            <label for="arabic-birth-place">{{__('Student.place of birth in english')}}</label>
                             <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth" value="{{old('place_of_birth')}}">
                             @error('place_of_birth')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -100,13 +100,13 @@
                         </div>
                         {{-- 8 --}}
                         <div class="box ">
-                            <label for="className " class="form-label">{{__('student.class')}}</label>
-                            <select id="className " class="form-control" name="class_id" value="{{old('class_id')}}">
-                                @foreach($classes as $class)
-                                    <option class="text-center" value="{{$class->id}}">{{$class->name}}</option>
+                            <label for="className " class="form-label">{{__('Student.class')}}</label>
+                            <select id="className " class="form-control" name="classroom_id" value="{{old('classroom_id')}}">
+                                @foreach($classrooms as $classroom)
+                                    <option class="text-center" value="{{$classroom->id}}">{{$classroom->name}}</option>
                                 @endforeach
                             </select>
-                            @error('class_id')
+                            @error('classroom_id')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
@@ -115,18 +115,18 @@
                 <!-- End personal info  -->
 
                 {{-- <!-- Start parent info  --> --}}
-                <h3 class="container-title">{{__('student.parent info')}}</h3>
+                <h3 class="container-title">{{__('Student.parent info')}}</h3>
                 <div class="container  containers-style ">
                     <div class="row">
                         <!-- father name  -->
                         <div class="box ">
-                            <label for="father">{{__('student.parent info')}}</label>
+                            <label for="father">{{__('Student.parent info')}}</label>
                             <div class="w-100 mt-5">
-                                <a href="{{route('relatives.create')}}" class=" save-button  w-full mt-3 p-3">{{__('student.parent info')}}</a>
+                                <a href="{{route('relatives.create')}}" class=" save-button  w-full mt-3 p-3">{{__('Student.parent info')}}</a>
                             </div>
                         </div>
                         <div class="box ">
-                            <label for="className " class="form-label">{{__('student.parent info')}}</label>
+                            <label for="className " class="form-label">{{__('Student.parent info')}}</label>
                             <select id="className " class="form-control" name="relative_id" value="{{old('relative_id')}}">
                                 @foreach($relatives as $relative)
                                     <option class="text-center" value="{{$relative->id}}">{{$relative->father_name}}</option>
@@ -143,14 +143,14 @@
                 <!-- End parent info  -->
                 
                 <!-- Start health info  -->
-                <h3 class="container-title ">{{__('student.health info')}}</h3>
+                <h3 class="container-title ">{{__('Student.health info')}}</h3>
                 <div class="container containers-style mb-5">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <h4 class="p-1 ">{{__('student.does the student')}}</h4>
+                            <h4 class="p-1 ">{{__('Student.does the Student')}}</h4>
 
                             {{-- 1 --}}
-                            <label class="mt-4">{{__('student.take any medicine ?')}}</label>
+                            <label class="mt-4">{{__('Student.take any medicine ?')}}</label>
                             {{-- ---- --}}
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
@@ -177,7 +177,7 @@
 
                             {{-- 2 --}}
                             {{-- -------------------------------- --}}
-                            <label class="mt-4">{{__('student.have an allergy ?')}}</label>
+                            <label class="mt-4">{{__('Student.have an allergy ?')}}</label>
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
@@ -204,7 +204,7 @@
                             </div>
                             {{-- 3 --}}
                             {{-- -------------------------------- --}}
-                            <label class="mt-4">{{__('student.have any health problem ?')}}</label>
+                            <label class="mt-4">{{__('Student.have any health problem ?')}}</label>
                             {{-- ---- --}}
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
@@ -235,11 +235,11 @@
                 </div>
                 <!-- End health info  -->
                 <!-- Start final box -->
-                <h3 class="container-title">{{__('student.other info')}}</h3>
+                <h3 class="container-title">{{__('Student.other info')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="form-label" for="std_Note">{{__('student.note')}}</label>
+                            <label class="form-label" for="std_Note">{{__('Student.note')}}</label>
                             <textarea name="note" class="form-control" id="std_Note" cols="50" rows="5">{{old('note')}}</textarea>
                         </div>
                     </div>

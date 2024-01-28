@@ -72,7 +72,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | If this setting is `false` log statements won't be sent as events to Flare,
-    | no matter which error level you specified in the Flare log channel.
+    | no matter which error Level you specified in the Flare log channel.
     |
     */
 

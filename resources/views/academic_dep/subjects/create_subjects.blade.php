@@ -10,13 +10,13 @@
             @endif
             <form method="post" action="{{route('subjects.store')}}">
                 @csrf
-                <h3 class="container-title">{{__('subject.create new subject')}}</h3>
+                <h3 class="container-title">{{__('Subject.create new Subject')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                             {{-- 1 --}}
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name"
-                                    for="c-name">{{__('subject.subject name in english')}}</label>
+                                    for="c-name">{{__('Subject.Subject name in english')}}</label>
                                 <input type="text" id="edu_name" class="form-control" name="name"
                                     value="{{old('name')}}">
                                 @error('name')
@@ -25,7 +25,7 @@
                             </div>
                             {{-- 2 --}}
                             <div class="box col-lg-12 col-md-12">
-                                <label for="edu_name_ar">{{__('subject.subject name in arabic')}}</label>
+                                <label for="edu_name_ar">{{__('Subject.Subject name in arabic')}}</label>
                                 <input type="text" id="edu_name_ar" class="form-control" name="name_ar"
                                     value="{{old('name_ar')}}">
                                 @error('name_ar')

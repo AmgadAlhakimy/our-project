@@ -9,15 +9,15 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-            <h1 class="p-relative title-1"> {{__('activity.create new activity')}} </h1>
+            <h1 class="p-relative title-1"> {{__('Activity.create new Activity')}} </h1>
             <form action="{{route('activities.store')}}" method="post">
                 @csrf
-                <h3 class="container-title">{{__('activity.activity info')}}</h3>
+                <h3 class="container-title">{{__('Activity.Activity info')}}</h3>
                 <div class="container  containers-style ">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label class="form-text" for="activity-name-e">{{__('activity.activity name in arabic')}}</label>
+                            <label class="form-text" for="activity-name-e">{{__('Activity.Activity name in arabic')}}</label>
                             <input type="text" class="form-control" id='activity-name-e' placeholder="in arabic"
                             name="name_ar" value="{{old('name_ar')}}">
                             @error('name_ar')
@@ -26,7 +26,7 @@
                         </div>
                         {{-- ************** --}}
                         <div class="box col-lg-6 col-md-12">
-                            <label class="" for="activity-name-a">{{__('activity.activity name in english')}} </label>
+                            <label class="" for="activity-name-a">{{__('Activity.Activity name in english')}} </label>
                             <input type="text" class="form-control" id='activity-name-a' placeholder="in english"
                                         name="name" value="{{old('name')}}">
                             @error('name')
@@ -35,7 +35,7 @@
                         </div>
                         <!-- 2 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label class="" for="area-name-e">{{__('activity.activity location in arabic')}}</label>
+                            <label class="" for="area-name-e">{{__('Activity.Activity location in arabic')}}</label>
                             <input type="text" class="form-control " id='area-name-e' name="location_ar"
                             placeholder="in arabic" value="{{old('location_ar')}}">
                             @error('location_ar')
@@ -44,7 +44,7 @@
                         </div>
                         {{-- *************** --}}
                         <div class="box col-lg-6 col-md-12">
-                            <label class="" for="area-name-a">{{__('activity.activity location in english')}}</label>
+                            <label class="" for="area-name-a">{{__('Activity.Activity location in english')}}</label>
                             <input type="text" class="form-control " id='area-name-a' name="location"
                                 placeholder="in english" value="{{old('location')}}">
                             @error('location')
@@ -53,7 +53,7 @@
                         </div>
                         {{-- 3 --}}
                         <div class="box col-lg-6 col-md-6">
-                            <label class="" for="area-number">{{__('activity.activity location contact')}}</label>
+                            <label class="" for="area-number">{{__('Activity.Activity location contact')}}</label>
                             <input type="number" class="form-control " id='area-number' name="contact" placeholder=""
                                 value="{{old('contact')}}">
                             @error('contact')
@@ -62,7 +62,7 @@
                         </div>
                         <!-- 4 -->
                         <div class="box col-lg-6 col-md-6">
-                            <label class="" for="date-activities">{{__('activity.date of activity')}}</label>
+                            <label class="" for="date-activities">{{__('Activity.date of Activity')}}</label>
                             <input type="date" class="form-control " id='date-activities' name="date"
                             value="{{old('date')}}">
                             @error('date')
@@ -72,7 +72,7 @@
                     </div>
                 </div>
                 <!-- 5 -->
-                <h3 class="container-title">{{__('activity.other info')}}</h3>
+                <h3 class="container-title">{{__('Activity.other info')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">

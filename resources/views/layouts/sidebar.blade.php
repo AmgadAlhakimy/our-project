@@ -101,10 +101,10 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">{{__('sidebar.add educational level')}}</a>
-                                <a id="" href="{{route('classes.create')}}" class="li-link_2">  {{__('sidebar.add a class')}}</a>
-                                <a href="{{route('subjects.create')}}" class="li-link_2"> {{__('sidebar.add subject')}}</a>
-                                <a href="{{route('activities.create')}}" class="li-link_2" > {{__('sidebar.add activity')}}</a>
+                                <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">{{__('sidebar.add educational Level')}}</a>
+                                <a id="" href="{{route('classrooms.create')}}" class="li-link_2">  {{__('sidebar.add a class')}}</a>
+                                <a href="{{route('subjects.create')}}" class="li-link_2"> {{__('sidebar.add Subject')}}</a>
+                                <a href="{{route('activities.create')}}" class="li-link_2" > {{__('sidebar.add Activity')}}</a>
                             </div>
                         </div>
                     </li>
@@ -123,8 +123,8 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="{{route('educational_levels.index')}}" class="li-link">{{__('sidebar.review of educational level')}}</a>
-                                <a href="{{route('classes.index')}}" class="li-link">{{__('sidebar.review of classes')}}</a>
+                                <a href="{{route('educational_levels.index')}}" class="li-link">{{__('sidebar.review of educational Level')}}</a>
+                                <a href="{{route('classrooms.index')}}" class="li-link">{{__('sidebar.review of classrooms')}}</a>
                                 <a href="{{route('subjects.index')}}" class="li-link"> {{__('sidebar.review of subjects')}}</a>
                                 <a href="{{route('activities.index')}}" class="li-link">{{__('sidebar.review activities')}}</a>
                             </div>
@@ -145,8 +145,8 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="{{route('educational_levels.show','deleted')}}" class="li-link">{{__('sidebar.deleted educational level')}}</a>
-                                <a href="{{route('classes.show','deleted')}}" class="li-link">{{__('sidebar.deleted classes')}}</a>
+                                <a href="{{route('educational_levels.show','deleted')}}" class="li-link">{{__('sidebar.deleted educational Level')}}</a>
+                                <a href="{{route('classrooms.show','deleted')}}" class="li-link">{{__('sidebar.deleted classrooms')}}</a>
                                 <a href="{{route('subjects.show','deleted')}}" class="li-link">{{__('sidebar.deleted subjects')}}</a>
                                 <a href="{{route('activities.show','deleted')}}" class="li-link">{{__('sidebar.deleted activities')}}</a>
                             </div>
@@ -344,7 +344,9 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/add-teacher' class="li-link">اضافة مدرس</a>
+                                <a href="{{route('teachers.create')}}" class="li-link">اضافة مدرس</a>
+                                <a href="{{route('teachers.index')}}" class="li-link">عرض المدرسين</a>
+                                <a href="{{route('teachers.show','deleted')}}" class="li-link">عرض المدرسين المحذوفين</a>
                                 <a href='/add-emp' class="li-link">اضافة موظف</a>
                                 <a href="#" class="li-link">جدول الغياب</a>
                                 <a href="#" class="li-link">1</a>
@@ -369,14 +371,14 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
-                            {{-- Add student --}}
-                            <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a student')}}</a>
+                            {{-- Add Student --}}
+                            <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a Student')}}</a>
                             {{-- review students --}}
                             <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
-                            <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted student')}}</a>
+                            <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>
                             {{-- deleted students --}}
-                            {{-- student avsence --}}
-                            <a href='/absence' class="li-link">{{__('sidebar.student absence')}}</a>
+                            {{-- Student avsence --}}
+                            <a href='/absence' class="li-link">{{__('sidebar.Student absence')}}</a>
                             <a href='/student_form' class="li-link">معلومات الطلاب</a>
                             <a href="#" class="li-link">الطلاب الأوائل</a>
 

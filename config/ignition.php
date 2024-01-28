@@ -74,7 +74,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Ignition comes with an additional make command that lets you create
-    | new solution classes more easily. To keep your default Laravel
+    | new solution classrooms more easily. To keep your default Laravel
     | installation clean, this command is not registered by default.
     |
     | You can enable the command registration below.
@@ -89,7 +89,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | You may specify a list of solution providers (as fully qualified class
-    | names) that shouldn't be loaded. Ignition will ignore these classes
+    | names) that shouldn't be loaded. Ignition will ignore these classrooms
     | and possible solutions provided by them will never be displayed.
     |
     */
@@ -125,7 +125,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | You may specify a list of solution providers (as fully qualified class
-    | names) that shouldn't be loaded. Ignition will ignore these classes
+    | names) that shouldn't be loaded. Ignition will ignore these classrooms
     | and possible solutions provided by them will never be displayed.
     |
     */

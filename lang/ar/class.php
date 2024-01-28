@@ -15,7 +15,7 @@ return [
     'create new class'=>'إنشاء فصل جديد',
     'class name in english'=>'اسم الفصل بالإنجليزية',
     'class name in arabic'=>'اسم الفصل بالعربية',
-    'educational level'=>'المرحلة الدراسية',
+    'educational Level'=>'المرحلة الدراسية',
     'class cost'=>'تكلفة الفصل',
     'class info'=>'معلومات الصف',
     'update class'=>'تعديل الصف: ',

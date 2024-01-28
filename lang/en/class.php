@@ -16,7 +16,7 @@ return [
     'create new class'=>'CREATE NEW CLASS',
     'class name in english'=>'Class Name in English',
     'class name in arabic'=>'Class Name in Arabic',
-    'educational level'=>'Education Level',
+    'educational Level'=>'Education Level',
     'class cost'=>'Class Cost',
     'class info'=>'Class Info',
     'update class'=>'Update Class: ',

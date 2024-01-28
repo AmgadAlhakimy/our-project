@@ -64,7 +64,7 @@ Route::group(
             return view('students_affairs/absence/absent_students');
         });
 
-        // a route to show more info about a student
+        // a route to show more info about a Student
         Route::get('students/more/{id}',
             [StudentController::class, 'more'])
             ->name('students.more');

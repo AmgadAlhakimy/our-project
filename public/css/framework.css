@@ -401,7 +401,7 @@ left: 20px;
   transition: all 1s ease;
   transform: rotate(360deg);
 }
-/* .student-img:hover{
+/* .Student-img:hover{
 
   transition: all 1s ease;
   transform: rotate(-20deg);
@@ -546,7 +546,7 @@ left: 20px;
 }
 /* test */
 /* End Check box Styles */
-/* Start student checkbox */
+/* Start Student checkbox */
 .toggle[type=checkbox].toggle {
   display: none;
 }
@@ -557,7 +557,7 @@ input[type=checkbox].toggle + label{
   transition: all 0.3s ease;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   background-color: var(--sidebar-bg);
-  
+
 }
 input[type=checkbox].toggle + label::before{
   position: absolute;
@@ -602,11 +602,11 @@ input[type=checkbox].toggle:checked + label::before{
 input[type=checkbox].toggle:checked + label.rounded::before{
   right: auto;
   left: 40px;
-  
+
 }
 input[type=checkbox].toggle:checked + input.test1{
   background-color: red;
 }
 
-/* End student checkbox */
+/* End Student checkbox */
 

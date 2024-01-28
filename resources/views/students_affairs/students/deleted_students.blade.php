@@ -4,25 +4,13 @@
     <div class="my-table">
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
-        
+
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">Deleted students</h4>
-                <div class="row first-card mt-4">
-                    <form method="post" action="{{route('students.search')}}">
-                        @method('GET')
-                        @csrf
-                        <div class="row">
-                            <label class="col-10">
-                                <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
-                            </label>
-                            <button type="submit" class="col save-button ">{{__('public.search')}}</button>
-                        </div>
-                    </form>
-                </div>
             </div>
-        </div>   
+        </div>
 
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
@@ -55,7 +43,7 @@
                             <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>
                             <td>{{$student->place_of_birth}}</td>
-                            <td>{{$student->class->name}}</td>
+                            <td>{{$student->classroom->name}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
                             <td>

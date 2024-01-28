@@ -13,10 +13,10 @@ return [
     |
     */
 
-    // create semester
-    'create new semester'=>'إنشاء فصل جديد',
-    'update semester'=>'تعديل الفصل',
-    'semester name in english'=>'اسم الفصل بالإنجليزية',
-    'semester name in arabic'=>'اسم الفصل بالعربية',
-    'semester info'=>'معلومات الفصل',
+    // create Semester
+    'create new Semester'=>'إنشاء فصل جديد',
+    'update Semester'=>'تعديل الفصل',
+    'Semester name in english'=>'اسم الفصل بالإنجليزية',
+    'Semester name in arabic'=>'اسم الفصل بالعربية',
+    'Semester info'=>'معلومات الفصل',
 ];

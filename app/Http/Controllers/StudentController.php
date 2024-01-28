@@ -2,16 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\student\StoreStudentRequest;
-use App\Http\Requests\student\UpdateStudentRequest;
-use App\Models\Classs;
+use App\Http\Requests\Student\StoreStudentRequest;
+use App\Http\Requests\Student\UpdateStudentRequest;
+use App\Models\Classroom;
 use App\Models\Relative;
 use App\Models\Student;
+use App\Traits\GenderTrait;
+use App\Traits\PhotoTrait;
 use Exception;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
+    use PhotoTrait;
+    use GenderTrait;
+
     /**
      * Display students.
      */
@@ -19,79 +24,33 @@ class StudentController extends Controller
     {
         try {
         $students = Student::all();
-        $classes= Classs::all();
+        $classrooms= Classroom::all();
         return view('students_affairs/students.show_students',
-            compact('students', 'classes'));
+            compact('students', 'classrooms'));
 
         }catch (\Exception  $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Show creating new student page.
+     * Show creating new Student page.
      */
     public function create()
     {
         try {
-        $classes = Classs::all();
+        $classrooms = Classroom::all();
         $relatives = Relative::all();
         return view('students_affairs/students.create_student',
-            compact('classes','relatives'));
+            compact('classrooms','relatives'));
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
-    /**
-     * store image.
-     */
-    private function image($request, $id)
-    {
-        if ($request->photo != NULL){
-        $requestData = $request->all();
-        $filename = time().$request->file('photo')->getClientOriginalName();
-        $path = $request->file('photo')->storeAs('images/students', $filename, 'public');
-        $requestData["photo"] = '/storage/'.$path;
-        return $requestData['photo'];
-        }else{
-             $student = Student::findorFail($id);
-             return  $student->photo;
-        }
-    }
-    /**
-     * translate the gender.
-     */
-    private function gender($request,$lang)
-    {
-        if($request->gender == 'ذكر')
-        {
-            $gender_en = $request->gender_ar_m;
-            $gender_ar = $request->gender;
-        }
-        elseif (strtolower($request->gender )== 'male')
-        {
-            $gender_en = $request->gender;
-            $gender_ar = $request->gender_ar_m;
-        }
-        elseif ($request->gender == 'أنثى')
-        {
-            $gender_en = $request->gender_ar_f;
-            $gender_ar = $request->gender;
-        }
-        elseif (strtolower($request->gender )== 'female')
-        {
-            $gender_en = $request->gender;
-            $gender_ar = $request->gender_ar_f;
-        }
 
-        if($lang == 'en')
-            return $gender_en;
-        elseif($lang == 'ar')
-            return  $gender_ar;
-    }
     /**
-     * Store a new student.
+     * Store a new Student.
      */
     public function store(StoreStudentRequest $request)
     {
@@ -101,7 +60,8 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request,0),
+            'photo'=>$this->insertImage($request,0,
+                "\App\Models\Student",'images/students'),
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
@@ -128,14 +88,14 @@ class StudentController extends Controller
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
-            'class_id'=>$request->class_id,
+            'classroom_id'=>$request->classroom_id,
             'relative_id'=>$request->relative_id,
 
         ]);
         return redirect()->back()->with(['success' => __('message.success')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -150,28 +110,28 @@ class StudentController extends Controller
                 compact('students', ));
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Show the form for editing student page.
+     * Show the form for editing Student page.
      */
     public function edit($id)
     {
         try {
             $student = Student::findorFail($id);
-            $classes = Classs::all();
+            $classrooms = Classroom::all();
             return view('students_affairs/students.edit_student',
-                compact('student','classes'));
+                compact('student','classrooms'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Update the specified student.
+     * Update the specified Student.
      */
     public function update(UpdateStudentRequest $request, $id)
     {
@@ -182,7 +142,9 @@ class StudentController extends Controller
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ],
-            'photo'=>$this->image($request, $id),
+            'photo'=>$this->insertImage($request,$id,
+                "\App\Models\Student",'images/students'),
+
             'address'=>[
                 'en'=> $request->address,
                 'ar'=> $request->address_ar
@@ -209,19 +171,19 @@ class StudentController extends Controller
                 'ar'=>$request->health_problem_desc,
             ],
             'note'=>$request->note,
-            'class_id'=>$request->class_id,
+            'classroom_id'=>$request->classroom_id,
             'relative_id'=>$request->relative_id,
         ]);
         return redirect()->route('students.index')
             ->with(['success' => __('message.update')]);
 
         }catch (\Exception $e){
-         return $e->getMessage();
+         return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Remove the specified student.
+     * Remove the specified Student.
      */
     public function destroy($id)
     {
@@ -231,13 +193,13 @@ class StudentController extends Controller
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
 
     /**
-     * Restore the specified student.
+     * Restore the specified Student.
      */
     public function restore($id)
     {
@@ -247,27 +209,29 @@ class StudentController extends Controller
                 ->with(['success' => trans('message.restore')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * Remove by force the specified student.
+     * Remove by force the specified Student.
      */
     public function forceDelete($id)
     {
         try {
+            $this->deleteImage($id,"App\Models\Student");
+
             Student::withTrashed()->where('id', $id)->forceDelete();
             return redirect()->back()
                 ->with(['warning' => trans('message.force delete')]);
 
         }catch (Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * show student according to the search.
+     * show Student according to the search.
      */
     public function search(Request $request)
     {
@@ -285,7 +249,7 @@ class StudentController extends Controller
                     ->orwhere('place_of_birth->en','like',"%$search%")
                     ->orwhere('place_of_birth->ar','like',"%$search%")
                     ->orwhere('birthdate','like',"%$search%");
-            })->orWhereHas('class',function ($query) use ($search){
+            })->orWhereHas('classroom',function ($query) use ($search){
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
@@ -293,12 +257,12 @@ class StudentController extends Controller
                 compact('search','students'));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
     /**
-     * show student according to the search.
+     * show Student according to the search.
      */
     public function more($id)
     {
@@ -308,7 +272,7 @@ class StudentController extends Controller
                 compact('student',));
 
         }catch (\Exception $e){
-            return $e->getMessage();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 }
