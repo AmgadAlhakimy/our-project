@@ -5,12 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Level\StoreEducationalLevelRequest;
 use App\Http\Requests\Level\UpdateEducationalLevelRequest;
 use App\Models\EducationalLevel;
-use App\Traits\UniqueTrait;
 use Illuminate\Http\Request;
 
 class EducationalLevelController extends Controller
 {
-    use UniqueTrait;
 
     /**
      * Display Educational levels.
@@ -44,12 +42,6 @@ class EducationalLevelController extends Controller
      */
     public function store(StoreEducationalLevelRequest $request)
     {
-
-        if ($this->unique($request->name,$request->name_ar,
-            "App\Models\EducationalLevel"))
-            return redirect()->back()->with(['error' => __('validation.unique')]);
-
-
         try {
          EducationalLevel::create([
              'name' => [

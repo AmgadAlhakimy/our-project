@@ -22,8 +22,8 @@ class StoreSemesterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required', 'unique:semesters', 'max:100'],
-            'name_ar'=>['required', 'unique:semesters', 'max:100'],
+            'name'=>['required', 'unique:semesters,name->en', 'max:100'],
+            'name_ar'=>['required', 'unique:semesters,name->ar', 'max:100'],
         ];
     }
     public function messages(): array

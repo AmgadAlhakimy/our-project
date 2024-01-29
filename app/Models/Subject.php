@@ -15,4 +15,9 @@ class Subject extends Model
 
     public  $translatable=['name'];
     protected $fillable=['name'];
+
+    public function classrooms()
+    {
+        return $this->belongsToMany(Classroom::class,'subject_classroom_pivot');
+    }
 }

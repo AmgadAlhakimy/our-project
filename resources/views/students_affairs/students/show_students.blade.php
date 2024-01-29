@@ -43,33 +43,33 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($students  as $Student )
+                    @foreach($students  as $student )
                         <tr class="test_1">
-                            <td>{{$Student->id}}</td>
-                            <td>{{$Student->name}}</td>
-                            <td><img src="{{asset($Student->photo)}}"
+                            <td>{{$student->id}}</td>
+                            <td>{{$student->name}}</td>
+                            <td><img src="{{asset($student->photo)}}"
                                 class="student-img" alt="photo"></td>
-                            <td>{{$Student->address}}</td>
-                            <td>{{$Student->gender}}</td>
-                            <td>{{$Student->birthdate}}</td>
-                            <td>{{$Student->place_of_birth}}</td>
-                            <td>{{$Student->classroom->name}}</td>
-                            <td>{{$Student->created_at}}</td>
-                            <td>{{$Student->updated_at}}</td>
+                            <td>{{$student->address}}</td>
+                            <td>{{$student->gender}}</td>
+                            <td>{{$student->birthdate}}</td>
+                            <td>{{$student->place_of_birth}}</td>
+                            <td>{{$student->classroom->name}}</td>
+                            <td>{{$student->created_at}}</td>
+                            <td>{{$student->updated_at}}</td>
 
                             <td>
-                                <a href="{{route('students.edit',$Student->id)}}"
+                                <a href="{{route('students.edit',$student->id)}}"
                                     class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                             <td>
                                 <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"
-                                        data-bs-target="#delete{{$Student->id}}">
+                                        data-bs-target="#delete{{$student->id}}">
                                     <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
                                 </button>
                                 <!-- Modal -->
 
-                                <div class="modal fade" id="delete{{$Student->id}}"
+                                <div class="modal fade" id="delete{{$student->id}}"
                                         tabindex="-1" aria-labelledby="exampleModalLabel"
                                         aria-hidden="true">
                                     <div class="modal-dialog">
@@ -78,12 +78,12 @@
                                                 <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
                                             </div>
                                             <div class="modal-body">
-                                                {{__('public.are you sure you want to delete').$Student->name}}
+                                                {{__('public.are you sure you want to delete').$student->name}}
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
-                                                <form method="post" action="{{route('students.destroy',$Student->id)}}">
+                                                <form method="post" action="{{route('students.destroy',$student->id)}}">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
@@ -95,7 +95,7 @@
                             </td>
                             {{-- واجهة المعلومات او الاستمارة الكاملة الخاصة بالطالب --}}
                             <td>
-                                <a href="{{route('students.more',$Student->id)}}"
+                                <a href="{{route('students.more',$student->id)}}"
                                     class="btn save-button btn-info w-100">
                                     <i class="fa-solid fa-info-circle"></i> {{__('Student.more info')}} </a>
                             </td>

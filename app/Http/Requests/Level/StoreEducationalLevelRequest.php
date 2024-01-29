@@ -24,14 +24,14 @@ class StoreEducationalLevelRequest extends FormRequest
     {
 
         return [
-            'name' => ["required", "max:100"],
-            "name_ar"=>["required", "max:100"],
+            'name' => ["required","unique:educational_levels,name->en", "max:100"],
+            "name_ar"=>["required", "unique:educational_levels,name->ar", "max:100"],
         ];
     }
     public function messages(): array
     {
         return [
-            'name.$unique' => 'data has already been taken in this field',
+            //
         ];
     }
 }

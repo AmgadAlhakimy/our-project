@@ -22,7 +22,8 @@ class UpdateEducationalLevelRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required', 'unique:educational_levels', 'max:100'],
+            'name'=>'required|unique:educational_levels,name->en,'.$this->id,
+            'name_ar'=>'required|unique:educational_levels,name->ar,'.$this->id,
         ];
     }
     public function messages(): array

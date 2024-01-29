@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FollowUpStudentController;
 use App\Http\Controllers\RelativeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ActivityClassroomController;
@@ -19,6 +20,7 @@ Route::resource('subjects', SubjectController::class);
 Route::resource('activities', ActivityController::class);
 Route::resource('students', StudentController::class);
 Route::resource('relatives', RelativeController::class);
+Route::resource('follow_up_students', FollowUpStudentController::class);
 Route::resource('semesters', SemesterController::class);
 Route::resource('employees', EmployeeController::class);
 Route::resource('teachers', TeacherController::class);

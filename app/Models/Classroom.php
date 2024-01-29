@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use mysql_xdevapi\Table;
 use Spatie\Translatable\HasTranslations;
 
 class Classroom extends Model
@@ -26,5 +25,10 @@ class Classroom extends Model
     }
     public function students(){
         return $this->hasMany(Student::class,'classroom_id');
+    }
+
+    public function subjects()
+    {
+        return $this->belongsToMany(Subject::class, 'subject_classroom_pivot');
     }
 }

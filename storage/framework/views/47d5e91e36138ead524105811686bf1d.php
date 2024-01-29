@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
 <div class="my-table">
-        
-        
+
+
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">Outcame for the month</h4>
                 <div class="row first-card mt-4">
@@ -20,7 +20,7 @@
                 </div>
             </div>
 
-            
+
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
                     <option class="text-center d-"
@@ -40,7 +40,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
             </div>
-            
+
 
             <div class="cards-container  third-card">
                 <div class="card-info card-info_2 col ">
@@ -54,7 +54,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
             </div>
         </div>
-        
+
         <!-- table-hover table-striped -->
         <div class=" table-section ">
             <div class="card table-section ">
@@ -93,14 +93,14 @@ unset($__errorArgs, $__bag); ?>
 
             </div>
         </div>
-        
+
         <div class=" box row mt-5">
             <div class=" col mt-1 ">
-                
+
                 <input class="save-button  " type="submit" value="<?php echo e(__('public.ترحيل')); ?>">
             </div>
             <div class=" col mt-1">
-                
+
                 <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
             </div>
             <div class="  col mt-1">
@@ -111,4 +111,4 @@ unset($__errorArgs, $__bag); ?>
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teatchers/marks/add.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/marks/add.blade.php ENDPATH**/ ?>

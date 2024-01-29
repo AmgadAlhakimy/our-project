@@ -36,26 +36,26 @@ Route::group(
 
         // absence
         Route::get('children', function () {
-            return view('teatchers/daily/children-follow-up');
+            return view('teachers_affairs/daily/children-follow-up');
         });
 
         // absence
         Route::get('school', function () {
-            return view('teatchers/daily/school-follow-up');
+            return view('teachers_affairs/daily/school-follow-up');
         });
 
         // absence
         Route::get('student-list', function () {
-            return view('teatchers/daily/student-list');
+            return view('teachers_affairs/daily/student-list');
         });
 
         // absence
         Route::get('add_marks', function () {
-            return view('teatchers/marks/add');
+            return view('teachers_affairs/marks/add');
         });
         // absence
         Route::get('absence_class', function () {
-            return view('teatchers/absence/absent_student_class');
+            return view('teachers_affairs/absence/absent_student_class');
         });
 
         // absence

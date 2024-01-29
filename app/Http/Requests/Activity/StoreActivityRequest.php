@@ -22,8 +22,8 @@ class StoreActivityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:100'],
-            'name_ar' => ['required', 'max:100'],
+            'name' => ["required","unique:activities,name->en", "max:100"],
+            "name_ar"=>["required", "unique:activities,name->ar", "max:100"],
             'location' => ['required', 'max:100'],
             'location_ar' => ['required', 'max:100'],
             'date' => ['required'],

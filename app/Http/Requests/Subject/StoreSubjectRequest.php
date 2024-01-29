@@ -22,8 +22,8 @@ class StoreSubjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|max:50|unique:subjects,name',
-            'name_ar'=>'required|max:50|unique:subjects,name'
+            'name'=>'required|max:50|unique:subjects,name->en',
+            'name_ar'=>'required|max:50|unique:subjects,name->ar'
         ];
     }
     public function messages(): array
@@ -31,7 +31,6 @@ class StoreSubjectRequest extends FormRequest
         return [
             'sub_name.required'=>'This filed is required',
             'sub_name.max'=>'The maximum length is 50 letters',
-            'sub_name.unique'=>'You have already saved this Subject',
         ];
     }
 }

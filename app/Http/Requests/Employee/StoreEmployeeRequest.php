@@ -22,7 +22,8 @@ class StoreEmployeeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required', 'unique:employees', 'max:100'],
+            'name' => ["required","unique:employees,name->en", "max:100"],
+            "name_ar"=>["required", "unique:employees,name->ar", "max:100"],
             'photo'=>['image','mimes:jpg,jpeg,png,gif,svg','max:100'],
             'birthdate'=>['required'],
             'qualification'=>['required','max:20'],

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/codezero/laravel-unique-translation" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/mcamara/laravel-localization" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/php-flasher/flasher" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/php-flasher/flasher-laravel" vcs="Git" />

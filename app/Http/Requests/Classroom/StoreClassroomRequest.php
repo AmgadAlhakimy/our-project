@@ -22,8 +22,8 @@ class StoreClassroomRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required', 'unique:classrooms', 'max:100'],
-            'name_ar'=>['required', 'max:100'],
+            'name' => ["required","unique:classrooms,name->en", "max:100"],
+            "name_ar"=>["required", "unique:classrooms,name->ar", "max:100"],
             'cost'=>'required',
             'Level'=>'required',
         ];

@@ -5,6 +5,7 @@
 use App\Http\Controllers\ActivityController;
 use App\Http\Controllers\ClassroomController;
 use App\Http\Controllers\EducationalLevelController;
+use App\Http\Controllers\FollowUpStudentController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\SubjectController;
@@ -37,4 +38,8 @@ Route::get('students/search',
 Route::get('teachers/search',
     [TeacherController::class, 'search'])
     ->name('teachers.search');
+
+Route::get('follow-up/createNote/{id}',
+    [FollowUpStudentController::class, 'createNote'])
+    ->name('follow_up_students.createNote');
 
