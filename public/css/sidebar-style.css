@@ -306,17 +306,17 @@
   transform: rotate(360deg);
 }
 .sidebar.close .logo-text {
-  font-size: 0px;
+  font-size: 0.1px;
   transform: rotate(180deg);
 }
 .logo-text-1 {
-  font-size: 0px;
+  font-size: 0.1px;
   transform: rotate(360deg);
 }
 .sidebar.close .logo-text-1 {
   font-size: 20px;
   transition: all .5s ease;
-  transform: rotate(180deg);
+  /*transform: rotate(180deg);*/
 }
 
 /* -------- end icons styles --------- */
