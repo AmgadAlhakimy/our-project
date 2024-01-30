@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Level;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateEducationalLevelRequest extends FormRequest
 {
@@ -24,19 +25,13 @@ class UpdateEducationalLevelRequest extends FormRequest
     {
 
         return [
-//            'email' => 'required|email|unique:users,email,'.$this->user->id,
-//            'name'=>'required|unique:educational_levels,name->en,'.$this->id,
-            'name' => [
-                'required',
-                'unique:educational_levels,name->en,' . $this->id
-            ],
-            'name_ar'=>'required|unique:educational_levels,name->ar,' . $this->id,
-
+//            'name_ar'=>"required|unique:educational_levels,name->ar,".$this->request->id,
         ];
     }
     public function messages(): array
     {
         return [
+
         ];
     }
 }
