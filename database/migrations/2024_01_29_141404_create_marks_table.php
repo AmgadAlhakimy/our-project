@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('marks', function (Blueprint $table) {
             $table->id();
-            $table->integer('exam')->default(-1);
-            $table->integer('homework')->default(-1);
-            $table->integer('oral')->default(-1);
-            $table->integer('behavior')->default(-1);
-            $table->integer('total')->default(-1);
-            $table->integer('rate')->default(-1);
-            $table->integer('average')->default(-1);
+            $table->integer('exam')->nullable();
+            $table->integer('homework')->nullable();
+            $table->integer('oral')->nullable();
+            $table->integer('behavior')->nullable();
+            $table->integer('total')->nullable();
+            $table->integer('rate')->nullable();
+            $table->integer('average')->nullable();
             $table->foreignId('student_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('subject_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();

@@ -35,19 +35,11 @@ Route::group(
         require __DIR__.'/restore.php';
         require __DIR__.'/force_delete.php';
 
-        // absence
-        Route::get('children', function () {
-            return view('teachers_affairs/daily/children-follow-up');
-        });
+
 
         // absence
         Route::get('school', function () {
             return view('teachers_affairs/daily/school-follow-up');
-        });
-
-        // absence
-        Route::get('student-list', function () {
-            return view('teachers_affairs/daily/student-list');
         });
 
         // absence

@@ -19,13 +19,6 @@ class MarkSeeder extends Seeder
         $subjects = Subject::all();
      for($i = 1; $i<=70; $i++ ){
          Mark::create([
-             'exam'=> -1,
-             'homework'=> -1,
-             'oral'=> -1,
-             'behavior'=> -1,
-             'total'=> -1,
-             'rate'=> -1,
-             'average'=> -1,
              'student_id'=> $students->random()->id,
              'subject_id'=> $subjects->random()->id,
          ]);

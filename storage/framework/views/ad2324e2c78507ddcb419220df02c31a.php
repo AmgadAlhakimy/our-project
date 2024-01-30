@@ -46,25 +46,25 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $__currentLoopData = $subjects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $subjects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td><?php echo e($subject->id); ?></td>
-                            <td><?php echo e($subject->name); ?></td>
-                            <td><?php echo e($subject->created_at); ?></td>
-                            <td><?php echo e($subject->updated_at); ?></td>
+                            <td><?php echo e($Subject->id); ?></td>
+                            <td><?php echo e($Subject->name); ?></td>
+                            <td><?php echo e($Subject->created_at); ?></td>
+                            <td><?php echo e($Subject->updated_at); ?></td>
                             <td>
-                                <a href="<?php echo e(route('subjects.edit',$subject->id)); ?>"
+                                <a href="<?php echo e(route('subjects.edit',$Subject->id)); ?>"
                                 class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> <?php echo e(__('public.edit')); ?> </a>
                             </td>
                             <td>
                                 <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"
-                                        data-bs-target="#delete<?php echo e($subject->id); ?>">
+                                        data-bs-target="#delete<?php echo e($Subject->id); ?>">
                                     <i class="fa-solid fa-trash"></i> <?php echo e(__('public.delete')); ?>
 
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="delete<?php echo e($subject->id); ?>"
+                                <div class="modal fade" id="delete<?php echo e($Subject->id); ?>"
                                     tabindex="-1" aria-labelledby="exampleModalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog">
@@ -73,13 +73,13 @@
                                                 <h5 class="modal-title" id="exampleModalLabel"><?php echo e(__('public.delete')); ?></h5>
                                             </div>
                                             <div class="modal-body">
-                                                <?php echo e(__('public.are you sure you want to delete').$subject->name); ?>
+                                                <?php echo e(__('public.are you sure you want to delete').$Subject->name); ?>
 
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     <?php echo e(__('public.cancel')); ?></button>
-                                                <form method="post" action="<?php echo e(route('subjects.destroy',$subject->id)); ?>">
+                                                <form method="post" action="<?php echo e(route('subjects.destroy',$Subject->id)); ?>">
                                                     <?php echo method_field('DELETE'); ?>
                                                     <?php echo csrf_field(); ?>
                                                     <button type="submit" class="btn btn-primary"><?php echo e(__('public.ok')); ?></button>

@@ -187,22 +187,20 @@
                             
                     <!-- ======================== TEACHERS ========================== -->
 
-                    <li class="dropdown">
-                        <!-- ========== 1 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i class="icon-1 fa-solid fa-window-restore"></i>
-                                <span class="menu-name"> دفتر المتابعة</span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
+                    <!-- ========== 1 ============ -->
+                    <div class="sidebar-title">
+                        <a href="#" class="li-link title-4">
+                            <i class="icon-1 fa-solid fa-window-restore"></i>
+                            <span class="menu-name"> دفتر المتابعة</span>
+                            <i class="icon-1 fa-solid fa-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class="submenu">
+                        <div class="line-black">
+                            <a href="<?php echo e(route('follow_up_students.index')); ?>" class="li-link">رياضيات \ سادس </a>
+                            <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
                         </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href='/student-list' class="li-link">رياضيات \ سادس </a>
-                                <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
+                        <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
@@ -213,7 +211,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/add_marks' class="li-link">رياضيات \ ثالث</a>
+                                <a href="<?php echo e(route('marks.insertMarks',1)); ?>" class="li-link">رياضيات \ ثالث</a>
                                 <a href='#' class="li-link">علوم الحاسوب \ اول</a>
                                 <a href='#' class="li-link">علوم الحاسوب \ ثاني</a>
                                 <a href='#' class="li-link">علوم الحاسوب \ ثالث</a>
