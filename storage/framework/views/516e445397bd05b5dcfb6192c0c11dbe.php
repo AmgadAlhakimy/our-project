@@ -20,37 +20,6 @@
                 </div>
             </div>
         </div>
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">
@@ -82,7 +51,7 @@
                             <td><?php echo e($student->gender); ?></td>
                             <td><?php echo e($student->birthdate); ?></td>
                             <td><?php echo e($student->place_of_birth); ?></td>
-                            <td><?php echo e($student->class->name); ?></td>
+                            <td><?php echo e($student->classroom->name); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
 
@@ -128,7 +97,7 @@
                             <td>
                                 <a href="<?php echo e(route('students.more',$student->id)); ?>"
                                     class="btn save-button btn-info w-100">
-                                    <i class="fa-solid fa-info-circle"></i> <?php echo e(__('student.more info')); ?> </a>
+                                    <i class="fa-solid fa-info-circle"></i> <?php echo e(__('Student.more info')); ?> </a>
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

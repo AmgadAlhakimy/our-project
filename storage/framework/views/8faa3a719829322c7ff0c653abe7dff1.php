@@ -198,7 +198,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/student-list' class="li-link">رياضيات \ سادس </a>
+                                <a href="<?php echo e(route('follow_up_students.index')); ?>" class="li-link">رياضيات \ سادس </a>
                                 <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
                         </div>
                     </li>
