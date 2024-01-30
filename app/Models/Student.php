@@ -30,4 +30,8 @@ class Student extends Model
     {
         return $this->belongsTo(Relative::class,'relative_id');
     }
+    public function marks(){
+
+        return $this->hasMany(Mark::class);
+    }
 }

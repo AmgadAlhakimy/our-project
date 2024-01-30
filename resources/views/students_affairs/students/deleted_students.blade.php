@@ -26,7 +26,6 @@
                         <th ><div class="th-head-1" >gender</div></th>
                         <th ><div class="th-head-2" >birth date</div></th>
                         <th ><div class="th-head-2" >birth place</div></th>
-                        <th ><div class="th-head-2" >{{__('public.class')}}</div></th>
                         <th ><div class="th-head-2" >{{__('public.created at')}}</div></th>
                         <th ><div class="th-head-2" >{{__('public.updated at')}}</div></th>
                         <th colspan="2"><div class="th-head-4" >{{__('public.processes')}}</div></th>
@@ -43,7 +42,6 @@
                             <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>
                             <td>{{$student->place_of_birth}}</td>
-                            <td>{{$student->classroom->name}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
                             <td>

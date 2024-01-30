@@ -44,24 +44,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($subjects as $Subject)
+                    @foreach($subjects as $subject)
                         <tr>
-                            <td>{{$Subject->id}}</td>
-                            <td>{{$Subject->name}}</td>
-                            <td>{{$Subject->created_at}}</td>
-                            <td>{{$Subject->updated_at}}</td>
+                            <td>{{$subject->id}}</td>
+                            <td>{{$subject->name}}</td>
+                            <td>{{$subject->created_at}}</td>
+                            <td>{{$subject->updated_at}}</td>
                             <td>
-                                <a href="{{route('subjects.restore',$Subject->id)}}"
+                                <a href="{{route('subjects.restore',$subject->id)}}"
                                     class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.restore')}} </a>
                             </td>
                             <td>
                                 <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"
-                                        data-bs-target="#delete{{$Subject->id}}">
+                                        data-bs-target="#delete{{$subject->id}}">
                                     <i class="fa-solid fa-trash"></i> {{__('public.force delete')}}
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="delete{{$Subject->id}}"
+                                <div class="modal fade" id="delete{{$subject->id}}"
                                         tabindex="-1" aria-labelledby="exampleModalLabel"
                                         aria-hidden="true">
                                     <div class="modal-dialog">
@@ -70,12 +70,12 @@
                                                 <h5 class="modal-title" id="exampleModalLabel">{{__('public.force delete')}}</h5>
                                             </div>
                                             <div class="modal-body">
-                                                {{__('public.are you sure you want to delete').$Subject->name}}
+                                                {{__('public.are you sure you want to delete').$subject->name}}
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
-                                                <form method="post" action="{{route('subjects.forceDelete',$Subject->id)}}">
+                                                <form method="post" action="{{route('subjects.forceDelete',$subject->id)}}">
                                                     @method('get')
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>

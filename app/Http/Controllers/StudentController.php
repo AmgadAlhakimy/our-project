@@ -7,7 +7,6 @@ use App\Http\Requests\Student\UpdateStudentRequest;
 use App\Models\Classroom;
 use App\Models\Relative;
 use App\Models\Student;
-use App\Traits\GenderTrait;
 use App\Traits\PhotoTrait;
 use Exception;
 use Illuminate\Http\Request;
@@ -15,7 +14,6 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     use PhotoTrait;
-    use GenderTrait;
 
     /**
      * Display students.
@@ -67,8 +65,8 @@ class StudentController extends Controller
                 'ar'=> $request->address_ar
             ],
             'gender'=>[
-                'en'=>$this->gender($request,'en'),
-                'ar'=>$this->gender($request,'ar'),
+                'en'=>__('public.'.$request->gender),
+                'ar'=>__('public.'.$request->gender.'1'),
             ],
             'birthdate'=>$request->birthdate,
             'place_of_birth'=>[
@@ -150,8 +148,8 @@ class StudentController extends Controller
                 'ar'=> $request->address_ar
             ],
             'gender'=>[
-                'en'=>$this->gender($request,'en'),
-                'ar'=>$this->gender($request,'ar'),
+                'en'=>__('public.'.$request->gender),
+                'ar'=>__('public.'.$request->gender.'1'),
             ],
             'birthdate'=>$request->birthdate,
             'place_of_birth'=>[
@@ -204,10 +202,15 @@ class StudentController extends Controller
     public function restore($id)
     {
         try {
+            $classroom_id = Student::withTrashed()->select('classroom_id')->where('id', $id)->get();
+            $classroom = Classroom::where('id', $classroom_id)->pluck('id');
+            if($classroom->count() > 0){
             Student::withTrashed()->where('id', $id)->restore();
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
-
+            }else{
+                return redirect()->back() ->with(['error' => trans('message.restore_student_error')]);
+            }
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

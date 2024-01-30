@@ -51,27 +51,37 @@
                     <!-- 1 -->
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5  ">
                         <img class=" student-img h-100 w-50" src="../../../public/assets/icons/food-2.jpg" alt="">
-                        <select class="col form-select form-control" id="t-qualification">
-                            <option value="">None</option>
-                            <option value="">Some</option>
-                            <option value="">All</option>
+                        <select class="col form-select form-control" name="bath">
+                            <option value="{{__('public.all')}}">{{__('public.all')}}</option>
+                            <option value="{{__('public.some')}}">{{__('public.some')}}</option>
+                            <option value="{{__('public.none')}}">{{__('public.none')}}</option>
                         </select>
+                        @error('bath')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
                     </div>
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5 ">
                         <img class=" student-img h-100 w-50" src="../../../public/assets/icons/food-1.jpg" alt="">
-                        <select class="col form-select form-control" id="t-qualification">
-                            <option value="">None</option>
-                            <option value="">Some</option>
-                            <option value="">All</option>
+                        <select class="col form-select form-control" name="snack">
+                            <option value="{{__('public.all')}}">{{__('public.all')}}</option>
+                            <option value="{{__('public.some')}}">{{__('public.some')}}</option>
+                            <option value="{{__('public.none')}}">{{__('public.none')}}</option>
                         </select>
+                        @error('snack')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
                     </div>
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5">
                         <img class=" student-img h-100 w-50" src="../../../public/assets/icons/toilet.jpg" alt="">
-                        <select class="col form-select form-control" id="t-qualification">
-                            <option value="">None</option>
-                            <option value="">Some</option>
-                            <option value="">All</option>
+
+                        <select class="col form-select form-control" name="food">
+                            <option value="{{__('public.all')}}">{{__('public.all')}}</option>
+                            <option value="{{__('public.some')}}">{{__('public.some')}}</option>
+                            <option value="{{__('public.none')}}">{{__('public.none')}}</option>
                         </select>
+                        @error('food')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
                     </div>
                     <!-- 3 -->
                 </div>
@@ -83,13 +93,13 @@
                 <div class="box row">
                     <div class="notes col-lg-12 col-md-12">
                         <label class="form-label " for="st_dNote">NOTE</label>
-                        <textarea class="form-control" id="st_dNote" cols="50" rows="5"></textarea>
+                        <textarea class="form-control" name="note" cols="50" rows="5"></textarea>
                     </div>
                 </div>
             </div>
             <div class=" row">
                 <div class="box ">
-                    <input class="save-button " type="submit" value="Save ">
+                    <input class="save-button " type="submit" value="Save">
                     <input class="clear-button " type="reset" value="clear">
                 </div>
             </div>

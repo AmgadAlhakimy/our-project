@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Relative\StoreRelativeRequest;
 use App\Http\Requests\Relative\UpdateRelativeRequest;
 use App\Models\Relative;
+use App\Models\Student;
 
 class RelativeController extends Controller
 {
@@ -105,10 +106,21 @@ class RelativeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified classroom.
      */
-    public function destroy(Relative $relative)
+    public function destroy($id)
     {
-        //
+        try {
+            $relative_id = Student::where('relative_id', $id)->pluck('relative_id');
+            if($relative_id->count() == 0){
+                Relative::destroy($id);
+                return redirect()->route('relatives.index')
+                    ->with(['warning' => trans('message.delete')]);
+            }else{
+                return redirect()->back() ->with(['error' => trans('message.delete_relative_error')]);
+            }
+        }catch (\Exception $e){
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 }

@@ -1,6 +1,5 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
-
         
         
 
@@ -64,16 +63,15 @@ unset($__errorArgs, $__bag); ?>
         
         <!-- table-hover table-striped -->
         <div class=" table-section ">
-            <div class="card table-section ">
             <table class=" " >
                 <thead>
-                    <tr class="">
-                        <th ><div class="th-head-1  " ><?php echo e(__('public.id')); ?></div></th>
-                        <th ><div class="th-head-3" ><?php echo e(__('public.name')); ?></div></th>
-                        <th ><div class="th-head-1" ><?php echo e(__('public.photo')); ?></div></th>
-                        <th ><div class="th-head-3" ><?php echo e(__('student.Daily Follow-Up')); ?></div></th>
-                        <th ><div class="th-head-1" ></div></th>
-                    </tr>
+                <tr class="">
+                    <th ><div class="th-head-1" ><?php echo e(__('public.id')); ?></div></th>
+                    <th ><div class="th-head-3" ><?php echo e(__('public.name')); ?></div></th>
+                    <th ><div class="th-head-1" ><?php echo e(__('public.photo')); ?></div></th>
+                    <th ><div class="th-head-3" ><?php echo e(__('student.Daily Follow-Up')); ?></div></th>
+                    <th ><div class="th-head-1" ></div></th>
+                </tr>
                 </thead>
                 <tbody>
                 <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -88,7 +86,7 @@ unset($__errorArgs, $__bag); ?>
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
-            </div>
+            </table>
         </div>
     </div>
 <?php $__env->stopSection(); ?>

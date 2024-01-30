@@ -2,7 +2,6 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table">
-
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
 
@@ -59,16 +58,15 @@
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class=" table-section ">
-            <div class="card table-section ">
             <table class=" " >
                 <thead>
-                    <tr class="">
-                        <th ><div class="th-head-1  " >{{__('public.id')}}</div></th>
-                        <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
-                        <th ><div class="th-head-1" >{{__('public.photo')}}</div></th>
-                        <th ><div class="th-head-3" >{{__('student.Daily Follow-Up')}}</div></th>
-                        <th ><div class="th-head-1" ></div></th>
-                    </tr>
+                <tr class="">
+                    <th ><div class="th-head-1" >{{__('public.id')}}</div></th>
+                    <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
+                    <th ><div class="th-head-1" >{{__('public.photo')}}</div></th>
+                    <th ><div class="th-head-3" >{{__('student.Daily Follow-Up')}}</div></th>
+                    <th ><div class="th-head-1" ></div></th>
+                </tr>
                 </thead>
                 <tbody>
                 @foreach($students  as $student )
@@ -83,7 +81,7 @@
                     </tr>
                 @endforeach
                 </tbody>
-            </div>
+            </table>
         </div>
     </div>
 @endsection

@@ -20,4 +20,9 @@ class Subject extends Model
     {
         return $this->belongsToMany(Classroom::class,'subject_classroom_pivot');
     }
+
+    public function marks()
+    {
+        return $this->hasMany(Mark::class);
+    }
 }

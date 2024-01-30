@@ -1,10 +1,10 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
 
-
-
+        
+        
         <div class="table-header">
-
+            
             <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational Level info')); ?></h4>
             <div class="row first-card mt-4">
                 <form method="post" action="<?php echo e(route('educational_levels.search')); ?>">
@@ -19,7 +19,7 @@
                 </form>
             </div>
         </div>
-
+        
 
         <!-- table-hover table-striped -->
         <div class="table-section">
@@ -45,22 +45,22 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td><?php echo e($level->id); ?></td>
-                            <td><?php echo e($level->name); ?></td>
-                            <td><?php echo e($level->created_at); ?></td>
-                            <td><?php echo e($level->updated_at); ?></td>
-                            <td><a href="<?php echo e(route('educational_levels.edit',$level->id)); ?>"class="btn save-button btn-success w-100">
+                            <td><?php echo e($Level->id); ?></td>
+                            <td><?php echo e($Level->name); ?></td>
+                            <td><?php echo e($Level->created_at); ?></td>
+                            <td><?php echo e($Level->updated_at); ?></td>
+                            <td><a href="<?php echo e(route('educational_levels.edit',$Level->id)); ?>"class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> <?php echo e(__('public.edit')); ?> </a>
                             </td>
                             <td>
-                                <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"data-bs-target="#delete<?php echo e($level->id); ?>">
+                                <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"data-bs-target="#delete<?php echo e($Level->id); ?>">
                                     <i class="fa-solid fa-trash"></i> <?php echo e(__('public.delete')); ?>
 
                                 </button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="delete<?php echo e($level->id); ?>"
+                                <div class="modal fade" id="delete<?php echo e($Level->id); ?>"
                                     tabindex="-1" aria-labelledby="exampleModalLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog">
@@ -69,14 +69,14 @@
                                                 <h5 class="modal-title" id="exampleModalLabel"><?php echo e(__('public.delete')); ?></h5>
                                             </div>
                                             <div class="modal-body">
-                                                <?php echo e(__('public.are you sure you want to delete').$level->name); ?>
+                                                <?php echo e(__('public.are you sure you want to delete').$Level->name); ?>
 
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     <?php echo e(__('public.cancel')); ?></button>
                                                 <form method="post"
-                                                    action="<?php echo e(route('educational_levels.destroy',$level->id)); ?>">
+                                                    action="<?php echo e(route('educational_levels.destroy',$Level->id)); ?>">
                                                     <?php echo method_field('DELETE'); ?>
                                                     <?php echo csrf_field(); ?>
                                                     <button type="submit"

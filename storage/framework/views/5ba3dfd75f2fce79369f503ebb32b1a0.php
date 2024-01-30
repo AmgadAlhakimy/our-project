@@ -33,7 +33,7 @@
                         <!-- 1 -->
                         <?php $__currentLoopData = $student->classroom->subjects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                <input type="text" disabled class="form-control ms-2 me-2" name="subject[]"
+                                <input type="text"  class="form-control ms-2 me-2" name="subject[]"
                                        value="<?php echo e($subject->name); ?>">
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 ">
@@ -51,27 +51,58 @@
                     <!-- 1 -->
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5  ">
                         <img class=" student-img h-100 w-50" src="../../../public/assets/icons/food-2.jpg" alt="">
-                        <select class="col form-select form-control" id="t-qualificatiion">
-                            <option value="">None</option>
-                            <option value="">Some</option>
-                            <option value="">All</option>
+                        <select class="col form-select form-control" name="bath">
+                            <option value="<?php echo e(__('public.all')); ?>"><?php echo e(__('public.all')); ?></option>
+                            <option value="<?php echo e(__('public.some')); ?>"><?php echo e(__('public.some')); ?></option>
+                            <option value="<?php echo e(__('public.none')); ?>"><?php echo e(__('public.none')); ?></option>
                         </select>
+                        <?php $__errorArgs = ['bath'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="form-text text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5 ">
                         <img class=" student-img h-100 w-50" src="../../../public/assets/icons/food-1.jpg" alt="">
-                        <select class="col form-select form-control" id="t-qualificatiion">
-                            <option value="">None</option>
-                            <option value="">Some</option>
-                            <option value="">All</option>
+                        <select class="col form-select form-control" name="snack">
+                            <option value="<?php echo e(__('public.all')); ?>"><?php echo e(__('public.all')); ?></option>
+                            <option value="<?php echo e(__('public.some')); ?>"><?php echo e(__('public.some')); ?></option>
+                            <option value="<?php echo e(__('public.none')); ?>"><?php echo e(__('public.none')); ?></option>
                         </select>
+                        <?php $__errorArgs = ['snack'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="form-text text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5">
                         <img class=" student-img h-100 w-50" src="../../../public/assets/icons/toilet.jpg" alt="">
-                        <select class="col form-select form-control" id="t-qualificatiion">
-                            <option value="">None</option>
-                            <option value="">Some</option>
-                            <option value="">All</option>
+
+                        <select class="col form-select form-control" name="food">
+                            <option value="<?php echo e(__('public.all')); ?>"><?php echo e(__('public.all')); ?></option>
+                            <option value="<?php echo e(__('public.some')); ?>"><?php echo e(__('public.some')); ?></option>
+                            <option value="<?php echo e(__('public.none')); ?>"><?php echo e(__('public.none')); ?></option>
                         </select>
+                        <?php $__errorArgs = ['food'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <small class="form-text text-danger"><?php echo e($message); ?></small>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     </div>
                     <!-- 3 -->
                 </div>
@@ -83,13 +114,13 @@
                 <div class="box row">
                     <div class="notes col-lg-12 col-md-12">
                         <label class="form-label " for="st_dNote">NOTE</label>
-                        <textarea class="form-control" id="st_dNote" cols="50" rows="5"></textarea>
+                        <textarea class="form-control" name="note" cols="50" rows="5"></textarea>
                     </div>
                 </div>
             </div>
             <div class=" row">
                 <div class="box ">
-                    <input class="save-button " type="submit" value="Save ">
+                    <input class="save-button " type="submit" value="Save">
                     <input class="clear-button " type="reset" value="clear">
                 </div>
             </div>

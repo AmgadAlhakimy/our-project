@@ -25,13 +25,13 @@ class StoreClassroomRequest extends FormRequest
             'name' => ["required","unique:classrooms,name->en", "max:100"],
             "name_ar"=>["required", "unique:classrooms,name->ar", "max:100"],
             'cost'=>'required',
-            'Level'=>'required',
+            'level'=>'required',
         ];
     }
     public function messages(): array
     {
         return [
-            'Level.required'=>__('eduLevel.Sorry! you have to create Educational Level first'),
+            'level.required'=>__('eduLevel.Sorry! you have to create Educational Level first'),
         ];
     }
 }

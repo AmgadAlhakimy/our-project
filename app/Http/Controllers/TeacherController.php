@@ -6,7 +6,6 @@ use App\Http\Requests\Teacher\StoreTeacherRequest;
 use App\Http\Requests\Teacher\UpdateTeacherRequest;
 use App\Models\Teacher;
 use App\Traits\EmployeeTrait;
-use App\Traits\GenderTrait;
 use App\Traits\PhotoTrait;
 use Illuminate\Http\Request;
 
@@ -14,7 +13,6 @@ class TeacherController extends Controller
 {
     use EmployeeTrait;
     use PhotoTrait;
-    use GenderTrait;
 
     /**
      * Display a listing of the resource.
@@ -57,8 +55,8 @@ class TeacherController extends Controller
                 'photo'=>$this->insertImage($request,0,
                     "\App\Models\Teacher",'images/teachers'),
                 'gender'=>[
-                    'en'=>$this->gender($request,'en'),
-                    'ar'=>$this->gender($request,'ar'),
+                    'en'=>__('public.'.$request->gender),
+                    'ar'=>__('public.'.$request->gender.'1'),
                 ],
                 'contact' => $request->contact,
                 'address' => [
@@ -128,8 +126,8 @@ class TeacherController extends Controller
                     'photo'=>$this->insertImage($request,$id,
                         "\App\Models\Teacher",'images/teachers'),
                     'gender'=>[
-                        'en'=>$this->gender($request,'en'),
-                        'ar'=>$this->gender($request,'ar'),
+                        'en'=>__('public.'.$request->gender),
+                        'ar'=>__('public.'.$request->gender.'1'),
                     ],
                     'contact' => $request->contact,
                     'address' => [
