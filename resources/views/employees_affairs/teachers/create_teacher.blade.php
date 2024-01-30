@@ -49,8 +49,6 @@
                             @error('gender')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
-                            <input type="hidden" name="gender_ar_m" value="{{__('Student.male_ar')}}">
-                            <input type="hidden" name="gender_ar_f" value="{{__('Student.female_ar')}}">
                         </div>
                         <!-- 4 -->
                         <div class="box ">

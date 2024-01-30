@@ -39,10 +39,10 @@ return [
     'educational Level'=>'Educational Level',
     'are you sure you want to delete'=>'Are you sure you want to delete: ',
     'gender'=>'gender',
-    'male'=>'Male',
-    'female'=>'Female',
-    'male_ar'=>'ذكر',
-    'female_ar'=>'انثى',
+    'male'=>'male',
+    'female'=>'female',
+    'male1'=>'ذكر',
+    'female1'=>'انثى',
     'photo'=>'Photo',
     'address'=>'Address',
     'qualification'=>'Qualification',
@@ -50,12 +50,16 @@ return [
     'major'=>'Major',
     'restore'=>'Restore',
     'force delete'=>'Force Delete',
-
     'class'=>'CLASS',
     'month'=>'Month',
     'Teacher'=>'Teacher',
-
-
-
-
+    'all'=>'all',
+    'some'=>'some',
+    'none'=>'none',
+    'all_ar'=>'الكل',
+    'some_ar'=>'بعض',
+    'none_ar'=>'لا شيء',
+    'all1'=>'الكل',
+    'some1'=>'بعض',
+    'none1'=>'لا شيء',
 ];

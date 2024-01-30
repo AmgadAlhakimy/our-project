@@ -29,6 +29,7 @@ Route::group(
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
+        require __DIR__.'/extra.php';
         require __DIR__.'/search.php';
         require __DIR__.'/resources.php';
         require __DIR__.'/restore.php';

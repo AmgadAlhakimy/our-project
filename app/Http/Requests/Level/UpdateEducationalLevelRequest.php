@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateEducationalLevelRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -21,17 +22,21 @@ class UpdateEducationalLevelRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
-            'name'=>'required|unique:educational_levels,name->en,'.$this->id,
-            'name_ar'=>'required|unique:educational_levels,name->ar,'.$this->id,
+//            'email' => 'required|email|unique:users,email,'.$this->user->id,
+//            'name'=>'required|unique:educational_levels,name->en,'.$this->id,
+            'name' => [
+                'required',
+                'unique:educational_levels,name->en,' . $this->id
+            ],
+            'name_ar'=>'required|unique:educational_levels,name->ar,' . $this->id,
+
         ];
     }
     public function messages(): array
     {
         return [
-            'name.required'=>'This filed is required',
-            'name.unique'=>'You have already saved this educational Level',
-            'name.max'=>'The maximum length is 100',
         ];
     }
 }

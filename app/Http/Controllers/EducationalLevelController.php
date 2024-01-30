@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Level\StoreEducationalLevelRequest;
 use App\Http\Requests\Level\UpdateEducationalLevelRequest;
+use App\Models\Classroom;
 use App\Models\EducationalLevel;
 use Illuminate\Http\Request;
 
@@ -91,7 +92,10 @@ class EducationalLevelController extends Controller
     {
         try {
         $level = EducationalLevel::findorFail($id);
-            $level->name = ['en' => $request->name, 'ar' => $request->name_ar];
+            $level->name = [
+                'en' => $request->name,
+                'ar' => $request->name_ar
+            ];
             $level->update();
 
             return redirect()->route('educational_levels.index')
@@ -108,9 +112,14 @@ class EducationalLevelController extends Controller
     public function destroy($id)
     {
         try {
-        EducationalLevel::destroy($id);
-        return redirect()->route('educational_levels.index')
-            ->with(['warning' => trans('message.delete')]);
+            $classroom_id = Classroom::where('edu_id', $id)->pluck('edu_id');
+            if($classroom_id->count() == 0){
+             EducationalLevel::destroy($id);
+            return redirect()->route('educational_levels.index')
+                 ->with(['warning' => trans('message.delete')]);
+            }else{
+                return redirect()->back() ->with(['error' => trans('message.delete_level_error')]);
+            }
 
         }catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

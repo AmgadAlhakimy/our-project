@@ -13,7 +13,7 @@ class SubjectSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i = 1; $i<=20; $i++ ){
+        for($i = 1; $i<=7; $i++ ){
             Subject::create([
                 'name'=> [
                     'en'=>"Subject $i",

@@ -27,27 +27,12 @@
                 <table class=" ">
                     <thead>
                     <tr>
-                        <th>
-                            <div class="th-head-1">{{__('public.id')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-3">{{__('public.name')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-1">{{__('public.cost')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-3">{{__('public.educational Level')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.created at')}}</div>
-                        </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.updated at')}}</div>
-                        </th>
-                        <th colspan="2">
-                            <div class="th-head-4">{{__('public.processes')}}</div>
-                        </th>
+                        <th><div class="th-head-1">{{__('public.id')}}</div></th>
+                        <th><div class="th-head-3">{{__('public.name')}}</div></th>
+                        <th><div class="th-head-1">{{__('public.cost')}}</div></th>
+                        <th><div class="th-head-2">{{__('public.created at')}}</div></th>
+                        <th><div class="th-head-2">{{__('public.updated at')}}</div></th>
+                        <th colspan="2"><div class="th-head-4">{{__('public.processes')}}</div></th>
                     </tr>
                     </thead>
                     @foreach($classrooms  as $classroom )
@@ -56,7 +41,6 @@
                             <td>{{$classroom->id}}</td>
                             <td>{{$classroom->name}}</td>
                             <td>{{$classroom->cost}}</td>
-                            <td>{{$classroom->Level->name}}</td>
                             <td>{{$classroom->created_at}}</td>
                             <td>{{$classroom->updated_at}}</td>
                             <td>

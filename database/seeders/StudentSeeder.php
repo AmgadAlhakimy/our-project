@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Classroom;
 use App\Models\Relative;
 use App\Models\Student;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class StudentSeeder extends Seeder
@@ -15,8 +14,20 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        $gender_en = ['male','female','male','female','male','female','male','female','male','female'];
-        $gender_ar = ['ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى'];
+        $gender_en = [
+            'male','female','male','female','male','female','male','female','male','female',
+            'male','female','male','female','male','female','male','female','male','female',
+            'male','female','male','female','male','female','male','female','male','female',
+            'male','female','male','female','male','female','male','female','male','female',
+            'male','female','male','female','male','female','male','female','male','female',
+        ];
+        $gender_ar = [
+            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
+            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
+            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
+            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
+            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
+        ];
 
         $classrooms = Classroom::all();
         $relatives = Relative::all();
@@ -35,7 +46,7 @@ class StudentSeeder extends Seeder
                     'en'=>$gender_en[$i-1],
                     'ar'=>$gender_ar[$i-1],
                 ],
-                'birthdate'=>"2020-02-$i",
+                'birthdate'=>"20".$i."-02-03",
                 'place_of_birth'=> [
                     'en'=>"place $i",
                     'ar'=>"مكان $i",

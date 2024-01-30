@@ -15,5 +15,5 @@ class Activity extends Model
 
 
     protected $fillable=['name','location','contact','date'];
-    public array $translatable = ['name','location'];
+    protected array $translatable = ['name','location'];
 }

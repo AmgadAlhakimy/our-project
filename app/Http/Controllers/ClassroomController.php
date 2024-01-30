@@ -6,6 +6,7 @@ use App\Http\Requests\Classroom\StoreClassroomRequest;
 use App\Http\Requests\Classroom\UpdateClassroomRequest;
 use App\Models\Classroom;
 use App\Models\EducationalLevel;
+use App\Models\Student;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -120,10 +121,14 @@ class ClassroomController extends Controller
     public function destroy($id)
     {
         try {
+            $student_id = Student::where('classroom_id', $id)->pluck('classroom_id');
+            if($student_id->count() == 0){
             Classroom::destroy($id);
             return redirect()->route('classrooms.index')
                 ->with(['warning' => trans('message.delete')]);
-
+            }else{
+                return redirect()->back() ->with(['error' => trans('message.delete_classroom_error')]);
+            }
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -135,10 +140,16 @@ class ClassroomController extends Controller
     public function restore($id)
     {
         try {
-        Classroom::withTrashed()->where('id', $id)->restore();
-        return redirect()->back()
-            ->with(['success' => trans('message.restore')]);
+            $edu_id = Classroom::withTrashed()->select('edu_id')->where('id', $id)->get();
+            $level = EducationalLevel::where('id', $edu_id)->pluck('id');
 
+            if($level->count() > 0){
+            Classroom::withTrashed()->where('id', $id)->restore();
+            return redirect()->back()
+                ->with(['success' => trans('message.restore')]);
+            }else{
+                return redirect()->back() ->with(['error' => trans('message.restore_classroom_error')]);
+            }
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
