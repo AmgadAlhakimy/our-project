@@ -74,7 +74,7 @@ class MarkController extends Controller
     public function update(UpdateMarkRequest $request, $id)
     {
         try {
-        $students_num = Mark::where('classroom_id', $id)->where('subject_id', $id)->count();//60
+        $students_num = Mark::where('classroom_id', $id)->where('subject_id', $id)->count();
         for ($i=0; $i<$students_num; $i++){
         $mark = Mark::findorFail($request->mark[$i]);
             $mark->update([
