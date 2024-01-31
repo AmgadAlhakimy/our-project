@@ -24,11 +24,15 @@ class Classroom extends Model
         return $this->belongsTo(EducationalLevel::class,'edu_id');
     }
     public function students(){
-        return $this->hasMany(Student::class,'classroom_id');
+        return $this->hasMany(Student::class);
     }
 
     public function subjects()
     {
         return $this->belongsToMany(Subject::class, 'subject_classroom_pivot');
+    }
+    public function marks()
+    {
+        return $this->hasMany(Mark::class);
     }
 }

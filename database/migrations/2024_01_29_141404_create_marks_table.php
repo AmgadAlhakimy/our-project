@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('total')->nullable();
             $table->integer('rate')->nullable();
             $table->integer('average')->nullable();
+            $table->foreignId('classroom_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('student_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('subject_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();

@@ -17,7 +17,7 @@ class SubjectClassroomSeeder extends Seeder
         $classrooms = Classroom::all();
         $subjects = Subject::all();
 
-        for($i = 1; $i<=40; $i++ ){
+        for($i = 1; $i<=100; $i++ ){
             SubjectClassroom::create([
             'classroom_id'=>$classrooms->random()->id,
             'subject_id'=>$subjects->random()->id,

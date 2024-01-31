@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Classroom;
 use App\Models\Mark;
 use App\Models\Student;
 use App\Models\Subject;
@@ -15,13 +16,20 @@ class MarkSeeder extends Seeder
      */
     public function run(): void
     {
-        $students = Student::all();
-        $subjects = Subject::all();
-     for($i = 1; $i<=70; $i++ ){
-         Mark::create([
-             'student_id'=> $students->random()->id,
-             'subject_id'=> $subjects->random()->id,
-         ]);
-     }
+
+        $classrooms = Classroom::all();
+        foreach ($classrooms as $classroom) {
+            $subjects = $classroom->subjects;
+            foreach ($subjects as $subject) {
+                $students = $classroom->students;
+                foreach ($students as $student) {
+                    Mark::create([
+                        'student_id' => $student->id,
+                        'subject_id' => $subject->id,
+                        'classroom_id' => $classroom->id,
+                    ]);
+                }
+            }
+        }
     }
 }

@@ -18,4 +18,9 @@ class Mark extends Model
     {
         return $this->belongsTo(Subject::class);
     }
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class);
+    }
 }

@@ -33,15 +33,12 @@ class MarkController extends Controller
      */
     public function insertMarks($id)
     {
-
         try {
-            $classroom = Classroom::findorfail($id);
-            $subject = Subject::findorfail($id);
-            $marks = Mark::all();
-            $students =  $classroom->students;
-            $marks = $subject->marks;
+                $marks = Mark::where('classroom_id', $id)
+                                ->where('subject_id', $id)->get();
             return view('teachers_affairs/marks.insert_marks',
-                compact('students', 'marks'));
+                compact('marks'));
+
         }catch (\Exception  $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -74,9 +71,24 @@ class MarkController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMarkRequest $request, Mark $mark)
+    public function update(UpdateMarkRequest $request, $id)
     {
-        //
+        try {
+        $students_num = Mark::where('classroom_id', $id)->where('subject_id', $id)->count();//60
+        for ($i=0; $i<$students_num; $i++){
+        $mark = Mark::findorFail($request->mark[$i]);
+            $mark->update([
+            'exam'=>$request->exam[$i],
+            'homework'=>$request->homework[$i],
+            'oral'=>$request->oral[$i],
+            'behavior'=>$request->behavior[$i],
+        ]);
+        }
+        return redirect()->back()->with(['success' => __('message.success')]);
+
+    } catch (\Exception $e) {
+return redirect()->back()->with(['error' => $e->getMessage()]);
+}
     }
 
     /**

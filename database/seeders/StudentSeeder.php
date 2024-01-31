@@ -14,24 +14,12 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        $gender_en = [
-            'male','female','male','female','male','female','male','female','male','female',
-            'male','female','male','female','male','female','male','female','male','female',
-            'male','female','male','female','male','female','male','female','male','female',
-            'male','female','male','female','male','female','male','female','male','female',
-            'male','female','male','female','male','female','male','female','male','female',
-        ];
-        $gender_ar = [
-            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
-            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
-            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
-            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
-            'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',
-        ];
+        $gender_en = [ 'male','female','male','female','male','female','male','female','male','female',];
+        $gender_ar = [ 'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',];
 
         $classrooms = Classroom::all();
         $relatives = Relative::all();
-        for($i = 1; $i<=10; $i++ ){
+        for($i = 1; $i<=100; $i++ ){
             Student::create([
                 'name'=> [
                     'en'=>"Student $i",
@@ -43,10 +31,10 @@ class StudentSeeder extends Seeder
                     'ar'=>"الثلاثين $i",
                 ],
                 'gender'=> [
-                    'en'=>$gender_en[$i-1],
-                    'ar'=>$gender_ar[$i-1],
+                    'en'=>$gender_en[rand(0,9)],
+                    'ar'=>$gender_ar[rand(0,9)],
                 ],
-                'birthdate'=>"20".$i."-02-03",
+                'birthdate'=>"2023-02-03",
                 'place_of_birth'=> [
                     'en'=>"place $i",
                     'ar'=>"مكان $i",
