@@ -9,7 +9,7 @@
         <form method="post" action="{{route('follow_up_children.store')}}">
             @csrf
             <input type="hidden" name="student_id" value="{{$student->id}}">
-            <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1>
+            {{-- <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1> --}}
             <!-- Start personal info  -->
 
             <div class="container containers-style mb-3   head-name">
@@ -26,7 +26,7 @@
             <h3 class="container-title">HOMEWORK - ASSIGNMENT</h3>
 {{--            <div data-repeater-list="list_comments">--}}
                 <div class="container containers-style">
-                </div>
+                
                 <div class="row">
                     <!-- 5 -->
                     <div class="box row">
@@ -34,7 +34,7 @@
                         @foreach($student->classroom->subjects as $subject)
                             <div class="col-lg-4 col-md-4 col-sm-4 ">
                                 <input type="text"  class="form-control ms-2 me-2" name="subject[]"
-                                       value="{{$subject->name}}">
+                                    value="{{$subject->name}}">
                                 @error('subject')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -48,6 +48,7 @@
                         @endforeach
                     </div>
                 </div>
+            </div>
 
             <!-- End personal info  -->
             <!-- Start functional info  -->

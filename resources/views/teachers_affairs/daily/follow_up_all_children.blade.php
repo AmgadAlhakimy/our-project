@@ -8,30 +8,30 @@
         @endif
         <form method="post" action="{{route('follow_up_children.store')}}">
             @csrf
-            <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1>
+            {{-- <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1> --}}
             <!-- Start personal info  -->
             <h3 class="container-title">HOMEWORK - ASSIGNMENT</h3>
-                <div class="container containers-style">
-                </div>
-                <div class="row">
-                    <!-- 5 -->
-                    <div class="box row">
-                        <!-- 1 -->
-                        @foreach($classroom->subjects as $subject)
-                            <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                <input type="text"  class="form-control ms-2 me-2" name="subject[]"
-                                       value="{{$subject->name}}">
-                                @error('subject')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 ">
-                                <input type="text" class=" form-control ms-2 me-2" name="comment[]">
-                                @error('comment')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-                            </div>
-                        @endforeach
+                <div class="container  containers-style">
+                    <div class="row">
+                        <!-- 5 -->
+                        <div class="box row">
+                            <!-- 1 -->
+                            @foreach($classroom->subjects as $subject)
+                                <div class="col-lg-4 col-md-4 col-sm-4 ">
+                                    <input type="text"  class="form-control ms-2 me-2" name="subject[]"
+                                        value="{{$subject->name}}">
+                                    @error('subject')
+                                    <small class="form-text text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 ">
+                                    <input type="text" class=" form-control ms-2 me-2" name="comment[]">
+                                    @error('comment')
+                                    <small class="form-text text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
@@ -65,7 +65,6 @@
                     </div>
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5">
                         <img class=" student-img h-100 w-50" src="../../../public/assets/icons/toilet.jpg" alt="">
-
                         <select class="col form-select form-control" name="food">
                             <option value="{{__('public.all')}}">{{__('public.all')}}</option>
                             <option value="{{__('public.some')}}">{{__('public.some')}}</option>

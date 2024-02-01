@@ -128,14 +128,6 @@ unset($__errorArgs, $__bag); ?>
                 
             </div>
         </form>
-
-
-
-
-
-
-        
-            
     </div>
 <?php $__env->stopSection(); ?>
 

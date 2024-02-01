@@ -123,37 +123,5 @@
                 
             </div>
         </form>
-
-
-
-
-
-
-        {{-- ------------------------------------------------------- --}}
-            {{-- <table class=" " >
-                <thead>
-                <tr class="">
-                    <th ><div class="th-head-1" >{{__('public.id')}}</div></th>
-                    <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
-                    <th ><div class="th-head-1" >{{__('public.photo')}}</div></th>
-                    <th ><div class="th-head-3" >{{__('student.Daily Follow-Up')}}</div></th>
-                    <th ><div class="th-head-1" ></div></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($students  as $student )
-                    <tr>
-                        <td class="fw-bolder">{{$student->id}}</td>
-                        <td>{{$student->name}}</td>
-                        <td><img class="student-img" src="{{$student->photo}}" alt=""></td>
-                        <td>
-                            <a href="{{route('follow_up_students.createNote', $student->id)}}" class="btn save-button btn-light me-5 w-100">
-                                {{__('student.Daily Follow-Up')}} (icon)<i class="ms-3 fa-solid fab-pen"></i></a></td>
-                        <td></td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
-        </div> --}}
     </div>
 @endsection

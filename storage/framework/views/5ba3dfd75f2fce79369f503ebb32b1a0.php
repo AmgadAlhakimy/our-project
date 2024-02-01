@@ -6,10 +6,10 @@
 
             </div>
         <?php endif; ?>
-        <form method="post" action="<?php echo e(route('follow_up_students.store')); ?>">
+        <form method="post" action="<?php echo e(route('follow_up_children.store')); ?>">
             <?php echo csrf_field(); ?>
             <input type="hidden" name="student_id" value="<?php echo e($student->id); ?>">
-            <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1>
+            
             <!-- Start personal info  -->
 
             <div class="container containers-style mb-3   head-name">
@@ -26,7 +26,7 @@
             <h3 class="container-title">HOMEWORK - ASSIGNMENT</h3>
 
                 <div class="container containers-style">
-                </div>
+                
                 <div class="row">
                     <!-- 5 -->
                     <div class="box row">
@@ -34,14 +34,35 @@
                         <?php $__currentLoopData = $student->classroom->subjects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="col-lg-4 col-md-4 col-sm-4 ">
                                 <input type="text"  class="form-control ms-2 me-2" name="subject[]"
-                                       value="<?php echo e($subject->name); ?>">
+                                    value="<?php echo e($subject->name); ?>">
+                                <?php $__errorArgs = ['subject'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <small class="form-text text-danger"><?php echo e($message); ?></small>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 ">
                                 <input type="text" class=" form-control ms-2 me-2" name="comment[]">
+                                <?php $__errorArgs = ['comment'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                <small class="form-text text-danger"><?php echo e($message); ?></small>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
+            </div>
 
             <!-- End personal info  -->
             <!-- Start functional info  -->
