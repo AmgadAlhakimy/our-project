@@ -3,11 +3,11 @@
 
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
-        
-        
+
+
 
         <div class="table-header">
-            
+
             <div class="row first-card  ">
                 <h4 class="col container-title mt-2"><?php echo e(__('teacher.Absence and Daily Book')); ?></h4>
                 <div class="row first-card mt-4">
@@ -23,7 +23,7 @@
                     </form>
                 </div>
             </div>
-            
+
 
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
@@ -42,7 +42,7 @@
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
-            
+
 
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
@@ -63,7 +63,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
             </div>
         </div>
-        
+
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">
@@ -78,7 +78,7 @@ unset($__errorArgs, $__bag); ?>
                     </tr>
                     </thead>
                     <tbody>
-                        
+
                     <tbody>
                         <tr class="test_1">
                             <td>77</td>
@@ -97,7 +97,7 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-                    
+
                     </tbody>
                 </table>
             </div>
@@ -105,4 +105,4 @@ unset($__errorArgs, $__bag); ?>
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/daily/follow-up-nursery.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/daily/show_children.blade.php ENDPATH**/ ?>

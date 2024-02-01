@@ -129,4 +129,4 @@ unset($__errorArgs, $__bag); ?>
 </section>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/daily/follow-up-children.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/daily/follow_up_children.blade.php ENDPATH**/ ?>
