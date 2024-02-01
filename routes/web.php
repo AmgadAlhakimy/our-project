@@ -41,6 +41,14 @@ Route::group(
         Route::get('school', function () {
             return view('teachers_affairs/daily/school-follow-up');
         });
+        // nursery
+        Route::get('nursery', function () {
+            return view('teachers_affairs/daily/follow-up-nursery');
+        });
+        // nursery
+        Route::get('children', function () {
+            return view('teachers_affairs/daily/follow-up-children');
+        });
 
         // absence
         Route::get('add_marks', function () {
@@ -52,7 +60,6 @@ Route::group(
         });
 
         // absence
-
         Route::get('absence', function () {
             return view('students_affairs/absence/absent_students');
         });
@@ -61,6 +68,8 @@ Route::group(
         Route::get('students/more/{id}',
             [StudentController::class, 'more'])
             ->name('students.more');
+
+            
     });
 
 

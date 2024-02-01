@@ -77,8 +77,6 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            <input type="hidden" name="gender_ar_m" value="<?php echo e(__('Student.male_ar')); ?>">
-                            <input type="hidden" name="gender_ar_f" value="<?php echo e(__('Student.female_ar')); ?>">
                         </div>
                         <!-- 4 -->
                         <div class="box ">

@@ -30,4 +30,21 @@ return [
     'salary'=>'الراتب',
     'major'=>'التخصص',
     'other info'=>'معلومات أخرى',
+
+
+    // the daily follow up book
+    'Absence and Daily Book' => 'الغياب ودفتر المتابعة',
+    'For All Class'=>'لكل الفصل',
+    'TO BRING TO SCHOOL'=>'اشياء لاخذها للمدرسة',
+    'TO TAKE HOME'=>'اشياء لاخذها للبيت ',
+    'NOTE'=>'ملاحظات',
+    'For All Students'=>'لكل الطلاب ',
+    'ABSENCE REASON'=>'سبب الغياب ',
+
+
+
+    'other '=>'hhhh ',
+    'other '=>'hhhh ',
+
+
 ];

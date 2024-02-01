@@ -2,25 +2,13 @@
     <div class="my-table">
         
         
-        
+
         <div class="table-header">
             
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">Deleted students</h4>
-                <div class="row first-card mt-4">
-                    <form method="post" action="<?php echo e(route('students.search')); ?>">
-                        <?php echo method_field('GET'); ?>
-                        <?php echo csrf_field(); ?>
-                        <div class="row">
-                            <label class="col-10">
-                                <input type="text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
-                            </label>
-                            <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
-                        </div>
-                    </form>
-                </div>
             </div>
-        </div>   
+        </div>
 
         
         <!-- table-hover table-striped -->
@@ -36,7 +24,6 @@
                         <th ><div class="th-head-1" >gender</div></th>
                         <th ><div class="th-head-2" >birth date</div></th>
                         <th ><div class="th-head-2" >birth place</div></th>
-                        <th ><div class="th-head-2" ><?php echo e(__('public.class')); ?></div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.created at')); ?></div></th>
                         <th ><div class="th-head-2" ><?php echo e(__('public.updated at')); ?></div></th>
                         <th colspan="2"><div class="th-head-4" ><?php echo e(__('public.processes')); ?></div></th>
@@ -53,7 +40,6 @@
                             <td><?php echo e($student->gender); ?></td>
                             <td><?php echo e($student->birthdate); ?></td>
                             <td><?php echo e($student->place_of_birth); ?></td>
-                            <td><?php echo e($student->classes->name); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
                             <td>

@@ -609,4 +609,11 @@ input[type=checkbox].toggle:checked + input.test1{
 }
 
 /* End Student checkbox */
-
+.center_y_x{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.shadow_1{
+  text-shadow: 1px 1px 1px rgba(107, 107, 107, 0.5);
+}

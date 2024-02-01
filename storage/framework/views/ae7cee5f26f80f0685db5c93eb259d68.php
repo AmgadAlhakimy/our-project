@@ -5,14 +5,14 @@
 
         <div class="table-header">
             
-            <div class="row first-card ">
-                <h4 class="col container-title mt-2">Students Information</h4>
+            <div class="row first-card  ">
+                <h4 class="col container-title mt-2"><?php echo e(__('teacher.Absence and Daily Book')); ?></h4>
                 <div class="row first-card mt-4">
                     <form method="post" action="<?php echo e(route('students.search')); ?>">
                         <?php echo method_field('GET'); ?>
                         <?php echo csrf_field(); ?>
-                        <div class="row">
-                            <label class="col-10">
+                        <div class="row ">
+                            <label class="col-9">
                                 <input type="text" required class="form-control "  name="search" value="<?php echo e(isset($search) ? $search : ''); ?>">
                             </label>
                             <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
@@ -30,7 +30,7 @@
 
                 <a class="card-info card-info_2  col  save-button"
                     href='/children'>
-                    <h4 class="text-center">لكل الفصل</h4>
+                    <h4 class="text-center"><?php echo e(__('teacher.For All Class')); ?></h4>
                     <h4 class=" Names"> MATH</h4>
                 </a>
 
@@ -62,32 +62,80 @@ unset($__errorArgs, $__bag); ?>
         </div>
         
         <!-- table-hover table-striped -->
-        <div class=" table-section ">
-            <table class=" " >
-                <thead>
-                <tr class="">
-                    <th ><div class="th-head-1" ><?php echo e(__('public.id')); ?></div></th>
-                    <th ><div class="th-head-3" ><?php echo e(__('public.name')); ?></div></th>
-                    <th ><div class="th-head-1" ><?php echo e(__('public.photo')); ?></div></th>
-                    <th ><div class="th-head-3" ><?php echo e(__('student.Daily Follow-Up')); ?></div></th>
-                    <th ><div class="th-head-1" ></div></th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <tr>
-                        <td class="fw-bolder"><?php echo e($student->id); ?></td>
-                        <td><?php echo e($student->name); ?></td>
-                        <td><img class="student-img" src="<?php echo e($student->photo); ?>" alt=""></td>
-                        <td>
-                            <a href="<?php echo e(route('follow_up_students.createNote', $student->id)); ?>" class="btn save-button btn-light me-5 w-100">
-                                <?php echo e(__('student.Daily Follow-Up')); ?> (icon)<i class="ms-3 fa-solid fab-pen"></i></a></td>
-                        <td></td>
-                    </tr>
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </tbody>
-            </table>
-        </div>
+        
+        <form method="post" action="<?php echo e(route('students.search')); ?>">
+            <?php echo method_field('GET'); ?>
+            <?php echo csrf_field(); ?>
+            <div class="table-header mt-3">
+                
+                <h4 class="col container-title "><?php echo e(__('teacher.For All Students')); ?> </h4>
+
+                <div class="box row me-2 ms-2 mb-1 ">
+                    <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                        <input class="form-control shadow" placeholder="<?php echo e(__('teacher.TO TAKE HOME')); ?>" id="" ></input>
+                    </div>
+                    <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                        <input class="form-control shadow" placeholder="<?php echo e(__('teacher.TO BRING TO SCHOOL')); ?>"  id="" ></input>
+                    </div>
+                    <div class="notes col-lg-12 col-md-12 col-sm-12 mt-1 mb-1">
+                        <input placeholder="<?php echo e(__('teacher.NOTE')); ?>"class="form-control shadow"  ></input>
+                    </div>
+                </div>
+            </div>
+            
+            <div class=" table-header mt-3">
+                <div class="row">
+                    <div class="cards_info_style col-lg-4 col-md-6 col-sm-12 mb-2">
+                        
+                        <div class="row ">
+                            <div class="box mb-1 mt-2 col">
+                                <img  class=" cards_img" src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>" alt="skills"/>
+                            </div>
+                            <div class="text-center col row center_y_x me-1 ms-1">
+                                <label class="col-12 cards_title mt-1 mb-1"> Emad nasr mansour </label>
+                                <label class="col-12 cards_sup_title mt-1 mb-1">i7676</label>
+                            </div>
+                        </div>
+                        
+                        <hr class=" ms-2 me-2 shadow">
+                        
+                        <div class="box row me-2 ms-2 mb-1 ">
+                            <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                                <input class="form-control shadow" placeholder="<?php echo e(__('teacher.TO TAKE HOME')); ?>" id="" ></input>
+                            </div>
+                            <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                                <input class="form-control shadow" placeholder="<?php echo e(__('teacher.TO BRING TO SCHOOL')); ?>"  id="" ></input>
+                            </div>
+                            <div class="notes col-lg-12 col-md-12 col-sm-12 mt-1 mb-1">
+                                <input class="form-control shadow" placeholder="<?php echo e(__('teacher.NOTE')); ?>" ></input>
+                            </div>
+                        </div>
+                        
+                        <hr class=" ms-2 me-2 shadow">
+                        
+                        <div class=" row me-4 ms-2 mb-1">
+                            <div class="notes col-2 center_y_x">
+                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" checked >
+                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>                        
+                            </div>
+                            <div class="notes col">
+                                <input class="form-control shadow mb-1" placeholder=" <?php echo e(__('teacher.ABSENCE REASON')); ?>"  id="" ></input>
+                            </div>
+                        </div>                    
+                    </div>
+
+                </div>
+                
+            </div>
+        </form>
+
+
+
+
+
+
+        
+            
     </div>
 <?php $__env->stopSection(); ?>
 

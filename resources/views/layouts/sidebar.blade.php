@@ -217,7 +217,7 @@
                         <p class="title">قسم المعلمين</p>
                             {{-- ---المعلمين--- --}}
                     <!-- ======================== TEACHERS ========================== -->
-
+                    <li class="dropdown">
                     <!-- ========== 1 ============ -->
                     <div class="sidebar-title">
                         <a href="#" class="li-link title-4">
@@ -228,9 +228,12 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
-                            <a href="{{route('follow_up_students.index')}}" class="li-link">رياضيات \ سادس </a>
+                            <a href='/school' class="li-link">علوم \ سادس </a>
+                            <a href='/nursery' class="li-link">quran \ KG1 </a>
                             <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
                         </div>
+                    </div>
+                </li>
                         <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">

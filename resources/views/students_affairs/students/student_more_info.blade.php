@@ -15,7 +15,7 @@
                                         {{-- 1 --}}
                                         <div class="box col">
                                             <img class=" cards_img" src="{{asset($student->photo)}}" alt="">
-                                        </div>
+                                        </div> 
                                         <div class="text-center ">
                                             <label class="  cards_title"> {{$student->name}} </label>
                                             <label class="  cards_sup_title">({{$student->id}})</label>
