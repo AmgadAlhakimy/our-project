@@ -13,7 +13,7 @@
                                         
                                         <div class="box col">
                                             <img class=" cards_img" src="<?php echo e(asset($student->photo)); ?>" alt="">
-                                        </div>
+                                        </div> 
                                         <div class="text-center ">
                                             <label class="  cards_title"> <?php echo e($student->name); ?> </label>
                                             <label class="  cards_sup_title">(<?php echo e($student->id); ?>)</label>

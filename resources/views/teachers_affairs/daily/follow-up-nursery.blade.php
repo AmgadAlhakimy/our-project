@@ -72,25 +72,10 @@
                     </thead>
                     <tbody>
                         
-                    <tbody>
-                        <tr class="test_1">
-                            <td>77</td>
-                            <td>kj;lk;l</td>
-                            <td><img src=""
-                                class="student-img" alt="photo"></td>
-                            <td>
-                                <a href='/children' class="btn save-button btn-light me-5 w-100">
-                                    {{__('student.Daily Follow-Up')}} <i class="ms-3 fa-solid fab-pen"></i>
-                                </a>
-                            </td>
-                            <td></td>
-                        </tr>
 
 
 
-
-
-                    {{-- @foreach($students  as $student )
+                    @foreach($students  as $student )
                         <tr>
                             <td class="fw-bolder">{{$student->id}}</td>
                             <td>{{$student->name}}</td>
@@ -100,7 +85,7 @@
                                     {{__('student.Daily Follow-Up')}} (icon)<i class="ms-3 fa-solid fab-pen"></i></a></td>
                             <td></td>
                         </tr>
-                    @endforeach --}}
+                    @endforeach
                     </tbody>
                 </table>
             </div>

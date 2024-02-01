@@ -23,11 +23,15 @@
             </div>
         </div>
         <!-- table-hover table-striped -->
+        <button class="save-button btn-danger m-3">delete all</button>
+        <button class="save-button btn-info m-3 select_bt" onclick="toggleCheckboxes()" id="select_bt">select</button>
         <div class="table-section">
             <div class="card table-section ">
-                <table class=" " >
+                <table class=" " id="check_table" >
                     <thead>
                     <tr>
+                        
+                        <th ><label class="" ><input type="checkbox" id="select_all" style="display: none"></label></th>
                         <th ><div class="th-head-1  " >{{__('public.id')}}</div></th>
                         <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
                         <th ><div class="th-head-1" >{{__('public.photo')}}</div></th>
@@ -45,6 +49,7 @@
                     <tbody>
                     @foreach($students  as $student )
                         <tr class="test_1">
+                            <td ><input type="checkbox" class="check_item" id="checkbox" style="display: none"></td>
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
                             <td><img src="{{asset($student->photo)}}"

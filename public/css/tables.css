@@ -157,6 +157,12 @@ tr:hover img {
   transition: all 1s ease;
   background-color: #fff;
 }
+.test_1 td{
+  /* display: flex; */
+  text-align: center;
+  /* justify-content: center;
+  align-items: center; */
+}
 
 
 /* Start media */
