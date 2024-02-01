@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Classroom;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateClassroomRequest extends FormRequest
 {
@@ -17,12 +19,20 @@ class UpdateClassroomRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
+        $id = $this->route('classroom');
         return [
-            'name'=>['required', 'unique:classrooms', 'max:50'],
+            'name'=>[
+                'required',
+                Rule::unique('classrooms','name->en')->ignore($id),
+                'max:50'],
+            'name_ar' => [
+                'required',
+                Rule::unique('classrooms', 'name->ar')->ignore($id)
+            ],
             'cost'=>'required',
         ];
     }

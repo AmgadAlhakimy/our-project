@@ -29,6 +29,14 @@ Route::group(
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
+//        Route::get('/classrooms/{id}', function () {
+//            return view('layouts/sidebar');
+//        });
+
+
+        Route::get('/classrooms/{id}',
+            [StudentController::class, 'getClassrooms']);
+
         require __DIR__.'/extra.php';
         require __DIR__.'/search.php';
         require __DIR__.'/resources.php';

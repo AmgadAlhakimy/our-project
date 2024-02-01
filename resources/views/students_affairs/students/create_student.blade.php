@@ -99,12 +99,25 @@
                             @enderror
                         </div>
                         {{-- 8 --}}
-                        <div class="box ">
+                        <div class="box col-lg-6 col-md-6 ">
+                            <label for="className " class="form-label">{{__('Student.level')}}</label>
+                            <select id="className" class="form-control" name="level_id"
+                            onchange="console.log($(this).val())">
+                                @foreach($levels as $level)
+                                    <option class="text-center" value="{{$level->id}}">{{$level->name}}</option>
+                                @endforeach
+                            </select>
+                            @error('level_id')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
+
+                        <div class="box col-lg-6 col-md-6 ">
                             <label for="className " class="form-label">{{__('Student.class')}}</label>
                             <select id="className " class="form-control" name="classroom_id" value="{{old('classroom_id')}}">
-                                @foreach($classrooms as $classroom)
-                                    <option class="text-center" value="{{$classroom->id}}">{{$classroom->name}}</option>
-                                @endforeach
+{{--                                @foreach($classrooms as $classroom)--}}
+{{--                                    <option class="text-center" value="{{$classroom->id}}">{{$classroom->name}}</option>--}}
+{{--                                @endforeach--}}
                             </select>
                             @error('classroom_id')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -141,7 +154,7 @@
                     </div>
                 </div>
                 <!-- End parent info  -->
-                
+
                 <!-- Start health info  -->
                 <h3 class="container-title ">{{__('Student.health info')}}</h3>
                 <div class="container containers-style mb-5">
@@ -257,6 +270,25 @@
         </section>
     </main>
     <script>
-
+        $(document.ready(function (){
+            $('select[name="level_id"]').on('change', function (){
+                var level_id = $(this).val();
+                if(level_id){
+                    $.ajax({
+                        url: "{{URL::to('classrooms')}}/" + level_id,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data){
+                            $('select[name="classroom_id"]').empty();
+                            $.each(data, function (key, value){
+                                $('select[name="classroom_id"]').append('<option value="' + key +'">' + value + '</option>');
+                            });
+                        },
+                    });
+                }else {
+                    console.log('AJAX load did not work');
+                }
+            });
+        }));
     </script>
 @endsection

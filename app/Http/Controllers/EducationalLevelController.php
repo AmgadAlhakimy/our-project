@@ -91,10 +91,6 @@ class EducationalLevelController extends Controller
     public function update(UpdateEducationalLevelRequest $request, $id)
     {
         try {
-            $this->validate($request,array(
-                'name_ar'=>"required|unique:educational_levels,name->ar,$id",
-                'name' => "required|unique:educational_levels,name->en,$id"
-            ));
         $level = EducationalLevel::findorFail($id);
             $level->name = [
                 'en' => $request->name,

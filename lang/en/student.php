@@ -59,9 +59,10 @@ return [
     'first you have to add classrooms'=>'first you have to add classrooms',
     'parents'=>'Parents',
     'more info'=>'More info',
-    
+
     'birth date'=> ' Birth Date',
     'birth place'=> 'Birth Place ',
     'Daily Follow-Up'=> 'Daily Follow-Up ',
+    'level'=>'Educational level'
 
 ];

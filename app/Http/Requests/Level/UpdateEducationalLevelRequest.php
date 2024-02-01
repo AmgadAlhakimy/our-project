@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Level;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -19,19 +20,26 @@ class UpdateEducationalLevelRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
-
+        $id = $this->route('educational_level');
         return [
-//            'name_ar'=>"required|unique:educational_levels,name->ar,".$this->request->id,
+            'name' => [
+                'required',
+                Rule::unique('educational_levels', 'name->en')->ignore($id),
+                'max:50'],
+            'name_ar' => [
+                'required',
+                Rule::unique('educational_levels', 'name->ar')->ignore($id),
+                'max:50'],
         ];
     }
     public function messages(): array
     {
         return [
-
+            //
         ];
     }
 }

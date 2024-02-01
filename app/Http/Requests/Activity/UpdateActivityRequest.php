@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Activity;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateActivityRequest extends FormRequest
 {
@@ -17,13 +19,18 @@ class UpdateActivityRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
+        $id = $this->route('activity');
         return [
-            'name' => ['required', 'max:100'],
-            'name_ar' => ['required', 'max:100'],
+            'name' => ['required',
+                Rule::unique('activities','name->en')->ignore($id),
+                'max:100'],
+            'name_ar' => ['required',
+                Rule::unique('activities','name->ar')->ignore($id),
+                'max:100'],
             'location' => ['required', 'max:100'],
             'location_ar' => ['required', 'max:100'],
         ];

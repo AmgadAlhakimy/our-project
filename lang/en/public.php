@@ -62,4 +62,5 @@ return [
     'all1'=>'الكل',
     'some1'=>'بعض',
     'none1'=>'لا شيء',
+    'select level'=>'please select educational level',
 ];

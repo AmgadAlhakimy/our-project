@@ -62,5 +62,6 @@ return [
     'birth date'=> 'تاريخ الميلاد',
     'birth place'=> 'مكان الميلاد',
     'Daily Follow-Up' => 'دفتر المتابعة',
+    'level'=>'المرحلة الدراسية'
 
 ];

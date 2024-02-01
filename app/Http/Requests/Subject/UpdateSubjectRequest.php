@@ -4,6 +4,7 @@ namespace App\Http\Requests\Subject;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateSubjectRequest extends FormRequest
 {
@@ -22,11 +23,17 @@ class UpdateSubjectRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name'=>"required|unique:subjects,name->en,$this->id",
-//            'name' => 'required|email|unique:subjects,name->en,'.$this->id,
+        $subject_id = $this->route('subject');
 
-            'name_ar'=>"required|unique:subjects,name->ar,$this->id",
+        return [
+            'name' => [
+                'required',
+                Rule::unique('subjects', 'name->en')->ignore($subject_id)
+            ],
+            'name_ar' => [
+                'required',
+                Rule::unique('subjects', 'name->ar')->ignore($subject_id)
+            ],
         ];
     }
 }
