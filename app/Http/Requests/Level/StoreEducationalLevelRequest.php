@@ -24,8 +24,8 @@ class StoreEducationalLevelRequest extends FormRequest
     {
 
         return [
-            'name' => ["required","unique:educational_levels,name->en", "max:100"],
-            "name_ar"=>["required", "unique:educational_levels,name->ar", "max:100"],
+            'name' => ["required","unique:educational_levels,name->en", "max:50"],
+            "name_ar"=>["required", "unique:educational_levels,name->ar", "max:50"],
         ];
     }
     public function messages(): array

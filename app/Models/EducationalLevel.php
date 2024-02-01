@@ -16,7 +16,7 @@ class EducationalLevel extends Model
     public array $translatable = ['name'];
     protected $fillable = ['name'];
 
-    public function classses(){
+    public function classrooms(){
         return $this->hasMany(Classroom::class,'edu_id');
     }
 }

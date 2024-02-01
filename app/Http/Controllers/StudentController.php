@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Student\StoreStudentRequest;
 use App\Http\Requests\Student\UpdateStudentRequest;
 use App\Models\Classroom;
+use App\Models\EducationalLevel;
 use App\Models\Relative;
 use App\Models\Student;
 use App\Traits\PhotoTrait;
@@ -39,8 +40,9 @@ class StudentController extends Controller
         try {
         $classrooms = Classroom::all();
         $relatives = Relative::all();
+        $levels = EducationalLevel::all();
         return view('students_affairs/students.create_student',
-            compact('classrooms','relatives'));
+            compact('classrooms','relatives', 'levels'));
 
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -277,5 +279,13 @@ class StudentController extends Controller
         }catch (\Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
+    }
+
+    /**
+     * get classrooms according to educational level.
+     */
+    public function getClassrooms($id)
+    {
+        return Classroom::where('edu_id', $id)->pluck("name", "id");
     }
 }

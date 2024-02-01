@@ -6,6 +6,8 @@ use App\Http\Requests\Subject\StoreSubjectRequest;
 use App\Http\Requests\Subject\UpdateSubjectRequest;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class SubjectController extends Controller
 {
@@ -89,7 +91,6 @@ class SubjectController extends Controller
     public function update(UpdateSubjectRequest $request, $id)
     {
         try {
-
             $subject = Subject::findorFail($id);
             $subject->update([
                 'name' => [
