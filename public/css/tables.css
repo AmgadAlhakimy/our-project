@@ -59,10 +59,6 @@ td button:nth-child(2){
 .first-card{
 /* margin-top: -10px; */
 }
-.search-button{
-  margin-right: 15px;
-  margin-left: 10px;
-}
 .search2 {
   margin-right: 10px;
   width: 120px;
@@ -82,7 +78,7 @@ td button:nth-child(2){
   transition: all 1s ease;
 }
 thead th {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   background-color: #f6f9fc;
   color: #8493a5;
@@ -117,7 +113,6 @@ tr:hover img {
 /* Start table style  */
 .th-head-1 {
   width: 50px;
-  white-space: nowrap;
 }
 .th-head-2 {
   width: 100px;
@@ -131,10 +126,9 @@ tr:hover img {
 .th-head-1,.th-head-2,.th-head-3,.th-head-4 {
     color: var(--S-Color-1);
     font-size: 18px;
+    text-align: center;
 }
 .my-card {
-  /* border: 1px solid var(--grey-color); */
-  background-color: red;
   margin: 20px;
   padding: 20px;
 }
@@ -157,12 +151,14 @@ tr:hover img {
   transition: all 1s ease;
   background-color: #fff;
 }
+.table-section th {
+  text-align: center;
+}
 
 
 /* Start media */
 @media (max-width: 670px) {
   .container-title {
-    /* font-size: px; */
     margin-top: 0px;
     }
     .table-header .first-card{

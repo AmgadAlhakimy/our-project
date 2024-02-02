@@ -24,11 +24,20 @@
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
 
         <!-- table-hover table-striped -->
+        <div class="table-header mt-3 mb-3">
+            <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()" id="select_bt">{{__('public.select')}}</button>
+            <button class="save-button btn-danger me-1 ms-1">{{__('public.delete all')}}</button>
+        </div>
+        <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section">
-                <table class=" ">
+                <table class=" " id="check_table">
                     <thead>
                     <tr>
+                        <th class=" me-4 ms-4">
+                            <input type="checkbox" id="select_all" 
+                                style="display: none" >
+                        </th>
                         <th>
                             <div class="th-head-1">{{__('public.id')}}</div>
                         </th>
@@ -49,6 +58,7 @@
                     <tbody>
                     @foreach($levels as $Level)
                         <tr>
+                            <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
                             <td>{{$Level->id}}</td>
                             <td>{{$Level->name}}</td>
                             <td>{{$Level->created_at}}</td>

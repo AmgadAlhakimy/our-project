@@ -428,10 +428,43 @@ left: 20px;
       font-size: 30PX;
     }
   .title-1{
+    font-size: 35PX;
+  }
+}
+@media (max-width: 690px) {
+  .topic-name , .topic-title{
+    font-size: 15px;
+    margin-top: 0px;
+    }
+
+    .student-img{
+      height: 70px;
+      width: 50px;
+    }
+    .container-title{
+      font-size: 25PX;
+    }
+  .title-1{
     font-size: 30PX;
   }
 }
+@media (max-width: 560px) {
+  .topic-name , .topic-title{
+    font-size: 15px;
+    margin-top: 0px;
+    }
 
+    .student-img{
+      height: 70px;
+      width: 50px;
+    }
+    .container-title{
+      font-size: 20PX;
+    }
+  .title-1{
+    font-size: 25PX;
+  }
+}
 
 /* Start Check box Styles */
 

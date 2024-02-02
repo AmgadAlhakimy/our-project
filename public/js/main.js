@@ -22,7 +22,7 @@ toggleSidebar.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
 logo.addEventListener("click", () => {
-    sidebar.classList.toggle("close");
+    sidebar.classList.toggle("active");
 });
 
 // --------------------------------------------------------------------------------
@@ -98,5 +98,35 @@ function toggleInput() {
     check_test(checkbox1,input1,input2);
     check_test(checkbox2,input3,input4);
     check_test(checkbox3,input5,input6);
-
 }
+
+// table checkbox item
+const selectAllCheckbox = document.getElementById('select_all');
+const checkboxItems = document.querySelectorAll('.check_item');
+
+selectAllCheckbox.addEventListener('change', function() {
+    checkboxItems.forEach(function(checkbox) {
+        checkbox.checked = selectAllCheckbox.checked;
+    });
+    });
+
+    checkboxItems.forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+        const allChecked = [...checkboxItems].every(function(item) {
+        return item.checked;
+        });
+        selectAllCheckbox.checked = allChecked;
+    });
+    });
+// select_bt button
+function toggleCheckboxes() {
+    var checkboxes = document.querySelectorAll("input[type='checkbox']");
+    
+        checkboxes.forEach(function(checkbox) {
+        if (checkbox.style.display === "none") {
+            checkbox.style.display = "block";
+        } else {
+            checkbox.style.display = "none";
+        }
+        });
+    }

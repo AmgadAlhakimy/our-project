@@ -81,7 +81,6 @@
             </div>
         </div>
         <!-- ============= LIST ============== -->
-        <div class="my-menu">
             <div class="sidebar-nav">
                 <ul class="list-ul my-scroll">
                     <!--  dropdown list item عنوان القسم-->

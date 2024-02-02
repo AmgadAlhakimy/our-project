@@ -78,6 +78,17 @@ unset($__errorArgs, $__bag); ?>
                     </tr>
                     </thead>
                     <tbody>
+<<<<<<< HEAD
+                        
+
+
+
+                    <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <tr>
+                            <td class="fw-bolder"><?php echo e($student->id); ?></td>
+                            <td><?php echo e($student->name); ?></td>
+                            <td><img class="student-img" src="<?php echo e($student->photo); ?>" alt=""></td>
+=======
 
                     <tbody>
                         <tr class="test_1">
@@ -85,19 +96,22 @@ unset($__errorArgs, $__bag); ?>
                             <td>kj;lk;l</td>
                             <td><img src=""
                                 class="student-img" alt="photo"></td>
+>>>>>>> refs/remotes/origin/main
                             <td>
-                                <a href='/children' class="btn save-button btn-light me-5 w-100">
-                                    <?php echo e(__('student.Daily Follow-Up')); ?> <i class="ms-3 fa-solid fab-pen"></i>
-                                </a>
-                            </td>
+                                <a href="<?php echo e(route('follow_up_students.createNote', $student->id)); ?>" class="btn save-button btn-light me-5 w-100">
+                                    <?php echo e(__('student.Daily Follow-Up')); ?> (icon)<i class="ms-3 fa-solid fab-pen"></i></a></td>
                             <td></td>
                         </tr>
+<<<<<<< HEAD
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+=======
 
 
 
 
 
 
+>>>>>>> refs/remotes/origin/main
                     </tbody>
                 </table>
             </div>

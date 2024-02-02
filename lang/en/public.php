@@ -63,4 +63,8 @@ return [
     'some1'=>'بعض',
     'none1'=>'لا شيء',
     'select level'=>'please select educational level',
+
+    'select' => 'Select',
+    'unselect' => 'Un Select',
+    'delete all' => 'Delete All',
 ];

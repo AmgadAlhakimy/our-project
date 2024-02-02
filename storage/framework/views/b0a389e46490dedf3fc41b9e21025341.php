@@ -161,12 +161,32 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box ">
+                        <div class="box col-lg-6 col-md-6 ">
+                            <label for="className " class="form-label"><?php echo e(__('Student.level')); ?></label>
+                            <select id="className" class="form-control" name="level_id"
+                            onchange="console.log($(this).val())">
+                                <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option class="text-center" value="<?php echo e($level->id); ?>"><?php echo e($level->name); ?></option>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </select>
+                            <?php $__errorArgs = ['level_id'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <small class="form-text text-danger"><?php echo e($message); ?></small>
+                            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                        </div>
+
+                        <div class="box col-lg-6 col-md-6 ">
                             <label for="className " class="form-label"><?php echo e(__('Student.class')); ?></label>
                             <select id="className " class="form-control" name="classroom_id" value="<?php echo e(old('classroom_id')); ?>">
-                                <?php $__currentLoopData = $classrooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $classroom): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option class="text-center" value="<?php echo e($classroom->id); ?>"><?php echo e($classroom->name); ?></option>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+
+
                             </select>
                             <?php $__errorArgs = ['classroom_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -217,7 +237,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                 </div>
                 <!-- End parent info  -->
-                
+
                 <!-- Start health info  -->
                 <h3 class="container-title "><?php echo e(__('Student.health info')); ?></h3>
                 <div class="container containers-style mb-5">
@@ -396,7 +416,26 @@ unset($__errorArgs, $__bag); ?>
         </section>
     </main>
     <script>
-
+        $(document.ready(function (){
+            $('select[name="level_id"]').on('change', function (){
+                var level_id = $(this).val();
+                if(level_id){
+                    $.ajax({
+                        url: "<?php echo e(URL::to('classrooms')); ?>/" + level_id,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data){
+                            $('select[name="classroom_id"]').empty();
+                            $.each(data, function (key, value){
+                                $('select[name="classroom_id"]').append('<option value="' + key +'">' + value + '</option>');
+                            });
+                        },
+                    });
+                }else {
+                    console.log('AJAX load did not work');
+                }
+            });
+        }));
     </script>
 <?php $__env->stopSection(); ?>
 

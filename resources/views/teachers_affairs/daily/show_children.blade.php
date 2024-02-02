@@ -1,11 +1,9 @@
 {{------------ واجهة تفت رالمتابعة الخاص بطلاب المدرسة ----------------}}
-
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table">
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
-
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card  ">
@@ -17,7 +15,7 @@
                         <div class="row ">
                             <label class="col-9">
                                 <input type="text" required class="form-control "
-                                       name="search" value="{{isset($search) ? $search : ''}}">
+                                    name="search" value="{{isset($search) ? $search : ''}}">
                             </label>
                             <button type="submit" class="col save-button ">{{__('public.search')}}</button>
                         </div>
@@ -31,13 +29,12 @@
                     <h4 class=" text-center">{{$classroom->name}}</h4>
                     <h4 class=" Names"> {{$subject->name}}</h4>
                 </div>
-
+                
                 <a class="card-info card-info_2  col  save-button"
                     href="{{route('follow_up_children.index')}}">
                     <h4 class="text-center">{{__('teacher.For All Class')}}</h4>
                     <h4 class=" Names"> MATH</h4>
                 </a>
-
                 <div class="card-info card-info_2 col ">
                     <h4 class="text-center ">Month</h4>
                     <h4 class=" Names">10</h4>
@@ -49,29 +46,30 @@
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">
-                <table class=" " >
-                    <thead>
-                    <tr class="">
-                        <th ><div class="th-head-1" >{{__('public.id')}}</div></th>
-                        <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
+                <table  >
+                    <thead >
+                    <tr >
+                        <th class="text-center"><div class="th-head-1" >{{__('public.id')}}</div></th>
+                        <th ><div class="th-head-1" >{{__('public.name')}}</div></th>
                         <th ><div class="th-head-1" >{{__('public.photo')}}</div></th>
-                        <th ><div class="th-head-2" >{{__('student.Daily Follow-Up')}}</div></th>
-                        <th ><div class="th-head-1" ></div></th>
+                        <th ><div class="th-head-1" >{{__('student.Daily Follow-Up')}}</div></th>
+                        <th ><div class="th-head-1 " >abcent</div></th>
+                        <th ><div class="th-head-1" >describtion abcent</div></th>
                     </tr>
                     </thead>
                     <tbody>
-
-                    <tbody>
-                     @foreach($classroom->students  as $student )
+                    @foreach($classroom->students  as $student )
                         <tr class="test_1">
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
                             <td><img class="student-img" src="{{$student->photo}}" alt=""></td>
+                            <td><a href="{{route('follow_up_children.createNote',$student->id)}}"
+                                class="btn save-button btn-light me-5 w-100">{{__('student.Daily Follow-Up')}} (icon)
+                                <i class=" fa-solid fab-pen"></i></a></td>
                             <td>
-                                <a href="{{route('follow_up_children.createNote',$student->id)}}" class="btn save-button btn-light me-5 w-100">
-                                    {{__('student.Daily Follow-Up')}} (icon)<i class="ms-3 fa-solid fab-pen"></i></a></td>
+                                <input type="checkbox" class="check_item " id="checkbox">
                             </td>
-                            <td></td>
+                            <td> <input class="form-control shadow" type="text" placeholder="the abcent ascuces"></td>
                         </tr>
                     @endforeach
                     </tbody>
