@@ -6,11 +6,12 @@
                 {{Session::get('success')}}
             </div>
         @endif
-        <form method="post" action="{{route('follow_up_children.store')}}">
+        <form method="post" action="{{route('follow_up_children.storeAll',$classroom->id)}}">
+            @method('GET')
             @csrf
             {{-- <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1> --}}
             <!-- Start personal info  -->
-            <h3 class="container-title">HOMEWORK - ASSIGNMENT</h3>
+            <h3 class="container-title">HOMEWORK - ASSIGNMENT FOR ALL STUDENTS</h3>
                 <div class="container  containers-style">
                     <div class="row">
                         <!-- 5 -->
@@ -18,11 +19,12 @@
                             <!-- 1 -->
                             @foreach($classroom->subjects as $subject)
                                 <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                    <input type="text"  class="form-control ms-2 me-2" name="subject[]"
-                                        value="{{$subject->name}}">
+                                    <select name="subject[]" class="form-control">
+                                    <option value="{{$subject->id}}">{{$subject->name}}</option>
                                     @error('subject')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
+                                    </select>
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 ">
                                     <input type="text" class=" form-control ms-2 me-2" name="comment[]">
@@ -42,7 +44,7 @@
                 <div class="row ">
                     <!-- 1 -->
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5  ">
-                        <img class=" student-img h-100 w-50" src="../../../public/assets/icons/food-2.jpg" alt="">
+                        <img class=" student-img h-100 w-50" src="{{asset('assets/icons/toilet.jpg')}}" alt="">
                         <select class="col form-select form-control" name="bath">
                             <option value="{{__('public.all')}}">{{__('public.all')}}</option>
                             <option value="{{__('public.some')}}">{{__('public.some')}}</option>
@@ -53,7 +55,7 @@
                         @enderror
                     </div>
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5 ">
-                        <img class=" student-img h-100 w-50" src="../../../public/assets/icons/food-1.jpg" alt="">
+                        <img class=" student-img h-100 w-50" src="{{asset('assets/icons/food-1.jpg')}}" alt="">
                         <select class="col form-select form-control" name="snack">
                             <option value="{{__('public.all')}}">{{__('public.all')}}</option>
                             <option value="{{__('public.some')}}">{{__('public.some')}}</option>
@@ -64,7 +66,7 @@
                         @enderror
                     </div>
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5">
-                        <img class=" student-img h-100 w-50" src="../../../public/assets/icons/toilet.jpg" alt="">
+                        <img class=" student-img h-100 w-50" src="{{asset('assets/icons/food-2.jpg')}}" alt="">
                         <select class="col form-select form-control" name="food">
                             <option value="{{__('public.all')}}">{{__('public.all')}}</option>
                             <option value="{{__('public.some')}}">{{__('public.some')}}</option>

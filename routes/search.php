@@ -44,14 +44,7 @@ Route::get('marks/search',
     [MarkController::class, 'search'])
     ->name('marks.search');
 
-Route::get('follow-up/createNote/{id}',
-    [FollowUpStudentController::class, 'createNote'])
-    ->name('follow_up_students.createNote');
-
-
-
-
-
 Route::get('/classrooms/getClassrooms/{id}',
     [StudentController::class, 'getClassrooms'])
     ->name('classrooms.getClassrooms');
+

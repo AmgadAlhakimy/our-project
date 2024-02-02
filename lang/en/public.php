@@ -67,4 +67,6 @@ return [
     'select' => 'Select',
     'unselect' => 'Un Select',
     'delete all' => 'Delete All',
+    'num'=>'Number',
+
 ];

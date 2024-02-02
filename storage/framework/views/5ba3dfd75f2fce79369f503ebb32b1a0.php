@@ -9,7 +9,7 @@
         <form method="post" action="<?php echo e(route('follow_up_children.store')); ?>">
             <?php echo csrf_field(); ?>
             <input type="hidden" name="student_id" value="<?php echo e($student->id); ?>">
-            
+
             <!-- Start personal info  -->
 
             <div class="container containers-style mb-3   head-name">
@@ -26,7 +26,7 @@
             <h3 class="container-title">HOMEWORK - ASSIGNMENT</h3>
 
                 <div class="container containers-style">
-                
+
                 <div class="row">
                     <!-- 5 -->
                     <div class="box row">
@@ -150,4 +150,4 @@ unset($__errorArgs, $__bag); ?>
 </section>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/daily/follow_up_children.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/daily/follow_up_child.blade.php ENDPATH**/ ?>

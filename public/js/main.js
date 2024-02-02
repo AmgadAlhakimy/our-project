@@ -22,7 +22,7 @@ toggleSidebar.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
 logo.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
+    sidebar.classList.toggle("close");
 });
 
 // --------------------------------------------------------------------------------
@@ -121,7 +121,7 @@ selectAllCheckbox.addEventListener('change', function() {
 // select_bt button
 function toggleCheckboxes() {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
-    
+
         checkboxes.forEach(function(checkbox) {
         if (checkbox.style.display === "none") {
             checkbox.style.display = "block";

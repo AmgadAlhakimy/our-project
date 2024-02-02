@@ -18,6 +18,7 @@ return new class extends Migration
             $table->json('bath');
             $table->json('snack');
             $table->json('food');
+            $table->string('note')->nullable();
             $table->foreignId('student_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
