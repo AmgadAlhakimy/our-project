@@ -14,6 +14,7 @@ return [
     */
 
     "success"=>"Data has been saved successfully!",
+    "already exists"=>"Data has already been saved!",
     "update"=>"Data has been updated successfully!",
     "delete"=>"Data has been deleted successfully!",
     "restore"=>"Data has been restored successfully!",

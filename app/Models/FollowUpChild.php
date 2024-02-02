@@ -11,7 +11,7 @@ class FollowUpChild extends Model
     use HasTranslations;
 
 
-    protected $fillable = ['subject','comment', 'bath', 'snack', 'food','student_id'];
+    protected $fillable = ['subject','comment', 'bath', 'snack', 'food','student_id','note'];
     protected $translatable = ['bath', 'snack', 'food'];
     protected $casts =[
         'subject' => 'array',

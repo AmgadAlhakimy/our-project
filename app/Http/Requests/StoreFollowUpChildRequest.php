@@ -27,4 +27,10 @@ class StoreFollowUpChildRequest extends FormRequest
 //            "comment.*"  => 'required',
         ];
     }
+    public function messages(): array
+    {
+        return [
+            'subject.*.required'=>'please fill all fields',
+        ];
+    }
 }

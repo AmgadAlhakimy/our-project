@@ -34,11 +34,10 @@ return [
 
     // the daily follow up book
     'Absence and Daily Book' => 'الغياب ودفتر المتابعة',
-    'For All Class'=>'لكل الفصل',
+    'for all students'=>'إضافة إلى كل الطلاب',
     'TO BRING TO SCHOOL'=>'اشياء لاخذها للمدرسة',
     'TO TAKE HOME'=>'اشياء لاخذها للبيت ',
     'NOTE'=>'ملاحظات',
-    'For All Students'=>'لكل الطلاب ',
     'ABSENCE REASON'=>'سبب الغياب ',
 
 

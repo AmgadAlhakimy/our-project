@@ -35,11 +35,10 @@ return [
 
         // the daily follow up book
         'Absence and Daily Book' => 'Absence and Daily Book',
-        'For All Class'=>'For All Class',
         'TO BRING TO SCHOOL'=>'TO BRING TO SCHOOL',
         'TO TAKE HOME'=>'TO TAKE HOME',
         'NOTE'=>'NOTE',
-        'For All Students'=>'For All Students',
+        'for all students'=>'Add For All Students',
         'ABSENCE REASON'=>'ABSENCE REASON',
-    
+
 ];
