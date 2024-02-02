@@ -15,7 +15,7 @@
                 <h3 class="container-title"><?php echo e(__('Student.Student info')); ?></h3>
                 <div class="container containers-style ">
                     <div class="row">
-
+                        
                         <div class="box col-lg-6 col-md-12">
                             <label class="  title-3 "
                             for="english-name"><?php echo e(__("Student.Student's name in arabic")); ?></label>
@@ -31,7 +31,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-12">
                             <label class="text-center"
                                 for="arab-name"><?php echo e(__("Student.Student's name in english")); ?></label>
@@ -47,7 +47,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box row me-2 mb-3 col-lg-6 col-md-12 ">
                             <label class="" for="photo"><?php echo e(__('change students photo')); ?></label>
                             <input type="file" class="form-control col-8" id="photo" name="photo" value="<?php echo e($student->photo); ?>">
@@ -80,7 +80,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-
+                            
                             <div class="col-lg-6 col-md-6 ">
                                 <span
                                     class=" text-center title-3 "><?php echo e(__("Student.Student's address in english")); ?></span>
@@ -97,7 +97,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender"><?php echo e(__('Student.gender')); ?></label>
                             <select class="col form-select form-control" id="gender" name="gender">
@@ -119,7 +119,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-6">
                             <label for="age"><?php echo e(__('Student.birthdate')); ?></label>
                             <input type="date" class="form-control" id="age" name="birthdate" value="<?php echo e($student->birthdate); ?>">
@@ -134,10 +134,11 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-6">
                             <label for="english-birth-place"><?php echo e(__('Student.place of birth in arabic')); ?></label>
-                            <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar"  value="<?php echo e($student->getTranslation('place_of_birth','ar')); ?>">
+                            <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar"
+                                   value="<?php echo e($student->getTranslation('place_of_birth','ar')); ?>">
                             <?php $__errorArgs = ['place_of_birth_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -149,10 +150,11 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-6">
                             <label for="arabic-birth-place"><?php echo e(__('Student.place of birth in english')); ?></label>
-                            <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth"  value="<?php echo e($student->getTranslation('place_of_birth','en')); ?>">
+                            <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth"
+                                   value="<?php echo e($student->getTranslation('place_of_birth','en')); ?>">
                             <?php $__errorArgs = ['place_of_birth'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -164,17 +166,17 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box ">
                             <label for="className " class="form-label"><?php echo e(__('Student.class')); ?></label>
-                            <select id="className " class="form-control" name="class">
-                                <?php $__currentLoopData = $classes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $class): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <option class="text-center" value="<?php echo e($class->id); ?>"
-                                    <?php if($class->id == $student->class_id): ?> selected <?php endif; ?>>
-                                        <?php echo e($class->name); ?></option>
+                            <select id="className " class="form-control" name="classroom_id">
+                                <?php $__currentLoopData = $classrooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $classroom): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option class="text-center" value="<?php echo e($classroom->id); ?>"
+                                    <?php if($classroom->id == $student->classroom_id): ?> selected <?php endif; ?>>
+                                        <?php echo e($classroom->name); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
-                            <?php $__errorArgs = ['class'];
+                            <?php $__errorArgs = ['classroom_id'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -184,7 +186,9 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                            <input type="text" value="<?php echo e($student->relative->id); ?>" name="relative_id">
                         </div>
+
                     </div>
                 </div>
                 <!-- End personal info  -->

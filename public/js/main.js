@@ -22,7 +22,7 @@ toggleSidebar.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
 logo.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
+    sidebar.classList.toggle("close");
 });
 
 // --------------------------------------------------------------------------------

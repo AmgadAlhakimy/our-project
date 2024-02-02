@@ -7,18 +7,18 @@
 
                 </div>
             <?php endif; ?>
-            <form method="post" action="<?php echo e(route('students.store')); ?>" enctype="multipart/form-data">
+            <form method="post" action="<?php echo e(route('relatives.store')); ?>">
                 <?php echo csrf_field(); ?>
 
-
+                
                 <h3 class="container-title"><?php echo e(__('Student.parent info')); ?></h3>
                 <div class="container  containers-style ">
                     <div class="row">
                         <!-- father name  -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="father"><?php echo e(__("Student.father's name in english")); ?></label>
-                            <input type="text" class="form-control" id='father' name="father" value="<?php echo e(old('father')); ?>">
-                            <?php $__errorArgs = ['father'];
+                            <input type="text" class="form-control" id='father' name="father_name" value="<?php echo e(old('father_name')); ?>">
+                            <?php $__errorArgs = ['father_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -31,8 +31,8 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label for="father_ar"><?php echo e(__("Student.father's name in arabic")); ?></label>
-                            <input type="text" class="form-control" id='father_ar' name="father_ar" value="<?php echo e(old('father_ar')); ?>">
-                            <?php $__errorArgs = ['father_ar'];
+                            <input type="text" class="form-control" id='father_ar' name="father_name_ar" value="<?php echo e(old('father_name_ar')); ?>">
+                            <?php $__errorArgs = ['father_name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -76,8 +76,8 @@ unset($__errorArgs, $__bag); ?>
                         <div class="box ">
                             <label for="f-numbers"><?php echo e(__("Student.father's contacts")); ?></label>
                             <div class="row ">
-                                <input type="number" class="col form-control ms-2 me-2" id='f-numbers' name="father_num_1" value="<?php echo e(old('father_num_1')); ?>">
-                                <?php $__errorArgs = ['father_num_1'];
+                                <input type="number" class="col form-control ms-2 me-2" id='f-numbers' name="father_contact1" value="<?php echo e(old('father_contact1')); ?>">
+                                <?php $__errorArgs = ['father_contact1'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -87,8 +87,8 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                <input type="number" class="col form-control me-2 ms-2" id='f-numbers' name="father_num_2" value="<?php echo e(old('father_num_2')); ?>">
-                                <?php $__errorArgs = ['father_num_2'];
+                                <input type="number" class="col form-control me-2 ms-2" id='f-numbers' name="father_contact2" value="<?php echo e(old('father_contact2')); ?>">
+                                <?php $__errorArgs = ['father_contact2'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -103,8 +103,8 @@ unset($__errorArgs, $__bag); ?>
                         <!-- mother name  -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="arab-mother-name"><?php echo e(__("Student.mother's name in english")); ?></label>
-                            <input type="text" class="form-control" id='arab-mother-name' name="mother" value="<?php echo e(old('mother')); ?>">
-                            <?php $__errorArgs = ['mother'];
+                            <input type="text" class="form-control" id='arab-mother-name' name="mother_name" value="<?php echo e(old('mother_name')); ?>">
+                            <?php $__errorArgs = ['mother_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -117,8 +117,8 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label for="english-mother-name"><?php echo e(__("Student.mother's name in arabic")); ?></label>
-                            <input type="text" class="form-control" id='english-mother-name' name="mother_ar" value="<?php echo e(old('mother_ar')); ?>">
-                            <?php $__errorArgs = ['mother_ar'];
+                            <input type="text" class="form-control" id='english-mother-name' name="mother_name_ar" value="<?php echo e(old('mother_name_ar')); ?>">
+                            <?php $__errorArgs = ['mother_name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -162,8 +162,8 @@ unset($__errorArgs, $__bag); ?>
                         <div class="box ">
                             <label for="m-numbers"><?php echo e(__("Student.mother's contacts")); ?></label>
                             <div class="row ">
-                                <input type="number" class="col form-control ms-2 me-2" id='m-numbers' name="mother_num_1" value="<?php echo e(old('mother_num_1')); ?>">
-                                <?php $__errorArgs = ['mother_num_1'];
+                                <input type="number" class="col form-control ms-2 me-2" id='m-numbers' name="mother_contact1" value="<?php echo e(old('mother_contact1')); ?>">
+                                <?php $__errorArgs = ['mother_contact1'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -173,8 +173,8 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                <input type="number" class="col form-control me-2 ms-2" id='m-numbers' name="mother_num_2" value="<?php echo e(old('mother_num_2')); ?>">
-                                <?php $__errorArgs = ['mother_num_2'];
+                                <input type="number" class="col form-control me-2 ms-2" id='m-numbers' name="mother_contact2" value="<?php echo e(old('mother_contact2')); ?>">
+                                <?php $__errorArgs = ['mother_contact2'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -189,8 +189,8 @@ unset($__errorArgs, $__bag); ?>
                         <!-- garden name  -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="name-a"><?php echo e(__('Student.kin name in english')); ?></label>
-                            <input type="text" class="form-control" id='name-a' name="kin"  value="<?php echo e(old('kin')); ?>">
-                            <?php $__errorArgs = ['kin'];
+                            <input type="text" class="form-control" id='name-a' name="kin_name"  value="<?php echo e(old('kin_name')); ?>">
+                            <?php $__errorArgs = ['kin_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -203,8 +203,8 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label for="name-e"><?php echo e(__('Student.kin name in arabic')); ?></label>
-                            <input type="text" class="form-control" id='name-e' name="kin_ar"  value="<?php echo e(old('kin_ar')); ?>">
-                            <?php $__errorArgs = ['kin_ar'];
+                            <input type="text" class="form-control" id='name-e' name="kin_name_ar"  value="<?php echo e(old('kin_name_ar')); ?>">
+                            <?php $__errorArgs = ['kin_name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -247,7 +247,7 @@ unset($__errorArgs, $__bag); ?>
                         <!-- garden number  -->
                         <div class="box col">
                             <label for="number"><?php echo e(__('Student.kin contact')); ?></label>
-                            <input type="number" class="form-control mb-5" id='number' name="kin_contact" value="<?php echo e(old('kin_contact')); ?>">
+                            <input type="number" class="form-control " id='number' name="kin_contact" value="<?php echo e(old('kin_contact')); ?>">
                             <?php $__errorArgs = ['kin_contact'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -261,7 +261,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-
+                
 
                 <div class=" row">
                     <div class="box col ">
@@ -271,7 +271,7 @@ unset($__errorArgs, $__bag); ?>
                         <input class="clear-button " type="reset" value="<?php echo e(__('public.clear')); ?>">
                     </div>
                 </div>
-
+                
                 <!-- End parent info  -->
             </form>
         </section>

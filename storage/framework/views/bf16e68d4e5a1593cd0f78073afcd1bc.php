@@ -56,12 +56,9 @@
                                     <div class="th-head-1 ">id</div>
                                     <div></div>
                                 </th>
+                                
                                 <th>
-                                    <div class="th-head-1 ">student id</div>
-                                    <div></div>
-                                </th>
-                                <th>
-                                    <div class="th-head-3">Name</div>
+                                    <div class="th-head-2">Name</div>
                                 </th>
                                 <th>
                                     <div class="th-head-1">photo</div>
@@ -103,8 +100,8 @@
                             <tbody>
                             <?php $__currentLoopData = $marks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mark): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    <td><input type="hidden" name="mark[]" value="<?php echo e($mark->id); ?>"></td>
-                                    <td><?php echo e($counter); ?></td>
+                                    
+                                    
                                     <td><?php echo e($mark->student->id); ?></td>
                                     <td><?php echo e($mark->student->name); ?></td>
                                     <td><img src="<?php echo e($mark->student->photo); ?>" class="student-img" alt=""></td>

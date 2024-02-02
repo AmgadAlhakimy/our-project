@@ -57,12 +57,12 @@
                                     <div class="th-head-1 ">id</div>
                                     <div></div>
                                 </th>
-                                <th>
+                                {{-- <th>
                                     <div class="th-head-1 ">student id</div>
                                     <div></div>
-                                </th>
+                                </th> --}}
                                 <th>
-                                    <div class="th-head-3">Name</div>
+                                    <div class="th-head-2">Name</div>
                                 </th>
                                 <th>
                                     <div class="th-head-1">photo</div>
@@ -104,8 +104,8 @@
                             <tbody>
                             @foreach($marks as $mark)
                                 <tr>
-                                    <td><input type="hidden" name="mark[]" value="{{$mark->id}}"></td>
-                                    <td>{{$counter}}</td>
+                                    {{-- <td><input type="hidden" name="mark[]" value="{{$mark->id}}"></td> --}}
+                                    {{-- <td>{{$counter}}</td> --}}
                                     <td>{{$mark->student->id}}</td>
                                     <td>{{$mark->student->name}}</td>
                                     <td><img src="{{$mark->student->photo}}" class="student-img" alt=""></td>
