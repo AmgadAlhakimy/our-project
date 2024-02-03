@@ -12,7 +12,7 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
+ 
     //shared in many pages
     'create new Activity'=>'إنشاء نشاط جديد',
     'Activity info'=>'معلومات النشاط',
@@ -23,5 +23,7 @@ return [
     'Activity location contact'=>'رقم الهاتف الخاص بالموقع',
     'date of Activity'=>'تاريخ النشاط',
     'other info'=>'معلومات أخرى',
-    'update Activity'=>'تعديل النشاط: '
+    'update Activity'=>'تعديل النشاط: ',
+    'in arabic'=>'بالعربية',
+    'in english'=>'بالأنجليزية',
 ];

@@ -25,20 +25,20 @@
             <div class="card table-section ">
                 <table class=" ">
                     <thead>
-                    <tr>
-                        <th>
+                        <tr>
+                        <th >
                             <div class="th-head-1">{{__('public.id')}}</div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-3">{{__('public.name')}}</div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-2">{{__('public.location')}}</div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-2">{{__('public.contact')}}</div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-2">{{__('public.date')}}</div>
                         </th>
                         <th>
@@ -58,6 +58,7 @@
                     @foreach($activities  as $activity )
                         <tbody>
                         <tr>
+                            {{-- <td class="num_table ">{{$counter}}</td> --}}
                             <td>{{$activity->id}}</td>
                             <td>{{$activity->name}}</td>
                             <td>{{$activity->location}}</td>

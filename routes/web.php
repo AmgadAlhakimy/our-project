@@ -48,15 +48,23 @@ Route::group(
 
         // absence
         Route::get('school', function () {
-            return view('teachers_affairs/daily/school-follow-up');
+            return view('teachers_affairs/follow_up_students/school-follow-up');
+        });
+        // absence
+        Route::get('students_view', function () {
+            return view('teachers_affairs/follow_up_students/index_school_follow_up');
         });
         // nursery
         Route::get('nursery', function () {
-            return view('teachers_affairs/daily/follow-up-nursery');
+            return view('teachers_affairs/follow_up_children/follow-up-nursery');
+        });
+        // nursery
+        Route::get('children_view', function () {
+            return view('teachers_affairs/follow_up_children/index_children_follow_up');
         });
         // nursery
         Route::get('children', function () {
-            return view('teachers_affairs/daily/follow-up-children');
+            return view('teachers_affairs/follow_up_children/follow-up-children');
         });
 
         // absence

@@ -7,7 +7,7 @@
         <div class="table-header">
             
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">Students Information</h4>
+                <h4 class="col container-title mt-2">عرض غياب طلاب الروضة</h4>
                 <div class="row first-card mt-4">
                     <form method="post" action="<?php echo e(route('students.search')); ?>">
                         <?php echo method_field('GET'); ?>
@@ -61,12 +61,11 @@ unset($__errorArgs, $__bag); ?>
             <table class=" " >
                 <thead>
                     <tr class="">
-                        <th ><div class="th-head-1 " >id</div></th>
-                        <th ><div class="th-head-3" >Name</div></th>
-                        <th ><div class="th-head-2" >photo</div></th>
-                        <th ><div class="th-head-2" >Absence</div></th>
-                        <th ><div class="th-head-4" >descrbiton</div></th>
-                        <th ><div class="th-hea" ></div></th>
+                        <th class="th-head-1 text-center">id</th>
+                        <th class="th-head-3 text-center">Name</th>
+                        <th class="th-head-2 text-center">photo</th>
+                        <th class="th-head-2 text-center">زمن الحضور</th>
+                        <th class="th-head-3 text-center">زمن الأنصراف</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,14 +74,13 @@ unset($__errorArgs, $__bag); ?>
                         <td>mohanad naser mansour</td>
                         <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
                         <td><div class=" mt-3">
-                                <input class="toggle  " type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" checked >
-                                <label class="form-label  rounded" for="healthProblem" id="healthProblem"></label>
+                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" checked >
+                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                         </td>
                         <td>
                             <input type="text" class="form-control">
                         </td>
-                        <td></td>
                     </tr>
                 </tbody>
             </div>

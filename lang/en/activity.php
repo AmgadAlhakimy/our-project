@@ -13,7 +13,7 @@ return [
     |
     */
 
-    //shared in many pages
+    //shared in many pages 
     'create new Activity'=>'Create New Activity',
     'Activity info'=>'Activity Info',
     'Activity name in english'=>'Activity Name in English',
@@ -23,5 +23,8 @@ return [
     'Activity location contact'=>'Activity Location Contact',
     'date of Activity'=>'Date of Activity',
     'other info'=>'Other Info',
-    'update Activity'=>'Update Activity: '
+    'update Activity'=>'Update Activity: ',
+    
+    'in arabic'=>'In Arabic',
+    'in english'=>'In English',
 ];
