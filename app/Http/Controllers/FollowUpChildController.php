@@ -22,7 +22,7 @@ class FollowUpChildController extends Controller
         try {
             $classroom = Classroom::findorfail(1);
             $subject = Subject::findorfail(1);
-            return view('teachers_affairs/daily.follow_up_all_children',
+            return view('teachers_affairs/follow_up_children.follow_up_all_children',
                 compact('subject', 'classroom'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -35,7 +35,7 @@ class FollowUpChildController extends Controller
             $classroom = Classroom::findorfail($classroom_id);
             $subject = Subject::findorfail(2);
             $month = Carbon::now()->format('F j');
-            return view('teachers_affairs/daily.show_children',
+            return view('teachers_affairs/follow_up_children.show_children',
                 compact('subject', 'classroom', 'month'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -61,7 +61,7 @@ class FollowUpChildController extends Controller
                 ->where('created_at', 'like', "%$date%")->exists()) {
                 $student = Student::findorfail($student_id);
                 $follow_up = FollowUpChild::where('student_id', $student_id)->get();
-                return view('teachers_affairs/daily.follow_up_child',
+                return view('teachers_affairs/follow_up_children.follow_up_child',
                     compact('student', 'follow_up'));
 
             } else {

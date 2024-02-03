@@ -197,7 +197,7 @@
                     <div class="submenu">
                         <div class="line-black">
                             <a href='/school' class="li-link">علوم \ سادس </a>
-                            <a href="<?php echo e(route('follow_up_children.showChildren',['id1'=>1,'id2'=>2])); ?>" class="li-link">quran \ KG1 </a>
+                            <a href="<?php echo e(route('follow_up_children.showChildren',1)); ?>" class="li-link">quran \ KG1 </a>
                             <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
                         </div>
                     </div>

@@ -244,7 +244,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="{{route('marks.insertMarks',1)}}" class="li-link">رياضيات \ ثالث</a>
+                                <a href="{{route('marks.insertMarks',2)}}" class="li-link">رياضيات \ ثالث</a>
                                 <a href='#' class="li-link">علوم الحاسوب \ اول</a>
                                 <a href='#' class="li-link">علوم الحاسوب \ ثاني</a>
                                 <a href='#' class="li-link">علوم الحاسوب \ ثالث</a>

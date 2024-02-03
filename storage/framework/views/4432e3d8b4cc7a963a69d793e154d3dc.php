@@ -30,7 +30,7 @@
 
                 <a class="card-info card-info_2  col  save-button"
                     href='/children'>
-                    <h4 class="text-center"><?php echo e(__('teacher.For All Class')); ?></h4>
+                    <h4 class="text-center"><?php echo e(__('teacher.for all students')); ?></h4>
                     <h4 class=" Names"> MATH</h4>
                 </a>
 
@@ -68,7 +68,7 @@ unset($__errorArgs, $__bag); ?>
             <?php echo csrf_field(); ?>
             <div class="table-header mt-3">
                 
-                <h4 class="col container-title "><?php echo e(__('teacher.For All Students')); ?> </h4>
+                <h4 class="col container-title "><?php echo e(__('teacher.for all students')); ?> </h4>
 
                 <div class="box row me-2 ms-2 mb-1 ">
                     <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
@@ -82,7 +82,7 @@ unset($__errorArgs, $__bag); ?>
                     </div>
                 </div>
             </div>
-            
+
             <div class=" table-header mt-3">
                 <div class="row">
                     <div class="cards_info_style col-lg-4 col-md-6 col-sm-12 mb-2">
@@ -116,16 +116,16 @@ unset($__errorArgs, $__bag); ?>
                         <div class=" row me-4 ms-2 mb-1">
                             <div class="notes col-2 center_y_x">
                                 <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" checked >
-                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>                        
+                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                             <div class="notes col">
                                 <input class="form-control shadow mb-1" placeholder=" <?php echo e(__('teacher.ABSENCE REASON')); ?>"  id="" ></input>
                             </div>
-                        </div>                    
+                        </div>
                     </div>
 
                 </div>
-                
+
             </div>
         </form>
     </div>
