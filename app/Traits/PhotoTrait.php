@@ -28,6 +28,5 @@ trait PhotoTrait
         if (file_exists($image_path)){
             unlink($image_path);
         }
-
     }
 }

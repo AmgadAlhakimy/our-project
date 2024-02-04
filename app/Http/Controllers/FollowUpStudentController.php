@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classroom;
+use App\Http\Requests\FollowUpStudent\StoreFollowUpStudentRequest;
+use App\Http\Requests\FollowUpStudent\UpdateFollowUpStudentRequest;
 use App\Models\FollowUpStudent;
-use App\Http\Requests\StoreFollowUpStudentRequest;
-use App\Http\Requests\UpdateFollowUpStudentRequest;
 use App\Models\Student;
 
 class FollowUpStudentController extends Controller

@@ -24,14 +24,26 @@ class StoreEducationalLevelRequest extends FormRequest
     {
 
         return [
-            'name' => ["required","unique:educational_levels,name->en", "max:50"],
-            "name_ar"=>["required", "unique:educational_levels,name->ar", "max:50"],
+            'name' => [
+                "required",
+                "unique:educational_levels,name->en",
+                "max:50",
+                "regex:/^[a-zA-Z\s]+$/"
+                ],
+            "name_ar" => [
+                "required",
+                "unique:educational_levels,name->ar",
+                "max:50",
+                "regex:/^[\p{Arabic}\s]+$/u"
+                ],
         ];
     }
+
     public function messages(): array
     {
         return [
-            //
+            'name.regex'=>__('validation.english letters'),
+            'name_ar.regex'=>__('validation.arabic letters'),
         ];
     }
 }

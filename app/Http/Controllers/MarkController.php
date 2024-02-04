@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classroom;
+use App\Http\Requests\Marks\StoreMarkRequest;
+use App\Http\Requests\Marks\UpdateMarkRequest;
 use App\Models\Mark;
-use App\Http\Requests\StoreMarkRequest;
-use App\Http\Requests\UpdateMarkRequest;
-use App\Models\Student;
-use App\Models\Subject;
 
 class MarkController extends Controller
 {

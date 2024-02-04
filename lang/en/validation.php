@@ -150,7 +150,8 @@ return [
     'url' => 'The :attribute field must be a valid URL.',
     'ulid' => 'The :attribute field must be a valid ULID.',
     'uuid' => 'The :attribute field must be a valid UUID.',
-
+    'english letters'=>'This filed must be only English letters',
+    'arabic letters'=>'This filed must be only Arabic letters',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -165,6 +166,7 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+
         ],
     ],
 

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FollowUpChild\StoreFollowUpChildRequest;
+use App\Http\Requests\FollowUpChild\UpdateFollowUpChildRequest;
 use App\Models\Classroom;
 use App\Models\FollowUpChild;
-use App\Http\Requests\StoreFollowUpChildRequest;
-use App\Http\Requests\UpdateFollowUpChildRequest;
 use App\Models\Student;
 use App\Models\Subject;
 use Carbon\Carbon;
