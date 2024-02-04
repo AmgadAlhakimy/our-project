@@ -7,7 +7,7 @@
 
                 </div>
             <?php endif; ?>
-            <h1 class="p-relative title-1"> <?php echo e(__('Activity.create new Activity')); ?> </h1>
+            <h1 class="p-relative title-1"><?php echo e(__('Activity.create new Activity')); ?></h1>
             <form action="<?php echo e(route('activities.store')); ?>" method="post">
                 <?php echo csrf_field(); ?>
                 <h3 class="container-title"><?php echo e(__('Activity.Activity info')); ?></h3>
@@ -16,7 +16,7 @@
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12">
                             <label class="form-text" for="activity-name-e"><?php echo e(__('Activity.Activity name in arabic')); ?></label>
-                            <input type="text" class="form-control" id='activity-name-e' placeholder="in arabic"
+                            <input type="text" class="form-control" id='activity-name-e' placeholder="<?php echo e(__('Activity.in arabic')); ?>"
                             name="name_ar" value="<?php echo e(old('name_ar')); ?>">
                             <?php $__errorArgs = ['name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -29,10 +29,10 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-12">
                             <label class="" for="activity-name-a"><?php echo e(__('Activity.Activity name in english')); ?> </label>
-                            <input type="text" class="form-control" id='activity-name-a' placeholder="in english"
+                            <input type="text" class="form-control" id='activity-name-a' placeholder="<?php echo e(__('Activity.in english')); ?>"
                                         name="name" value="<?php echo e(old('name')); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -49,7 +49,7 @@ unset($__errorArgs, $__bag); ?>
                         <div class="box col-lg-6 col-md-12">
                             <label class="" for="area-name-e"><?php echo e(__('Activity.Activity location in arabic')); ?></label>
                             <input type="text" class="form-control " id='area-name-e' name="location_ar"
-                            placeholder="in arabic" value="<?php echo e(old('location_ar')); ?>">
+                            placeholder="<?php echo e(__('Activity.in arabic')); ?>" value="<?php echo e(old('location_ar')); ?>">
                             <?php $__errorArgs = ['location_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -61,11 +61,11 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-12">
                             <label class="" for="area-name-a"><?php echo e(__('Activity.Activity location in english')); ?></label>
                             <input type="text" class="form-control " id='area-name-a' name="location"
-                                placeholder="in english" value="<?php echo e(old('location')); ?>">
+                                placeholder="<?php echo e(__('Activity.in english')); ?>" value="<?php echo e(old('location')); ?>">
                             <?php $__errorArgs = ['location'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -77,7 +77,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-
+                        
                         <div class="box col-lg-6 col-md-6">
                             <label class="" for="area-number"><?php echo e(__('Activity.Activity location contact')); ?></label>
                             <input type="number" class="form-control " id='area-number' name="contact" placeholder=""
@@ -132,7 +132,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-
+                
                 <div class=" row">
                     <div class="box col ">
                         <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">

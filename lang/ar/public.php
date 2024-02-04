@@ -72,6 +72,8 @@ return [
     'select' => 'إختيار',
     'unselect' => 'الغاء الأختيار',
     'delete all' => 'حذف الكل',
-    'num'=>'رقم',
+    'num'=>'م',
+    'absent'=>'الغياب',
+    'description'=>'سبب الغياب',
 
 ];

@@ -38,6 +38,7 @@
                     @foreach($classrooms  as $classroom )
                         <tbody>
                         <tr>
+                            <td class="num_table ">{{$counter}}</td>
                             <td>{{$classroom->id}}</td>
                             <td>{{$classroom->name}}</td>
                             <td>{{$classroom->cost}}</td>

@@ -1,4 +1,4 @@
-{{------------ واجهة تفت رالمتابعة الخاص بطلاب المدرسة ----------------}}
+{{------------ واجهة عرض دفتر المتابعة الخاص بطلاب المدرسة ----------------}}
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table">
@@ -8,7 +8,7 @@
         <div class="table-header">
             {{-- the title and search --}} 
             <div class="row first-card  ">
-                <h4 class="col container-title mt-2">{{__('teacher.Absence and Daily Book')}}</h4>
+                <h4 class="col container-title mt-2">{{__('teacher.view and Daily Book')}}</h4>
                 <div class="row first-card mt-4">
                     <form method="post" action="{{route('students.search')}}">
                         @method('GET')
@@ -26,29 +26,14 @@
 
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
-                    <h4 class=" text-center">frist grade</h4>
-                    <h4 class=" Names"> MATH</h4>
+                    <h4 class=" text-center">الصف السادس</h4>
+                    <h4 class=" Names"> قرآن</h4>
                 </div>
-
                 <div class="card-info card-info_2 col ">
-                    <h4 class="text-center ">Month</h4>
+                    <h4 class="text-center ">{{__('teacher.الشهر')}}</h4>
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
-            {{-- the select input --}}
-
-            {{-- سلكت ذكر وانثى يمكن نستخدمة في المستقبل ويمكن لا --}}
-            {{-- <div class="box col-lg-12 col-md-12 ">
-                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
-                    <option class="text-center"
-                            value="{{__('Student.male')}}">{{__('Student.male')}}</option>
-                    <option class="text-center"
-                            value="{{__('Student.female')}}">{{__('Student.female')}}</option>
-                </select>
-                @error('sex')
-                <small class="form-text text-danger">{{$message}}</small>
-                @enderror
-            </div> --}}
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->

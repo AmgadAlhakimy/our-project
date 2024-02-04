@@ -160,7 +160,7 @@
                                 <i
                                     class="icon-1 fa-solid fa-window-restore"
                                 ></i>
-                                <span class="menu-name">{{__('عرض التقارير')}} </span>
+                                <span class="menu-name">{{__('sidebar.view records')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
@@ -213,7 +213,7 @@
                     </li> --}}
                     {{--  START the second section --}}
 
-                        <p class="title">قسم المعلمين</p>
+                        <p class="title">{{__('sidebar.teacher section')}}</p>
                             {{-- ---المعلمين--- --}}
                     <!-- ======================== TEACHERS ========================== -->
                     <li class="dropdown">
@@ -229,6 +229,8 @@
                         <div class="line-black">
                             <a href='/school' class="li-link">علوم \ سادس </a>
                             <a href="{{route('follow_up_children.showChildren',1)}}" class="li-link">quran \ KG1 </a>
+                            <a href='/students_view' class="li-link">{{__('sidebar.عرض دفتر المابعة (المدرسة)')}}</a>
+                            <a href='/children_view' class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>
                             <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
                         </div>
                     </div>
@@ -263,7 +265,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/absence_class' class="li-link">اول</a>
+                                <a href='/absence_class' class="li-link">واجهة عرض الغياب ليست معتمدة</a>
                                 <a href='#' class="li-link">ثاني</a>
                                 <a href='#' class="li-link">ثالث</a>
                                 <a href='#' class="li-link">رابع</a>

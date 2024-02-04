@@ -23,20 +23,20 @@
             <div class="card table-section ">
                 <table class=" ">
                     <thead>
-                    <tr>
-                        <th>
+                        <tr>
+                        <th >
                             <div class="th-head-1"><?php echo e(__('public.id')); ?></div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-3"><?php echo e(__('public.name')); ?></div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-2"><?php echo e(__('public.location')); ?></div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-2"><?php echo e(__('public.contact')); ?></div>
                         </th>
-                        <th>
+                        <th >
                             <div class="th-head-2"><?php echo e(__('public.date')); ?></div>
                         </th>
                         <th>
@@ -56,6 +56,7 @@
                     <?php $__currentLoopData = $activities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $activity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tbody>
                         <tr>
+                            
                             <td><?php echo e($activity->id); ?></td>
                             <td><?php echo e($activity->name); ?></td>
                             <td><?php echo e($activity->location); ?></td>

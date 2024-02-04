@@ -16,6 +16,7 @@ return [
     'search'=>'SEARCH',
     'Lang' => 'English',
 
+    // خاص ب
     'Admin' => 'Admin',
     'academic department' => 'Academic Department',
     'addition' => 'Addition',
@@ -24,7 +25,7 @@ return [
     'add Subject' => 'Add Subject',
     'add Activity' => 'Add activities',
 
-    'academic department review'=>'Review',
+    'academic department review'=>'View',
     'review of educational Level'=>'View Educational Level',
     'review of classrooms'=>'View Classes ',
     'review of subjects'=>'View Subjects',
@@ -41,4 +42,9 @@ return [
     'review students'=>'Review Student',
     'deleted Student'=>'Delete Student',
     'Student absence'=>'Student Absence',
+
+    // شغل ماجد
+    'teacher section' => 'Teacher Section',
+    'view records' => 'View Records',
+
 ];

@@ -23,7 +23,7 @@ return [
     'add a class' => 'إضافة فصل ',
     'add Subject' => 'إضافة مادة',
     'add Activity' => 'إضافة نشاط',
-    'academic department review'=>'القسم الأكاديمي',
+    'academic department review'=>' عرض',
     'review of educational Level'=>'المراحل الدراسية',
     'review of classrooms'=>'الفصول ',
     'review of subjects'=>'المواد الدراسية',
@@ -43,4 +43,8 @@ return [
     'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',
+
+    // شغل ماجد
+    'teacher section' => 'قسم المعلمين',
+    'view records' => 'عرض التقارير',
 ];
