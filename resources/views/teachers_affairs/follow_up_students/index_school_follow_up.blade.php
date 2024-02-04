@@ -46,21 +46,31 @@
                 <h4 class="col container-title ">{{__('teacher.for all students')}} </h4>
 
                 <div class="box row me-2 ms-2 mb-1 ">
-                    <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
-                        <input class="form-control shadow" placeholder="{{__('teacher.TO TAKE HOME')}}" id="" ></input>
+                    <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                        <label for="" class="form-label ">{{__('teacher.TO TAKE HOME')}}</label>
+                        <label class="form-control shadow"  id="" >books</label>
                     </div>
-                    <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
-                        <input class="form-control shadow" placeholder="{{__('teacher.TO BRING TO SCHOOL')}}"  id="" ></input>
+                    <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                        <label for="" class="form-label ">{{__('teacher.TO BRING TO SCHOOL')}}</label>
+                        <label class="form-control shadow"   id="" >pencil</label>
                     </div>
-                    <div class="notes col-lg-12 col-md-12 col-sm-12 mt-1 mb-1">
-                        <input placeholder="{{__('teacher.NOTE')}}"class="form-control shadow"  ></input>
+                    <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                        <label for="" class="form-label ">{{__('teacher.subject')}}</label>
+                        <label class="form-control shadow" >mathmatic</label>
+                    </div>
+                    <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                        <label for="" class="form-label ">{{__('teacher.NOTE')}}</label>
+                        <label class="form-control shadow"  >no not</label>
                     </div>
                 </div>
                 {{-- the all students info buttons is not ready yet --}}
                 <div class=" row">
                     <div class="box mb-1 mt-1">
-                        <input class="save-button " type="submit" value="Save">
-                        <input class="clear-button " type="reset" value="clear">
+                        <a href="#">
+                            <button class="btn save-button btn-success ">
+                                {{__('public.edit')}}<i class="fa-solid fa-pen-to-square"></i>
+                            </button></a>
+                        <input class="btn clear-button btn-danger" type="reset" value="clear">
                     </div>
                 </div>
             </div>
@@ -82,27 +92,43 @@
                         <hr class=" ms-2 me-2 shadow">
                         {{-- ------- --}}
                         <div class="box row me-2 ms-2 mb-1 ">
-                            <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
-                                <input class="form-control shadow" placeholder="{{__('teacher.TO TAKE HOME')}}" id="" ></input>
+                            <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                                <label for="" class="form-label ">{{__('teacher.TO TAKE HOME')}}</label>
+                                <label class="form-control shadow"  id="" >books</label>
                             </div>
-                            <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
-                                <input class="form-control shadow" placeholder="{{__('teacher.TO BRING TO SCHOOL')}}"  id="" ></input>
+                            <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                                <label for="" class="form-label ">{{__('teacher.TO BRING TO SCHOOL')}}</label>
+                                <label class="form-control shadow"   id="" >pencil</label>
                             </div>
-                            <div class="notes col-lg-12 col-md-12 col-sm-12 mt-1 mb-1">
-                                <input class="form-control shadow" placeholder="{{__('teacher.NOTE')}}" ></input>
+                            <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                                <label for="" class="form-label ">{{__('teacher.subject')}}</label>
+                                <label class="form-control shadow" >mathmatic</label>
+                            </div>
+                            <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                                <label for="" class="form-label ">{{__('teacher.NOTE')}}</label>
+                                <label class="form-control shadow"  >no not</label>
                             </div>
                         </div>
                         {{-- ------- --}}
                         <hr class=" ms-2 me-2 shadow">
                         {{-- --- absent ---- --}}
                         <div class=" row me-4 ms-2 mb-1">
-                            <div class="notes col-2 center_y_x">
-                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
+                            <div class=" col-2 center_y_x mt-4">
+                                <input class="form-label " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
-                            <div class="notes col">
-                                <input class="form-control shadow mb-1" placeholder=" {{__('teacher.ABSENCE REASON')}}"  id="" ></input>
+                            <div class=" col text-center">
+                                <label for="" class="form-label">{{__('teacher.ABSENCE REASON')}}</label>
+                                <label class="form-control shadow mb-1"   id="" > he was sick</label>
                             </div>
+                        </div>
+                        <hr class=" ms-2 me-2 shadow">
+                        <div class="notes col-12 text-center">
+                            <a href="#">
+                                <button class="btn save-button btn-success w-50">
+                                    {{__('public.edit')}}<i class="fa-solid fa-pen-to-square"></i>
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>

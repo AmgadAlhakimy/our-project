@@ -35,25 +35,25 @@
                             <input type="checkbox" id="select_all" 
                                 style="display: none" >
                         </th>
-                        <th ><div class="th-head-1  " ><?php echo e(__('public.id')); ?></div></th>
-                        <th ><div class="th-head-3" ><?php echo e(__('public.name')); ?></div></th>
-                        <th ><div class="th-head-1" ><?php echo e(__('public.photo')); ?></div></th>
-                        <th ><div class="th-head-3" ><?php echo e(__('public.address')); ?></div></th>
-                        <th ><div class="th-head-1" ><?php echo e(__('student.gender')); ?></div></th>
-                        <th ><div class="th-head-2" ><?php echo e(__('student.birth date')); ?></div></th>
-                        <th ><div class="th-head-2" ><?php echo e(__('student.birth place')); ?></div></th>
-                        <th ><div class="th-head-2" ><?php echo e(__('public.class')); ?></div></th>
-                        <th ><div class="th-head-2" ><?php echo e(__('public.created at')); ?></div></th>
-                        <th ><div class="th-head-2" ><?php echo e(__('public.updated at')); ?></div></th>
-                        <th colspan="2"><div class="th-head-4" ><?php echo e(__('public.processes')); ?></div></th>
-                        <th ><div class="th-head-2" ><?php echo e(__('student.more info')); ?></div></th>
+                        <th class="th-head-1  "><?php echo e(__('public.id')); ?></th>
+                        <th class="th-head-3"><?php echo e(__('public.name')); ?></th>
+                        <th class="th-head-1"><?php echo e(__('public.photo')); ?></th>
+                        <th class="th-head-3"><?php echo e(__('public.address')); ?></th>
+                        <th class="th-head-1"><?php echo e(__('student.gender')); ?></th>
+                        <th class="th-head-2"><?php echo e(__('student.birth date')); ?></th>
+                        <th class="th-head-2"><?php echo e(__('student.birth place')); ?></th>
+                        <th class="th-head-2"><?php echo e(__('public.class')); ?></th>
+                        <th class="th-head-2"><?php echo e(__('public.created at')); ?></th>
+                        <th class="th-head-2"><?php echo e(__('public.updated at')); ?></th>
+                        <th colspan="2"><div class="th-head-4"><?php echo e(__('public.processes')); ?></div></th>
+                        <th ><div class="th-head-2"><?php echo e(__('student.more info')); ?></div></th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="test_1">
                             <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
-                            <td><?php echo e($student->id); ?></td>
+                            <td><?php echo e($student->id); ?> amgad abd alraqeeb abdu alhakimy</td>
                             <td><?php echo e($student->name); ?></td>
                             <td><img src="<?php echo e(asset($student->photo)); ?>"
                                 class="student-img" alt="photo"></td>
@@ -64,7 +64,7 @@
                             <td><?php echo e($student->classroom->name); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
-
+ 
                             <td>
                                 <a href="<?php echo e(route('students.edit',$student->id)); ?>"
                                     class="btn save-button btn-success w-100">

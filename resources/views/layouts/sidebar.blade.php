@@ -218,23 +218,37 @@
                     <!-- ======================== TEACHERS ========================== -->
                     <li class="dropdown">
                     <!-- ========== 1 ============ -->
-                    <div class="sidebar-title">
-                        <a href="#" class="li-link title-4">
-                            <i class="icon-1 fa-solid fa-window-restore"></i>
-                            <span class="menu-name"> دفتر المتابعة</span>
-                            <i class="icon-1 fa-solid fa-chevron-down"></i>
-                        </a>
-                    </div>
-                    <div class="submenu">
-                        <div class="line-black">
-                            <a href='/school' class="li-link">علوم \ سادس </a>
-                            <a href="{{route('follow_up_children.showChildren',1)}}" class="li-link">quran \ KG1 </a>
-                            <a href='/students_view' class="li-link">{{__('sidebar.عرض دفتر المابعة (المدرسة)')}}</a>
-                            <a href='/children_view' class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>
-                            <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i class="icon-1 fa-solid fa-window-restore"></i>
+                                <span class="menu-name">دفتر المتابعة مدرسي</span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
                         </div>
-                    </div>
-                </li>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href='/school' class="li-link">علوم \ سادس </a>
+                                <a href='/students_view' class="li-link">{{__('sidebar.عرض دفتر المابعة (المدرسة)')}}</a>
+                                <a href='#' class="li-link">تقارير دفتر المتابعة</a>
+                            </div>
+                        </div>
+                    <li class="dropdown">
+                    <!-- ========== 2 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i class="icon-1 fa-solid fa-window-restore"></i>
+                                <span class="menu-name">دفتر المتابعة روضة</span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href="{{route('follow_up_children.showChildren',1)}}" class="li-link">quran \ KG1 </a>
+                                <a href='/children_view' class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>
+                                <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
+                            </div>
+                        </div>
+                    </li>
                         <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">

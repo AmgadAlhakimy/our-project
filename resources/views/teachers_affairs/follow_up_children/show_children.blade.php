@@ -67,7 +67,7 @@
                             <td>{{$student->name}}</td>
                             <td><img class="student-img" src="{{$student->photo}}" alt=""></td>
                             <td><a href="{{route('follow_up_children.createNote',$student->id)}}">
-                                <button class=" save-button btn-light ">{{__('student.Daily Follow-Up')}} <i class=" fa-solid fa-pencil-ruler"></i></button></a></td>
+                                <button class=" save-button btn-light "><i class=" fa-solid fa-pencil-ruler"></i>{{__('student.Daily Follow-Up')}} </button></a></td>
                             <td><label for="">7:30am</label></td>
                             <td><label for="">1:35pm</label></td>
                             <td>

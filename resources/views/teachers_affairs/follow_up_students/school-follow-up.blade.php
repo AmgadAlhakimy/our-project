@@ -4,7 +4,6 @@
     <div class="my-table">
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
-
         <div class="table-header">
             {{-- the title and search --}} 
             <div class="row first-card  ">
@@ -23,32 +22,17 @@
                 </div>
             </div>
             {{-- the thacher name and the month --}}
-
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
                     <h4 class=" text-center">frist grade</h4>
                     <h4 class=" Names"> MATH</h4>
                 </div>
-
                 <div class="card-info card-info_2 col ">
                     <h4 class="text-center ">Month</h4>
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
             {{-- the select input --}}
-
-            {{-- سلكت ذكر وانثى يمكن نستخدمة في المستقبل ويمكن لا --}}
-            {{-- <div class="box col-lg-12 col-md-12 ">
-                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
-                    <option class="text-center"
-                            value="{{__('Student.male')}}">{{__('Student.male')}}</option>
-                    <option class="text-center"
-                            value="{{__('Student.female')}}">{{__('Student.female')}}</option>
-                </select>
-                @error('sex')
-                <small class="form-text text-danger">{{$message}}</small>
-                @enderror
-            </div> --}}
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
@@ -59,15 +43,17 @@
             <div class="table-header mt-3">
                 {{-- for all studentes --}}
                 <h4 class="col container-title ">{{__('teacher.for all students')}} </h4>
-
                 <div class="box row me-2 ms-2 mb-1 ">
-                    <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                    <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
                         <input class="form-control shadow" placeholder="{{__('teacher.TO TAKE HOME')}}" id="" ></input>
                     </div>
-                    <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                    <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
                         <input class="form-control shadow" placeholder="{{__('teacher.TO BRING TO SCHOOL')}}"  id="" ></input>
                     </div>
-                    <div class="notes col-lg-12 col-md-12 col-sm-12 mt-1 mb-1">
+                    <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                        <input placeholder="{{__('teacher.subject')}}"class="form-control shadow"  ></input>
+                    </div>
+                    <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
                         <input placeholder="{{__('teacher.NOTE')}}"class="form-control shadow"  ></input>
                     </div>
                 </div>
@@ -79,7 +65,6 @@
                     </div>
                 </div>
             </div>
-
             <div class=" table-header mt-3">
                 <div class="row">
                     <div class="cards_info_style col-lg-4 col-md-6 col-sm-12 mb-2">
@@ -97,13 +82,16 @@
                         <hr class=" ms-2 me-2 shadow">
                         {{-- ------- --}}
                         <div class="box row me-2 ms-2 mb-1 ">
-                            <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                            <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
                                 <input class="form-control shadow" placeholder="{{__('teacher.TO TAKE HOME')}}" id="" ></input>
                             </div>
-                            <div class="notes col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
+                            <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
                                 <input class="form-control shadow" placeholder="{{__('teacher.TO BRING TO SCHOOL')}}"  id="" ></input>
                             </div>
-                            <div class="notes col-lg-12 col-md-12 col-sm-12 mt-1 mb-1">
+                            <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
+                                <input class="form-control shadow" placeholder="{{__('teacher.subject')}}" ></input>
+                            </div>
+                            <div class=" col-lg-6 col-md-12 col-sm-12 mt-1 mb-1">
                                 <input class="form-control shadow" placeholder="{{__('teacher.NOTE')}}" ></input>
                             </div>
                         </div>
@@ -115,7 +103,7 @@
                                 <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
-                            <div class="notes col">
+                            <div class=" col">
                                 <input class="form-control shadow mb-1" placeholder=" {{__('teacher.ABSENCE REASON')}}"  id="" ></input>
                             </div>
                         </div>

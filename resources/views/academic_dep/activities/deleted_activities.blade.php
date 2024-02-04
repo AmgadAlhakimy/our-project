@@ -26,29 +26,29 @@
                 <table class=" ">
                     <thead>
                         <tr>
-                        <th >
-                            <div class="th-head-1">{{__('public.id')}}</div>
+                        <th class="th-head-1">
+                            {{__('public.id')}}
                         </th>
-                        <th >
-                            <div class="th-head-3">{{__('public.name')}}</div>
+                        <th class="th-head-3">
+                            {{__('public.name')}}
                         </th>
-                        <th >
-                            <div class="th-head-2">{{__('public.location')}}</div>
+                        <th class="th-head-2">
+                            {{__('public.location')}}
                         </th>
-                        <th >
-                            <div class="th-head-2">{{__('public.contact')}}</div>
+                        <th class="th-head-2">
+                            {{__('public.contact')}}
                         </th>
-                        <th >
-                            <div class="th-head-2">{{__('public.date')}}</div>
+                        <th class="th-head-2">
+                            {{__('public.date')}}
                         </th>
-                        <th>
-                            <div class="th-head-3">{{__('public.note')}}</div>
+                        <th class="th-head-3">
+                            {{__('public.note')}}
                         </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.created at')}}</div>
+                        <th class="th-head-2">
+                            {{__('public.created at')}}
                         </th>
-                        <th>
-                            <div class="th-head-2">{{__('public.updated at')}}</div>
+                        <th class="th-head-2">
+                            {{__('public.updated at')}}
                         </th>
                         <th colspan="2">
                             <div class="th-head-4">{{__('public.processes')}}</div>
@@ -62,9 +62,9 @@
                             <td>{{$activity->id}}</td>
                             <td>{{$activity->name}}</td>
                             <td>{{$activity->location}}</td>
-                            <td>{{$activity->contact}}</td>
+                            <td >{{$activity->contact}} </td>
                             <td>{{$activity->date}}</td>
-                            <td>{{$activity->note}}</td>
+                            <td>{{$activity->note}} </td>
                             <td>{{$activity->created_at}}</td>
                             <td>{{$activity->updated_at}}</td>
                             <td>

@@ -150,7 +150,7 @@ input::-webkit-inner-spin-button {
   font-weight: bold;
   /* text-align: center; */
   /* display: flex; */
-  align-items: center;
+  align-items: center; 
 }
 .container label ,.form-label {
   color: var(--text-color-1);

@@ -33,26 +33,6 @@
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
-            
-            
-            <div class="box col-lg-12 col-md-12 ">
-                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
-                    <option class="text-center"
-                            value="<?php echo e(__('student.male')); ?>"><?php echo e(__('student.male')); ?></option>
-                    <option class="text-center"
-                            value="<?php echo e(__('student.female')); ?>"><?php echo e(__('student.female')); ?></option>
-                </select>
-                <?php $__errorArgs = ['sex'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                <small class="form-text text-danger"><?php echo e($message); ?></small>
-                <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-            </div>
         </div>
         
         <!-- table-hover table-striped -->
@@ -65,6 +45,7 @@ unset($__errorArgs, $__bag); ?>
                         <th class="th-head-3 text-center">Name</th>
                         <th class="th-head-2 text-center">photo</th>
                         <th class="th-head-2 text-center">زمن الحضور</th>
+                        <th class="th-head-2 text-center">سبب الغياب</th>
                         <th class="th-head-3 text-center">زمن الأنصراف</th>
                     </tr>
                 </thead>
@@ -73,18 +54,32 @@ unset($__errorArgs, $__bag); ?>
                         <td class="fw-bolder">130</td>
                         <td>mohanad naser mansour</td>
                         <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
-                        <td><div class=" mt-3">
+                        <td>
+                            <div class=" mt-3">
                                 <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" checked >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                         </td>
+                        <td><input type="text" class="form-control"></td>
                         <td>
-                            <input type="text" class="form-control">
+                            <div class=" mt-3">
+                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" checked >
+                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
+            </table>
             </div>
         </div>
+        
+        <div class=" mt-5 row">
+            <div class="box col ">
+                <input class="save-button me-5 ms-5 " type="submit" value="<?php echo e(__('public.save')); ?>">
+                <input class="clear-button me-5 ms-5 " type="reset" value="<?php echo e(__('public.clear')); ?>">
+            </div>
+        </div>
+        
     </div>
 <?php $__env->stopSection(); ?>
 

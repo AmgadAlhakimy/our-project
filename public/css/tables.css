@@ -78,18 +78,24 @@ td button:nth-child(2){
   transition: all 1s ease;
 }
 thead th {
-  /* position: sticky; */
   top: 0;
   background-color: #f6f9fc;
   color: #8493a5;
-  font-size: 15px;
   padding: 15px;
+  color: var(--S-Color-1);
+  font-size: 18px;
 }
 th , td {
   border-bottom: 1px solid #dddddd;
   padding: 10px 5px;
-  word-break: break-all;
+  /* word-break: break-all; */
   text-align: center;
+  width: 100px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+td{
+
 }
 td .student-img {
   height: 60px;
@@ -99,7 +105,7 @@ td .student-img {
   border: 5px solid #ced0d2;
 }
 tr:hover td {
-  font-weight: bold;
+  /* font-weight: bold; */
   color: var(--S-Color-2);
   cursor: pointer;
   background-color: #f6f9fc;
@@ -123,10 +129,7 @@ tr:hover img {
 .th-head-4 {
   width: 300px;
 }
-.th-head-1,.th-head-2,.th-head-3,.th-head-4 {
-    color: var(--S-Color-1);
-    font-size: 18px;
-}
+
 .my-card {
   margin: 20px;
   padding: 20px;
@@ -152,6 +155,7 @@ tr:hover img {
 }
 .table-section th {
   text-align: center;
+
 }
 
 .card_btn{
