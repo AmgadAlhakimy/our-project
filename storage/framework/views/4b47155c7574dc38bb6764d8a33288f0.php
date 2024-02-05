@@ -24,29 +24,37 @@
                 <table class=" ">
                     <thead>
                         <tr>
-                        <th >
-                            <div class="th-head-1"><?php echo e(__('public.id')); ?></div>
+                        <th class="th-head-1">
+                            <?php echo e(__('public.id')); ?>
+
                         </th>
-                        <th >
-                            <div class="th-head-3"><?php echo e(__('public.name')); ?></div>
+                        <th class="th-head-3">
+                            <?php echo e(__('public.name')); ?>
+
                         </th>
-                        <th >
-                            <div class="th-head-2"><?php echo e(__('public.location')); ?></div>
+                        <th class="th-head-2">
+                            <?php echo e(__('public.location')); ?>
+
                         </th>
-                        <th >
-                            <div class="th-head-2"><?php echo e(__('public.contact')); ?></div>
+                        <th class="th-head-2">
+                            <?php echo e(__('public.contact')); ?>
+
                         </th>
-                        <th >
-                            <div class="th-head-2"><?php echo e(__('public.date')); ?></div>
+                        <th class="th-head-2">
+                            <?php echo e(__('public.date')); ?>
+
                         </th>
-                        <th>
-                            <div class="th-head-3"><?php echo e(__('public.note')); ?></div>
+                        <th class="th-head-3">
+                            <?php echo e(__('public.note')); ?>
+
                         </th>
-                        <th>
-                            <div class="th-head-2"><?php echo e(__('public.created at')); ?></div>
+                        <th class="th-head-2">
+                            <?php echo e(__('public.created at')); ?>
+
                         </th>
-                        <th>
-                            <div class="th-head-2"><?php echo e(__('public.updated at')); ?></div>
+                        <th class="th-head-2">
+                            <?php echo e(__('public.updated at')); ?>
+
                         </th>
                         <th colspan="2">
                             <div class="th-head-4"><?php echo e(__('public.processes')); ?></div>
@@ -60,9 +68,9 @@
                             <td><?php echo e($activity->id); ?></td>
                             <td><?php echo e($activity->name); ?></td>
                             <td><?php echo e($activity->location); ?></td>
-                            <td><?php echo e($activity->contact); ?></td>
+                            <td ><?php echo e($activity->contact); ?> </td>
                             <td><?php echo e($activity->date); ?></td>
-                            <td><?php echo e($activity->note); ?></td>
+                            <td><?php echo e($activity->note); ?> </td>
                             <td><?php echo e($activity->created_at); ?></td>
                             <td><?php echo e($activity->updated_at); ?></td>
                             <td>

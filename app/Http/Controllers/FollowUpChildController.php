@@ -118,6 +118,7 @@ class FollowUpChildController extends Controller
      */
     public function storeAll(StoreFollowUpChildRequest $request, $classroom_id)
     {
+        return $request;
         try {
             $date = Carbon::now()->format('Y-m-d');
             if (FollowUpChild::where('created_at', 'like', "%$date%")->exists()) {

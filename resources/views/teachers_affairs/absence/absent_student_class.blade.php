@@ -35,19 +35,6 @@
                     <h4 class=" Names">10</h4>
                 </div>
             </div>
-            {{-- the select input --}}
-            
-            <div class="box col-lg-12 col-md-12 ">
-                <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
-                    <option class="text-center"
-                            value="{{__('student.male')}}">{{__('student.male')}}</option>
-                    <option class="text-center"
-                            value="{{__('student.female')}}">{{__('student.female')}}</option>
-                </select>
-                @error('sex')
-                <small class="form-text text-danger">{{$message}}</small>
-                @enderror
-            </div>
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
@@ -60,6 +47,7 @@
                         <th class="th-head-3 text-center">Name</th>
                         <th class="th-head-2 text-center">photo</th>
                         <th class="th-head-2 text-center">زمن الحضور</th>
+                        <th class="th-head-2 text-center">سبب الغياب</th>
                         <th class="th-head-3 text-center">زمن الأنصراف</th>
                     </tr>
                 </thead>
@@ -68,17 +56,31 @@
                         <td class="fw-bolder">130</td>
                         <td>mohanad naser mansour</td>
                         <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
-                        <td><div class=" mt-3">
+                        <td>
+                            <div class=" mt-3">
                                 <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                         </td>
+                        <td><input type="text" class="form-control"></td>
                         <td>
-                            <input type="text" class="form-control">
+                            <div class=" mt-3">
+                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
+                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
+            </table>
             </div>
         </div>
+        
+        <div class=" mt-5 row">
+            <div class="box col ">
+                <input class="save-button me-5 ms-5 " type="submit" value="{{__('public.save')}}">
+                <input class="clear-button me-5 ms-5 " type="reset" value="{{__('public.clear')}}">
+            </div>
+        </div>
+        
     </div>
 @endsection

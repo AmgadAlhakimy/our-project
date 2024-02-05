@@ -37,25 +37,25 @@
                             <input type="checkbox" id="select_all" 
                                 style="display: none" >
                         </th>
-                        <th ><div class="th-head-1  " >{{__('public.id')}}</div></th>
-                        <th ><div class="th-head-3" >{{__('public.name')}}</div></th>
-                        <th ><div class="th-head-1" >{{__('public.photo')}}</div></th>
-                        <th ><div class="th-head-3" >{{__('public.address')}}</div></th>
-                        <th ><div class="th-head-1" >{{__('student.gender')}}</div></th>
-                        <th ><div class="th-head-2" >{{__('student.birth date')}}</div></th>
-                        <th ><div class="th-head-2" >{{__('student.birth place')}}</div></th>
-                        <th ><div class="th-head-2" >{{__('public.class')}}</div></th>
-                        <th ><div class="th-head-2" >{{__('public.created at')}}</div></th>
-                        <th ><div class="th-head-2" >{{__('public.updated at')}}</div></th>
-                        <th colspan="2"><div class="th-head-4" >{{__('public.processes')}}</div></th>
-                        <th ><div class="th-head-2" >{{__('student.more info')}}</div></th>
+                        <th class="th-head-1  ">{{__('public.id')}}</th>
+                        <th class="th-head-3">{{__('public.name')}}</th>
+                        <th class="th-head-1">{{__('public.photo')}}</th>
+                        <th class="th-head-3">{{__('public.address')}}</th>
+                        <th class="th-head-1">{{__('student.gender')}}</th>
+                        <th class="th-head-2">{{__('student.birth date')}}</th>
+                        <th class="th-head-2">{{__('student.birth place')}}</th>
+                        <th class="th-head-2">{{__('public.class')}}</th>
+                        <th class="th-head-2">{{__('public.created at')}}</th>
+                        <th class="th-head-2">{{__('public.updated at')}}</th>
+                        <th colspan="2"><div class="th-head-4">{{__('public.processes')}}</div></th>
+                        <th ><div class="th-head-2">{{__('student.more info')}}</div></th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($students  as $student )
                         <tr class="test_1">
                             <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
-                            <td>{{$student->id}}</td>
+                            <td>{{$student->id}} amgad abd alraqeeb abdu alhakimy</td>
                             <td>{{$student->name}}</td>
                             <td><img src="{{asset($student->photo)}}"
                                 class="student-img" alt="photo"></td>

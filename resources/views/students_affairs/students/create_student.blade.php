@@ -42,7 +42,7 @@
                             @enderror
                         </div>
                         {{-- 4 --}}
-                        <div class="box row">
+                        <div class="box row"> 
                             <div class="col-lg-6 col-md-6">
                                 <label for="address">{{__("Student.Student's address in arabic")}}</label>
                                 <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="{{old('address_ar')}}">
