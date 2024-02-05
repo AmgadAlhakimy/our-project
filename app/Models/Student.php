@@ -24,14 +24,17 @@ class Student extends Model
                                   'allergy_desc', 'health_problem_desc',];
     public function classroom()
     {
-        return $this->belongsTo(Classroom::class,'classroom_id');
+        return $this->belongsTo(Classroom::class);
     }
     public function relative()
     {
-        return $this->belongsTo(Relative::class,'relative_id');
+        return $this->belongsTo(Relative::class);
     }
     public function marks(){
 
         return $this->hasMany(Mark::class);
+    }public function followUpChildren(){
+
+        return $this->hasMany(FollowUpChild::class);
     }
 }

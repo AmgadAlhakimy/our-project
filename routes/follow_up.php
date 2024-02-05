@@ -29,3 +29,7 @@ Route::get('follow-up-child/storeAll/{classroom_id}',
     [FollowUpChildController::class, 'storeAll'])
     ->name('follow_up_children.storeAll');
 
+Route::get('follow-up-children/display',
+    [FollowUpChildController::class, 'displayAllChildren'])
+    ->name('follow_up_children.displayAllChildren');
+

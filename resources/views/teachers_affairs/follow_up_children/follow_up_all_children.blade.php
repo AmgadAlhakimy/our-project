@@ -57,6 +57,12 @@
                         <!-- 5 -->
                         <div class="box row">
                             <!-- 1 -->
+<<<<<<< HEAD
+                            @foreach($classroom->subjects as $subject)
+                                <div class="col-lg-4 col-md-4 col-sm-4 ">
+                                    <label>{{$subject->name}}</label>
+
+=======
                             {{-- @foreach($classroom->subjects as $subject) --}}
                                 <div class="col-lg-4 col-md-4 col-sm-4 " >
                                     <select name="subject[]" class="form-control" id="sub_select" size="1">
@@ -65,6 +71,7 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     </select>
+>>>>>>> 37c8517b5bff3bcd06985935d1d79eb9bc25eb19
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 ">
                                     <input type="text" class=" form-control ms-2 me-2" name="comment[]">
@@ -72,7 +79,11 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                 </div>
+<<<<<<< HEAD
+                            @endforeach
+=======
                             {{-- @endforeach --}}
+>>>>>>> 37c8517b5bff3bcd06985935d1d79eb9bc25eb19
                         </div>
                     </div>
                 </div>

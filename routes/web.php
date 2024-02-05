@@ -53,6 +53,9 @@ Route::group(
         Route::get('nursery', function () {
             return view('teachers_affairs/follow_up_children/follow-up-nursery');
         });
+<<<<<<< HEAD
+
+=======
         // nursery
         Route::get('children_view', function () {
             return view('teachers_affairs/follow_up_children/index_children_follow_up');
@@ -65,6 +68,7 @@ Route::group(
         Route::get('index_absence', function () {
             return view('teachers_affairs/absence/index_absent_children');
         });
+>>>>>>> 37c8517b5bff3bcd06985935d1d79eb9bc25eb19
         // nursery
         Route::get('children', function () {
             return view('teachers_affairs/follow_up_children/follow-up-children');
