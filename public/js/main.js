@@ -130,3 +130,14 @@ function toggleCheckboxes() {
         }
         });
     }
+
+// hide the options from the subjects select
+function hidOptions(){
+    var select = document.getElementById ("sub_select")
+    var options = select.options;
+
+    for(var i = 0; i < options.length; i++){
+        options[i].style.display= "none";
+    }
+    
+}

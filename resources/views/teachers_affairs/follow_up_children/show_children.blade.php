@@ -28,6 +28,7 @@
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
                     <h4 class=" text-center">{{$classroom->name}}</h4>
+                    <h4 class=" Names"> قرآن</h4>
                 </div>
 
                 <a class="card-info card-info_2  col  save-button"

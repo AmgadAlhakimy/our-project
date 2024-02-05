@@ -53,10 +53,6 @@
                         <th class="th-head-1">{{__('student.وجبة')}}</th>
                         <th class="th-head-1">{{__('student.snack')}}</th>
                         <th class="th-head-1">{{__('student.path room')}}</th>
-                        <th class="th-head-1">{{__('public. وقت الحظور')}}</th>
-                        <th class="th-head-1">{{__('public.وقت الأنصراف')}}</th>
-                        <th class="th-head-1 ">{{__('public.absent')}}</th>
-                        <th class="th-head-1">{{__('public.absent reason')}}</th>
                         <th class="th-head-1">{{__('public.more info')}}</th>
                         <th class="th-head-1">{{__('public.processes')}}</th>
                     </tr>
@@ -65,6 +61,7 @@
                      @foreach($follow_up  as $follow )
                         <tr class="test_1 ">
                             <td class="num_table ">{{$counter}}</td>
+<<<<<<< HEAD:resources/views/teachers_affairs/follow_up_children/display_follow_up_children.blade.php
                             <td>{{$follow->student->id}}</td>
                             <td>{{$follow->student->name}}</td>
                             <td><img class="student-img" src="{{$follow->student->photo}}" alt=""></td>
@@ -80,6 +77,20 @@
                                 <input type="checkbox" class="check_item" checked id="checkbox" name="absent[]" value="absent">
                             </td>
                             <td> <label class=" " type="text" name="">absent_reason </label></td>
+=======
+                            <td>0012</td>
+                            <td>KHALED ABDULNASER MANSOUR</td>
+                            <td><img class="student-img" src="#" alt=""></td>
+                            <td><label for="">math 1</label></td>
+                            <td><label for="">math 2</label></td>
+                            <td><label for="">math 3</label></td>
+                            <td><label for="">math 4</label></td>
+                            <td><label for="">math 5</label></td>
+                            <td><label for="">math 6</label></td>
+                            <td><label for=""> all</label></td>
+                            <td><label for="">some</label></td>
+                            <td><label for="">tow times</label></td>
+>>>>>>> 37c8517b5bff3bcd06985935d1d79eb9bc25eb19:resources/views/teachers_affairs/follow_up_children/index_children_follow_up.blade.php
                             <td><label for="">info </label></td>
                             <td><a href="#">
                                 <button class=" save-button btn-success"><i class="me-1 ms-1 fa-solid fa-pen-to-square"></i>{{__('public.edit')}} </button></a>
