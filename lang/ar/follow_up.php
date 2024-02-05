@@ -15,4 +15,10 @@ return [
 
     //create educational Level
     'sorry first add students'=>'عذرا يجب إضافة ملاحظات الى جميع الطلاب أولاً',
+    'for all students' => 'اضافة لكل الطلاب',
+    'homework assignment for all students' => 'واجبات ومهام',
+    'food and bathroom' => 'الطعام ودورة المياه',
+    'add info' => 'إضافة معلومات',
+    'note' => 'ملاحظات',
+    'fonts' => 'dddd',
 ];

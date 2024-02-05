@@ -9,7 +9,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">عرض غياب طلاب الروضة</h4>
+                <h4 class="col container-title mt-2">تحضير طلاب الروضة</h4>
                 <div class="row first-card mt-4">
                     <form method="post" action="{{route('students.search')}}">
                         @method('GET')
@@ -43,12 +43,14 @@
             <table class=" " >
                 <thead>
                     <tr class="">
-                        <th class="th-head-1 text-center">id</th>
-                        <th class="th-head-3 text-center">Name</th>
-                        <th class="th-head-2 text-center">photo</th>
-                        <th class="th-head-2 text-center">زمن الحضور</th>
-                        <th class="th-head-2 text-center">سبب الغياب</th>
-                        <th class="th-head-3 text-center">زمن الأنصراف</th>
+                        <th class="th-head-1">{{__('public.id')}}</th>
+                        <th class="th-head-1">{{__('public.name')}}</th>
+                        <th class="th-head-1">{{__('public.photo')}}</th>
+                        <th class="th-head-1 ">{{__('public.absent')}}</th>
+                        <th class="th-head-1">{{__('teacher.absent reason')}}</th>
+                        <th class="th-head-1">{{__('teacher.وقت الأنصراف')}}</th>
+                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -58,14 +60,14 @@
                         <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
                         <td>
                             <div class=" mt-3">
-                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
+                                <input class=" mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()"  >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                         </td>
                         <td><input type="text" class="form-control"></td>
                         <td>
                             <div class=" mt-3">
-                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
+                                <input class=" mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()"  >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                         </td>

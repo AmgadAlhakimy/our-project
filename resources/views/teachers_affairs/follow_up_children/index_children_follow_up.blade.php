@@ -56,10 +56,6 @@
                         <th class="th-head-1">{{__('student.وجبة')}}</th>
                         <th class="th-head-1">{{__('student.snack')}}</th>
                         <th class="th-head-1">{{__('student.path room')}}</th>
-                        <th class="th-head-1">{{__('public. وقت الحظور')}}</th>
-                        <th class="th-head-1">{{__('public.وقت الأنصراف')}}</th>
-                        <th class="th-head-1 ">{{__('public.absent')}}</th>
-                        <th class="th-head-1">{{__('public.absent reason')}}</th>
                         <th class="th-head-1">{{__('public.more info')}}</th>
                         <th class="th-head-1">{{__('public.processes')}}</th>
                     </tr>
@@ -80,12 +76,6 @@
                             <td><label for=""> all</label></td>
                             <td><label for="">some</label></td>
                             <td><label for="">tow times</label></td>
-                            <td><label for="">7:30am</label></td>
-                            <td><label for="">1:35pm</label></td>
-                            <td>
-                                <input type="checkbox" class="check_item" checked id="checkbox" name="absent[]" value="absent">
-                            </td>
-                            <td> <label class=" " type="text" name="">absent_reason </label></td>
                             <td><label for="">info </label></td>
                             <td><a href="#">
                                 <button class=" save-button btn-success"><i class="me-1 ms-1 fa-solid fa-pen-to-square"></i>{{__('public.edit')}} </button></a>

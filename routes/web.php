@@ -62,6 +62,14 @@ Route::group(
         Route::get('children_view', function () {
             return view('teachers_affairs/follow_up_children/index_children_follow_up');
         });
+        // all_students
+        Route::get('all_children', function () {
+            return view('teachers_affairs/follow_up_children/follow_up_all_children');
+        });
+        // index_absence
+        Route::get('index_absence', function () {
+            return view('teachers_affairs/absence/index_absent_children');
+        });
         // nursery
         Route::get('children', function () {
             return view('teachers_affairs/follow_up_children/follow-up-children');

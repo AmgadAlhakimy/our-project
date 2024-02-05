@@ -56,6 +56,10 @@ return [
     'all'=>'all',
     'some'=>'some',
     'none'=>'none',
+    'one'=>'Once',
+    'tow'=>'Twice',
+
+
     'all_ar'=>'الكل',
     'some_ar'=>'بعض',
     'none_ar'=>'لا شيء',
