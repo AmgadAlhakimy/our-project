@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Activity;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Activity_classroom\StoreActivityClassroomRequest;
 use App\Http\Requests\Activity_classroom\UpdateActivityClassroomRequest;
 use App\Models\Activity;

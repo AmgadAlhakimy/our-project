@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Level;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Level\StoreEducationalLevelRequest;
 use App\Http\Requests\Level\UpdateEducationalLevelRequest;
 use App\Models\Classroom;
@@ -18,7 +19,7 @@ class EducationalLevelController extends Controller
     {
         try {
             $levels = EducationalLevel::all();
-            return view('academic_dep/educational_levels.index_education_levels',
+            return view('academic_dep/educational_levels.display_educational_levels',
                 compact('levels'));
 
         } catch (\Exception $e) {
@@ -32,7 +33,7 @@ class EducationalLevelController extends Controller
     public function create()
     {
         try {
-        return view('academic_dep/educational_levels.create_education_levels');
+        return view('academic_dep/educational_levels.create_educational_level');
         } catch (\Exception $e) {
                     return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -64,7 +65,7 @@ class EducationalLevelController extends Controller
     {
         try {
             $levels = EducationalLevel::onlyTrashed()->get();
-            return view('academic_dep/educational_levels.deleted_education_levels',
+            return view('academic_dep/educational_levels.deleted_educational_levels',
                 compact('levels'));
         }catch (\Exception $e) {
                     return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -78,7 +79,7 @@ class EducationalLevelController extends Controller
     {
         try {
         $level = EducationalLevel::findorFail($id);
-        return view('academic_dep/educational_levels.edit_education_levels',
+        return view('academic_dep/educational_levels.edit_educational_level',
             compact('level'));
         }catch (\Exception $e) {
                     return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -166,7 +167,7 @@ class EducationalLevelController extends Controller
             $query->where('name->en','like',"%$search%")
             ->orwhere('name->ar','like',"%$search%");
         })->get();
-        return view('academic_dep/educational_levels.index_education_levels',
+        return view('academic_dep/educational_levels.display_educational_levels',
             compact('search','levels'));
 
         }catch (\Exception $e){

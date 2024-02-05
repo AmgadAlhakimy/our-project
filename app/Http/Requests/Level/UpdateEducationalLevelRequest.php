@@ -28,18 +28,31 @@ class UpdateEducationalLevelRequest extends FormRequest
         return [
             'name' => [
                 'required',
-                Rule::unique('educational_levels', 'name->en')->ignore($id),
-                'max:50'],
+                Rule::unique('educational_levels',
+                    'name->en')->ignore($id),
+                'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
             'name_ar' => [
                 'required',
-                Rule::unique('educational_levels', 'name->ar')->ignore($id),
-                'max:50'],
+                Rule::unique('educational_levels',
+                    'name->ar')->ignore($id),
+                'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
     public function messages(): array
     {
         return [
-            //
+            'name.regex' => __('validation.english letters'),
+            'name_ar.regex' => __('validation.arabic letters'),
         ];
     }
 }

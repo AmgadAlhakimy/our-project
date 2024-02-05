@@ -1,10 +1,10 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
 
-        
-        
+
+
         <div class="table-header">
-            
+
             <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational Level info')); ?></h4>
             <div class="row first-card mt-4">
                 <form method="post" action="<?php echo e(route('educational_levels.search')); ?>">
@@ -20,7 +20,7 @@
                 </form>
             </div>
         </div>
-        
+
 
         <!-- table-hover table-striped -->
         <div class="table-header mt-3 mb-3">
@@ -161,4 +161,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/index_education_levels.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/display_educational_levels.blade.php ENDPATH**/ ?>

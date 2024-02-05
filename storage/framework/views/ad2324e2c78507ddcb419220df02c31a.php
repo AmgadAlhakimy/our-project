@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table mt-5">
-        
-        
+
+
         <div class="table-header">
-            
+
             <h4 class="col container-title mt-2">Subject Information</h4>
             <div class="row first-card mt-4">
                 <form method="post" action="<?php echo e(route('subjects.search')); ?>">
@@ -17,9 +17,9 @@
                     </div>
                 </form>
             </div>
-            
+
         </div>
-        
+
 
         <!-- table-hover table-striped -->
         <div class="table-header mt-3 mb-3">
@@ -33,7 +33,7 @@
                     <thead>delelte
                     <tr>
                         <th class=" me-4 ms-4">
-                            <input type="checkbox" id="select_all" 
+                            <input type="checkbox" id="select_all"
                                 style="display: none" >
                         </th>
                         <th>
@@ -107,4 +107,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/subjects/index_subjects.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/subjects/display_subjects.blade.php ENDPATH**/ ?>

@@ -4,7 +4,7 @@
 
 
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('DELETED EDUCATIONAL LEVELS')); ?></h4>
                 <div class="row first-card mt-4">
@@ -103,4 +103,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/deleted_education_levels.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/deleted_educational_levels.blade.php ENDPATH**/ ?>

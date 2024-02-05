@@ -29,22 +29,17 @@ Route::group(
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
-//        Route::get('/classrooms/{id}', function () {
-//            return view('layouts/sidebar');
-//        });
+
+        include 'follow_up.php';
+        include 'marks.php';
+        include 'search.php';
+        include 'resources.php';
+        include 'restore.php';
+        include 'force_delete.php';
 
 
         Route::get('/classrooms/{id}',
             [StudentController::class, 'getClassrooms']);
-
-        require __DIR__.'/follow_up.php';
-        require __DIR__.'/extra.php';
-        require __DIR__.'/search.php';
-        require __DIR__.'/resources.php';
-        require __DIR__.'/restore.php';
-        require __DIR__.'/force_delete.php';
-
-
 
         // absence
         Route::get('school', function () {
