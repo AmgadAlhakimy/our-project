@@ -29,6 +29,20 @@ class FollowUpChildController extends Controller
         }
     }
 
+    public function displayAllChildren()
+    {
+        try {
+            $classroom = Classroom::findorfail(1);
+            $date = Carbon::now()->format('Y-m-d');
+            $follow_up = FollowUpChild::where('created_at', 'like', "%$date%")->get();
+
+            return view('teachers_affairs/follow_up_children.display_follow_up_children',
+                compact('classroom', 'follow_up'));
+        } catch (\Exception  $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+
     public function showChildren($classroom_id)
     {
         try {
@@ -88,7 +102,6 @@ class FollowUpChildController extends Controller
     {
         try {
             FollowUpChild::create([
-                'subject' => $request->subject,
                 'comment' => $request->comment,
                 'bath' => [
                     'en' => __('public.' . $request->bath),
@@ -118,7 +131,6 @@ class FollowUpChildController extends Controller
      */
     public function storeAll(StoreFollowUpChildRequest $request, $classroom_id)
     {
-        return $request;
         try {
             $date = Carbon::now()->format('Y-m-d');
             if (FollowUpChild::where('created_at', 'like', "%$date%")->exists()) {

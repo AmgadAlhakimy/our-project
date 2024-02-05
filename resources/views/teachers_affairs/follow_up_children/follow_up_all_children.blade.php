@@ -19,12 +19,8 @@
                             <!-- 1 -->
                             @foreach($classroom->subjects as $subject)
                                 <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                    <select name="subject[]" class="form-control">
-                                    <option value="{{$subject->id}}">{{$subject->name}}</option>
-                                    @error('subject')
-                                    <small class="form-text text-danger">{{$message}}</small>
-                                    @enderror
-                                    </select>
+                                    <label>{{$subject->name}}</label>
+
                                 </div>
                                 <div class="col-lg-8 col-md-8 col-sm-8 ">
                                     <input type="text" class=" form-control ms-2 me-2" name="comment[]">
@@ -33,7 +29,6 @@
                                     @enderror
                                 </div>
                             @endforeach
-                            <SPAN name="anything" value="test">test span</SPAN>
                         </div>
                     </div>
                 </div>

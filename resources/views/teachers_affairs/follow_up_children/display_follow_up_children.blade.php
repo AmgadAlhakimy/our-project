@@ -47,12 +47,9 @@
                         <th class="th-head-1"><div class="" >{{__('public.id')}}</th>
                         <th class="th-head-1">{{__('public.name')}}</th>
                         <th class="th-head-1">{{__('public.photo')}}</th>
-                        <th class="th-head-1">subject1</th>
-                        <th class="th-head-1">subject2</th>
-                        <th class="th-head-1">subject3</th>
-                        <th class="th-head-1">subject4</th>
-                        <th class="th-head-1">subject5</th>
-                        <th class="th-head-1">subject6</th>
+                        @foreach($classroom->subjects as $subject)
+                            <th class="th-head-1">{{$subject->name}}</th>
+                                @endforeach
                         <th class="th-head-1">{{__('student.وجبة')}}</th>
                         <th class="th-head-1">{{__('student.snack')}}</th>
                         <th class="th-head-1">{{__('student.path room')}}</th>
@@ -65,21 +62,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {{-- @foreach($classroom->students  as $student ) --}}
+                     @foreach($follow_up  as $follow )
                         <tr class="test_1 ">
                             <td class="num_table ">{{$counter}}</td>
-                            <td>0012</td>
-                            <td>KHALED ABDULNASER MANSOUR</td>
-                            <td><img class="student-img" src="#" alt=""></td>
-                            <td><label for="">math 1</label></td>
-                            <td><label for="">math 2</label></td>
-                            <td><label for="">math 3</label></td>
-                            <td><label for="">math 4</label></td>
-                            <td><label for="">math 5</label></td>
-                            <td><label for="">math 6</label></td>
-                            <td><label for=""> all</label></td>
-                            <td><label for="">some</label></td>
-                            <td><label for="">tow times</label></td>
+                            <td>{{$follow->student->id}}</td>
+                            <td>{{$follow->student->name}}</td>
+                            <td><img class="student-img" src="{{$follow->student->photo}}" alt=""></td>
+                            @foreach($follow->comment as $comment)
+                                <td class="th-head-1">{{$comment}}</td>
+                            @endforeach
+                            <td><label for=""> {{$follow->food}}</label></td>
+                            <td><label for="">{{$follow->snack}}</label></td>
+                            <td><label for="">{{$follow->bath}}</label></td>
                             <td><label for="">7:30am</label></td>
                             <td><label for="">1:35pm</label></td>
                             <td>
@@ -92,7 +86,7 @@
                             </td>
                             <?php $counter++ ?>
                         </tr>
-                    {{-- @endforeach --}}
+                     @endforeach
                     </tbody>
                 </table>
             </div>

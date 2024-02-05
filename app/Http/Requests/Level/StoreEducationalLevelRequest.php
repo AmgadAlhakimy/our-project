@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Level;
 
 use App\Models\EducationalLevel;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEducationalLevelRequest extends FormRequest
@@ -18,7 +19,7 @@ class StoreEducationalLevelRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {

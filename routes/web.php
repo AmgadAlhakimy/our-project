@@ -53,10 +53,7 @@ Route::group(
         Route::get('nursery', function () {
             return view('teachers_affairs/follow_up_children/follow-up-nursery');
         });
-        // nursery
-        Route::get('children_view', function () {
-            return view('teachers_affairs/follow_up_children/index_children_follow_up');
-        });
+
         // nursery
         Route::get('children', function () {
             return view('teachers_affairs/follow_up_children/follow-up-children');
