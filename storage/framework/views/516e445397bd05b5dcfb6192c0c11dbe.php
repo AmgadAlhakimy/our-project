@@ -64,7 +64,7 @@
                             <td><?php echo e($student->classroom->name); ?></td>
                             <td><?php echo e($student->created_at); ?></td>
                             <td><?php echo e($student->updated_at); ?></td>
- 
+
                             <td>
                                 <a href="<?php echo e(route('students.edit',$student->id)); ?>"
                                     class="btn save-button btn-success w-100">

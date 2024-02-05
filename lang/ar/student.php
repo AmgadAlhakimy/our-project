@@ -11,7 +11,7 @@ return [
     | the validator class. Some of these rules have multiple versions such
     | as the size rules. Feel free to tweak each of these messages here.
     |
-    */
+    */ 
 
     //create Student
     'Register a new Student'=>'تسجيل طالب جديد',
@@ -62,6 +62,28 @@ return [
     'birth date'=> 'تاريخ الميلاد',
     'birth place'=> 'مكان الميلاد',
     'Daily Follow-Up' => 'دفتر المتابعة',
-    'level'=>'المرحلة الدراسية'
+    'level'=>'المرحلة الدراسية',
+
+    'student information'=>'معلومات الطالب',
+    'personal info'=>'معلومات شخصية',
+
+    "father name"=>"اسم الأب",
+    "father work"=>"عمل الأب",
+    "father contacts 1"=>"رقم الأب 1",
+    "father contacts 2"=>"رقم الأب 2",
+
+    "mother name"=>"اسم الأم",
+    "mother work"=>"عمل الأم",
+    "mother contacts 1"=>"رقم الأم 1",
+    "mother contacts 2"=>"رقم الأم 2",
+
+    'student allergy'=>'الحساسية',
+    'student health problem'=>'مشاكل صحية',
+    'student medicines'=>'ادوية يستخدمها',
+
+    'kin name'=>'اسم القريب',
+    'kin relationship'=>'علاقة القريب',
+    "kin contact"=>"رقم القريب",
+
 
 ];

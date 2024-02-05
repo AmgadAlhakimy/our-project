@@ -12,7 +12,7 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
-
+ 
     //create Student
     'Register a new Student'=>'Register a new Student',
     'Student info'=>'Student info',
@@ -52,13 +52,35 @@ return [
     'take any medicine ?'=>'Take any Medicine ?',
     'no'=>'No',
     'yes'=>'Yes',
-    'have an allergy ?'=>'Have an Allergy ?',
+    'have an allergy?'=>'Have an Allergy ?',
     'have any health problem ?'=>'Have any Health Problem ?',
     'other info'=>'Other Info',
     'note'=>'NOTE:',
     'first you have to add classrooms'=>'first you have to add classrooms',
     'parents'=>'Parents',
     'more info'=>'More info',
+
+    'student information'=>'Student Information',
+    'personal info'=>'personal Information',
+
+    "father name"=>"father name",
+    "father work"=>"father work",
+    "father contacts 1"=>"father contacts 1",
+    "father contacts 2"=>"father contacts 2",
+
+    "mother name"=>"Mother name",
+    "mother work"=>"Mother work",
+    "mother contacts 1"=>"mother contacts 1",
+    "mother contacts 2"=>"mother contacts 2",
+
+    'student allergy'=>'student allergy',
+    'student health problem'=>'student health problem',
+    'student medicines'=>'student medicines',
+
+    'kin name'=>'kin name',
+    'kin relationship'=>'kin relationship',
+    "kin contact"=>"kin Contact",
+
 
     'birth date'=> ' Birth Date',
     'birth place'=> 'Birth Place ',

@@ -78,6 +78,11 @@ Route::group(
         Route::get('absence_class', function () {
             return view('teachers_affairs/absence/absent_student_class');
         });
+        // -----------------------
+        // absence
+        Route::get('student_info', function () {
+            return view('parents/student_info');
+        });
 
         // absence
         Route::get('absence', function () {

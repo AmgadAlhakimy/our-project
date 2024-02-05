@@ -272,7 +272,7 @@
 
                     
                     <!-- ======================== PARENTS ========================== -->
-                    <p class="title">قسم اولياء الأمور</p>
+                    <p class="title"><?php echo e(__('sidebar.parent section')); ?></p>
 
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
@@ -281,17 +281,17 @@
                                 <i
                                     class="icon-1 fa-solid fa-window-restore"
                                 ></i>
-                                <span class="menu-name">الاباء</span>
+                                <span class="menu-name"><?php echo e(__('sidebar.parent')); ?></span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="#" class="li-link">معلومات اولياء الامور</a>
-                                <a href="#" class="li-link">2</a>
-                                <a href="#" class="li-link">3</a>
-                                <a href="#" class="li-link">4</a>
-                                <a href="#" class="li-link">5</a>
+                                <a href='/student_info' class="li-link"><?php echo e(__('sidebar.son info')); ?></a>
+                                <a href="#" class="li-link"><?php echo e(__('sidebar.daily follow up ')); ?></a>
+                                <a href="#" class="li-link"><?php echo e(__('sidebar.absent info')); ?></a>
+                                <a href="#" class="li-link"><?php echo e(__('sidebar.monthly marks')); ?></a>
+                                <a href="#" class="li-link"><?php echo e(__('sidebar.final marks')); ?></a>
                             </div>
                         </div>
                     </li>
