@@ -25,20 +25,25 @@ class StoreEducationalLevelRequest extends FormRequest
 
         return [
             'name' => [
-                "required",
-                "unique:educational_levels,name->en",
-                "max:50",
-                "regex:/^[a-zA-Z\s]+$/"
+                'required',
+                'unique:educational_levels,name->en',
+                'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
                 ],
-            "name_ar" => [
-                "required",
-                "unique:educational_levels,name->ar",
-                "max:50",
-                "regex:/^[\p{Arabic}\s]+$/u"
+            'name_ar' => [
+                'required',
+                'unique:educational_levels,name->ar',
+                'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
                 ],
         ];
     }
 
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
     public function messages(): array
     {
         return [

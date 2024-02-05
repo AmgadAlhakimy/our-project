@@ -29,7 +29,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-12">
                             <label class="" for="activity-name-a"><?php echo e(__('Activity.Activity name in english')); ?> </label>
                             <input type="text" class="form-control" id='activity-name-a' placeholder="<?php echo e(__('Activity.in english')); ?>"
@@ -61,7 +61,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-12">
                             <label class="" for="area-name-a"><?php echo e(__('Activity.Activity location in english')); ?></label>
                             <input type="text" class="form-control " id='area-name-a' name="location"
@@ -77,7 +77,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-6">
                             <label class="" for="area-number"><?php echo e(__('Activity.Activity location contact')); ?></label>
                             <input type="number" class="form-control " id='area-number' name="contact" placeholder=""
@@ -132,7 +132,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class=" row">
                     <div class="box col ">
                         <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
@@ -146,4 +146,4 @@ unset($__errorArgs, $__bag); ?>
     </main>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/activities/create_activities.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/activities/create_activity.blade.php ENDPATH**/ ?>

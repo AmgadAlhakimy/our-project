@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Activity;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreActivityRequest extends FormRequest
@@ -17,16 +18,40 @@ class StoreActivityRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            'name' => ["required","unique:activities,name->en", "max:100"],
-            "name_ar"=>["required", "unique:activities,name->ar", "max:100"],
-            'location' => ['required', 'max:100'],
-            'location_ar' => ['required', 'max:100'],
-            'date' => ['required'],
+            'name' => [
+                'required',
+                'unique:activities,name->en',
+                'max:100',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'name_ar'=>[
+                'required',
+                'unique:activities,name->ar',
+                'max:100',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
+            'location' => ['required', 'string', 'max:100'],
+            'location_ar' => ['required', 'string', 'max:100'],
+            'date' => ['required', 'date'],
+            'contact'=>['nullable', 'numeric']
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'name.regex' => __('validation.english letters'),
+            'name_ar.regex' => __('validation.arabic letters'),
         ];
     }
 }

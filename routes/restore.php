@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\ClassroomController;
-use App\Http\Controllers\EducationalLevelController;
+use App\Http\Controllers\Activity\ActivityController;
+use App\Http\Controllers\Classroom\ClassroomController;
+use App\Http\Controllers\Level\EducationalLevelController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
-use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 

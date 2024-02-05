@@ -12,7 +12,7 @@
                 <h3 class="container-title"><?php echo e(__('Subject.create new Subject')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
-                            
+
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name"
                                     for="c-name"><?php echo e(__('Subject.Subject name in english')); ?></label>
@@ -29,7 +29,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            
+
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name_ar"><?php echo e(__('Subject.Subject name in arabic')); ?></label>
                                 <input type="text" id="edu_name_ar" class="form-control" name="name_ar"
@@ -47,7 +47,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
                     </div>
-                    
+
                         <div class=" row">
                             <div class="box col ">
                                 <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
@@ -61,4 +61,4 @@ unset($__errorArgs, $__bag); ?>
     </main>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/subjects/create_subjects.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/subjects/create_subject.blade.php ENDPATH**/ ?>

@@ -23,7 +23,91 @@ class UpdateRelativeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'father_name' => [
+                'required', 'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'father_name_ar' => [
+                'required', 'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
+            'father_work' => [
+                'nullable', 'max:50',
+                'regex:/^[a-zA-Z\s]*([a-zA-Z\s]+[0-9])*+$/',
+            ],
+            'father_work_ar' => [
+                'nullable', 'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
+            'father_contact1' => [
+                'required', 'numeric',
+            ],
+            'father_contact2' => [
+                'nullable', 'numeric',
+            ],
+            'mother_name' => [
+                'required', 'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'mother_name_ar' => [
+                'required', 'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
+            'mother_work' => [
+                'nullable', 'max:50',
+                'regex:/^[a-zA-Z\s]*([a-zA-Z\s]+[0-9])*+$/',
+            ],
+            'mother_work_ar' => [
+                'nullable', 'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
+            'mother_contact1' => [
+                'nullable', 'numeric',
+            ],
+            'mother_contact2' => [
+                'nullable', 'numeric',
+            ],
+            'kin_name' => [
+                'nullable', 'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'kin_name_ar' => [
+                'nullable', 'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
+            'kin_relationship' => [
+                'nullable', 'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
+            'kin_relationship_ar' => [
+                'nullable', 'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
+            ],
+            'kin_contact' => [
+                'nullable', 'numeric',
+            ],
+        ];
+    }
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'father_name.regex'=>__('validation.english letters'),
+            'father_name_ar.regex'=>__('validation.arabic letters'),
+            'mother_name.regex'=>__('validation.english letters'),
+            'mother_name_ar.regex'=>__('validation.arabic letters'),
+            'father_work.regex'=>__('validation.english letters'),
+            'father_work_ar.regex'=>__('validation.arabic letters'),
+            'mother_work.regex'=>__('validation.english letters'),
+            'mother_work_ar.regex'=>__('validation.arabic letters'),
+            'kin_name.regex'=>__('validation.english letters'),
+            'kin_name_ar.regex'=>__('validation.arabic letters'),
+            'kin_relationship.regex'=>__('validation.english letters'),
+            'kin_relationship_ar.regex'=>__('validation.arabic letters'),
         ];
     }
 }

@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Subject;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Subject\StoreSubjectRequest;
 use App\Http\Requests\Subject\UpdateSubjectRequest;
 use App\Models\Subject;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 
 class SubjectController extends Controller
 {
@@ -18,7 +17,7 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::all();
-            return view('academic_dep/subjects.index_subjects',
+            return view('academic_dep/subjects.display_subjects',
                 compact('subjects'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -32,7 +31,7 @@ class SubjectController extends Controller
     public function create()
     {
         try {
-            return view('academic_dep/subjects.create_subjects');
+            return view('academic_dep/subjects.create_subject');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -78,7 +77,7 @@ class SubjectController extends Controller
     {
         try {
             $subject = Subject::findorFail($id);
-            return view('academic_dep/subjects.edit_subjects',
+            return view('academic_dep/subjects.edit_subject',
                 compact('subject'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -163,7 +162,7 @@ class SubjectController extends Controller
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
-            return view('academic_dep/subjects.index_subjects',
+            return view('academic_dep/subjects.display_subjects',
                 compact('search','subjects'));
 
         }catch (\Exception $e){

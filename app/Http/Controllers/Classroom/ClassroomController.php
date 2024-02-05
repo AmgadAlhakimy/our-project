@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Classroom;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Classroom\StoreClassroomRequest;
 use App\Http\Requests\Classroom\UpdateClassroomRequest;
 use App\Models\Classroom;
@@ -19,7 +20,7 @@ class ClassroomController extends Controller
     {
         try {
             $classrooms = Classroom::all();
-            return view('academic_dep/classrooms.index_classroom',
+            return view('academic_dep/classrooms.display_classrooms',
                 compact('classrooms'));
 
         }catch (Exception $e){
@@ -69,7 +70,7 @@ class ClassroomController extends Controller
     {
         try {
         $classrooms = Classroom::onlyTrashed()->get();
-        return view('academic_dep/classrooms.deleted_classroom',
+        return view('academic_dep/classrooms.deleted_classrooms',
             compact('classrooms'));
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -121,13 +122,15 @@ class ClassroomController extends Controller
     public function destroy($id)
     {
         try {
-            $student_id = Student::where('classroom_id', $id)->pluck('classroom_id');
+            $student_id = Student::where('classroom_id', $id)
+                ->pluck('classroom_id');
             if($student_id->count() == 0){
             Classroom::destroy($id);
             return redirect()->route('classrooms.index')
                 ->with(['warning' => trans('message.delete')]);
             }else{
-                return redirect()->back() ->with(['error' => trans('message.delete_classroom_error')]);
+                return redirect()->back() ->with(['error' =>
+                    trans('message.delete_classroom_error')]);
             }
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -140,7 +143,8 @@ class ClassroomController extends Controller
     public function restore($id)
     {
         try {
-            $edu_id = Classroom::withTrashed()->select('edu_id')->where('id', $id)->get();
+            $edu_id = Classroom::withTrashed()->select('edu_id')
+                ->where('id', $id)->get();
             $level = EducationalLevel::where('id', $edu_id)->pluck('id');
 
             if($level->count() > 0){
@@ -148,7 +152,8 @@ class ClassroomController extends Controller
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
             }else{
-                return redirect()->back() ->with(['error' => trans('message.restore_classroom_error')]);
+                return redirect()->back() ->with(['error' =>
+                    trans('message.restore_classroom_error')]);
             }
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -188,7 +193,7 @@ class ClassroomController extends Controller
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
-            return view('academic_dep/classrooms.index_classroom',
+            return view('academic_dep/classrooms.display_classrooms',
                 compact('search','classrooms'));
 
         }catch (\Exception $e){

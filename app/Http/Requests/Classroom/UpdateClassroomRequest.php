@@ -25,24 +25,34 @@ class UpdateClassroomRequest extends FormRequest
     {
         $id = $this->route('classroom');
         return [
-            'name'=>[
+            'name' => [
                 'required',
-                Rule::unique('classrooms','name->en')->ignore($id),
-                'max:50'],
+                Rule::unique('classrooms',
+                    'name->en')->ignore($id),
+                'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
+            ],
             'name_ar' => [
                 'required',
-                Rule::unique('classrooms', 'name->ar')->ignore($id)
+                Rule::unique('classrooms',
+                    'name->ar')->ignore($id),
+                'max:50',
+                'regex:/^[\p{Arabic}\s]+$/u',
             ],
-            'cost'=>'required',
+            'cost' => 'required',
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
     public function messages(): array
     {
         return [
-            'name.required'=>'This filed is required',
-            'name.unique'=>'You have already saved this classroom',
-            'name.max'=>'The maximum length is 50',
-            'cost.required'=>'This filed is required',
+            'name.regex' => __('validation.english letters'),
+            'name_ar.regex' => __('validation.arabic letters'),
         ];
     }
 }
