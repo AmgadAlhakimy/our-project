@@ -33,7 +33,8 @@
     <div class="head " dir="ltr">
         {{-- THE MAIN SEARCH OF SIDEBAR --}}
         <div class="search p-relative">
-            <label for="rtl"></label> <input class="search1" type="search" placeholder="{{__('sidebar.search')}}" id="rtl" />
+            <label for="rtl"></label> <input class="search1" type="search"
+                                             placeholder="{{__('sidebar.search')}}" id="rtl" />
         </div>
         <div class="icons">
                     <span class="notification p-relative">
@@ -221,14 +222,14 @@
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
                                 <i class="icon-1 fa-solid fa-window-restore"></i>
-                                <span class="menu-name">دفتر المتابعة مدرسي</span>
+                                <span class="menu-name">دفتر متابعة مدرسة</span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
                                 <a href='/school' class="li-link">علوم \ سادس </a>
-                                <a href="{{route('follow_up_children.displayAllChildren')}}" class="li-link">{{__('sidebar.عرض دفتر المابعة (المدرسة)')}}</a>
+{{--                                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('sidebar.عرض دفتر المابعة (المدرسة)')}}</a>--}}
                                 <a href='#' class="li-link">تقارير دفتر المتابعة</a>
                             </div>
                         </div>
@@ -237,20 +238,14 @@
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
                                 <i class="icon-1 fa-solid fa-window-restore"></i>
-                                <span class="menu-name">دفتر المتابعة روضة</span>
+                                <span class="menu-name">دفتر متابعة روضة</span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-<<<<<<< HEAD
-                                <a href="{{route('follow_up_children.showChildren',1)}}" class="li-link">quran \ KG1 </a>
-                                <a href="{{route('follow_up_children.displayAllChildren')}}" class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>
-=======
-                                <a href='/all_children' class="li-link">quran \ KG1 </a>
-                                {{-- <a href="{{route('follow_up_children.showChildren',1)}}" class="li-link">quran \ KG1 </a> --}}
-                                <a href='/children_view' class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>
->>>>>>> 37c8517b5bff3bcd06985935d1d79eb9bc25eb19
+                                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">quran \ KG1 </a>
+                                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>
                                 <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
                             </div>
                         </div>

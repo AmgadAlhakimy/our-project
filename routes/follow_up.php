@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('follow-up/showChildren/{classroom_id}',
-    [FollowUpChildController::class, 'showChildren'])
-    ->name('follow_up_children.showChildren');
+Route::get('follow-up/writingFollowUp/{classroom_id}',
+    [FollowUpChildController::class, 'writingFollowUp'])
+    ->name('follow_up_children.writingFollowUp');
 
 Route::get('follow-up-student/createNote/{id}',
     [FollowUpStudentController::class, 'createNote'])
@@ -29,7 +29,7 @@ Route::get('follow-up-child/storeAll/{classroom_id}',
     [FollowUpChildController::class, 'storeAll'])
     ->name('follow_up_children.storeAll');
 
-Route::get('follow-up-children/display',
+Route::get('follow-up-children/display/{classroom_id}',
     [FollowUpChildController::class, 'displayAllChildren'])
     ->name('follow_up_children.displayAllChildren');
 

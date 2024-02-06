@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('follow_up_children', function (Blueprint $table) {
             $table->id();
-            $table->json('comment');
+            $table->json('homework');
             $table->json('bath');
             $table->json('snack');
             $table->json('food');
