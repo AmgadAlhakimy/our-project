@@ -4,18 +4,19 @@
     <main class="main ">
         <section class="section" >
             <!-- <h1 class="p-relative title-1">اضافة كلاس</h1> -->
-            <form action="{{route('class_activity.store')}}">
+            <form method="post" action="{{route('teacher_subjects.store')}}">
                 @csrf
-                <h3 class="container-title">اضف انشطة للفصول</h3>
+                <h3 class="container-title">اضف المواد الخاصة بالمدرس</h3>
                 <div class="container containers-style">
                     <div class="">
                         <div class="row">
                             <!-- 1 -->
+
                             <div class="box col-12 ">
-                                <label for="level-class">the classes</label>
-                                <select class="form-select form-control " id="level-class" name="class_id">
-                                    @foreach($classses as $class)
-                                        <option class="text-center" value="{{$class->id}}">{{$class->name}}</option>
+                                <label for="level-class">the Teacher</label>
+                                <select class="form-select form-control " id="teacher" name="teacher_id">
+                                    @foreach($teachers as $teacher)
+                                        <option class="text-center" value="{{$teacher->id}}">{{$teacher->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('class_id')
@@ -25,18 +26,20 @@
                             <hr>
                             <!-- 2 -->
                                 <div class="box mb-1">
-                                    <label class="" for="level-class">choose the activities please</label>
+                                    <label class="" for="level-class">choose the subjects please</label>
                                 </div>
+
                                 <div class="box ">
-                                        <div class="btn-container ">
+                                    <div class="btn-container ">
                                         <!-- <div class="btn-menu "> -->
                                         <div class="btn-l-container  row">
                                             <!-- -------- start buttons  -->
-                                            @foreach($activities as $Activity)
+                                            {{$i=1}}
+                                            @foreach($subjects as $Subject)
                                                 <label class="btn-l-label col ">
-                                                    <input class="light-btn" type="checkbox"
-                                                           value="{{$Activity->id}}">
-                                                    <span class="btn-l-text">{{$Activity->name}}</span>
+                                                    <input class="light-btn" type="checkbox" name="subject_id[]"
+                                                           value="{{$Subject->id}}" >
+                                                    <span class="btn-l-text">{{$Subject->name}} </span>
                                                 </label>
                                             @endforeach
                                             <!-- -------- end buttons  -->
@@ -45,6 +48,9 @@
                                 </div>
                             <!-- </div> -->
                         </div>
+
+
+
                     </div>
                 </div>
                 <div class=" row">
@@ -54,7 +60,7 @@
                     </div>
                 </div>
             </form>
-        </section>
+            </section>
     </main>
 </body>
 @endsection

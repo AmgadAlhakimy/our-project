@@ -80,5 +80,6 @@ return [
     'num'=>'N',
     'absent'=>'Absent',
     'description'=>'Description',
+    'please select the gender'=>'please select the gender',
 
 ];

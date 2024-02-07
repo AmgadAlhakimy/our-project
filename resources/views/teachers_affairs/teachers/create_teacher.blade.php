@@ -15,7 +15,7 @@
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12  ">
-                            <label for="teacher-name-a">{{__('teacher.teachers name in english')}}</label>
+                            <label for="teacher-name-a">{{__('teacher.teacher name in english')}}</label>
                             <input type="text" class="form-control " id='teacher-name-a' name="name"
                                     value="{{old('name')}}">
                             @error('name')
@@ -23,7 +23,7 @@
                             @enderror
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label for="teacher-name-e">{{__('teacher.teachers name in arabic')}}</label>
+                            <label for="teacher-name-e">{{__('teacher.teacher name in arabic')}}</label>
                             <input type="text" class="form-control " id='teacher-name-e' name="name_ar"
                                    value="{{old('name_ar')}}">
                             @error('name_ar')
@@ -43,6 +43,7 @@
                         <div class="box col-lg-6 col-md-12 ">
                             <label for="gender">{{__('public.gender')}}</label>
                             <select class="col form-select form-control" id="gender" name="gender">
+                                <option value="" selected disabled>{{__('public.please select the gender')}}</option>
                                 <option  value="{{__('public.male')}}">{{__('public.male')}}</option>
                                 <option value="{{__('public.female')}}">{{__('public.female')}}</option>
                             </select>

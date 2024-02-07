@@ -27,35 +27,35 @@
                                 <div class="box ">
                                         <div class="btn-container ">
                                         <!-- <div class="btn-menu "> -->
-                                        <div class="btnl-container  row">
+                                        <div class="btn-l-container  row">
                                             <!-- -------- start buttons  -->
-                                            <label class="btnl-lable col ">
+                                            <label class="btn-l-label col ">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">الصف الاول</span>
+                                                <span class="btn-l-text">الصف الاول</span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">الصف الثاني</span>
+                                                <span class="btn-l-text">الصف الثاني</span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">حضانة </span>
+                                                <span class="btn-l-text">حضانة </span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">kg1</span>
+                                                <span class="btn-l-text">kg1</span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">kg2</span>
+                                                <span class="btn-l-text">kg2</span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">الصف الثالث</span>
+                                                <span class="btn-l-text">الصف الثالث</span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">reception </span>
+                                                <span class="btn-l-text">reception </span>
                                             </label>
 
                                             <!-- -------- end buttons  -->

@@ -14,8 +14,8 @@ return [
     */
 
     'teachers info'=>'معلومات المدرس',
-    'teachers name in english'=>'اسم المدرس بالإنجليزية',
-    'teachers name in arabic'=>'اسم المدرس بالعربية',
+    'teacher name in english'=>'اسم المدرس بالإنجليزية',
+    'teacher name in arabic'=>'اسم المدرس بالعربية',
     'photo'=>'الصورة',
     'phone'=>'الهاتف',
     'address'=>'العنوان',

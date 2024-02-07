@@ -16,7 +16,7 @@ class TeacherController extends Controller
     use PhotoTrait;
 
     /**
-     * Display a listing of the resource.
+     * Display teachers.
      */
     public function index()
     {
@@ -24,6 +24,7 @@ class TeacherController extends Controller
             $teachers = Teacher::all();
             return view('teachers_affairs/teachers.display_teachers',
                 compact('teachers'));
+
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -43,7 +44,7 @@ class TeacherController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a new teacher.
      */
     public function store(StoreTeacherRequest $request)
     {

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Subject;
+use App\Models\Teacher;
 use App\Models\TeacherSubject;
 use App\Http\Requests\StoreTeacherSubjectRequest;
 use App\Http\Requests\UpdateTeacherSubjectRequest;
@@ -13,7 +15,12 @@ class TeacherSubjectController extends Controller
      */
     public function index()
     {
-        //
+        try {
+            return view('academic_dep/relations.relations-page');
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -21,7 +28,15 @@ class TeacherSubjectController extends Controller
      */
     public function create()
     {
-        //
+        try {
+            $teachers = Teacher::all();
+            $subjects = Subject::all();
+            return view('academic_dep/relations.teacher_subjects',
+                compact('teachers', 'subjects'));
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -29,7 +44,20 @@ class TeacherSubjectController extends Controller
      */
     public function store(StoreTeacherSubjectRequest $request)
     {
-        //
+        try {
+            foreach ($request->subject_id as $subject_id) {
+                echo $request->teacher_id;
+                echo $subject_id;
+                TeacherSubject::create([
+                    'teacher_id'=>$request->teacher_id,
+                    'subject_id'=>$subject_id,
+                ]);
+            }
+            return redirect()->back()->with(['success' => 'saved successfully']);
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**

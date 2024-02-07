@@ -14,8 +14,8 @@ return [
     */
 
     'teachers info'=>'Teacher Info',
-    'teachers name in english'=>'Teacher Name in English',
-    'teachers name in arabic'=>'Teacher Name in Arabic',
+    'teacher name in english'=>"Teacher's Name in English",
+    'teacher name in arabic'=>"Teacher's Name in Arabic",
     'photo'=>'Photo',
     'contact'=>'Contact',
     'address in english'=>'Address in English',

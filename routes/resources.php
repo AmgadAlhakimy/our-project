@@ -13,6 +13,7 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\TeacherController;
+use App\Http\Controllers\TeacherSubjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('educational_levels', EducationalLevelController::class);
@@ -27,4 +28,5 @@ Route::resource('employees', EmployeeController::class);
 Route::resource('students', StudentController::class);
 Route::resource('subjects', SubjectController::class);
 Route::resource('teachers', TeacherController::class);
+Route::resource('teacher_subjects', TeacherSubjectController::class);
 Route::resource('marks', MarkController::class);

@@ -13,4 +13,5 @@ class TeacherSubject extends Model
     use SoftDeletes;
 
     protected $fillable = ['teacher_id','subject_id'];
+    protected $table = 'teacher_subjects_pivot';
 }

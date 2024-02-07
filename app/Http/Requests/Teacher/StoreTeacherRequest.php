@@ -25,7 +25,7 @@ class StoreTeacherRequest extends FormRequest
         return [
             'name'=>['required','max:50',
                 'unique:teachers,name->en',
-                'regex:/^[a-zA-Z\s]+$/',
+                'regex:/^[a-zA-Z-\s]+$/',
             ],
             'name_ar'=>['required','max:50',
                 'unique:teachers,name->ar',
@@ -33,9 +33,10 @@ class StoreTeacherRequest extends FormRequest
 
             ],
             'contact' => ['required', 'numeric'],
+            'gender'=>'required',
             'address' => [
                 'required', 'max:100',
-                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
+                'regex:/^[A-Za-z-\s]+[A-Za-z0-9]*$/',
             ],
             'address_ar' => [
                 'required', 'max:100',

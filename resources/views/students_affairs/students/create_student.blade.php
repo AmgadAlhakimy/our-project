@@ -42,7 +42,7 @@
                             @enderror
                         </div>
                         {{-- 4 --}}
-                        <div class="box row"> 
+                        <div class="box row">
                             <div class="col-lg-6 col-md-6">
                                 <label for="address">{{__("Student.Student's address in arabic")}}</label>
                                 <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="{{old('address_ar')}}">
@@ -62,7 +62,8 @@
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender">{{__('Student.gender')}}</label>
-                            <select class="col form-select form-control" id="gender" name="gender" value="{{old('gender')}}">
+                            <select class="col form-select form-control" id="gender" name="gender">
+                                <option value="" selected disabled>{{__('public.please select the gender')}}</option>
                                 <option class="text-center"
                                         value="{{__('Student.male')}}">{{__('Student.male')}}</option>
                                 <option class="text-center"
@@ -100,7 +101,7 @@
                         </div>
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="className " class="form-label">{{__('Student.level')}}</label>
+                            <label for="className" class="form-label">{{__('Student.level')}}</label>
                             <select id="className" class="form-control" name="level_id"
                             onchange="console.log($(this).val())">
                                 @foreach($levels as $level)
@@ -149,7 +150,6 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <input type="text" name="relative_id" id="" disabled required value="{{old('relative_id')}}">
                         <!-- garden number  -->
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 {{-- -*- --}}
-                                <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1"value="{{old('medicine_desc')}}"
+                                <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
                                     aria-label="Text input with radio button" placeholder="desc in english" hidden >
                                 @error('medicine_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
@@ -272,7 +272,7 @@
     <script>
         $(document.ready(function (){
             $('select[name="level_id"]').on('change', function (){
-                var level_id = $(this).val();
+                let level_id = $(this).val();
                 if(level_id){
                     $.ajax({
                         url: "{{URL::to('classrooms')}}/" + level_id,

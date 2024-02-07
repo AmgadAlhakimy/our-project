@@ -84,5 +84,6 @@ return [
     'num'=>'م',
     'absent'=>'الغياب',
     'description'=>'سبب الغياب',
+    'please select the gender'=>'الرجاء اختيار النوع',
 
 ];
