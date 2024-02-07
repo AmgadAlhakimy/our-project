@@ -26,7 +26,7 @@ class SubjectController extends Controller
 
 
     /**
-     * Show creating new Subject page.
+     * Show creating a new Subject page.
      */
     public function create()
     {

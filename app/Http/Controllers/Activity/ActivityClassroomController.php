@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Activity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Activity_classroom\StoreActivityClassroomRequest;
 use App\Http\Requests\Activity_classroom\UpdateActivityClassroomRequest;
-use App\Models\Activity;
-use App\Models\ActivityClassroom;
+use App\Models\Activity\Activity;
+use App\Models\Activity\ActivityClassroom;
 use App\Models\Classroom;
 
 class ActivityClassroomController extends Controller

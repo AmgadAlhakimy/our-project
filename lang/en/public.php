@@ -45,6 +45,8 @@ return [
     'female1'=>'انثى',
     'photo'=>'Photo',
     'address'=>'Address',
+    'address in english'=>'Address in English',
+    'address in arabic'=>'Address in Arabic',
     'qualification'=>'Qualification',
     'salary'=>'Salary',
     'major'=>'Major',

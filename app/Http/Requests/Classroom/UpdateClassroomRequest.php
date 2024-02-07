@@ -30,14 +30,14 @@ class UpdateClassroomRequest extends FormRequest
                 Rule::unique('classrooms',
                     'name->en')->ignore($id),
                 'max:50',
-                'regex:/^[a-zA-Z\s]+$/',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
             ],
             'name_ar' => [
                 'required',
                 Rule::unique('classrooms',
                     'name->ar')->ignore($id),
                 'max:50',
-                'regex:/^[\p{Arabic}\s]+$/u',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
             ],
             'cost' => 'required',
         ];

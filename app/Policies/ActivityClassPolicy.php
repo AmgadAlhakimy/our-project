@@ -2,9 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\ActivityClassroom;
+use App\Models\Activity\ActivityClassroom;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class ActivityClassPolicy
 {

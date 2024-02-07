@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Employee;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreEmployeeRequest extends FormRequest
@@ -17,18 +18,43 @@ class StoreEmployeeRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            'name' => ["required","unique:employees,name->en", "max:100"],
-            "name_ar"=>["required", "unique:employees,name->ar", "max:100"],
-            'photo'=>['image','mimes:jpg,jpeg,png,gif,svg','max:100'],
-            'birthdate'=>['required'],
-            'qualification'=>['required','max:20'],
-            'address'=>['required','max:100'],
-            'contact1'=>['required','numeric'],
+            'name' => [
+                'required',
+                'unique:employees,name->en',
+                'max:100',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
+            ],
+            'name_ar'=>[
+                'required',
+                'unique:employees,name->ar',
+                'max:100',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
+            ],
+            'photo'=>[
+                'image',
+                'mimes:jpg,jpeg,png,gif,svg',
+                'max:100'
+            ],
+            'birthdate'=>[
+                'required'
+            ],
+            'qualification'=>[
+                'required',
+                'max:20'
+            ],
+            'address'=>[
+                'required',
+                'max:100'
+            ],
+            'contact1'=>[
+                'required',
+                'numeric'
+            ],
 
 
         ];

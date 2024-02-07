@@ -16,7 +16,7 @@ class Teacher extends Model
     protected $fillable= ['name','photo','gender','contact','address',
                           'qualification','salary','major','note'];
 
-    public $translatable=['name','gender','address','qualification','major'];
-
+    public array $translatable = ['name','gender','address',
+                                    'qualification','major'];
 
 }

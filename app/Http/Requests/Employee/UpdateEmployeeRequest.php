@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Employee;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateEmployeeRequest extends FormRequest
@@ -17,12 +18,15 @@ class UpdateEmployeeRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
         return [
-            'name' => ['required', 'unique:employees', 'max:100'],
+            'name' => [
+                'required', 'unique:employees', 'max:100',
+
+            ],
 //            'photo' => ['image', 'mimes:jpg,jpeg,png,gif,svg', 'max:100'],
             'birthdate' => ['required'],
             'qualification' => ['required', 'max:20'],

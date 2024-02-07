@@ -24,12 +24,16 @@ return [
     'high school'=>'ثانوية عامة',
     'diploma'=>'دبلوم',
     'bachelor'=>'بكالوريوس',
-    'high school_ar'=>'High School',
-    'diploma_ar'=>'Diploma',
-    'bachelor_ar'=>'Bachelor',
     'salary'=>'الراتب',
     'major'=>'التخصص',
     'other info'=>'معلومات أخرى',
+    'qualification in english'=>'المؤهل بالإنجليزية',
+    'qualification in arabic'=>'المؤهل بالعربية',
+    'create a new teacher' => 'إنشاء مدرس جديد',
+    'major in english'=>'التخصص بالإنجليزية',
+    'major in arabic'=>'التخصص بالعربية',
+
+
 
 
     // the daily follow up book
