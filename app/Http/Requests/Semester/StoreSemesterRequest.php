@@ -22,13 +22,32 @@ class StoreSemesterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>['required', 'unique:semesters,name->en', 'max:100'],
-            'name_ar'=>['required', 'unique:semesters,name->ar', 'max:100'],
+            'name'=>[
+                'required',
+                'unique:semesters,name->en',
+                'max:100',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
+            ],
+            'name_ar'=>[
+                'required',
+                'unique:semesters,name->ar',
+                'max:100',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
+            ],
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
     public function messages(): array
     {
         return [
+            'name.regex'=>__('validation.english letters'),
+            'name_ar.regex'=>__('validation.arabic letters'),
         ];
     }
+
 }

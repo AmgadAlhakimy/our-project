@@ -26,7 +26,7 @@ class SubjectController extends Controller
 
 
     /**
-     * Show creating new Subject page.
+     * Show creating a new subject page.
      */
     public function create()
     {
@@ -38,7 +38,7 @@ class SubjectController extends Controller
     }
 
     /**
-     * Store a new Subject.
+     * Store a new subject.
      */
     public function store(StoreSubjectRequest $request)
     {

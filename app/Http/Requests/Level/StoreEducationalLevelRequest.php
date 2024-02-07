@@ -26,16 +26,14 @@ class StoreEducationalLevelRequest extends FormRequest
 
         return [
             'name' => [
-                'required',
+                'required', 'max:50',
                 'unique:educational_levels,name->en',
-                'max:50',
-                'regex:/^[a-zA-Z\s]+$/',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
                 ],
             'name_ar' => [
-                'required',
+                'required', 'max:50',
                 'unique:educational_levels,name->ar',
-                'max:50',
-                'regex:/^[\p{Arabic}\s]+$/u',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
                 ],
         ];
     }
@@ -52,4 +50,5 @@ class StoreEducationalLevelRequest extends FormRequest
             'name_ar.regex'=>__('validation.arabic letters'),
         ];
     }
+
 }

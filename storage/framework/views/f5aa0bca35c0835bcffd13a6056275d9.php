@@ -7,12 +7,12 @@
             <form action="">
                 <h3 class="container-title">اضف مواد للفصول</h3>
                 <div class="container containers-style">
-                    <div class=""> 
+                    <div class="">
                         <div class="row">
                             <!-- 1 -->
                             <div class="box col-12 ">
                                 <label for="level-class">the classes</label>
-                                <select class="form-select form-control " id="level-class"> 
+                                <select class="form-select form-control " id="level-class">
                                     <option  value="">روضة</option>
                                     <option  value="">ابتدائي</option>
                                 </select>
@@ -22,54 +22,54 @@
                                 <div class="box mb-1">
                                     <label class="" for="level-class">choose the subjects please</label>
                                 </div>
-                                
+
                                 <div class="box ">
                                         <div class="btn-container ">
                                         <!-- <div class="btn-menu "> -->
-                                        <div class="btnl-container  row">
+                                        <div class="btn-l-container  row">
                                             <!-- -------- start buttons  -->
-                                            <label class="btnl-lable col ">
+                                            <label class="btn-l-label col ">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">قرآن</span>
+                                                <span class="btn-l-text">قرآن</span>
                                             </label>
-                                            <label class="btnl-lable col ">
+                                            <label class="btn-l-label col ">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">اسلامية</span>
+                                                <span class="btn-l-text">اسلامية</span>
                                             </label>
-                                            <label class="btnl-lable col ">
+                                            <label class="btn-l-label col ">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">علوم</span>
+                                                <span class="btn-l-text">علوم</span>
                                             </label>
-                                            <label class="btnl-lable col ">
+                                            <label class="btn-l-label col ">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">رياضة</span>
+                                                <span class="btn-l-text">رياضة</span>
                                             </label>
-                                            <label class="btnl-lable col ">
+                                            <label class="btn-l-label col ">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">رياضيات</span>
+                                                <span class="btn-l-text">رياضيات</span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text"> عربي</span>
+                                                <span class="btn-l-text"> عربي</span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">انجليزي </span>
+                                                <span class="btn-l-text">انجليزي </span>
                                             </label>
-                                            <label class="btnl-lable col">
+                                            <label class="btn-l-label col">
                                                 <input class="light-btn" type="checkbox" >
-                                                <span class="btnl-text">اجتماعيات</span>
+                                                <span class="btn-l-text">اجتماعيات</span>
                                             </label>
-                                        
+
                                             <!-- -------- end buttons  -->
                                         </div>
                                     </div>
                                 </div>
                             <!-- </div> -->
                         </div>
-                            
 
-                            
+
+
                     </div>
                 </div>
                 <div class=" row">

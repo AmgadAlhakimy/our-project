@@ -31,15 +31,15 @@
                                 <div class="box">
                                         <div class="btn-container ">
                                         <!-- <div class="btn-menu "> -->
-                                        <div class="btnl-container  row">
+                                        <div class="btn-l-container  row">
                                             <!-- -------- start buttons  -->
                                                 {{$i=1}}
                                             @foreach($subjects as $Subject)
 
-                                                <label class="btnl-lable col ">
+                                                <label class="btn-l-label col ">
                                                     <input class="light-btn" type="checkbox" name="subject_id_{{$i++}}"
                                                            value="{{$Subject->id}}" >
-                                                    <span class="btnl-text">{{$Subject->name}} </span>
+                                                    <span class="btn-l-text">{{$Subject->name}} </span>
                                                 </label>
                                             @endforeach
                                             <!-- -------- end buttons  -->

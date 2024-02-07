@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('follow_up_students', function (Blueprint $table) {
             $table->id();
-            $table->json('subject');
-            $table->json('comment');
-            $table->json('bath');
-            $table->json('snack');
-            $table->json('food');
+            $table->json('homework');
             $table->foreignId('student_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('subject_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }

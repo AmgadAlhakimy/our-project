@@ -27,18 +27,16 @@ class UpdateEducationalLevelRequest extends FormRequest
         $id = $this->route('educational_level');
         return [
             'name' => [
-                'required',
+                'required','max:50',
                 Rule::unique('educational_levels',
                     'name->en')->ignore($id),
-                'max:50',
-                'regex:/^[a-zA-Z\s]+$/',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
             ],
             'name_ar' => [
-                'required',
+                'required','max:50',
                 Rule::unique('educational_levels',
                     'name->ar')->ignore($id),
-                'max:50',
-                'regex:/^[\p{Arabic}\s]+$/u',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
             ],
         ];
     }

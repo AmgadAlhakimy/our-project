@@ -14,8 +14,8 @@ return [
     */
 
     'teachers info'=>'Teacher Info',
-    'teachers name in english'=>'Teacher Name in English',
-    'teachers name in arabic'=>'Teacher Name in Arabic',
+    'teacher name in english'=>"Teacher's Name in English",
+    'teacher name in arabic'=>"Teacher's Name in Arabic",
     'photo'=>'Photo',
     'contact'=>'Contact',
     'address in english'=>'Address in English',
@@ -25,13 +25,13 @@ return [
     'high school'=>'High School',
     'diploma'=>'Diploma',
     'bachelor'=>'Bachelor',
-    'high school_ar'=>'ثانوية عامة',
-    'diploma_ar'=>'دبلوم',
-    'bachelor_ar'=>'بكالوريوس',
     'salary'=>'Salary',
     'major in english'=>'Major in English',
     'major in arabic'=>'Major in Arabic',
     'other info'=>'Other Info',
+    'qualification in english'=>'Qualification in English',
+    'qualification in arabic'=>'Qualification in Arabic',
+    'create a new teacher' => 'Create a New Teacher',
 
         // the daily follow up book
         'Absence and Daily Book' => 'Absence and Daily Book',

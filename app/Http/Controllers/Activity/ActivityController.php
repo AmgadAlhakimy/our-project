@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Activity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Activity\StoreActivityRequest;
 use App\Http\Requests\Activity\UpdateActivityRequest;
-use App\Models\Activity;
+use App\Models\Activity\Activity;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller

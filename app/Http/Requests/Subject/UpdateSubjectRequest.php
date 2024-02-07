@@ -26,14 +26,29 @@ class UpdateSubjectRequest extends FormRequest
         $subject_id = $this->route('subject');
 
         return [
-            'name' => [
-                'required',
-                Rule::unique('subjects', 'name->en')->ignore($subject_id)
+            'name' => ['required','max:50',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
+                Rule::unique('subjects',
+                    'name->en')->ignore($subject_id),
             ],
-            'name_ar' => [
-                'required',
-                Rule::unique('subjects', 'name->ar')->ignore($subject_id)
+            'name_ar' => ['required','max:50',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
+                Rule::unique('subjects',
+                    'name->ar')->ignore($subject_id),
             ],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'name.regex'=>__('validation.english letters'),
+            'name_ar.regex'=>__('validation.arabic letters'),
         ];
     }
 }

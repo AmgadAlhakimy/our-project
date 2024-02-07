@@ -7,7 +7,7 @@ use App\Http\Controllers\Level\EducationalLevelController;
 use App\Http\Controllers\MarkController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
-use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\Teacher\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 

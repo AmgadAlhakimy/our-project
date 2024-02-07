@@ -30,13 +30,13 @@
                                 <div class="box ">
                                         <div class="btn-container ">
                                         <!-- <div class="btn-menu "> -->
-                                        <div class="btnl-container  row">
+                                        <div class="btn-l-container  row">
                                             <!-- -------- start buttons  -->
                                             @foreach($activities as $Activity)
-                                                <label class="btnl-lable col ">
+                                                <label class="btn-l-label col ">
                                                     <input class="light-btn" type="checkbox"
                                                            value="{{$Activity->id}}">
-                                                    <span class="btnl-text">{{$Activity->name}}</span>
+                                                    <span class="btn-l-text">{{$Activity->name}}</span>
                                                 </label>
                                             @endforeach
                                             <!-- -------- end buttons  -->

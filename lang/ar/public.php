@@ -47,6 +47,8 @@ return [
     'أنثى1'=>'أنثى',
     'photo'=>'الصورة',
     'address'=>'العنوان',
+    'address in english'=>'العنوان بالإإنجليزية',
+    'address in arabic'=>'العنوان بالعربية',
     'qualification'=>'المؤهل',
     'salary'=>'الراتب',
     'major'=>'التخصص',
@@ -82,5 +84,6 @@ return [
     'num'=>'م',
     'absent'=>'الغياب',
     'description'=>'سبب الغياب',
+    'please select the gender'=>'الرجاء اختيار النوع',
 
 ];

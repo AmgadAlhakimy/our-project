@@ -33,11 +33,11 @@ class StoreRelativeRequest extends FormRequest
             ],
             'father_work' => [
                 'nullable', 'max:50',
-                'regex:/^[a-zA-Z\s]*([a-zA-Z\s]+[0-9])*+$/',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
             ],
             'father_work_ar' => [
                 'nullable', 'max:50',
-                'regex:/^[\p{Arabic}\s]+$/u',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
             ],
             'father_contact1' => [
                 'required', 'numeric',
@@ -55,11 +55,11 @@ class StoreRelativeRequest extends FormRequest
             ],
             'mother_work' => [
                 'nullable', 'max:50',
-                'regex:/^[a-zA-Z\s]*([a-zA-Z\s]+[0-9])*+$/',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
             ],
             'mother_work_ar' => [
                 'nullable', 'max:50',
-                'regex:/^[\p{Arabic}\s]+$/u',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
             ],
             'mother_contact1' => [
                 'nullable', 'numeric',
@@ -77,11 +77,11 @@ class StoreRelativeRequest extends FormRequest
             ],
             'kin_relationship' => [
                 'nullable', 'max:50',
-                'regex:/^[a-zA-Z\s]+$/',
+                'regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/',
             ],
             'kin_relationship_ar' => [
                 'nullable', 'max:50',
-                'regex:/^[\p{Arabic}\s]+$/u',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
             ],
             'kin_contact' => [
                 'nullable', 'numeric',

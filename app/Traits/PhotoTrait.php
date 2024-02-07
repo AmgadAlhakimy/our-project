@@ -11,6 +11,9 @@ trait PhotoTrait
     public function insertImage($request, $id, $model, $folder)
     {
         if ($request->photo != NULL){
+            if($id>0){
+                $this->deleteImage($id, $model);
+            }
             $requestData = $request->all();
             $filename = time().$request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs($folder, $filename, 'public');

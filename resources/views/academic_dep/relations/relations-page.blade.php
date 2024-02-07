@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 @section('content')
-<body>
+    <body>
     <main class="main ">
         <section class="section ">
             <h1 data-text="" class="p-relative title-1">ربط العلاقات</h1>
@@ -9,77 +9,57 @@
             <!-- Start final box -->
             <h3 class="container-title">اختر العلاقة</h3>
             <div class="container containers-style">
-<<<<<<< HEAD
-                    <div class="box row"> 
 
-                        <div class="notes col-lg-6 col-md-6 col-sm-12">
-                            <a href="/class-"class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                    <div class="relation-title"> المرحلة الدراسية بالفصول </div></button>
-=======
-                    <div class="box row">
-                        <div class="notes col-lg-6 col-md-6 col-sm-12">
-                            <a href="{{route('class_subject.create')}}" class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                    <div class="relation-title"> المرحلة الدراسية بالفصول </div>
-                                </button>
->>>>>>> 99c1c93523f7d08d9cc41fea6df6c7e2b62e74d9
-                            </a>
-                        </div>
+                <div class="box row">
+                    <div class="notes col-lg-6 col-md-6 col-sm-12">
+                        <a href="{{route('teacher_subjects.create')}}" class="li-link">
+                            <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
+                                <div class="relation-title"> المرحلة الدراسية بالفصول</div>
+                            </button>
+                        </a>
+                    </div>
 
-                        <div class="notes col-lg-6 col-md-6 col-sm-12">
-<<<<<<< HEAD
-                            <a href="/class-subjects"class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                    <div class="relation-title"> الفصول بالمواد الدراسية </div></button>
-=======
-                            <a href="{{route('class_subject.create')}}" class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                    <div class="relation-title"> الفصول بالمواد الدراسية </div>
-                                </button>
->>>>>>> 99c1c93523f7d08d9cc41fea6df6c7e2b62e74d9
-                            </a>
-                        </div>
+                    <div class="notes col-lg-6 col-md-6 col-sm-12">
 
-                        <div class="notes col-lg-6 col-md-6 col-sm-12">
-<<<<<<< HEAD
-                            <a href="/class-activites"class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                    <div class="relation-title"> الفصل بالأنشطة   </div></button>
-=======
-                            <a href="{{route('class_activity.create')}}" class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                    <div class="relation-title"> الفصل بالأنشطة   </div>
-                                </button>
->>>>>>> 99c1c93523f7d08d9cc41fea6df6c7e2b62e74d9
-                            </a>
-                        </div>
+                        <a href="{{route('teacher_subjects.create')}}" class="li-link">
+                            <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
+                                <div class="relation-title"> الفصول بالمواد الدراسية</div>
+                            </button>
+                        </a>
+                    </div>
 
-                        <div class="notes col-lg-6 col-md-6 col-sm-12">
-<<<<<<< HEAD
-                            <a href="/class-teatcher"class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                    <div class="relation-title"> المدرس بفصولة التدريسية</div></button>
-=======
-                            <a href="/class-teacher" class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5"><div class="relation-title"> المدرس بفصولة التدريسية</div></button>
->>>>>>> 99c1c93523f7d08d9cc41fea6df6c7e2b62e74d9
-                            </a>
-                        </div>
+                    <div class="notes col-lg-6 col-md-6 col-sm-12">
+
+                        <a href="{{route('class_activity.create')}}" class="li-link">
+                            <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
+                                <div class="relation-title"> الفصل بالأنشطة</div>
+                            </button>
+                        </a>
+                    </div>
+
+                    <a href="/class-teacher" class="li-link">
+                        <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
+                            <div class="relation-title"> المدرس بفصولة التدريسية</div>
+                        </button>
+
+                        <a href="/class-teacher" class="li-link">
+                            <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
+                                <div class="relation-title"> المدرس بفصولة التدريسية</div>
+                            </button>
+                        </a>
 
                         <div class="notes col-lg-12 col-md-12 col-sm-12">
-                            <a href="/teacher-subjects" class="li-link">
-                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5"><div class="relation-title">المدرس بالمواد الخاصة بة  </div></button>
+                            <a  href="{{route('teacher_subjects.create')}}" class="li-link">
+                                <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
+                                    <div class="relation-title">المدرس بالمواد الخاصة بة</div>
+                                </button>
                             </a>
                         </div>
-
-                    </div>
+                    </a>
+                </div>
             </div>
-            <!-- End final box -->
-<<<<<<< HEAD
-=======
         </section>
->>>>>>> 99c1c93523f7d08d9cc41fea6df6c7e2b62e74d9
+        <!-- End final box -->
     </main>
-</body>
+    </body>
 @endsection
