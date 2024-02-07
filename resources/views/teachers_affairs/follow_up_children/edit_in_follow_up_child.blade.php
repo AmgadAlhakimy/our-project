@@ -11,7 +11,7 @@
             @csrf
             {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
             {{-- the table header with bottuns and search input --}}
-            <div class="table-header container">
+            <div class="table-header container mt-2">
                 {{--                 the title and search --}}
                 <div class="row first-card">
                     <h4 class="col container-title mt-2">{{__('follow_up.for all students')}}</h4>

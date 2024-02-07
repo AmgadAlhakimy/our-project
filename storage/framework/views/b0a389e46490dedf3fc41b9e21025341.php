@@ -62,7 +62,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box row">
+                        <div class="box row"> 
                             <div class="col-lg-6 col-md-6">
                                 <label for="address"><?php echo e(__("Student.Student's address in arabic")); ?></label>
                                 <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="<?php echo e(old('address_ar')); ?>">

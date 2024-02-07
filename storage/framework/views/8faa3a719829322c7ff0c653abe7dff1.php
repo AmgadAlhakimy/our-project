@@ -198,7 +198,7 @@
                         <div class="submenu">
                             <div class="line-black">
                                 <a href='/school' class="li-link">علوم \ سادس </a>
-
+                                
                                 <a href='#' class="li-link">تقارير دفتر المتابعة</a>
                             </div>
                         </div>
@@ -213,11 +213,8 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="<?php echo e(route('follow_up_children.showChildren',1)); ?>" class="li-link">quran \ KG1 </a>
-                                <a href="<?php echo e(route('follow_up_children.displayAllChildren')); ?>" class="li-link"><?php echo e(__('sidebar.عرض دفتر المابعة (الروضة)')); ?></a>
-                                <a href='/all_children' class="li-link">quran \ KG1 </a>
-                                
-                                <a href='/children_view' class="li-link"><?php echo e(__('sidebar.عرض دفتر المابعة (الروضة)')); ?></a>
+                                <a href="<?php echo e(route('follow_up_children.writingFollowUp',1)); ?>" class="li-link">quran \ KG1 </a>
+                                <a href="<?php echo e(route('follow_up_children.displayAllChildren',1)); ?>" class="li-link"><?php echo e(__('sidebar.عرض دفتر المابعة (الروضة)')); ?></a>
                                 <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
                             </div>
                         </div>
