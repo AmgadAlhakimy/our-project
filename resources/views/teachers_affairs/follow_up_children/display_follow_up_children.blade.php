@@ -16,7 +16,7 @@
                         <div class="row ">
                             <label class="col-9">
                                 <input type="text" required class="form-control"
-                                       name="search" value="{{isset($search) ? $search : ''}}">
+                                    name="search" value="{{isset($search) ? $search : ''}}">
                             </label>
                             <button type="submit" class="col save-button ">{{__('public.search')}}</button>
                         </div>
@@ -44,15 +44,14 @@
                     <thead>
                     <tr>
                         <th class="num_table  ">{{__('public.num')}}</th>
-                        <th class="th-head-1">
-                            <div class="">{{__('public.id')}}</th>
+                        <th class="th-head-4">{{__('public.id')}}</th>
                         <th class="th-head-1">{{__('public.name')}}</th>
                         <th class="th-head-1">{{__('public.photo')}}</th>
                         @foreach($classroom->subjects as $subject)
-                            <th class="th-head-1">{{$subject->name}}</th>
+                            <th >{{$subject->name}}</th>
                         @endforeach
                         <th class="th-head-1">{{__('follow_up.food')}}</th>
-                        <th class="th-head-1">{{__('follow_up.snack')}}</th>
+                        <th class="th-head-4">{{__('follow_up.snack')}}</th>
                         <th class="th-head-1">{{__('follow_up.bath')}}</th>
                         <th class="th-head-1">{{__('public.note')}}</th>
                         <th class="th-head-1">{{__('public.processes')}}</th>
@@ -68,12 +67,12 @@
                             @foreach($follow->homework as $homework)
                                 <td class="th-head-1">{{$homework}}</td>
                             @endforeach
-                            <td><label for=""> {{$follow->food}}</label></td>
-                            <td><label for="">{{$follow->snack}}</label></td>
-                            <td><label for="">{{$follow->bath}}</label></td>
-                            <td><label for="">{{$follow->note}} </label></td>
+                            <td> {{$follow->food}}</td>
+                            <td>{{$follow->snack}}</td>
+                            <td>{{$follow->bath}}</td>
+                            <td>{{$follow->note}} </td>
                             <td><a href="{{route('follow_up_children.edit',$follow->id)}}"
-                                   class="btn save-button btn-success w-100">
+                                class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                                 <?php $counter++ ?>

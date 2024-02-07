@@ -198,6 +198,7 @@
                         <div class="submenu">
                             <div class="line-black">
                                 <a href='/school' class="li-link">علوم \ سادس </a>
+                                <a href='/students_view' class="li-link"> عرض \ علوم \ سادس </a>
                                 
                                 <a href='#' class="li-link">تقارير دفتر المتابعة</a>
                             </div>
@@ -375,7 +376,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <div href='#' class="li-link">1</div>
+                                <a href="<?php echo e(route('teacher_subjects.index')); ?>" class="li-link">relationship</a>
                                 <span href='#' class="li-link">2</span>
                                 <a href='#' class="li-link">3</a>
                             </div>

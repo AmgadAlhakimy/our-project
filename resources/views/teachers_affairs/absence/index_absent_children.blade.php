@@ -29,7 +29,7 @@
                 <div class="card-info card-info_2 col ">
                     <h4 class=" text-center">
                         {{-- {{$classroom->name}} --}}
-                        KHALED
+                        frist grade
                     </h4>
                 </div>
                 <div class="card-info card-info_2 col ">
@@ -44,7 +44,7 @@
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
-        <div class="table-section">
+        <div class="table-section"> 
             <div class="card table-section ">
                 <table  >
                     <thead >
@@ -54,9 +54,9 @@
                         <th class="th-head-1">{{__('public.name')}}</th>
                         <th class="th-head-1">{{__('public.photo')}}</th>
                         <th class="th-head-1 ">{{__('public.absent')}}</th>
-                        <th class="th-head-1">{{__('teacher. وقت الحظور')}}</th>
+                        <th class="th-head-1">{{__('teacher.time attendance')}}</th>
                         <th class="th-head-1">{{__('teacher.absent reason')}}</th>
-                        <th class="th-head-1">{{__('teacher.وقت الأنصراف')}}</th>
+                        <th class="th-head-1">{{__('teacher.departure time')}}</th>
                     </tr>
                     </thead>
                     <tbody>

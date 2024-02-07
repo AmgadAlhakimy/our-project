@@ -11,10 +11,10 @@
             @csrf
             {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
             {{-- the table header with bottuns and search input --}}
+            <h4 class="col container-title mt-2">{{__('follow_up.for all students')}}</h4>
             <div class="table-header container mt-2">
-                {{--                 the title and search --}}
+                {{-- the title and search --}}
                 <div class="row first-card">
-                    <h4 class="col container-title mt-2">{{__('follow_up.for all students')}}</h4>
                 </div>
                 {{-- the thacher name and the month --}}
 
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <!-- Start personal info  -->
-            <h3 class="container-title">{{__('follow_up.homework')}}</h3>
+            <h3 class="container-title mt-5">{{__('follow_up.homework')}}</h3>
             <div class="container  containers-style">
                 <div class="row">
                     <!-- 5 -->
@@ -41,17 +41,19 @@
                         <!-- 1 -->
                         @foreach($classroom->subjects as $subject)
                             <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                <label>{{$subject->name}}</label>
+                                <label class="form-control">{{$subject->name}}</label>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 ">
                                 <input type="text" id="homework" class="form-control ms-2 me-2"
-                                       name="homework[]" value="{{old('homework.*')}}">
+                                    name="homework[]" value="{{old('homework.*')}}">
                                 @error('homework.*')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
                         @endforeach
                     </div>
+                </div>
+            </div>
                     <!-- End personal info  -->
                     <!-- Start functional info  -->
                     <h3 class="container-title">{{__('follow_up.food and bathroom')}}</h3>
@@ -99,11 +101,11 @@
                     </div>
                     <!-- End functional info  -->
                     <!-- Start final box -->
+                    <h3 class="container-title">{{__('public.note')}}</h3>
                     <div class="container containers-style">
                         <label for="note"></label>
                         <div class="box row">
                             <div class="notes col-lg-12 col-md-12">
-                                <h3 class="container-title">{{__('public.note')}}</h3>
                                 <textarea class="form-control" name="note" id="note" cols="50" rows="5"></textarea>
                             </div>
                         </div>

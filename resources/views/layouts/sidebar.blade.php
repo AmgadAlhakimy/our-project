@@ -229,6 +229,7 @@
                         <div class="submenu">
                             <div class="line-black">
                                 <a href='/school' class="li-link">علوم \ سادس </a>
+                                <a href='/students_view' class="li-link"> عرض \ علوم \ سادس </a>
                                 {{-- <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a> --}}
                                 <a href='#' class="li-link">تقارير دفتر المتابعة</a>
                             </div>

@@ -51,7 +51,7 @@
                 </div>
             {{-- <h1 data-text="" class="p-relative title-1">DAILY FOLLOW-UP NERSORY</h1> --}}
             <!-- Start personal info  -->
-            <h3 class="container-title">{{__('follow_up.homework assignment')}}</h3>
+            <h3 class="container-title">{{__('follow_up.homework ااا assignment')}}</h3>
                 <div class="container  containers-style">
                     <div class="row">
                         <!-- 5 -->
@@ -59,7 +59,7 @@
                             <!-- 1 -->
                             @foreach($classroom->subjects as $subject)
                                 <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                    <label>{{$subject->name}}</label>
+                                    <label class="form-control">{{$subject->name}}</label>
 
                             {{-- @foreach($classroom->subjects as $subject) --}}
                                 <div class="col-lg-4 col-md-4 col-sm-4 " >

@@ -39,14 +39,17 @@ return [
     // the daily follow up book
     'Absence and Daily Book' => 'الغياب ودفتر المتابعة',
     'for all students'=>'إضافة إلى كل الطلاب',
-    'TO BRING TO SCHOOL'=>'اشياء لاخذها للمدرسة',
-    'TO TAKE HOME'=>'اشياء لاخذها للبيت ',
+    'TO BRING TO SCHOOL'=>'تؤخذ للمدرسة',
+    'TO TAKE HOME'=>'تؤخذ للبيت ',
     'NOTE'=>'ملاحظات',
-    'ABSENCE REASON'=>'سبب الغياب ',
+    'absent reason'=>'سبب الغياب ',
 
+    'subject'=>'الموضوع',
+    'show the absent children'=>'عرض الأطفال الغائبين',
+    'absent children'=>'الأطفال الغائبين',
+    'time attendance'=>'وقت الحظور',
+    'departure time'=>'وقت الانصراف',
 
-
-    'other '=>'hhhh ',
     'other '=>'hhhh ',
 
 

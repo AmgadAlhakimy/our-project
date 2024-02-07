@@ -30,7 +30,7 @@
                 <div class="card-info card-info_2 col ">
                     <h4 class="text-center ">Month</h4>
                     <h4 class=" Names">10</h4>
-                </div>
+                </div> 
             </div>
             {{-- the select input --}}
         </div>
@@ -59,7 +59,7 @@
                 </div>
                 {{-- the all students info buttons is not ready yet --}}
                 <div class=" row">
-                    <div class="box mb-1 mt-1">
+                    <div class="box mb-1 mt-3">
                         <input class="save-button " type="submit" value="Save">
                         <input class="clear-button " type="reset" value="clear">
                     </div>

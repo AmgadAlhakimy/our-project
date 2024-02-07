@@ -7,7 +7,7 @@
         <div class="table-header">
             
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">تحضير طلاب الروضة</h4>
+                <h4 class="col container-title mt-2"><?php echo e(__('teacher.absent children')); ?></h4>
                 <div class="row first-card mt-4">
                     <form method="post" action="<?php echo e(route('students.search')); ?>">
                         <?php echo method_field('GET'); ?>
@@ -46,7 +46,7 @@
                         <th class="th-head-1"><?php echo e(__('public.photo')); ?></th>
                         <th class="th-head-1 "><?php echo e(__('public.absent')); ?></th>
                         <th class="th-head-1"><?php echo e(__('teacher.absent reason')); ?></th>
-                        <th class="th-head-1"><?php echo e(__('teacher.وقت الأنصراف')); ?></th>
+                        <th class="th-head-1"><?php echo e(__('teacher.departure time')); ?></th>
                         
 
                     </tr>
@@ -58,14 +58,14 @@
                         <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
                         <td>
                             <div class=" mt-3">
-                                <input class=" mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()"  >
+                                <input class="chick_style mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()"  >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                         </td>
                         <td><input type="text" class="form-control"></td>
                         <td>
                             <div class=" mt-3">
-                                <input class=" mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()"  >
+                                <input class="chick_style mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()"  >
                                 <label class="form-label  " for="healthProblem" id="healthProblem"></label>
                             </div>
                         </td>

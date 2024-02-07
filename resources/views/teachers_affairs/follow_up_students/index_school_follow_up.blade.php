@@ -5,7 +5,7 @@
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
 
-        <div class="table-header">
+        <div class="table-header"> 
             {{-- the title and search --}} 
             <div class="row first-card  ">
                 <h4 class="col container-title mt-2">{{__('teacher.view and Daily Book')}}</h4>
@@ -65,12 +65,12 @@
                 </div>
                 {{-- the all students info buttons is not ready yet --}}
                 <div class=" row">
-                    <div class="box mb-1 mt-1">
+                    <div class="box mb-1 mt-3">
                         <a href="#">
                             <button class="btn save-button btn-success ">
-                                {{__('public.edit')}}<i class="fa-solid fa-pen-to-square"></i>
+                                {{__('public.edit')}}<i class="fa-solid fa-pen-to-square me-2 ms-2"></i>
                             </button></a>
-                        <input class="btn clear-button btn-danger" type="reset" value="clear">
+                        <button class="btn clear-button btn-danger" type="reset" >{{__('public.clear')}}<i class="fa-solid fa-trash me-2 ms-2"></i></button>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                                 <label class="col-12 cards_title mt-1 mb-1"> Emad nasr mansour </label>
                                 <label class="col-12 cards_sup_title mt-1 mb-1">i7676</label>
                             </div>
-                        </div>
+                        </div> 
                         {{-- ---- daily info --- --}}
                         <hr class=" ms-2 me-2 shadow">
                         {{-- ------- --}}
@@ -126,7 +126,7 @@
                         <div class="notes col-12 text-center">
                             <a href="#">
                                 <button class="btn save-button btn-success w-50">
-                                    {{__('public.edit')}}<i class="fa-solid fa-pen-to-square"></i>
+                                    {{__('public.edit')}}<i class="fa-solid fa-pen-to-square me-2 ms-2"></i>
                                 </button>
                             </a>
                         </div>

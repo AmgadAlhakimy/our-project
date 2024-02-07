@@ -33,12 +33,20 @@ return [
     'qualification in arabic'=>'Qualification in Arabic',
     'create a new teacher' => 'Create a New Teacher',
 
-        // the daily follow up book
-        'Absence and Daily Book' => 'Absence and Daily Book',
-        'TO BRING TO SCHOOL'=>'TO BRING TO SCHOOL',
-        'TO TAKE HOME'=>'TO TAKE HOME',
-        'NOTE'=>'NOTE',
-        'for all students'=>'Add For All Students',
-        'ABSENCE REASON'=>'ABSENCE REASON',
+    // the daily follow up book
+    'Absence and Daily Book' => 'Absence and Daily Book',
+    'TO BRING TO SCHOOL'=>'BRING TO SCHOOL',
+    'TO TAKE HOME'=>'TAKE HOME',
+    'NOTE'=>'NOTE',
+    'for all students'=>'Add For All Students',
+    'show the absent children'=>'Show the Absent Children',
+    'absent children'=>'Absent Children',
+    
+    'subject'=>'Subject',
+    'absent reason'=>'Absent Reason',
+    'time attendance'=>'Time Attendance',
+    'departure time'=>'Departure Time',
+
+
 
 ];
