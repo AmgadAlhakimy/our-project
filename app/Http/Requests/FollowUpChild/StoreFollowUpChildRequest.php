@@ -23,14 +23,13 @@ class StoreFollowUpChildRequest extends FormRequest
     public function rules(): array
     {
         return [
-//            "subject.*"  => 'required',
-//            "comment.*"  => 'required',
+            "homework.*"  => 'required',
         ];
     }
     public function messages(): array
     {
         return [
-            'subject.*.required'=>'please fill all fields',
+            //
         ];
     }
 }

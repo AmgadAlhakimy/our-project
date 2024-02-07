@@ -56,16 +56,20 @@ return [
     'all'=>'all',
     'some'=>'some',
     'none'=>'none',
-    'one'=>'Once',
-    'tow'=>'Twice',
+    'once'=>'Once',
+    'twice'=>'Twice',
 
 
     'all_ar'=>'الكل',
     'some_ar'=>'بعض',
     'none_ar'=>'لا شيء',
+    'once_ar'=>'مرة',
+    'twice_ar'=>'مرتين',
     'all1'=>'الكل',
     'some1'=>'بعض',
     'none1'=>'لا شيء',
+    'once1'=>'مرة',
+    'twice1'=>'مرتين',
     'select level'=>'please select educational level',
 
     'select' => 'Select',

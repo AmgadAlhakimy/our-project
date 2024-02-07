@@ -20,4 +20,8 @@ return [
     'food and bathroom'=>'Food And Bathroom',
     'add info'=>'Add Info',
     'note'=>'Note',
+    'homework'=>'Homework',
+    'bath'=>'Bathroom',
+    'food'=>'Food',
+    'snack'=>'Snack',
 ];

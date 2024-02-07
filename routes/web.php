@@ -54,6 +54,7 @@ Route::group(
             return view('teachers_affairs/follow_up_children/follow-up-nursery');
         });
 
+
         // nursery
         Route::get('children_view', function () {
             return view('teachers_affairs/follow_up_children/index_children_follow_up');

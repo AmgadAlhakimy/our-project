@@ -29,27 +29,29 @@ class FollowUpChildController extends Controller
         }
     }
 
-    public function displayAllChildren()
+    public function displayAllChildren($classroom_id)
     {
         try {
-            $classroom = Classroom::findorfail(1);
+
+            $classroom = Classroom::findorfail($classroom_id);
+            $month = Carbon::now()->format('F j');
             $date = Carbon::now()->format('Y-m-d');
             $follow_up = FollowUpChild::where('created_at', 'like', "%$date%")->get();
 
             return view('teachers_affairs/follow_up_children.display_follow_up_children',
-                compact('classroom', 'follow_up'));
+                compact('classroom', 'follow_up', 'month'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
-    public function showChildren($classroom_id)
+    public function writingFollowUp($classroom_id)
     {
         try {
             $classroom = Classroom::findorfail($classroom_id);
             $subject = Subject::findorfail(2);
             $month = Carbon::now()->format('F j');
-            return view('teachers_affairs/follow_up_children.show_children',
+            return view('teachers_affairs/follow_up_children.writing_in_follow_up_children',
                 compact('subject', 'classroom', 'month'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -61,14 +63,6 @@ class FollowUpChildController extends Controller
      */
     public function createNote($student_id)
     {
-//                $follow_up = FollowUpChild::where('student_id', $student_id)->get();
-//                foreach ($follow_up as $follow){
-//                    $i = 0;
-//                    echo $follow->id;
-//                    echo $follow->subject;
-//                    echo $follow->comment[$i];
-//                    $i++;
-//                }
         try {
             $date = Carbon::now()->format('Y-m-d');
             if (FollowUpChild::where('student_id', $student_id)
@@ -102,7 +96,7 @@ class FollowUpChildController extends Controller
     {
         try {
             FollowUpChild::create([
-                'comment' => $request->comment,
+                'homework' => $request->homework,
                 'bath' => [
                     'en' => __('public.' . $request->bath),
                     'ar' => __('public.' . $request->bath . '1'),
@@ -118,7 +112,7 @@ class FollowUpChildController extends Controller
                 'student_id' => $student_id,
                 'note' => $request->note,
             ]);
-            return redirect()->back()->with(['success' => __('message.success')]);
+            return true;
 
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -134,14 +128,15 @@ class FollowUpChildController extends Controller
         try {
             $date = Carbon::now()->format('Y-m-d');
             if (FollowUpChild::where('created_at', 'like', "%$date%")->exists()) {
-                return redirect()->back()->with(['error' => __('message.already exists')]);
+                return redirect()->route('follow_up_children.displayAllChildren', $classroom_id)
+                    ->with(['error' => __('message.homework already exists')]);
 
             } else {
                 $students = Student::where('classroom_id', $classroom_id)->get();
                 foreach ($students as $student) {
                     $this->storeChild($request, $student->id);
                 }
-                return redirect()->route('follow_up_children.showChildren', $classroom_id)
+                return redirect()->route('follow_up_children.displayAllChildren', $classroom_id)
                     ->with(['success' => __('message.success')]);
             }
         } catch (\Exception $e) {
@@ -152,8 +147,7 @@ class FollowUpChildController extends Controller
     /**
      * Display the specified resource.
      */
-    public
-    function show()
+    public function show()
     {
         //
     }
@@ -161,17 +155,30 @@ class FollowUpChildController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public
-    function edit(FollowUpChild $followUpChild)
+    public function edit($id)
     {
-        //
+        try {
+            $subjects = [];
+            $classroom = Classroom::findorfail(1);
+            $subject = Subject::findorfail(2);
+            foreach ( $classroom->subjects as $subject) {
+                array_push($subjects, $subject->name);
+            }
+            $month = Carbon::now()->format('F j');
+            $child = FollowUpChild::findorFail($id);
+            $homework = $child->homework;
+            $subjects_homework = array_combine($subjects, $homework);
+            return view('teachers_affairs/follow_up_children.edit_in_follow_up_child',
+                compact('classroom', 'month', 'subjects_homework', 'subject'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public
-    function update(UpdateFollowUpChildRequest $request, FollowUpChild $followUpChild)
+    public function update(UpdateFollowUpChildRequest $request, FollowUpChild $followUpChild)
     {
         //
     }
@@ -179,8 +186,7 @@ class FollowUpChildController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public
-    function destroy(FollowUpChild $followUpChild)
+    public function destroy(FollowUpChild $followUpChild)
     {
         //
     }
