@@ -6,13 +6,13 @@
             <!-- <h1 class="p-relative title-1">اضافة كلاس</h1> -->
             <form action="{{route('subject_classrooms.store')}}" method="post">
                 @csrf
-                <h3 class="container-title">اضف مواد للفصول</h3>
+                <h3 class="container-title">{{__('relations.add subjects for classes')}}</h3>
                 <div class="container containers-style">
                     <div class="">
                         <div class="row">
-                            <!-- 1 -->
+                            <!-- 1 --> 
                             <div class="box col-12 ">
-                                <label for="level-class">the classes</label>
+                                <label for="level-class">{{__('relations.classes')}}</label>
                                 <select class="form-select form-control " id="level-class" name="classroom_id">
                                     @foreach($classrooms as $classroom)
                                         <option class="text-center"
@@ -23,10 +23,12 @@
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
-                            <hr>
+                            <div>
+                                <hr class=" ">
+                            </div>
                             <!-- 2 -->
                             <div class="box mb-1">
-                                <label class="" for="level-class">choose the subjects please</label>
+                                <label class="" for="level-class">{{__('relations.subjects')}}</label>
                             </div>
 
                             <div class="box">
@@ -38,7 +40,7 @@
                                         @foreach($subjects as $Subject)
                                             <label class="btn-l-label col ">
                                                 <input class="light-btn" type="checkbox" name="subject_id[{{$index}}]"
-                                                       value="{{$Subject->id}}">
+                                                    value="{{$Subject->id}}">
                                                 <span class="btn-l-text">{{$Subject->name}} </span>
                                             </label>
                                             <?php $index++; ?>
@@ -57,8 +59,8 @@
                 </div>
                 <div class=" row">
                     <div class="box ">
-                        <input class="save-button " type="submit" value="Save">
-                        <input class="clear-button " type="reset" value="clear">
+                        <input class="save-button me-2 ms-2" type="submit" value="Save">
+                        <input class="clear-button me-2 ms-2" type="reset" value="clear">
                     </div>
                 </div>
             </form>

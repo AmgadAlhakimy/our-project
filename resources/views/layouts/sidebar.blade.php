@@ -173,6 +173,29 @@
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
+                            </div> 
+                        </div>
+                    </li>
+                    <!-- ========== 5 ============ -->
+                    {{--  الربط والعلاقات  --}}
+                    <li class="dropdown">
+                        <!-- ========== 4 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i
+                                    class="icon-1 fa-solid fa-window-restore"
+                                ></i>
+                                <span class="menu-name">{{__('sidebar.relations')}} </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href='{{route('subject_classrooms.create')}}' class="li-link">{{__('sidebar.subjects - classes')}}</a>
+                                <a href='{{route('class_activity.create')}}' class="li-link">{{__('sidebar.classes - activities')}}</a>
+                                <a href='{{route('teacher_subjects.create')}}' class="li-link">{{__('sidebar.teachers - subjects')}}</a>
+                                <a href='/teacher_classes' class="li-link">{{__('sidebar.teachers - classes')}}</a>
+                                <a href='' class="li-link">{{__('sidebar.relationship')}}</a>
                             </div>
                         </div>
                     </li>

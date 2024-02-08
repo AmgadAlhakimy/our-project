@@ -49,6 +49,10 @@ Route::group(
         Route::get('students_view', function () {
             return view('teachers_affairs/follow_up_students/index_school_follow_up');
         });
+        // teacher_classes
+        Route::get('teacher_classes', function () {
+            return view('academic_dep/relations/class-teatcher');
+        });
 
 
 

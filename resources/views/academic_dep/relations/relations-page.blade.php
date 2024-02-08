@@ -12,7 +12,7 @@
 
                     <div class="notes col-lg-6 col-md-6 col-sm-12">
 
-                        <a href="{{route('subject_classrooms.create')}}" class="li-link">
+                        <a href="" class="li-link">
                             <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
                                 <div class="relation-title"> الفصول بالمواد الدراسية</div>
                             </button>
@@ -33,11 +33,6 @@
                             <div class="relation-title"> المدرس بفصولة التدريسية</div>
                         </button>
 
-                        <a href="/class-teacher" class="li-link">
-                            <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                <div class="relation-title"> المدرس بفصولة التدريسية</div>
-                            </button>
-                        </a>
 
                         <div class="notes col-lg-12 col-md-12 col-sm-12">
                             <a  href="{{route('teacher_subjects.create')}}" class="li-link">

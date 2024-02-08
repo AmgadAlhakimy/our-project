@@ -1,19 +1,18 @@
 @extends('layouts.sidebar')
 @section('content')
     <body>
-    <main class="main ">
+    <main class="main "> 
         <section class="section">
             <!-- <h1 class="p-relative title-1">اضافة كلاس</h1> -->
             <form method="post" action="{{route('teacher_subjects.store')}}">
                 @csrf
-                <h3 class="container-title">اضف المواد الخاصة بالمدرس</h3>
+                <h3 class="container-title"> {{__('relations.add subjects for teachers')}}</h3>
                 <div class="container containers-style">
                     <div class="">
                         <div class="row">
                             <!-- 1 -->
-
                             <div class="box col-12 ">
-                                <label for="teacher">the Teacher</label>
+                                <label for="teacher"> {{__('relations.teacher')}}</label>
                                 <select class="form-select form-control " id="teacher" name="teacher_id">
                                     <option value="" selected
                                             disabled>{{__('teacher.please select a teacher')}}</option>
@@ -26,10 +25,12 @@
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
-                            <hr>
+                            <div>
+                                <hr class=" ">
+                            </div>
                             <!-- 2 -->
                             <div class="box mb-1">
-                                <label class="" for="level-class">choose the subjects please</label>
+                                <label class="" for="level-class"> {{__('relations.subjects')}}</label>
                             </div>
 
                             <div class="box ">
@@ -61,8 +62,8 @@
                 </div>
                 <div class=" row">
                     <div class="box ">
-                        <input class="save-button " type="submit" value="Save ">
-                        <input class="clear-button " type="reset" value="clear">
+                        <input class="save-button me-2 ms-2" type="submit" value="Save">
+                        <input class="clear-button me-2 ms-2" type="reset" value="clear">
                     </div>
                 </div>
             </form>

@@ -174,6 +174,29 @@
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
+                            </div> 
+                        </div>
+                    </li>
+                    <!-- ========== 5 ============ -->
+                    
+                    <li class="dropdown">
+                        <!-- ========== 4 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i
+                                    class="icon-1 fa-solid fa-window-restore"
+                                ></i>
+                                <span class="menu-name"><?php echo e(__('sidebar.relations')); ?> </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href='<?php echo e(route('subject_classrooms.create')); ?>' class="li-link"><?php echo e(__('sidebar.subjects - classes')); ?></a>
+                                <a href='<?php echo e(route('class_activity.create')); ?>' class="li-link"><?php echo e(__('sidebar.classes - activities')); ?></a>
+                                <a href='<?php echo e(route('teacher_subjects.create')); ?>' class="li-link"><?php echo e(__('sidebar.teachers - subjects')); ?></a>
+                                <a href='/teacher_classes' class="li-link"><?php echo e(__('sidebar.teachers - classes')); ?></a>
+                                <a href='' class="li-link"><?php echo e(__('sidebar.relationship')); ?></a>
                             </div>
                         </div>
                     </li>

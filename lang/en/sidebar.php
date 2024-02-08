@@ -43,8 +43,16 @@ return [
     'deleted Student'=>'Delete Student',
     'Student absence'=>'Student Absence',
 
+        // relations 
+        'relations'=>'Relations',
+        'subjects - classes'=>'Subjects - Classes',
+        'classes - activities'=>'Classes - Activities',
+        'teachers - subjects'=>'Teachers - Subjects',
+        'teachers - classes'=>'Teachers - Classes',
+        'hhhh'=>'hhhh',
+    
     // شغل ماجد
     'teacher section' => 'Teacher Section',
     'view records' => 'View Records',
-
+ 
 ];
