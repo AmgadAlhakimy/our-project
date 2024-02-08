@@ -23,13 +23,17 @@ class StoreFollowUpChildRequest extends FormRequest
     public function rules(): array
     {
         return [
+
             "homework.*"  => 'required',
+            "bath"  => 'required',
+            "snack"  => 'required',
+            "food"  => 'required',
         ];
     }
     public function messages(): array
     {
         return [
-            //
-        ];
+            'homework.*.required'=>__('follow_up.homework field is required')
+            ];
     }
 }

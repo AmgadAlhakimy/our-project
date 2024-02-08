@@ -30,7 +30,6 @@
                     <h4 class=" text-center">{{$classroom->name}}</h4>
                 </div>
                 <div class="card-info card-info_2 col ">
-                    <h4 class="text-center ">{{__('public.month')}}</h4>
                     <h4 class=" Names">{{$month}}</h4>
                 </div>
             </div>
