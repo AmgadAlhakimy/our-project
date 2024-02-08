@@ -14,8 +14,10 @@ return [
     */
 
     //create educational Level
-    'sorry first add students'=>'عذرا يجب إضافة ملاحظات الى جميع الطلاب أولاً',
-    'for all students' => 'اضافة لكل الطلاب',
+    'sorry first add students'=>'عذرا يجب إضافة ملاحظات الى جميع الاطفال أولاً',
+    'for all students' => 'اضافة لكل الاطفال',
+    'edit for all students'=>'تعديل لكل الأطفال',
+
     'homework assignment for all students' => 'واجبات ومهام',
     'food and bathroom' => 'الطعام ودورة المياه',
     'add info' => 'إضافة معلومات',
@@ -28,4 +30,7 @@ return [
     'please select the quantity of snack'=>'الرجاء تحديد كمية الوجبة الخفيفة',
     'please select the quantity of food'=>'الرجاء تحديد كمية الطعام',
     'homework field is required'=>'حقل الواجب مطلوب على الأقل اكتب لا يوجد',
+
+    'click her' => 'اضغط هنا',
+
 ];

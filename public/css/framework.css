@@ -646,3 +646,14 @@ input[type=checkbox].toggle:checked + input.test1{
 .shadow_1{
   text-shadow: 1px 1px 1px rgba(107, 107, 107, 0.5);
 }
+/* start message style */
+.text-danger{
+  /* color: var(--blue-alt-color);
+  background-color: var(--border-color);
+  border: 5 solid black;
+  text-shadow: 1px 1px 1px rgba(107, 107, 107, 0.5);
+  padding: 5px;
+  margin: 10px; */
+
+}
+/* end message style */

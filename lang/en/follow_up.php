@@ -16,6 +16,7 @@ return [
     //create educational Level
     'sorry first add students'=>'Sorry! first add for all students',
     'for all students'=>'For All Students',
+    'edit for all students'=>'Edit For All Students',
     'homework assignment for all students'=>'Homework - Assignment',
     'food and bathroom'=>'Food And Bathroom',
     'add info'=>'Add Info',
@@ -28,4 +29,6 @@ return [
     'please select the quantity of snack'=>'Please, Select The Quantity of Snack',
     'please select the quantity of food'=>'Please, Select The Quantity of Food',
     'homework field is required'=>'This Homework Field is Required At least write there is none',
+
+    'click her' => 'CLICK HER',
 ];
