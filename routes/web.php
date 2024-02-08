@@ -49,28 +49,15 @@ Route::group(
         Route::get('students_view', function () {
             return view('teachers_affairs/follow_up_students/index_school_follow_up');
         });
-        // nursery
-        Route::get('nursery', function () {
-            return view('teachers_affairs/follow_up_children/follow-up-nursery');
-        });
 
 
-        // nursery
-        Route::get('children_view', function () {
-            return view('teachers_affairs/follow_up_children/index_children_follow_up');
-        });
-        // all_students
-        Route::get('all_children', function () {
-            return view('teachers_affairs/follow_up_children/follow_up_all_children');
-        });
+
+
         // index_absence
         Route::get('index_absence', function () {
             return view('teachers_affairs/absence/index_absent_children');
         });
-        // nursery
-        Route::get('children', function () {
-            return view('teachers_affairs/follow_up_children/follow-up-children');
-        });
+
 
         // absence
         Route::get('add_marks', function () {

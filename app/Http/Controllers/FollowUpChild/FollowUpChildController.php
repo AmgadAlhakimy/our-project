@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\FollowUpChild;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\FollowUpChild\StoreFollowUpChildRequest;
 use App\Http\Requests\FollowUpChild\UpdateFollowUpChildRequest;
 use App\Models\Classroom;
@@ -28,7 +29,9 @@ class FollowUpChildController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
-
+    /**
+     * Display all children according to the classroom.
+     */
     public function displayAllChildren($classroom_id)
     {
         try {
@@ -48,11 +51,10 @@ class FollowUpChildController extends Controller
     public function writingFollowUp($classroom_id)
     {
         try {
-            $classroom = Classroom::findorfail($classroom_id);
-            $subject = Subject::findorfail(2);
+            $classroom = Classroom::findorfail(1);
             $month = Carbon::now()->format('F j');
             return view('teachers_affairs/follow_up_children.writing_in_follow_up_children',
-                compact('subject', 'classroom', 'month'));
+                compact('classroom', 'month'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -160,7 +162,6 @@ class FollowUpChildController extends Controller
         try {
             $subjects = [];
             $classroom = Classroom::findorfail(1);
-            $subject = Subject::findorfail(2);
             foreach ( $classroom->subjects as $subject) {
                 array_push($subjects, $subject->name);
             }
@@ -169,7 +170,7 @@ class FollowUpChildController extends Controller
             $homework = $child->homework;
             $subjects_homework = array_combine($subjects, $homework);
             return view('teachers_affairs/follow_up_children.edit_in_follow_up_child',
-                compact('classroom', 'month', 'subjects_homework', 'subject'));
+                compact('classroom', 'month', 'subjects_homework', 'child'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -178,9 +179,32 @@ class FollowUpChildController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFollowUpChildRequest $request, FollowUpChild $followUpChild)
+    public function update(UpdateFollowUpChildRequest $request, $id)
     {
-        //
+        try {
+            $child = FollowUpChild::findorFail($id);
+            $child->update([
+                'homework' => $request->homework,
+                'bath' => [
+                    'en' => __('public.' . $request->bath),
+                    'ar' => __('public.' . $request->bath . '1'),
+                ],
+                'snack' => [
+                    'en' => __('public.' . $request->snack),
+                    'ar' => __('public.' . $request->snack . '1'),
+                ],
+                'food' => [
+                    'en' => __('public.' . $request->food),
+                    'ar' => __('public.' . $request->food . '1'),
+                ],
+                'note' => $request->note,
+            ]);
+            return redirect()->route('follow_up_children.displayAllChildren',1)
+                ->with(['success' => __('message.update')]);
+
+        }catch (\Exception $e){
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**

@@ -1,12 +1,9 @@
 <?php
 
 
-use App\Http\Controllers\FollowUpChildController;
+use App\Http\Controllers\FollowUpChild\FollowUpChildController;
 use App\Http\Controllers\FollowUpStudentController;
-use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
-
-
 
 
 Route::get('follow-up/writingFollowUp/{classroom_id}',

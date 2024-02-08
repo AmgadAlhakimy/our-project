@@ -58,8 +58,8 @@ return [
     'all'=>'all',
     'some'=>'some',
     'none'=>'none',
-    'once'=>'Once',
-    'twice'=>'Twice',
+    'once'=>'once',
+    'twice'=>'twice',
 
 
     'all_ar'=>'الكل',

@@ -23,5 +23,9 @@ return [
     'homework' => 'الواجب المنزلي',
     'bath'=>'الحمام',
     'food'=>'الطعام',
-    'snack'=>'وجبة خفيفة    ',
+    'snack'=>'وجبة خفيفة',
+    'please select how many times'=>'الرجاء تحديد عدد مرات الدخول الى دورة المياه',
+    'please select the quantity of snack'=>'الرجاء تحديد كمية الوجبة الخفيفة',
+    'please select the quantity of food'=>'الرجاء تحديد كمية الطعام',
+    'homework field is required'=>'حقل الواجب مطلوب على الأقل اكتب لا يوجد',
 ];

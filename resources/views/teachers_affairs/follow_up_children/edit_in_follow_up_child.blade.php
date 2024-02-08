@@ -6,8 +6,8 @@
                 {{Session::get('success')}}
             </div>
         @endif
-        <form method="post" action="{{route('follow_up_children.storeAll',$classroom->id)}}">
-            @method('GET')
+        <form method="post" action="{{route('follow_up_children.update', $child->id)}}">
+            @method('PUT')
             @csrf
             {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
             {{-- the table header with bottuns and search input --}}
@@ -23,10 +23,8 @@
                         <h4 class=" text-center">
                             {{$classroom->name}}
                         </h4>
-                        <h4 class=" Names">{{$subject->name}}</h4>
                     </div>
                     <div class="card-info card-info_2 col ">
-                        <h4 class="text-center ">{{__('public.month')}}</h4>
                         <h4 class=" Names">{{$month}}</h4>
                     </div>
                 </div>
@@ -39,83 +37,105 @@
                     <div class="box row">
                         <label for="homework"></label>
                         <!-- 1 -->
+                        <?php $index = 0; ?>
                         @foreach($subjects_homework as $subject => $homework)
                             <div class="col-lg-4 col-md-4 col-sm-4 ">
                                 <label class="form-control">{{$subject}}</label>
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8 ">
                                 <input type="text" id="homework" class="form-control ms-2 me-2"
-                                       name="homework[]" value="{{$homework}}">
-                                @error('homework.*')
+                                       name="homework[{{$index}}]" value="{{$homework}}">
+                                @error("homework.$index")
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                             </div>
+                                <?php $index++; ?>
                         @endforeach
                     </div>
                 </div>
             </div>
-                    <!-- End personal info  -->
-                    <!-- Start functional info  -->
-                    <h3 class="container-title">{{__('follow_up.food and bathroom')}}</h3>
-                    <div class="container containers-style">
-                        <div class="row ">
-                            <!-- 1 -->
-                            <div class="box col-lg-4 col-md-4 col-ms-12 mb-5  ">
-                                <label for="bath"></label>
-                                <img class=" student-img h-100 w-50" src="{{asset('assets/icons/toilet.jpg')}}" alt="">
-                                <select class="col form-select form-control" id="bath" name="bath">
-                                    <option value="{{__('public.none')}}">{{__('public.none')}}</option>
-                                    <option value="{{__('public.once')}}">{{__('public.once')}}</option>
-                                    <option value="{{__('public.twice')}}">{{__('public.twice')}}</option>
-                                </select>
-                                @error('bath')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-                            </div>
-                            <div class="box col-lg-4 col-md-4 col-ms-12 mb-5 ">
-                                <label for="snack"></label>
-                                <img class=" student-img h-100 w-50" src="{{asset('assets/icons/food-1.jpg')}}" alt="">
-                                <select class="col form-select form-control" id="snack" name="snack">
-                                    <option value="{{__('public.none')}}">{{__('public.none')}}</option>
-                                    <option value="{{__('public.some')}}">{{__('public.some')}}</option>
-                                    <option value="{{__('public.all')}}">{{__('public.all')}}</option>
-                                </select>
-                                @error('snack')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-                            </div>
-                            <div class="box col-lg-4 col-md-4 col-ms-12 mb-5">
-                                <label for="food"></label>
-                                <img class=" student-img h-100 w-50" src="{{asset('assets/icons/food-2.jpg')}}" alt="">
-                                <select class="col form-select form-control" id="food" name="food">
-                                    <option value="{{__('public.none')}}">{{__('public.none')}}</option>
-                                    <option value="{{__('public.some')}}">{{__('public.some')}}</option>
-                                    <option value="{{__('public.all')}}">{{__('public.all')}}</option>
-                                </select>
-                                @error('food')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-                            </div>
-                            <!-- 3 -->
-                        </div>
+            <!-- End personal info  -->
+            <!-- Start functional info  -->
+            <h3 class="container-title">{{__('follow_up.food and bathroom')}}</h3>
+            <div class="container containers-style">
+                <div class="row ">
+                    <!-- 1 -->
+                    <div class="box col-lg-4 col-md-4 col-ms-12 mb-5  ">
+                        <label for="bath"></label>
+                        <img class=" student-img h-100 w-50" src="{{asset('assets/icons/toilet.jpg')}}" alt="">
+                        <select class="col form-select form-control" id="bath" name="bath">
+                            <option value="{{__('public.none')}}"
+                                    @if($child->getTranslation('bath','en') == 'none') selected @endif>
+                                {{__('public.none')}}</option>
+                            <option value="{{__('public.once')}}"
+                                    @if($child->getTranslation('bath','en') == 'once') selected @endif>
+                                {{__('public.once')}}</option>
+                            <option value="{{__('public.twice')}}"
+                                    @if($child->getTranslation('bath','en') == 'twice') selected @endif>
+                                {{__('public.twice')}}</option>
+                        </select>
+                        @error('bath')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
                     </div>
-                    <!-- End functional info  -->
-                    <!-- Start final box -->
-                    <h3 class="container-title">{{__('public.note')}}</h3>
-                    <div class="container containers-style">
-                        <label for="note"></label>
-                        <div class="box row">
-                            <div class="notes col-lg-12 col-md-12">
-                                <textarea class="form-control" name="note" id="note" cols="50" rows="5"></textarea>
-                            </div>
-                        </div>
+                    <div class="box col-lg-4 col-md-4 col-ms-12 mb-5 ">
+                        <label for="snack"></label>
+                        <img class=" student-img h-100 w-50" src="{{asset('assets/icons/food-1.jpg')}}" alt="">
+                        <select class="col form-select form-control" id="snack" name="snack">
+                            <option value="{{__('public.none')}}"
+                                    @if($child->getTranslation('snack','en') == 'none') selected @endif>
+                                {{__('public.none')}}</option>
+                            <option value="{{__('public.some')}}"
+                                    @if($child->getTranslation('snack','en') == 'some') selected @endif>
+                                {{__('public.some')}}</option>
+                            <option value="{{__('public.all')}}"
+                                    @if($child->getTranslation('snack','en') == 'all') selected @endif>
+                                {{__('public.all')}}</option>
+                        </select>
+                        @error('snack')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
                     </div>
-                    <div class=" row">
-                        <div class="box ">
-                            <input class="save-button " type="submit" value="{{__('public.save')}}">
-                            <input class="clear-button " type="reset"  value="{{__('public.clear')}}">
-                        </div>
+                    <div class="box col-lg-4 col-md-4 col-ms-12 mb-5">
+                        <label for="food"></label>
+                        <img class=" student-img h-100 w-50" src="{{asset('assets/icons/food-2.jpg')}}" alt="">
+                        <select class="col form-select form-control" id="food" name="food">
+                            <option value="{{__('public.none')}}"
+                                    @if($child->getTranslation('food','en') == 'none') selected @endif>
+                                {{__('public.none')}}</option>
+                            <option value="{{__('public.some')}}"
+                                    @if($child->getTranslation('food','en') == 'some') selected @endif>
+                                {{__('public.some')}}</option>
+                            <option value="{{__('public.all')}}"
+                                    @if($child->getTranslation('food','en') == 'all') selected @endif>
+                                {{__('public.all')}}</option>
+                        </select>
+                        @error('food')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
                     </div>
+                    <!-- 3 -->
+                </div>
+            </div>
+            <!-- End functional info  -->
+            <!-- Start final box -->
+            <h3 class="container-title">{{__('public.note')}}</h3>
+            <div class="container containers-style">
+                <label for="note"></label>
+                <div class="box row">
+                    <div class="notes col-lg-12 col-md-12">
+                        <textarea class="form-control" name="note" id="note" cols="50"
+                                  rows="5">{{$child->note}}</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="box col ">
+                    <input class="save-button " type="submit" value="{{__('public.update')}}">
+                </div>
+                <div class="box  col">
+                    <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                 </div>
             </div>
             <!-- End final box -->

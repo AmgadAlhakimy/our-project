@@ -24,4 +24,8 @@ return [
     'bath'=>'Bathroom',
     'food'=>'Food',
     'snack'=>'Snack',
+    'please select how many times'=>'Please, Select How Many Times',
+    'please select the quantity of snack'=>'Please, Select The Quantity of Snack',
+    'please select the quantity of food'=>'Please, Select The Quantity of Food',
+    'homework field is required'=>'This Homework Field is Required At least write there is none',
 ];
