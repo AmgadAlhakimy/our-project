@@ -34,7 +34,7 @@ return [
     'create a new teacher' => 'Create a New Teacher',
 
     // the daily follow up book
-    'Absence and Daily Book' => 'Absence and Daily Book',
+    'Show the Daily Book' => 'Show the Daily Book',
     'TO BRING TO SCHOOL'=>'BRING TO SCHOOL',
     'TO TAKE HOME'=>'TAKE HOME',
     'NOTE'=>'NOTE',

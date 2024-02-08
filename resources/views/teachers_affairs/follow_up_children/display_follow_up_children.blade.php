@@ -27,8 +27,12 @@
 
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
-                    <h4 class=" text-center">{{$classroom->name}}</h4>
+                    <h4 class="Names ">{{$classroom->name}}</h4>
                 </div>
+                    <a href="" class="card-info card-info_2 col btn save-button">
+                        <h4 class="topic-title mt-2">{{__('follow_up.for all students')}}</h4>
+                        <p class="text-center ">{{__('follow_up.click her')}}</p>
+                    </a>
                 <div class="card-info card-info_2 col ">
                     <h4 class=" Names">{{$month}}</h4>
                 </div>
@@ -43,8 +47,8 @@
                     <thead>
                     <tr>
                         <th class="num_table  ">{{__('public.num')}}</th>
-                        <th class="th-head-4">{{__('public.id')}}</th>
-                        <th class="th-head-1">{{__('public.name')}}</th>
+                        <th class="th-head-1">{{__('public.id')}}</th>
+                        <th class="th-head-3">{{__('public.name')}}</th>
                         <th class="th-head-1">{{__('public.photo')}}</th>
                         @foreach($classroom->subjects as $subject)
                             <th >{{$subject->name}}</th>

@@ -37,7 +37,7 @@ return [
 
 
     // the daily follow up book
-    'Absence and Daily Book' => 'الغياب ودفتر المتابعة',
+    'Show the Daily Book' => 'عرض دفتر المتابعة',
     'for all students'=>'إضافة إلى كل الطلاب',
     'TO BRING TO SCHOOL'=>'تؤخذ للمدرسة',
     'TO TAKE HOME'=>'تؤخذ للبيت ',

@@ -11,12 +11,21 @@
             @csrf
             {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
             {{-- the table header with bottuns and search input --}}
-            <h4 class="col container-title mt-2">{{__('follow_up.for all students')}}</h4>
             <div class="table-header container mt-2">
                 {{-- the title and search --}}
-                <div class="row first-card">
+                <div class="row first-card text-center">
+                    <div class="col ">
+                        <img class="cards_img" src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
+                    </div> 
+                    <div class="center_y_x col">
+                        <div class=" text-center ">
+                            <div class="cards_title">khaled abdulnaser mansour alqubaty</div>
+                            <div class="cards_sup_title">233254325</div>
+                        </div> 
+                    </div>
                 </div>
                 {{-- the thacher name and the month --}}
+                <hr class=" ms-2 me-2 shadow">
 
                 <div class="cards-container mt-4 third-card row">
                     <div class="card-info card-info_2 col ">
@@ -39,11 +48,11 @@
                         <!-- 1 -->
                         <?php $index = 0; ?>
                         @foreach($subjects_homework as $subject => $homework)
-                            <div class="col-lg-4 col-md-4 col-sm-4 ">
-                                <label class="form-control">{{$subject}}</label>
+                            <div class="col-12 col-sm-4 col-lg-4">
+                                <label class="form-control ">{{$subject}}</label>
                             </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 ">
-                                <input type="text" id="homework" class="form-control ms-2 me-2"
+                            <div class="col-12 col-sm-8 col-lg-8">
+                                <input type="text" id="homework" class="form-control "
                                        name="homework[{{$index}}]" value="{{$homework}}">
                                 @error("homework.$index")
                                 <small class="form-text text-danger">{{$message}}</small>
@@ -58,7 +67,7 @@
             <!-- Start functional info  -->
             <h3 class="container-title">{{__('follow_up.food and bathroom')}}</h3>
             <div class="container containers-style">
-                <div class="row ">
+                <div class="row mb-4">
                     <!-- 1 -->
                     <div class="box col-lg-4 col-md-4 col-ms-12 mb-5  ">
                         <label for="bath"></label>
@@ -119,23 +128,23 @@
             </div>
             <!-- End functional info  -->
             <!-- Start final box -->
-            <h3 class="container-title">{{__('public.note')}}</h3>
+            <h3 class="container-title">{{__('student.more info')}}</h3>
             <div class="container containers-style">
+                <h3 class="topic-title text-center">{{__('public.note')}}</h3>
                 <label for="note"></label>
                 <div class="box row">
                     <div class="notes col-lg-12 col-md-12">
                         <textarea class="form-control" name="note" id="note" cols="50"
-                                  rows="5">{{$child->note}}</textarea>
+                            rows="5">{{$child->note}}</textarea>
                     </div>
                 </div>
             </div>
-            <div class=" row">
-                <div class="box col ">
+            <div class=" ">
+                <div class="box">
                     <input class="save-button " type="submit" value="{{__('public.update')}}">
-                </div>
-                <div class="box  col">
+
                     <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="btn clear-button"><i
-                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                        class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                 </div>
             </div>
             <!-- End final box -->
