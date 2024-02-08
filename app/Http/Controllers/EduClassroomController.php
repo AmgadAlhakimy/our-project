@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classroom;
-use App\Models\EducationalLevel;
-use App\Models\EduClassroom;
 use App\Http\Requests\StoreEduClassroomRequest;
 use App\Http\Requests\UpdateEduClassroomRequest;
+use App\Models\Classroom\Classroom;
+use App\Models\EducationalLevel;
+use App\Models\EduClassroom;
 
 class EduClassroomController extends Controller
 {

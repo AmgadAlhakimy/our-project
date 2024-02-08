@@ -41,11 +41,12 @@ return [
     'for all students'=>'Add For All Students',
     'show the absent children'=>'Show the Absent Children',
     'absent children'=>'Absent Children',
-    
+
     'subject'=>'Subject',
     'absent reason'=>'Absent Reason',
     'time attendance'=>'Time Attendance',
     'departure time'=>'Departure Time',
+    'please select a teacher'=>'Please Select a Teacher',
 
 
 

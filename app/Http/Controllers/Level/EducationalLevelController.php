@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Level;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Level\StoreEducationalLevelRequest;
 use App\Http\Requests\Level\UpdateEducationalLevelRequest;
-use App\Models\Classroom;
+use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use Illuminate\Http\Request;
 

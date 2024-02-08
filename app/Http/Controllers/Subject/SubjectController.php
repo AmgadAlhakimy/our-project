@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Subject;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Subject\StoreSubjectRequest;
 use App\Http\Requests\Subject\UpdateSubjectRequest;
-use App\Models\Subject;
+use App\Models\Subject\Subject;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller

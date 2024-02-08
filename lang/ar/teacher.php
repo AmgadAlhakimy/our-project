@@ -49,8 +49,7 @@ return [
     'absent children'=>'الأطفال الغائبين',
     'time attendance'=>'وقت الحظور',
     'departure time'=>'وقت الانصراف',
-
-    'other '=>'hhhh ',
+    'please select a teacher'=>'الرجاء تحديد مدرس',
 
 
 ];

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Student\StoreStudentRequest;
 use App\Http\Requests\Student\UpdateStudentRequest;
-use App\Models\Classroom;
+use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Relative;
 use App\Models\Student;

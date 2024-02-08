@@ -5,10 +5,10 @@ namespace App\Http\Controllers\FollowUpChild;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FollowUpChild\StoreFollowUpChildRequest;
 use App\Http\Requests\FollowUpChild\UpdateFollowUpChildRequest;
-use App\Models\Classroom;
+use App\Models\Classroom\Classroom;
 use App\Models\FollowUpChild;
 use App\Models\Student;
-use App\Models\Subject;
+use App\Models\Subject\Subject;
 use Carbon\Carbon;
 
 

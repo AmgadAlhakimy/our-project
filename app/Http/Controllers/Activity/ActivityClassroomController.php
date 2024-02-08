@@ -7,7 +7,7 @@ use App\Http\Requests\Activity_classroom\StoreActivityClassroomRequest;
 use App\Http\Requests\Activity_classroom\UpdateActivityClassroomRequest;
 use App\Models\Activity\Activity;
 use App\Models\Activity\ActivityClassroom;
-use App\Models\Classroom;
+use App\Models\Classroom\Classroom;
 
 class ActivityClassroomController extends Controller
 {

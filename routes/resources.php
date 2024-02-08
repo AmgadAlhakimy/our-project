@@ -11,12 +11,14 @@ use App\Http\Controllers\MarkController;
 use App\Http\Controllers\RelativeController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Subject\SubjectClassroomController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\TeacherController;
-use App\Http\Controllers\TeacherSubjectController;
+use App\Http\Controllers\Teacher\TeacherSubjectController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('educational_levels', EducationalLevelController::class);
+Route::resource('subject_classrooms', SubjectClassroomController::class);
 Route::resource('follow_up_students', FollowUpStudentController::class);
 Route::resource('follow_up_children', FollowUpChildController::class);
 Route::resource('class_activity', ActivityClassroomController::class);

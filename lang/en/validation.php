@@ -152,6 +152,8 @@ return [
     'uuid' => 'The :attribute field must be a valid UUID.',
     'english letters'=>'This filed must be only English letters',
     'arabic letters'=>'This filed must be only Arabic letters',
+    'at lease select one subject'=>'You Have to Select at Least One Subject',
+
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

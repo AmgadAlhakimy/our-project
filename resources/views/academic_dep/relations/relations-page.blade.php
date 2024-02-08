@@ -10,18 +10,9 @@
             <h3 class="container-title">اختر العلاقة</h3>
             <div class="container containers-style">
 
-                <div class="box row">
-                    <div class="notes col-lg-6 col-md-6 col-sm-12">
-                        <a href="{{route('teacher_subjects.create')}}" class="li-link">
-                            <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
-                                <div class="relation-title"> المرحلة الدراسية بالفصول</div>
-                            </button>
-                        </a>
-                    </div>
-
                     <div class="notes col-lg-6 col-md-6 col-sm-12">
 
-                        <a href="{{route('teacher_subjects.create')}}" class="li-link">
+                        <a href="{{route('subject_classrooms.create')}}" class="li-link">
                             <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
                                 <div class="relation-title"> الفصول بالمواد الدراسية</div>
                             </button>

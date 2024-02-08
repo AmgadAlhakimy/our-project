@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Classroom;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Classroom\StoreClassroomRequest;
 use App\Http\Requests\Classroom\UpdateClassroomRequest;
-use App\Models\Classroom;
+use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Student;
 use Exception;
