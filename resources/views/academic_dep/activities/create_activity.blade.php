@@ -7,7 +7,7 @@
             @if(Session::has('success'))
                 <div class="alert alert-success" role="alert">
                     {{Session::get('success')}}
-                </div>
+                </div> 
             @endif
             <h1 class="p-relative title-1">{{__('Activity.create new Activity')}}</h1>
             <form action="{{route('activities.store')}}" method="post">
