@@ -33,7 +33,7 @@ class Classroom extends Model
 
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'subject_classroom_pivot');
+        return $this->belongsToMany(Subject::class, 'subject_classrooms_pivot');
     }
     public function marks()
     {

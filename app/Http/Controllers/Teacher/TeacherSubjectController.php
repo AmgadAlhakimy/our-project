@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Teacher;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreTeacherSubjectRequest;
-use App\Http\Requests\UpdateTeacherSubjectRequest;
+use App\Http\Requests\Teacher\StoreTeacherSubjectRequest;
+use App\Http\Requests\Teacher\UpdateTeacherSubjectRequest;
 use App\Models\Subject\Subject;
 use App\Models\Teacher;
 use App\Models\TeacherSubject;
+use Exception;
 
 class TeacherSubjectController extends Controller
 {
@@ -35,7 +36,7 @@ class TeacherSubjectController extends Controller
             return view('academic_dep/relations.teacher_subjects',
                 compact('teachers', 'subjects'));
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -47,8 +48,6 @@ class TeacherSubjectController extends Controller
     {
         try {
             foreach ($request->subject_id as $subject_id) {
-                echo $request->teacher_id;
-                echo $subject_id;
                 TeacherSubject::create([
                     'teacher_id'=>$request->teacher_id,
                     'subject_id'=>$subject_id,
@@ -56,7 +55,7 @@ class TeacherSubjectController extends Controller
             }
             return redirect()->back()->with(['success' => 'saved successfully']);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

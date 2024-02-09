@@ -14,14 +14,14 @@ class SubjectClassroomSeeder extends Seeder
      */
     public function run(): void
     {
-        $classrooms = Classroom::all();
-        $subjects = Subject::all();
-
-        for($i = 1; $i<=80; $i++ ){
-            SubjectClassroom::create([
-            'classroom_id'=>$classrooms->random()->id,
-            'subject_id'=>$subjects->random()->id,
-                ]);
-        }
+//        $classrooms = Classroom::all();
+//        $subjects = Subject::all();
+//
+//        for($i = 1; $i<=80; $i++ ){
+//            SubjectClassroom::create([
+//            'classroom_id'=>$classrooms->random()->id,
+//            'subject_id'=>$subjects->random()->id,
+//                ]);
+//        }
     }
 }

@@ -10,13 +10,16 @@
                 <div class="container containers-style">
                     <div class="">
                         <div class="row">
-                            <!-- 1 --> 
+                            <!-- 1 -->
                             <div class="box col-12 ">
                                 <label for="level-class">{{__('relations.classes')}}</label>
                                 <select class="form-select form-control " id="level-class" name="classroom_id">
+                                    <option value="" selected disabled>
+                                        {{__('classroom.please select a classroom')}}</option>
                                     @foreach($classrooms as $classroom)
-                                        <option class="text-center"
-                                                value="{{$classroom->id}}">{{$classroom->name}}</option>
+                                        <option class="text-center" value="{{$classroom->id}}"
+                                            {{ old('classroom_id') == $classroom->id ? 'selected' : '' }}>
+                                            {{$classroom->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('classroom_id')
@@ -36,21 +39,20 @@
                                     <!-- <div class="btn-menu "> -->
                                     <div class="btn-l-container  row">
                                         <!-- -------- start buttons  -->
-                                            <?php $index = 0; ?>
+
                                         @foreach($subjects as $Subject)
                                             <label class="btn-l-label col ">
-                                                <input class="light-btn" type="checkbox" name="subject_id[{{$index}}]"
-                                                    value="{{$Subject->id}}">
+                                                <input class="light-btn" type="checkbox" name="subject_id[]"
+                                                       value="{{$Subject->id}}" {{ old('subject_id') && in_array($Subject->id, old('subject_id')) ? 'checked' : '' }}>
                                                 <span class="btn-l-text">{{$Subject->name}} </span>
                                             </label>
-                                            <?php $index++; ?>
                                         @endforeach
                                         <!-- -------- end buttons  -->
-                                        @error("subject_id.$index")
-                                        <small class="form-text text-danger">{{$message}}</small>
-                                        @enderror
                                     </div>
                                 </div>
+                                @error("subject_id")
+                                <small class="form-text text-danger">{{$message}}</small>
+                                @enderror
                             </div>
                             <!-- </div> -->
                         </div>

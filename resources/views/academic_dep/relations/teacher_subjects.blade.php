@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 @section('content')
     <body>
-    <main class="main "> 
+    <main class="main ">
         <section class="section">
             <!-- <h1 class="p-relative title-1">اضافة كلاس</h1> -->
             <form method="post" action="{{route('teacher_subjects.store')}}">
@@ -14,11 +14,12 @@
                             <div class="box col-12 ">
                                 <label for="teacher"> {{__('relations.teacher')}}</label>
                                 <select class="form-select form-control " id="teacher" name="teacher_id">
-                                    <option value="" selected
-                                            disabled>{{__('teacher.please select a teacher')}}</option>
+                                    <option value="" selected disabled>
+                                        {{__('teacher.please select a teacher')}}</option>
                                     @foreach($teachers as $teacher)
                                         <option class="text-center" value="{{$teacher->id}}"
-                                            {{ old('teacher_id') == $teacher->id ? 'selected' : '' }}>{{$teacher->name}}</option>
+                                            {{ old('teacher_id') == $teacher->id ? 'selected' : '' }}>
+                                            {{$teacher->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('teacher_id')
@@ -38,14 +39,12 @@
                                     <!-- <div class="btn-menu "> -->
                                     <div class="btn-l-container  row">
                                         <!-- -------- start buttons  -->
-                                            <?php $index = 0; ?>
                                         @foreach($subjects as $Subject)
                                             <label class="btn-l-label col ">
-                                                <input class="light-btn" type="checkbox" name="subject_id[{{$index}}]"
+                                                <input class="light-btn" type="checkbox" name="subject_id[]"
                                                        value="{{$Subject->id}}" {{ old('subject_id') && in_array($Subject->id, old('subject_id')) ? 'checked' : '' }}>
                                                 <span class="btn-l-text">{{$Subject->name}} </span>
                                             </label>
-                                                <?php $index++; ?>
                                         @endforeach
                                         <!-- -------- end buttons  -->
                                     </div>

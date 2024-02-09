@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Subject;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSubjectClassroomRequest;
-use App\Http\Requests\UpdateSubjectClassroomRequest;
+use App\Http\Requests\Subject\StoreSubjectClassroomRequest;
+use App\Http\Requests\Subject\UpdateSubjectClassroomRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\Subject\Subject;
 use App\Models\Subject\SubjectClassroom;
+use Exception;
 
 class SubjectClassroomController extends Controller
 {
@@ -30,7 +31,7 @@ class SubjectClassroomController extends Controller
             return view('academic_dep/relations.subject_classrooms',
                 compact('classrooms', 'subjects'));
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -40,7 +41,19 @@ class SubjectClassroomController extends Controller
      */
     public function store(StoreSubjectClassroomRequest $request)
     {
-        //
+        try {
+            foreach ($request->subject_id as $subject_id) {
+                SubjectClassroom::create([
+                    'classroom_id'=>$request->classroom_id,
+                    'subject_id'=>$subject_id,
+                ]);
+            }
+            return redirect()->back()->with(['success' => 'saved successfully']);
+
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+
     }
 
     /**

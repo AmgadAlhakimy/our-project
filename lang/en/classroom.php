@@ -20,5 +20,7 @@ return [
     'class cost'=>'Class Cost',
     'class info'=>'Class Info',
     'update class'=>'Update Class: ',
-    'please select a classroom'=>'Please Select a Classroom'
+    'please select a classroom'=>'Please Select a Classroom',
+    'you have already chosen this classroom'=>'The Subjects for this
+    Classroom Have Already Been Distributed, and You Can Now Only Modify Them',
 ];
