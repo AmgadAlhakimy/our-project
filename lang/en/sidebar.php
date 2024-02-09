@@ -45,14 +45,25 @@ return [
 
         // relations 
         'relations'=>'Relations',
-        'subjects - classes'=>'Subjects - Classes',
+        'subjects - classes'=>'Subjects -Classes',
         'classes - activities'=>'Classes - Activities',
         'teachers - subjects'=>'Teachers - Subjects',
         'teachers - classes'=>'Teachers - Classes',
-        'hhhh'=>'hhhh',
+
+        'display relations'=>'Display Relations', 
+        'display subjects - teachers'=>'Display Teacher-Subjects', 
+        'display classes -  teacher'=>'Display Teacher-Classes', 
+        'display subjects - classes'=>'Display Class-Subjects', 
+        'display classes - activities'=>'Display Class-Activities', 
+        'hhhh'=>'hhhh', 
+        'hhhh'=>'hhhh', 
+        'hhhh'=>'hhhh', 
+        'hhhh'=>'hhhh', 
     
-    // شغل ماجد
+    
+    
+        // work
     'teacher section' => 'Teacher Section',
     'view records' => 'View Records',
- 
+
 ];

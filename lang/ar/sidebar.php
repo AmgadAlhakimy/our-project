@@ -40,7 +40,7 @@ return [
     'review students'=>'عرض الطلاب',
     'deleted Student'=>'سلة المهملات (الطلاب)',
     'Student absence'=>'تحضير الطلاب',
-
+ 
     // relations 
     'relations'=>'ربط العلاقات',
     'subjects - classes'=>'مواد - فصول',
@@ -48,9 +48,20 @@ return [
     'teachers - subjects'=>'مدرسين - مواد',
     'teachers - classes'=>'مدرسين - فصول',
     'hhhh'=>'hhhh',
+
+
+    'display relations'=>'عرض العلاقات', 
+    'display subjects - teachers'=>'عرض معلم-المنهج', 
+    'display classes -  teacher'=>'عرض معلم-فصول', 
+    'display subjects - classes'=>'عرض فصل-المنهج', 
+    'display classes - activities'=>'عرض فصل-الأنشطة', 
+    'hhhh'=>'hhhh', 
+    'hhhh'=>'hhhh', 
+    'hhhh'=>'hhhh', 
+    'hhhh'=>'hhhh', 
     'hhhh'=>'hhhh',
  
-    // شغل ماجد
+    // 
     'teacher section' => 'قسم المعلمين',
     'view records' => 'عرض التقارير',
 

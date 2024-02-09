@@ -196,7 +196,29 @@
                                 <a href='<?php echo e(route('class_activity.create')); ?>' class="li-link"><?php echo e(__('sidebar.classes - activities')); ?></a>
                                 <a href='<?php echo e(route('teacher_subjects.create')); ?>' class="li-link"><?php echo e(__('sidebar.teachers - subjects')); ?></a>
                                 <a href='/teacher_classes' class="li-link"><?php echo e(__('sidebar.teachers - classes')); ?></a>
-                                <a href='' class="li-link"><?php echo e(__('sidebar.relationship')); ?></a>
+
+                            </div>
+                        </div>
+                    </li>
+                    <!-- ========== 6 ============ -->
+                    
+                    <li class="dropdown">
+                        <!-- ========== 4 ============ -->
+                        <div class="sidebar-title">
+                            <a href="#" class="li-link title-4">
+                                <i
+                                    class="icon-1 fa-solid fa-window-restore"
+                                ></i>
+                                <span class="menu-name"><?php echo e(__('sidebar.display relations')); ?> </span>
+                                <i class="icon-1 fa-solid fa-chevron-down"></i>
+                            </a>
+                        </div>
+                        <div class="submenu">
+                            <div class="line-black">
+                                <a href='/dis_sub_teacher' class="li-link"><?php echo e(__('sidebar.display subjects - teachers')); ?></a>
+                                <a href='/dis_class_teacher' class="li-link"><?php echo e(__('sidebar.display classes -  teacher')); ?></a>
+                                <a href='/dis_sub_class' class="li-link"><?php echo e(__('sidebar.display subjects - classes')); ?></a>
+                                <a href='/dis_class_activity' class="li-link"><?php echo e(__('sidebar.display classes - activities')); ?></a>
                             </div>
                         </div>
                     </li>

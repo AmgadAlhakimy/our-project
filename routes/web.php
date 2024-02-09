@@ -49,9 +49,28 @@ Route::group(
         Route::get('students_view', function () {
             return view('teachers_affairs/follow_up_students/index_school_follow_up');
         });
+
+        // -----------------
         // teacher_classes
         Route::get('teacher_classes', function () {
             return view('academic_dep/relations/class-teatcher');
+        });
+        // dis_sub_teacher
+        Route::get('dis_class_activity', function () {
+            return view('academic_dep/relations/index_relations/display_class_activities');
+        });
+        // dis_class_teacher
+        Route::get('dis_class_teacher', function () {
+            return view('academic_dep/relations/index_relations/display_class-teatcher');
+        });
+        // dis_sub_class
+        Route::get('dis_sub_class', function () {
+            return view('academic_dep/relations/index_relations/display_subject_classrooms');
+        });
+
+        // dis_sub_teacher
+        Route::get('dis_sub_teacher', function () {
+            return view('academic_dep/relations/index_relations/display_teacher_subjects');
         });
 
 

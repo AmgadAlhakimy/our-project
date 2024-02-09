@@ -27,8 +27,14 @@ return [
     'edit classes for teacher' => 'تعديل ربط الفصول بالمعلمين',
     'edit subjects for teachers' => 'تعديل ربط المنهج بالمعلمين',
     'edit subjects for classes' => 'تعديل ربط المنهج بالفصول',
+
+    
+    'display activities for classes' => 'عرض ربط الأنشطة بالفصول',
+    'display classes for teachers' => 'عرض ربط المعلمين بالفصول',
+    'display subjects for classes' => 'عرض ربط الفصول بالمنهج', 
+    'display subjects for teachers' => 'عرض ربط المعلمين بالمنهج',
     'hhhh' => 'gggg',
     'hhhh' => 'gggg',
 
-
+ 
 ];

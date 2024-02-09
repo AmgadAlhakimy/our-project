@@ -23,13 +23,14 @@ return [
     'add classes for teacher' => 'Add Classes For Teacher',
 
     'edit activities for classes' => 'Edit Activities For Classes',
-    'edit classes for teacher' => 'Edit Classes For teacher',
-    'edit subjects for teachers' => 'Edit Subjects For teachers',
+    'edit classes for teacher' => 'Edit Classes For Teachers',
+    'edit subjects for teachers' => 'Edit Subjects For Teachers',
     'edit subjects for classes' => 'Edit Subjects For Classes',
-    'hhhh' => 'gggg',
-    'hhhh' => 'gggg',
-    'hhhh' => 'gggg',
-    'hhhh' => 'gggg',
+
+    'display activities for classes' => 'Display Activities For Classes',
+    'display classes for teachers' => 'Display Classes For Teachers',
+    'display subjects for classes' => 'Display Subjects For Classes', 
+    'display subjects for teachers' => 'Display Subjects For Teachers',
     'hhhh' => 'gggg',
     'hhhh' => 'gggg',
 
