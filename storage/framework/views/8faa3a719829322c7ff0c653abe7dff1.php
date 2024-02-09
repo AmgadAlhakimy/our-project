@@ -31,7 +31,7 @@
 <!-- Start content  -->
 <div class="content">
     <div class="head " dir="ltr">
-        
+
         <div class="search p-relative">
             <label for="rtl"></label> <input class="search1" type="search"
                                              placeholder="<?php echo e(__('sidebar.search')); ?>" id="rtl" />
@@ -42,7 +42,7 @@
                     </span>
             <img src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>" alt="skills"/>
         </div>
-        
+
         <div class="dropDownLang">
             <div class="select">
                 <span class="selected"><?php echo e(__('sidebar.Lang')); ?></span>
@@ -74,7 +74,7 @@
         <!-- ============= logo ================== -->
         <div class="my-head">
             <div class="my-menu-btn">
-                
+
                 <img src="<?php echo e(URL::asset('assets/images/layouts/logo2.png')); ?>" class="logo-img" alt="" />
                 <div class="sidebar-icon">
                     <i class="logo-text fa-solid fa-caret-left"></i>
@@ -87,8 +87,8 @@
                 <ul class="list-ul my-scroll">
                     <!--  dropdown list item عنوان القسم-->
                     <p class="title"><?php echo e(__('sidebar.academic department')); ?></p>
-                    
-                    
+
+
                     <li class="dropdown">
                         <!-- ========== 1 ============ -->
                         <div class="sidebar-title">
@@ -110,7 +110,7 @@
                         </div>
                     </li>
                     <!-- ========== 2 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
@@ -132,7 +132,7 @@
                         </div>
                     </li>
                     <!-- ========== 3 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 3 ============ -->
                         <div class="sidebar-title">
@@ -154,7 +154,7 @@
                         </div>
                     </li>
                     <!-- ========== 4 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 4 ============ -->
                         <div class="sidebar-title">
@@ -174,11 +174,11 @@
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
-                            </div> 
+                            </div>
                         </div>
                     </li>
                     <!-- ========== 5 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 4 ============ -->
                         <div class="sidebar-title">
@@ -186,7 +186,7 @@
                                 <i
                                     class="icon-1 fa-solid fa-window-restore"
                                 ></i>
-                                <span class="menu-name"><?php echo e(__('sidebar.relations')); ?> </span>
+                                <span class="menu-name"><?php echo e(__('sidebar.relationships')); ?> </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
@@ -201,7 +201,7 @@
                         </div>
                     </li>
                     <!-- ========== 6 ============ -->
-                    
+
                     <li class="dropdown">
                         <!-- ========== 4 ============ -->
                         <div class="sidebar-title">
@@ -209,7 +209,7 @@
                                 <i
                                     class="icon-1 fa-solid fa-window-restore"
                                 ></i>
-                                <span class="menu-name"><?php echo e(__('sidebar.display relations')); ?> </span>
+                                <span class="menu-name"><?php echo e(__('sidebar.display relationships')); ?> </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
@@ -223,13 +223,13 @@
                         </div>
                     </li>
                     <!-- ========== 5 ============ -->
-                    
+
                     <!-- ======================== ACOUNTENT ========================== -->
-                    
-                    
+
+
 
                         <p class="title"><?php echo e(__('sidebar.teacher section')); ?></p>
-                            
+
                     <!-- ======================== TEACHERS ========================== -->
                     <li class="dropdown">
                     <!-- ========== 1 ============ -->
@@ -244,7 +244,7 @@
                             <div class="line-black">
                                 <a href='/school' class="li-link">علوم \ سادس </a>
                                 <a href='/students_view' class="li-link"> عرض \ علوم \ سادس </a>
-                                
+
                                 <a href='#' class="li-link">تقارير دفتر المتابعة</a>
                             </div>
                         </div>
@@ -311,12 +311,12 @@
 
                         <p class="title">قسم الكنترول</p>
 
-                    
-                    
-                    <!-- ======================== CONTROLE ========================== -->
-                    
 
-                    
+
+                    <!-- ======================== CONTROLE ========================== -->
+
+
+
                     <!-- ======================== PARENTS ========================== -->
                     <p class="title"><?php echo e(__('sidebar.parent section')); ?></p>
 
@@ -342,7 +342,7 @@
                         </div>
                     </li>
 
-                    
+
                     <!-- ======================== EMB ========================== -->
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
@@ -365,7 +365,7 @@
                             </div>
                         </div>
                     </li>
-                            
+
                     <!-- ======================== STUDENTS ========================== -->
                     <p class="title"><?php echo e(__('sidebar.students affairs')); ?></p>
 
@@ -382,18 +382,18 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
-                            
+
                             <a href='<?php echo e(route('students.create')); ?>' class="li-link"><?php echo e(__('sidebar.add a Student')); ?></a>
-                            
+
                             <a href="<?php echo e(route('students.index')); ?>" class="li-link"><?php echo e(__('sidebar.review students')); ?></a>
                             <a href="<?php echo e(route('students.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted Student')); ?></a>
-                            
-                            
+
+
                             <a href='/absence' class="li-link"><?php echo e(__('sidebar.Student absence')); ?></a>
                             <a href='/student_form' class="li-link">معلومات الطلاب</a>
                             <a href="#" class="li-link">الطلاب الأوائل</a>
 
-                            
+
                             <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                 <div class="select">
                                     <span class="selected">Lang</span>
@@ -405,7 +405,7 @@
                                     <a href="#" class="li-link_2">3</a>
                                     <a href='#' class="li-link_2">4</a>
                                     <a href="#" class="li-link_2">5</a>
-                                </ul>  
+                                </ul>
                             </div>
                         </div>
 
@@ -430,7 +430,7 @@
 
 
 
-                    
+
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
@@ -449,11 +449,11 @@
                         </div>
                     </li>
 
-                    
-                    
 
-                    
-                    
+
+
+
+
                     <li class=" ">
                         <!-- ========== 2 ============ -->
                         <!-- <div class="sidebar-title"> -->
@@ -494,7 +494,7 @@
         </div>
 
         <!-- ========== THE LAST MENU ============ -->
-        
+
         <!-- ====================== -->
 </div>
 </div>
@@ -521,5 +521,5 @@
 
 
 
-                                
+
 <?php /**PATH E:\My-Github\our-project\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

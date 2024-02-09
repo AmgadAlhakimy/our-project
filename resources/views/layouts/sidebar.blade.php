@@ -173,7 +173,7 @@
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
-                            </div> 
+                            </div>
                         </div>
                     </li>
                     <!-- ========== 5 ============ -->
@@ -185,7 +185,7 @@
                                 <i
                                     class="icon-1 fa-solid fa-window-restore"
                                 ></i>
-                                <span class="menu-name">{{__('sidebar.relations')}} </span>
+                                <span class="menu-name">{{__('sidebar.relationships')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
@@ -208,13 +208,13 @@
                                 <i
                                     class="icon-1 fa-solid fa-window-restore"
                                 ></i>
-                                <span class="menu-name">{{__('sidebar.display relations')}} </span>
+                                <span class="menu-name">{{__('sidebar.display relationships')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='/dis_sub_teacher' class="li-link">{{__('sidebar.display subjects - teachers')}}</a>
+                                <a href="{{route('teacher_subjects.index')}}" class="li-link">{{__('sidebar.display subjects - teachers')}}</a>
                                 <a href='/dis_class_teacher' class="li-link">{{__('sidebar.display classes -  teacher')}}</a>
                                 <a href='/dis_sub_class' class="li-link">{{__('sidebar.display subjects - classes')}}</a>
                                 <a href='/dis_class_activity' class="li-link">{{__('sidebar.display classes - activities')}}</a>

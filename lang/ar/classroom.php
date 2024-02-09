@@ -20,4 +20,5 @@ return [
     'class info'=>'معلومات الصف',
     'update class'=>'تعديل الصف: ',
     'please select a classroom'=>'الرجاء تحديد فصل',
+    'you have already chosen this classroom'=>'لقد تم توزيع المواد لهذا الصف مسبقاً لايمكنك الأن سوى التعديل عليه',
 ];

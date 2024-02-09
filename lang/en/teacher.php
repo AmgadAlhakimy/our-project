@@ -47,6 +47,8 @@ return [
     'time attendance'=>'Time Attendance',
     'departure time'=>'Departure Time',
     'please select a teacher'=>'Please Select a Teacher',
+    'you have already chosen this teacher'=>'The Subjects for this
+    Teacher Have Already Been Distributed, and You Can Now Only Modify Them',
 
 
 

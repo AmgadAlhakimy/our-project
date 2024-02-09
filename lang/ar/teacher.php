@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'teachers info'=>'معلومات المدرس',
-    'teacher name in english'=>'اسم المدرس بالإنجليزية',
-    'teacher name in arabic'=>'اسم المدرس بالعربية',
+    'teachers info'=>'معلومات المعلم',
+    'teacher name in english'=>'اسم المعلم بالإنجليزية',
+    'teacher name in arabic'=>'اسم المعلم بالعربية',
     'photo'=>'الصورة',
     'phone'=>'الهاتف',
     'address'=>'العنوان',
@@ -29,14 +29,14 @@ return [
     'other info'=>'معلومات أخرى',
     'qualification in english'=>'المؤهل بالإنجليزية',
     'qualification in arabic'=>'المؤهل بالعربية',
-    'create a new teacher' => 'إنشاء مدرس جديد',
+    'create a new teacher' => 'إنشاء المعلم جديد',
     'major in english'=>'التخصص بالإنجليزية',
     'major in arabic'=>'التخصص بالعربية',
 
 
 
 
-    // the daily follow up book
+    // the daily follow_up book
     'Show the Daily Book' => 'عرض دفتر المتابعة',
     'for all students'=>'إضافة إلى كل الطلاب',
     'TO BRING TO SCHOOL'=>'تؤخذ للمدرسة',
@@ -49,7 +49,8 @@ return [
     'absent children'=>'الأطفال الغائبين',
     'time attendance'=>'وقت الحظور',
     'departure time'=>'وقت الانصراف',
-    'please select a teacher'=>'الرجاء تحديد مدرس',
+    'please select a teacher'=>'الرجاء تحديد المعلم',
+    'you have already chosen this teacher'=>'لقد تم توزيع المواد لهذا المعلم مسبقاً لايمكنك الأن سوى التعديل عليه',
 
 
 ];

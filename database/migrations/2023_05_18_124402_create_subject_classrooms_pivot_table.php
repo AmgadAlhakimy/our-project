@@ -16,6 +16,7 @@ return new class extends Migration
             $table->bigInteger('subject_id');
             $table->bigInteger('classroom_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

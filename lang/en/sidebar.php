@@ -43,25 +43,25 @@ return [
     'deleted Student'=>'Delete Student',
     'Student absence'=>'Student Absence',
 
-        // relations 
-        'relations'=>'Relations',
+        // relationships
+        'relationships'=>'Relations',
         'subjects - classes'=>'Subjects -Classes',
         'classes - activities'=>'Classes - Activities',
         'teachers - subjects'=>'Teachers - Subjects',
         'teachers - classes'=>'Teachers - Classes',
 
-        'display relations'=>'Display Relations', 
-        'display subjects - teachers'=>'Display Teacher-Subjects', 
-        'display classes -  teacher'=>'Display Teacher-Classes', 
-        'display subjects - classes'=>'Display Class-Subjects', 
-        'display classes - activities'=>'Display Class-Activities', 
-        'hhhh'=>'hhhh', 
-        'hhhh'=>'hhhh', 
-        'hhhh'=>'hhhh', 
-        'hhhh'=>'hhhh', 
-    
-    
-    
+        'display relationships'=>'Display Relations',
+        'display subjects - teachers'=>'Display Teacher-Subjects',
+        'display classes -  teacher'=>'Display Teacher-Classes',
+        'display subjects - classes'=>'Display Class-Subjects',
+        'display classes - activities'=>'Display Class-Activities',
+        'hhhh'=>'hhhh',
+        'hhhh'=>'hhhh',
+        'hhhh'=>'hhhh',
+        'hhhh'=>'hhhh',
+
+
+
         // work
     'teacher section' => 'Teacher Section',
     'view records' => 'View Records',

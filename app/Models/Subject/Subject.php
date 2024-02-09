@@ -4,6 +4,7 @@ namespace App\Models\Subject;
 
 use App\Models\Classroom\Classroom;
 use App\Models\Mark;
+use App\Models\Teacher\Teacher;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -20,7 +21,11 @@ class Subject extends Model
 
     public function classrooms()
     {
-        return $this->belongsToMany(Classroom::class,'subject_classroom_pivot');
+        return $this->belongsToMany(Classroom::class, 'subject_classrooms_pivot');
+    }
+    public function teachers()
+    {
+        return $this->belongsToMany(Teacher::class, 'teacher_subjects_pivot');
     }
 
     public function marks()

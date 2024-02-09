@@ -53,24 +53,24 @@ Route::group(
         // -----------------
         // teacher_classes
         Route::get('teacher_classes', function () {
-            return view('academic_dep/relations/class-teatcher');
+            return view('academic_dep/relationships/class-teatcher');
         });
         // dis_sub_teacher
         Route::get('dis_class_activity', function () {
-            return view('academic_dep/relations/index_relations/display_class_activities');
+            return view('academic_dep/relationships/display_relationships/display_class_activities');
         });
         // dis_class_teacher
         Route::get('dis_class_teacher', function () {
-            return view('academic_dep/relations/index_relations/display_class-teatcher');
+            return view('academic_dep/relationships/display_relationships/display_class-teatcher');
         });
         // dis_sub_class
         Route::get('dis_sub_class', function () {
-            return view('academic_dep/relations/index_relations/display_subject_classrooms');
+            return view('academic_dep/relationships/display_relationships/display_subject_classrooms');
         });
 
         // dis_sub_teacher
         Route::get('dis_sub_teacher', function () {
-            return view('academic_dep/relations/index_relations/display_teacher_subjects');
+            return view('academic_dep/relationships/display_relationships/display_teacher_subjects');
         });
 
 

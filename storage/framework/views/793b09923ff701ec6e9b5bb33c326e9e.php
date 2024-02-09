@@ -1,16 +1,16 @@
 <?php $__env->startSection('content'); ?>
 <body>
     <main class="main ">
-        <section class="section" > 
+        <section class="section" >
             <!-- <h2 class="p-relative title-1">اختر فصول المدرس</h2> -->
             <form action="">
-                <h3 class="container-title"><?php echo e(__('relations.add classes for teacher')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('relationships.add classes for teacher')); ?></h3>
                 <div class="container containers-style">
                     <div class="">
                         <div class="row">
                             <!-- 1 -->
                             <div class="box col-12 ">
-                                <label for="level-class"><?php echo e(__('relations.teacher')); ?></label>
+                                <label for="level-class"><?php echo e(__('relationships.teacher')); ?></label>
                                 <select class="form-select form-control " id="level-class">
                                     <option  value="">ahmad</option>
                                     <option  value="">khalid</option>
@@ -22,7 +22,7 @@
                             </div>
                             <!-- 2 -->
                                 <div class="box mb-1">
-                                    <label class="" for="level-class"><?php echo e(__('relations.classes')); ?></label>
+                                    <label class="" for="level-class"><?php echo e(__('relationships.classes')); ?></label>
                                 </div>
 
                                 <div class="box ">
@@ -34,7 +34,7 @@
                                                 <input class="light-btn" type="checkbox" >
                                                 <span class="btn-l-text">الصف الاول</span>
                                             </label>
-                                            
+
 
                                             <!-- -------- end buttons  -->
                                         </div>
@@ -59,4 +59,4 @@
 </body>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/relations/class-teatcher.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/relationships/class-teatcher.blade.php ENDPATH**/ ?>
