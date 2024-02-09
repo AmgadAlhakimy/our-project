@@ -28,7 +28,7 @@ class SubjectClassroomController extends Controller
         try {
             $subjects = Subject::all();
             $classrooms = Classroom::all();
-            return view('academic_dep/relations.subject_classrooms',
+            return view('academic_dep/relationships.subject_classrooms',
                 compact('classrooms', 'subjects'));
 
         } catch (Exception $e) {

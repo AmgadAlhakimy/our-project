@@ -29,7 +29,7 @@
             <div class="card table-section ">
                 <table class=" " id="check_table" >
                     <thead>
-                    <tr>
+                    <tr> 
                         
                         <th class=" me-4 ms-4">
                             <input type="checkbox" id="select_all" 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Teacher;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\StoreTeacherRequest;
 use App\Http\Requests\Teacher\UpdateTeacherRequest;
-use App\Models\Teacher;
+use App\Models\Teacher\Teacher;
 use App\Traits\EmployeeTrait;
 use App\Traits\PhotoTrait;
 use Illuminate\Http\Request;
@@ -189,7 +189,7 @@ class TeacherController extends Controller
     public function forceDelete($id)
     {
         try {
-            $this->deleteImage($id,"App\Models\Teacher");
+            $this->deleteImage($id,"App\Models\Teacher\Teacher");
             Teacher::withTrashed()->where('id', $id)->forceDelete();
             return redirect()->back()
                 ->with(['warning' => trans('message.force delete')]);

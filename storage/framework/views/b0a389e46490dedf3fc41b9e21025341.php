@@ -62,7 +62,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box row"> 
+                        <div class="box row">
                             <div class="col-lg-6 col-md-6">
                                 <label for="address"><?php echo e(__("Student.Student's address in arabic")); ?></label>
                                 <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="<?php echo e(old('address_ar')); ?>">
@@ -96,7 +96,8 @@ unset($__errorArgs, $__bag); ?>
                         
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender"><?php echo e(__('Student.gender')); ?></label>
-                            <select class="col form-select form-control" id="gender" name="gender" value="<?php echo e(old('gender')); ?>">
+                            <select class="col form-select form-control" id="gender" name="gender">
+                                <option value="" selected disabled><?php echo e(__('public.please select the gender')); ?></option>
                                 <option class="text-center"
                                         value="<?php echo e(__('Student.male')); ?>"><?php echo e(__('Student.male')); ?></option>
                                 <option class="text-center"
@@ -162,7 +163,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="className " class="form-label"><?php echo e(__('Student.level')); ?></label>
+                            <label for="className" class="form-label"><?php echo e(__('Student.level')); ?></label>
                             <select id="className" class="form-control" name="level_id"
                             onchange="console.log($(this).val())">
                                 <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -232,7 +233,6 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <input type="text" name="relative_id" id="" disabled required value="<?php echo e(old('relative_id')); ?>">
                         <!-- garden number  -->
                     </div>
                 </div>
@@ -265,7 +265,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                 
-                                <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1"value="<?php echo e(old('medicine_desc')); ?>"
+                                <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1" value="<?php echo e(old('medicine_desc')); ?>"
                                     aria-label="Text input with radio button" placeholder="desc in english" hidden >
                                 <?php $__errorArgs = ['medicine_desc'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -418,7 +418,7 @@ unset($__errorArgs, $__bag); ?>
     <script>
         $(document.ready(function (){
             $('select[name="level_id"]').on('change', function (){
-                var level_id = $(this).val();
+                let level_id = $(this).val();
                 if(level_id){
                     $.ajax({
                         url: "<?php echo e(URL::to('classrooms')); ?>/" + level_id,

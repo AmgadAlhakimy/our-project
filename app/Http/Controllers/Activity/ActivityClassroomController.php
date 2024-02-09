@@ -27,7 +27,7 @@ class ActivityClassroomController extends Controller
         try {
             $classses = Classroom::all();
             $activities = Activity::all();
-            return view('academic_dep/relations.class_activities',
+            return view('academic_dep/relationships.class_activities',
                 compact('classses','activities'));
         }catch (\Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);

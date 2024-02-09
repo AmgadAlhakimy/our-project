@@ -117,6 +117,9 @@ tr:hover img {
   border: none;
 }
 /* Start table style  */
+.th-head {
+  width: 70px;
+}
 .th-head-1 {
   width: 50px;
 }
