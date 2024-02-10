@@ -50,7 +50,10 @@ return [
     'time attendance'=>'وقت الحظور',
     'departure time'=>'وقت الانصراف',
     'please select a teacher'=>'الرجاء تحديد المعلم',
-    'you have already chosen this teacher'=>'لقد تم توزيع المواد لهذا المعلم مسبقاً لايمكنك الأن سوى التعديل عليه',
+    'you have already chosen this teacher'=>
+        'لقد تم توزيع المواد لهذا المعلم مسبقاً لايمكنك الأن سوى التعديل عليه',
+    'you have already chosen this teacher and classroom'=>
+        'لقد تم توزيع الصفوف لهذا المعلم مسبقاً لايمكنك الأن سوى التعديل عليه',
 
 
 ];

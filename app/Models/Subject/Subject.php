@@ -21,11 +21,11 @@ class Subject extends Model
 
     public function classrooms()
     {
-        return $this->belongsToMany(Classroom::class, 'subject_classrooms_pivot');
+        return $this->belongsToMany(Classroom::class, 'classroom_subject_pivot');
     }
     public function teachers()
     {
-        return $this->belongsToMany(Teacher::class, 'teacher_subjects_pivot');
+        return $this->belongsToMany(Teacher::class, 'subject_teacher_pivot');
     }
 
     public function marks()

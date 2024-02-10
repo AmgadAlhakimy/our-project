@@ -192,9 +192,9 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='<?php echo e(route('subject_classrooms.create')); ?>' class="li-link"><?php echo e(__('sidebar.subjects - classes')); ?></a>
+                                <a href='<?php echo e(route('classroom_subject.create')); ?>' class="li-link"><?php echo e(__('sidebar.subjects - classes')); ?></a>
                                 <a href='<?php echo e(route('class_activity.create')); ?>' class="li-link"><?php echo e(__('sidebar.classes - activities')); ?></a>
-                                <a href='<?php echo e(route('teacher_subjects.create')); ?>' class="li-link"><?php echo e(__('sidebar.teachers - subjects')); ?></a>
+                                <a href='<?php echo e(route('subject_teacher.create')); ?>' class="li-link"><?php echo e(__('sidebar.teachers - subjects')); ?></a>
                                 <a href='/teacher_classes' class="li-link"><?php echo e(__('sidebar.teachers - classes')); ?></a>
 
                             </div>
@@ -421,7 +421,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="<?php echo e(route('teacher_subjects.index')); ?>" class="li-link">relationship</a>
+                                <a href="<?php echo e(route('subject_teacher.index')); ?>" class="li-link">relationship</a>
                                 <span href='#' class="li-link">2</span>
                                 <a href='#' class="li-link">3</a>
                             </div>

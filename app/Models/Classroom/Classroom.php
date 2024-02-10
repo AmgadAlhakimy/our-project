@@ -2,10 +2,12 @@
 
 namespace App\Models\Classroom;
 
+use App\Models\Activity\Activity;
 use App\Models\EducationalLevel;
 use App\Models\Mark;
 use App\Models\Student;
 use App\Models\Subject\Subject;
+use App\Models\Teacher\Teacher;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -33,7 +35,15 @@ class Classroom extends Model
 
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'subject_classrooms_pivot');
+        return $this->belongsToMany(Subject::class, 'classroom_subject_pivot');
+    }
+    public function teachers()
+    {
+        return $this->belongsToMany(Teacher::class, 'classroom_teacher_pivot');
+    }
+    public function activities()
+    {
+        return $this->belongsToMany(Activity::class, 'activity_classroom_pivot');
     }
     public function marks()
     {

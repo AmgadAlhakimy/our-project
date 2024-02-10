@@ -19,4 +19,6 @@ return [
     'Subject name in english'=>'اسم المادة بالإنجليزية',
     'Subject name in arabic'=>'اسم المادة بالعربية',
     'Subject info'=>'معلومات المادة',
+    'subject'=>'المادة',
+    'subjects'=>'المواد',
 ];

@@ -2,6 +2,7 @@
 
 namespace App\Models\Teacher;
 
+use App\Models\Classroom\Classroom;
 use App\Models\Subject\Subject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -21,6 +22,10 @@ class Teacher extends Model
                                     'qualification','major'];
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'teacher_subjects_pivot');
+        return $this->belongsToMany(Subject::class, 'subject_teacher_pivot');
+    }
+    public function classrooms()
+    {
+        return $this->belongsToMany(Classroom::class, 'classroom_teacher_pivot');
     }
 }

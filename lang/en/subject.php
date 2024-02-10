@@ -19,4 +19,6 @@ return [
     'Subject name in english'=>'Subject Name in English',
     'Subject name in arabic'=>'Subject Name in Arabic',
     'Subject info'=>'Subject Info',
+    'subjects'=>'Subjects',
+    'subject'=>'Subject',
 ];

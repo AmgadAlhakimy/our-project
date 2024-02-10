@@ -153,6 +153,8 @@ return [
     'english letters'=>'This filed must be only English letters',
     'arabic letters'=>'This filed must be only Arabic letters',
     'at lease select one subject'=>'You Have to Select at Least One Subject',
+    'at lease select one classroom'=>'You Have to Select at Least One Classroom',
+    'at lease select one activity'=>'You Have to Select at Least One Activity',
 
     /*
     |--------------------------------------------------------------------------

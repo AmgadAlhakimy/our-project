@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Subject\SubjectClassroom;
+use App\Models\Classroom\ClassroomSubject;
 use App\Models\User;
 
 class SubjectClassroomPolicy
@@ -18,7 +18,7 @@ class SubjectClassroomPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, SubjectClassroom $subjectClassroom): bool
+    public function view(User $user, ClassroomSubject $subjectClassroom): bool
     {
         //
     }
@@ -34,7 +34,7 @@ class SubjectClassroomPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, SubjectClassroom $subjectClassroom): bool
+    public function update(User $user, ClassroomSubject $subjectClassroom): bool
     {
         //
     }
@@ -42,7 +42,7 @@ class SubjectClassroomPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, SubjectClassroom $subjectClassroom): bool
+    public function delete(User $user, ClassroomSubject $subjectClassroom): bool
     {
         //
     }
@@ -50,7 +50,7 @@ class SubjectClassroomPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, SubjectClassroom $subjectClassroom): bool
+    public function restore(User $user, ClassroomSubject $subjectClassroom): bool
     {
         //
     }
@@ -58,7 +58,7 @@ class SubjectClassroomPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, SubjectClassroom $subjectClassroom): bool
+    public function forceDelete(User $user, ClassroomSubject $subjectClassroom): bool
     {
         //
     }

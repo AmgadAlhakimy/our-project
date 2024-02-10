@@ -19,6 +19,8 @@ return [
     'educational Level'=>'Education Level',
     'class cost'=>'Class Cost',
     'class info'=>'Class Info',
+    'classroom'=>'Classroom',
+    'classrooms'=>'Classrooms',
     'update class'=>'Update Class: ',
     'please select a classroom'=>'Please Select a Classroom',
     'you have already chosen this classroom'=>'The Subjects for this

@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\StudentController;
+use App\Models\Classroom\Classroom;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -38,8 +39,13 @@ Route::group(
         include 'force_delete.php';
 
 
-        Route::get('/classrooms/{id}',
-            [StudentController::class, 'getClassrooms']);
+//        Route::get('/classrooms/{id}',
+//            [StudentController::class, 'getClassrooms']);
+
+        Route::get('/classrooms/{educationalLevelId}', function ($educationalLevelId) {
+            $classrooms = Classroom::where('edu_id', $educationalLevelId)->get()->toArray();
+            return response()->json($classrooms);
+        });
 
         // absence
         Route::get('school', function () {
@@ -56,22 +62,6 @@ Route::group(
             return view('academic_dep/relationships/class-teatcher');
         });
         // dis_sub_teacher
-        Route::get('dis_class_activity', function () {
-            return view('academic_dep/relationships/display_relationships/display_class_activities');
-        });
-        // dis_class_teacher
-        Route::get('dis_class_teacher', function () {
-            return view('academic_dep/relationships/display_relationships/display_class-teatcher');
-        });
-        // dis_sub_class
-        Route::get('dis_sub_class', function () {
-            return view('academic_dep/relationships/display_relationships/display_subject_classrooms');
-        });
-
-        // dis_sub_teacher
-        Route::get('dis_sub_teacher', function () {
-            return view('academic_dep/relationships/display_relationships/display_teacher_subjects');
-        });
 
 
 

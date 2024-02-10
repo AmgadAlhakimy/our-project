@@ -49,6 +49,8 @@ return [
     'please select a teacher'=>'Please Select a Teacher',
     'you have already chosen this teacher'=>'The Subjects for this
     Teacher Have Already Been Distributed, and You Can Now Only Modify Them',
+    'you have already chosen this teacher and classroom'=>'The Classrooms for this
+    Teacher Have Already Been Distributed, and You Can Now Only Modify Them',
 
 
 

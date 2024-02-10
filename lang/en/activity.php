@@ -13,7 +13,7 @@ return [
     |
     */
 
-    //shared in many pages 
+    //shared in many pages
     'create new Activity'=>'Create New Activity',
     'Activity info'=>'Activity Info',
     'Activity name in english'=>'Activity Name in English',
@@ -23,8 +23,10 @@ return [
     'Activity location contact'=>'Activity Location Contact',
     'date of Activity'=>'Date of Activity',
     'other info'=>'Other Info',
+    'activity'=>'Activity',
+    'activities'=>'Activities',
     'update Activity'=>'Update Activity: ',
-    
-    'in arabic'=>'In Arabic',
-    'in english'=>'In English',
+    'please select an activity'=>'Please Select an Activity',
+    'you have already chosen this activity'=>'The Classrooms for this
+    Activity Have Already Been Distributed, and You Can Now Only Modify Them',
 ];

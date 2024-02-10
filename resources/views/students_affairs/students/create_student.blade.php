@@ -1,6 +1,7 @@
 {{-- اضافة طالب جديد --}}
 @extends('layouts.sidebar')
 @section('content')
+
     <main class="main">
         <section class="section ">
             @if(Session::has('success'))
@@ -59,6 +60,7 @@
                                 @enderror
                             </div>
                         </div>
+
                         {{-- 5 --}}
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender">{{__('Student.gender')}}</label>
@@ -102,25 +104,24 @@
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="className" class="form-label">{{__('Student.level')}}</label>
-                            <select id="className" class="form-control" name="level_id"
-                            onchange="console.log($(this).val())">
+                            <label for="educational_level">Select an Educational Level:</label>
+                            <select id="educational_level" name="educational_level" onchange="populateClassrooms()">
+                                <option value="">Select</option>
                                 @foreach($levels as $level)
                                     <option class="text-center" value="{{$level->id}}">{{$level->name}}</option>
                                 @endforeach
                             </select>
-                            @error('level_id')
+                            @error('educational_level')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
 
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="className " class="form-label">{{__('Student.class')}}</label>
-                            <select id="className " class="form-control" name="classroom_id" value="{{old('classroom_id')}}">
-{{--                                @foreach($classrooms as $classroom)--}}
-{{--                                    <option class="text-center" value="{{$classroom->id}}">{{$classroom->name}}</option>--}}
-{{--                                @endforeach--}}
+                            <label for="classroom">Select a Classroom:</label>
+                            <select id="classroom" name="classroom">
+                                <option value="">Select Educational Level First</option>
                             </select>
-                            @error('classroom_id')
+                            @error('classroom')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
@@ -269,26 +270,57 @@
             </form>
         </section>
     </main>
+
+
     <script>
-        $(document.ready(function (){
-            $('select[name="level_id"]').on('change', function (){
-                let level_id = $(this).val();
-                if(level_id){
-                    $.ajax({
-                        url: "{{URL::to('classrooms')}}/" + level_id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function (data){
-                            $('select[name="classroom_id"]').empty();
-                            $.each(data, function (key, value){
-                                $('select[name="classroom_id"]').append('<option value="' + key +'">' + value + '</option>');
+        function populateClassrooms() {
+            var educationalLevelId = document.getElementById('educational_level').value;
+            var classroomSelect = document.getElementById('classroom');
+
+            // Clear existing options
+            classroomSelect.innerHTML = '';
+
+            if (educationalLevelId !== '') {
+                // Send an AJAX request to fetch the classrooms
+                $.ajax({
+                    url: '/classrooms/' + educationalLevelId,
+                    type: 'GET',
+                    success: function(data) {
+                        // Ensure the response data is an array
+                        if (Array.isArray(data)) {
+                            // Populate classrooms based on the response
+                            data.forEach(function(classroom) {
+                                classroomSelect.innerHTML += '<option value="' + classroom.id + '">' + classroom.name + '</option>';
                             });
-                        },
-                    });
-                }else {
-                    console.log('AJAX load did not work');
-                }
-            });
-        }));
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        }
     </script>
+{{--    <script>--}}
+{{--        $(document.ready(function (){--}}
+{{--            $('select[name="level_id"]').on('change', function (){--}}
+{{--                let level_id = $(this).val();--}}
+{{--                if(level_id){--}}
+{{--                    $.ajax({--}}
+{{--                        url: "{{URL::to('classrooms')}}/" + level_id,--}}
+{{--                        type: "GET",--}}
+{{--                        dataType: "json",--}}
+{{--                        success: function (data){--}}
+{{--                            $('select[name="classroom_id"]').empty();--}}
+{{--                            $.each(data, function (key, value){--}}
+{{--                                $('select[name="classroom_id"]').append('<option value="' + key +'">' + value + '</option>');--}}
+{{--                            });--}}
+{{--                        },--}}
+{{--                    });--}}
+{{--                }else {--}}
+{{--                    console.log('AJAX load did not work');--}}
+{{--                }--}}
+{{--            });--}}
+{{--        }));--}}
+{{--    </script>--}}
 @endsection

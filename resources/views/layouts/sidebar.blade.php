@@ -2,6 +2,8 @@
 
 <html lang="">
 <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -191,10 +193,10 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href='{{route('subject_classrooms.create')}}' class="li-link">{{__('sidebar.subjects - classes')}}</a>
-                                <a href='{{route('class_activity.create')}}' class="li-link">{{__('sidebar.classes - activities')}}</a>
-                                <a href='{{route('teacher_subjects.create')}}' class="li-link">{{__('sidebar.teachers - subjects')}}</a>
-                                <a href='/teacher_classes' class="li-link">{{__('sidebar.teachers - classes')}}</a>
+                                <a href='{{route('classroom_subject.create')}}' class="li-link">{{__('sidebar.subjects - classes')}}</a>
+                                <a href="{{route('classroom_teacher.create')}}" class="li-link">{{__('sidebar.teachers - classes')}}</a>
+                                <a href='{{route('subject_teacher.create')}}' class="li-link">{{__('sidebar.teachers - subjects')}}</a>
+                                <a href='{{route('activity_classroom.create')}}' class="li-link">{{__('sidebar.classes - activities')}}</a>
 
                             </div>
                         </div>
@@ -214,10 +216,10 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="{{route('teacher_subjects.index')}}" class="li-link">{{__('sidebar.display subjects - teachers')}}</a>
-                                <a href='/dis_class_teacher' class="li-link">{{__('sidebar.display classes -  teacher')}}</a>
-                                <a href='/dis_sub_class' class="li-link">{{__('sidebar.display subjects - classes')}}</a>
-                                <a href='/dis_class_activity' class="li-link">{{__('sidebar.display classes - activities')}}</a>
+                                <a href="{{route('classroom_subject.index')}}" class="li-link">{{__('sidebar.display subjects - classes')}}</a>
+                                <a href="{{route('classroom_teacher.index')}}" class="li-link">{{__('sidebar.display classes -  teacher')}}</a>
+                                <a href="{{route('subject_teacher.index')}}" class="li-link">{{__('sidebar.display subjects - teachers')}}</a>
+                                <a href="{{route('activity_classroom.index')}}" class="li-link">{{__('sidebar.display classes - activities')}}</a>
                             </div>
                         </div>
                     </li>
@@ -473,7 +475,7 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="{{route('teacher_subjects.index')}}" class="li-link">relationship</a>
+                                <a href="{{route('subject_teacher.index')}}" class="li-link">relationship</a>
                                 <span href='#' class="li-link">2</span>
                                 <a href='#' class="li-link">3</a>
                             </div>
@@ -614,7 +616,6 @@
                 </li> --}}
         <!-- ====================== -->
 </div>
-</div>
 <!-- ============= home section ================= -->
 <section class="section-home">
     <div class="toggle-sidebar">
@@ -630,6 +631,7 @@
 <script src="{{URL::asset('js/bootstrap.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
 <script src="{{URL::asset('js/jquery.js')}}"></script>
+<script src="{{URL::asset('js/jquery-3.7.1.min.js')}}"></script>
 <script src="{{URL::asset('js/main.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
 </body>

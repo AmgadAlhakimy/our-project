@@ -286,6 +286,7 @@ class StudentController extends Controller
      */
     public function getClassrooms($id)
     {
+        return 'hello world';
         return Classroom::where('edu_id', $id)->pluck("name", "id");
     }
 }
