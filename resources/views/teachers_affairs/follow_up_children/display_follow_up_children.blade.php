@@ -29,8 +29,8 @@
                 <div class="card-info card-info_2 col ">
                     <h4 class="Names ">{{$classroom->name}}</h4>
                 </div>
-                    <a href="" class="card-info card-info_2 col btn save-button">
-                        <h4 class="topic-title mt-2">{{__('follow_up.for all students')}}</h4>
+                    <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}" class="card-info card-info_2 col btn save-button">
+                        <h4 class="topic-title mt-2">{{__('follow_up.edit for all students')}}</h4>
                         <p class="text-center ">{{__('follow_up.click her')}}</p>
                     </a>
                 <div class="card-info card-info_2 col ">

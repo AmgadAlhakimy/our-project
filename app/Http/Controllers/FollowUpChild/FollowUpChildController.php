@@ -10,6 +10,8 @@ use App\Models\FollowUpChild;
 use App\Models\Student;
 use App\Models\Subject\Subject;
 use Carbon\Carbon;
+use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 
 class FollowUpChildController extends Controller
@@ -29,6 +31,7 @@ class FollowUpChildController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
+
     /**
      * Display all children according to the classroom.
      */
@@ -51,11 +54,14 @@ class FollowUpChildController extends Controller
     public function writingFollowUp($classroom_id)
     {
         try {
-            $classroom = Classroom::findorfail(1);
+            $classroom = Classroom::findorfail($classroom_id);
+            if (count($classroom->subjects) === 0) {
+                return redirect()->back()->with(['error' => __('follow_up.sorry this classroom does not have subjects')]);
+            }
             $month = Carbon::now()->format('F j');
             return view('teachers_affairs/follow_up_children.writing_in_follow_up_children',
                 compact('classroom', 'month'));
-        } catch (\Exception  $e) {
+        } catch (Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -162,7 +168,7 @@ class FollowUpChildController extends Controller
         try {
             $subjects = [];
             $classroom = Classroom::findorfail(1);
-            foreach ( $classroom->subjects as $subject) {
+            foreach ($classroom->subjects as $subject) {
                 array_push($subjects, $subject->name);
             }
             $month = Carbon::now()->format('F j');
@@ -199,10 +205,54 @@ class FollowUpChildController extends Controller
                 ],
                 'note' => $request->note,
             ]);
-            return redirect()->route('follow_up_children.displayAllChildren',1)
+                return redirect()->route('follow_up_children.displayAllChildren', 1)
+                    ->with(['success' => __('message.update')]);
+
+
+        } catch (ModelNotFoundException $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function editAllChildren($classroom_id)
+    {
+
+        try {
+            $subjects = [];
+            $classroom = Classroom::findorfail($classroom_id);
+            foreach ($classroom->subjects as $subject) {
+                array_push($subjects, $subject->name);
+            }
+            $month = Carbon::now()->format('F j');
+            $child = FollowUpChild::findorFail(1);
+            $homework = $child->homework;
+            $subjects_homework = array_combine($subjects, $homework);
+            return view('teachers_affairs/follow_up_children.editing_in_follow_up_children',
+                compact('classroom', 'month', 'subjects_homework', 'child'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+
+    /**
+     * store for all students.
+     */
+    public function updateAllChildren(UpdateFollowUpChildRequest $request, $classroom_id)
+    {
+        try {
+            $date = Carbon::now()->format('Y-m-d');
+//            $students = Student::where('classroom_id', $classroom_id)->get();
+            $children = FollowUpChild::all();
+            foreach ($children as $child) {
+                $this->update($request, $child->id);
+            }
+            return redirect()->route('follow_up_children.displayAllChildren', $classroom_id)
                 ->with(['success' => __('message.update')]);
 
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

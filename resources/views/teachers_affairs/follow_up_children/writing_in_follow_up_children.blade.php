@@ -13,7 +13,7 @@
             {{-- the table header with bottuns and search input --}}
             <h4 class="col container-title mt-2">{{__('follow_up.for all students')}}</h4>
             <div class="table-header container mt-2">
-                
+
                 {{-- the thacher name and the month --}}
 
                 <div class="cards-container third-card row">
@@ -63,9 +63,12 @@
                         <img class=" student-img h-100 w-50" src="{{asset('assets/icons/toilet.jpg')}}" alt="">
                         <select class="col form-select form-control" id="bath" name="bath">
                             <option value="" selected disabled>{{__('follow_up.please select how many times')}}</option>
-                            <option value="{{__('public.none')}}">{{__('public.none')}}</option>
-                            <option value="{{__('public.once')}}">{{__('public.once')}}</option>
-                            <option value="{{__('public.twice')}}">{{__('public.twice')}}</option>
+                            <option value="{{__('public.none')}}"  {{ old('bath') == 'public.none'  ? 'selected' : '' }}>
+                                {{__('public.none')}}</option>
+                            <option value="{{__('public.once')}}"  {{ old('bath') == 'public.once'  ? 'selected' : '' }}>
+                                {{__('public.once')}}</option>
+                            <option value="{{__('public.twice')}}" {{ old('bath') == 'public.twice' ? 'selected' : '' }}>
+                                {{__('public.twice')}}</option>
                         </select>
                         @error('bath')
                         <small class="form-text text-danger">{{$message}}</small>
@@ -77,9 +80,12 @@
                         <select class="col form-select form-control" id="snack" name="snack">
                             <option value="" selected
                                     disabled>{{__('follow_up.please select the quantity of snack')}}</option>
-                            <option value="{{__('public.none')}}">{{__('public.none')}}</option>
-                            <option value="{{__('public.some')}}">{{__('public.some')}}</option>
-                            <option value="{{__('public.all')}}">{{__('public.all')}}</option>
+                            <option value="{{__('public.none')}}" {{ old('snack') == 'public.none'  ? 'selected' : '' }}>
+                                {{__('public.none')}}</option>
+                            <option value="{{__('public.some')}}" {{ old('snack') == 'public.some'  ? 'selected' : '' }}>
+                                {{__('public.some')}}</option>
+                            <option value="{{__('public.all')}}"  {{ old('snack') == 'public.all'   ? 'selected' : '' }}>
+                                {{__('public.all')}}</option>
                         </select>
                         @error('snack')
                         <small class="form-text text-danger">{{$message}}</small>
@@ -91,9 +97,12 @@
                         <select class="col form-select form-control" id="food" name="food">
                             <option value="" selected
                                     disabled>{{__('follow_up.please select the quantity of food')}}</option>
-                            <option value="{{__('public.none')}}">{{__('public.none')}}</option>
-                            <option value="{{__('public.some')}}">{{__('public.some')}}</option>
-                            <option value="{{__('public.all')}}">{{__('public.all')}}</option>
+                            <option value="{{__('public.none')}}" {{ old('food') == 'public.none'  ? 'selected' : '' }}>
+                                {{__('public.none')}}</option>
+                            <option value="{{__('public.some')}}" {{ old('food') == 'public.some'  ? 'selected' : '' }}>
+                                {{__('public.some')}}</option>
+                            <option value="{{__('public.all')}}"  {{ old('food') == 'public.all'   ? 'selected' : '' }}>
+                                {{__('public.all')}}</option>
                         </select>
                         @error('food')
                         <small class="form-text text-danger">{{$message}}</small>

@@ -25,11 +25,11 @@ class UpdateStudentRequest extends FormRequest
         return [
             'name' => [
                 'required', 'max:100',
-                'regex:/^[a-zA-Z\s]+$/',
+                'regex:/^[A-Za-z-\s]+[A-Za-z0-9]*$/',
             ],
             'name_ar' => [
                 'required', 'max:100',
-                'regex:/^[\p{Arabic}\s]+$/u',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
 
             ],
             'photo' => 'required', 'image', 'max:1024',

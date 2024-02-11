@@ -31,10 +31,10 @@
             <div class="card table-section ">
                 <table class=" " id="check_table" >
                     <thead>
-                    <tr> 
-                        
+                    <tr>
+
                         <th class=" me-4 ms-4">
-                            <input type="checkbox" id="select_all" 
+                            <input type="checkbox" id="select_all"
                                 style="display: none" >
                         </th>
                         <th class="th-head-1  ">{{__('public.id')}}</th>
@@ -55,7 +55,7 @@
                     @foreach($students  as $student )
                         <tr class="test_1">
                             <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
-                            <td>{{$student->id}} amgad abd alraqeeb abdu alhakimy</td>
+                            <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
                             <td><img src="{{asset($student->photo)}}"
                                 class="student-img" alt="photo"></td>

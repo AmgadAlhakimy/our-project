@@ -15,13 +15,13 @@
                 {{-- the title and search --}}
                 <div class="row first-card text-center">
                     <div class="col ">
-                        <img class="cards_img" src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
-                    </div> 
+                        <img class="cards_img" src="{{$child->student->photo}}" alt="skills"/>
+                    </div>
                     <div class="center_y_x col">
                         <div class=" text-center ">
-                            <div class="cards_title">khaled abdulnaser mansour alqubaty</div>
-                            <div class="cards_sup_title">233254325</div>
-                        </div> 
+                            <div class="cards_title">{{$child->student->name}}</div>
+                            <div class="cards_sup_title">{{$child->student->id}}</div>
+                        </div>
                     </div>
                 </div>
                 {{-- the thacher name and the month --}}

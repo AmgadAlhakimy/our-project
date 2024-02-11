@@ -29,6 +29,7 @@ return [
     'please select the quantity of snack'=>'Please, Select The Quantity of Snack',
     'please select the quantity of food'=>'Please, Select The Quantity of Food',
     'homework field is required'=>'This Homework Field is Required At least write there is none',
+    'sorry this classroom does not have subjects'=>'Sorry, this Classroom Does Not Have Subjects',
 
     'click her' => 'CLICK HER',
 ];
