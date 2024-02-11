@@ -15,8 +15,8 @@
 .cards_img{
     width: 150px;
     border-radius: 50%;
+    border:1px solid grey;
     /*  */
-    
 }
 .cards_info_style{
     transition: width 0.3s;
@@ -33,7 +33,7 @@
 
 /* media */
 @media (max-width: 680px) {
-    
+
     .cards_title,.cards_sup_title{
         font-size: 20px;
     }

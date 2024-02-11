@@ -5,8 +5,8 @@
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
 
-        <div class="table-header"> 
-            {{-- the title and search --}} 
+        <div class="table-header">
+            {{-- the title and search --}}
             <div class="row first-card  ">
                 <h4 class="col container-title mt-2">{{__('teacher.view and Daily Book')}}</h4>
                 <div class="row first-card mt-4">
@@ -77,6 +77,8 @@
 
             <div class=" table-header mt-3">
                 <div class="row">
+                    @for($i=0; $i<30; $i++)
+
                     <div class="cards_info_style col-lg-4 col-md-6 col-sm-12 mb-2">
                         {{-- names & photo --}}
                         <div class="row ">
@@ -87,7 +89,7 @@
                                 <label class="col-12 cards_title mt-1 mb-1"> Emad nasr mansour </label>
                                 <label class="col-12 cards_sup_title mt-1 mb-1">i7676</label>
                             </div>
-                        </div> 
+                        </div>
                         {{-- ---- daily info --- --}}
                         <hr class=" ms-2 me-2 shadow">
                         {{-- ------- --}}
@@ -131,6 +133,7 @@
                             </a>
                         </div>
                     </div>
+                    @endfor
                 </div>
             </div>
         </form>

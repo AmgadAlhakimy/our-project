@@ -105,7 +105,7 @@
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="className" class="form-label">{{__('Student.level')}}</label>
                             <label for="educational_level">Select an Educational Level:</label>
-                            <select id="educational_level" name="educational_level" onchange="populateClassrooms()">
+                            <select id="educational_level" class="form-control" name="educational_level" onchange="populateClassrooms()">
                                 <option value="">Select</option>
                                 @foreach($levels as $level)
                                     <option class="text-center" value="{{$level->id}}">{{$level->name}}</option>
@@ -118,7 +118,7 @@
 
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="classroom">Select a Classroom:</label>
-                            <select id="classroom" name="classroom">
+                            <select id="classroom" class="form-control" name="classroom">
                                 <option value="">Select Educational Level First</option>
                             </select>
                             @error('classroom')
@@ -269,7 +269,7 @@
                 <!-- End final box -->
             </form>
         </section>
-    </main>
+    </main> 
 
 
     <script>

@@ -29,10 +29,10 @@
             <div class="card table-section ">
                 <table class=" " id="check_table" >
                     <thead>
-                    <tr> 
-                        
+                    <tr>
+
                         <th class=" me-4 ms-4">
-                            <input type="checkbox" id="select_all" 
+                            <input type="checkbox" id="select_all"
                                 style="display: none" >
                         </th>
                         <th class="th-head-1  "><?php echo e(__('public.id')); ?></th>
@@ -53,7 +53,7 @@
                     <?php $__currentLoopData = $students; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $student): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr class="test_1">
                             <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
-                            <td><?php echo e($student->id); ?> amgad abd alraqeeb abdu alhakimy</td>
+                            <td><?php echo e($student->id); ?></td>
                             <td><?php echo e($student->name); ?></td>
                             <td><img src="<?php echo e(asset($student->photo)); ?>"
                                 class="student-img" alt="photo"></td>

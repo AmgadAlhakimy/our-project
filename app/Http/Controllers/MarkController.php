@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Marks\StoreMarkRequest;
 use App\Http\Requests\Marks\UpdateMarkRequest;
+use App\Models\Classroom\Classroom;
 use App\Models\Mark;
 
 class MarkController extends Controller
@@ -31,10 +32,11 @@ class MarkController extends Controller
     public function insertMarks($id)
     {
         try {
+            $classroom = Classroom::findorfail(1);
                 $marks = Mark::where('classroom_id', $id)
                                 ->where('subject_id', $id)->get();
             return view('teachers_affairs/marks.insert_marks',
-                compact('marks'));
+                compact('marks','classroom'));
 
         }catch (\Exception  $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);

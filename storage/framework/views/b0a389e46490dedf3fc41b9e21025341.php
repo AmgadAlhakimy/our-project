@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+
     <main class="main">
         <section class="section ">
             <?php if(Session::has('success')): ?>
@@ -93,6 +94,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
+
                         
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender"><?php echo e(__('Student.gender')); ?></label>
@@ -164,13 +166,14 @@ unset($__errorArgs, $__bag); ?>
                         
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="className" class="form-label"><?php echo e(__('Student.level')); ?></label>
-                            <select id="className" class="form-control" name="level_id"
-                            onchange="console.log($(this).val())">
+                            <label for="educational_level">Select an Educational Level:</label>
+                            <select id="educational_level" class="form-control" name="educational_level" onchange="populateClassrooms()">
+                                <option value="">Select</option>
                                 <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option class="text-center" value="<?php echo e($level->id); ?>"><?php echo e($level->name); ?></option>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
-                            <?php $__errorArgs = ['level_id'];
+                            <?php $__errorArgs = ['educational_level'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -183,13 +186,11 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="className " class="form-label"><?php echo e(__('Student.class')); ?></label>
-                            <select id="className " class="form-control" name="classroom_id" value="<?php echo e(old('classroom_id')); ?>">
-
-
-
+                            <label for="classroom">Select a Classroom:</label>
+                            <select id="classroom" class="form-control" name="classroom">
+                                <option value="">Select Educational Level First</option>
                             </select>
-                            <?php $__errorArgs = ['classroom_id'];
+                            <?php $__errorArgs = ['classroom'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -414,29 +415,60 @@ unset($__errorArgs, $__bag); ?>
                 <!-- End final box -->
             </form>
         </section>
-    </main>
+    </main> 
+
+
     <script>
-        $(document.ready(function (){
-            $('select[name="level_id"]').on('change', function (){
-                let level_id = $(this).val();
-                if(level_id){
-                    $.ajax({
-                        url: "<?php echo e(URL::to('classrooms')); ?>/" + level_id,
-                        type: "GET",
-                        dataType: "json",
-                        success: function (data){
-                            $('select[name="classroom_id"]').empty();
-                            $.each(data, function (key, value){
-                                $('select[name="classroom_id"]').append('<option value="' + key +'">' + value + '</option>');
+        function populateClassrooms() {
+            var educationalLevelId = document.getElementById('educational_level').value;
+            var classroomSelect = document.getElementById('classroom');
+
+            // Clear existing options
+            classroomSelect.innerHTML = '';
+
+            if (educationalLevelId !== '') {
+                // Send an AJAX request to fetch the classrooms
+                $.ajax({
+                    url: '/classrooms/' + educationalLevelId,
+                    type: 'GET',
+                    success: function(data) {
+                        // Ensure the response data is an array
+                        if (Array.isArray(data)) {
+                            // Populate classrooms based on the response
+                            data.forEach(function(classroom) {
+                                classroomSelect.innerHTML += '<option value="' + classroom.id + '">' + classroom.name + '</option>';
                             });
-                        },
-                    });
-                }else {
-                    console.log('AJAX load did not work');
-                }
-            });
-        }));
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        }
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students_affairs/students/create_student.blade.php ENDPATH**/ ?>

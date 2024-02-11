@@ -29,7 +29,7 @@ return [
     'review of subjects'=>'المواد الدراسية',
     'review activities'=>'الأنشطة',
 
-    'trash'=>'سهلة المهملات',
+    'trash'=>'سلة المهملات',
     'deleted educational Level'=>'حذف مرحلة دراسية',
     'deleted classrooms'=>'حذف فصل دراسي',
     'deleted subjects'=>'حذف مادة',
