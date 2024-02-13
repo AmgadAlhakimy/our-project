@@ -1,5 +1,8 @@
 @extends('layouts.sidebar')
 @section('content')
+    @livewireStyles
+
+
     <main class="main ">
         <section class="section card-body">
             @if(Session::has('success'))
@@ -16,18 +19,20 @@
                             <div class=" col-md-1"></div>
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name"
-                                    for="c-name">{{__('eduLevel.educational Level name in english')}}</label>
+                                       for="c-name">{{__('eduLevel.educational Level name in english')}}</label>
                                 <input type="text" id="edu_name" class="form-control" name="name"
-                                    value="{{old('name')}}">
+                                       value="{{old('name')}}">
                                 @error('name')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
+                                @livewire('counter')
+                                <livewire:counter/>
                             </div>
                             <div class="col-md-1"></div>
                             <div class="box col-lg-12 col-md-12">
                                 <label for="edu_name_ar">{{__('eduLevel.educational Level name in arabic')}}</label>
                                 <input type="text" id="edu_name_ar" class="form-control" name="name_ar"
-                                    value="{{old('name_ar')}}">
+                                       value="{{old('name_ar')}}">
                                 @error('name_ar')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -49,4 +54,5 @@
             </form>
         </section>
     </main>
+    @livewireScripts
 @endsection

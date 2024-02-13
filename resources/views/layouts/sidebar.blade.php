@@ -2,14 +2,11 @@
 
 <html lang="">
 <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> sidebar </title>
-
-
+    @livewireStyles
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
@@ -438,6 +435,7 @@
                         <div class="line-black">
                             {{-- Add Student --}}
                             <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a Student')}}</a>
+                            <a href='{{url('student_parent')}}' class="li-link">{{__('add a Student with livewire')}}</a>
                             {{-- review students --}}
                             <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
                             <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>
@@ -634,6 +632,7 @@
 <script src="{{URL::asset('js/jquery-3.7.1.min.js')}}"></script>
 <script src="{{URL::asset('js/main.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
+@livewireScripts
 </body>
 </html>
 
