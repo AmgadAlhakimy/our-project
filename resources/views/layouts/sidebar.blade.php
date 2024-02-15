@@ -36,7 +36,7 @@
         {{-- THE MAIN SEARCH OF SIDEBAR --}}
         <div class="search p-relative">
             <label for="rtl"></label> <input class="search1" type="search"
-                                             placeholder="{{__('sidebar.search')}}" id="rtl" />
+                placeholder="{{__('sidebar.search')}}" id="rtl" />
         </div>
         <div class="icons">
                     <span class="notification p-relative">
@@ -224,43 +224,6 @@
                         </div>
                     </li>
                     <!-- ========== 5 ============ -->
-                    {{-- ---الحسابات--- --}}
-                    <!-- ======================== ACOUNTENT ========================== -->
-                    {{-- <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name">
-                                    الحسابات
-                                </span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href="#" class="li-link">
-                                    رسوم دراسية</a
-                                >
-                                <a href="#" class="li-link">
-                                    رسوم تسجيل</a
-                                >
-                                <a href="#" class="li-link"
-                                    >تقرير نصف السنة الحالي</a
-                                >
-                                <a href="#" class="li-link"
-                                    >تقارير الرواتب
-                                </a>
-                                <a href="#" class="li-link"
-                                    >تقارير السنة المالية
-                                </a>
-                            </div>
-                        </div>
-                    </li> --}}
-                    {{--  START the second section --}}
-
                         <p class="title">{{__('sidebar.teacher section')}}</p>
                             {{-- ---المعلمين--- --}}
                     <!-- ======================== TEACHERS ========================== -->
@@ -337,39 +300,6 @@
                         </div>
                     </li>
 
-
-
-
-
-
-                        <p class="title">قسم الكنترول</p>
-
-                    {{--  END the second section --}}
-                    {{-- ---الكنترول--- --}}
-                    <!-- ======================== CONTROLE ========================== -->
-                    {{-- <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name">كنترول</span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href="#" class="li-link"
-                                >اضافة الدرجات الشهرية</a>
-                                <a href="#" class="li-link"
-                                >جاول الغياب</a>
-                                <a href="#" class="li-link">المحصلة</a>
-                                <a href="#" class="li-link">تقارير</a>
-                            </div>
-                        </div>
-                    </li> --}}
-
                     {{-- ---الآباء--- --}}
                     <!-- ======================== PARENTS ========================== -->
                     <p class="title">{{__('sidebar.parent section')}}</p>
@@ -419,10 +349,10 @@
                             </div>
                         </div>
                     </li>
+
                             {{-- -------------شؤون الطلاب---------------  --}}
                     <!-- ======================== STUDENTS ========================== -->
                     <p class="title">{{__('sidebar.students affairs')}}</p>
-
                     <li class="dropdown">
                     <!-- ========== 2 ============ -->
                     <div class="sidebar-title">
@@ -482,8 +412,6 @@
                         </div>
                     </li>
 
-
-
                     {{-- ------------------------------ --}}
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
@@ -503,49 +431,6 @@
                         </div>
                     </li>
 
-                    {{-- ---قسم 3--- --}}
-                    {{-- <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name"> قسم 3</span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href="#" class="li-link">9</a>
-                                <a href="#" class="li-link">10</a>
-                                <a href="#" class="li-link">11</a>
-                                <a href="#" class="li-link">12</a>
-                            </div>
-                        </div>
-                    </li> --}}
-
-                    {{-- ---قسم 4--- --}}
-                    {{-- <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name"> قسم 4</span>
-                                <i class="icon-1 fa-solid fa-chevron-down"></i>
-                            </a>
-                        </div>
-                        <div class="submenu">
-                            <div class="line-black">
-                                <a href="#" class="li-link">13</a>
-                                <a href="#" class="li-link">14</a>
-                                <a href="#" class="li-link">15</a>
-                                <a href="#" class="li-link">16</a>
-                            </div>
-                        </div>
-                    </li> --}}
                     <li class=" ">
                         <!-- ========== 2 ============ -->
                         <!-- <div class="sidebar-title"> -->
@@ -569,11 +454,6 @@
                                 <a href="#" class="li-link">200000</a>
                                 <a href="#" class="li-link">400000</a>
                                 <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">100000</a>
-                                <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">400000</a>
-                                <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">100000</a>
                             </div>
                         </div>
                     </li>
@@ -640,30 +520,30 @@
 
 {{-- تصميم الدروبداون الثانوي --}}
 
-                                {{-- <div class="dropDownLang my-element">
-                                    <div class="select">
-                                        <span class="selected">Lang</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menuLang">
-                                        <a href="#" class="li-link_2">1</a>
-                                        <a href="#" class="li-link_2">2</a>
-                                        <a href="#" class="li-link_2">3</a>
-                                        <a href='#' class="li-link_2">4</a>
-                                        <a href="#" class="li-link_2">5</a>
-                                    </ul>
-                                </div>
+{{-- <div class="dropDownLang my-element">
+    <div class="select">
+        <span class="selected">Lang</span>
+        <div class="caret"></div>
+    </div>
+    <ul class="menuLang">
+        <a href="#" class="li-link_2">1</a>
+        <a href="#" class="li-link_2">2</a>
+        <a href="#" class="li-link_2">3</a>
+        <a href='#' class="li-link_2">4</a>
+        <a href="#" class="li-link_2">5</a>
+    </ul>
+</div>
 
-                                <div class="dropDownLang my-element" >
-                                    <div class="select">
-                                        <span class="selected">Lang</span>
-                                        <div class="caret"></div>
-                                    </div>
-                                    <ul class="menuLang">
-                                        <a href="#" class="li-link_2">1</a>
-                                        <a href="#" class="li-link_2">2</a>
-                                        <a href="#" class="li-link_2">3</a>
-                                        <a href='#' class="li-link_2">4</a>
-                                        <a href="#" class="li-link_2">5</a>
-                                    </ul>
-                                </div> --}}
+<div class="dropDownLang my-element" >
+    <div class="select">
+        <span class="selected">Lang</span>
+        <div class="caret"></div>
+    </div>
+    <ul class="menuLang">
+        <a href="#" class="li-link_2">1</a>
+        <a href="#" class="li-link_2">2</a>
+        <a href="#" class="li-link_2">3</a>
+        <a href='#' class="li-link_2">4</a>
+        <a href="#" class="li-link_2">5</a>
+    </ul>
+</div> --}}

@@ -8,7 +8,6 @@
   list-style: none;
   text-decoration: none;
 }
-/* varibels */
 
 /* ============ start sidebar footer */
 .sidebar .menu-footer {
@@ -226,9 +225,9 @@
 
 }
 
-/* -------------- submenu clouse -----------------*/
+/* -------------- submenu close -----------------*/
 
-/* ============= resposive / breakpoints    ============= */
+/* ============= responsive / breakpoints    ============= */
 @media (max-width: 1080px) {
 }
 /* for medium devices */
@@ -236,9 +235,7 @@
 }
 @media (max-width: 560px) {
 }
-/* for smail devices */
-@media (max-width: 360px) {
-}
+
 /* .sidebar.active .my-menu > ul > li > a .sidebar-text::after {
   content: "";
   position: absolute;
@@ -292,10 +289,11 @@
 }
 
 .sidebar.close .my-menu-btn .sidebar-icon {
-  width: 40px;
-  height: 40px;
-  left: 10px;
-  top: 25px;
+  /* width: 40px;
+  height: 40px; */
+  /* left: 500px; */
+  right: -35px;
+  top: 30px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   }
 /* -------- start icons styles --------- */

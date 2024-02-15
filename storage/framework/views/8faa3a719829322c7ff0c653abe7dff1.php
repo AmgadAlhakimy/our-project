@@ -36,7 +36,7 @@
         
         <div class="search p-relative">
             <label for="rtl"></label> <input class="search1" type="search"
-                                             placeholder="<?php echo e(__('sidebar.search')); ?>" id="rtl" />
+                placeholder="<?php echo e(__('sidebar.search')); ?>" id="rtl" />
         </div>
         <div class="icons">
                     <span class="notification p-relative">
@@ -225,11 +225,6 @@
                         </div>
                     </li>
                     <!-- ========== 5 ============ -->
-                    
-                    <!-- ======================== ACOUNTENT ========================== -->
-                    
-                    
-
                         <p class="title"><?php echo e(__('sidebar.teacher section')); ?></p>
                             
                     <!-- ======================== TEACHERS ========================== -->
@@ -306,18 +301,6 @@
                         </div>
                     </li>
 
-
-
-
-
-
-                        <p class="title">قسم الكنترول</p>
-
-                    
-                    
-                    <!-- ======================== CONTROLE ========================== -->
-                    
-
                     
                     <!-- ======================== PARENTS ========================== -->
                     <p class="title"><?php echo e(__('sidebar.parent section')); ?></p>
@@ -367,10 +350,10 @@
                             </div>
                         </div>
                     </li>
+
                             
                     <!-- ======================== STUDENTS ========================== -->
                     <p class="title"><?php echo e(__('sidebar.students affairs')); ?></p>
-
                     <li class="dropdown">
                     <!-- ========== 2 ============ -->
                     <div class="sidebar-title">
@@ -430,8 +413,6 @@
                         </div>
                     </li>
 
-
-
                     
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
@@ -451,11 +432,6 @@
                         </div>
                     </li>
 
-                    
-                    
-
-                    
-                    
                     <li class=" ">
                         <!-- ========== 2 ============ -->
                         <!-- <div class="sidebar-title"> -->
@@ -479,11 +455,6 @@
                                 <a href="#" class="li-link">200000</a>
                                 <a href="#" class="li-link">400000</a>
                                 <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">100000</a>
-                                <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">400000</a>
-                                <a href="#" class="li-link">200000</a>
-                                <a href="#" class="li-link">100000</a>
                             </div>
                         </div>
                     </li>
@@ -523,5 +494,5 @@
 
 
 
-                                
+
 <?php /**PATH E:\My-Github\our-project\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>
