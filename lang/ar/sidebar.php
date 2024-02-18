@@ -15,6 +15,10 @@ return [
 
     'search'=>'بحث',
     'Lang' => 'العربية',
+    'short_lang' => 'ع',
+    'my account' => 'حسابي',
+    'home' => 'الصفحة الرئيسية',
+    'notifications' => 'إشعارات',
 
     'Admin' => 'الأدارة',
     'academic department' => 'القسم الاكاديمي',
@@ -56,6 +60,7 @@ return [
     'display subjects - classes'=>'عرض فصل-المنهج',
     'display classes - activities'=>'عرض فصل-الأنشطة',
     'hhhh'=>'hhhh',
+
     'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',

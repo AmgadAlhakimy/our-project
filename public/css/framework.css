@@ -410,24 +410,64 @@ left: 20px;
   align-items: center;
 }
 /* //////////////////////////// */
-@media (max-width: 769px) {
+/* when the screen from 769 to larger */
+@media (
+  min-width: 780px) {
+    .dropDownLang .select .lang_1{
+      display: none;
+    }
+    .sec_menu{
+      display: none;
+    }
+    
+  .dropDownLang .menuLang{
+    left: 16%;
+    transform: translatex(-50%);
+    }
+  }
+@media (
+  min-width: 680px) {
+    .ph-home_m{
+      display: none;
+    }
+  }
+@media (
+  min-width: 560px) {
+    .ph-search_m{
+      display: none;
+    }
+  }
+  
+  /* when the screen from 769 to lower */
+@media (max-width: 780px) {
   .topic-name , .topic-title{
     font-size: 20px;
     margin-top: 0px;
+    min-width: none;
     }
-
-    .student-img{
-      height: 80px;
-      width: 60px;
-    }
-    .container-title{
-      font-size: 30PX;
-    }
+  .student-img{
+    height: 80px;
+    width: 60px;
+  }
+  .container-title{
+    font-size: 30px;
+  }
   .title-1{
-    font-size: 35PX;
+    font-size: 35px;
+  }
+  .dropDownLang .select {
+    width: 90px;
+  }
+  
+  .dropDownLang .select .lang_2{
+    display: none;
+  }
+  .ph-account,.ph-lang{
+    display: none;
   }
 }
-@media (max-width: 690px) {
+/* 690 */
+@media (max-width: 680px) {
   .topic-name , .topic-title{
     font-size: 15px;
     margin-top: 0px;
@@ -438,29 +478,63 @@ left: 20px;
       width: 50px;
     } 
     .container-title{
-      font-size: 25PX;
+      font-size: 25px;
     }
   .title-1{
-    font-size: 30PX;
+    font-size: 30px;
+  }
+  .dropDownLang .select{
+    width: 60px;
+  }
+  .dropDownLang .select-clicked{
+    width: 90px;
+  }
+  
+  .ph-home{
+    display: none;
   }
 }
+/* 560 */
 @media (max-width: 560px) {
   .topic-name , .topic-title{
     font-size: 15px;
     margin-top: 0px;
     }
-
     .student-img{
       height: 70px;
       width: 50px;
     }
     .container-title{
-      font-size: 20PX;
+      font-size: 20px;
     }
   .title-1{
-    font-size: 25PX;
+    font-size: 15px;
+  }
+  .ph-search{
+    display: none;
   }
 }
+/* phone screen */
+@media (max-width: 400px) {
+  .topic-name , .topic-title{
+    font-size: 15px;
+    margin-top: 0px;
+    }
+    .student-img{
+      height: 70px;
+      width: 50px;
+    }
+    .container-title{
+      font-size: 20px;
+    }
+  .title-1{
+    font-size: 15px;
+  }
+  .dropDownLang .select-clicked{
+    width: 80px;
+  }
+}
+
 
 /* Start Check box Styles */
 
@@ -646,6 +720,10 @@ input[type=checkbox].toggle:checked + input.test1{
 .shadow_1{
   text-shadow: 1px 1px 1px rgba(107, 107, 107, 0.5);
 }
+.border-left{
+  border-left: 1px solid var(--border-color);
+}
+
 /* start message style */
 .text-danger{
   /* color: var(--blue-alt-color);

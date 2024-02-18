@@ -32,24 +32,25 @@
 <div class="content">
     <div class="head " dir="ltr">
         
-        <div class="search p-relative">
+        <div class="search p-relative ph-search">
             <label for="rtl"></label> <input class="search1" type="search"
                 placeholder="<?php echo e(__('sidebar.search')); ?>" id="rtl" />
         </div>
-        <div class="icons">
+        <div class="icons ph-account">
                     <span class="notification p-relative">
                         <i class="fa-regular fa-bell fa-fw"></i>
                     </span>
             <img src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>" alt="skills"/>
         </div>
         
-        <div class="dropDownLang">
+        <div class="dropDownLang ph-lang">
             <div class="select">
-                <span class="selected"><?php echo e(__('sidebar.Lang')); ?></span>
+                <span class="lang_1 selected " ><?php echo e(__('sidebar.short_lang')); ?></span>
+                <span class="lang_2 selected" ><?php echo e(__('sidebar.Lang')); ?></span>
                 <div class="caret"></div>
             </div>
 
-            <ul class="menuLang">
+            <ul class="menuLang ms-5">
 
                 <?php $__currentLoopData = LaravelLocalization::getSupportedLocales(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $localeCode => $properties): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <li>
@@ -61,9 +62,56 @@
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
-            <a class="cards_info_style me-1 ms-1 card-info " aria-current="page" href='/'>  <i class="h2 icon-1 fa-solid fa-home-lg-alt"></i></a>
+        
+        
+        <div class="dropDownLang sec_menu">
+            <div class="select w-100 ">
+                
+                <i class="h2 mt-1 mb-1 icon-1 fa-solid fa-list"></i>
+                <div class="caret d-none"></div>
+            </div>
+            <ul class="menuLang w-200 ">
+                
+                <div class="mt-1 ph-home_m home">
+                    <a class=" " aria-current="page" href='/'>  <i class="h2 icon-1 fa-solid fa-home-lg-alt"></i> </a>
+                </div>
+                
+                <hr class="ph-home_m">
+                <li>
+                    <a href="#" class=""><?php echo e(__('sidebar.notifications')); ?></a>
+                </li>
+                
+                <hr class="">
+                <li>
+                    <div class="icons ">
+                        <img class=" " src="<?php echo e(URL::asset('assets/images/layouts/skills-02.jpg')); ?>" alt="skills"/>
+                        <a class="title-4 ms-1 me-1"><?php echo e(__('sidebar.my account')); ?></a>
+                    </div>
+                </li>
+                
+                <hr class="">
+                <?php $__currentLoopData = LaravelLocalization::getSupportedLocales(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $localeCode => $properties): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li class="">
+                        <a rel="alternate" hreflang="<?php echo e($localeCode); ?>" href="<?php echo e(LaravelLocalization::getLocalizedURL($localeCode, null, [], true)); ?>">
+                            <?php echo e($properties['native']); ?>
 
-
+                        </a>
+                    </li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                
+                <hr class="ph-search_m">
+                <div class="search p-relative mt-1 ph-search_m">
+                    <input class="search1 w-100 " type="search"
+                        placeholder="<?php echo e(__('sidebar.search')); ?>" id="rtl" />
+                </div>
+            </ul>
+        </div>
+        
+        <div class="me-1 ms-1 ph-home border-left">
+            <a class="   card-info " aria-current="page" href='/'>  <i class="mt-2 h2 icon-1 fa-solid fa-home-lg-alt"></i></a>
+        </div>
+        
+        
     </div>
 </div>
 <!-- end head  -->

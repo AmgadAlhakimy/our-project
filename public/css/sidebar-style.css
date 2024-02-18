@@ -223,16 +223,6 @@ body{
   margin-right: 10px;
   color: #fff;
 }
-.line-black .menuLang {
-  /* background-color: rgba(0, 0, 0, 0.1); */
-  margin-left: 10px;
-  width: 110%;
-  box-shadow: none;
-  border: none;
-  transition: all 0.5s ease;
-
-
-}
 
 /* -------------- submenu close -----------------*/
 
@@ -348,9 +338,6 @@ body{
   cursor: pointer;
 
 }
-.dropDownLang * {
-  box-sizing: border-box;
-}
 .select{
   color: var(--grey-color);
   display: flex;
@@ -393,6 +380,7 @@ body{
 .caret-rotate{
   color: red;
 }
+
 .menuLang{
   list-style: none;
   padding: 0.2em 0.5em;
@@ -400,9 +388,9 @@ body{
   border-radius: 0.5em;
   position: absolute;
   top: 3em;
-  left: 50%;
   width: 100%;
-  transform: translatex(-50%);
+  left: 16%;
+  transform: translatex(-75%);
   opacity: 0;
   display: none;
   transition: 0.2s;
@@ -413,9 +401,9 @@ body{
   box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.2);
   background-color: var(--sidebar-bg);
 }
-.menuLang li {
+.menuLang li,.menuLang .home {
   padding: 0.7em 0.5em;
-  margin: 0.3em 0;
+  margin: 1px 0;
   border-radius: 0.5em;
   width: 90%;
   cursor: pointer;
@@ -425,10 +413,17 @@ body{
   background-color: var(--orange-color);
   margin-left: 10px;
 }
+.menuLang .home:hover {
+  background-color: var(--S-Color-3);
+  margin-left: 10px;
+  color: var(--color_dark2);
+}
 .menulang-open{
   display: block;
   opacity: 1;
 }
+
+
 
 
 /* Start content */
@@ -480,7 +475,7 @@ body{
 .content .head .search .search1:focus {
   outline: auto;
   outline-color: var(--orange-color);
-  width: 250px;
+  width: 200px;
   border-radius: 20px;
   border: none;
   transition: all 1s ease;
@@ -494,7 +489,7 @@ body{
   left: 50px;
 }
 
-.content .head .search input:focus::placeholder {
+.content .head .search .search1:focus::placeholder {
   opacity: 30%;
 }
 .head .icons .notification::before {
@@ -575,3 +570,46 @@ body{
   border-radius: 6px;
 }
 /* End Border  */
+/* w */
+.w-150{
+  width: 150px;
+}
+.w-200{
+  width: 200px;
+}
+.w-250{
+  width: 250px;
+}
+
+/* margin */
+.ms-50{
+  margin-left: 50px;
+}
+.ms-100{
+  margin-left: 100px;
+}
+.ms-150{
+  margin-left: 150px;
+}
+.ms-200{
+  margin-left: 200px;
+}
+
+.me-50{
+  margin-right: 50px;
+}
+.me-100{
+  margin-right: 100px;
+}
+.me-150{
+  margin-right: 150px;
+}
+.me-200{
+  margin-right: 200px;
+}
+.me-250{
+  margin-right: 250px;
+}
+.me-300{
+  margin-right: 300px;
+}

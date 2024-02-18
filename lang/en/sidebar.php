@@ -15,6 +15,10 @@ return [
 
     'search'=>'SEARCH',
     'Lang' => 'English',
+    'short_lang' => 'E',
+    'my account' => 'My Account',
+    'home' => 'HOME',
+    'notifications' => 'Notifications',
 
     // خاص ب
     'Admin' => 'Admin',
