@@ -1,5 +1,8 @@
 @extends('layouts.sidebar')
 @section('content')
+    @livewireStyles
+
+
     <main class="main ">
         <section class="section card-body">
             @if(Session::has('success'))
@@ -49,4 +52,5 @@
             </form>
         </section>
     </main>
+    @livewireScripts
 @endsection
