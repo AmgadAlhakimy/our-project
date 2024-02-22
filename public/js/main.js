@@ -2,7 +2,7 @@ const listItems = document.querySelectorAll(".list-ul li ");
 
 listItems.forEach((item) => {
     item.addEventListener("click", () => {
-        // حدث الضغط على الرابط الثاني
+
         let isActive = item.classList.contains("active");
 
         listItems.forEach((el) => {
@@ -14,16 +14,67 @@ listItems.forEach((item) => {
     });
 });
 
-const toggleSidebar = document.querySelector(".toggle-sidebar");
+// const toggleSidebar = document.querySelector(".toggle-sidebar");
 const logo = document.querySelector(".my-menu-btn");
 const sidebar = document.querySelector(".sidebar");
 
-toggleSidebar.addEventListener("click", () => {
-    sidebar.classList.toggle("close");
-});
+// toggleSidebar.addEventListener("click", () => {
+//     sidebar.classList.toggle("close");
+// });
 logo.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
+
+sidebar.classList.toggle("close")
+
+
+
+
+// ====================
+
+window.addEventListener('DOMContentLoaded', function() {
+    var my_toggle = document.getElementById('my_toggle');
+
+        function checkScreenWidth() {
+        if (window.innerWidth < 500) {
+            my_toggle.style.width = '100%';
+        }
+        }
+        checkScreenWidth(); 
+        window.addEventListener('resize', function() {
+        checkScreenWidth();
+        });
+    });
+
+
+const _clicked = document.getElementById("_clicked");
+const my_toggle = document.getElementById("my_toggle");
+
+_clicked.addEventListener("click", () => {
+    if (window.innerWidth >= 500) {
+        if (my_toggle.classList.contains("active")) {
+        my_toggle.classList.remove("active");
+        // my_toggle.style.backgroundColor = "red";
+        my_toggle.style.transition = "all 0.3s ease";
+        my_toggle.style.margin = "0px 0px 0px 0px";
+        requestAnimationFrame(() => {
+            my_toggle.style.transition = "all 0.3s ease";
+            my_toggle.style.margin = "0px 0px 0px 0px";
+        });
+        } else {
+        my_toggle.classList.add("active");
+        // my_toggle.style.backgroundColor = "green";
+        my_toggle.style.transition = "all 0.3s ease";
+        my_toggle.style.margin = "0px 0px 0px 220px";
+            requestAnimationFrame(() => {
+                my_toggle.style.transition = "all 0.3s ease";
+                my_toggle.style.margin = "0px 0px 0px 220px";
+            });
+        }
+    }
+});
+
+
 
 // --------------------------------------------------------------------------------
 //  the dropdown of language
@@ -99,7 +150,7 @@ function toggleInput() {
     check_test(checkbox2,input3,input4);
     check_test(checkbox3,input5,input6);
 }
-
+ 
 // table checkbox item
 const selectAllCheckbox = document.getElementById('select_all');
 const checkboxItems = document.querySelectorAll('.check_item');
@@ -141,3 +192,49 @@ function hidOptions(){
     }
     
 }
+
+
+
+
+
+
+// window.addEventListener('DOMContentLoaded', function() {
+//     var my_toggle = document.getElementById('my_toggle');
+//     var _clicked = document.getElementById('_clicked');
+  
+//     function checkScreenWidth() {
+//       if (window.innerWidth < 500) {
+//         my_toggle.style.width = '100%';
+//       }
+//     }
+  
+//     function handleToggleClick() {
+//       if (window.innerWidth >= 500) {
+//         if (my_toggle.classList.contains('active')) {
+//           my_toggle.classList.remove('active');
+//           my_toggle.style.backgroundColor = 'red';
+//           my_toggle.style.transition = 'all 0.3s ease';
+//           my_toggle.style.margin = '0px 0px 0px 0px';
+  
+//           requestAnimationFrame(() => {
+//             my_toggle.style.transition = 'all 0.3s ease';
+//             my_toggle.style.margin = '0px 0px 0px 0px';
+//           });
+//         } else {
+//           my_toggle.classList.add('active');
+//           my_toggle.style.backgroundColor = 'green';
+//           my_toggle.style.transition = 'all 0.3s ease';
+//           my_toggle.style.margin = '0px 0px 0px 300px';
+  
+//           requestAnimationFrame(() => {
+//             my_toggle.style.transition = 'all 0.3s ease';
+//             my_toggle.style.margin = '0px 0px 0px 300px';
+//           });
+//         }
+//       }
+//     }
+  
+//     checkScreenWidth();
+//     window.addEventListener('resize', checkScreenWidth);
+//     _clicked.addEventListener('click', handleToggleClick);
+//   });
