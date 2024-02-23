@@ -260,7 +260,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
-                </div>
+                </div> 
                 
 
                 <div class=" row">

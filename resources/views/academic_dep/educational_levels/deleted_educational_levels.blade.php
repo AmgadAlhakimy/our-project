@@ -12,7 +12,7 @@
                     <form method="post" action="{{route('students.search')}}">
                         @method('GET')
                         @csrf
-                        <div class="row">
+                        <div class="row"> 
                             <label class="col-10">
                                 <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
                             </label>
