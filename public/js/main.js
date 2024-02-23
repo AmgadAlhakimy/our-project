@@ -46,7 +46,6 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
 const _clicked = document.getElementById("_clicked");
 const my_toggle = document.getElementById("my_toggle");
 

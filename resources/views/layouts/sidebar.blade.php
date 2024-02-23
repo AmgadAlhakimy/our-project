@@ -69,7 +69,8 @@
         <div class="dropDownLang sec_menu">
             <div class="select w-100 ">
                 {{-- title --}}
-                <i class="h4 mt-1 mb-1 icon-1 fa-solid fa-list"></i>
+                <i class="h4 mt-1 mb-1 icon-1 fa-solid fa-bars"></i>
+                
                 <div class="caret d-none"></div>
             </div>
             <ul class="menuLang w-200 ">
@@ -133,17 +134,15 @@
             <!-- ============= LIST ============== -->
             <div class="sidebar-nav">
                 <ul class="list-ul my-scroll">
-                    <!--  dropdown list item عنوان القسم-->
-                    <p class="title">{{__('sidebar.academic department')}}</p>
+                    <!--  dropdown list item عنوان القسم-->                
+                        <p class="title">{{__('sidebar.academic department')}}<i class="ms-1 me-1 fa-solid fa-school"></i></p>
                     {{-- القسم الأكاديمي --}}
                     {{-- اضافة الاقسام الأكاديمية --}}
                     <li class="dropdown">
                         <!-- ========== 1 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-address-book"
-                                ></i>
+                                <i class="icon-1 fa-solid fa-school"></i>
                                 <span class="menu-name"> {{__('sidebar.addition')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -163,9 +162,7 @@
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-play-circle"
-                                ></i>
+                                <i class="icon-1 fa-solid fa-clipboard-list"></i>
                                 <span class="menu-name"> {{__('sidebar.academic department review')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -185,9 +182,7 @@
                         <!-- ========== 3 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-trash-restore"
-                                ></i>
+                                <i class="icon-1 fa-solid fa-trash-can"></i>
                                 <span class="menu-name">{{__('sidebar.trash')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -207,9 +202,7 @@
                         <!-- ========== 4 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-portal-enter"
-                                ></i>
+                                <i class="icon-1 fa-solid fa-newspaper"></i>
                                 <span class="menu-name">{{__('sidebar.view records')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -231,9 +224,7 @@
                         <!-- ========== 4 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-code-branch"
-                                ></i>
+                                <i class="icon-1 fa-solid fa-timeline"></i>
                                 <span class="menu-name">{{__('sidebar.relationships')}} </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -271,7 +262,7 @@
                         </div>
                     </li>
                     <!-- ========== 5 ============ -->
-                        <p class="title">{{__('sidebar.teacher section')}}</p>
+                        <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                             {{-- ---المعلمين--- --}}
                     <!-- ======================== TEACHERS ========================== -->
                     <li class="dropdown">
@@ -279,7 +270,7 @@
                     <!-- دفتر المتابعة المدرسة -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i class="icon-1 fa-solid fa-book-reader"></i>
+                                <i class="icon-1 fa-solid fa-children"></i>
                                 <span class="menu-name">دفتر متابعة مدرسة</span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -336,7 +327,7 @@
                     <li class="dropdown">
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i class="icon-1 fa-solid fa-kaaba"></i>
+                                <i class="icon-1 fa-solid fa-list-check"></i>
                                 <span class="menu-name"> التحضير والغياب  </span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -353,13 +344,13 @@
                     </li>
                     {{-- ---الآباء--- --}}
                     <!-- ======================== PARENTS ========================== -->
-                    <p class="title">{{__('sidebar.parent section')}}</p>
+                    <p class="title">{{__('sidebar.parent section')}}<i class="ms-1 me-1 fa-solid fa-people-roof"></i></p>
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
                                 <i
-                                    class="icon-1 fa-solid fa-snwoman"
+                                class="icon-1 fa-solid fa-person-half-dress"
                                 ></i>
                                 <span class="menu-name">{{__('sidebar.parent')}}</span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
@@ -377,11 +368,12 @@
                     </li>
                     {{-- ---شؤون الموظفين--- --}}
                     <!-- ======================== EMB ========================== -->
+                            <p class="title">{{__('sidebar.parent section')}}<i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
-                                <i class="icon-1 fa-solid fa-parent"></i>
+                                <i class="icon-1 fa-solid fa-user-tie"></i>
                                 <span class="menu-name">شؤون الموظفين</span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
@@ -400,7 +392,7 @@
                     </li>
                             {{-- -------------شؤون الطلاب---------------  --}}
                     <!-- ======================== STUDENTS ========================== -->
-                    <p class="title">{{__('sidebar.students affairs')}}</p>
+                    <p class="title">{{__('sidebar.students affairs')}}<i class="ms-1 me-1 fa-solid fa-marker"></i></p>
                     <li class="dropdown">
                     <!-- ========== 2 ============ -->
                     <div class="sidebar-title">
