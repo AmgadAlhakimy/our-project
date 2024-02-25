@@ -51,7 +51,7 @@ return [
     'classes - activities'=>'فصول - أنشطة',
     'teachers - subjects'=>'مدرسين - مواد',
     'teachers - classes'=>'مدرسين - فصول',
-    'hhhh'=>'hhhh',
+    'hhhh'=>'hhhh', 
 
 
     'display relationships'=>'عرض العلاقات',
@@ -59,6 +59,36 @@ return [
     'display classes -  teacher'=>'عرض معلم-فصول',
     'display subjects - classes'=>'عرض فصل-المنهج',
     'display classes - activities'=>'عرض فصل-الأنشطة',
+    'hhhh'=>'hhhh',
+
+// parent section
+    'parent'=>'الآباء',
+    'parent section'=>'قسم الآباء',
+    'personnel affairs'=>'شؤون الموظفين',
+    'personnel affairs section'=>'قسم شؤون الموظفين',
+    
+    'son info'=>'معلومات الأبناء',
+    'daily follow up '=>'الغياب ودفتر المتابعة',
+    'monthly marks'=>'المحصلة الشهرية',
+    'final marks'=>'المحصلة النهائية',
+    'hhhh'=>'hhhh',
+
+    
+    'add new teacher'=>'إضافة مدرس جديد',
+    'view teachers'=>'عرض المدرسين',
+    'deleted teachers'=>'المدرسين المحذوفين',
+    'add new emb'=>'إضافة موظف جديد',
+    'view emb'=>'عرض الموظفين',
+    'deleted emb'=>'الموظفين المحذوفين',
+    'emb and teachers absent'=>'غياب الموظفين والمدرسين',
+
+    'control section'=>'قسم الكنترول',
+    'monthly income'=>'المحصلة الشهرية',
+    'first term income'=>'محصلة الترم الأول',
+    'second term income'=>'محصلة الترم الثاني',
+    'the first students'=>'الطلاب الأوائل',
+    'hhhh'=>'hhhh',
+    'hhhh'=>'hhhh',
     'hhhh'=>'hhhh',
 
     'hhhh'=>'hhhh',

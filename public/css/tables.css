@@ -13,7 +13,7 @@ body {
 }
 
 .table-header {
-  margin-top: 120px;
+    margin-top: 120px;
     padding: 20px;
     background-color: var(--container-color);
     border: 1px solid var(--border-color);
@@ -52,24 +52,27 @@ body {
 }
 thead th {
     top: 0;
-    background-color: #f6f9fc;
-    color: #8493a5;
-    padding: 15px;
+    background-color: var(--container-color);
+    padding: 10px;
     color: var(--S-Color-1);
-    font-size: 18px;
 }
 th,
 td {
     border-bottom: 1px solid #dddddd;
     padding: 10px 5px;
-    /* word-break: break-all; */
     text-align: center;
-    width: 100px;
     overflow-wrap: break-word;
     word-break: break-all;
+    font-size: 14px;
 }
 td {
+    /* border-left: 0.03px double var(--border-color); */
 }
+.mark_table th, .mark_table td{
+    border-left:1px solid #dddddd ;
+    border-right:1px solid #dddddd ;
+}
+
 td .student-img {
     height: 60px;
     width: 60px;
@@ -105,7 +108,6 @@ tr:hover img {
 .th-head-4 {
     width: 300px;
 }
-
 .my-card {
     margin: 20px;
     padding: 20px;
@@ -131,6 +133,8 @@ tr:hover img {
 }
 .table-section th {
     text-align: center;
+}
+.table-section tbody td {
 }
 
 .card_btn {
@@ -163,7 +167,8 @@ tr:hover img {
     background-color: var(--S-Color-1);
     color: #fff;
     width: 1px;
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 15px;
 }
 /*  عمواد مائل افقيا */
 .static_c {

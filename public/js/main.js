@@ -25,10 +25,8 @@ logo.addEventListener("click", () => {
     sidebar.classList.toggle("close");
 });
 
+// ========== تعليق السايد بار
 sidebar.classList.toggle("close")
-
-
-
 
 // ====================
 
@@ -36,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var my_toggle = document.getElementById('my_toggle');
 
         function checkScreenWidth() {
-        if (window.innerWidth < 500) {
+        if (window.innerWidth < 600) {
             my_toggle.style.width = '100%';
         }
         }
@@ -50,27 +48,26 @@ const _clicked = document.getElementById("_clicked");
 const my_toggle = document.getElementById("my_toggle");
 
 _clicked.addEventListener("click", () => {
-    if (window.innerWidth >= 500) {
+
         if (my_toggle.classList.contains("active")) {
         my_toggle.classList.remove("active");
         // my_toggle.style.backgroundColor = "red";
-        my_toggle.style.transition = "all 0.3s ease";
+        my_toggle.style.transition = "all .5s ease";
         my_toggle.style.margin = "0px 0px 0px 0px";
         requestAnimationFrame(() => {
-            my_toggle.style.transition = "all 0.3s ease";
+            my_toggle.style.transition = "all 0.5s ease";
             my_toggle.style.margin = "0px 0px 0px 0px";
         });
         } else {
         my_toggle.classList.add("active");
         // my_toggle.style.backgroundColor = "green";
-        my_toggle.style.transition = "all 0.3s ease";
+        my_toggle.style.transition = "all 0.5s ease";
         my_toggle.style.margin = "0px 0px 0px 220px";
             requestAnimationFrame(() => {
-                my_toggle.style.transition = "all 0.3s ease";
+                my_toggle.style.transition = "all 0.5s ease";
                 my_toggle.style.margin = "0px 0px 0px 220px";
             });
         }
-    }
 });
 
 

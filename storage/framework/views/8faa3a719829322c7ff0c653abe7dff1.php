@@ -14,7 +14,7 @@
     <link href="<?php echo e(URL::asset('css/style.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(URL::asset('css/tables.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(URL::asset('css/normalize.css')); ?>" rel="stylesheet">
-    <link href="<?php echo e(URL::asset('css/sidebar-header.css')); ?>" rel="stylesheet">
+    
     <link href="<?php echo e(URL::asset('css/sidebar-style.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(URL::asset('css/sidebar-bottuns.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(URL::asset('css/cards_info.css')); ?>" rel="stylesheet">
@@ -152,10 +152,10 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a id="" href="<?php echo e(route('educational_levels.create')); ?>" class="li-link_2 "><?php echo e(__('sidebar.add educational Level')); ?></a>
-                                <a id="" href="<?php echo e(route('classrooms.create')); ?>" class="li-link_2">  <?php echo e(__('sidebar.add a class')); ?></a>
-                                <a href="<?php echo e(route('subjects.create')); ?>" class="li-link_2"> <?php echo e(__('sidebar.add Subject')); ?></a>
-                                <a href="<?php echo e(route('activities.create')); ?>" class="li-link_2" > <?php echo e(__('sidebar.add Activity')); ?></a>
+                                <a id="" href="<?php echo e(route('educational_levels.create')); ?>" class="li-link "><?php echo e(__('sidebar.add educational Level')); ?></a>
+                                <a id="" href="<?php echo e(route('classrooms.create')); ?>" class="li-link"><?php echo e(__('sidebar.add a class')); ?></a>
+                                <a href="<?php echo e(route('subjects.create')); ?>" class="li-link"><?php echo e(__('sidebar.add Subject')); ?></a>
+                                <a href="<?php echo e(route('activities.create')); ?>" class="li-link"><?php echo e(__('sidebar.add Activity')); ?></a>
                             </div>
                         </div>
                     </li>
@@ -214,10 +214,6 @@
                             <div class="line-black">
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
                             </div>
                         </div>
                     </li>
@@ -264,6 +260,115 @@
                             </div>
                         </div>
                     </li>
+ 
+
+                    <!-- ========== 5 ============ -->
+                    <p class="title"><?php echo e(__('sidebar.control section')); ?><i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
+                    <div class="control_section" >
+                                
+                        <!-- ======================== control ========================== -->
+                        <!-- المحصلة الشهريه الشهر الأول -->
+                        <li class="dropdown">
+                        <!-- ========== 1 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name"><?php echo e(__('sidebar.monthly income')); ?>1</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/m_marks' class="li-link">ثاني</a>
+                                    <a href='/#' class="li-link"> ثالث </a>
+                                    <a href='/#' class="li-link"> رابع </a>
+                                    <a href='/#' class="li-link"> خامس </a>
+                                    <a href='/#' class="li-link"> سادس </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- المحصلة الشهريه الشهر الثاني -->
+                        <li class="dropdown">
+                        <!-- ========== 2 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name"><?php echo e(__('sidebar.monthly income')); ?> 2</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <!-- المحصلة الشهرية الشهر الثالث -->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name"><?php echo e(__('sidebar.monthly income')); ?> 3</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <!-- الشهادة الختامية نصف السنة -->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href='#' class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name"><?php echo e(__('sidebar.first term income')); ?></span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/first_term_income' class="li-link"> اول </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- الشهادة الختامية اخر السنة -->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name"><?php echo e(__('sidebar.second term income')); ?></span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/#' class="li-link"> عربي </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--ترتيب الطلاب الأوالئل-->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name"><?php echo e(__('sidebar.the first students')); ?></span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/#' class="li-link"> اول </a>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+
                     <!-- ========== 5 ============ -->
                         <p class="title"><?php echo e(__('sidebar.teacher section')); ?><i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                             
@@ -371,25 +476,25 @@
                     </li>
                     
                     <!-- ======================== EMB ========================== -->
-                            <p class="title"><?php echo e(__('sidebar.parent section')); ?><i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
+                            <p class="title"><?php echo e(__('sidebar.personnel affairs section')); ?><i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
                                 <i class="icon-1 fa-solid fa-user-tie"></i>
-                                <span class="menu-name">شؤون الموظفين</span>
+                                <span class="menu-name"><?php echo e(__('sidebar.personnel affairs')); ?></span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="<?php echo e(route('teachers.create')); ?>" class="li-link">اضافة مدرس</a>
-                                <a href="<?php echo e(route('teachers.index')); ?>" class="li-link">عرض المدرسين</a>
-                                <a href="<?php echo e(route('teachers.show','deleted')); ?>" class="li-link">عرض المدرسين المحذوفين</a>
-                                <a href='/add-emp' class="li-link">اضافة موظف</a>
-                                <a href="#" class="li-link">جدول الغياب</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">2</a>
+                                <a href="<?php echo e(route('teachers.create')); ?>" class="li-link"><?php echo e(__('sidebar.add new teacher')); ?></a>
+                                <a href="<?php echo e(route('teachers.index')); ?>" class="li-link"><?php echo e(__('sidebar.view teachers')); ?></a>
+                                <a href="<?php echo e(route('teachers.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted teachers')); ?></a>
+                                <a href='/add-emp' class="li-link"><?php echo e(__('sidebar.add new emb')); ?></a>
+                                <a href="#" class="li-link"><?php echo e(__('sidebar.view emb')); ?></a>
+                                <a href="#" class="li-link"><?php echo e(__('sidebar.deleted emb')); ?></a>
+                                <a href="#" class="li-link"><?php echo e(__('sidebar.emb and teachers absent')); ?></a>
                             </div>
                         </div>
                     </li>

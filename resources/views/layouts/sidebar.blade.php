@@ -13,7 +13,7 @@
     <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/tables.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/normalize.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/sidebar-header.css')}}" rel="stylesheet">
+    {{-- <link href="{{URL::asset('css/sidebar-header.css')}}" rel="stylesheet"> --}}
     <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/cards_info.css')}}" rel="stylesheet">
@@ -149,10 +149,10 @@
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a id="" href="{{route('educational_levels.create')}}" class="li-link_2 ">{{__('sidebar.add educational Level')}}</a>
-                                <a id="" href="{{route('classrooms.create')}}" class="li-link_2">  {{__('sidebar.add a class')}}</a>
-                                <a href="{{route('subjects.create')}}" class="li-link_2"> {{__('sidebar.add Subject')}}</a>
-                                <a href="{{route('activities.create')}}" class="li-link_2" > {{__('sidebar.add Activity')}}</a>
+                                <a id="" href="{{route('educational_levels.create')}}" class="li-link ">{{__('sidebar.add educational Level')}}</a>
+                                <a id="" href="{{route('classrooms.create')}}" class="li-link">{{__('sidebar.add a class')}}</a>
+                                <a href="{{route('subjects.create')}}" class="li-link">{{__('sidebar.add Subject')}}</a>
+                                <a href="{{route('activities.create')}}" class="li-link">{{__('sidebar.add Activity')}}</a>
                             </div>
                         </div>
                     </li>
@@ -211,10 +211,6 @@
                             <div class="line-black">
                                 <a href="#" class="li-link">1</a>
                                 <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">1</a>
                             </div>
                         </div>
                     </li>
@@ -261,6 +257,115 @@
                             </div>
                         </div>
                     </li>
+ 
+
+                    <!-- ========== 5 ============ -->
+                    <p class="title">{{__('sidebar.control section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
+                    <div class="control_section" >
+                                {{-- ---قسم الكنترول--- --}}
+                        <!-- ======================== control ========================== -->
+                        <!-- المحصلة الشهريه الشهر الأول -->
+                        <li class="dropdown">
+                        <!-- ========== 1 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name">{{__('sidebar.monthly income')}}1</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/m_marks' class="li-link">ثاني</a>
+                                    <a href='/#' class="li-link"> ثالث </a>
+                                    <a href='/#' class="li-link"> رابع </a>
+                                    <a href='/#' class="li-link"> خامس </a>
+                                    <a href='/#' class="li-link"> سادس </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- المحصلة الشهريه الشهر الثاني -->
+                        <li class="dropdown">
+                        <!-- ========== 2 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name">{{__('sidebar.monthly income')}} 2</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    {{-- <a href='/#' class="li-link"> اول </a> --}}
+                                </div>
+                            </div>
+                        </li>
+                        <!-- المحصلة الشهرية الشهر الثالث -->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name">{{__('sidebar.monthly income')}} 3</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    {{-- <a href='/#' class="li-link"> اول </a> --}}
+                                </div>
+                            </div>
+                        </li>
+                        <!-- الشهادة الختامية نصف السنة -->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href='#' class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name">{{__('sidebar.first term income')}}</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/first_term_income' class="li-link"> اول </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- الشهادة الختامية اخر السنة -->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name">{{__('sidebar.second term income')}}</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/#' class="li-link"> عربي </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--ترتيب الطلاب الأوالئل-->
+                        <li class="dropdown">
+                        <!-- ========== 3 ============ -->
+                            <div class="sidebar-title">
+                                <a href="#" class="li-link title-4">
+                                    <i class="icon-1 fa-solid fa-children"></i>
+                                    <span class="menu-name">{{__('sidebar.the first students')}}</span>
+                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                </a>
+                            </div>
+                            <div class="submenu">
+                                <div class="line-black">
+                                    <a href='/#' class="li-link"> اول </a>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+
                     <!-- ========== 5 ============ -->
                         <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                             {{-- ---المعلمين--- --}}
@@ -368,25 +473,25 @@
                     </li>
                     {{-- ---شؤون الموظفين--- --}}
                     <!-- ======================== EMB ========================== -->
-                            <p class="title">{{__('sidebar.parent section')}}<i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
+                            <p class="title">{{__('sidebar.personnel affairs section')}}<i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
                     <li class="dropdown">
                         <!-- ========== 2 ============ -->
                         <div class="sidebar-title">
                             <a href="#" class="li-link title-4">
                                 <i class="icon-1 fa-solid fa-user-tie"></i>
-                                <span class="menu-name">شؤون الموظفين</span>
+                                <span class="menu-name">{{__('sidebar.personnel affairs')}}</span>
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
                         <div class="submenu">
                             <div class="line-black">
-                                <a href="{{route('teachers.create')}}" class="li-link">اضافة مدرس</a>
-                                <a href="{{route('teachers.index')}}" class="li-link">عرض المدرسين</a>
-                                <a href="{{route('teachers.show','deleted')}}" class="li-link">عرض المدرسين المحذوفين</a>
-                                <a href='/add-emp' class="li-link">اضافة موظف</a>
-                                <a href="#" class="li-link">جدول الغياب</a>
-                                <a href="#" class="li-link">1</a>
-                                <a href="#" class="li-link">2</a>
+                                <a href="{{route('teachers.create')}}" class="li-link">{{__('sidebar.add new teacher')}}</a>
+                                <a href="{{route('teachers.index')}}" class="li-link">{{__('sidebar.view teachers')}}</a>
+                                <a href="{{route('teachers.show','deleted')}}" class="li-link">{{__('sidebar.deleted teachers')}}</a>
+                                <a href='/add-emp' class="li-link">{{__('sidebar.add new emb')}}</a>
+                                <a href="#" class="li-link">{{__('sidebar.view emb')}}</a>
+                                <a href="#" class="li-link">{{__('sidebar.deleted emb')}}</a>
+                                <a href="#" class="li-link">{{__('sidebar.emb and teachers absent')}}</a>
                             </div>
                         </div>
                     </li>
@@ -516,7 +621,7 @@
         </div>
 
             <!-- ========== THE LAST MENU ============ -->
-            {{-- <div class="my-menu menu-footer">
+            {{-- <div class=" menu-footer">
                 <ul class="list-ul">
                     <!--  dropdown list item -->
                     <p class="title">admin</p>

@@ -63,10 +63,6 @@ Route::group(
         Route::get('teacher_classes', function () {
             return view('academic_dep/relationships/class-teatcher');
         });
-        // dis_sub_teacher
-
-
-
 
         // index_absence
         Route::get('index_absence', function () {
@@ -91,6 +87,26 @@ Route::group(
         // absence
         Route::get('absence', function () {
             return view('students_affairs/absence/absent_students');
+        });
+
+        // ========================
+        // control
+        // marks of month
+        Route::get('m_marks', function () {
+            return view('control/monthly/marks_of_month');
+        });
+        // all m arks of month
+        Route::get('all_m_marks', function () {
+            return view('control/monthly/all_marks_of_month');
+        });
+        // first_term_income
+        Route::get('first_term_income', function () {
+            return view('control/first_term/first_term_income');
+        });
+
+        // all_marks_of_first_term
+        Route::get('all_marks_of_first_term', function () {
+            return view('control/first_term/all_marks_of_first_term');
         });
 
         // a route to show more info about a Student

@@ -57,10 +57,6 @@
                                     <div class="th-head-1 ">id</div>
                                     <div></div>
                                 </th>
-                                {{-- <th>
-                                    <div class="th-head-1 ">student id</div>
-                                    <div></div>
-                                </th> --}}
                                 <th>
                                     <div class="th-head-2">Name</div>
                                 </th>
