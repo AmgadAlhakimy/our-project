@@ -115,9 +115,11 @@
                         <hr class=" ms-2 me-2 shadow">
                         {{-- --- absent ---- --}}
                         <div class=" row me-4 ms-2 mb-1">
-                            <div class=" col-2 center_y_x mt-4">
-                                <input class="form-label " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
-                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
+                            <div class="check_style mt-2 col-2 center_y_x mt-4">                            
+                                <label >
+                                    <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
+                                    <i></i>
+                                </label>
                             </div>
                             <div class=" col text-center">
                                 <label for="" class="form-label">{{__('teacher.ABSENCE REASON')}}</label>

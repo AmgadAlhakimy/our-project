@@ -27,7 +27,7 @@
 
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
-                    <h4 class=" text-center">
+                    <h4 class=" text-center card-title">
                         {{-- {{$classroom->name}} --}}
                         frist grade
                     </h4>
@@ -44,7 +44,7 @@
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
-        <div class="table-section"> 
+        <div class="table-section shadow-none"> 
             <div class="card table-section ">
                 <table  >
                     <thead >
@@ -70,9 +70,15 @@
                                 {{-- {{$student->name}} --}}
                             </td>
                             <td><img class="student-img" 
-                                {{-- src="{{$student->photo}}" alt="" --}}
-                            ></td>
-                            <td><input type="checkbox" class="check_item" checked id="checkbox" name="absent[]" value="absent"></td>
+                                {{-- src="{{$student->photo}}" alt="" --}}></td>
+                            <td>
+                                    <div class="mt-2 check_style">
+                                    <label >
+                                        <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
+                                        <i></i>
+                                    </label>
+                                </div> 
+                            </td>
                             <td><label for="">7:30am</label></td>
                             <td><label for="">he was stupid</label></td>
                             <td><label for="">1:35pm</label></td>

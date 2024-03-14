@@ -175,25 +175,31 @@ tr:hover img {
     writing-mode: vertical-rl;
 }
 
-/* Start media */
-@media (max-width: 670px) {
-    .container-title {
-        margin-top: 0px;
-    }
-    .table-header .first-card {
-        display: flex;
-        flex-direction: column;
-    }
-    .first-card .row {
-        margin: 0px 0px;
-    }
-    .first-card .row .col-1 {
-        padding: 0px 0px;
-    }
-    .second-card {
-        margin: 10px 0px;
-    }
-    .card-info h4 {
-        font-size: 18px;
-    }
-}
+/* START THE CHECK BOX STYLE */
+
+.check_style i {
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--o-title-1);
+    border-radius: 5px;
+    color: #000;
+  }
+  .check_style input[type="checkbox"]:checked ~ i {
+    border-top: none;
+    border-right: none;
+    box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.1);
+    height: 15px;
+    width: 25px;
+    transform: rotate(-45deg);
+    border-radius: 0;
+    border-color: var(--green-color);
+    /* margin-bottom: 6px; */
+  }
+  .check_style input[type="checkbox"] {
+    -webkit-appearance: none;
+  }
+  /* END THE CHECK BOX STYLE */
+

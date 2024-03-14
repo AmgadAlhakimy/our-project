@@ -14,7 +14,7 @@
 
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
-        <div class="table-section">
+        <div class="table-section shadow-none">
             <div class="card table-section ">
                 <table class=" " >
                     <thead>

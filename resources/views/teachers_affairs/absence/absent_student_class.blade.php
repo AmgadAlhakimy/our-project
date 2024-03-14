@@ -38,7 +38,7 @@
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
-        <div class=" table-section ">
+        <div class=" table-section shadow-none">
             <div class="card table-section ">
             <table class=" " >
                 <thead>
@@ -59,16 +59,20 @@
                         <td>mohanad naser mansour</td>
                         <td><img class="student-img" src="../../../public/assets/images/layouts/skills-01.jpg" alt=""></td>
                         <td>
-                            <div class=" mt-3">
-                                <input class="chick_style mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()"  >
-                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
+                            <div class="mt-2 check_style">
+                                <label >
+                                    <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
+                                    <i></i>
+                                </label>
                             </div>
                         </td>
                         <td><input type="text" class="form-control"></td>
                         <td>
-                            <div class=" mt-3">
-                                <input class="chick_style mb-3" type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()"  >
-                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
+                            <div class="mt-2 check_style">
+                                <label >
+                                    <input class=" " type="checkbox" name=""  id="" value="{{old('')}}" >
+                                    <i></i>
+                                </label>
                             </div>
                         </td>
                     </tr>

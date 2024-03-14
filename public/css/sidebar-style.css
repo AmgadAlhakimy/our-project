@@ -107,7 +107,7 @@ body {
     transform: rotate(180deg);
 }
 .list-ul li .fa-chevron-down {
-    transition: all 0.5s ease;
+    transition: all 0.5s ease; 
     transform: rotate(360deg);
 }
 .list-ul li .sidebar-title .li-link {
@@ -222,14 +222,7 @@ body {
 
 /* -------------- submenu close -----------------*/
 
-/* ============= responsive / breakpoints    ============= */
-@media (max-width: 1080px) {
-}
-/* for medium devices */
-@media (max-width: 774px) {
-}
-@media (max-width: 560px) {
-}
+
 
 /* .sidebar.active .my-menu > ul > li > a .sidebar-text::after {
   content: "";
@@ -313,18 +306,6 @@ body {
 }
 
 /* -------- end icons styles --------- */
-
-.title {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 10px 5px;
-    border-top: 2px solid var(--border-color);
-    color: var(--school-color-3);
-}
-.title:hover{
-    color: var(--grey-color);
-}
 .my-menu-btn {
     cursor: pointer;
 }
@@ -515,11 +496,7 @@ body {
 .gap-20 {
     gap: 20px;
 }
-@media (max-width: 767px) {
-    .block-mobile {
-        display: block;
-    }
-}
+
 /* End Box  */
 /* Start padding + Margin  */
 
@@ -551,11 +528,7 @@ body {
 .fs-14 {
     font-size: 14px;
 }
-@media (max-width: 767px) {
-    .txt-c-mobile {
-        text-align: center;
-    }
-}
+
 /* End font  */
 /* Start Border  */
 .rad-6 {

@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="table-section">
+        <div class="table-section shadow-none">
             <div class="card table-section ">
                 <table class=" mark_table" id="check_table" >
                     <thead >

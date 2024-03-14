@@ -75,9 +75,11 @@
                     <hr class=" ms-2 me-2 shadow">
                     {{-- --- absent ---- --}}
                     <div class=" row me-4 ms-2 mb-1">
-                        <div class="notes col-2 center_y_x">
-                            <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
-                            <label class="form-label  " for="healthProblem" id="healthProblem"></label>
+                        <div class="notes col-2 center_y_x check_style mt-2">
+                                <label >
+                                    <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
+                                    <i></i>
+                                </label>
                         </div>
                         <div class=" col">
                             <input class="form-control shadow mb-1" placeholder=" {{__('teacher.ABSENCE REASON')}}"  id="" ></input>
@@ -120,9 +122,11 @@
                         <hr class=" ms-2 me-2 shadow">
                         {{-- --- absent ---- --}}
                         <div class=" row me-4 ms-2 mb-1">
-                            <div class="notes col-2 center_y_x">
-                                <input class=" " type="checkbox" name="have_health_problem"  id="healthProblem" value="{{old('have_health_problem')}}" onchange="toggleInput()" checked >
-                                <label class="form-label  " for="healthProblem" id="healthProblem"></label>
+                            <div class="notes col-2 center_y_x mt-2 check_style">
+                                <label >
+                                    <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
+                                    <i></i>
+                                </label>
                             </div>
                             <div class=" col">
                                 <input class="form-control shadow mb-1" placeholder=" {{__('teacher.ABSENCE REASON')}}"  id="" ></input>

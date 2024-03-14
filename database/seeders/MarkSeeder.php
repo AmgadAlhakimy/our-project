@@ -14,19 +14,19 @@ class MarkSeeder extends Seeder
     public function run(): void
     {
 
-//        $classrooms = Classroom::all();
-//        foreach ($classrooms as $classroom) {
-//            $subjects = $classroom->subjects;
-//            foreach ($subjects as $subject) {
-//                $students = $classroom->students;
-//                foreach ($students as $student) {
-//                    Mark::create([
-//                        'student_id' => $student->id,
-//                        'subject_id' => $subject->id,
-//                        'classroom_id' => $classroom->id,
-//                    ]);
-//                }
-//            }
-//        }
+        $classrooms = Classroom::all();
+        foreach ($classrooms as $classroom) {
+            $subjects = $classroom->subjects;
+            foreach ($subjects as $subject) {
+                $students = $classroom->students;
+                foreach ($students as $student) {
+                    Mark::create([
+                        'student_id' => $student->id,
+                        'subject_id' => $subject->id,
+                        'classroom_id' => $classroom->id,
+                    ]);
+                }
+            }
+        }
     }
 }
