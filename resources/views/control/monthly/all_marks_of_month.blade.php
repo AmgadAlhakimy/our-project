@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">

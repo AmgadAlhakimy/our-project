@@ -6,10 +6,12 @@ use App\Models\Classroom\Classroom;
 use App\Models\Subject\Subject;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Mark extends Model
 {
     use HasFactory;
+    use SoftDeletes;
     protected $fillable = ['exam','homework','oral','behavior','total',
                             'rate','average','student_id','subject_id'];
     public function student(){

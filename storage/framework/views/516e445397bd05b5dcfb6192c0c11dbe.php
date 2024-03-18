@@ -25,7 +25,7 @@
             <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()" id="select_bt"><?php echo e(__('public.select')); ?></button>
             <button class="save-button btn-danger me-1 ms-1"><?php echo e(__('public.delete all')); ?></button>
         </div>
-        <div class="table-section">
+        <div class="table-section shadow-none">
             <div class="card table-section ">
                 <table class=" " id="check_table" >
                     <thead>

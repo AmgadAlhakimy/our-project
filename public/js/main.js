@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', function() {
             my_toggle.style.width = '100%';
         }
         }
-        checkScreenWidth(); 
+        checkScreenWidth();
         window.addEventListener('resize', function() {
         checkScreenWidth();
         });
@@ -146,7 +146,7 @@ function toggleInput() {
     check_test(checkbox2,input3,input4);
     check_test(checkbox3,input5,input6);
 }
- 
+
 // table checkbox item
 const selectAllCheckbox = document.getElementById('select_all');
 const checkboxItems = document.querySelectorAll('.check_item');
@@ -186,7 +186,7 @@ function hidOptions(){
     for(var i = 0; i < options.length; i++){
         options[i].style.display= "none";
     }
-    
+
 }
 
 
@@ -197,13 +197,13 @@ function hidOptions(){
 // window.addEventListener('DOMContentLoaded', function() {
 //     var my_toggle = document.getElementById('my_toggle');
 //     var _clicked = document.getElementById('_clicked');
-  
+
 //     function checkScreenWidth() {
 //       if (window.innerWidth < 500) {
 //         my_toggle.style.width = '100%';
 //       }
 //     }
-  
+
 //     function handleToggleClick() {
 //       if (window.innerWidth >= 500) {
 //         if (my_toggle.classList.contains('active')) {
@@ -211,7 +211,7 @@ function hidOptions(){
 //           my_toggle.style.backgroundColor = 'red';
 //           my_toggle.style.transition = 'all 0.3s ease';
 //           my_toggle.style.margin = '0px 0px 0px 0px';
-  
+
 //           requestAnimationFrame(() => {
 //             my_toggle.style.transition = 'all 0.3s ease';
 //             my_toggle.style.margin = '0px 0px 0px 0px';
@@ -221,7 +221,7 @@ function hidOptions(){
 //           my_toggle.style.backgroundColor = 'green';
 //           my_toggle.style.transition = 'all 0.3s ease';
 //           my_toggle.style.margin = '0px 0px 0px 300px';
-  
+
 //           requestAnimationFrame(() => {
 //             my_toggle.style.transition = 'all 0.3s ease';
 //             my_toggle.style.margin = '0px 0px 0px 300px';
@@ -229,7 +229,7 @@ function hidOptions(){
 //         }
 //       }
 //     }
-  
+
 //     checkScreenWidth();
 //     window.addEventListener('resize', checkScreenWidth);
 //     _clicked.addEventListener('click', handleToggleClick);
