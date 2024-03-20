@@ -72,7 +72,7 @@
                                     <div>20</div>
                                 </th>
                                 <th>
-                                    <div class="">Oral.E</div>
+                                    <div class="">Oral</div>
                                     <div>10</div>
                                 </th>
                                 <th>

@@ -32,10 +32,17 @@ class MarkController extends Controller
     public function insertMarks($id)
     {
         try {
+<<<<<<< HEAD
             $classroom = Classroom::findorfail(1);
                 $marks = Mark::where('classroom_id', 1)
                                 ->where('subject_id', 1)->get();
 //                return $marks;
+=======
+            $classroom = Classroom::findorfail(11);
+                $marks = Mark::where('classroom_id', 11)
+                                ->where('subject_id', 4)->get();
+                                // return $marks;
+>>>>>>> 31de7b59420f537261ae06fc4a5c4deedbb9c598
             return view('teachers_affairs/marks.insert_marks',
                 compact('marks','classroom'));
 

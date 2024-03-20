@@ -78,7 +78,6 @@
             <div class=" table-header mt-3">
                 <div class="row">
                     @for($i=0; $i<30; $i++)
-
                     <div class="cards_info_style col-lg-4 col-md-6 col-sm-12 mb-2">
                         {{-- names & photo --}}
                         <div class="row ">
@@ -86,7 +85,7 @@
                                 <img  class=" cards_img" src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
                             </div>
                             <div class="text-center col row center_y_x me-1 ms-1">
-                                <label class="col-12 cards_title mt-1 mb-1"> Emad nasr mansour </label>
+                                <label class="col-12 cards_title mt-1 mb-1"> Emad  mansour </label>
                                 <label class="col-12 cards_sup_title mt-1 mb-1">i7676</label>
                             </div>
                         </div>

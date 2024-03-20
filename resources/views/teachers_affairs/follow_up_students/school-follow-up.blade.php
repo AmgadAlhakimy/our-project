@@ -40,7 +40,7 @@
         <form method="post" action="{{route('students.search')}}">
             @method('GET')
             @csrf
-            <div class="table-header ">
+            <div class="table-header mt-4 ">
                 {{-- for all studentes --}}
                 <h4 class="col container-title ">{{__('teacher.for all students')}} </h4>
                 <div class="cards_info_style col-12 mb-2">
@@ -57,7 +57,7 @@
                     {{-- ---- daily info --- --}}
                     <hr class=" ms-2 me-2 shadow">
                     {{-- ------- --}}
-                    <div class="box row me-2 ms-2 mb-1 ">
+                    <div class="box row me-2 ms-2 mb-2 ">
                         <div class=" col-lg-6 col-md-6 col-sm-6 mt-1 mb-1">
                             <input class="form-control shadow" placeholder="{{__('teacher.TO TAKE HOME')}}" id="" ></input>
                         </div>
@@ -72,19 +72,6 @@
                         </div>
                     </div>
                     {{-- ------- --}}
-                    <hr class=" ms-2 me-2 shadow">
-                    {{-- --- absent ---- --}}
-                    <div class=" row me-4 ms-2 mb-1">
-                        <div class="notes col-2 center_y_x check_style mt-2">
-                                <label >
-                                    <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
-                                    <i></i>
-                                </label>
-                        </div>
-                        <div class=" col">
-                            <input class="form-control shadow mb-1" placeholder=" {{__('teacher.ABSENCE REASON')}}"  id="" ></input>
-                        </div>
-                    </div>
                 </div>
             </div>
 
