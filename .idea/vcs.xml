@@ -9,6 +9,7 @@
     <mapping directory="$PROJECT_DIR$/vendor/php-flasher/flasher-laravel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/spatie/laravel-package-tools" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/spatie/laravel-translatable" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/polyfill-php83" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/yoeunes/toastr" vcs="Git" />
   </component>
 </project>
