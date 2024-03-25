@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
     <?php $counter = 1 ?>
         <!--    --><?php //$month = "2024-01-31" ?><!---->
-    <?php $__currentLoopData = $marks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mark): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <?php $month = $mark->created_at->format('F') ?>
-            <?php $subject = $mark->subject->name ?>
-            <?php $classroom = $mark->classroom ?>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
+    
+    
+    
+    
 
     <div class="my-table">
         
@@ -21,7 +21,7 @@
                         <div class="row">
                             <label class="col-10">
                                 <input type="text" required class="form-control " name="search"
-                                    value="<?php echo e(isset($search) ? $search : ''); ?>">
+                                       value="<?php echo e($search ?? ''); ?>">
                             </label>
                             <button type="submit" class="col save-button "><?php echo e(__('public.search')); ?></button>
                         </div>
@@ -36,14 +36,13 @@
                 <div class="cards-container  third-card">
                     <div class="card-info card-info_2 col ">
                         <h4 class=" Names"> <?php echo e($classroom->name); ?></h4>
-
+                        
                     </div>
 
                     <div class="card-info card-info_2 col ">
                         <h4 class=" text-center">Month</h4>
-
+                        
                     </div>
-                </div>
                 </div>
 
                 
@@ -102,11 +101,13 @@
                                     
                                     
                                     <td><?php echo e($mark->student->id); ?> 123123</td>
-                                    <td><?php echo e($mark->student->name); ?> AMGAD ALHAKEMY</td>
+                                    <td><?php echo e($mark->student->name); ?> AMGAD AL-HAKIMY</td>
                                     <td><img src="<?php echo e($mark->student->photo); ?>" class="student-img" alt=""></td>
-                                    <td><input type="number" value="<?php echo e($mark->exam); ?>" name="exam[]" class=" form-control "
-                                            id='Exam-Mark' placeholder="_" min="0" max="60">
-                                            60
+                                    <td><label for='Exam-Mark'></label><input type="number" value="<?php echo e($mark->exam); ?>"
+                                                                              name="exam[]" class=" form-control "
+                                                                              id='Exam-Mark' placeholder="_" min="0"
+                                                                              max="60">
+
                                         <?php $__errorArgs = ['exam'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -117,10 +118,12 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?></td>
-                                    <td><input type="number" value="<?php echo e($mark->homework); ?>" name="homework[]"
-                                            class=" form-control "
-                                            id='HW-Mark' placeholder="_" min="0" max="20">
-                                            20
+                                    <td><label for='HW-Mark'></label><input type="number" value="<?php echo e($mark->homework); ?>"
+                                                                            name="homework[]"
+                                                                            class=" form-control "
+                                                                            id='HW-Mark' placeholder="_" min="0"
+                                                                            max="20">
+
                                         <?php $__errorArgs = ['homework'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -131,10 +134,11 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?></td>
-                                    <td><input type="number" value="<?php echo e($mark->oral); ?>" name="oral[]" class=" form-control "
-                                            id='Oral-Mark' placeholder="_" min="0" max="10">
+                                    <td><label for='Oral-Mark'></label><input type="number" value="<?php echo e($mark->oral); ?>"
+                                                                              name="oral[]" class=" form-control "
+                                                                              id='Oral-Mark' placeholder="_" min="0"
+                                                                              max="10">
 
-                                            7720388293
 
                                         <?php $__errorArgs = ['oral'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -146,10 +150,13 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?></td>
-                                    <td><input type="number" value="<?php echo e($mark->behavior); ?>" name="behavior[]"
-                                            class=" form-control "
-                                            id='behavior-Mark' placeholder="_" min="0" max="10">
-                                            2020
+                                    <td><label for='behavior-Mark'></label><input type="number"
+                                                                                  value="<?php echo e($mark->behavior); ?>"
+                                                                                  name="behavior[]"
+                                                                                  class=" form-control "
+                                                                                  id='behavior-Mark' placeholder="_"
+                                                                                  min="0" max="10">
+
                                         <?php $__errorArgs = ['behavior'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -160,9 +167,6 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?></td>
-                                    <td><label for="">90</label></td>
-                                    <td><label for="">18</label></td>
-                                    <td><label for="">90%</label></td>
                                 </tr>
                                     <?php $counter++ ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -171,20 +175,19 @@ unset($__errorArgs, $__bag); ?></td>
 
                     </div>
                 </div>
-            <div class=" box row mt-5">
-                <div class=" col mt-1 ">
-                    
-                    <input class="save-button  " type="button" value="<?php echo e(__('public.ترحيل')); ?>">
+                <div class=" box row mt-5">
+                    <div class=" col mt-1 ">
+                        
+                        <input class="save-button  " type="button" value="<?php echo e(__('public.ترحيل')); ?>">
+                    </div>
+                    <div class=" col mt-1">
+                        
+                        <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
+                    </div>
+                    <div class="  col mt-1">
+                        <input class="clear-button " type="reset" value="<?php echo e(__('public.clear')); ?>">
+                    </div>
                 </div>
-                <div class=" col mt-1">
-                    
-                    <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
-                </div>
-                <div class="  col mt-1">
-                    <input class="clear-button " type="reset" value="<?php echo e(__('public.clear')); ?>">
-                </div>
-            </div>
-        </form>
 <?php $__env->stopSection(); ?>
 
 

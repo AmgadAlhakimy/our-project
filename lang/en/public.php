@@ -14,6 +14,7 @@ return [
     */
 
     //shared in many pages
+    'title'=>'Planet Of Juniors Academy',
     'save'=>'Save',
     'ok'=>'Ok',
     'clear'=>'Clear',
