@@ -1,7 +1,6 @@
 /* globals */
 
 * {
-    /* font-family: 'poppins', sans-serif; */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -31,7 +30,7 @@ body {
 /* ============ End sidebar footer */
 /* ==================== sidebar ========================== */
 .toggle-sidebar{
-    /* margin: 0px 0px 00px 220px ; */
+    margin: 0px 0px 00px 240px ;
     /* background-color: gray; */
 }
 .side-container .sidebar.close .toggle-sidebar{
@@ -40,21 +39,22 @@ body {
 }
 .side-container {
     display: flex;
-
+/*  */
 }
 .sidebar {
-    
     position: fixed;
     z-index: 9999;
     flex-grow: 1;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 250px;
     transition: all 0.5s ease;
     border-radius: 15px;
     background-color: var(--sidebar-bg);
     box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.1);
+
+
 }
 .sidebar.close {
     width: 0px;
@@ -64,11 +64,14 @@ body {
 .my-head {
     padding: 0px 0px;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    /* background-color: #fff; */
+
 }
 /* ----------------- the second menu of sidebar -------------------- */
-.sidebar .sidebar-nav .my-scroll {
+.my-scroll {
+    /* position: relative; */
     overflow: auto;
-    position: relative;
 }
 .my-menu {
     margin-top: -20px;
@@ -83,6 +86,7 @@ body {
 }
 .list-ul::-webkit-scrollbar {
     /*display: none;*/
+
 }
 .li-link {
     display: flex;
@@ -92,7 +96,6 @@ body {
     border-radius: 8px;
     transition: all 0.5s;
 }
-
 .sidebar-title {
     display: flex;
     justify-content: safe;
@@ -243,10 +246,11 @@ body {
 } */
 /* ----------------------  LOGO STYLE ------------------------- */
 .logo-img {
-    width: 250px;
-    padding: 20px 10px;
+    width: 0px;
+    /* width: 250px; */
+    /* padding: 20px 10px; */
     /* background-color: gray; */
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
 }
 .sidebar.close .logo-img {
     position: absolute;
@@ -255,11 +259,13 @@ body {
     transform: rotate(360deg);
     top: -15px;
     left: 50px;
+    /* temporary cod */
+    padding: 20px 10px;
 }
 
 .my-menu-btn .sidebar-icon {
     position: absolute;
-    right: -14px;
+    right: -24px;
     top: 3.5%;
     width: 28px;
     height: 28px;

@@ -2,7 +2,6 @@ const listItems = document.querySelectorAll(".list-ul li ");
 
 listItems.forEach((item) => {
     item.addEventListener("click", () => {
-
         let isActive = item.classList.contains("active");
 
         listItems.forEach((el) => {
@@ -13,7 +12,7 @@ listItems.forEach((item) => {
         else item.classList.add("active");
     });
 });
-
+ 
 // const toggleSidebar = document.querySelector(".toggle-sidebar");
 const logo = document.querySelector(".my-menu-btn");
 const sidebar = document.querySelector(".sidebar");
@@ -26,51 +25,48 @@ logo.addEventListener("click", () => {
 });
 
 // ========== تعليق السايد بار
-sidebar.classList.toggle("close")
+// sidebar.classList.toggle("close");
 
 // ====================
 
-window.addEventListener('DOMContentLoaded', function() {
-    var my_toggle = document.getElementById('my_toggle');
+window.addEventListener("DOMContentLoaded", function () {
+    var my_toggle = document.getElementById("my_toggle");
 
-        function checkScreenWidth() {
+    function checkScreenWidth() {
         if (window.innerWidth < 600) {
-            my_toggle.style.width = '100%';
+            my_toggle.style.width = "100%";
         }
-        }
+    }
+    checkScreenWidth();
+    window.addEventListener("resize", function () {
         checkScreenWidth();
-        window.addEventListener('resize', function() {
-        checkScreenWidth();
-        });
     });
+});
 
 const _clicked = document.getElementById("_clicked");
 const my_toggle = document.getElementById("my_toggle");
 
 _clicked.addEventListener("click", () => {
-
-        if (my_toggle.classList.contains("active")) {
+    if (my_toggle.classList.contains("active")) {
         my_toggle.classList.remove("active");
         // my_toggle.style.backgroundColor = "red";
         my_toggle.style.transition = "all .5s ease";
+        my_toggle.style.margin = "0px 0px 0px 240px";
+        requestAnimationFrame(() => {
+            my_toggle.style.transition = "all 0.5s ease";
+            my_toggle.style.margin = "0px 0px 0px 240px";
+        });
+    } else {
+        my_toggle.classList.add("active");
+        // my_toggle.style.backgroundColor = "green";
+        my_toggle.style.transition = "all 0.5s ease";
         my_toggle.style.margin = "0px 0px 0px 0px";
         requestAnimationFrame(() => {
             my_toggle.style.transition = "all 0.5s ease";
             my_toggle.style.margin = "0px 0px 0px 0px";
         });
-        } else {
-        my_toggle.classList.add("active");
-        // my_toggle.style.backgroundColor = "green";
-        my_toggle.style.transition = "all 0.5s ease";
-        my_toggle.style.margin = "0px 0px 0px 220px";
-            requestAnimationFrame(() => {
-                my_toggle.style.transition = "all 0.5s ease";
-                my_toggle.style.margin = "0px 0px 0px 220px";
-            });
-        }
+    }
 });
-
-
 
 // --------------------------------------------------------------------------------
 //  the dropdown of language
@@ -117,15 +113,14 @@ dropdowns.forEach((dropdownlang) => {
 // شرط النصوص مع التشكبوكس
 // -----------------------------------------------------------
 
-
 // ---------------------
-function check_test(my_checkbox, my_input1, my_input2){
-    if(my_checkbox.checked) {
-        my_input1.hidden=false;
-        my_input2.hidden=false;
-    }else{
-        my_input1.hidden=true;
-        my_input2.hidden=true;
+function check_test(my_checkbox, my_input1, my_input2) {
+    if (my_checkbox.checked) {
+        my_input1.hidden = false;
+        my_input2.hidden = false;
+    } else {
+        my_input1.hidden = true;
+        my_input2.hidden = true;
     }
 }
 function toggleInput() {
@@ -133,66 +128,60 @@ function toggleInput() {
     var checkbox2 = document.getElementById("haveAllergy");
     var checkbox3 = document.getElementById("healthProblem");
     //
-    var input1 = document.getElementById("std_medicine_desc_1")
-    var input2 = document.getElementById("std_medicine_desc_2")
+    var input1 = document.getElementById("std_medicine_desc_1");
+    var input2 = document.getElementById("std_medicine_desc_2");
     //
-    var input3 = document.getElementById("std_allergy_desc_1")
-    var input4 = document.getElementById("std_allergy_desc_2")
+    var input3 = document.getElementById("std_allergy_desc_1");
+    var input4 = document.getElementById("std_allergy_desc_2");
     //
-    var input5 = document.getElementById("std_health_desc_1")
-    var input6 = document.getElementById("std_health_desc_2")
+    var input5 = document.getElementById("std_health_desc_1");
+    var input6 = document.getElementById("std_health_desc_2");
 
-    check_test(checkbox1,input1,input2);
-    check_test(checkbox2,input3,input4);
-    check_test(checkbox3,input5,input6);
+    check_test(checkbox1, input1, input2);
+    check_test(checkbox2, input3, input4);
+    check_test(checkbox3, input5, input6);
 }
 
 // table checkbox item
-const selectAllCheckbox = document.getElementById('select_all');
-const checkboxItems = document.querySelectorAll('.check_item');
+const selectAllCheckbox = document.getElementById("select_all");
+const checkboxItems = document.querySelectorAll(".check_item");
 
-selectAllCheckbox.addEventListener('change', function() {
-    checkboxItems.forEach(function(checkbox) {
+selectAllCheckbox.addEventListener("change", function () {
+    checkboxItems.forEach(function (checkbox) {
         checkbox.checked = selectAllCheckbox.checked;
     });
-    });
+});
 
-    checkboxItems.forEach(function(checkbox) {
-    checkbox.addEventListener('change', function() {
-        const allChecked = [...checkboxItems].every(function(item) {
-        return item.checked;
+checkboxItems.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+        const allChecked = [...checkboxItems].every(function (item) {
+            return item.checked;
         });
         selectAllCheckbox.checked = allChecked;
     });
-    });
+});
 // select_bt button
 function toggleCheckboxes() {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
 
-        checkboxes.forEach(function(checkbox) {
+    checkboxes.forEach(function (checkbox) {
         if (checkbox.style.display === "none") {
             checkbox.style.display = "block";
         } else {
             checkbox.style.display = "none";
         }
-        });
-    }
-
-// hide the options from the subjects select
-function hidOptions(){
-    var select = document.getElementById ("sub_select")
-    var options = select.options;
-
-    for(var i = 0; i < options.length; i++){
-        options[i].style.display= "none";
-    }
-
+    });
 }
 
+// hide the options from the subjects select
+function hidOptions() {
+    var select = document.getElementById("sub_select");
+    var options = select.options;
 
-
-
-
+    for (var i = 0; i < options.length; i++) {
+        options[i].style.display = "none";
+    }
+}
 
 // window.addEventListener('DOMContentLoaded', function() {
 //     var my_toggle = document.getElementById('my_toggle');

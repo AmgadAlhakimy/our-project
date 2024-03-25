@@ -14,6 +14,7 @@ return [
     */
 
     //shared in many pages
+    'title'=>'روضة كوكب الصغار',
     'save'=>'حفظ',
     'ok'=>'موافق',
     'clear'=>'إفارغ',
