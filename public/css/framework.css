@@ -550,7 +550,7 @@ input::-webkit-inner-spin-button {
     .ph-home {
         display: none;
     }
-    
+
     .save-button, .clear-button{
         width: 90px;
         font-size: 10px;
@@ -636,7 +636,7 @@ input::-webkit-inner-spin-button {
     .dropDownLang .select-clicked {
         width: 80px;
     }
-    
+
     .save-button, .clear-button{
         width: 70px;
         font-size: 8px;

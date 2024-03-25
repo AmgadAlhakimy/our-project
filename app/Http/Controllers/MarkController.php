@@ -35,7 +35,24 @@ class MarkController extends Controller
             $classroom = Classroom::findorfail(1);
                 $marks = Mark::where('classroom_id', 1)
                                 ->where('subject_id', 1)->get();
-//                return $marks;
+
+            $classrooms = Classroom::all();
+            foreach ($classrooms as $classroom) {
+                echo $classroom->subjects;
+                $subjects = $classroom->subjects;
+//                echo $subjects;
+//                foreach ($subjects as $subject) {
+//                    $students = $classroom->students;
+//                    foreach ($students as $student) {
+//                        Mark::create([
+//                            'student_id' => $student->id,
+//                            'subject_id' => $subject->id,
+//                            'classroom_id' => $classroom->id,
+//                        ]);
+//                    }
+//                }
+            }
+                return ;
             return view('teachers_affairs/marks.insert_marks',
                 compact('marks','classroom'));
 
