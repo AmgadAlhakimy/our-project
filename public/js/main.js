@@ -42,32 +42,76 @@ window.addEventListener("DOMContentLoaded", function () {
         checkScreenWidth();
     });
 });
-
+document.addEventListener('DOMContentLoaded', function(){
 const _clicked = document.getElementById("_clicked");
 const my_toggle = document.getElementById("my_toggle");
+    var body = document.querySelector('body');
+    var myDiv = document.getElementById('myDiv');
 
-_clicked.addEventListener("click", () => {
-    if (my_toggle.classList.contains("active")) {
-        my_toggle.classList.remove("active");
-        // my_toggle.style.backgroundColor = "red";
-        my_toggle.style.transition = "all .5s ease";
-        my_toggle.style.margin = "0px 0px 0px 240px";
-        requestAnimationFrame(() => {
-            my_toggle.style.transition = "all 0.5s ease";
-            my_toggle.style.margin = "0px 0px 0px 240px";
-        });
-    } else {
-        my_toggle.classList.add("active");
-        // my_toggle.style.backgroundColor = "green";
-        my_toggle.style.transition = "all 0.5s ease";
-        my_toggle.style.margin = "0px 0px 0px 0px";
-        requestAnimationFrame(() => {
-            my_toggle.style.transition = "all 0.5s ease";
-            my_toggle.style.margin = "0px 0px 0px 0px";
+    if (body.dir === 'rtl'){
+        myDiv.classList.add('myDiv_rtl');
+
+            _clicked.addEventListener("click", () => {
+                if (my_toggle.classList.contains("active")) {
+                    my_toggle.classList.remove("active");
+                    // my_toggle.style.backgroundColor = "red";
+                    my_toggle.style.transition = "all .5s ease";
+                    my_toggle.style.margin = "0px 240px 0px 0px";
+                    requestAnimationFrame(() => {
+                        my_toggle.style.transition = "all 0.5s ease";
+                        my_toggle.style.margin = "0px 240px 0px 0px";
+                    });
+                } else {
+                    my_toggle.classList.add("active");
+                    // my_toggle.style.backgroundColor = "green";
+                    my_toggle.style.transition = "all 0.5s ease";
+                    my_toggle.style.margin = "0px 0px 0px 0px";
+                    requestAnimationFrame(() => {
+                        my_toggle.style.transition = "all 0.5s ease";
+                        my_toggle.style.margin = "0px 0px 0px 0px";
+                    });
+                }
+            });
+            }else{
+        myDiv.classList.add('myDiv_ltr');
+
+        _clicked.addEventListener("click", () => {
+            if (my_toggle.classList.contains("active")) {
+                my_toggle.classList.remove("active");
+                // my_toggle.style.backgroundColor = "blue";
+                my_toggle.style.transition = "all .5s ease";
+                my_toggle.style.margin = "0px 0px 0px 240px";
+                requestAnimationFrame(() => {
+                    my_toggle.style.transition = "all 0.5s ease";
+                    my_toggle.style.margin = "0px 0px 0px 240px";
+                });
+            } else {
+                my_toggle.classList.add("active");
+                // my_toggle.style.backgroundColor = "black";
+                my_toggle.style.transition = "all 0.5s ease";
+                my_toggle.style.margin = "0px 0px 0px 0px";
+                requestAnimationFrame(() => {
+                    my_toggle.style.transition = "all 0.5s ease";
+                    my_toggle.style.margin = "0px 0px 0px 0px";
+                });
+            }
         });
     }
-});
+})
+// --------------------------------------------------------------------------------
+//  THE DARACTION OF BODY
 
+
+
+    
+       
+ 
+
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------
 //  the dropdown of language
 const dropdowns = document.querySelectorAll(".dropDownLang");
