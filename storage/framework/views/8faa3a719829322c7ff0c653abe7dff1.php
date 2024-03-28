@@ -609,24 +609,22 @@
             <!-- ========== THE LAST MENU ============ -->
             
             <!-- ============= home section ================= -->
+                <?php 
+                    $dir = 'rtl';
+                ?>
+
             <div class="section-home">
-                <div id="myDiv">
-                    <?php if(config('app.direction') === 'ltr'): ?>
-                    <div id="my_toggle" class="dir_2 toggle-sidebar">
-                        <?php echo $__env->yieldContent('content'); ?>
-                    </div>
-                    <?php else: ?>
-                    <div id="my_toggle" class="dir_1 toggle-sidebar">
-                        <?php echo $__env->yieldContent('content'); ?>
-                    </div>
-                    <?php endif; ?>
+                <div id="my_toggle" class="toggle-sidebar"
+                    
+                    
+                    >
+                    <?php echo $__env->yieldContent('content'); ?>
                 </div>
             </div>
             <!-- ====================== -->
     </div>
 
 <!-- link js -->
-
 
 
 <script src="<?php echo e(URL::asset('js/all.min.js')); ?>"></script>

@@ -655,17 +655,16 @@
                 </ul>
             </div>--}}
             <!-- ============= home section ================= -->
+                <?php 
+                    $dir = 'rtl';
+                ?>
+
             <div class="section-home">
-                <div id="myDiv">
-                    @if (config('app.direction') === 'ltr')
-                    <div id="my_toggle" class="dir_2 toggle-sidebar">
-                        @yield('content')
-                    </div>
-                    @else
-                    <div id="my_toggle" class="dir_1 toggle-sidebar">
-                        @yield('content')
-                    </div>
-                    @endif
+                <div id="my_toggle" class="toggle-sidebar"
+                    {{-- style="color: @if($dir === 'rtl') 0px 240px 0px 0px @else 0px 0px 00px 240px @endif;" --}}
+                    {{-- style="margin-{{ $dir === 'rtl' ? '0px 0px 00px 240px' : '0px 240px 0px 0px' }}: 20px;" --}}
+                    >
+                    @yield('content')
                 </div>
             </div>
             <!-- ====================== -->
@@ -673,8 +672,8 @@
 
 <!-- link js -->
 
-
-
+{{-- 
+<script>var dir = {{$dir}}</script> --}}
 <script src="{{URL::asset('js/all.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.js')}}"></script>

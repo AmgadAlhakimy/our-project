@@ -42,6 +42,9 @@ window.addEventListener("DOMContentLoaded", function () {
         checkScreenWidth();
     });
 });
+
+
+
 document.addEventListener('DOMContentLoaded', function(){
 const _clicked = document.getElementById("_clicked");
 const my_toggle = document.getElementById("my_toggle");
@@ -50,11 +53,9 @@ const my_toggle = document.getElementById("my_toggle");
 
     if (body.dir === 'rtl'){
         myDiv.classList.add('myDiv_rtl');
-
             _clicked.addEventListener("click", () => {
                 if (my_toggle.classList.contains("active")) {
                     my_toggle.classList.remove("active");
-                    // my_toggle.style.backgroundColor = "red";
                     my_toggle.style.transition = "all .5s ease";
                     my_toggle.style.margin = "0px 240px 0px 0px";
                     requestAnimationFrame(() => {
@@ -63,7 +64,6 @@ const my_toggle = document.getElementById("my_toggle");
                     });
                 } else {
                     my_toggle.classList.add("active");
-                    // my_toggle.style.backgroundColor = "green";
                     my_toggle.style.transition = "all 0.5s ease";
                     my_toggle.style.margin = "0px 0px 0px 0px";
                     requestAnimationFrame(() => {
@@ -74,11 +74,9 @@ const my_toggle = document.getElementById("my_toggle");
             });
             }else{
         myDiv.classList.add('myDiv_ltr');
-
         _clicked.addEventListener("click", () => {
             if (my_toggle.classList.contains("active")) {
                 my_toggle.classList.remove("active");
-                // my_toggle.style.backgroundColor = "blue";
                 my_toggle.style.transition = "all .5s ease";
                 my_toggle.style.margin = "0px 0px 0px 240px";
                 requestAnimationFrame(() => {
@@ -87,7 +85,6 @@ const my_toggle = document.getElementById("my_toggle");
                 });
             } else {
                 my_toggle.classList.add("active");
-                // my_toggle.style.backgroundColor = "black";
                 my_toggle.style.transition = "all 0.5s ease";
                 my_toggle.style.margin = "0px 0px 0px 0px";
                 requestAnimationFrame(() => {
