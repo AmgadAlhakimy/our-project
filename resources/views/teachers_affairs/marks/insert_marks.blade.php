@@ -99,10 +99,8 @@
                             <tbody>
                             @foreach($marks as $mark)
                                 <tr>
-                                    {{-- <td><input type="hidden" name="mark[]" value="{{$mark->id}}"></td> --}}
-                                    {{-- <td>{{$counter}}</td> --}}
-                                    <td>{{$mark->student->id}} 123123</td>
-                                    <td>{{$mark->student->name}} AMGAD AL-HAKIMY</td>
+                                    <td>{{$mark->student->id}}</td>
+                                    <td>{{$mark->student->name}}</td>
                                     <td><img src="{{$mark->student->photo}}" class="student-img" alt=""></td>
                                     <td><label for='Exam-Mark'></label><input type="number" value="{{$mark->exam}}"
                                                                               name="exam[]" class=" form-control "
@@ -140,6 +138,9 @@
                                         @error('behavior')
                                         <small class="form-text text-danger"> {{$message}}</small>
                                         @enderror</td>
+                                    <?php $total = $mark->exam + $mark->homework + $mark->oral + $mark->behavior?>
+                                    <td>{{$total}}</td>
+                                    <td>{{floor($total/5)}}</td>
                                 </tr>
                                     <?php $counter++ ?>
                             @endforeach

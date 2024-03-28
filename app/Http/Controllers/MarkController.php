@@ -34,25 +34,7 @@ class MarkController extends Controller
         try {
             $classroom = Classroom::findorfail(1);
                 $marks = Mark::where('classroom_id', 1)
-                                ->where('subject_id', 1)->get();
-
-            $classrooms = Classroom::all();
-            foreach ($classrooms as $classroom) {
-                echo $classroom->subjects;
-                $subjects = $classroom->subjects;
-//                echo $subjects;
-//                foreach ($subjects as $subject) {
-//                    $students = $classroom->students;
-//                    foreach ($students as $student) {
-//                        Mark::create([
-//                            'student_id' => $student->id,
-//                            'subject_id' => $subject->id,
-//                            'classroom_id' => $classroom->id,
-//                        ]);
-//                    }
-//                }
-            }
-                return ;
+                                ->where('subject_id', 5)->get();
             return view('teachers_affairs/marks.insert_marks',
                 compact('marks','classroom'));
 
@@ -91,7 +73,7 @@ class MarkController extends Controller
     public function update(UpdateMarkRequest $request, $id)
     {
         try {
-        $students_num = Mark::where('classroom_id', $id)->where('subject_id', $id)->count();
+        $students_num = Mark::where('classroom_id', 1)->where('subject_id', 5)->count();
         for ($i=0; $i<$students_num; $i++){
         $mark = Mark::findorFail($request->mark[$i]);
             $mark->update([
