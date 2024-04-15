@@ -609,15 +609,9 @@
             <!-- ========== THE LAST MENU ============ -->
             
             <!-- ============= home section ================= -->
-                <?php 
-                    $dir = 'rtl';
-                ?>
 
             <div class="section-home">
-                <div id="my_toggle" class="toggle-sidebar"
-                    
-                    
-                    >
+                <div id="my_toggle" class="toggle-sidebar">
                     <?php echo $__env->yieldContent('content'); ?>
                 </div>
             </div>
@@ -625,7 +619,6 @@
     </div>
 
 <!-- link js -->
-
 
 <script src="<?php echo e(URL::asset('js/all.min.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('js/bootstrap.bundle.min.js')); ?>"></script>

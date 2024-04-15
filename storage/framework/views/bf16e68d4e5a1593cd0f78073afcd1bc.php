@@ -98,10 +98,8 @@
                             <tbody>
                             <?php $__currentLoopData = $marks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mark): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
-                                    
-                                    
-                                    <td><?php echo e($mark->student->id); ?> 123123</td>
-                                    <td><?php echo e($mark->student->name); ?> AMGAD AL-HAKIMY</td>
+                                    <td><?php echo e($mark->student->id); ?></td>
+                                    <td><?php echo e($mark->student->name); ?></td>
                                     <td><img src="<?php echo e($mark->student->photo); ?>" class="student-img" alt=""></td>
                                     <td><label for='Exam-Mark'></label><input type="number" value="<?php echo e($mark->exam); ?>"
                                                                               name="exam[]" class=" form-control "
@@ -167,6 +165,9 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?></td>
+                                    <?php $total = $mark->exam + $mark->homework + $mark->oral + $mark->behavior?>
+                                    <td><?php echo e($total); ?></td>
+                                    <td><?php echo e(floor($total/5)); ?></td>
                                 </tr>
                                     <?php $counter++ ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

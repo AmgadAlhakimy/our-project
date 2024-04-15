@@ -655,15 +655,9 @@
                 </ul>
             </div>--}}
             <!-- ============= home section ================= -->
-                <?php 
-                    $dir = 'rtl';
-                ?>
 
             <div class="section-home">
-                <div id="my_toggle" class="toggle-sidebar"
-                    {{-- style="color: @if($dir === 'rtl') 0px 240px 0px 0px @else 0px 0px 00px 240px @endif;" --}}
-                    {{-- style="margin-{{ $dir === 'rtl' ? '0px 0px 00px 240px' : '0px 240px 0px 0px' }}: 20px;" --}}
-                    >
+                <div id="my_toggle" class="toggle-sidebar">
                     @yield('content')
                 </div>
             </div>
@@ -672,8 +666,6 @@
 
 <!-- link js -->
 
-{{-- 
-<script>var dir = {{$dir}}</script> --}}
 <script src="{{URL::asset('js/all.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.js')}}"></script>

@@ -12,7 +12,10 @@ listItems.forEach((item) => {
         else item.classList.add("active");
     });
 });
- 
+
+
+
+
 // const toggleSidebar = document.querySelector(".toggle-sidebar");
 const logo = document.querySelector(".my-menu-btn");
 const sidebar = document.querySelector(".sidebar");
@@ -25,7 +28,7 @@ logo.addEventListener("click", () => {
 });
 
 // ========== تعليق السايد بار
-// sidebar.classList.toggle("close");
+sidebar.classList.toggle("close");
 
 // ====================
 
@@ -42,6 +45,8 @@ window.addEventListener("DOMContentLoaded", function () {
         checkScreenWidth();
     });
 });
+
+
 
 
 
