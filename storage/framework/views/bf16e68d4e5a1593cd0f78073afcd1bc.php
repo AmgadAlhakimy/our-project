@@ -87,10 +87,6 @@
                                     <div>20</div>
                                 </th>
                                 <th>
-                                    <div class="">Percent</div>
-                                    <div>100%</div>
-                                </th>
-                                <th>
                                     <div class=""></div>
                                 </th>
                             </tr>
@@ -98,6 +94,7 @@
                             <tbody>
                             <?php $__currentLoopData = $marks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mark): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <tr>
+                                    <input type="hidden" value="<?php echo e($mark->id); ?>" name="id[]">
                                     <td><?php echo e($mark->student->id); ?></td>
                                     <td><?php echo e($mark->student->name); ?></td>
                                     <td><img src="<?php echo e($mark->student->photo); ?>" class="student-img" alt=""></td>

@@ -12,10 +12,6 @@ listItems.forEach((item) => {
         else item.classList.add("active");
     });
 });
-
-
-
-
 // const toggleSidebar = document.querySelector(".toggle-sidebar");
 const logo = document.querySelector(".my-menu-btn");
 const sidebar = document.querySelector(".sidebar");
@@ -46,44 +42,45 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const _clicked = document.getElementById("_clicked");
+    const my_toggle = document.getElementById("my_toggle");
+    var body = document.querySelector("body");
+    var myDiv = document.getElementById("myDiv");
 
+    if (body.dir === "rtl") {
+        myDiv.classList.add("myDiv_rtl");
+        _clicked.addEventListener("click", () => {
+            if (my_toggle.classList.contains("active")) {
+                my_toggle.classList.remove("active");
+                my_toggle.style.transition = "all .5s ease";
+                my_toggle.style.margin = "0px 240px 0px 0px";
+                my_toggle.style.backgroundColor = "black";
 
-
-
-document.addEventListener('DOMContentLoaded', function(){
-const _clicked = document.getElementById("_clicked");
-const my_toggle = document.getElementById("my_toggle");
-    var body = document.querySelector('body');
-    var myDiv = document.getElementById('myDiv');
-
-    if (body.dir === 'rtl'){
-        myDiv.classList.add('myDiv_rtl');
-            _clicked.addEventListener("click", () => {
-                if (my_toggle.classList.contains("active")) {
-                    my_toggle.classList.remove("active");
-                    my_toggle.style.transition = "all .5s ease";
+                requestAnimationFrame(() => {
+                    my_toggle.style.transition = "all 0.5s ease";
                     my_toggle.style.margin = "0px 240px 0px 0px";
-                    requestAnimationFrame(() => {
-                        my_toggle.style.transition = "all 0.5s ease";
-                        my_toggle.style.margin = "0px 240px 0px 0px";
-                    });
-                } else {
-                    my_toggle.classList.add("active");
+                });
+            } else {
+                my_toggle.classList.add("active");
+                my_toggle.style.transition = "all 0.5s ease";
+                my_toggle.style.margin = "0px 0px 0px 0px";
+                requestAnimationFrame(() => {
                     my_toggle.style.transition = "all 0.5s ease";
                     my_toggle.style.margin = "0px 0px 0px 0px";
-                    requestAnimationFrame(() => {
-                        my_toggle.style.transition = "all 0.5s ease";
-                        my_toggle.style.margin = "0px 0px 0px 0px";
-                    });
-                }
-            });
-            }else{
-        myDiv.classList.add('myDiv_ltr');
+                    my_toggle.style.backgroundColor = "red";
+                });
+            }
+        });
+    } else {
+        myDiv.classList.add("myDiv_ltr");
         _clicked.addEventListener("click", () => {
             if (my_toggle.classList.contains("active")) {
                 my_toggle.classList.remove("active");
                 my_toggle.style.transition = "all .5s ease";
                 my_toggle.style.margin = "0px 0px 0px 240px";
+                my_toggle.style.backgroundColor = "blue";
+
                 requestAnimationFrame(() => {
                     my_toggle.style.transition = "all 0.5s ease";
                     my_toggle.style.margin = "0px 0px 0px 240px";
@@ -95,19 +92,13 @@ const my_toggle = document.getElementById("my_toggle");
                 requestAnimationFrame(() => {
                     my_toggle.style.transition = "all 0.5s ease";
                     my_toggle.style.margin = "0px 0px 0px 0px";
+                    my_toggle.style.backgroundColor = "green";
                 });
             }
         });
     }
-})
+});
 // --------------------------------------------------------------------------------
-//  THE DARACTION OF BODY
-
-
-
-    
-       
- 
 
 // --------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------

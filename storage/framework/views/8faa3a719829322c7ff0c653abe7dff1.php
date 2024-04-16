@@ -612,7 +612,9 @@
 
             <div class="section-home">
                 <div id="my_toggle" class="toggle-sidebar">
-                    <?php echo $__env->yieldContent('content'); ?>
+                    
+                        <?php echo $__env->yieldContent('content'); ?>
+                    
                 </div>
             </div>
             <!-- ====================== -->

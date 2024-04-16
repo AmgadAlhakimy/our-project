@@ -1,6 +1,5 @@
 @extends('layouts.sidebar')
 @section('content')
-    @livewireStyles
 
 
     <main class="main ">
@@ -52,5 +51,5 @@
             </form>
         </section>
     </main>
-    @livewireScripts
+    @livewire('counter')
 @endsection

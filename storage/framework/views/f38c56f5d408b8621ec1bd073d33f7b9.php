@@ -95,6 +95,21 @@ unset($__errorArgs, $__bag); ?>
             </form>
         </section>
     </main>
+    <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('counter')->html();
+} elseif ($_instance->childHasBeenRendered('6rUX9RY')) {
+    $componentId = $_instance->getRenderedChildComponentId('6rUX9RY');
+    $componentTag = $_instance->getRenderedChildComponentTagName('6rUX9RY');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('6rUX9RY');
+} else {
+    $response = \Livewire\Livewire::mount('counter');
+    $html = $response->html();
+    $_instance->logRenderedChild('6rUX9RY', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/classrooms/create_classroom.blade.php ENDPATH**/ ?>

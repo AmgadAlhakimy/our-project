@@ -658,7 +658,9 @@
 
             <div class="section-home">
                 <div id="my_toggle" class="toggle-sidebar">
-                    @yield('content')
+                    {{-- <div id="myDive"> --}}
+                        @yield('content')
+                    {{-- </div> --}}
                 </div>
             </div>
             <!-- ====================== -->
