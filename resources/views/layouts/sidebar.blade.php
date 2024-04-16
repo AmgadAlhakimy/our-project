@@ -655,25 +655,18 @@
                 </ul>
             </div>--}}
             <!-- ============= home section ================= -->
+
             <div class="section-home">
-                <div id="myDiv">
-                    @if (config('app.direction') === 'ltr')
-                    <div id="my_toggle" class="dir_2 toggle-sidebar">
+                <div id="my_toggle" class="toggle-sidebar">
+                    {{-- <div id="myDive"> --}}
                         @yield('content')
-                    </div>
-                    @else
-                    <div id="my_toggle" class="dir_1 toggle-sidebar">
-                        @yield('content')
-                    </div>
-                    @endif
+                    {{-- </div> --}}
                 </div>
             </div>
             <!-- ====================== -->
     </div>
 
 <!-- link js -->
-
-
 
 <script src="{{URL::asset('js/all.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>

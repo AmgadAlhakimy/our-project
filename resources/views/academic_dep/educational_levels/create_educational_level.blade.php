@@ -1,5 +1,10 @@
 @extends('layouts.sidebar')
 @section('content')
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0b0f861703a111352dd3abfe2894a17d280d8798
     <main class="main ">
         <section class="section card-body">
             @if(Session::has('success'))
@@ -49,5 +54,9 @@
             </form>
         </section>
     </main>
+<<<<<<< HEAD
     @livewire('clicker')
+=======
+    @livewire('counter')
+>>>>>>> 0b0f861703a111352dd3abfe2894a17d280d8798
 @endsection

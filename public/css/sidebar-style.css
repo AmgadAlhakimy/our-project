@@ -23,10 +23,16 @@
 }
 /* ============ End sidebar footer */
 /* ==================== sidebar ========================== */
-.toggle-sidebar {
-    /* margin: 0px 0px 00px 240px; */
-    /* background-color: #000; */
+/* .toggle-sidebar{
+    margin: 0px 0px 00px 240px;
+    transition : "all .5s ease";
 }
+body[dir="ltr"] .toggle-sidebar{
+    margin: 0px 240px 0px 0px;
+    background-color: #685555;
+}
+ */
+
 /* .myDiv_rtl{
     margin: 0px 0px 240px 0px;
     background-color: red;
@@ -44,12 +50,6 @@
     margin: 0px 0px 0px 240px;
     background-color: blueviolet;
 } */
-
-
-
-
-
-
 
 .side-container .sidebar.close .toggle-sidebar {
     padding: 0;
