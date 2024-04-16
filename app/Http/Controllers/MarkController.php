@@ -33,12 +33,12 @@ class MarkController extends Controller
     {
         try {
             $classroom = Classroom::findorfail(1);
-                $marks = Mark::where('classroom_id', 1)
-                                ->where('subject_id', 5)->get();
+            $marks = Mark::where('classroom_id', 1)
+                ->where('subject_id', 5)->get();
             return view('teachers_affairs/marks.insert_marks',
-                compact('marks','classroom'));
+                compact('marks', 'classroom'));
 
-        }catch (\Exception  $e){
+        } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -73,24 +73,21 @@ class MarkController extends Controller
     public function update(UpdateMarkRequest $request, $id)
     {
         try {
-        $students_num = Mark::where('classroom_id', 1)->where('subject_id', 5)->count();
-        for ($i=0; $i<$students_num; $i++){
-        $mark = Mark::findorFail($request->mark[$i]);
-        echo "hello world";
-            $mark->update([
-//            'exam'=>$request->exam[$i],
-//            'homework'=>$request->homework[$i],
-//            'oral'=>$request->oral[$i],
-//            'behavior'=>$request->behavior[$i],
-        ]);
-        }
-        return ;
-        return $students_num;
-        return redirect()->back()->with(['success' => __('message.success')]);
+            $students_num = Mark::where('classroom_id', 1)->where('subject_id', 5)->count();
+            for ($i = 0; $i < $students_num; $i++) {
+                $mark = Mark::findorFail($request->id[$i]);
+                $mark->update([
+                    'exam' => $request->exam[$i],
+                    'homework' => $request->homework[$i],
+                    'oral' => $request->oral[$i],
+                    'behavior' => $request->behavior[$i],
+                ]);
+            }
+            return redirect()->back()->with(['success' => __('message.success')]);
 
-    } catch (\Exception $e) {
-return redirect()->back()->with(['error' => $e->getMessage()]);
-}
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**

@@ -88,10 +88,6 @@
                                     <div>20</div>
                                 </th>
                                 <th>
-                                    <div class="">Percent</div>
-                                    <div>100%</div>
-                                </th>
-                                <th>
                                     <div class=""></div>
                                 </th>
                             </tr>
@@ -99,6 +95,7 @@
                             <tbody>
                             @foreach($marks as $mark)
                                 <tr>
+                                    <input type="hidden" value="{{$mark->id}}" name="id[]">
                                     <td>{{$mark->student->id}}</td>
                                     <td>{{$mark->student->name}}</td>
                                     <td><img src="{{$mark->student->photo}}" class="student-img" alt=""></td>
