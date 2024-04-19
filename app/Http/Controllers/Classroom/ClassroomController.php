@@ -10,16 +10,18 @@ use App\Models\EducationalLevel;
 use App\Models\Student;
 use Exception;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class ClassroomController extends Controller
 {
+    use WithPagination;
     /**
      * Display classrooms.
      */
     public function index()
     {
         try {
-            $classrooms = Classroom::all();
+            $classrooms = Classroom::paginate(5);
             return view('academic_dep/classrooms.display_classrooms',
                 compact('classrooms'));
 

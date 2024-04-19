@@ -1,12 +1,12 @@
 @extends('layouts.sidebar')
 @section('content')
     <?php $counter = 1 ?>
-        <!--    --><?php //$month = "2024-01-31" ?><!---->
-    {{--    @foreach($marks as $mark)--}}
-    {{--            <?php $month = $mark->created_at->format('F') ?>--}}
-    {{--            <?php $subject = $mark->subject->name ?>--}}
-    {{--            <?php $classroom = $mark->classroom ?>--}}
-    {{--    @endforeach--}}
+        <?php $month = "2024-01-31" ?>
+        @foreach($marks as $mark)
+                <?php $month = $mark->created_at->format('F') ?>
+                <?php $subject = $mark->subject->name ?>
+                <?php $classroom = $mark->classroom ?>
+        @endforeach
 
     <div class="my-table">
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}

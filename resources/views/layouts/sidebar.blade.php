@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> {{__('public.title')}} </title>
-    @livewireStyles
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
@@ -19,9 +18,9 @@
     <link href="{{URL::asset('css/cards_info.css')}}" rel="stylesheet">
     <!-- box icons -->
     <!-- box icons -->
-    <!-- styles --> 
     <!-- styles -->
-</head> 
+    <!-- styles -->
+</head>
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
 
@@ -45,7 +44,7 @@
             </div>
         </div>
         <div class="head_1">
-            
+
             <div class=" icons ph-account">
                         <span class="notification p-relative">
                             <i class="fa-regular fa-bell fa-fw"></i>
@@ -59,9 +58,9 @@
                     <span class="lang_2 selected" >{{__('sidebar.Lang')}}</span>
                     <div class="caret"></div>
                 </div>
-    
+
                 <ul class="menuLang ms-5">
-    
+
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li>
                             <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
@@ -71,7 +70,7 @@
                     @endforeach
                 </ul>
             </div>
-            
+
             {{-- THE DROPDOWN MENEU 2 --}}
             {{-- home --}}
             <div class=" me-1 ms-1 ph-home border-left">
@@ -84,13 +83,13 @@
                 <div class="select w-100 ">
                     {{-- title --}}
                     <i class="h4 mt-1 mb-1 icon-1 fa-solid fa-bars"></i>
-                    
+
                     <div class="caret d-none"></div>
                 </div>
                 <ul class="menuLang w-200 ">
                     {{-- HOME --}}
                     <li>
-    
+
                         <a class="mt-1 ph-home_m " aria-current="page" href='/'>
                             <i class="h2 mt-1 mb-1 icon-1 fa-solid fa-home-lg-alt"></i> </a>
                     </li>
@@ -103,7 +102,7 @@
                         </div>
                     </li>
                     {{-- 2 --}}
-                    <hr class="">                
+                    <hr class="">
                     <li>
                         <a href="#" class="">{{__('sidebar.notifications')}} <i class=" ms-1 me-1 icon-1 fa-solid fa-bell"></i></a>
                     </li>
@@ -125,9 +124,9 @@
                 </ul>
             </div>
         </div>
-        
+
         {{-- ------------------------------------------- --}}
-        
+
     </div>
 </div>
 <!-- end head  -->
@@ -135,11 +134,11 @@
 <!-- start sidebar -->
     <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
         <div class="sidebar my-scroll">
-            
+
             <!-- ============= LIST ============== -->
             <div class="sidebar-nav ">
                     <ul class="list-ul ">
-                        <!--  dropdown list item عنوان القسم-->                
+                        <!--  dropdown list item عنوان القسم-->
                             <p class="title">{{__('sidebar.academic department')}}<i class="ms-1 me-1 fa-solid fa-school"></i></p>
                         {{-- القسم الأكاديمي --}}
                         {{-- اضافة الاقسام الأكاديمية --}}
@@ -236,7 +235,7 @@
                                     <a href="{{route('classroom_teacher.create')}}" class="li-link">{{__('sidebar.teachers - classes')}}</a>
                                     <a href='{{route('subject_teacher.create')}}' class="li-link">{{__('sidebar.teachers - subjects')}}</a>
                                     <a href='{{route('activity_classroom.create')}}' class="li-link">{{__('sidebar.classes - activities')}}</a>
-    
+
                                 </div>
                             </div>
                         </li>
@@ -262,8 +261,8 @@
                                 </div>
                             </div>
                         </li>
-     
-    
+
+
                         <!-- ========== 5 ============ -->
                         <p class="title">{{__('sidebar.control section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                         <div class="control_section" >
@@ -370,7 +369,7 @@
                                 </div>
                             </li>
                         </div>
-    
+
                         <!-- ========== 5 ============ -->
                             <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                                 {{-- ---المعلمين--- --}}
@@ -424,7 +423,7 @@
                             </div>
                             <div class="submenu">
                                 <div class="line-black">
-                                    <a href="{{route('marks.insertMarks',2)}}" class="li-link">رياضيات \ ثالث</a>
+                                    <a href="{{route('marks.insert',5)}}" class="li-link">رياضيات \ ثالث</a>
                                     <a href='#' class="li-link">علوم الحاسوب \ اول</a>
                                     <a href='#' class="li-link">علوم الحاسوب \ ثاني</a>
                                     <a href='#' class="li-link">علوم الحاسوب \ ثالث</a>
@@ -527,7 +526,7 @@
                                 <a href='/absence' class="li-link">{{__('sidebar.Student absence')}}</a>
                                 <a href='/student_form' class="li-link">معلومات الطلاب</a>
                                 <a href="#" class="li-link">الطلاب الأوائل</a>
-    
+
                                 {{-- START THE SECOND DROPDOWN --}}
                                 <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                     <div class="select">
@@ -543,7 +542,7 @@
                                     </ul>  {{-- END THE SECOND DROPDOWN --}}
                                 </div>
                             </div>
-    
+
                         <li class="dropdown">
                             <!-- ========== 2 ============ -->
                             <div class="sidebar-title">
@@ -576,7 +575,7 @@
                             </div>
                             <div class="submenu">
                                 <div class="line-black">
-    
+
                                 </div>
                             </div>
                         </li>
@@ -620,7 +619,7 @@
                         <!-- ====================== -->
                         </div>
                         </li>
-                    
+
                     </ul>
             </div>
         </div>
@@ -676,7 +675,6 @@
 <script src="{{URL::asset('js/jquery-3.7.1.min.js')}}"></script>
 <script src="{{URL::asset('js/main.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
-@livewireScripts
 </body>
 </html>
 

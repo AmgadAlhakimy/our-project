@@ -1,7 +1,11 @@
 <div>
-    <h1>{{ $count }}</h1>
-
-    <button wire:click="increment">+</button>
-
-    <button wire:click="decrement">-</button>
+    <button wire:click="add">
+        +
+    </button>
+    <button wire:click="sub">
+        -
+    </button>
+    <br>
+    {{$num}}
+<br>
 </div>

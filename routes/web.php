@@ -4,8 +4,8 @@
 use App\Http\Controllers\StudentController;
 use App\Models\Classroom\Classroom;
 use Illuminate\Support\Facades\Route;
+use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use App\Livewire\Counter;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +25,17 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
+
     function () {
 
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post('/livewire/update', $handle);
+        });
 
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
-        Route::get('/counter', Counter::class);
+
 
         include 'follow_up.php';
         include 'marks.php';
