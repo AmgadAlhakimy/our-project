@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {j8
     const _clicked = document.getElementById("_clicked");
     const my_toggle = document.getElementById("my_toggle");
     var body = document.querySelector("body");

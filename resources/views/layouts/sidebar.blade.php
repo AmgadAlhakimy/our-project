@@ -127,7 +127,6 @@
         </div>
         
         {{-- ------------------------------------------- --}}
-        
     </div>
 </div>
 <!-- end head  -->
@@ -236,7 +235,6 @@
                                     <a href="{{route('classroom_teacher.create')}}" class="li-link">{{__('sidebar.teachers - classes')}}</a>
                                     <a href='{{route('subject_teacher.create')}}' class="li-link">{{__('sidebar.teachers - subjects')}}</a>
                                     <a href='{{route('activity_classroom.create')}}' class="li-link">{{__('sidebar.classes - activities')}}</a>
-    
                                 </div>
                             </div>
                         </li>
@@ -261,9 +259,7 @@
                                     <a href="{{route('activity_classroom.index')}}" class="li-link">{{__('sidebar.display classes - activities')}}</a>
                                 </div>
                             </div>
-                        </li>
-     
-    
+                        </li>    
                         <!-- ========== 5 ============ -->
                         <p class="title">{{__('sidebar.control section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                         <div class="control_section" >
@@ -597,22 +593,6 @@
                                     <a href="#" class="li-link">200000</a>
                                     <a href="#" class="li-link">100000</a>
                                     <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">400000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">100000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">400000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">400000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">100000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">400000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">100000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">400000</a>
                                     <a href="#" class="li-link">200000</a> --}}
                                 </div>
                             </div>
@@ -681,8 +661,8 @@
 </html>
 
 
-{{-- تصميم الدروبداون الثانوي --}}
 
+{{-- تصميم الدروبداون الثانوي --}}
 {{-- <div class="dropDownLang my-element">
     <div class="select">
         <span class="selected">Lang</span>
@@ -696,7 +676,6 @@
         <a href="#" class="li-link_2">5</a>
     </ul>
 </div>
-
 <div class="dropDownLang my-element" >
     <div class="select">
         <span class="selected">Lang</span>
