@@ -5,8 +5,8 @@
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col-10">
-                    <input wire:model.live.debounce.500ms="search" type="text" required class="form-control " name="search"
-                           value="{{isset($search) ? $search : ''}}">
+                    <input wire:model.live.debounce.500ms="search"
+                           type="text" class="form-control" name="search">
                 </label>
             </div>
         </div>
@@ -32,16 +32,16 @@
                                style="display: none">
                     </th>
                     <th>
-                        <div class="th-head-1">{{__('public.id')}}</div>
+                        <button wire:click="ordering('id')" class="th-head-1">{{__('public.id')}}</button>
                     </th>
                     <th>
-                        <div class="th-head-3">{{__('public.name')}}</div>
+                        <button wire:click="ordering('name')" class="th-head-3">{{__('public.name')}}</button>
                     </th>
                     <th>
-                        <div class="th-head-2">{{__('public.created at')}}</div>
+                        <button wire:click="ordering('created_at')" class="th-head-2">{{__('public.created at')}}</button>
                     </th>
                     <th>
-                        <div class="th-head-2">{{__('public.updated at')}}</div>
+                        <button wire:click="ordering('updated_at')" class="th-head-2">{{__('public.updated at')}}</button>
                     </th>
                     <th colspan="2">
                         <div class="th-head-4">{{__('public.processes')}}</div>
