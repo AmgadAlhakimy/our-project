@@ -130,7 +130,6 @@
         </div>
         
         
-        
     </div>
 </div>
 <!-- end head  -->
@@ -239,7 +238,6 @@
                                     <a href="<?php echo e(route('classroom_teacher.create')); ?>" class="li-link"><?php echo e(__('sidebar.teachers - classes')); ?></a>
                                     <a href='<?php echo e(route('subject_teacher.create')); ?>' class="li-link"><?php echo e(__('sidebar.teachers - subjects')); ?></a>
                                     <a href='<?php echo e(route('activity_classroom.create')); ?>' class="li-link"><?php echo e(__('sidebar.classes - activities')); ?></a>
-    
                                 </div>
                             </div>
                         </li>
@@ -264,9 +262,7 @@
                                     <a href="<?php echo e(route('activity_classroom.index')); ?>" class="li-link"><?php echo e(__('sidebar.display classes - activities')); ?></a>
                                 </div>
                             </div>
-                        </li>
-     
-    
+                        </li>    
                         <!-- ========== 5 ============ -->
                         <p class="title"><?php echo e(__('sidebar.control section')); ?><i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                         <div class="control_section" >

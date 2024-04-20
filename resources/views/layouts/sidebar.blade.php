@@ -510,6 +510,7 @@
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
+                        
                         <div class="submenu">
                             <div class="line-black">
                                 {{-- Add Student --}}
