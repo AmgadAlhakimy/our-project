@@ -7,7 +7,11 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('marks/insertMarks/{id}',
-    [MarkController::class, 'insertMarks'])
-    ->name('marks.insertMarks');
+Route::get('marks/insert/{id}',
+    [MarkController::class, 'insert'])
+    ->name('marks.insert');
+
+Route::get('marks/modify/{id}',
+    [MarkController::class, 'modify'])
+    ->name('marks.modify');
 

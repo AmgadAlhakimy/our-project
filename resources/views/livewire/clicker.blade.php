@@ -1,5 +1,6 @@
 <div>
-    <button wire:click="add"> + </button>
-    <button wire:click="sub"> - </button>
-    <h1>{{$num}}</h1>
+     Success is as dangerous as failure. <br>
+    <button wire:click="handel">
+        click me
+    </button>
 </div>

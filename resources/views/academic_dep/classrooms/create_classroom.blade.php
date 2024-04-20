@@ -68,5 +68,4 @@
             </form>
         </section>
     </main>
-    @livewire('counter')
 @endsection

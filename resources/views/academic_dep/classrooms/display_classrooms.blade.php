@@ -14,7 +14,8 @@
                     @csrf
                     <div class="row">
                         <label class="col-10">
-                            <input type="text" required class="form-control"  name="search" value="{{isset($search) ? $search : ''}}">
+                            <input type="text" required class="form-control" name="search"
+                                   value="{{isset($search) ? $search : ''}}">
                         </label>
                         <button type="submit" class="col save-button ">{{__('public.search')}}</button>
                     </div>
@@ -24,10 +25,11 @@
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class="table-header mt-3 mb-3">
-            <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()" id="select_bt">{{__('public.select')}}</button>
+            <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()"
+                    id="select_bt">{{__('public.select')}}</button>
             <button class="save-button btn-danger me-1 ms-1">{{__('public.delete all')}}</button>
         </div>
-        
+
         <!-- table-hover table-striped -->
         <div class="table-section shadow-none">
             <div class="card table-section ">
@@ -35,8 +37,8 @@
                     <thead>
                     <tr>
                         <th class=" me-4 ms-4">
-                        <input type="checkbox" id="select_all" 
-                            style="display: none" >
+                            <input type="checkbox" id="select_all"
+                                   style="display: none">
                         </th>
                         <th>
                             <div class="th-head-1">{{__('public.id')}}</div>
@@ -64,7 +66,8 @@
                     @foreach($classrooms  as $classroom )
                         <tbody>
                         <tr>
-                            <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
+                            <td><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none">
+                            </td>
                             <td>{{$classroom->id}}</td>
                             <td>{{$classroom->name}}</td>
                             <td>{{$classroom->cost}}</td>
@@ -72,7 +75,8 @@
                             <td>{{$classroom->created_at}}</td>
                             <td>{{$classroom->updated_at}}</td>
                             <td>
-                                <a href="{{route('classrooms.edit',$classroom->id)}}" class="btn save-button btn-success w-100">
+                                <a href="{{route('classrooms.edit',$classroom->id)}}"
+                                   class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                             <td>
@@ -82,12 +86,13 @@
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$classroom->id}}"
-                                    tabindex="-1" aria-labelledby="exampleModalLabel"
-                                    aria-hidden="true">
+                                     tabindex="-1" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
+                                                <h5 class="modal-title"
+                                                    id="exampleModalLabel">{{__('public.delete')}}</h5>
                                             </div>
                                             <div class="modal-body">
                                                 {{__('public.are you sure you want to delete').$classroom->name}}
@@ -95,10 +100,12 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
-                                                <form method="post" action="{{route('classrooms.destroy',$classroom->id)}}">
+                                                <form method="post"
+                                                      action="{{route('classrooms.destroy',$classroom->id)}}">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
+                                                    <button type="submit"
+                                                            class="btn btn-primary">{{__('public.ok')}}</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -111,5 +118,6 @@
                 </table>
             </div>
         </div>
+        {{$classrooms->links()}}
     </div>
 @endsection

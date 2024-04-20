@@ -29,13 +29,13 @@ class MarkController extends Controller
      * Show the form for inserting marks for student
      * according to a subject.
      */
-    public function insertMarks($id)
+    public function insert($id)
     {
         try {
             $classroom = Classroom::findorfail(1);
 
             $marks = Mark::where('classroom_id', 1)
-                ->where('subject_id', 7)->get();
+                ->where('subject_id', $id)->get();
             return view('teachers_affairs/marks.insert_marks',
                 compact('marks', 'classroom'));
 
@@ -71,10 +71,10 @@ class MarkController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMarkRequest $request, $id)
+    public function modify(UpdateMarkRequest $request, $id)
     {
         try {
-            $students_num = Mark::where('classroom_id', 1)->where('subject_id', 7)->count();
+            $students_num = Mark::where('classroom_id', 1)->where('subject_id', $id)->count();
             for ($i = 0; $i < $students_num; $i++) {
                 $mark = Mark::findorFail($request->id[$i]);
                 $mark->update([

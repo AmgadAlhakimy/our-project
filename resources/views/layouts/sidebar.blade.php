@@ -510,7 +510,6 @@
                                 <i class="icon-1 fa-solid fa-chevron-down"></i>
                             </a>
                         </div>
-                        
                         <div class="submenu">
                             <div class="line-black">
                                 {{-- Add Student --}}
@@ -662,8 +661,8 @@
 </html>
 
 
-
 {{-- تصميم الدروبداون الثانوي --}}
+
 {{-- <div class="dropDownLang my-element">
     <div class="select">
         <span class="selected">Lang</span>
@@ -677,6 +676,7 @@
         <a href="#" class="li-link_2">5</a>
     </ul>
 </div>
+
 <div class="dropDownLang my-element" >
     <div class="select">
         <span class="selected">Lang</span>
