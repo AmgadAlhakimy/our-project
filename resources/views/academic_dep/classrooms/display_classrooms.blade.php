@@ -118,6 +118,6 @@
                 </table>
             </div>
         </div>
-        {{$classrooms->links()}}
+        {{$classrooms->links('pagination::bootstrap-5')}}
     </div>
 @endsection

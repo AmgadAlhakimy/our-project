@@ -7,7 +7,7 @@ body {
     /* background-color: var(--body-color); */
 }
 *:focus {
-    outline: none; 
+    outline: none;
 }
 a {
     text-decoration: none;
@@ -94,7 +94,7 @@ input::-webkit-inner-spin-button {
   width: 250px;
   background-color: black;
 
-} 
+}
 .main h1::after {
   width: 40px;
   background-color: rgb(124, 115, 115);
@@ -880,3 +880,8 @@ input[type="checkbox"].toggle:checked + input.test1 {
 .bg-gray-1 {
     background-color: rgb(201, 201, 201);
 }
+/* the arrows that take you to another page */
+/*.pagination .pagination-prev,*/
+/*.pagination .pagination-next {*/
+/*    font-size: 14px;*/
+/*}*/

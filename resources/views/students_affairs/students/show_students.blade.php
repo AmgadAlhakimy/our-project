@@ -14,7 +14,8 @@
                         @csrf
                         <div class="row">
                             <label class="col-10">
-                                <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
+                                <input type="text" required class="form-control " name="search"
+                                       value="{{isset($search) ? $search : ''}}">
                             </label>
                             <button type="submit" class="col save-button ">{{__('public.search')}}</button>
                         </div>
@@ -24,18 +25,19 @@
         </div>
         <!-- table-hover table-striped -->
         <div class="table-header mt-3 mb-3">
-            <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()" id="select_bt">{{__('public.select')}}</button>
+            <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()"
+                    id="select_bt">{{__('public.select')}}</button>
             <button class="save-button btn-danger me-1 ms-1">{{__('public.delete all')}}</button>
         </div>
         <div class="table-section shadow-none">
             <div class="card table-section ">
-                <table class=" " id="check_table" >
+                <table class=" " id="check_table">
                     <thead>
                     <tr>
 
                         <th class=" me-4 ms-4">
                             <input type="checkbox" id="select_all"
-                                style="display: none" >
+                                   style="display: none">
                         </th>
                         <th class="th-head-1  ">{{__('public.id')}}</th>
                         <th class="th-head-3">{{__('public.name')}}</th>
@@ -47,18 +49,23 @@
                         <th class="th-head-2">{{__('public.class')}}</th>
                         <th class="th-head-2">{{__('public.created at')}}</th>
                         <th class="th-head-2">{{__('public.updated at')}}</th>
-                        <th colspan="2"><div class="th-head-4">{{__('public.processes')}}</div></th>
-                        <th ><div class="th-head-2">{{__('student.more info')}}</div></th>
+                        <th colspan="2">
+                            <div class="th-head-4">{{__('public.processes')}}</div>
+                        </th>
+                        <th>
+                            <div class="th-head-2">{{__('student.more info')}}</div>
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($students  as $student )
                         <tr class="test_1">
-                            <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
+                            <td><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none">
+                            </td>
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
                             <td><img src="{{asset($student->photo)}}"
-                                class="student-img" alt="photo"></td>
+                                     class="student-img" alt="photo"></td>
                             <td>{{$student->address}}</td>
                             <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>
@@ -69,7 +76,7 @@
 
                             <td>
                                 <a href="{{route('students.edit',$student->id)}}"
-                                    class="btn save-button btn-success w-100">
+                                   class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
                             </td>
                             <td>
@@ -80,12 +87,13 @@
                                 <!-- Modal -->
 
                                 <div class="modal fade" id="delete{{$student->id}}"
-                                        tabindex="-1" aria-labelledby="exampleModalLabel"
-                                        aria-hidden="true">
+                                     tabindex="-1" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
+                                                <h5 class="modal-title"
+                                                    id="exampleModalLabel">{{__('public.delete')}}</h5>
                                             </div>
                                             <div class="modal-body">
                                                 {{__('public.are you sure you want to delete').$student->name}}
@@ -96,7 +104,8 @@
                                                 <form method="post" action="{{route('students.destroy',$student->id)}}">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
+                                                    <button type="submit"
+                                                            class="btn btn-primary">{{__('public.ok')}}</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -106,11 +115,12 @@
                             {{-- واجهة المعلومات او الاستمارة الكاملة الخاصة بالطالب --}}
                             <td>
                                 <a href="{{route('students.more',$student->id)}}"
-                                    class="btn save-button btn-info w-100">
+                                   class="btn save-button btn-info w-100">
                                     <i class="fa-solid fa-info-circle"></i> {{__('Student.more info')}} </a>
                             </td>
                         </tr>
                     @endforeach
+            {{$students->links('pagination::bootstrap-5')}}
                     </tbody>
                 </table>
             </div>
