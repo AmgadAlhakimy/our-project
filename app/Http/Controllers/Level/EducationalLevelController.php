@@ -8,9 +8,11 @@ use App\Http\Requests\Level\UpdateEducationalLevelRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class EducationalLevelController extends Controller
 {
+    use WithPagination;
 
     /**
      * Display Educational levels.
@@ -18,7 +20,7 @@ class EducationalLevelController extends Controller
     public function index()
     {
         try {
-            $levels = EducationalLevel::all();
+            $levels = EducationalLevel::paginate(5);
             return view('academic_dep/educational_levels.display_educational_levels',
                 compact('levels'));
 

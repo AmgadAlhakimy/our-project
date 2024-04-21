@@ -22,7 +22,7 @@ class StudentController extends Controller
     public function index()
     {
         try {
-        $students = Student::all();
+        $students = Student::paginate(20);
         $classrooms= Classroom::all();
         return view('students_affairs/students.show_students',
             compact('students', 'classrooms'));

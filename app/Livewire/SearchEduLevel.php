@@ -4,10 +4,15 @@ namespace App\Livewire;
 
 use App\Models\EducationalLevel;
 use Livewire\Component;
+use Livewire\WithPagination;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class SearchEduLevel extends Component
 {
+    use WithPagination;
+
+    public $pagination = 5;
+
     public $search = '';
     public $orderBy = 'id';
     public $sortOrder = 'asc';
@@ -22,7 +27,8 @@ class SearchEduLevel extends Component
 
     public function render()
     {
-        $levels = [];
+        try {
+
         $lang = LaravelLocalization::setLocale();
 
         if (strlen($this->search) >= 1) {
@@ -32,9 +38,13 @@ class SearchEduLevel extends Component
 
             $levels = EducationalLevel::orderBy(
                 ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
-                $this->sortOrder)->get();
+                $this->sortOrder)->paginate($this->pagination);
         }
+
         return view('livewire.search-edu-level',
             compact('levels'));
+        }catch (\Exception $e){
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 }

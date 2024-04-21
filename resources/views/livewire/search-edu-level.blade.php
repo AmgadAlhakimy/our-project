@@ -38,10 +38,12 @@
                         <button wire:click="ordering('name')" class="th-head-3">{{__('public.name')}}</button>
                     </th>
                     <th>
-                        <button wire:click="ordering('created_at')" class="th-head-2">{{__('public.created at')}}</button>
+                        <button wire:click="ordering('created_at')"
+                                class="th-head-2">{{__('public.created at')}}</button>
                     </th>
                     <th>
-                        <button wire:click="ordering('updated_at')" class="th-head-2">{{__('public.updated at')}}</button>
+                        <button wire:click="ordering('updated_at')"
+                                class="th-head-2">{{__('public.updated at')}}</button>
                     </th>
                     <th colspan="2">
                         <div class="th-head-4">{{__('public.processes')}}</div>
@@ -98,8 +100,15 @@
                 @endforeach
                 </tbody>
             </table>
-
-
         </div>
     </div>
+    {{$levels->links('pagination::bootstrap-5')}}
+    <label>Number of rows:</label>
+    <select class=""  wire:model.live="pagination">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+    </select>
+<br><br><br><br>
 </div>

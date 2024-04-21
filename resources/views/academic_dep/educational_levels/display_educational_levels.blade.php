@@ -25,32 +25,17 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                             {{__('public.cancel')}}</button>
-                        <form method="post"
+                        <form method="post">
                         {{--                                  action="{{route('educational_levels.destroy',$Level->id)}}">--}}
                         @method('DELETE')
                         @csrf
                         <button type="submit"
                                 class="btn btn-primary">{{__('public.ok')}}</button>
-                        <input type="text" id="delete_all_id" name="delete_all_id" value=''>
+                            <label for="delete_all_id"></label><input type="text" id="delete_all_id" name="delete_all_id" value=''>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(function () {
-            $("#btn_delete_all").click(function () {
-                console.log('hello world');
-                var seleted = new Array();
-                $("#check_table input[type=checkbox]:checked").each(function () {
-                    seleted.push(this.value);
-                });
-                if (seleted.length > 0) {
-                    $('#delete_all').modal('show')
-                    $('input[id="delete_all_id"]').val(seleted);
-                }
-            });
-        });
-    </script>
 @endsection
