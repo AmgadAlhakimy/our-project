@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e40d005a33d2848f4b47439785e31d82",
+    "content-hash": "7292061101bf5e686a2fb34c5138fe66",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -186,16 +186,16 @@
         },
         {
             "name": "codezero/laravel-unique-translation",
-            "version": "4.3.0",
+            "version": "4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/codezero-be/laravel-unique-translation.git",
-                "reference": "0ce43fc5d5e798533f219b077dee5238bc84d1d7"
+                "reference": "a2daae936dbc3bf0658c8d13ec6a9f9ff20357b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codezero-be/laravel-unique-translation/zipball/0ce43fc5d5e798533f219b077dee5238bc84d1d7",
-                "reference": "0ce43fc5d5e798533f219b077dee5238bc84d1d7",
+                "url": "https://api.github.com/repos/codezero-be/laravel-unique-translation/zipball/a2daae936dbc3bf0658c8d13ec6a9f9ff20357b1",
+                "reference": "a2daae936dbc3bf0658c8d13ec6a9f9ff20357b1",
                 "shasum": ""
             },
             "require": {
@@ -245,7 +245,7 @@
             ],
             "support": {
                 "issues": "https://github.com/codezero-be/laravel-unique-translation/issues",
-                "source": "https://github.com/codezero-be/laravel-unique-translation/tree/4.3.0"
+                "source": "https://github.com/codezero-be/laravel-unique-translation/tree/4.3.1"
             },
             "funding": [
                 {
@@ -257,7 +257,7 @@
                     "type": "ko_fi"
                 }
             ],
-            "time": "2024-03-12T18:01:02+00:00"
+            "time": "2024-04-17T08:28:56+00:00"
         },
         {
             "name": "dasprid/enum",
@@ -7897,16 +7897,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "10.5.18",
+            "version": "10.5.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "835df1709ac6c968ba34bf23f3c30e5d5a266de8"
+                "reference": "c726f0de022368f6ed103e452a765d3304a996a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/835df1709ac6c968ba34bf23f3c30e5d5a266de8",
-                "reference": "835df1709ac6c968ba34bf23f3c30e5d5a266de8",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c726f0de022368f6ed103e452a765d3304a996a4",
+                "reference": "c726f0de022368f6ed103e452a765d3304a996a4",
                 "shasum": ""
             },
             "require": {
@@ -7978,7 +7978,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.18"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.5.19"
             },
             "funding": [
                 {
@@ -7994,7 +7994,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-14T07:05:31+00:00"
+            "time": "2024-04-17T14:06:18+00:00"
         },
         {
             "name": "sebastian/cli-parser",

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> <?php echo e(__('public.title')); ?> </title>
-    <?php echo \Livewire\Livewire::styles(); ?>
+    <?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::styles(); ?>
 
     <link href="<?php echo e(URL::asset('css/bootstrap.min.css')); ?>" rel="stylesheet">
     <link href="<?php echo e(URL::asset('css/all.min.css')); ?>" rel="stylesheet">
@@ -423,7 +423,7 @@
                             </div>
                             <div class="submenu">
                                 <div class="line-black">
-                                    <a href="<?php echo e(route('marks.insertMarks',2)); ?>" class="li-link">رياضيات \ ثالث</a>
+                                    
                                     <a href='#' class="li-link">علوم الحاسوب \ اول</a>
                                     <a href='#' class="li-link">علوم الحاسوب \ ثاني</a>
                                     <a href='#' class="li-link">علوم الحاسوب \ ثالث</a>
@@ -626,7 +626,7 @@
 <script src="<?php echo e(URL::asset('js/jquery-3.7.1.min.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('js/main.js')); ?>"></script>
 <script src="<?php echo e(URL::asset('js/script.js')); ?>"></script>
-<?php echo \Livewire\Livewire::scripts(); ?>
+<?php echo \Livewire\Mechanisms\FrontendAssets\FrontendAssets::scripts(); ?>
 
 </body>
 </html>

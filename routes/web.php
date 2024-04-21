@@ -118,7 +118,6 @@ Route::group(
             [StudentController::class, 'more'])
             ->name('students.more');
 
-
     });
 
 
