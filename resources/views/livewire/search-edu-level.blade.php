@@ -3,13 +3,10 @@
         {{-- the title and search --}}
         <h4 class="form-group container-title">{{__('eduLevel.educational Level info')}}</h4>
         <div class="row first-card mt-4">
-<<<<<<< HEAD
             <div class="row">
                 <label class="col">
-=======
             <div class="row" >
                 <label class="col-10">
->>>>>>> 3b023b8f3c82dbbe5c6cf08378b67564e8fe2c7e
                     <input wire:model.live.debounce.500ms="search"
                     type="text" class="form-control" name="search">
                 </label>
@@ -17,6 +14,8 @@
             </div>
         </div>
     </div>
+    </div>
+
     <div class="table-header mt-3 mb-3" id="paginated">
         <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()"
                 id="select_bt">{{__('public.select')}}</button>
@@ -27,7 +26,6 @@
             {{__('public.delete all')}}</button>
     </div>
     <!-- table-hover table-striped -->
-<<<<<<< HEAD
 
     <div class="ms-4 me-4">
         <label class=""> {{__('public.number of rows:')}} </label>
@@ -42,10 +40,7 @@
     </div>
     {{-- ------------------------------- --}}
 
-    <div class="table-section shadow-none">
-=======
     <div class="table-section shadow-none" >
->>>>>>> 3b023b8f3c82dbbe5c6cf08378b67564e8fe2c7e
         <div class="card table-section">
             <table class=" " id="check_table">
                 <thead>
@@ -125,21 +120,10 @@
             </table>
         </div>
     </div>
-<<<<<<< HEAD
 
     <div class="me-4 ms-4 mt-3">
         {{$levels->links('pagination::bootstrap-5')}}
     </div>
-
-=======
-    {{$levels->links(data: ['scrollTo' => '#paginated'])}}
-    <label>Number of rows:</label>
-    <select class=""  wire:model.live="pagination">
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-    </select>
->>>>>>> 3b023b8f3c82dbbe5c6cf08378b67564e8fe2c7e
+    
 <br><br><br><br>
 </div>

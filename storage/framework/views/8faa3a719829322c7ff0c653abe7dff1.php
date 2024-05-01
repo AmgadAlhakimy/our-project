@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 
 <html lang="">
+<?php echo $__env->make('layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
 
-    <?php echo $__env->make('layouts.links', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    
-    <body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
-        
-        <?php echo $__env->make('layouts.sidebar_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <?php echo $__env->make('layouts.sidebar_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <!-- start sidebar -->
 
     <div class="side-container" <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
         <div class="sidebar my-scroll">
-            
+
             <!-- ============= LIST ============== -->
             <div class="sidebar-nav ">
                     <ul class="list-ul ">
-                        <!--  dropdown list item عنوان القسم-->                
+                        <!--  dropdown list item عنوان القسم-->
                             <p class="title"><?php echo e(__('sidebar.academic department')); ?><i class="ms-1 me-1 fa-solid fa-school"></i></p>
                         
                         
@@ -136,7 +135,7 @@
                                     <a href="<?php echo e(route('activity_classroom.index')); ?>" class="li-link"><?php echo e(__('sidebar.display classes - activities')); ?></a>
                                 </div>
                             </div>
-                        </li>    
+                        </li>
                         <!-- ========== 5 ============ -->
                         <p class="title"><?php echo e(__('sidebar.control section')); ?><i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                         <div class="control_section" >
@@ -243,6 +242,7 @@
                                 </div>
                             </li>
                         </div>
+                        
                         <!-- ========== 5 ============ -->
                             <p class="title"><?php echo e(__('sidebar.teacher section')); ?><i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                                 
@@ -399,7 +399,7 @@
                                 <a href='/absence' class="li-link"><?php echo e(__('sidebar.Student absence')); ?></a>
                                 <a href='/student_form' class="li-link">معلومات الطلاب</a>
                                 <a href="#" class="li-link">الطلاب الأوائل</a>
-    
+
                                 
                                 <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                     <div class="select">
@@ -415,7 +415,7 @@
                                     </ul>  
                                 </div>
                             </div>
-    
+
                         <li class="dropdown">
                             <!-- ========== 2 ============ -->
                             <div class="sidebar-title">
@@ -448,14 +448,14 @@
                             </div>
                             <div class="submenu">
                                 <div class="line-black">
-    
+
                                 </div>
                             </div>
                         </li>
                         <!-- ====================== -->
                         </div>
                         </li>
-                    
+
                     </ul>
             </div>
         </div>
