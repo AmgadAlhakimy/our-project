@@ -52,9 +52,8 @@ ul {
     --sidebar-bg: #fff;
     --sidebar-head-bg: #fff;
     --border-color: #eee;
-
     --green-color: #22c55e;
-    /* ----------------------- bottuns colors */
+    /* ----------------------- buttons colors */
     --section-bg-2: #d5d7da;
     --buttons-bg: #222;
 }
@@ -62,8 +61,9 @@ ul {
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 /* Start scroll style  */
 ::-webkit-scrollbar {
-    /* width: 10px; */
+    width: 10px;
     height: 10px;
+    overflow: auto;
 }
 ::-webkit-scrollbar-track {
     background-color: #ddd;
@@ -75,30 +75,12 @@ input::-webkit-inner-spin-button {
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--orange2-color);
+    border-radius: 20px;
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--o-title-1);
 }
 /* End scroll style  */
-/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-/* .main h1::before,
-.main h1::after {
-  content: "";
-  position: absolute;
-  height: 3px;
-  background-color: #0075ff;
-  left: 0;
-  bottom: -10px;
-}
-.main h1::before {
-  width: 250px;
-  background-color: black;
-
-}
-.main h1::after {
-  width: 40px;
-  background-color: rgb(124, 115, 115);
-} */
 /* Start section  */
 .section {
     flex: 1 1 auto;

@@ -86,5 +86,6 @@ return [
     'absent'=>'الغياب',
     'description'=>'سبب الغياب',
     'please select the gender'=>'الرجاء اختيار النوع',
+    'number of rows:'=>'عدد الصفوف:',
 
 ];

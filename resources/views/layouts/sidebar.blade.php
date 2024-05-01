@@ -1,137 +1,14 @@
 <!DOCTYPE html>
 
 <html lang="">
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> {{__('public.title')}} </title>
-    @livewireStyles
-    <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/tables.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/normalize.css')}}" rel="stylesheet">
-    {{-- <link href="{{URL::asset('css/sidebar-header.css')}}" rel="stylesheet"> --}}
-    <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/cards_info.css')}}" rel="stylesheet">
-    <!-- box icons -->
-    <!-- box icons -->
-    <!-- styles --> 
-    <!-- styles -->
-</head> 
-<body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
-
-<!-- Start head  -->
-<!-- Start content  -->
-<div class="content">
-    <div class="head " dir="">
-        <div class="head_1">
-            <!-- ============= logo ================== -->
-            <div class="my-menu-btn row" id="_clicked">
-                {{-- ___________ the main logo in the sidebar --}}
-                <div class="col sidebar-icon">
-                    <i class="h3 logo-text-1 fa-solid fa-bars"></i>
-                </div>
-                <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" class="col logo-img" alt="" />
-            </div>
-            {{-- THE MAIN SEARCH OF SIDEBAR --}}
-            <div class=" search p-relative ph-search">
-                <label for="rtl"></label> <input class="search1" type="search"
-                    placeholder="{{__('sidebar.search')}}" id="rtl" />
-            </div>
-        </div>
-        <div class="head_1">
-            
-            <div class=" icons ph-account">
-                        <span class="notification p-relative">
-                            <i class="fa-regular fa-bell fa-fw"></i>
-                        </span>
-                <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
-            </div>
-            {{-- THE DROPDOWN LUNGUAGE --}}
-            <div class=" dropDownLang ph-lang">
-                <div class="select">
-                    <span class="lang_1 selected " >{{__('sidebar.short_lang')}}</span>
-                    <span class="lang_2 selected" >{{__('sidebar.Lang')}}</span>
-                    <div class="caret"></div>
-                </div>
+    @include('layouts.links')
     
-                <ul class="menuLang ms-5">
-    
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li>
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                {{ $properties['native'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-            
-            {{-- THE DROPDOWN MENEU 2 --}}
-            {{-- home --}}
-            <div class=" me-1 ms-1 ph-home border-left">
-                <a class="card-info  " aria-current="page" href='/'>
-                    <i class="mt-2 h3 icon-1 fa-solid fa-home-lg-alt"></i>
-                </a>
-            </div>
-            {{-- -------------------- --}}
-            <div class=" dropDownLang sec_menu">
-                <div class="select w-100 ">
-                    {{-- title --}}
-                    <i class="h4 mt-1 mb-1 icon-1 fa-solid fa-bars"></i>
-                    
-                    <div class="caret d-none"></div>
-                </div>
-                <ul class="menuLang w-200 ">
-                    {{-- HOME --}}
-                    <li>
-    
-                        <a class="mt-1 ph-home_m " aria-current="page" href='/'>
-                            <i class="h2 mt-1 mb-1 icon-1 fa-solid fa-home-lg-alt"></i> </a>
-                    </li>
-                    {{-- 1 --}}
-                    <hr class="ph-home_m">
-                    <li>
-                        <div id="sidebar_1" class="icons ">
-                            <img class=" " src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
-                            <a class="title-4 ms-1 me-1">{{__('sidebar.my account')}} </i></a>
-                        </div>
-                    </li>
-                    {{-- 2 --}}
-                    <hr class="">                
-                    <li>
-                        <a href="#" class="">{{__('sidebar.notifications')}} <i class=" ms-1 me-1 icon-1 fa-solid fa-bell"></i></a>
-                    </li>
-                    {{-- 3 --}}
-                    <hr class="">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li class="">
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                {{ $properties['native'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                    {{-- 4 --}}
-                    <hr class="ph-search_m">
-                    <div class="search p-relative mt-1 ph-search_m">
-                        <input class="search1 w-100 " type="search"
-                            placeholder="{{__('sidebar.search')}}" id="rtl" />
-                    </div>
-                </ul>
-            </div>
-        </div>
-        
-        {{-- ------------------------------------------- --}}
-    </div>
-</div>
-<!-- end head  -->
-<!-- End content  -->
+    <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
+        {{-- sidebar header --}}
+        @include('layouts.sidebar_header')
 <!-- start sidebar -->
+
     <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
         <div class="sidebar my-scroll">
             
@@ -366,7 +243,6 @@
                                 </div>
                             </li>
                         </div>
-    
                         <!-- ========== 5 ============ -->
                             <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                                 {{-- ---المعلمين--- --}}
@@ -576,27 +452,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li class=" ">
-                            <!-- ========== 2 ============ -->
-                            <!-- <div class="sidebar-title"> -->
-                            <!-- <a href="#" class="li-link title-4">
-                                <i class="icon-1 fa-solid fa-window-restore"></i>
-                                <span class="menu-name"> من نحن</span>
-                                <i class=" fa-solid fa-chevron-down"></i>
-                        </a> -->
-                            <!-- </div> -->
-                            <div class="submenu">
-                                <div class="">
-                                    {{-- <a href="#" class="li-link">100000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">400000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">100000</a>
-                                    <a href="#" class="li-link">200000</a>
-                                    <a href="#" class="li-link">200000</a> --}}
-                                </div>
-                            </div>
-                        </li>
                         <!-- ====================== -->
                         </div>
                         </li>
@@ -604,89 +459,22 @@
                     </ul>
             </div>
         </div>
-
-            <!-- ========== THE LAST MENU ============ -->
-            {{-- <div class=" menu-footer">
-                <ul class="list-ul">
-                    <!--  dropdown list item -->
-                    <p class="title">admin</p>
-                    <li class="dropdown">
-                        <!-- ========== 1 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name"> من نحن </span>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <!-- ========== 2 ============ -->
-                        <div class="sidebar-title">
-                            <a href="#" class="li-link title-4">
-                                <i
-                                    class="icon-1 fa-solid fa-window-restore"
-                                ></i>
-                                <span class="menu-name"> خروج </span>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>--}}
-            <!-- ============= home section ================= -->
-
-            <div class="section-home">
-                <div id="my_toggle" class="toggle-sidebar">
-                    {{-- <div id="myDive"> --}}
-                        @yield('content')
-                    {{-- </div> --}}
+        {{-- start toggle section --}}
+        <div class="section-home">
+            <div id="my_toggle" class="toggle-sidebar">
+                <div id="myDive">
+                    @yield('content')
                 </div>
             </div>
-            <!-- ====================== -->
+        </div>
+        {{-- end toggle section --}}
     </div>
+    <!-- end sidebar -->
+    <!-- ====================== -->
 
-<!-- link js -->
 
-<script src="{{URL::asset('js/all.min.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-<script src="{{URL::asset('js/jquery.js')}}"></script>
-<script src="{{URL::asset('js/jquery-3.7.1.min.js')}}"></script>
-<script src="{{URL::asset('js/main.js')}}"></script>
-<script src="{{URL::asset('js/script.js')}}"></script>
-@livewireScripts
+<!-- start link js -->
+    @include('layouts.js_links')
+<!-- end link js -->
 </body>
 </html>
-
-
-{{-- تصميم الدروبداون الثانوي --}}
-
-{{-- <div class="dropDownLang my-element">
-    <div class="select">
-        <span class="selected">Lang</span>
-        <div class="caret"></div>
-    </div>
-    <ul class="menuLang">
-        <a href="#" class="li-link_2">1</a>
-        <a href="#" class="li-link_2">2</a>
-        <a href="#" class="li-link_2">3</a>
-        <a href='#' class="li-link_2">4</a>
-        <a href="#" class="li-link_2">5</a>
-    </ul>
-</div>
-
-<div class="dropDownLang my-element" >
-    <div class="select">
-        <span class="selected">Lang</span>
-        <div class="caret"></div>
-    </div>
-    <ul class="menuLang">
-        <a href="#" class="li-link_2">1</a>
-        <a href="#" class="li-link_2">2</a>
-        <a href="#" class="li-link_2">3</a>
-        <a href='#' class="li-link_2">4</a>
-        <a href="#" class="li-link_2">5</a>
-    </ul>
-</div> --}}

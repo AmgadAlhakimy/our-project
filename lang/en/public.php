@@ -83,4 +83,6 @@ return [
     'description'=>'Description',
     'please select the gender'=>'please select the gender',
 
+    'number of rows:'=>'Number of Rows:',
+
 ];

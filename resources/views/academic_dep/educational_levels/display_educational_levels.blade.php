@@ -17,7 +17,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title"
-                            id="exampleModalLabel">{{__('public.delete')}}</h5>
+                            id="exampleModalLabel">{{__('public.delete')}} </h5>
                     </div>
                     <div class="modal-body">
                         {{--                            {{__('public.are you sure you want to delete').$Level->name}}--}}

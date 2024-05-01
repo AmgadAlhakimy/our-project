@@ -30,9 +30,7 @@
 body[dir="ltr"] .toggle-sidebar{
     margin: 0px 240px 0px 0px;
     background-color: #685555;
-}
- */
-
+}*/
 /* .myDiv_rtl{
     margin: 0px 0px 240px 0px;
     background-color: red;
@@ -40,8 +38,6 @@ body[dir="ltr"] .toggle-sidebar{
 .myDiv_ltr{
     background-color: green;
 } */
-
-
 /* .dir_1{
     margin: 0px 240px 0px 0px;
     background-color: aqua;
@@ -50,7 +46,6 @@ body[dir="ltr"] .toggle-sidebar{
     margin: 0px 0px 0px 240px;
     background-color: blueviolet;
 } */
-
 .side-container .sidebar.close .toggle-sidebar {
     padding: 0;
 }
@@ -79,7 +74,9 @@ body[dir="ltr"] .toggle-sidebar{
 
 /* ----------------- the second menu of sidebar -------------------- */
 .my-scroll {
-    /* position: relative; */
+    overflow: hidden;
+}
+.my-scroll:hover {
     overflow: auto;
 }
 .my-menu {
@@ -234,21 +231,21 @@ body[dir="ltr"] .toggle-sidebar{
 /* -------------- submenu close -----------------*/
 
 /* .sidebar.active .my-menu > ul > li > a .sidebar-text::after {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 20%;
-  width: 20px;
-  height: 20px;
-  border-radius: 2px;
-  background-color: #ff0000;
-  transform: rotate(45deg);
-  z-index: -1;
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 20%;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    background-color: #ff0000;
+    transform: rotate(45deg);
+    z-index: -1;
 }
 .sidebar.active > ul > li > a:hover .sidebar-text {
-  left: 50px;
-  opacity: 1;
-  visibility: visible;
+    left: 50px;
+    opacity: 1;
+    visibility: visible;
 } */
 /* ----------------------  LOGO STYLE ------------------------- */
 .logo-img {

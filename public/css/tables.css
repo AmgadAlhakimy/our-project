@@ -22,12 +22,12 @@ body {
 }
 .table-section {
     white-space: nowrap;
-    overflow-x: scroll;
     height: 100%;
     overflow: auto;
     margin-top: 10px;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--sidebar-bg);
 }
 .table-head {
     position: sticky;
@@ -50,11 +50,22 @@ body {
     border: none;
     transition: all 1s ease;
 }
-thead th {
+thead th,
+thead th button {
     top: 0;
     background-color: var(--container-color);
     padding: 10px;
     color: var(--S-Color-1);
+    font-weight: bold;
+    border: none;
+    /* backdrop-filter: blur(1px); */
+}
+thead th button {
+    background-color: transparent;
+}
+thead th button:hover , button:hover .icon-arrow{
+    color: var(--S-Color-2);
+    border-color:  var(--S-Color-2);
 }
 th,
 td {
@@ -68,9 +79,10 @@ td {
 td {
     /* border-left: 0.03px double var(--border-color); */
 }
-.mark_table th, .mark_table td{
-    border-left:1px solid #dddddd ;
-    border-right:1px solid #dddddd ;
+.mark_table th,
+.mark_table td {
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
 }
 
 td .student-img {
@@ -186,8 +198,8 @@ tr:hover img {
     border: 2px solid var(--o-title-1);
     border-radius: 5px;
     color: #000;
-  }
-  .check_style input[type="checkbox"]:checked ~ i {
+}
+.check_style input[type="checkbox"]:checked ~ i {
     border-top: none;
     border-right: none;
     box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.1);
@@ -197,9 +209,28 @@ tr:hover img {
     border-radius: 0;
     border-color: var(--green-color);
     /* margin-bottom: 6px; */
-  }
-  .check_style input[type="checkbox"] {
+}
+.check_style input[type="checkbox"] {
     -webkit-appearance: none;
-  }
-  /* END THE CHECK BOX STYLE */
+}
+/* END THE CHECK BOX STYLE */
+.num_rows{
+    border-color: var(--S-Color-1);
+    font-weight: bold;
+    border-radius: 5px;
+    /* margin: 0px 5px; */
+}
+.icon-arrow{
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50% ;
+    text-align: center;
+    font-size: 1rem;
+    border: 1.4px solid var(--S-Color-1);
+    margin: 0 4px;
+}
 
+th button.active .icon-arrow { 
+    transform: rotate(180deg); 
+}
