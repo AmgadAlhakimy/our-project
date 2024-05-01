@@ -12,7 +12,7 @@ return [
     | as the size rules. Feel free to tweak each of these messages here.
     |
     */
- 
+
     //create Student
     'Register a new Student'=>'Register a new Student',
     'Student info'=>'Student info',
@@ -46,7 +46,7 @@ return [
     'kin name in english'=>'kin name in English',
     'kin relationship in arabic'=>'kin relationship in Arabic',
     'kin relationship in english'=>'kin relationship in English',
-    "kin contact"=>"kin Contact",
+    'kin contact'=>'kin Contact',
     'health info'=>'Health Info',
     'does the Student'=>'Does the Student',
     'take any medicine ?'=>'Take any Medicine ?',
@@ -79,12 +79,12 @@ return [
 
     'kin name'=>'kin name',
     'kin relationship'=>'kin relationship',
-    "kin contact"=>"kin Contact",
 
 
     'birth date'=> ' Birth Date',
     'birth place'=> 'Birth Place ',
     'Daily Follow-Up'=> 'Daily Follow-Up ',
-    'level'=>'Educational level'
+    'level'=>'Educational level',
+    'please select the father'=>'Please Select the Father',
 
 ];

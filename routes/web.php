@@ -2,6 +2,11 @@
 
 
 use App\Http\Controllers\StudentController;
+use App\Livewire\Clicker;
+use App\Livewire\Counter;
+use App\Livewire\FormWizard;
+use App\Livewire\Multistep;
+use App\Livewire\StudentForm;
 use App\Models\Classroom\Classroom;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
@@ -36,6 +41,14 @@ Route::group(
             return view('layouts/sidebar');
         });
 
+      Route::get('/counter',Counter::class);
+      Route::get('/clicker',Clicker::class);
+      Route::get('/form-wizard',FormWizard::class);
+//      Route::get('/student-form',StudentForm::class);
+
+        Route::view('student_parent','livewire.create-student');
+        Route::view('student-form','livewire.student-form');
+        Route::get('/multistep',Multistep::class);
 
         include 'follow_up.php';
         include 'marks.php';

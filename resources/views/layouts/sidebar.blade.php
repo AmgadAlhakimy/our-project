@@ -1,21 +1,134 @@
 <!DOCTYPE html>
 
 <html lang="">
+<<<<<<< HEAD
 
     @include('layouts.links')
     
     <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
         {{-- sidebar header --}}
         @include('layouts.sidebar_header')
+=======
+@include('layouts.header')
+<body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
+
+
+<!-- Start head  -->
+<!-- Start content  -->
+<div class="content">
+    <div class="head " dir="">
+        <div class="head_1">
+            <!-- ============= logo ================== -->
+            <div class="my-menu-btn row" id="_clicked">
+                {{-- ___________ the main logo in the sidebar --}}
+                <div class="col sidebar-icon">
+                    <i class="h3 logo-text-1 fa-solid fa-bars"></i>
+                </div>
+                <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" class="col logo-img" alt="" />
+            </div>
+            {{-- THE MAIN SEARCH OF SIDEBAR --}}
+            <div class=" search p-relative ph-search">
+                <label for="rtl"></label> <input class="search1" type="search"
+                    placeholder="{{__('sidebar.search')}}" id="rtl" />
+            </div>
+        </div>
+        <div class="head_1">
+
+            <div class=" icons ph-account">
+                        <span class="notification p-relative">
+                            <i class="fa-regular fa-bell fa-fw"></i>
+                        </span>
+                <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
+            </div>
+            {{-- THE DROPDOWN LUNGUAGE --}}
+            <div class=" dropDownLang ph-lang">
+                <div class="select">
+                    <span class="lang_1 selected " >{{__('sidebar.short_lang')}}</span>
+                    <span class="lang_2 selected" >{{__('sidebar.Lang')}}</span>
+                    <div class="caret"></div>
+                </div>
+
+                <ul class="menuLang ms-5">
+
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li>
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
+            {{-- THE DROPDOWN MENEU 2 --}}
+            {{-- home --}}
+            <div class=" me-1 ms-1 ph-home border-left">
+                <a class="card-info  " aria-current="page" href='/'>
+                    <i class="mt-2 h3 icon-1 fa-solid fa-home-lg-alt"></i>
+                </a>
+            </div>
+            {{-- -------------------- --}}
+            <div class=" dropDownLang sec_menu">
+                <div class="select w-100 ">
+                    {{-- title --}}
+                    <i class="h4 mt-1 mb-1 icon-1 fa-solid fa-bars"></i>
+
+                    <div class="caret d-none"></div>
+                </div>
+                <ul class="menuLang w-200 ">
+                    {{-- HOME --}}
+                    <li>
+
+                        <a class="mt-1 ph-home_m " aria-current="page" href='/'>
+                            <i class="h2 mt-1 mb-1 icon-1 fa-solid fa-home-lg-alt"></i> </a>
+                    </li>
+                    {{-- 1 --}}
+                    <hr class="ph-home_m">
+                    <li>
+                        <div id="sidebar_1" class="icons ">
+                            <img class=" " src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
+                            <a class="title-4 ms-1 me-1">{{__('sidebar.my account')}} </i></a>
+                        </div>
+                    </li>
+                    {{-- 2 --}}
+                    <hr class="">
+                    <li>
+                        <a href="#" class="">{{__('sidebar.notifications')}} <i class=" ms-1 me-1 icon-1 fa-solid fa-bell"></i></a>
+                    </li>
+                    {{-- 3 --}}
+                    <hr class="">
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="">
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
+                    {{-- 4 --}}
+                    <hr class="ph-search_m">
+                    <div class="search p-relative mt-1 ph-search_m">
+                        <input class="search1 w-100 " type="search"
+                            placeholder="{{__('sidebar.search')}}" id="rtl" />
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        {{-- ------------------------------------------- --}}
+    </div>
+</div>
+<!-- end head  -->
+<!-- End content  -->
+>>>>>>> 3b023b8f3c82dbbe5c6cf08378b67564e8fe2c7e
 <!-- start sidebar -->
 
     <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
         <div class="sidebar my-scroll">
-            
+
             <!-- ============= LIST ============== -->
             <div class="sidebar-nav ">
                     <ul class="list-ul ">
-                        <!--  dropdown list item عنوان القسم-->                
+                        <!--  dropdown list item عنوان القسم-->
                             <p class="title">{{__('sidebar.academic department')}}<i class="ms-1 me-1 fa-solid fa-school"></i></p>
                         {{-- القسم الأكاديمي --}}
                         {{-- اضافة الاقسام الأكاديمية --}}
@@ -136,7 +249,7 @@
                                     <a href="{{route('activity_classroom.index')}}" class="li-link">{{__('sidebar.display classes - activities')}}</a>
                                 </div>
                             </div>
-                        </li>    
+                        </li>
                         <!-- ========== 5 ============ -->
                         <p class="title">{{__('sidebar.control section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                         <div class="control_section" >
@@ -243,6 +356,10 @@
                                 </div>
                             </li>
                         </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3b023b8f3c82dbbe5c6cf08378b67564e8fe2c7e
                         <!-- ========== 5 ============ -->
                             <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                                 {{-- ---المعلمين--- --}}
@@ -399,7 +516,7 @@
                                 <a href='/absence' class="li-link">{{__('sidebar.Student absence')}}</a>
                                 <a href='/student_form' class="li-link">معلومات الطلاب</a>
                                 <a href="#" class="li-link">الطلاب الأوائل</a>
-    
+
                                 {{-- START THE SECOND DROPDOWN --}}
                                 <div class="dropDownLang my-element" onclick="cancelclick(event)">
                                     <div class="select">
@@ -415,7 +532,7 @@
                                     </ul>  {{-- END THE SECOND DROPDOWN --}}
                                 </div>
                             </div>
-    
+
                         <li class="dropdown">
                             <!-- ========== 2 ============ -->
                             <div class="sidebar-title">
@@ -448,14 +565,14 @@
                             </div>
                             <div class="submenu">
                                 <div class="line-black">
-    
+
                                 </div>
                             </div>
                         </li>
                         <!-- ====================== -->
                         </div>
                         </li>
-                    
+
                     </ul>
             </div>
         </div>

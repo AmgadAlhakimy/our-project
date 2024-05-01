@@ -78,8 +78,7 @@
                         <label for="snack"></label>
                         <img class=" student-img h-100 w-50" src="{{asset('assets/icons/food-1.jpg')}}" alt="">
                         <select class="col form-select form-control" id="snack" name="snack">
-                            <option value="" selected
-                                    disabled>{{__('follow_up.please select the quantity of snack')}}</option>
+                            <option value="" selected disabled>{{__('follow_up.please select the quantity of snack')}}</option>
                             <option value="{{__('public.none')}}" {{ old('snack') == 'public.none'  ? 'selected' : '' }}>
                                 {{__('public.none')}}</option>
                             <option value="{{__('public.some')}}" {{ old('snack') == 'public.some'  ? 'selected' : '' }}>

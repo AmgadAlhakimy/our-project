@@ -156,6 +156,10 @@ return [
     |
     */
 
+<<<<<<< HEAD
     // 'pagination_theme' => 'tailwind',
+=======
+//    'pagination_theme' => 'tailwind',
+>>>>>>> 3b023b8f3c82dbbe5c6cf08378b67564e8fe2c7e
     'pagination_theme' => 'bootstrap',
 ];
