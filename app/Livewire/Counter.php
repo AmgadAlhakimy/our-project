@@ -2,21 +2,12 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class Counter extends Component
 {
-    public $num=10;
-
-    public function add()
-    {
-        $this->num++;
-    }
-    public function sub()
-    {
-        $this->num--;
-
-    }
+    #[Title('Counter page')]
     public function render()
     {
         return view('livewire.counter');

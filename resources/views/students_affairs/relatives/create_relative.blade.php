@@ -142,12 +142,12 @@
                             @enderror
                         </div>
                     </div>
-                </div> 
+                </div>
                 {{-- --- --}}
 
                 <div class=" row">
                     <div class="box col ">
-                        <input class="save-button " type="submit" value="{{__('public.save')}}">
+                        <input class="save-button" wire:click="nextStep" type="submit" value="{{__('public.next')}}">
                     </div>
                     <div class="box  col">
                         <input class="clear-button " type="reset" value="{{__('public.clear')}}">
@@ -158,9 +158,6 @@
             </form>
         </section>
     </main>
-    <script>
-
-    </script>
 @endsection
 
 

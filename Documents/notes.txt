@@ -1,0 +1,2 @@
+add the parent select in the second page 
+and if you select one of them inputs will disappear

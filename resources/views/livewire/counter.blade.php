@@ -1,11 +1,4 @@
 <div>
-    <button wire:click="add">
-        +
-    </button>
-    <button wire:click="sub">
-        -
-    </button>
-    <br>
-    {{$num}}
-<br>
+    This is counter <br>
+    Be like water.
 </div>

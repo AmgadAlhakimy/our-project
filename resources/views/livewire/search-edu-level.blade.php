@@ -3,7 +3,7 @@
         {{-- the title and search --}}
         <h4 class="form-group container-title">{{__('eduLevel.educational Level info')}}</h4>
         <div class="row first-card mt-4">
-            <div class="row">
+            <div class="row" >
                 <label class="col-10">
                     <input wire:model.live.debounce.500ms="search"
                            type="text" class="form-control" name="search">
@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <div class="table-header mt-3 mb-3">
+    <div class="table-header mt-3 mb-3" id="paginated">
         <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()"
                 id="select_bt">{{__('public.select')}}</button>
 
@@ -22,7 +22,7 @@
             {{__('public.delete all')}}</button>
     </div>
     <!-- table-hover table-striped -->
-    <div class="table-section shadow-none">
+    <div class="table-section shadow-none" >
         <div class="card table-section">
             <table class=" " id="check_table">
                 <thead>
@@ -102,7 +102,7 @@
             </table>
         </div>
     </div>
-    {{$levels->links('pagination::bootstrap-5')}}
+    {{$levels->links(data: ['scrollTo' => '#paginated'])}}
     <label>Number of rows:</label>
     <select class=""  wire:model.live="pagination">
         <option value="5">5</option>

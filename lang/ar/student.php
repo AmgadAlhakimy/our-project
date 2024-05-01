@@ -11,17 +11,17 @@ return [
     | the validator class. Some of these rules have multiple versions such
     | as the size rules. Feel free to tweak each of these messages here.
     |
-    */ 
+    */
 
     //create Student
     'Register a new Student'=>'تسجيل طالب جديد',
     'Student info'=>'معلومات الطالب',
-    "Student's name in arabic"=>"اسم الطالب بالعربي",
-    "Student's name in english"=>"اسم الطالب بالإنجليزية",
+    "Student's name in arabic"=>'اسم الطالب بالعربي',
+    "Student's name in english"=>'اسم الطالب بالإنجليزية',
     'photo'=>'صورة',
     'addresses'=>'العناوين',
-    "Student's address in arabic"=>"عنوان الطالب بالعربي",
-    "Student's address in english"=>"عنوان الطالب بالإنجليزية",
+    "Student's address in arabic"=>'عنوان الطالب بالعربي',
+    "Student's address in english"=>'عنوان الطالب بالإنجليزية',
     'gender'=>'النوع',
     'male'=>'ذكر',
     'female'=>'أنثى',
@@ -46,7 +46,6 @@ return [
     'kin name in english'=>'اسم احد الأقارب بالإنجليزية',
     'kin relationship in arabic'=>'علاقة هذا القريب بالطالب بالعربية',
     'kin relationship in english'=>'علاقة هذا القريب بالطالب بالإنجليزية',
-    "kin contact"=>"رقم هذا القريب",
     'health info'=>'المعلومات الصحية',
     'does the Student'=>'هل الطالب',
     'take any medicine ?'=>'يأخذ علاج؟',
@@ -67,15 +66,15 @@ return [
     'student information'=>'معلومات الطالب',
     'personal info'=>'معلومات شخصية',
 
-    "father name"=>"اسم الأب",
-    "father work"=>"عمل الأب",
-    "father contacts 1"=>"رقم الأب 1",
-    "father contacts 2"=>"رقم الأب 2",
+    'father name'=>'اسم الأب',
+    'father work'=>'عمل الأب',
+    'father contacts 1'=>'رقم الأب 1',
+    'father contacts 2'=>'رقم الأب 2',
 
-    "mother name"=>"اسم الأم",
-    "mother work"=>"عمل الأم",
-    "mother contacts 1"=>"رقم الأم 1",
-    "mother contacts 2"=>"رقم الأم 2",
+    'mother name'=>'اسم الأم',
+    'mother work'=>'عمل الأم',
+    'mother contacts 1'=>'رقم الأم 1',
+    'mother contacts 2'=>'رقم الأم 2',
 
     'student allergy'=>'الحساسية',
     'student health problem'=>'مشاكل صحية',
@@ -83,7 +82,8 @@ return [
 
     'kin name'=>'اسم القريب',
     'kin relationship'=>'علاقة القريب',
-    "kin contact"=>"رقم القريب",
+    'kin contact'=>'رقم القريب',
+    'please select the father'=>'الرجاء اختيار الأب',
 
 
 ];

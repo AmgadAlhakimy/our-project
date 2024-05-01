@@ -88,6 +88,7 @@ class StoreRelativeRequest extends FormRequest
             ],
         ];
     }
+
     /**
      * Get the error messages for the defined validation rules.
      *
@@ -96,18 +97,18 @@ class StoreRelativeRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'father_name.regex'=>__('validation.english letters'),
-            'father_name_ar.regex'=>__('validation.arabic letters'),
-            'mother_name.regex'=>__('validation.english letters'),
-            'mother_name_ar.regex'=>__('validation.arabic letters'),
-            'father_work.regex'=>__('validation.english letters'),
-            'father_work_ar.regex'=>__('validation.arabic letters'),
-            'mother_work.regex'=>__('validation.english letters'),
-            'mother_work_ar.regex'=>__('validation.arabic letters'),
-            'kin_name.regex'=>__('validation.english letters'),
-            'kin_name_ar.regex'=>__('validation.arabic letters'),
-            'kin_relationship.regex'=>__('validation.english letters'),
-            'kin_relationship_ar.regex'=>__('validation.arabic letters'),
+            'father_name.regex' => __('validation.english letters'),
+            'father_name_ar.regex' => __('validation.arabic letters'),
+            'mother_name.regex' => __('validation.english letters'),
+            'mother_name_ar.regex' => __('validation.arabic letters'),
+            'father_work.regex' => __('validation.english letters'),
+            'father_work_ar.regex' => __('validation.arabic letters'),
+            'mother_work.regex' => __('validation.english letters'),
+            'mother_work_ar.regex' => __('validation.arabic letters'),
+            'kin_name.regex' => __('validation.english letters'),
+            'kin_name_ar.regex' => __('validation.arabic letters'),
+            'kin_relationship.regex' => __('validation.english letters'),
+            'kin_relationship_ar.regex' => __('validation.arabic letters'),
         ];
     }
 }

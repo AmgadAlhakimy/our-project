@@ -1,6 +1,3 @@
 <div>
-     Success is as dangerous as failure. <br>
-    <button wire:click="handel">
-        click me
-    </button>
+     Nothing in the world is as soft and yielding as water.
 </div>

@@ -25,25 +25,26 @@ class SearchEduLevel extends Component
         $this->orderBy = $item;
     }
 
+
     public function render()
     {
         try {
 
-        $lang = LaravelLocalization::setLocale();
-
-        if (strlen($this->search) >= 1) {
-            $levels = EducationalLevel::where('name->en', 'like', "%$this->search%")
-                ->orwhere('name->ar', 'like', "%$this->search%")->get();
-        } else {
-
+            $lang = LaravelLocalization::setLocale();
+            if (strlen($this->search) >= 1) {
+                $levels = EducationalLevel::where('name->en', 'like', "%$this->search%")
+                    ->orwhere('name->ar', 'like', "%$this->search%")->paginate($this->pagination);
+                return view('livewire.search-edu-level',
+                    compact('levels'));
+            } else {
             $levels = EducationalLevel::orderBy(
                 ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
                 $this->sortOrder)->paginate($this->pagination);
-        }
 
-        return view('livewire.search-edu-level',
-            compact('levels'));
-        }catch (\Exception $e){
+                return view('livewire.search-edu-level',
+                    compact('levels'));
+            }
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

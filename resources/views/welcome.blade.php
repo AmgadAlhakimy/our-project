@@ -16,7 +16,7 @@
         </style>
     </head>
     <body class="antialiased">
-    @livewire('clicker')
+{{--    @livewire('clicker')--}}
     <br>
     @livewire('counter')
     </body>
