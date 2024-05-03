@@ -32,7 +32,7 @@ class FormWizard extends Component
     }
     public function incrementSteps()
     {
-        $this->validateForm();
+//        $this->validateForm();
         if ($this->currentStep < $this->totalSteps) {
             $this->currentStep++;
         }
