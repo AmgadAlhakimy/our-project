@@ -242,7 +242,7 @@
                                 </div>
                             </li>
                         </div>
-                        
+
                         <!-- ========== 5 ============ -->
                             <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                                 {{-- ---المعلمين--- --}}
@@ -390,7 +390,7 @@
                             <div class="line-black">
                                 {{-- Add Student --}}
                                 <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a Student')}}</a>
-                                <a href='{{url('student_parent')}}' class="li-link">{{__('add a Student with livewire')}}</a>
+                                <a href='{{url('/form-wizard')}}' class="li-link">{{__('add a Student with livewire')}}</a>
                                 {{-- review students --}}
                                 <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
                                 <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>
