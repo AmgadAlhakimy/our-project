@@ -242,7 +242,7 @@
                                 </div>
                             </li>
                         </div>
-                        
+
                         <!-- ========== 5 ============ -->
                             <p class="title"><?php echo e(__('sidebar.teacher section')); ?><i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
                                 
@@ -390,7 +390,7 @@
                             <div class="line-black">
                                 
                                 <a href='<?php echo e(route('students.create')); ?>' class="li-link"><?php echo e(__('sidebar.add a Student')); ?></a>
-                                <a href='<?php echo e(url('student_parent')); ?>' class="li-link"><?php echo e(__('add a Student with livewire')); ?></a>
+                                <a href='<?php echo e(url('/form-wizard')); ?>' class="li-link"><?php echo e(__('add a Student with livewire')); ?></a>
                                 
                                 <a href="<?php echo e(route('students.index')); ?>" class="li-link"><?php echo e(__('sidebar.review students')); ?></a>
                                 <a href="<?php echo e(route('students.show','deleted')); ?>" class="li-link"><?php echo e(__('sidebar.deleted Student')); ?></a>

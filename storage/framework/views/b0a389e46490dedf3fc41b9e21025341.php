@@ -13,10 +13,10 @@
                 <!-- Start personal info  -->
                 <h3 class="container-title"><?php echo e(__('create Student')); ?></h3>
                 <div class="container containers-style ">
-                    <div class="row">
+                    <div class="row ">
                         
-                        <div class="box col-lg-6 col-md-12">
-                            <label class="  title-3 "
+                        <div class="box col-lg-6 col-md-6 col-sm-12">
+                            <label class="title-3 "
                             for="english-name"><?php echo e(__("Student.Student's name in arabic")); ?></label>
                             <input type="text" class="form-control " id='english-name' name="name_ar" value="<?php echo e(old('name_ar')); ?>">
                             <?php $__errorArgs = ['name_ar'];
@@ -31,7 +31,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box col-lg-6 col-md-12">
+                        <div class="box col-lg-6 col-md-6 col-sm-12">
                             <label class="text-center"
                                 for="arab-name"><?php echo e(__("Student.Student's name in english")); ?></label>
                             <input type="text" class="form-control " id='arab-name' name="name" value="<?php echo e(old('name')); ?>">
@@ -48,7 +48,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         
 
-                        <div class="box col">
+                        <div class="box col-lg-2 col-md-2 col-sm-12">
                             <label class="" for="photo"><?php echo e(__('Student.photo')); ?></label>
                             <input type="file" class="form-control " id="photo" name="photo" value="<?php echo e(old('photo')); ?>">
                             <?php $__errorArgs = ['photo'];
@@ -63,40 +63,39 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box row">
-                            <div class="col-lg-6 col-md-6">
-                                <label for="address"><?php echo e(__("Student.Student's address in arabic")); ?></label>
-                                <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar" value="<?php echo e(old('address_ar')); ?>">
-                                <?php $__errorArgs = ['address_ar'];
+                        
+                        <div class="box col-lg-5 col-md-5 col-sm-12 ">
+                            <label for="address"><?php echo e(__("Student.Student's address in arabic")); ?></label>
+                            <input type="text" class=" form-control " id='address' name="address_ar" value="<?php echo e(old('address_ar')); ?>">
+                            <?php $__errorArgs = ['address_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <small class="form-text text-danger"><?php echo e($message); ?></small>
-                                <?php unset($message);
+                            <small class="form-text text-danger"><?php echo e($message); ?></small>
+                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            </div>
-                            
-                            <div class="col-lg-6 col-md-6 ">
-                                <label for="address"><?php echo e(__("Student.Student's address in english")); ?></label>
-                                <input type="text" class=" form-control ms-2 me-2" id="address" name="address" value="<?php echo e(old('address')); ?>">
-                                <?php $__errorArgs = ['address'];
+                        </div>
+                        
+                        <div class="box col-lg-5 col-md-5 col-sm-12 ">
+                            <label for="address"><?php echo e(__("Student.Student's address in english")); ?></label>
+                            <input type="text" class=" form-control " id="address" name="address" value="<?php echo e(old('address')); ?>">
+                            <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <small class="form-text text-danger"><?php echo e($message); ?></small>
-                                <?php unset($message);
+                            <small class="form-text text-danger"><?php echo e($message); ?></small>
+                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                            </div>
                         </div>
 
                         
-                        <div class="box col-lg-6 col-md-6 ">
+                        <div class="box col-lg-3 col-md-4 col-sm-6 ">
                             <label for="gender"><?php echo e(__('Student.gender')); ?></label>
                             <select class="col form-select form-control" id="gender" name="gender">
                                 <option value="" selected disabled><?php echo e(__('public.please select the gender')); ?></option>
@@ -119,7 +118,7 @@ unset($__errorArgs, $__bag); ?>
                         <input type="hidden" name="gender_ar_m" value="<?php echo e(__('Student.male_ar')); ?>">
                         <input type="hidden" name="gender_ar_f" value="<?php echo e(__('Student.female_ar')); ?>">
                         
-                        <div class="box col-lg-6 col-md-6">
+                        <div class="box col-lg-3 col-md-4 col-sm-6">
                             <label for="age"><?php echo e(__('Student.birthdate')); ?></label>
                             <input type="date" class="form-control" id="age" name="birthdate" value="<?php echo e(old('birthdate')); ?>">
                             <?php $__errorArgs = ['birthdate'];
@@ -134,7 +133,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box col-lg-6 col-md-6 ">
+                        <div class="box col-lg-3 col-md-4 col-sm-6 ">
                             <label for="english-birth-place"><?php echo e(__('Student.place of birth in arabic')); ?></label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="<?php echo e(old('place_of_birth_ar')); ?>">
                             <?php $__errorArgs = ['place_of_birth_ar'];
@@ -149,7 +148,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box col-lg-6 col-md-6">
+                        <div class="box col-lg-3 col-md-4 col-sm-6">
                             <label for="arabic-birth-place"><?php echo e(__('Student.place of birth in english')); ?></label>
                             <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth" value="<?php echo e(old('place_of_birth')); ?>">
                             <?php $__errorArgs = ['place_of_birth'];
@@ -164,9 +163,8 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box col-lg-6 col-md-6 ">
-                            <label for="className" class="form-label"><?php echo e(__('Student.level')); ?></label>
-                            <label for="educational_level">Select an Educational Level:</label>
+                        <div class="box col-lg-6 col-md-8 col-sm-12">
+                            <label for="className" class="title-3"><?php echo e(__('Student.level')); ?></label>
                             <select id="educational_level" class="form-control" name="educational_level" onchange="populateClassrooms()">
                                 <option value="">Select</option>
                                 <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -185,7 +183,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
 
-                        <div class="box col-lg-6 col-md-6 ">
+                        <div class="box col-lg-6 col col-sm-12">
                             <label for="classroom">Select a Classroom:</label>
                             <select id="classroom" class="form-control" name="classroom">
                                 <option value="">Select Educational Level First</option>
@@ -217,7 +215,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
                         <div class="box ">
-                            <label for="className " class="form-label"><?php echo e(__('Student.parent info')); ?></label>
+                            <label for="className " class="title-3"><?php echo e(__('Student.parent info')); ?></label>
                             <select id="className " class="form-control" name="relative_id" value="<?php echo e(old('relative_id')); ?>">
                                 <?php $__currentLoopData = $relatives; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $relative): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option class="text-center" value="<?php echo e($relative->id); ?>"><?php echo e($relative->father_name); ?></option>
@@ -252,7 +250,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="<?php echo e(old('take_medicine')); ?>" onchange="toggleInput()">
-                                    <label class="form-label col rounded" for="takeMedicineE" ></label>
+                                    <label class="title-3 col rounded" for="takeMedicineE" ></label>
                                 </div>
                                 
                                 <?php $__errorArgs = ['take_medicine'];
@@ -301,7 +299,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="<?php echo e(old('have_allergy')); ?>" onchange="toggleInput()">
 
-                                    <label class="form-label col rounded" for="haveAllergy" ></label>
+                                    <label class="title-3 col rounded" for="haveAllergy" ></label>
                                 </div>
                                 
                                 <?php $__errorArgs = ['have_allergy'];
@@ -348,7 +346,7 @@ unset($__errorArgs, $__bag); ?>
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" >
-                                    <label class="form-label col rounded" for="healthProblem" id="healthProblem"></label>
+                                    <label class="title-3 col rounded" for="healthProblem" id="healthProblem"></label>
                                 </div>
                                 
                                 <?php $__errorArgs = ['have_health_problem'];
@@ -399,7 +397,7 @@ unset($__errorArgs, $__bag); ?>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="form-label" for="std_Note"><?php echo e(__('Student.note')); ?></label>
+                            <label class="title-3" for="std_Note"><?php echo e(__('Student.note')); ?></label>
                             <textarea name="note" class="form-control" id="std_Note" cols="50" rows="5"><?php echo e(old('note')); ?></textarea>
                         </div>
                     </div>
