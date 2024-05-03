@@ -6,7 +6,7 @@
             <div class="row">
                 <label class="col">
             <div class="row" >
-                <label class="col-10">
+                <label class="col-11">
                     <input wire:model.live.debounce.500ms="search"
                     type="text" class="form-control" name="search">
                 </label>
@@ -57,11 +57,11 @@
                     </th>
                     <th>
                         <button wire:click="ordering('created_at')"
-                                class="th-head-2">{{__('public.created at')}} <span class="icon-arrow">&UpArrow;</span></button>
+                            class="th-head-2">{{__('public.created at')}} <span class="icon-arrow">&UpArrow;</span></button>
                     </th>
                     <th>
                         <button wire:click="ordering('updated_at')"
-                                class="th-head-2">{{__('public.updated at')}} <span class="icon-arrow">&UpArrow;</span></button>
+                            class="th-head-2">{{__('public.updated at')}} <span class="icon-arrow">&UpArrow;</span></button>
                     </th>
                     <th colspan="2">
                         <div class="th-head-4">{{__('public.processes')}} </div>
@@ -127,3 +127,8 @@
     
 <br><br><br><br>
 </div>
+{{--
+السكرول
+البحث العدسة بالداخل او غيرها
+السهم في رأس الجدول 
+--}}

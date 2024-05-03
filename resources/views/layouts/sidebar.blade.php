@@ -460,8 +460,8 @@
             </div>
         </div>
         {{-- start toggle section --}}
-        <div class="section-home">
-            <div id="my_toggle" class="toggle-sidebar">
+        <div class="section-home mt-5">
+            <div id="my_toggle" class="toggle-sidebar ">
                 <div id="myDive">
                     @yield('content')
                 </div>

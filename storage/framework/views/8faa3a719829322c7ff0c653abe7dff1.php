@@ -460,8 +460,8 @@
             </div>
         </div>
         
-        <div class="section-home">
-            <div id="my_toggle" class="toggle-sidebar">
+        <div class="section-home mt-5">
+            <div id="my_toggle" class="toggle-sidebar ">
                 <div id="myDive">
                     <?php echo $__env->yieldContent('content'); ?>
                 </div>
