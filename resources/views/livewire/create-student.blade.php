@@ -6,6 +6,36 @@
                     {{Session::get('success')}}
                 </div>
             @endif
+                {{-- <!-- Start parent info  --> --}}
+                <h3 class="container-title">{{__('Student.parent info')}}</h3>
+                <div class="container  containers-style ">
+                    <div class="row">
+                        <!-- father name  -->
+                        <div class="box ">
+                            <label for="father">{{__('Student.parent info')}}</label>
+                            <div class="w-100 mt-5">
+                                <a href="{{route('relatives.create')}}"
+                                   class=" save-button  w-full mt-3 p-3">{{__('Student.parent info')}}</a>
+                            </div>
+                        </div>
+                        <div class="box ">
+                            <label for="className " class="form-label">{{__('Student.parent info')}}</label>
+                            <select id="className " class="form-control" name="relative_id"
+                                    value="{{old('relative_id')}}">
+                                <option value="" selected disabled>{{__('student.please select the father')}}</option>
+                                @foreach($relatives as $relative)
+                                    <option class="text-center"
+                                            value="{{$relative->id}}">{{$relative->father_name}}</option>
+                                @endforeach
+                            </select>
+                            @error('relative_id')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
+                        <!-- garden number  -->
+                    </div>
+                </div>
+                <!-- End parent info  -->
             <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">
                 @csrf
                 <!-- Start personal info  -->
@@ -132,37 +162,6 @@
                     </div>
                 </div>
                 <!-- End personal info  -->
-
-                {{-- <!-- Start parent info  --> --}}
-                <h3 class="container-title">{{__('Student.parent info')}}</h3>
-                <div class="container  containers-style ">
-                    <div class="row">
-                        <!-- father name  -->
-                        <div class="box ">
-                            <label for="father">{{__('Student.parent info')}}</label>
-                            <div class="w-100 mt-5">
-                                <a href="{{route('relatives.create')}}"
-                                   class=" save-button  w-full mt-3 p-3">{{__('Student.parent info')}}</a>
-                            </div>
-                        </div>
-                        <div class="box ">
-                            <label for="className " class="form-label">{{__('Student.parent info')}}</label>
-                            <select id="className " class="form-control" name="relative_id"
-                                    value="{{old('relative_id')}}">
-                                <option value="" selected disabled>{{__('student.please select the father')}}</option>
-                                @foreach($relatives as $relative)
-                                    <option class="text-center"
-                                            value="{{$relative->id}}">{{$relative->father_name}}</option>
-                                @endforeach
-                            </select>
-                            @error('relative_id')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
-                        <!-- garden number  -->
-                    </div>
-                </div>
-                <!-- End parent info  -->
 
                 <!-- Start health info  -->
                 <h3 class="container-title ">{{__('Student.health info')}}</h3>
