@@ -11,6 +11,39 @@
         @endif
         <!-- Start parent info  -->
         @if($currentStep === 1)
+<<<<<<< HEAD
+
+            <h3 class="container-title">{{__('Student.parent info')}}</h3>
+            <div class="container  containers-style ">
+                <form wire:submit="storeRelative">
+                    <div class="row">
+                        {{-- frist select the father if he exsist in the sestem --}}
+
+                        <label class="">
+                            {{__('student.if the father exists write it here')}}
+                            <input type="text" class="form-control" wire:model.live="search"
+                                   placeholder="{{__('student.please select the fahter frist')}}">
+                        </label>
+                        @if(sizeof($fathers) > 0)
+                            <div class="dropdown-menu d-block py-0 title-4">
+                                @foreach($fathers as $father)
+                                    <div class="px-3 py-1 border-bottom">
+                                        <div class="d-flex flex-column ml-3">
+                                        </div>
+                                    </div>
+                                    <span wire:click="myFather('{{$father->father_name}}')">
+                                    {{$father->father_name}}</span>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        <div class="mt-2 mb-2">
+                            <hr>
+                        </div>
+
+
+                        <!-- father name  -->
+=======
         <h3 class="container-title">{{__('Student.the parents')}}</h3>
             <div class="container containers-style">
                 <div>
@@ -42,6 +75,7 @@
                 <form wire:submit="storeRelative">
                     <div class="row">  
                     <!-- father name  -->
+>>>>>>> c7b0d20b80720fb5ac16742aa0ff60f5447f75ef
                         <div class="box col-lg-6 col-md-12">
                             <label for="father">{{__("Student.father's name in english")}}</label>
                             <input type="text" class="form-control" id='father' wire:model.blur="form.father_name"
@@ -171,7 +205,8 @@
                         </div>
                         <div class="box col-lg-6 col-md-6">
                             <label for="relation-e">{{__('Student.kin relationship in arabic')}}</label>
-                            <input type="text" class="form-control" id='relation-e' wire:model="form.kin_relationship_ar"
+                            <input type="text" class="form-control" id='relation-e'
+                                   wire:model="form.kin_relationship_ar"
                                    value="{{old('kin_relationship_ar')}}">
                             @error('form.kin_relationship_ar')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -193,39 +228,11 @@
                             <div wire:loading class="spinner-border spinner-border-sm"></div>
                         </button>
                     </div>
-                    
-                </div>
                 </form>
-    
-        @elseif($currentStep === 2)
-            @include('livewire.student')
-    
-            {{-- --- --}}
-    
-            {{--        <div class=" row">--}}
-            {{--            <div class="box col ">--}}
-            {{--                <input class="save-button" wire:model="nextStep" value="{{__('public.next')}}">--}}
-            {{--            </div>--}}
-            {{--            <div class="box  col">--}}
-            {{--                <input class="clear-button " type="reset" value="{{__('public.clear')}}">--}}
-            {{--            </div>--}}
-            {{--        </div>--}}
-        @endif
-        <div class="row">
-            <div class="box col">
-                @if($currentStep>2)
-                    <button wire:click="decrementSteps" class="btn btn-primary">Previous</button>
-                @endif
-                {{--                @if($currentStep<$totalSteps)--}}
-                {{--                    <button wire:click="incrementSteps" class="btn btn-primary">Next</button>--}}
-                {{--                @endif--}}
-                @if($currentStep === $totalSteps)
-                    <button wire:click="submit" class="btn btn-success">
-                        Submit
-                    </button>
+
+                @elseif($currentStep === 2)
+                    @include('livewire.student')
                 @endif
             </div>
-        </div>
     </div>
-</div>
 
