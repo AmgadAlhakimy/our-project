@@ -11,7 +11,6 @@
         @endif
         <!-- Start parent info  -->
         @if($currentStep === 1)
-<<<<<<< HEAD
 
             <h3 class="container-title">{{__('Student.parent info')}}</h3>
             <div class="container  containers-style ">
@@ -43,7 +42,6 @@
 
 
                         <!-- father name  -->
-=======
         <h3 class="container-title">{{__('Student.the parents')}}</h3>
             <div class="container containers-style">
                 <div>
@@ -75,7 +73,6 @@
                 <form wire:submit="storeRelative">
                     <div class="row">  
                     <!-- father name  -->
->>>>>>> c7b0d20b80720fb5ac16742aa0ff60f5447f75ef
                         <div class="box col-lg-6 col-md-12">
                             <label for="father">{{__("Student.father's name in english")}}</label>
                             <input type="text" class="form-control" id='father' wire:model.blur="form.father_name"
