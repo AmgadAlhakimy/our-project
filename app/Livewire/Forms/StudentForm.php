@@ -14,7 +14,7 @@ class StudentForm extends Form
     public string $name;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
     public string $name_ar;
-    #[Rule('required|image|max:1024|mimes:jpg,png,jpeg,gif,svg,ico')]
+    #[Rule('required|max:1024|mimes:jpg,png,jpeg,gif,svg,ico')]
     public string $photo;
     #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
     public string $address;
