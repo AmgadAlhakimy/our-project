@@ -39,8 +39,8 @@ Route::group(
         });
 
       Route::get('/counter',Counter::class);
-      Route::get('/student',Student::class);
-//      Route::get('/student-form',StudentForm::class);
+      Route::get('/student',Student::class)
+          ->name('createStudent');
 
         include 'follow_up.php';
         include 'marks.php';

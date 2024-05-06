@@ -390,7 +390,7 @@
                             <div class="line-black">
                                 {{-- Add Student --}}
                                 <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a Student')}}</a>
-                                <a href='{{url('/form-wizard')}}' class="li-link">{{__('add a Student with livewire')}}</a>
+                                <a href='{{route('createStudent')}}' class="li-link">{{__('add a Student with livewire')}}</a>
                                 {{-- review students --}}
                                 <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
                                 <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>

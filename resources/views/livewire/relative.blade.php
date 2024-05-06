@@ -196,7 +196,7 @@
     @endif
     <div class="row">
         <div class="box col">
-            @if($currentStep>1)
+            @if($currentStep>2)
                 <button wire:click="decrementSteps" class="btn btn-primary">Previous</button>
             @endif
             {{--                @if($currentStep<$totalSteps)--}}

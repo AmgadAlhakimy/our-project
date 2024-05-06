@@ -85,5 +85,6 @@ return [
     'kin contact'=>'رقم القريب',
     'please select the father'=>'الرجاء اختيار الأب',
     'if the father exists write it here'=>'الرجاء كتابة الأب هنا إذا كان موجود مسبقاً',
+    'change father'=>'تغيير الأب',
 
 ];
