@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Relative\StoreRelativeRequest;
-use App\Http\Requests\Relative\UpdateRelativeRequest;
+use App\Http\Requests\Relative\StoreRelativesRequest;
+use App\Http\Requests\Relative\UpdateRelativesRequest;
 use App\Models\Relative;
 use App\Models\Student;
 
@@ -40,7 +40,7 @@ class RelativeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRelativeRequest $request)
+    public function store(StoreRelativesRequest $request)
     {
         try {
             Relative::create([
@@ -100,7 +100,7 @@ class RelativeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRelativeRequest $request, Relative $relative)
+    public function update(UpdateRelativesRequest $request, Relative $relative)
     {
         //
     }
