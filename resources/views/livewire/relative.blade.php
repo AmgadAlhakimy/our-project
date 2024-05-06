@@ -22,10 +22,11 @@
                             placeholder="{{__('student.please select the father first')}}">
                         </label>
                         @if(sizeof($fathers) > 0)
-                            <div class="dropdown-menu d-block py-0 text-center mt-7 form-label pointer">
+                            <div class="dropdown-menu d-block py-0 text-center mt-7 form-label pointer ">
                                 @foreach($fathers as $father)
                                     <div class="px-3 py-1 border-bottom">
-                                        <div class="d-flex flex-column ml-3">
+                                        <div class="d-flex flex-column ">
+                                            
                                         </div>
                                     </div>
                                     <span wire:click="myFather('{{$father->father_name}}')">
