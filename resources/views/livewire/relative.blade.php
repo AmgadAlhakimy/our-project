@@ -1,3 +1,7 @@
+
+
+
+
 <div class="section">
     <div>
         @if(Session::has('success'))
@@ -7,41 +11,40 @@
         @endif
         <!-- Start parent info  -->
         @if($currentStep === 1)
-            
+        <h3 class="container-title">{{__('Student.the parents')}}</h3>
+            <div class="container containers-style">
+                <div>
+                    <div class="row mb-3 text-center">
+                        {{-- frist select the father if he exsist in the sestem --}}
+                        <label class="col">
+                            {{__('student.if the father exists write it here')}}
+                            <input type="text" class="form-control" wire:model.live="search"
+                            placeholder="{{__('student.please select the father first')}}">
+                        </label>
+                        @if(sizeof($fathers) > 0)
+                            <div class="dropdown-menu d-block py-0 text-center mt-7 form-label pointer">
+                                @foreach($fathers as $father)
+                                    <div class="px-3 py-1 border-bottom">
+                                        <div class="d-flex flex-column ml-3">
+                                        </div>
+                                    </div>
+                                    <span wire:click="myFather('{{$father->father_name}}')">
+                                        {{$father->father_name}}</span>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
             <h3 class="container-title">{{__('Student.parent info')}}</h3>
             <div class="container  containers-style ">
                 <form wire:submit="storeRelative">
-                    <div class="row">
-                    {{-- frist select the father if he exsist in the sestem --}}
-    
-                    <label class="">
-                        {{__('student.if the father exists write it here')}}
-                        <input type="text" class="form-control" wire:model.live="search"
-                        placeholder="{{__('student.please select the fahter frist')}}">
-                    </label>
-                    @if(sizeof($fathers) > 0)
-                        <div class="dropdown-menu d-block py-0 title-4">
-                            @foreach($fathers as $father)
-                                <div class="px-3 py-1 border-bottom">
-                                    <div class="d-flex flex-column ml-3">
-                                    </div>
-                                </div>
-                                <span wire:click="myFather('{{$father->father_name}}')">
-                                    {{$father->father_name}}</span>
-                            @endforeach
-                        </div>
-                    @endif
-                    
-                    <div class="mt-2 mb-2">
-                        <hr>
-                    </div>
-    
-    
+                    <div class="row">  
                     <!-- father name  -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="father">{{__("Student.father's name in english")}}</label>
                             <input type="text" class="form-control" id='father' wire:model.blur="form.father_name"
-                                   value="{{old('father_name')}}">
+                                value="{{old('father_name')}}">
                             @error('form.father_name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -49,7 +52,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="father_ar">{{__("Student.father's name in arabic")}}</label>
                             <input type="text" class="form-control" id='father_ar' wire:model.live="form.father_name_ar"
-                                   value="{{old('father_name_ar')}}">
+                                value="{{old('father_name_ar')}}">
                             @error('form.father_name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -58,7 +61,7 @@
                         <div class="box col-lg-6 col-md-6">
                             <label for="father_work">{{__("Student.father's work in english")}}</label>
                             <input type="text" class="form-control" id='father_work' wire:model="form.father_work"
-                                   value="{{old('father_work')}}">
+                                value="{{old('father_work')}}">
                             @error('form.father_work')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -66,7 +69,7 @@
                         <div class="box col-lg-6 col-md-6">
                             <label for="father_work_ar">{{__("Student.father's work in arabic")}}</label>
                             <input type="text" class="form-control" id='father_work_ar' wire:model="form.father_work_ar"
-                                   value="{{old('father_work_ar')}}">
+                                value="{{old('father_work_ar')}}">
                             @error('form.father_work_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -76,12 +79,12 @@
                             <label for="f-numbers">{{__("Student.father's contacts")}}</label>
                             <div class="row ">
                                 <input type="number" class="col form-control ms-2 me-2" id='f-numbers'
-                                       wire:model="form.father_contact1" value="{{old('father_contact1')}}">
+                                    wire:model="form.father_contact1" value="{{old('father_contact1')}}">
                                 @error('form.father_contact1')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 <input type="number" class="col form-control me-2 ms-2" id='f-numbers'
-                                       wire:model="form.father_contact2" value="{{old('father_contact2')}}">
+                                    wire:model="form.father_contact2" value="{{old('father_contact2')}}">
                                 @error('form.father_contact2')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -91,8 +94,8 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="arab-mother-name">{{__("Student.mother's name in english")}}</label>
                             <input type="text" class="form-control" id='arab-mother-name'
-                                   wire:model.live.debounce.500ms="form.mother_name"
-                                   value="{{old('mother_name')}}">
+                                    wire:model.live.debounce.500ms="form.mother_name"
+                                    value="{{old('mother_name')}}">
                             @error('form.mother_name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -100,8 +103,8 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="english-mother-name">{{__("Student.mother's name in arabic")}}</label>
                             <input type="text" class="form-control" id='english-mother-name'
-                                   wire:model="form.mother_name_ar"
-                                   value="{{old('mother_name_ar')}}">
+                                    wire:model="form.mother_name_ar"
+                                    value="{{old('mother_name_ar')}}">
                             @error('form.mother_name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -110,7 +113,7 @@
                         <div class="box col-lg-6 col-md-6">
                             <label for="arab-mother-work">{{__("Student.mother's work in english")}}</label>
                             <input type="text" class="form-control" id='arab-mother-work' wire:model="form.mother_work"
-                                   value="{{old('mother_work')}}">
+                                    value="{{old('mother_work')}}">
                             @error('form.mother_work')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -118,7 +121,7 @@
                         <div class="box col-lg-6 col-md-6">
                             <label for="work">{{__("Student.mother's work in arabic")}}</label>
                             <input type="text" class="form-control" id='work' wire:model="form.mother_work_ar"
-                                   value="{{old('mother_work_ar')}}">
+                                    value="{{old('mother_work_ar')}}">
                             @error('form.mother_work_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -128,12 +131,12 @@
                             <label for="m-numbers">{{__("Student.mother's contacts")}}</label>
                             <div class="row ">
                                 <input type="number" class="col form-control ms-2 me-2" id='m-numbers'
-                                       wire:model="form.mother_contact1" value="{{old('mother_contact1')}}">
+                                        wire:model="form.mother_contact1" value="{{old('mother_contact1')}}">
                                 @error('form.mother_contact1')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
                                 <input type="number" class="col form-control me-2 ms-2" id='m-numbers'
-                                       wire:model="form.mother_contact2" value="{{old('mother_contact2')}}">
+                                        wire:model="form.mother_contact2" value="{{old('mother_contact2')}}">
                                 @error('form.mother_contact2')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -143,7 +146,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="name-a">{{__('Student.kin name in english')}}</label>
                             <input type="text" class="form-control" id='name-a' wire:model="form.kin_name"
-                                   value="{{old('kin_name')}}">
+                                    value="{{old('kin_name')}}">
                             @error('form.kin_name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -151,7 +154,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="name-e">{{__('Student.kin name in arabic')}}</label>
                             <input type="text" class="form-control" id='name-e' wire:model="form.kin_name_ar"
-                                   value="{{old('kin_name_ar')}}">
+                                    value="{{old('kin_name_ar')}}">
                             @error('form.kin_name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
