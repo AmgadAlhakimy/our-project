@@ -12,36 +12,6 @@
         <!-- Start parent info  -->
         @if($currentStep === 1)
 
-            <h3 class="container-title">{{__('Student.parent info')}}</h3>
-            <div class="container  containers-style ">
-                <form wire:submit="storeRelative">
-                    <div class="row">
-                        {{-- frist select the father if he exsist in the sestem --}}
-
-                        <label class="">
-                            {{__('student.if the father exists write it here')}}
-                            <input type="text" class="form-control" wire:model.live="search"
-                                   placeholder="{{__('student.please select the fahter frist')}}">
-                        </label>
-                        @if(sizeof($fathers) > 0)
-                            <div class="dropdown-menu d-block py-0 title-4">
-                                @foreach($fathers as $father)
-                                    <div class="px-3 py-1 border-bottom">
-                                        <div class="d-flex flex-column ml-3">
-                                        </div>
-                                    </div>
-                                    <span wire:click="myFather('{{$father->father_name}}')">
-                                    {{$father->father_name}}</span>
-                                @endforeach
-                            </div>
-                        @endif
-
-                        <div class="mt-2 mb-2">
-                            <hr>
-                        </div>
-
-
-                        <!-- father name  -->
         <h3 class="container-title">{{__('Student.the parents')}}</h3>
             <div class="container containers-style">
                 <div>
@@ -55,7 +25,7 @@
                         @if(sizeof($fathers) > 0)
                             <div class="dropdown-menu d-block py-0 text-center mt-7 form-label pointer ">
                                 @foreach($fathers as $father)
-                                    <div class="px-3 py-1 border-bottom">
+                                    <div class=" pt-1 border-bottom">
                                         <div class="d-flex flex-column ">
                                             
                                         </div>
@@ -219,17 +189,17 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="box mt-4 col-12">
-                        <button type="submit" class=" save-button text-center">
-                            {{__('public.next')}}
-                            <div wire:loading class="spinner-border spinner-border-sm"></div>
-                        </button>
-                    </div>
+                </div>
+                <div class="box mt-4 col-12">
+                    <button type="submit" class=" save-button text-center">
+                        {{__('public.next')}}
+                        <div wire:loading class="spinner-border spinner-border-sm"></div>
+                    </button>
+                </div>
                 </form>
 
                 @elseif($currentStep === 2)
                     @include('livewire.student')
                 @endif
-            </div>
     </div>
 
