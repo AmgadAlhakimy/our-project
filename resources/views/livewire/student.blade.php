@@ -7,25 +7,22 @@
                 </div>
             @endif
             {{-- <!-- Start parent info  --> --}}
-            <h3 class="container-title">{{__('Student.parent info')}}</h3>
+            <h3 class="container-title">{{__('Student.choose parents')}}</h3>
             <div class="container  containers-style ">
+
                 <div class="row">
                     <!-- father name  -->
-                    <div class="box ">
-                        <label for="father">{{__('Student.parent info')}}</label>
-                        <div class="w-100 mt-5">
-                            <button wire:click="resetFather"
-                               class=" save-button  w-full mt-3 p-3">{{__('Student.change father')}}</button>
-                        </div>
+                    <div class="col-4 box">
+                        <button wire:click="resetFather"
+                            class="text-dark save-button mt-1">{{__('Student.change father')}}</button>
                     </div>
-                    <div class="box">
-                        <label for="className " class="form-label">{{__('Student.parent info')}}</label>
+                    <div class="col-8 box">
                         @if(sizeof($fathers) < 1 or $showSelect === true)
-                            <select id="className " class="form-control" wire:model="studentForm.relative_id"
+                            <select id="className " class="form-control text-danger" wire:model="studentForm.relative_id"
                                     value="{{old('relative_id')}}">
                                 <option value="" selected disabled>{{__('student.please select the father')}}</option>
                                 @foreach($relatives as $relative)
-                                    <option class="text-center"
+                                    <option class="text-center "
                                             value="{{$relative->id}}">{{$relative->father_name}}</option>
                                 @endforeach
                             </select>
@@ -33,7 +30,7 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         @else
-                            <h1>{{$father}}</h1>
+                            <label class="text-danger h5 mt-1 ">{{$father}}</label>
                         @endif
                     </div>
                     <!-- garden number  -->

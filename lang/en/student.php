@@ -32,6 +32,7 @@ return [
     'place of birth in english'=>'Place of birth in English',
     'class'=>'Class',
     'parent info'=>'Parent Info',
+    'the parents'=>'the Parents',
     "father's name in arabic"=>"Father's name in Arabic",
     "father's name in english"=>"Father's name in English",
     "father's work in arabic"=>"Father's work in Arabic",
@@ -87,6 +88,8 @@ return [
     'level'=>'Educational level',
     'please select the father'=>'Please Select the Father',
     'if the father exists write it here'=>'If the Father Exists Write it Here',
-    'change father'=>'Change Father'
+    'change father'=>'Change Father',
+
+    'please select the father first'=>'Please, Select the Father First'
 
 ];

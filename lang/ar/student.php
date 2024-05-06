@@ -32,6 +32,8 @@ return [
     'place of birth in english'=>'مكان الميلاد بالإنجليزية',
     'class'=>'الصف',
     'parent info'=>'معلومات الأباء',
+    'the parents'=>'الآباء',
+
     "father's name in arabic"=>"اسم الأب بالعربي",
     "father's name in english"=>"اسم الأب بالإنجليزية",
     "father's work in arabic"=>"عمل الأب بالعربي",
@@ -86,5 +88,9 @@ return [
     'please select the father'=>'الرجاء اختيار الأب',
     'if the father exists write it here'=>'الرجاء كتابة الأب هنا إذا كان موجود مسبقاً',
     'change father'=>'تغيير الأب',
+
+
+    'please select the father first'=>'الرجاء، قم باختيار الاب اولاً',
+
 
 ];

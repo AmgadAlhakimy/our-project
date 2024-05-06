@@ -223,6 +223,10 @@ input::-webkit-inner-spin-button {
 .notes {
     margin-bottom: 30px;
 }
+.pointer{
+    cursor: pointer;
+
+}
 /* End box  */
 /* --------------------------------------------------------------------- */
 /* Start text style  */
@@ -270,7 +274,7 @@ input::-webkit-inner-spin-button {
     border: none;
     color: var(--green-color);
     font-weight: bold;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 5px 5px 5px -1px rgba(10, 99, 169, 0.16),
         -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
 }
@@ -291,7 +295,7 @@ input::-webkit-inner-spin-button {
     border: none;
     color: var(--S-Color-2);
     font-weight: bold;
-    border-radius: 50px;
+    border-radius: 10px;
     box-shadow: 5px 5px 5px -1px rgba(10, 99, 169, 0.16),
         -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
 }
@@ -329,6 +333,15 @@ input::-webkit-inner-spin-button {
 /* start checkbox */
 .mb-100 {
     margin-bottom: 100px;
+}
+.mt-6{
+    margin-top: 60;
+}
+.mt-7{
+    margin-top: 70px;
+}
+.mt-8{
+    margin-top: 80;
 }
 
 .checkb {
