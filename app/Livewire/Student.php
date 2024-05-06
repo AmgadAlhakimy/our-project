@@ -8,15 +8,18 @@ use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Relative;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Student extends Component
 {
+    use WithFileUploads;
+
     public RelativesForm $form;
     public StudentForm $studentForm;
     public $selectedLevel=null;
     public $classrooms;
     public int $currentStep = 1;
-    public int $totalSteps = 3;
+    public int $totalSteps = 2;
     public string $search = "";
     public string $father = "";
     public $showSelect = false;

@@ -71,7 +71,7 @@
 
                         <div class="box col">
                             <label class="" for="photo">{{__('Student.photo')}}</label>
-                            <input type="file" class="form-control " id="photo" wire:model="studentForm.photo"
+                            <input type="file" class="form-control " id="photo" wire:model.live="studentForm.photo"
                                    value="{{old('photo')}}">
                             @error('studentForm.photo')
                             <small class="form-text text-danger">{{$message}}</small>
