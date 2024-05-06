@@ -16,11 +16,13 @@ class SearchEduLevel extends Component
     public $search = '';
     public $orderBy = 'id';
     public $sortOrder = 'asc';
+    public $arrow = false;
 
     public function ordering($item)
     {
         if ($this->orderBy == $item) {
             $this->sortOrder = $this->sortOrder === 'asc' ? 'desc' : 'asc';
+            $this->arrow = !$this->arrow;
         }
         $this->orderBy = $item;
     }
@@ -37,9 +39,9 @@ class SearchEduLevel extends Component
                 return view('livewire.search-edu-level',
                     compact('levels'));
             } else {
-            $levels = EducationalLevel::orderBy(
-                ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
-                $this->sortOrder)->paginate($this->pagination);
+                $levels = EducationalLevel::orderBy(
+                    ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
+                    $this->sortOrder)->paginate($this->pagination);
 
                 return view('livewire.search-edu-level',
                     compact('levels'));

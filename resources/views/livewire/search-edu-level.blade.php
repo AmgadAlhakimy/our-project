@@ -27,17 +27,7 @@
     </div>
     <!-- table-hover table-striped -->
 
-    <div class="ms-4 me-4">
-        <label class=""> {{__('public.number of rows:')}} </label>
-        <select class="num_rows "  wire:model.live="pagination">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="75">75</option>
-            <option value="100">100</option>
-        </select>
-    </div>
+
     {{-- ------------------------------- --}}
 
     <div class="table-section shadow-none" >
@@ -50,10 +40,13 @@
                             style="display: none">
                     </th>
                     <th>
-                        <button id="arrowButton" wire:click="ordering('id')" class="th-head-1">{{__('public.id')}}  <span class="icon-arrow">&UpArrow;</span></button>
+                        <button id="arrowButton" wire:click="ordering('id')" class="th-head-1">
+                            {{__('public.id')}}  @if($arrow)<span class="icon-arrow">&UpArrow;</span>@else
+                                <span class="icon-arrow">&DownArrow;</span> @endif</button>
                     </th>
                     <th>
-                        <button wire:click="ordering('name')" class="th-head-3">{{__('public.name')}} <span class="icon-arrow">&UpArrow;</span></button>
+                        <button wire:click="ordering('name')" class="th-head-3">
+                            {{__('public.name')}} <span class="icon-arrow">&UpArrow;</span></button>
                     </th>
                     <th>
                         <button wire:click="ordering('created_at')"
@@ -124,11 +117,21 @@
     <div class="me-4 ms-4 mt-3">
         {{$levels->links('pagination::bootstrap-5')}}
     </div>
-    
+    <div class="ms-4 me-4">
+        <label class=""> {{__('public.number of rows:')}} </label>
+        <select class="num_rows "  wire:model.live="pagination">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="75">75</option>
+            <option value="100">100</option>
+        </select>
+    </div>
 <br><br><br><br>
 </div>
 {{--
 السكرول
 البحث العدسة بالداخل او غيرها
-السهم في رأس الجدول 
+السهم في رأس الجدول
 --}}
