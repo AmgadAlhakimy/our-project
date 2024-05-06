@@ -260,12 +260,12 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
-                </div> 
+                </div>
                 
 
                 <div class=" row">
                     <div class="box col ">
-                        <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
+                        <input class="save-button" wire:click="nextStep" type="submit" value="<?php echo e(__('public.next')); ?>">
                     </div>
                     <div class="box  col">
                         <input class="clear-button " type="reset" value="<?php echo e(__('public.clear')); ?>">
@@ -276,9 +276,6 @@ unset($__errorArgs, $__bag); ?>
             </form>
         </section>
     </main>
-    <script>
-
-    </script>
 <?php $__env->stopSection(); ?>
 
 

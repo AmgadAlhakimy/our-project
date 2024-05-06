@@ -34,7 +34,8 @@
                 <ul class="menuLang ms-5">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li>
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                            class="lung_test">
                                 {{ $properties['native'] }}
                             </a>
                         </li>
@@ -53,12 +54,12 @@
                 <div class="select w-100 ">
                     {{-- title --}}
                     <i class="h4 mt-1 mb-1 icon-1 fa-solid fa-bars"></i>
-                    
+
                     <div class="caret d-none"></div>
                 </div>
                 <ul class="menuLang w-200 ">
                     {{-- HOME --}}
-                    <li>    
+                    <li>
                         <a class="mt-1 ph-home_m " aria-current="page" href='/'>
                         <i class="h2 mt-1 mb-1 icon-1 fa-solid fa-home-lg-alt"></i> </a>
                     </li>
@@ -71,19 +72,19 @@
                         </div>
                     </li>
                     {{-- 2 --}}
-                    <hr class="">                
+                    <hr class="">
                     <li>
                         <a href="#" class="">{{__('sidebar.notifications')}} <i class=" ms-1 me-1 icon-1 fa-solid fa-bell"></i></a>
                     </li>
                     {{-- 3 --}}
                     <hr class="">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li class="">
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                                {{ $properties['native'] }}
-                            </a>
-                        </li>
-                    @endforeach
+{{--                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
+{{--                        <li class="">--}}
+{{--                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">--}}
+{{--                                {{ $properties['native'] }}--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    @endforeach--}}
                     {{-- 4 --}}
                     <hr class="ph-search_m">
                     <div class="search p-relative mt-1 ph-search_m">
