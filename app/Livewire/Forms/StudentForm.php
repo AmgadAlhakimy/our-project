@@ -14,8 +14,8 @@ class StudentForm extends Form
     public string $name;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
     public string $name_ar;
-//    #[Validate('image|max:1024')]
     #[Rule('nullable|sometimes|max:1024')]
+//    #[Validate('image|max:1024')]
     public string $photo;
     #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
     public string $address;

@@ -67,12 +67,17 @@
                 <div class="box col">
                     <label class="" for="photo">{{__('Student.photo')}}</label>
                     <input type="file" class="form-control" id="photo"
-                            wire:model.live="studentForm.photo"
+                            wire:model.live="image"
                             value="{{old('photo')}}">
-                    @error('studentForm.photo')
+                    @error('image')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
+                    @if($image)
+                        <img class="cards_img" alt="photo"
+                             src="{{$image->temporaryUrl()}}">
+                    @endif
                 </div>
+                <button class="btn btn-secondary" wire:click="resetImage">Reset the image</button>
                 {{-- 4 --}}
                 <div class="box row">
                     <div class="col-lg-6 col-md-6">
