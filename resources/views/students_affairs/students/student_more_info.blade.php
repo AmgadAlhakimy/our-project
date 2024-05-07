@@ -1,13 +1,13 @@
 {{--   واجهة معلومات الطالب كاملة --}}
 @extends('layouts.sidebar')
 @section('content')
-    
+
     <main class="">
         <section class="section  ">
                 <!-- Start personal info  -->
                 <h3 class="container-title mb-5">{{__('student.student information')}}</h3>
             <div class="cards_container row">
-                
+
                 <div class=" containers-style">
                     <label class="box container-title col-12 ">{{__('student.personal info')}}</label>
                     <div class="row col">
@@ -17,8 +17,8 @@
                                     <div class=" row">
                                         {{-- 1 --}}
                                         <div class="box col">
-                                            <img class=" cards_img" src="{{asset($student->photo)}}" alt="">
-                                        </div> 
+                                            <img class="cards_img" src="{{asset($student->photo)}}" alt="">
+                                        </div>
                                         <div class="text-center ">
                                             <label class="  cards_title"> {{$student->name}} </label>
                                             <label class="  cards_sup_title">({{$student->id}})</label>

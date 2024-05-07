@@ -7,6 +7,7 @@ use App\Livewire\Forms\StudentForm;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Relative;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -22,6 +23,8 @@ class Student extends Component
     public int $totalSteps = 3;
     public string $search = "";
     public string $father = "";
+#[Rule('required|image|mimes:jpeg,png,jpg,gif|max:2048')]
+    public $image;
     public $showSelect = false;
 
 
@@ -73,6 +76,9 @@ class Student extends Component
 
     public function storeStudent()
     {
+        $this->validate([
+            'image'=>'required|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
         $this->studentForm->validate();
         try {
             \App\Models\Student::create($this->studentForm->all());
@@ -81,5 +87,9 @@ class Student extends Component
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
+    }
+    public function resetImage()
+    {
+        $this->image="";
     }
 }
