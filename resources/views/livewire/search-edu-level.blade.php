@@ -51,7 +51,7 @@
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('name')" class=" th-head-3 ">
+                        <button wire:click="ordering('name')" class="  ">
                             <div class="box row">
                                 <div class="col d-flex justify-content-end">
                                     {{__('public.name')}} 
@@ -63,15 +63,31 @@
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('created_at')"
-                            class="th-head-2">{{__('public.created at')}} <span class="icon-arrow">&UpArrow;</span></button>
+                        <button wire:click="ordering('created_at')"class=" ">
+                            <div class="box row">
+                                <div class="col d-flex justify-content-end">
+                                    {{__('public.created at')}}
+                                </div>
+                                <div class="col d-flex justify-content-center mt-2">
+                                    <div class=" icon_arrow_test"></div>
+                                </div>
+                            </div>
+                        </button>
                     </th>
                     <th>
                         <button wire:click="ordering('updated_at')"
-                            class="th-head-2">{{__('public.updated at')}} <span class="icon-arrow">&UpArrow;</span></button>
+                            class="th--2">
+                            <div class="box row">
+                                <div class="col d-flex justify-content-end">
+                                    {{__('public.updated at')}}                                </div>
+                                <div class="col d-flex justify-content-center mt-2">
+                                    <div class=" icon_arrow_test"></div>
+                                </div>
+                            </div>
+                        </button>
                     </th>
                     <th colspan="2">
-                        <div class="th-head-4">{{__('public.processes')}} </div>
+                        <div class="th--4">{{__('public.processes')}} </div>
                     </th>
                 </tr>
                 </thead>
