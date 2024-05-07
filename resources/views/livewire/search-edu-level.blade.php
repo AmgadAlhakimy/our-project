@@ -30,6 +30,7 @@
 
     {{-- ------------------------------- --}}
 
+
     <div class="table-section shadow-none" >
         <div class="card table-section">
             <table class=" " id="check_table">
@@ -41,12 +42,25 @@
                     </th>
                     <th>
                         <button id="arrowButton" wire:click="ordering('id')" class="th-head-1">
-                            {{__('public.id')}}  @if($arrow)<span class="icon-arrow">&UpArrow;</span>@else
-                                <span class="icon-arrow">&DownArrow;</span> @endif</button>
+                            {{__('public.id')}}  
+                            @if($arrow)
+                                <span class="icon-arrow ">&UpArrow;</span>
+                                @else
+                                <span class="icon-arrow">&DownArrow;</span> 
+                            @endif
+                        </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('name')" class="th-head-3">
-                            {{__('public.name')}} <span class="icon-arrow">&UpArrow;</span></button>
+                        <button wire:click="ordering('name')" class=" th-head-3 ">
+                            <div class="box row">
+                                <div class="col d-flex justify-content-end">
+                                    {{__('public.name')}} 
+                                </div>
+                                <div class="col d-flex justify-content-center mt-2">
+                                    <div class=" icon_arrow_test"></div>
+                                </div>
+                            </div>
+                        </button>
                     </th>
                     <th>
                         <button wire:click="ordering('created_at')"
