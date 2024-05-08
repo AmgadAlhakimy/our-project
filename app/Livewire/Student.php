@@ -17,13 +17,13 @@ class Student extends Component
 
     public RelativesForm $form;
     public StudentForm $studentForm;
-    public $selectedLevel=null;
+
+    public $selectedLevel = null;
     public $classrooms;
-    public int $currentStep = 1;
+    public int $currentStep = 2;
     public int $totalSteps = 3;
     public string $search = "";
     public string $father = "";
-#[Rule('required|image|mimes:jpeg,png,jpg,gif|max:2048')]
     public $image;
     public $showSelect = false;
 
@@ -43,9 +43,10 @@ class Student extends Component
                 'fathers')
         )->title('Create new Student');
     }
+
     public function updatedSelectedLevel()
     {
-        $this->classrooms = Classroom::where('edu_id',$this->selectedLevel)->get();
+        $this->classrooms = Classroom::where('edu_id', $this->selectedLevel)->get();
     }
 
     public function myFather($data)
@@ -76,20 +77,12 @@ class Student extends Component
 
     public function storeStudent()
     {
-        $this->validate([
-            'image'=>'required|mimes:jpeg,png,jpg,gif|max:2048'
-        ]);
-        $this->studentForm->validate();
-        try {
-            \App\Models\Student::create($this->studentForm->all());
+            $this->studentForm->store();
             $this->currentStep++;
-            return redirect()->back()->with(['success' => __('message.success')]);
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
     }
+
     public function resetImage()
     {
-        $this->image="";
+        $this->image = "";
     }
 }

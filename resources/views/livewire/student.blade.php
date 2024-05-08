@@ -12,13 +12,13 @@
             <!-- father name  -->
             <div class="col-4 box">
                 <button wire:click="resetFather"
-                    class="text-dark save-button mt-1">{{__('Student.change father')}}</button>
+                        class="text-dark save-button mt-1">{{__('Student.change father')}}</button>
             </div>
             <div class="col-8 box">
                 @if(sizeof($fathers) < 1 or $showSelect === true)
                     <select id="className " class="form-control text-danger" wire:model="studentForm.relative_id"
                             value="{{old('relative_id')}}">
-                        <option value="" selected disabled>{{__('student.please select the father')}}</option>
+                        <option value="" selected>{{__('student.please select the father')}}</option>
                         @foreach($relatives as $relative)
                             <option class="text-center "
                                     value="{{$relative->id}}">{{$relative->father_name}}</option>
@@ -35,8 +35,8 @@
         </div>
     </div>
     <!-- End parent info  -->
-{{--            <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">--}}
-        <form wire:submit="storeStudent">
+    {{--            <form method="post" action="{{route('students.store')}}" enctype="multipart/form-data">--}}
+    <form wire:submit="storeStudent">
         @csrf
         <!-- Start personal info  -->
         <h3 class="container-title">{{__('create Student')}}</h3>
@@ -45,9 +45,9 @@
                 {{-- 1 --}}
                 <div class="box col-lg-6 col-md-12">
                     <label class="  title-3 "
-                            for="english-name">{{__("Student.Student's name in arabic")}}</label>
+                           for="english-name">{{__("Student.Student's name in arabic")}}</label>
                     <input type="text" class="form-control" id='name_ar' wire:model="studentForm.name_ar"
-                            value="{{old('name_ar')}}">
+                           value="{{old('name_ar')}}">
                     @error('studentForm.name_ar')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -55,9 +55,9 @@
                 {{-- 2 --}}
                 <div class="box col-lg-6 col-md-12">
                     <label class="text-center"
-                            for="arab-name">{{__("Student.Student's name in english")}}</label>
+                           for="arab-name">{{__("Student.Student's name in english")}}</label>
                     <input type="text" class="form-control " id='arab-name' wire:model="studentForm.name"
-                            value="{{old('name')}}">
+                           value="{{old('name')}}">
                     @error('studentForm.name')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -67,15 +67,15 @@
                 <div class="box col">
                     <label class="" for="photo">{{__('Student.photo')}}</label>
                     <input type="file" class="form-control" id="photo"
-                            wire:model.live="image"
-                            value="{{old('photo')}}">
-                    @error('image')
+                           wire:model.live="studentForm.photo"
+                           value="{{old('photo')}}">
+                    @error('studentForm.photo')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
-                    @if($image)
-                        <img class="cards_img" alt="photo"
-                             src="{{$image->temporaryUrl()}}">
-                    @endif
+{{--                    @if($image)--}}
+{{--                        <img class="cards_img" alt="photo"--}}
+{{--                             src="{{$image->temporaryUrl()}}">--}}
+{{--                    @endif--}}
                 </div>
                 <button class="btn btn-secondary" wire:click="resetImage">Reset the image</button>
                 {{-- 4 --}}
@@ -83,8 +83,8 @@
                     <div class="col-lg-6 col-md-6">
                         <label for="address">{{__("Student.Student's address in arabic")}}</label>
                         <input type="text" class=" form-control ms-2 me-2" id='address'
-                                wire:model="studentForm.address_ar"
-                                value="{{old('address_ar')}}">
+                               wire:model="studentForm.address_ar"
+                               value="{{old('address_ar')}}">
                         @error('studentForm.address_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -93,8 +93,8 @@
                     <div class="col-lg-6 col-md-6 ">
                         <label for="address">{{__("Student.Student's address in english")}}</label>
                         <input type="text" class=" form-control ms-2 me-2" id="address"
-                                wire:model="studentForm.address"
-                                value="{{old('address')}}">
+                               wire:model="studentForm.address"
+                               value="{{old('address')}}">
                         @error('studentForm.address')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -121,7 +121,7 @@
                 <div class="box col-lg-6 col-md-6">
                     <label for="age">{{__('Student.birthdate')}}</label>
                     <input type="date" class="form-control" id="age" wire:model="studentForm.birthdate"
-                            value="{{old('birthdate')}}">
+                           value="{{old('birthdate')}}">
                     @error('studentForm.birthdate')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -130,8 +130,8 @@
                 <div class="box col-lg-6 col-md-6 ">
                     <label for="english-birth-place">{{__('Student.place of birth in arabic')}}</label>
                     <input type="text" class="form-control" id="english-birth-place"
-                            wire:model="studentForm.place_of_birth_ar"
-                            value="{{old('place_of_birth_ar')}}">
+                           wire:model="studentForm.place_of_birth_ar"
+                           value="{{old('place_of_birth_ar')}}">
                     @error('studentForm.place_of_birth_ar')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -140,8 +140,8 @@
                 <div class="box col-lg-6 col-md-6">
                     <label for="arabic-birth-place">{{__('Student.place of birth in english')}}</label>
                     <input type="text" class="form-control" id="arabic-birth-place"
-                            wire:model="studentForm.place_of_birth"
-                            value="{{old('place_of_birth')}}">
+                           wire:model="studentForm.place_of_birth"
+                           value="{{old('place_of_birth')}}">
                     @error('studentForm.place_of_birth')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -150,31 +150,31 @@
                 <div class="box col-lg-12 col-md-12 ">
                     <label for="className" class="form-label">{{__('Student.level')}}</label>
                     <label for="educational_level">Select an Educational Level:</label>
-                    <select  class="form-control" wire:model.live="selectedLevel">
+                    <select class="form-control" wire:model.live="selectedLevel">
                         <option value="" selected>{{__('public.select level')}}</option>
                         @foreach($levels as $level)
                             <option class="text-center" value="{{$level->id}}">{{$level->name}}</option>
                         @endforeach
                     </select>
-                    @error('studentForm.educational_level')
+                    @error('selectedLevel')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
 
-                @if(!is_null($selectedLevel))
                 <div class="box col-lg-6 col-md-6 ">
                     <label for="classroom">Select a Classroom:</label>
-                    <select id="classroom" class="form-control" wire:model="studentForm.selectedClassrooms">
-                        <option value="">Select Educational Level First</option>
-                        @foreach($classrooms as $classroom)
-                        <option value="{{$classroom->id}}">{{$classroom->name}}</option>
-                        @endforeach
+                    <select id="classroom" class="form-control" wire:model="studentForm.classroom_id">
+                            <option value="" selected>Select Educational Level First</option>
+                        @if(!is_null($selectedLevel))
+                            @foreach($classrooms as $classroom)
+                                <option value="{{$classroom->id}}">{{$classroom->name}}</option>
+                            @endforeach
+                        @endif
                     </select>
-                    @error('studentForm.selectedClassrooms')
+                    @error('studentForm.classroom_id')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
-                @endif
             </div>
         </div>
         <!-- End personal info  -->
@@ -191,8 +191,8 @@
                     <label class="col d-flex justify-content-end">{{__('Student.take any medicine ?')}}</label>
                     <div class="col mt-2 d-flex justify-content-start">
                         <input class="toggle " type="checkbox" wire:model="studentForm.take_medicine"
-                                id="takeMedicineE"
-                                value="{{old('take_medicine')}}" onchange="toggleInput()">
+                               id="takeMedicineE"
+                               value="{{old('take_medicine')}}" onchange="toggleInput()">
                         <label class="form-label  rounded" for="takeMedicineE"></label>
                     </div>
                     {{-- ---- --}}
@@ -203,16 +203,16 @@
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col " wire:model="studentForm.medicine_desc"
-                                id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
-                                aria-label="Text input with radio button" placeholder="desc in english" hidden>
+                               id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
+                               aria-label="Text input with radio button" placeholder="desc in english" hidden>
                         @error('studentForm.medicine_desc')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col"
-                                wire:model="studentForm.medicine_desc_ar"
-                                id="std_medicine_desc_2" value="{{old('medicine_desc_ar')}}"
-                                aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
+                               wire:model="studentForm.medicine_desc_ar"
+                               id="std_medicine_desc_2" value="{{old('medicine_desc_ar')}}"
+                               aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                         @error('studentForm.medicine_desc_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -225,8 +225,8 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                             <input class="toggle col" type="checkbox" wire:model="studentForm.have_allergy"
-                                    id="haveAllergy"
-                                    value="{{old('have_allergy')}}" onchange="toggleInput()">
+                                   id="haveAllergy"
+                                   value="{{old('have_allergy')}}" onchange="toggleInput()">
 
                             <label class="form-label col rounded" for="haveAllergy"></label>
                         </div>
@@ -236,16 +236,16 @@
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col" wire:model="studentForm.allergy_desc"
-                                id="std_allergy_desc_1"
-                                aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
-                                placeholder="desc in english" hidden>
+                               id="std_allergy_desc_1"
+                               aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
+                               placeholder="desc in english" hidden>
                         @error('studentForm.allergy_desc')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col" wire:model="studentForm.allergy_desc_ar"
-                                id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
-                                aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
+                               id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
+                               aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                         @error('studentForm.allergy_desc_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -257,10 +257,10 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                             <input class="toggle col" type="checkbox" wire:model="studentForm.have_health_problem"
-                                    id="healthProblem" value="{{old('have_health_problem')}}"
-                                    onchange="toggleInput()">
+                                   id="healthProblem" value="{{old('have_health_problem')}}"
+                                   onchange="toggleInput()">
                             <label class="form-label col rounded" for="healthProblem"
-                                    id="healthProblem"></label>
+                                   id="healthProblem"></label>
                         </div>
                         {{-- -*- --}}
                         @error('studentForm.have_health_problem')
@@ -268,19 +268,19 @@
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col"
-                                wire:model="studentForm.health_problem_desc"
-                                id="std_health_desc_1"
-                                aria-label="Text input with radio button" value="{{old('health_problem_desc')}}"
-                                placeholder="desc in english" hidden>
+                               wire:model="studentForm.health_problem_desc"
+                               id="std_health_desc_1"
+                               aria-label="Text input with radio button" value="{{old('health_problem_desc')}}"
+                               placeholder="desc in english" hidden>
                         @error('studentForm.health_problem_desc')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col"
-                                wire:model="studentForm.health_problem_desc_ar"
-                                id="std_health_desc_2"
-                                value="{{old('health_problem_desc_ar')}}"
-                                aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
+                               wire:model="studentForm.health_problem_desc_ar"
+                               id="std_health_desc_2"
+                               value="{{old('health_problem_desc_ar')}}"
+                               aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                         @error('studentForm.health_problem_desc_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
@@ -297,7 +297,7 @@
                 <div class="box col-lg-12 col-md-12">
                     <label class="form-label" for="std_Note">{{__('Student.note')}}</label>
                     <textarea wire:model="studentForm.note" class="form-control" id="std_Note" cols="50"
-                            rows="5">{{old('note')}}</textarea>
+                              rows="5">{{old('note')}}</textarea>
                 </div>
             </div>
         </div>

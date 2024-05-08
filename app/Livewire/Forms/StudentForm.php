@@ -2,45 +2,57 @@
 
 namespace App\Livewire\Forms;
 
-use Livewire\Attributes\Validate;
+use App\Models\Student;
+use App\Traits\PhotoTrait;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
 
 class StudentForm extends Form
 {
+    use PhotoTrait;
+
     #[Rule('required')]
-    public string $relative_id;
+    public $relative_id;
     #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
     public string $name;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
     public string $name_ar;
-    #[Rule('nullable|sometimes|max:1024')]
-//    #[Validate('image|max:1024')]
-    public string $photo;
+    #[Rule('nullable|image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
+    public $photo;
     #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
     public string $address;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public string $address_ar;
-    public string $gender;
     #[Rule('required')]
-    public string $birthdate;
+    public $gender;
+    #[Rule('required')]
+    public $birthdate;
     #[Rule('required')]
     public string $place_of_birth;
     #[Rule('required')]
     public string $place_of_birth_ar;
-    public string $educational_level;
     #[Rule('required')]
-    public string $classroom;
-    public string $take_medicine;
-    public string $medicine_desc;
-    public string $medicine_desc_ar;
-    public string $have_allergy;
-    public string $allergy_desc;
-    public string $allergy_desc_ar;
-    public string $have_health_problem;
-    public string $health_problem_desc;
-    public string $health_problem_desc_ar;
-    public string $note;
+    public $classroom_id;
+    #[Rule('nullable')]
+    public $take_medicine;
+    #[Rule('nullable')]
+    public string $medicine_desc= "";
+    #[Rule('nullable')]
+    public string $medicine_desc_ar= "";
+    #[Rule('nullable')]
+    public $have_allergy;
+    #[Rule('nullable')]
+    public string $allergy_desc= "";
+    #[Rule('nullable')]
+    public string $allergy_desc_ar= "";
+    #[Rule('nullable')]
+    public $have_health_problem;
+    #[Rule('nullable')]
+    public string $health_problem_desc= "";
+    #[Rule('nullable')]
+    public string $health_problem_desc_ar= "";
+    #[Rule('nullable')]
+    public string $note= "";
 
     /**
      * Get the error messages for the defined validation rules.
@@ -56,6 +68,54 @@ class StudentForm extends Form
             'address_ar.regex' => __('validation.arabic letters'),
             'class.required' => __('Student.first you have to add classrooms'),
         ];
+    }
+
+    public function store()
+    {
+        $this->validate();
+        try {
+            Student::create([
+                'name' => [
+                    'en' => $this->name,
+                    'ar' => $this->name_ar
+                ],
+//                'photo'=>$this->insertImage($request,0,
+//                    "\App\Models\Student",'images/students'),
+                'photo' => $this->photo,
+                'address' => [
+                    'en' => $this->address,
+                    'ar' => $this->address_ar
+                ],
+                'gender' => [
+                    'en' => __('public.' . $this->gender),
+                    'ar' => __('public.' . $this->gender . '1'),
+                ],
+                'birthdate' => $this->birthdate,
+                'place_of_birth' => [
+                    'en' => $this->place_of_birth,
+                    'ar' => $this->place_of_birth_ar,
+                ],
+                'medicine_desc' => [
+                    'en' => $this->medicine_desc,
+                    'ar' => $this->medicine_desc_ar,
+                ],
+                'allergy_desc' => [
+                    'en' => $this->allergy_desc,
+                    'ar' => $this->allergy_desc_ar,
+                ],
+                'health_problem_desc' => [
+                    'en' => $this->health_problem_desc,
+                    'ar' => $this->health_problem_desc,
+                ],
+                'note' => $this->note,
+                'classroom_id' => $this->classroom_id,
+                'relative_id' => $this->relative_id,
+
+            ]);
+            return redirect()->back()->with(['success' => __('message.success')]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
 
