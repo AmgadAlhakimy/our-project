@@ -6,24 +6,46 @@
             <div class="row">
                 <label class="col">
             <div class="row" >
-                <label class="col-11">
-                    <input wire:model.live.debounce.500ms="search"
-                    type="text" class="form-control" name="search">
-                </label>
-                <i class="col-2 mt-3 fa-regular fa-bell fa-fw"></i>
+
+                <label class="col">
+                    <div class="search p-relative ">
+                        {{-- <i class="fa-solid fa-magnifying-glass"></i> --}}
+                        <input wire:model.live.debounce.500ms="search"
+                            type="text" class="form-control " name="search" placeholder="{{__('sidebar.search')}}" >
+                        </label>
+                    </div>
             </div>
         </div>
     </div>
     </div>
 
     <div class="table-header mt-3 mb-3" id="paginated">
-        <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()"
-                id="select_bt">{{__('public.select')}}</button>
+        <div class="d-flex justify-content-between">
+            <div>
+                <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()"
+                    id="select_bt">{{__('public.select')}}
+                </button>
+                <button class="save-button btn-danger me-1 ms-1"
+                    type="button" id="btn_delete_all"
+                    {{--data-bs-target="#delete_all"--}}> {{__('public.delete all')}}
+                </button>
+            </div>
+            <div>
+                
+            <div class="mt-2">
+                <label class=""> {{__('public.number of rows:')}} </label>
+                <select class="num_rows "  wire:model.live="pagination">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="75">75</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+            </div>
+        </div>
 
-        <button class="save-button btn-danger me-1 ms-1"
-                type="button" id="btn_delete_all"
-            {{--data-bs-target="#delete_all"--}}>
-            {{__('public.delete all')}}</button>
     </div>
     <!-- table-hover table-striped -->
 
@@ -41,7 +63,7 @@
                             style="display: none">
                     </th>
                     <th>
-                        <button id="arrowButton" wire:click="ordering('id')" class="th-head-1">
+                        <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">
                             {{__('public.id')}}  
                             @if($arrow)
                                 <span class="icon-arrow ">&UpArrow;</span>
@@ -51,53 +73,41 @@
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('name')" class="  ">
-                            <div class="box row">
-                                <div class="col d-flex justify-content-end">
+                        <button wire:click="ordering('name')" class="">
+                            <div class="table_test form-label ">
                                     {{__('public.name')}} 
-                                </div>
-                                <div class="col d-flex justify-content-center mt-2">
-                                    <div class=" icon_arrow_test"></div>
-                                </div>
+                                    <div class="me-4 ms-4 mt-1 icon_arrow_test"></div>
                             </div>
                         </button>
                     </th>
                     <th>
                         <button wire:click="ordering('created_at')"class=" ">
-                            <div class="box row">
-                                <div class="col d-flex justify-content-end">
-                                    {{__('public.created at')}}
-                                </div>
-                                <div class="col d-flex justify-content-center mt-2">
-                                    <div class=" icon_arrow_test"></div>
-                                </div>
+                            <div class="table_test form-label ">
+                                {{__('public.created at')}}
+                                <div class="me-4 ms-4 mt-1 icon_arrow_test"></div>
                             </div>
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('updated_at')"
-                            class="th--2">
-                            <div class="box row">
-                                <div class="col d-flex justify-content-end">
-                                    {{__('public.updated at')}}                                </div>
-                                <div class="col d-flex justify-content-center mt-2">
-                                    <div class=" icon_arrow_test"></div>
-                                </div>
+                        <button wire:click="ordering('updated_at')" class="">
+                            <div class="table_test form-label ">
+                                {{__('public.updated at')}} 
+                                <div class="me-4 ms-4 mt-1 icon_arrow_test"></div>
                             </div>
                         </button>
                     </th>
                     <th colspan="2">
-                        <div class="th--4">{{__('public.processes')}} </div>
+                        <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($levels as $Level)
                     <tr>
-                        <td><input type="checkbox" class="check_item ms-2 me-2"
+                        <td ><input type="checkbox" class="check_item ms-2 me-2"
                             value="{{$Level->id}}" id="checkbox" style="display:none"></td>
                         <td>{{$Level->id}}</td>
-                        <td>{{$Level->name}}</td>
+                        <td >{{$Level->name}}</td>
                         <td>{{$Level->created_at}}</td>
                         <td>{{$Level->updated_at}}</td>
                         <td><a href="{{route('educational_levels.edit',$Level->id)}}"
@@ -144,21 +154,13 @@
         </div>
     </div>
 
-    <div class="me-4 ms-4 mt-3">
-        {{$levels->links('pagination::bootstrap-5')}}
-    </div>
-    <div class="ms-4 me-4">
-        <label class=""> {{__('public.number of rows:')}} </label>
-        <select class="num_rows "  wire:model.live="pagination">
-            <option value="5">5</option>
-            <option value="10">10</option>
-            <option value="25">25</option>
-            <option value="50">50</option>
-            <option value="75">75</option>
-            <option value="100">100</option>
-        </select>
-    </div>
-<br><br><br><br>
+    {{-- <div> --}}
+        {{-- <div class="row"> --}}
+            <div class=" me-4 ms-4 mt-3 ">
+                {{$levels->links('pagination::bootstrap-5')}}
+            </div>
+        {{-- </div> --}}
+    {{-- </div> --}}
 </div>
 {{--
 السكرول

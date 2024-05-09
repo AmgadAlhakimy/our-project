@@ -14,6 +14,7 @@
     <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/cards_info.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/font-awesome.css')}}" rel="stylesheet">
     <!-- box icons -->
     <!-- box icons -->
     <!-- styles -->

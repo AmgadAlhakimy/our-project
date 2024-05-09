@@ -15,7 +15,7 @@
             <div class=" search p-relative ph-search">
                 <label for="rtl"></label> <input class="search1" type="search"
                     placeholder="{{__('sidebar.search')}}" id="rtl" />
-            </div>
+            </div> 
         </div>
         <div class="head_1">
             <div class=" icons ph-account">
@@ -31,9 +31,9 @@
                     <span class="lang_2 selected" >{{__('sidebar.Lang')}}</span>
                     <div class="caret"></div>
                 </div>
-                <ul class="menuLang ms-5">
+                <ul class="menuLang ">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <li>
+                        <li class="">
                             <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
                             class="lung_test">
                                 {{ $properties['native'] }}

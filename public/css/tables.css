@@ -242,3 +242,10 @@ th button.active .icon-arrow {
 
     
 }
+
+.table_test{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    /* justify-content: space-between; */
+}
