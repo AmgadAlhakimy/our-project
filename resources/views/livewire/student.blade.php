@@ -5,6 +5,32 @@
         </div>
     @endif
     {{-- <!-- Start parent info  --> --}}
+        <h3 class="container-title">{{__('Student.the parents')}}</h3>
+        <div class="container containers-style">
+            <div>
+                <div class="row mb-3 text-center">
+                    {{-- frist select the father if he exsist in the sestem --}}
+                    <label class="col">
+                        {{__('student.if the father exists write it here')}}
+                        <input type="text" class="form-control" wire:model.live="search"
+                               placeholder="{{__('student.please select the father first')}}">
+                    </label>
+                    @if(sizeof($fathers) > 0)
+                        <div class="dropdown-menu d-block py-0 text-center mt-7 form-label pointer ">
+                            @foreach($fathers as $father)
+                                <div class=" pt-1 border-bottom">
+                                    <div class="d-flex flex-column ">
+
+                                    </div>
+                                </div>
+                                <span wire:click="myFather('{{$father->father_name}}')">
+                                        {{$father->father_name}}</span>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </div>
     <h3 class="container-title">{{__('Student.choose parents')}}</h3>
     <div class="container  containers-style ">
 
@@ -72,10 +98,10 @@
                     @error('studentForm.photo')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
-{{--                    @if($image)--}}
-{{--                        <img class="cards_img" alt="photo"--}}
-{{--                             src="{{$image->temporaryUrl()}}">--}}
-{{--                    @endif--}}
+                    @if($studentForm->photo)
+                        <img class="cards_img" alt="photo"
+                             src="{{$studentForm->photo->temporaryUrl()}}">
+                    @endif
                 </div>
                 <button class="btn btn-secondary" wire:click="resetImage">Reset the image</button>
                 {{-- 4 --}}

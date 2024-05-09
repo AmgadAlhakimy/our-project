@@ -3,13 +3,11 @@
 namespace App\Livewire\Forms;
 
 use App\Models\Student;
-use App\Traits\PhotoTrait;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
 
 class StudentForm extends Form
 {
-    use PhotoTrait;
 
     #[Rule('required')]
     public $relative_id;
@@ -69,7 +67,9 @@ class StudentForm extends Form
             'class.required' => __('Student.first you have to add classrooms'),
         ];
     }
-
+    /**
+     * Store a new student.
+     */
     public function store()
     {
         $this->validate();
@@ -79,9 +79,8 @@ class StudentForm extends Form
                     'en' => $this->name,
                     'ar' => $this->name_ar
                 ],
-//                'photo'=>$this->insertImage($request,0,
-//                    "\App\Models\Student",'images/students'),
-                'photo' => $this->photo,
+
+                'photo'=>$this->insertImage(),
                 'address' => [
                     'en' => $this->address,
                     'ar' => $this->address_ar
@@ -115,6 +114,12 @@ class StudentForm extends Form
             return redirect()->back()->with(['success' => __('message.success')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+    public function insertImage()
+    {
+        if($this->photo){
+            $this->photo->store('public/images/students');
         }
     }
 

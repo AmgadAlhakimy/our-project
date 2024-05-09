@@ -7,7 +7,6 @@ use App\Livewire\Forms\StudentForm;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Relative;
-use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -15,15 +14,14 @@ class Student extends Component
 {
     use WithFileUploads;
 
-    public RelativesForm $form;
+    public RelativesForm $relativeForm;
     public StudentForm $studentForm;
 
     public $selectedLevel = null;
     public $classrooms;
-    public int $currentStep = 2;
+    public int $currentStep = 1;
     public int $totalSteps = 3;
     public string $search = "";
-    public string $father = "";
     public $image;
     public $showSelect = false;
 
@@ -44,38 +42,23 @@ class Student extends Component
         )->title('Create new Student');
     }
 
+    public function increment(): int
+    {
+         return $this->currentStep = 2;
+    }
     public function updatedSelectedLevel()
     {
-        $this->classrooms = Classroom::where('edu_id', $this->selectedLevel)->get();
+        return $this->classrooms = Classroom::
+        where('edu_id', $this->selectedLevel)->get();
     }
 
-    public function myFather($data)
+    public function storeRelative(): void
     {
-        if ($this->currentStep < $this->totalSteps) {
-            $this->currentStep++;
-        }
-        $this->father = $data;
+        $this->relativeForm->store();
+        $this->currentStep++;
     }
 
-    public function resetFather()
-    {
-        $this->father = "";
-        $this->showSelect = true;
-    }
-
-    public function storeRelative()
-    {
-        $this->form->validate();
-        try {
-            Relative::create($this->form->all());
-            $this->currentStep++;
-            return redirect()->back()->with(['success' => __('message.success')]);
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
-
-    public function storeStudent()
+    public function storeStudent(): void
     {
             $this->studentForm->store();
             $this->currentStep++;
@@ -83,6 +66,6 @@ class Student extends Component
 
     public function resetImage()
     {
-        $this->image = "";
+        return $this->studentForm->photo = "";
     }
 }

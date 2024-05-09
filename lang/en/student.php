@@ -90,6 +90,7 @@ return [
     'if the father exists write it here'=>'If the Father Exists Write it Here',
     'change father'=>'Change Father',
 
-    'please select the father first'=>'Please, Select the Father First'
+    'please select the father first'=>'Please, Select the Father First',
+    'the father already exists'=>'The Father Already Exists',
 
 ];

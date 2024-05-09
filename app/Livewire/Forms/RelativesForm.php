@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Forms;
 
+use App\Models\Relative;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
 
@@ -12,35 +13,35 @@ class RelativesForm extends Form
     #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+$/u')]
     public string $father_name_ar;
     #[Rule('nullable|max:50|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $father_work;
+    public string $father_work="";
     #[Rule('nullable|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $father_work_ar;
+    public string $father_work_ar="";
     #[Rule('required|numeric')]
     public int $father_contact1;
     #[Rule('nullable|numeric')]
-    public int $father_contact2;
+    public int $father_contact2=0;
     #[Rule('required|max:50|regex:/^[a-zA-Z\s]+$/')]
     public string $mother_name;
-    #[Rule( 'required|max:50|regex:/^[\p{Arabic}\s]+$/u')]
+    #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+$/u')]
     public string $mother_name_ar;
     #[Rule('nullable|max:50|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $mother_work;
+    public string $mother_work="";
     #[Rule('nullable|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $mother_work_ar;
+    public string $mother_work_ar="";
     #[Rule('nullable|numeric')]
-    public int $mother_contact1;
+    public int $mother_contact1=0;
     #[Rule('nullable|numeric')]
-    public int $mother_contact2;
+    public int $mother_contact2=0;
     #[Rule('nullable|max:50|regex:/^[a-zA-Z\s]+$/')]
-    public string $kin_name;
+    public string $kin_name="";
     #[Rule('nullable|max:50|regex:/^[\p{Arabic}\s]+$/u')]
-    public string $kin_name_ar;
+    public string $kin_name_ar="";
     #[Rule('nullable|max:50|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $kin_relationship;
+    public string $kin_relationship="";
     #[Rule('nullable|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $kin_relationship_ar;
+    public string $kin_relationship_ar="";
     #[Rule('nullable|numeric')]
-    public int $kin_contact;
+    public int $kin_contact=0;
 
     /**
      * Get the error messages for the defined validation rules.
@@ -63,5 +64,49 @@ class RelativesForm extends Form
             'kin_relationship.regex' => __('validation.english letters'),
             'kin_relationship_ar.regex' => __('validation.arabic letters'),
         ];
+    }
+
+    /**
+     * Store a new relative.
+     */
+    public function store()
+    {
+        $this->validate();
+        try {
+            Relative::create([
+                'father_name' => [
+                    'en' => $this->father_name,
+                    'ar' => $this->father_name_ar
+                ],
+                'father_work' => [
+                    'en' => $this->father_work,
+                    'ar' => $this->father_work_ar
+                ],
+                'father_contact1' => $this->father_contact1,
+                'father_contact2' => $this->father_contact2,
+                'mother_name' => [
+                    'en' => $this->mother_name,
+                    'ar' => $this->mother_name_ar
+                ],
+                'mother_work' => [
+                    'en' => $this->mother_work,
+                    'ar' => $this->mother_work_ar,
+                ],
+                'mother_contact1' => $this->mother_contact1,
+                'mother_contact2' => $this->mother_contact2,
+                'kin_name' => [
+                    'en' => $this->kin_name,
+                    'ar' => $this->kin_name_ar,
+                ],
+                'kin_relationship' => [
+                    'en' => $this->kin_relationship,
+                    'ar' => $this->kin_relationship_ar,
+                ],
+                'kin_contact' => $this->kin_contact,
+            ]);
+            return redirect()->back()->with(['success' => __('message.success')]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 }
