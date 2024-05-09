@@ -8,8 +8,15 @@
         <!-- Start parent info  -->
         @if($currentStep === 1)
 
-            <button class="btn btn-success" wire:click="increment">
-                {{__('student.the father already exists')}}</button>
+
+        <div class="box row me-5 ms-5 mb-2">
+            <button class="col save-button" wire:click="increment">
+                {{__('student.the father already exists')}}
+            </button>
+        </div>
+        <div class="">
+            <tr>
+        </div>
             <h3 class="container-title">{{__('Student.parent info')}}</h3>
             <div class="container  containers-style ">
                 <form wire:submit="storeRelative">

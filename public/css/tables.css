@@ -238,9 +238,7 @@ th button.active .icon-arrow {
     border-top: 1px solid ;
     width: 7px;
     height: 7px;
-    transform: rotate(45deg);
-
-    
+    transform: rotate(45deg);    
 }
 
 .table_test{

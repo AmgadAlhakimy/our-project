@@ -64,7 +64,7 @@
                                 <a href="#" class="li-link title-4">
                                     <i class="icon-1 fa-solid fa-trash-can"></i>
                                     <span class="menu-name">{{__('sidebar.trash')}} </span>
-                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                    <i class="icon-1 fa-solid fa-chevron-up"></i>
                                 </a>
                             </div>
                             <div class="submenu">

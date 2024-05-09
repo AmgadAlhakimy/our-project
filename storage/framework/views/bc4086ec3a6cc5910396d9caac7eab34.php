@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
-    
+
     <main class="">
         <section class="section  ">
                 <!-- Start personal info  -->
                 <h3 class="container-title mb-5"><?php echo e(__('student.student information')); ?></h3>
             <div class="cards_container row">
-                
+
                 <div class=" containers-style">
                     <label class="box container-title col-12 "><?php echo e(__('student.personal info')); ?></label>
                     <div class="row col">
@@ -15,8 +15,8 @@
                                     <div class=" row">
                                         
                                         <div class="box col">
-                                            <img class=" cards_img" src="<?php echo e(asset($student->photo)); ?>" alt="">
-                                        </div> 
+                                            <img class="cards_img" src="<?php echo e(asset($student->photo)); ?>" alt="">
+                                        </div>
                                         <div class="text-center ">
                                             <label class="  cards_title"> <?php echo e($student->name); ?> </label>
                                             <label class="  cards_sup_title">(<?php echo e($student->id); ?>)</label>

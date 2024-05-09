@@ -5,32 +5,7 @@
         </div>
     @endif
     {{-- <!-- Start parent info  --> --}}
-        <h3 class="container-title">{{__('Student.the parents')}}</h3>
-        <div class="container containers-style">
-            <div>
-                <div class="row mb-3 text-center">
-                    {{-- frist select the father if he exsist in the sestem --}}
-                    <label class="col">
-                        {{__('student.if the father exists write it here')}}
-                        <input type="text" class="form-control" wire:model.live="search"
-                               placeholder="{{__('student.please select the father first')}}">
-                    </label>
-                    @if(sizeof($fathers) > 0)
-                        <div class="dropdown-menu d-block py-0 text-center mt-7 form-label pointer ">
-                            @foreach($fathers as $father)
-                                <div class=" pt-1 border-bottom">
-                                    <div class="d-flex flex-column ">
-
-                                    </div>
-                                </div>
-                                <span wire:click="myFather('{{$father->father_name}}')">
-                                        {{$father->father_name}}</span>
-                            @endforeach
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </div>
+        
     <h3 class="container-title">{{__('Student.choose parents')}}</h3>
     <div class="container  containers-style ">
 
@@ -38,23 +13,23 @@
             <!-- father name  -->
             <div class="col-4 box">
                 <button wire:click="resetFather"
-                        class="text-dark save-button mt-1">{{__('Student.change father')}}</button>
+                        class=" save-button mt-1">{{__('Student.change father')}}</button>
             </div>
-            <div class="col-8 box">
+            <div class="col-8 box ">
                 @if(sizeof($fathers) < 1 or $showSelect === true)
-                    <select id="className " class="form-control text-danger" wire:model="studentForm.relative_id"
+                    <select id="className " class="mt-1 form-control   " wire:model="studentForm.relative_id"
                             value="{{old('relative_id')}}">
                         <option value="" selected>{{__('student.please select the father')}}</option>
                         @foreach($relatives as $relative)
-                            <option class="text-center "
+                            <option class="text-center"
                                     value="{{$relative->id}}">{{$relative->father_name}}</option>
                         @endforeach
                     </select>
                     @error('studentForm.relative_id')
-                    <small class="form-text text-danger">{{$message}}</small>
+                    <small class="form-text ">{{$message}}</small>
                     @enderror
                 @else
-                    <label class="text-danger h5 mt-1 ">{{$father}}</label>
+                    <label class="">{{$father}}</label>
                 @endif
             </div>
             <!-- garden number  -->
@@ -89,42 +64,49 @@
                     @enderror
                 </div>
                 {{-- 3 --}}
+                <div class="">
+                    <div class="row">
+                        <div class="box col-8 ">
+                            <label class="" for="photo">{{__('Student.photo')}}</label>
+                            <input type="file" class="form-control" id="photo"
+                                wire:model.live="studentForm.photo"
+                                value="{{old('photo')}}">
+                            @error('studentForm.photo')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
+                        <div class="col mt-4">
+                            <button class="col w-100 save-button" wire:click="resetImage">Reset</button>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="box col">
-                    <label class="" for="photo">{{__('Student.photo')}}</label>
-                    <input type="file" class="form-control" id="photo"
-                           wire:model.live="studentForm.photo"
-                           value="{{old('photo')}}">
-                    @error('studentForm.photo')
+                @if($studentForm->photo)
+                <div class="box d-flex justify-content-center">
+                    <img class="personal_img mt-4 " alt="photo"
+                        src="{{$studentForm->photo->temporaryUrl()}}">
+                </div>
+                @endif
+                {{-- 4 --}}
+
+                <div class="box col-lg-6 col-md-6">
+                    <label for="address">{{__("Student.Student's address in arabic")}}</label>
+                    <input type="text" class=" form-control " id='address'
+                            wire:model="studentForm.address_ar"
+                            value="{{old('address_ar')}}">
+                    @error('studentForm.address_ar')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
-                    @if($studentForm->photo)
-                        <img class="cards_img" alt="photo"
-                             src="{{$studentForm->photo->temporaryUrl()}}">
-                    @endif
                 </div>
-                <button class="btn btn-secondary" wire:click="resetImage">Reset the image</button>
-                {{-- 4 --}}
-                <div class="box row">
-                    <div class="col-lg-6 col-md-6">
-                        <label for="address">{{__("Student.Student's address in arabic")}}</label>
-                        <input type="text" class=" form-control ms-2 me-2" id='address'
-                               wire:model="studentForm.address_ar"
-                               value="{{old('address_ar')}}">
-                        @error('studentForm.address_ar')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    {{-- -- --}}
-                    <div class="col-lg-6 col-md-6 ">
-                        <label for="address">{{__("Student.Student's address in english")}}</label>
-                        <input type="text" class=" form-control ms-2 me-2" id="address"
-                               wire:model="studentForm.address"
-                               value="{{old('address')}}">
-                        @error('studentForm.address')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
+                {{-- -- --}}
+                <div class="box col-lg-6 col-md-6 ">
+                    <label for="address">{{__("Student.Student's address in english")}}</label>
+                    <input type="text" class=" form-control " id="address"
+                            wire:model="studentForm.address"
+                            value="{{old('address')}}">
+                    @error('studentForm.address')
+                    <small class="form-text text-danger">{{$message}}</small>
+                    @enderror
                 </div>
 
                 {{-- 5 --}}
@@ -173,9 +155,8 @@
                     @enderror
                 </div>
                 {{-- 8 --}}
-                <div class="box col-lg-12 col-md-12 ">
+                <div class="box col-lg-6 col-md-6 ">
                     <label for="className" class="form-label">{{__('Student.level')}}</label>
-                    <label for="educational_level">Select an Educational Level:</label>
                     <select class="form-control" wire:model.live="selectedLevel">
                         <option value="" selected>{{__('public.select level')}}</option>
                         @foreach($levels as $level)
