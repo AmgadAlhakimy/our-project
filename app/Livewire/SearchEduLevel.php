@@ -17,9 +17,12 @@ class SearchEduLevel extends Component
     public $orderBy = 'id';
     public $sortOrder = 'asc';
     public $arrow = false;
+    public $showArrow = 'id';
+    public bool $isPaginate;
 
     public function ordering($item)
     {
+        $this->showArrow = $item;
         if ($this->orderBy == $item) {
             $this->sortOrder = $this->sortOrder === 'asc' ? 'desc' : 'asc';
             $this->arrow = !$this->arrow;
@@ -34,11 +37,13 @@ class SearchEduLevel extends Component
 
             $lang = LaravelLocalization::setLocale();
             if (strlen($this->search) >= 1) {
+                $this->isPaginate = false;
                 $levels = EducationalLevel::where('name->en', 'like', "%$this->search%")
-                    ->orwhere('name->ar', 'like', "%$this->search%")->paginate($this->pagination);
+                    ->orwhere('name->ar', 'like', "%$this->search%")->get();
                 return view('livewire.search-edu-level',
                     compact('levels'));
             } else {
+                $this->isPaginate = true;
                 $levels = EducationalLevel::orderBy(
                     ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
                     $this->sortOrder)->paginate($this->pagination);

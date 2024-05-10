@@ -230,8 +230,8 @@ tr:hover img {
     border: 1.4px solid var(--S-Color-1);
     margin: 0 4px;
 }
-th button.active .icon-arrow { 
-    transform: rotate(180deg); 
+th button.active .icon-arrow {
+    transform: rotate(180deg);
 }
 .icon_arrow_test{
     border-left: 1px solid ;
@@ -239,10 +239,15 @@ th button.active .icon-arrow {
     width: 7px;
     height: 7px;
     transform: rotate(45deg);
-
-    
 }
 
+.icon_arrow_test_down{
+    border-left: 1px solid ;
+    border-top: 1px solid ;
+    width: 7px;
+    height: 7px;
+    transform: rotate(225deg);
+}
 .table_test{
     display: flex;
     /* flex-direction: column; */

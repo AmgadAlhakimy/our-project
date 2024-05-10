@@ -11,7 +11,8 @@
                     <div class="search p-relative ">
                         {{-- <i class="fa-solid fa-magnifying-glass"></i> --}}
                         <input wire:model.live.debounce.500ms="search"
-                            type="text" class="form-control " name="search" placeholder="{{__('sidebar.search')}}" >
+                            type="text" class="form-control " name="search"
+                               placeholder="{{__('sidebar.search')}}" >
                         </label>
                     </div>
             </div>
@@ -31,7 +32,7 @@
                 </button>
             </div>
             <div>
-                
+                @if($isPaginate)
             <div class="mt-2">
                 <label class=""> {{__('public.number of rows:')}} </label>
                 <select class="num_rows "  wire:model.live="pagination">
@@ -43,6 +44,7 @@
                     <option value="100">100</option>
                 </select>
             </div>
+                @endif
             </div>
         </div>
 
@@ -64,19 +66,23 @@
                     </th>
                     <th>
                         <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">
-                            {{__('public.id')}}  
-                            @if($arrow)
-                                <span class="icon-arrow ">&UpArrow;</span>
-                                @else
-                                <span class="icon-arrow">&DownArrow;</span> 
+                            {{__('public.id')}}
+                            @if($arrow and $showArrow === 'id')
+                                <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                            @elseif(!$arrow and $showArrow === 'id')
+                                <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
                             @endif
                         </button>
                     </th>
                     <th>
                         <button wire:click="ordering('name')" class="">
                             <div class="table_test form-label ">
-                                    {{__('public.name')}} 
-                                    <div class="me-4 ms-4 mt-1 icon_arrow_test"></div>
+                                    {{__('public.name')}}
+                                @if($arrow and $showArrow === 'name')
+                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                                @elseif(!$arrow and $showArrow === 'name')
+                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
+                                @endif
                             </div>
                         </button>
                     </th>
@@ -84,15 +90,23 @@
                         <button wire:click="ordering('created_at')"class=" ">
                             <div class="table_test form-label ">
                                 {{__('public.created at')}}
-                                <div class="me-4 ms-4 mt-1 icon_arrow_test"></div>
+                                @if($arrow and $showArrow === 'created_at')
+                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                                @elseif(!$arrow and $showArrow === 'created_at')
+                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
+                                @endif
                             </div>
                         </button>
                     </th>
                     <th>
                         <button wire:click="ordering('updated_at')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.updated at')}} 
-                                <div class="me-4 ms-4 mt-1 icon_arrow_test"></div>
+                                {{__('public.updated at')}}
+                                @if($arrow and $showArrow === 'updated_at')
+                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                                @elseif(!$arrow and $showArrow === 'updated_at')
+                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
+                                @endif
                             </div>
                         </button>
                     </th>
@@ -152,16 +166,17 @@
                 </tbody>
             </table>
         </div>
+        @if($isPaginate)
+        <div class=" me-4 ms-4 mt-3 ">
+            {{$levels->links()}}
+        </div>
+        @endif
     </div>
 
     {{-- <div> --}}
         {{-- <div class="row"> --}}
-            <div class=" me-4 ms-4 mt-3 ">
-                {{$levels->links('pagination::bootstrap-5')}}
-            </div>
-        {{-- </div> --}}
-    {{-- </div> --}}
-</div>
+
+
 {{--
 السكرول
 البحث العدسة بالداخل او غيرها
