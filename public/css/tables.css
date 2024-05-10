@@ -238,7 +238,11 @@ th button.active .icon-arrow {
     border-top: 1px solid ;
     width: 7px;
     height: 7px;
+<<<<<<< HEAD
     transform: rotate(45deg);
+=======
+    transform: rotate(45deg);    
+>>>>>>> c9778e49d99d522f7ed24759960dc09a1cd2a64b
 }
 
 .icon_arrow_test_down{

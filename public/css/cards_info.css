@@ -5,6 +5,16 @@
     border:1px solid grey;
     /*  */
 }
+.personal_img{
+    border-radius: 15px;
+    border: 4px solid white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+.personal_img:hover{
+    border-color: var(--S-Color-8);
+}
 .cards_info_style{
     transition: width 0.3s;
     border-radius: 10px;
