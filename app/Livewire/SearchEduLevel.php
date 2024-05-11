@@ -19,6 +19,7 @@ class SearchEduLevel extends Component
     public $arrow = false;
     public $showArrow = 'id';
     public bool $isPaginate;
+    public $checkedLevel = [];
 
     public function ordering($item)
     {
@@ -54,5 +55,9 @@ class SearchEduLevel extends Component
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
+    }
+    public function deleteLevels()
+    {
+        dd($this->checkedLevel);
     }
 }

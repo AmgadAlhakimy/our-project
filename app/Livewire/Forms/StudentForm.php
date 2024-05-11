@@ -5,17 +5,18 @@ namespace App\Livewire\Forms;
 use App\Models\Student;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
+use Livewire\WithFileUploads;
 
 class StudentForm extends Form
 {
-
-    #[Rule('required')]
+use WithFileUploads;
+    #[Rule('required|exists:relatives,id')]
     public $relative_id;
     #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
     public string $name;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
     public string $name_ar;
-    #[Rule('nullable|image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
+    #[Rule('image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
     public $photo;
     #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
     public string $address;
@@ -65,6 +66,7 @@ class StudentForm extends Form
             'address.regex' => __('validation.english letters'),
             'address_ar.regex' => __('validation.arabic letters'),
             'class.required' => __('Student.first you have to add classrooms'),
+            'relative_id.exists' => __('student.please select from the list and the number of father only'),
         ];
     }
     /**
@@ -119,8 +121,10 @@ class StudentForm extends Form
     public function insertImage()
     {
         if($this->photo){
-            $this->photo->store('public/images/students');
+
+            return $this->photo->store('images/students');
         }
+        return null;
     }
 
 

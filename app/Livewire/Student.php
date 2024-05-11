@@ -19,7 +19,7 @@ class Student extends Component
 
     public $selectedLevel = null;
     public $classrooms;
-    public int $currentStep = 1;
+    public int $currentStep = 2;
     public int $totalSteps = 3;
     public string $search = "";
     public $image;

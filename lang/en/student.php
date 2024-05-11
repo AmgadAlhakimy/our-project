@@ -92,5 +92,7 @@ return [
 
     'please select the father first'=>'Please, Select the Father First',
     'the father already exists'=>'The Father Already Exists',
+    'please select from the list and the number of father only'=>
+    'please select from the list and the number of father only',
 
 ];

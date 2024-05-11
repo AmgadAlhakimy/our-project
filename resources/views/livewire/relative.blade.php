@@ -7,8 +7,6 @@
         @endif
         <!-- Start parent info  -->
         @if($currentStep === 1)
-
-
         <div class="box row me-5 ms-5 mb-2">
             <button class="col save-button" wire:click="increment">
                 {{__('student.the father already exists')}}
@@ -32,7 +30,7 @@
                         </div>
                         <div class="box col-lg-6 col-md-12">
                             <label for="father_ar">{{__("Student.father's name in arabic")}}</label>
-                            <input type="text" class="form-control" id='father_ar' wire:model.live="relativeForm.father_name_ar"
+                            <input type="text" class="form-control" id='father_ar' wire:model.live.debounce.500ms="relativeForm.father_name_ar"
                                 value="{{old('father_name_ar')}}">
                             @error('relativeForm.father_name_ar')
                             <small class="form-text text-danger">{{$message}}</small>

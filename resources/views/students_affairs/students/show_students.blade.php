@@ -64,8 +64,12 @@
                             </td>
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
-                            <td><img src="{{asset($student->photo)}}"
-                                     class="student-img" alt="photo"></td>
+                            <td><img
+                                    {{--                                    src="{{asset('storage/public/images/students/1715341178_0_tS9xstZf3FaIWhpS.jpg')}}"--}}
+                                    {{--                                    src="{{asset('storage/public/images/students/1715340777_IMG_20230304_151241_984.jpg')}}"--}}
+                                                                        src="{{asset($student->photo)}}"
+{{--                                    src="{{ asset('storage/'.$student->photo) }}"--}}
+                                    class="student-img" alt="photo"></td>
                             <td>{{$student->address}}</td>
                             <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>
@@ -120,7 +124,7 @@
                             </td>
                         </tr>
                     @endforeach
-            {{$students->links('pagination::bootstrap-5')}}
+                    {{$students->links()}}
                     </tbody>
                 </table>
             </div>

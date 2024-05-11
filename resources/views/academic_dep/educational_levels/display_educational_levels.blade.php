@@ -7,7 +7,7 @@
         {{-- the table header with bottuns and search input --}}
 
 
-        <livewire:search-edu-level/>
+{{--        <livewire:search-edu-level/>--}}
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
 
         <!-- table-hover table-striped -->
