@@ -28,79 +28,20 @@ sidebar.classList.toggle("close");
 
 // ====================
 
-// window.addEventListener("DOMContentLoaded", function () {
-//     var my_toggle = document.getElementById("my_toggle");
+window.addEventListener("DOMContentLoaded", function () {
+    var my_toggle = document.getElementById("my_toggle");
 
-//     function checkScreenWidth() {
-//         if (window.innerWidth < 600) {
-//             my_toggle.style.width = "100%";
-//         }
-//     }
-//     checkScreenWidth();
-//     window.addEventListener("resize", function () {
-//         checkScreenWidth();
-//     });
-// });
+    function checkScreenWidth() {
+        if (window.innerWidth < 600) {
+            my_toggle.style.width = "100%";
+        }
+    }
+    checkScreenWidth();
+    window.addEventListener("resize", function () {
+        checkScreenWidth();
+    });
+});
 
-// document.addEventListener("DOMContentLoaded", function () {j8
-//     const _clicked = document.getElementById("_clicked");
-//     const my_toggle = document.getElementById("my_toggle");
-//     var body = document.querySelector("body");
-//     var myDiv = document.getElementById("myDiv");
-
-//     if (body.dir === "rtl") {
-//         myDiv.classList.add("myDiv_rtl");
-//         _clicked.addEventListener("click", () => {
-//             if (my_toggle.classList.contains("active")) {
-//                 my_toggle.classList.remove("active");
-//                 my_toggle.style.transition = "all .5s ease";
-//                 my_toggle.style.margin = "0px 240px 0px 0px";
-//                 my_toggle.style.backgroundColor = "black";
-
-//                 requestAnimationFrame(() => {
-//                     my_toggle.style.transition = "all 0.5s ease";
-//                     my_toggle.style.margin = "0px 240px 0px 0px";
-//                 });
-//             } else {
-//                 my_toggle.classList.add("active");
-//                 my_toggle.style.transition = "all 0.5s ease";
-//                 my_toggle.style.margin = "0px 0px 0px 0px";
-//                 requestAnimationFrame(() => {
-//                     my_toggle.style.transition = "all 0.5s ease";
-//                     my_toggle.style.margin = "0px 0px 0px 0px";
-//                     my_toggle.style.backgroundColor = "red";
-//                 });
-//             }
-//         });
-//     } else {
-//         myDiv.classList.add("myDiv_ltr");
-//         _clicked.addEventListener("click", () => {
-//             if (my_toggle.classList.contains("active")) {
-//                 my_toggle.classList.remove("active");
-//                 my_toggle.style.transition = "all .5s ease";
-//                 my_toggle.style.margin = "0px 0px 0px 240px";
-//                 my_toggle.style.backgroundColor = "blue";
-
-//                 requestAnimationFrame(() => {
-//                     my_toggle.style.transition = "all 0.5s ease";
-//                     my_toggle.style.margin = "0px 0px 0px 240px";
-//                 });
-//             } else {
-//                 my_toggle.classList.add("active");
-//                 my_toggle.style.transition = "all 0.5s ease";
-//                 my_toggle.style.margin = "0px 0px 0px 0px";
-//                 requestAnimationFrame(() => {
-//                     my_toggle.style.transition = "all 0.5s ease";
-//                     my_toggle.style.margin = "0px 0px 0px 0px";
-//                     my_toggle.style.backgroundColor = "green";
-//                 });
-//             }
-//         });
-//     }
-// });
-// --------------------------------------------------------------------------------
-
-// test
 document.addEventListener("DOMContentLoaded", function () {
     const _clicked = document.getElementById("_clicked");
     const my_toggle = document.getElementById("my_toggle");
@@ -109,41 +50,103 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (body.dir === "rtl") {
         myDiv.classList.add("myDiv_rtl");
-    } else {
-        myDiv.classList.add("myDiv_ltr");
-    }
+        _clicked.addEventListener("click", () => {
+            if (my_toggle.classList.contains("active")) {
+                my_toggle.classList.remove("active");
+                my_toggle.style.transition = "all .5s ease";
+                my_toggle.style.margin = "0px 240px 0px 0px";
+                my_toggle.style.backgroundColor = "black";
 
-    _clicked.addEventListener("click", () => {
-        if (my_toggle.classList.contains("active")) {
-            my_toggle.classList.remove("active");
-            my_toggle.style.transition = "all .5s ease";
-            my_toggle.style.margin =
-                body.dir === "rtl" ? "0px 240px 0px 0px" : "0px 0px 0px 240px";
-            my_toggle.style.backgroundColor =
-                body.dir === "rtl" ? "black" : "blue";
-
-            requestAnimationFrame(() => {
-                my_toggle.style.transition = "all 0.5s ease";
-                my_toggle.style.margin =
-                    body.dir === "rtl"
-                        ? "0px 240px 0px 0px"
-                        : "0px 0px 0px 240px";
-            });
-        } else {
-            my_toggle.classList.add("active");
-            my_toggle.style.transition = "all 0.5s ease";
-            my_toggle.style.margin = "0px 0px 0px 0px";
-            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    my_toggle.style.transition = "all 0.5s ease";
+                    my_toggle.style.margin = "0px 240px 0px 0px";
+                });
+            } else {
+                my_toggle.classList.add("active");
                 my_toggle.style.transition = "all 0.5s ease";
                 my_toggle.style.margin = "0px 0px 0px 0px";
-                my_toggle.style.backgroundColor =
-                    body.dir === "rtl" ? "red" : "green";
-            });
-        }
-    });
+                my_toggle.style.backgroundColor = "blue";
+                requestAnimationFrame(() => {
+                    my_toggle.style.transition = "all 0.5s ease";
+                    my_toggle.style.margin = "0px 0px 0px 0px";
+                    my_toggle.style.backgroundColor = "red";
+                });
+            }
+        });
+    } else {
+        myDiv.classList.add("myDiv_ltr");
+        _clicked.addEventListener("click", () => {
+            if (my_toggle.classList.contains("active")) {
+                my_toggle.classList.remove("active");
+                my_toggle.style.transition = "all .5s ease";
+                my_toggle.style.margin = "0px 0px 0px 240px";
+                my_toggle.style.backgroundColor = "blue";
+
+                requestAnimationFrame(() => {
+                    my_toggle.style.transition = "all 0.5s ease";
+                    my_toggle.style.margin = "0px 0px 0px 240px";
+                });
+            } else {
+                my_toggle.classList.add("active");
+                my_toggle.style.transition = "all 0.5s ease";
+                my_toggle.style.margin = "0px 0px 0px 0px";
+                requestAnimationFrame(() => {
+                    my_toggle.style.transition = "all 0.5s ease";
+                    my_toggle.style.margin = "0px 0px 0px 0px";
+                    my_toggle.style.backgroundColor = "green";
+                });
+            }
+        });
+    }
 });
 // --------------------------------------------------------------------------------
-{
+
+// test the sidebar other code
+// document.addEventListener("DOMContentLoaded", function () {
+//     const _clicked = document.getElementById("_clicked");
+//     const my_toggle = document.getElementById("my_toggle");
+//     var body = document.querySelector("body");
+//     var myDiv = document.getElementById("myDiv");
+
+//     if (body.dir === "rtl") {
+//         myDiv.classList.add("myDiv_rtl");
+//     } else {
+//         myDiv.classList.add("myDiv_ltr");
+//     }
+
+//     _clicked.addEventListener("click", () => {
+//         if (my_toggle.classList.contains("active")) {
+//             my_toggle.classList.remove("active");
+//             my_toggle.style.transition = "all .5s ease";
+//             my_toggle.style.margin =
+//                 body.dir === "rtl" ? "0px 240px 0px 0px" : "0px 0px 0px 240px";
+//             my_toggle.style.backgroundColor =
+//                 body.dir === "rtl" ? "black" : "blue";
+
+//             requestAnimationFrame(() => {
+//                 my_toggle.style.transition = "all 0.5s ease";
+//                 my_toggle.style.margin =
+//                     body.dir === "rtl"
+//                         ? "0px 240px 0px 0px"
+//                         : "0px 0px 0px 240px";
+//             });
+//         } else {
+//             my_toggle.classList.add("active");
+//             my_toggle.style.transition = "all 0.5s ease";
+//             my_toggle.style.margin = "0px 0px 0px 0px";
+//             requestAnimationFrame(() => {
+//                 my_toggle.style.transition = "all 0.5s ease";
+//                 my_toggle.style.margin = "0px 0px 0px 0px";
+//                 my_toggle.style.backgroundColor =
+//                     body.dir === "rtl" ? "red" : "green";
+//             });
+//         }
+//     });
+// });
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------
+
     /* <html>
 <head>
     <title>Toggle Example</title>
@@ -166,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <script src="script.js"></script>
 </body> */
-}
+
 // --------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------
 // --------------------------------------------------------------------------------
@@ -184,11 +187,11 @@ dropdowns.forEach((dropdownlang) => {
 
     // add a click event to the select element
     select.addEventListener("click", () => {
-        // add the cliked select style to the secect element
+        // add the clicked select style to the select element
         select.classList.toggle("select-clicked");
-        // add the torare style to the caret element
+        // add the style to the caret element
         caret.classList.toggle("caret-rotate");
-        // add the open style to the menulang element
+        // add the open style to the lang element
         menulang.classList.toggle("menulang-open");
     });
 
@@ -202,7 +205,7 @@ dropdowns.forEach((dropdownlang) => {
             select.classList.remove("select-clicked");
             // add the rotate styles to the caret element
             caret.classList.remove("caret-rotate");
-            // add the opent style to the menulang elemnt
+            // add the open style to the menulang element
             menulang.classList.remove("menulang-open");
             // Remove active class from all option element
             options.forEach((option) => {

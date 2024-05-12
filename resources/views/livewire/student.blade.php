@@ -129,7 +129,7 @@
                 <div class="box col-lg-6 col-md-6">
                     <label for="age">{{__('Student.birthdate')}}</label>
                     <input type="date" class="form-control" id="age" wire:model="studentForm.birthdate"
-                           value="{{old('birthdate')}}">
+                            value="{{old('birthdate')}}">
                     @error('studentForm.birthdate')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -138,8 +138,8 @@
                 <div class="box col-lg-6 col-md-6 ">
                     <label for="english-birth-place">{{__('Student.place of birth in arabic')}}</label>
                     <input type="text" class="form-control" id="english-birth-place"
-                           wire:model="studentForm.place_of_birth_ar"
-                           value="{{old('place_of_birth_ar')}}">
+                            wire:model="studentForm.place_of_birth_ar"
+                            value="{{old('place_of_birth_ar')}}">
                     @error('studentForm.place_of_birth_ar')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -148,8 +148,8 @@
                 <div class="box col-lg-6 col-md-6">
                     <label for="arabic-birth-place">{{__('Student.place of birth in english')}}</label>
                     <input type="text" class="form-control" id="arabic-birth-place"
-                           wire:model="studentForm.place_of_birth"
-                           value="{{old('place_of_birth')}}">
+                            wire:model="studentForm.place_of_birth"
+                            value="{{old('place_of_birth')}}">
                     @error('studentForm.place_of_birth')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -198,8 +198,8 @@
                     <label class="col d-flex justify-content-end">{{__('Student.take any medicine ?')}}</label>
                     <div class="col mt-2 d-flex justify-content-start">
                         <input class="toggle " type="checkbox" wire:model="studentForm.take_medicine"
-                               id="takeMedicineE"
-                               value="{{old('take_medicine')}}" onchange="toggleInput()">
+                                id="takeMedicineE"
+                                value="{{old('take_medicine')}}" onchange="toggleInput()">
                         <label class="form-label  rounded" for="takeMedicineE"></label>
                     </div>
                     {{-- ---- --}}
@@ -210,16 +210,16 @@
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col " wire:model="studentForm.medicine_desc"
-                               id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
-                               aria-label="Text input with radio button" placeholder="desc in english" hidden>
+                                id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
+                                aria-label="Text input with radio button" placeholder="desc in english" hidden>
                         @error('studentForm.medicine_desc')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col"
-                               wire:model="studentForm.medicine_desc_ar"
-                               id="std_medicine_desc_2" value="{{old('medicine_desc_ar')}}"
-                               aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
+                                wire:model="studentForm.medicine_desc_ar"
+                                id="std_medicine_desc_2" value="{{old('medicine_desc_ar')}}"
+                                aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                         @error('studentForm.medicine_desc_ar')
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror

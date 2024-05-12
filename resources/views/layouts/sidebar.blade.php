@@ -462,9 +462,9 @@
         {{-- start toggle section --}}
         <div class="section-home mt-5">
             <div id="my_toggle" class="toggle-sidebar ">
-                <div id="myDive">
+                {{-- <div id="myDive"> --}}
                     @yield('content')
-                </div>
+                {{-- </div> --}}
             </div>
         </div>
         {{-- end toggle section --}}

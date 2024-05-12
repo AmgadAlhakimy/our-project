@@ -64,7 +64,7 @@
                                 <a href="#" class="li-link title-4">
                                     <i class="icon-1 fa-solid fa-trash-can"></i>
                                     <span class="menu-name"><?php echo e(__('sidebar.trash')); ?> </span>
-                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                    <i class="icon-1 fa-solid fa-chevron-up"></i>
                                 </a>
                             </div>
                             <div class="submenu">
@@ -462,9 +462,9 @@
         
         <div class="section-home mt-5">
             <div id="my_toggle" class="toggle-sidebar ">
-                <div id="myDive">
+                
                     <?php echo $__env->yieldContent('content'); ?>
-                </div>
+                
             </div>
         </div>
         
