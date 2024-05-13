@@ -20,6 +20,7 @@ class SearchEduLevel extends Component
     public $showArrow = 'id';
     public bool $isPaginate;
     public $checkedLevel = [];
+    public $selectAll = false;
 
     public function ordering($item)
     {
@@ -59,5 +60,13 @@ class SearchEduLevel extends Component
     public function deleteLevels()
     {
         dd($this->checkedLevel);
+    }
+    public function toggleSelectAll()
+    {
+        if ($this->selectAll) {
+            $this->selectedItems = EducationalLevel::pluck('id')->toArray();
+        } else {
+            $this->selectedItems = [];
+        }
     }
 }
