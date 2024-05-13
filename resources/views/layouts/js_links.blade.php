@@ -7,4 +7,5 @@
 <script src="{{URL::asset('js/jquery-3.7.1.min.js')}}"></script>
 <script src="{{URL::asset('js/main.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
+<script src="{{URL::asset('js/vanilla-tilt.js')}}"></script>
 @livewireScripts

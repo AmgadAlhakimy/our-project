@@ -92,6 +92,8 @@ return [
 
     'please select the father first'=>'الرجاء، قم باختيار الاب اولاً',
     'the father already exists'=>'إذا كان الأب موجود مسبقاً',
+    'please select from the list and the number of father only'=>
+        'يرجى الاختيار من القائمة ويجب أن يكون رقم الأب فقط',
 
 
 ];

@@ -475,6 +475,17 @@
 
 <!-- start link js -->
     <?php echo $__env->make('layouts.js_links', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".containers-style"), {
+		max: 5,
+		speed: 40
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll(".containers-style"));
+</script>
+
 <!-- end link js -->
 </body>
 </html>

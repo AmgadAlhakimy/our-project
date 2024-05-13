@@ -290,7 +290,6 @@ function hidOptions() {
 }
 
 
-
 // window.addEventListener('DOMContentLoaded', function() {
 //     var my_toggle = document.getElementById('my_toggle');
 //     var _clicked = document.getElementById('_clicked');
