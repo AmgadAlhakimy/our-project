@@ -61,7 +61,8 @@
             <thead>
             <tr>
                 <th class=" me-4 ms-4">
-                    <input type="checkbox">
+                    <input type="checkbox" wire:model.live="selectAll"
+                           wire:change.live="toggleSelectAll">
                 </th>
                 <th>
                     <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">
