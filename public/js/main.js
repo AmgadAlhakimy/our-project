@@ -24,157 +24,113 @@ logo.addEventListener("click", () => {
 });
 
 // ========== تعليق السايد بار
-sidebar.classList.toggle("close");
+// sidebar.classList.toggle("close");
 
 // ====================
 
-window.addEventListener("DOMContentLoaded", function () {
-    var my_toggle = document.getElementById("my_toggle");
 
-    function checkScreenWidth() {
-        if (window.innerWidth < 600) {
-            my_toggle.style.width = "100%";
+(function () {
+    document.addEventListener("DOMContentLoaded", function () {
+        const my_toggle = document.getElementById("my_toggle");
+        const _clicked = document.getElementById("_clicked");
+        const body = document.querySelector("body");
+
+        function checkScreenWidth() {
+            if (window.innerWidth < 600) {
+                my_toggle.style.width = "100%";
+            }
         }
-    }
-    checkScreenWidth();
-    window.addEventListener("resize", function () {
+
         checkScreenWidth();
-    });
-});
+        window.addEventListener("resize", checkScreenWidth);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const _clicked = document.getElementById("_clicked");
-    const my_toggle = document.getElementById("my_toggle");
-    var body = document.querySelector("body");
-    var myDiv = document.getElementById("myDiv");
+        if (body.dir === "rtl") {
+            my_toggle.style.margin = "0px 240px 0px 0px";
+        } else {
+            my_toggle.style.margin = "0px 0px 0px 240px";
+        }
 
-    if (body.dir === "rtl") {
-        myDiv.classList.add("myDiv_rtl");
-        _clicked.addEventListener("click", () => {
+        my_toggle.style.transition = "all .5s ease";
+
+        _clicked.addEventListener("click", function () {
             if (my_toggle.classList.contains("active")) {
                 my_toggle.classList.remove("active");
                 my_toggle.style.transition = "all .5s ease";
-                my_toggle.style.margin = "0px 240px 0px 0px";
-                my_toggle.style.backgroundColor = "black";
-
-                requestAnimationFrame(() => {
-                    my_toggle.style.transition = "all 0.5s ease";
+                if (body.dir === "rtl") {
                     my_toggle.style.margin = "0px 240px 0px 0px";
-                });
-            } else {
-                my_toggle.classList.add("active");
-                my_toggle.style.transition = "all 0.5s ease";
-                my_toggle.style.margin = "0px 0px 0px 0px";
-                my_toggle.style.backgroundColor = "blue";
-                requestAnimationFrame(() => {
-                    my_toggle.style.transition = "all 0.5s ease";
-                    my_toggle.style.margin = "0px 0px 0px 0px";
-                    my_toggle.style.backgroundColor = "red";
-                });
-            }
-        });
-    } else {
-        myDiv.classList.add("myDiv_ltr");
-        _clicked.addEventListener("click", () => {
-            if (my_toggle.classList.contains("active")) {
-                my_toggle.classList.remove("active");
-                my_toggle.style.transition = "all .5s ease";
-                my_toggle.style.margin = "0px 0px 0px 240px";
-                my_toggle.style.backgroundColor = "blue";
-
-                requestAnimationFrame(() => {
-                    my_toggle.style.transition = "all 0.5s ease";
+                } else {
                     my_toggle.style.margin = "0px 0px 0px 240px";
-                });
+                }
             } else {
                 my_toggle.classList.add("active");
                 my_toggle.style.transition = "all 0.5s ease";
                 my_toggle.style.margin = "0px 0px 0px 0px";
-                requestAnimationFrame(() => {
-                    my_toggle.style.transition = "all 0.5s ease";
-                    my_toggle.style.margin = "0px 0px 0px 0px";
-                    my_toggle.style.backgroundColor = "green";
-                });
             }
         });
-    }
-});
-// --------------------------------------------------------------------------------
+    });
+})();
 
-// test the sidebar other code
+
+// window.addEventListener("DOMContentLoaded", function () {
+//     var my_toggle = document.getElementById("my_toggle");
+    
+//     function checkScreenWidth() {
+//         if (window.innerWidth < 600) {
+//             my_toggle.style.width = "100%";
+//         }
+//     }
+//     checkScreenWidth();
+//     window.addEventListener("resize", function () {
+//         checkScreenWidth();
+//     });
+// });
+
+// (function () { 
 // document.addEventListener("DOMContentLoaded", function () {
 //     const _clicked = document.getElementById("_clicked");
 //     const my_toggle = document.getElementById("my_toggle");
 //     var body = document.querySelector("body");
-//     var myDiv = document.getElementById("myDiv");
 
 //     if (body.dir === "rtl") {
-//         myDiv.classList.add("myDiv_rtl");
-//     } else {
-//         myDiv.classList.add("myDiv_ltr");
-//     }
-
-//     _clicked.addEventListener("click", () => {
-//         if (my_toggle.classList.contains("active")) {
-//             my_toggle.classList.remove("active");
-//             my_toggle.style.transition = "all .5s ease";
-//             my_toggle.style.margin =
-//                 body.dir === "rtl" ? "0px 240px 0px 0px" : "0px 0px 0px 240px";
-//             my_toggle.style.backgroundColor =
-//                 body.dir === "rtl" ? "black" : "blue";
-
-//             requestAnimationFrame(() => {
-//                 my_toggle.style.transition = "all 0.5s ease";
-//                 my_toggle.style.margin =
-//                     body.dir === "rtl"
-//                         ? "0px 240px 0px 0px"
-//                         : "0px 0px 0px 240px";
-//             });
-//         } else {
-//             my_toggle.classList.add("active");
-//             my_toggle.style.transition = "all 0.5s ease";
-//             my_toggle.style.margin = "0px 0px 0px 0px";
-//             requestAnimationFrame(() => {
+//         my_toggle.style.margin = "0px 240px 0px 0px";
+//         my_toggle.style.transition = "all .5s ease";
+        
+//         _clicked.addEventListener("click", () => {
+//             if (my_toggle.classList.contains("active")) {
+//                 my_toggle.classList.remove("active");
+//                 my_toggle.style.transition = "all .5s ease";
+//                 my_toggle.style.margin = "0px 240px 0px 0px";
+//                 my_toggle.style.backgroundColor = "black";
+//             } else {
+//                 my_toggle.classList.add("active");
 //                 my_toggle.style.transition = "all 0.5s ease";
 //                 my_toggle.style.margin = "0px 0px 0px 0px";
-//                 my_toggle.style.backgroundColor =
-//                     body.dir === "rtl" ? "red" : "green";
-//             });
-//         }
-//     });
+//                 my_toggle.style.backgroundColor = "blue";
+//             }
+//         });
+//     } else {
+//         my_toggle.style.margin = "0px 0px 0px 240px";
+//         my_toggle.style.transition = "all .5s ease";
+
+//         _clicked.addEventListener("click", () => {
+//             if (my_toggle.classList.contains("active")) {
+//                 my_toggle.classList.remove("active");
+//                 my_toggle.style.transition = "all .5s ease";
+//                 my_toggle.style.margin = "0px 0px 0px 240px";
+//                 my_toggle.style.backgroundColor = "yellow";
+//             } else {
+//                 my_toggle.classList.add("active");
+//                 my_toggle.style.transition = "all 0.5s ease";
+//                 my_toggle.style.margin = "0px 0px 0px 0px";
+//                 my_toggle.style.backgroundColor = "green";
+//             }
+//         });
+//     }
 // });
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-
-    /* <html>
-<head>
-    <title>Toggle Example</title>
-    <style>
-        .myDiv_rtl {
-        }
-
-        .myDiv_ltr {
-        }
-
-        .active {
-        }
-    </style>
-</head>
-<body dir="rtl">
-    <div id="myDiv">
-        <div id="my_toggle">Toggle Me</div>
-    </div>
-    <button id="_clicked">Toggle</button>
-
-    <script src="script.js"></script>
-</body> */
+// })(); 
 
 // --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
-// --------------------------------------------------------------------------------
+
 //  the dropdown of language
 const dropdowns = document.querySelectorAll(".dropDownLang");
 
@@ -185,38 +141,27 @@ dropdowns.forEach((dropdownlang) => {
     const options = dropdownlang.querySelectorAll(".menuLang li"); //check
     const selected = dropdownlang.querySelector(".selected");
 
-    // add a click event to the select element
     select.addEventListener("click", () => {
-        // add the clicked select style to the select element
         select.classList.toggle("select-clicked");
-        // add the style to the caret element
         caret.classList.toggle("caret-rotate");
-        // add the open style to the lang element
         menulang.classList.toggle("menulang-open");
     });
 
     // loop through all option elements
     options.forEach((option) => {
-        // add a click event to the option element
         option.addEventListener("click", () => {
-            // chang selected inner text to clicked option inner text
             selected.innerText = option.innerText;
-            // add the cliched select styles to the select element
             select.classList.remove("select-clicked");
-            // add the rotate styles to the caret element
             caret.classList.remove("caret-rotate");
-            // add the open style to the menulang element
             menulang.classList.remove("menulang-open");
-            // Remove active class from all option element
             options.forEach((option) => {
                 option.classList.remove("active");
             });
-            // add active class to cliched option element
             option.classList.add("active");
         });
     });
 });
-// شرط النصوص مع التشكبوكس
+// شرط النص مع التشكبوكس
 // -----------------------------------------------------------
 
 // ---------------------
@@ -289,44 +234,3 @@ function hidOptions() {
     }
 }
 
-
-// window.addEventListener('DOMContentLoaded', function() {
-//     var my_toggle = document.getElementById('my_toggle');
-//     var _clicked = document.getElementById('_clicked');
-
-//     function checkScreenWidth() {
-//       if (window.innerWidth < 500) {
-//         my_toggle.style.width = '100%';
-//       }
-//     }
-
-//     function handleToggleClick() {
-//       if (window.innerWidth >= 500) {
-//         if (my_toggle.classList.contains('active')) {
-//           my_toggle.classList.remove('active');
-//           my_toggle.style.backgroundColor = 'red';
-//           my_toggle.style.transition = 'all 0.3s ease';
-//           my_toggle.style.margin = '0px 0px 0px 0px';
-
-//           requestAnimationFrame(() => {
-//             my_toggle.style.transition = 'all 0.3s ease';
-//             my_toggle.style.margin = '0px 0px 0px 0px';
-//           });
-//         } else {
-//           my_toggle.classList.add('active');
-//           my_toggle.style.backgroundColor = 'green';
-//           my_toggle.style.transition = 'all 0.3s ease';
-//           my_toggle.style.margin = '0px 0px 0px 300px';
-
-//           requestAnimationFrame(() => {
-//             my_toggle.style.transition = 'all 0.3s ease';
-//             my_toggle.style.margin = '0px 0px 0px 300px';
-//           });
-//         }
-//       }
-//     }
-
-//     checkScreenWidth();
-//     window.addEventListener('resize', checkScreenWidth);
-//     _clicked.addEventListener('click', handleToggleClick);
-//   });

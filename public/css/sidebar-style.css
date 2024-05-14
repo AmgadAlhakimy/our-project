@@ -28,9 +28,15 @@
     transition : "all .5s ease";
 }
 body[dir="ltr"] .toggle-sidebar{
-    margin: 0px 240px 0px 0px;
+    margin: 0px 0px 240px 0px;
     background-color: #685555;
-}*/
+}
+body[dir="rtl"] .toggle-sidebar{
+    margin: 0px 240px 0px 0px;
+    background-color: aqua;
+} */
+
+
 /* .myDiv_rtl{
     margin: 0px 0px 240px 0px;
     background-color: red;
@@ -38,17 +44,19 @@ body[dir="ltr"] .toggle-sidebar{
 .myDiv_ltr{
     background-color: green;
 } */
-/* .dir_1{
+
+/* 
+.dir_1{
     margin: 0px 240px 0px 0px;
     background-color: aqua;
 }
 .dir_2{
     margin: 0px 0px 0px 240px;
     background-color: blueviolet;
-} */
+}
 .side-container .sidebar.close .toggle-sidebar {
     padding: 0;
-}
+} */
 .side-container {
     display: flex;
     /*  */
