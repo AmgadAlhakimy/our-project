@@ -8,7 +8,7 @@
                     <div class="row">
 
                         <label class="col">
-                            <div class="search p-relative ">
+                            <div class="search p-relative">
                                 {{-- <i class="fa-solid fa-magnifying-glass"></i> --}}
                                 <input wire:model.live.debounce.500ms="search"
                                        type="text" class="form-control " name="search"
@@ -28,7 +28,8 @@
             </button>
             @if($checkedLevel)
                 <button class="btn btn-danger" wire:click="deleteLevels()">
-                    Selected Levels ({{ count($checkedLevel) }})</button>
+                    Selected Levels ({{ count($checkedLevel) }})
+                </button>
             @endif
         </div>
         <div>
@@ -61,8 +62,8 @@
             <thead>
             <tr>
                 <th class=" me-4 ms-4">
-                    <input type="checkbox" wire:model.live="selectAll"
-                           wire:change.live="toggleSelectAll">
+                    <input type="checkbox" wire:model="selectAll"
+                           wire:change="toggleSelectAll">
                 </th>
                 <th>
                     <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">

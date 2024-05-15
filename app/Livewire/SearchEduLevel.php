@@ -49,7 +49,6 @@ class SearchEduLevel extends Component
                 $levels = EducationalLevel::orderBy(
                     ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
                     $this->sortOrder)->paginate($this->pagination);
-
                 return view('livewire.search-edu-level',
                     compact('levels'));
             }
@@ -63,10 +62,14 @@ class SearchEduLevel extends Component
     }
     public function toggleSelectAll()
     {
-        if ($this->selectAll) {
-            $this->selectedItems = EducationalLevel::pluck('id')->toArray();
-        } else {
-            $this->selectedItems = [];
+//        $this->checkboxes = array_fill(0, count($this->checkboxes), $this->selectAll);
+    }
+    public function updatedSelectAll($value)
+    {
+        if ($value){
+
+        }else{
+            $this->checkedLevel = [];
         }
     }
 }
