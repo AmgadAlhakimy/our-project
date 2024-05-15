@@ -477,12 +477,16 @@
 
 <!-- start link js -->
     @include('layouts.js_links')
-    
+
 <script type="text/javascript">
 	VanillaTilt.init(document.querySelector(".containers-style"), {
 		max: 5,
 		speed: 30
 	});
+<<<<<<< HEAD
+=======
+
+>>>>>>> c66ec3ab9730ef7e73047b8fa4385fa614b0db6b
 	//It also supports NodeList
 	VanillaTilt.init(document.querySelectorAll(".containers-style"));
 </script>
