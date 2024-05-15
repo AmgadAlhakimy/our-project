@@ -459,9 +459,10 @@
                     </ul>
             </div>
         </div>
+
         
         <div class="section-home mt-5">
-            <div id="my_toggle" class=" ">
+            <div id="my_toggle" class="">
                 <div id="myDive" class="toggle-sidebar">
                     <?php echo $__env->yieldContent('content'); ?>
                 </div>
@@ -482,11 +483,9 @@
 		max: 5,
 		speed: 30
 	});
-	
 	//It also supports NodeList
 	VanillaTilt.init(document.querySelectorAll(".containers-style"));
 </script>
-
 <!-- end link js -->
 </body>
 </html>

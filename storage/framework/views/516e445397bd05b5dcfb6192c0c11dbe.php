@@ -62,8 +62,12 @@
                             </td>
                             <td><?php echo e($student->id); ?></td>
                             <td><?php echo e($student->name); ?></td>
-                            <td><img src="<?php echo e(asset($student->photo)); ?>"
-                                     class="student-img" alt="photo"></td>
+                            <td><img
+                                    
+                                    
+                                                                        src="<?php echo e(asset($student->photo)); ?>"
+
+                                    class="student-img" alt="photo"></td>
                             <td><?php echo e($student->address); ?></td>
                             <td><?php echo e($student->gender); ?></td>
                             <td><?php echo e($student->birthdate); ?></td>
@@ -120,7 +124,7 @@
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <?php echo e($students->links('pagination::bootstrap-5')); ?>
+                    <?php echo e($students->links()); ?>
 
                     </tbody>
                 </table>

@@ -656,7 +656,7 @@
         <div id="my_toggle" class="toggle-sidebar">
             {{-- <div id="myDive"> --}}
             {{--                @yield('content')--}}
-{{--            {{ $slot }}--}}
+           {{ $slot }}
             {{-- </div> --}}
         </div>
     </div>
