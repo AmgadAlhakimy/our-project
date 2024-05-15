@@ -8,7 +8,7 @@
     <?php echo $__env->make('layouts.sidebar_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <!-- start sidebar -->
 
-    <div class="side-container" <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
+    <div class="side-container" <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="" <?php endif; ?>>
         <div class="sidebar my-scroll">
 
             <!-- ============= LIST ============== -->
@@ -477,12 +477,13 @@
 
 <!-- start link js -->
     <?php echo $__env->make('layouts.js_links', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-    
+
 <script type="text/javascript">
 	VanillaTilt.init(document.querySelector(".containers-style"), {
 		max: 5,
 		speed: 30
 	});
+
 	//It also supports NodeList
 	VanillaTilt.init(document.querySelectorAll(".containers-style"));
 </script>

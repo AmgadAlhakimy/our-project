@@ -8,7 +8,7 @@
     @include('layouts.sidebar_header')
 <!-- start sidebar -->
 
-    <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
+    <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="" @endif>
         <div class="sidebar my-scroll">
 
             <!-- ============= LIST ============== -->
@@ -483,10 +483,7 @@
 		max: 5,
 		speed: 30
 	});
-<<<<<<< HEAD
-=======
 
->>>>>>> c66ec3ab9730ef7e73047b8fa4385fa614b0db6b
 	//It also supports NodeList
 	VanillaTilt.init(document.querySelectorAll(".containers-style"));
 </script>

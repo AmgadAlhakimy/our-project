@@ -29,105 +29,105 @@ logo.addEventListener("click", () => {
 // ====================
 
 
-(function () {
-    document.addEventListener("DOMContentLoaded", function () {
-        const my_toggle = document.getElementById("my_toggle");
-        const _clicked = document.getElementById("_clicked");
-        const body = document.querySelector("body");
+// (function () {
+//     document.addEventListener("DOMContentLoaded", function () {
+//         const my_toggle = document.getElementById("my_toggle");
+//         const _clicked = document.getElementById("_clicked");
+//         const body = document.querySelector("body");
 
-        function checkScreenWidth() {
-            if (window.innerWidth < 600) {
-                my_toggle.style.width = "100%";
-            }
+//         function checkScreenWidth() {
+//             if (window.innerWidth < 600) {
+//                 my_toggle.style.width = "100%";
+//             }
+//         }
+
+//         checkScreenWidth();
+//         window.addEventListener("resize", checkScreenWidth);
+
+//         if (body.dir === "rtl") {
+//             my_toggle.style.margin = "0px 240px 0px 0px";
+//         } else {
+//             my_toggle.style.margin = "0px 0px 0px 240px";
+//         }
+
+//         my_toggle.style.transition = "all .5s ease";
+
+//         _clicked.addEventListener("click", function () {
+//             if (my_toggle.classList.contains("active")) {
+//                 my_toggle.classList.remove("active");
+//                 my_toggle.style.transition = "all .5s ease";
+//                 if (body.dir === "rtl") {
+//                     my_toggle.style.margin = "0px 240px 0px 0px";
+//                 } else {
+//                     my_toggle.style.margin = "0px 0px 0px 240px";
+//                 }
+//             } else {
+//                 my_toggle.classList.add("active");
+//                 my_toggle.style.transition = "all 0.5s ease";
+//                 my_toggle.style.margin = "0px 0px 0px 0px";
+//             }
+//         });
+//     });
+// })();
+
+
+window.addEventListener("DOMContentLoaded", function () {
+    var my_toggle = document.getElementById("my_toggle");
+    
+    function checkScreenWidth() {
+        if (window.innerWidth < 600) {
+            my_toggle.style.width = "100%";
         }
-
+    }
+    checkScreenWidth();
+    window.addEventListener("resize", function () {
         checkScreenWidth();
-        window.addEventListener("resize", checkScreenWidth);
+    });
+});
 
-        if (body.dir === "rtl") {
-            my_toggle.style.margin = "0px 240px 0px 0px";
-        } else {
-            my_toggle.style.margin = "0px 0px 0px 240px";
-        }
+(function () { 
+document.addEventListener("DOMContentLoaded", function () {
+    const _clicked = document.getElementById("_clicked");
+    const my_toggle = document.getElementById("my_toggle");
+    var body = document.querySelector("body");
 
+    if (body.dir === "rtl") {
+        my_toggle.style.margin = "0px 240px 0px 0px";
         my_toggle.style.transition = "all .5s ease";
-
-        _clicked.addEventListener("click", function () {
+        
+        _clicked.addEventListener("click", () => {
             if (my_toggle.classList.contains("active")) {
                 my_toggle.classList.remove("active");
                 my_toggle.style.transition = "all .5s ease";
-                if (body.dir === "rtl") {
-                    my_toggle.style.margin = "0px 240px 0px 0px";
-                } else {
-                    my_toggle.style.margin = "0px 0px 0px 240px";
-                }
+                my_toggle.style.margin = "0px 240px 0px 0px";
+                // my_toggle.style.backgroundColor = "black";
             } else {
                 my_toggle.classList.add("active");
                 my_toggle.style.transition = "all 0.5s ease";
                 my_toggle.style.margin = "0px 0px 0px 0px";
+                // my_toggle.style.backgroundColor = "blue";
             }
         });
-    });
-})();
+    } else {
+        my_toggle.style.margin = "0px 0px 0px 240px";
+        my_toggle.style.transition = "all .5s ease";
 
-
-// window.addEventListener("DOMContentLoaded", function () {
-//     var my_toggle = document.getElementById("my_toggle");
-    
-//     function checkScreenWidth() {
-//         if (window.innerWidth < 600) {
-//             my_toggle.style.width = "100%";
-//         }
-//     }
-//     checkScreenWidth();
-//     window.addEventListener("resize", function () {
-//         checkScreenWidth();
-//     });
-// });
-
-// (function () { 
-// document.addEventListener("DOMContentLoaded", function () {
-//     const _clicked = document.getElementById("_clicked");
-//     const my_toggle = document.getElementById("my_toggle");
-//     var body = document.querySelector("body");
-
-//     if (body.dir === "rtl") {
-//         my_toggle.style.margin = "0px 240px 0px 0px";
-//         my_toggle.style.transition = "all .5s ease";
-        
-//         _clicked.addEventListener("click", () => {
-//             if (my_toggle.classList.contains("active")) {
-//                 my_toggle.classList.remove("active");
-//                 my_toggle.style.transition = "all .5s ease";
-//                 my_toggle.style.margin = "0px 240px 0px 0px";
-//                 my_toggle.style.backgroundColor = "black";
-//             } else {
-//                 my_toggle.classList.add("active");
-//                 my_toggle.style.transition = "all 0.5s ease";
-//                 my_toggle.style.margin = "0px 0px 0px 0px";
-//                 my_toggle.style.backgroundColor = "blue";
-//             }
-//         });
-//     } else {
-//         my_toggle.style.margin = "0px 0px 0px 240px";
-//         my_toggle.style.transition = "all .5s ease";
-
-//         _clicked.addEventListener("click", () => {
-//             if (my_toggle.classList.contains("active")) {
-//                 my_toggle.classList.remove("active");
-//                 my_toggle.style.transition = "all .5s ease";
-//                 my_toggle.style.margin = "0px 0px 0px 240px";
-//                 my_toggle.style.backgroundColor = "yellow";
-//             } else {
-//                 my_toggle.classList.add("active");
-//                 my_toggle.style.transition = "all 0.5s ease";
-//                 my_toggle.style.margin = "0px 0px 0px 0px";
-//                 my_toggle.style.backgroundColor = "green";
-//             }
-//         });
-//     }
-// });
-// })(); 
+        _clicked.addEventListener("click", () => {
+            if (my_toggle.classList.contains("active")) {
+                my_toggle.classList.remove("active");
+                my_toggle.style.transition = "all .5s ease";
+                my_toggle.style.margin = "0px 0px 0px 240px";
+                // my_toggle.style.backgroundColor = "yellow";
+            } else {
+                my_toggle.classList.add("active");
+                my_toggle.style.transition = "all 0.5s ease";
+                my_toggle.style.margin = "0px 0px 0px 0px";
+                // my_toggle.style.backgroundColor = "green";
+            }
+        });
+    }
+});
+})(); 
 
 // --------------------------------------------------------------------------------
 
