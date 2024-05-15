@@ -5,6 +5,7 @@
 }
 body {
     /* background-color: var(--body-color); */
+    /* background-color: gray; */
 }
 *:focus {
     outline: none;
@@ -56,6 +57,14 @@ ul {
     /* ----------------------- buttons colors */
     --section-bg-2: #d5d7da;
     --buttons-bg: #222;
+
+
+    --clr: #0f0;
+    --clr: #ff0;
+    --clr: #f00;
+    --clr: #f0f;
+    --clr: #0ff;
+
 }
 
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
@@ -83,10 +92,9 @@ input::-webkit-inner-spin-button {
 /* End scroll style  */
 /* Start section  */
 .section {
-    flex: 1 1 auto;
-    padding: 1rem 3rem;
+    /* flex: 1 1 auto; */
+    padding: 0 2rem;
     margin-top: 110px;
-    /* المارجن الاخير خاص بتنزيل الكونتنت تحت الهيد حق السايد بار */
 }
 .containers-style {
     padding: 0.5rem 1rem;
@@ -781,7 +789,6 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
     .container-title {
         font-size: 25px;
-        margin-top: 0px;
     }
     .title-1 {
         font-size: 30px;
@@ -850,7 +857,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 20px;
     }
     .container-title {
-        /* font-size: 20px; */
+        font-size: 20px;
     }
     .s_info_1 {
         flex: 0 0 auto;
@@ -890,8 +897,16 @@ input[type="checkbox"].toggle:checked + input.test1 {
         width: 110px;
     }
 }
+/* ---------------------------------------------- */
 /* phone screen */
 @media (max-width: 400px) {
+    .section{
+        
+    /* flex: 1 1 auto; */
+    padding: 0rem 1rem;
+    margin-top: 100px;
+        
+    }
     .topic-name,
     .topic-title {
         font-size: 16px;
@@ -904,9 +919,9 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .title-1 {
         font-size: 15px;
     }
-    /* .container-title {
+    .container-title {
         font-size: 15px;
-    } */
+    }
     .dropDownLang .select-clicked {
         width: 80px;
     }

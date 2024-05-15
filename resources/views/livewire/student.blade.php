@@ -9,12 +9,13 @@
     <h3 class="container-title">{{__('Student.choose parents')}}</h3>
     <div class="container  containers-style">
 
-        <div class="row">
+        <div class="">
             <!-- father name  -->
-            <div class="col-8 box">
+            <div class="row box">
                 <label>
-                    <input type="text" list="relative" wire:model.live.debounce.500ms="studentForm.relative_id"/>
-                    please choose the father here
+                    <input class="form-control col-12" type="text" list="relative" wire:model.live.debounce.500ms="studentForm.relative_id"
+                    placeholder={{__('student.please select the father')}}/>
+
                 </label>
                 <datalist id="relative">
                     <option value="" selected>{{__('student.please select the father')}}</option>
@@ -133,6 +134,7 @@
                 <div class="box col-lg-6 col-md-6">
                     <label for="english-birth-place">{{__('Student.place of birth in arabic')}}</label>
                     <input type="text" class="form-control" id="english-birth-place"
+
                           wire:model.live.debounce.500ms="studentForm.place_of_birth_ar"
                            value="{{old('place_of_birth_ar')}}">
                     @error('studentForm.place_of_birth_ar')
@@ -143,6 +145,7 @@
                 <div class="box col-lg-6 col-md-6">
                     <label for="arabic-birth-place">{{__('Student.place of birth in english')}}</label>
                     <input type="text" class="form-control" id="arabic-birth-place"
+
                           wire:model.live.debounce.500ms="studentForm.place_of_birth"
                            value="{{old('place_of_birth')}}">
                     @error('studentForm.place_of_birth')
@@ -192,7 +195,7 @@
 
                     <label class="col d-flex justify-content-end">{{__('Student.take any medicine ?')}}</label>
                     <div class="col mt-2 d-flex justify-content-start">
-                        <input class="toggle" type="checkbox"wire:model.live.debounce.500ms="studentForm.take_medicine"
+                        <input class="toggle" type="checkbox" wire:model.live.debounce.500ms="studentForm.take_medicine"
                                id="takeMedicineE"
                                value="{{old('take_medicine')}}" onchange="toggleInput()">
                         <label class="form-label  rounded" for="takeMedicineE"></label>
@@ -204,7 +207,7 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
-                        <input type="text" class=" form-control ms-1 me-1 col"wire:model.live.debounce.500ms="studentForm.medicine_desc"
+                        <input type="text" class=" form-control ms-1 me-1 col" wire:model.live.debounce.500ms="studentForm.medicine_desc"
                                id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
                                aria-label="Text input with radio button" placeholder="desc in english" hidden>
                         @error('studentForm.medicine_desc')
@@ -212,7 +215,7 @@
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col"
-                               live.debounce.500ms"studentForm.medicine_desc_ar"
+                               live.debounce.500ms="studentForm.medicine_desc_ar"
                                id="std_medicine_desc_2" value="{{old('medicine_desc_ar')}}"
                                aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                         @error('studentForm.medicine_desc_ar')
@@ -226,7 +229,7 @@
                     {{-- ---- --}}
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                            <input class="toggle col" type="checkbox" live.debounce.500ms"studentForm.have_allergy"
+                            <input class="toggle col" type="checkbox" wire:model.live.debounce.500ms="studentForm.have_allergy"
                                    id="haveAllergy"
                                    value="{{old('have_allergy')}}" onchange="toggleInput()">
 
@@ -237,7 +240,7 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
-                        <input type="text" class=" form-control ms-1 me-1 col" live.debounce.500ms"studentForm.allergy_desc"
+                        <input type="text" class=" form-control ms-1 me-1 col" wire:model.live.debounce.500ms="studentForm.allergy_desc"
                                id="std_allergy_desc_1"
                                aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
                                placeholder="desc in english" hidden>
@@ -245,7 +248,7 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
-                        <input type="text" class=" form-control ms-1 me-1 col" live.debounce.500ms"studentForm.allergy_desc_ar"
+                        <input type="text" class=" form-control ms-1 me-1 col" wire:model.live.debounce.500ms="studentForm.allergy_desc_ar"
                                id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
                                aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                         @error('studentForm.allergy_desc_ar')
@@ -258,7 +261,7 @@
                     {{-- ---- --}}
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                            <input class="toggle col" type="checkbox" live.debounce.500ms"studentForm.have_health_problem"
+                            <input class="toggle col" type="checkbox" wire:model.live.debounce.500ms="studentForm.have_health_problem"
                                    id="healthProblem" value="{{old('have_health_problem')}}"
                                    onchange="toggleInput()">
                             <label class="form-label col rounded" for="healthProblem"
@@ -270,7 +273,7 @@
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col"
-                               live.debounce.500ms"studentForm.health_problem_desc"
+                               wire:model.live.debounce.500ms="studentForm.health_problem_desc"
                                id="std_health_desc_1"
                                aria-label="Text input with radio button" value="{{old('health_problem_desc')}}"
                                placeholder="desc in english" hidden>
@@ -279,7 +282,7 @@
                         @enderror
                         {{-- -*- --}}
                         <input type="text" class=" form-control ms-1 me-1 col"
-                               live.debounce.500ms"studentForm.health_problem_desc_ar"
+                               wire:model.live.debounce.500ms="studentForm.health_problem_desc_ar"
                                id="std_health_desc_2"
                                value="{{old('health_problem_desc_ar')}}"
                                aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
@@ -298,7 +301,7 @@
             <div class="row">
                 <div class="box col-lg-12 col-md-12">
                     <label class="form-label" for="std_Note">{{__('Student.note')}}</label>
-                    <textarea live.debounce.500ms"studentForm.note" class="form-control" id="std_Note" cols="50"
+                    <textarea wire:model.live.debounce.500ms="studentForm.note" class="form-control" id="std_Note" cols="50"
                               rows="5">{{old('note')}}</textarea>
                 </div>
             </div>
@@ -312,4 +315,3 @@
         <!-- End final box -->
     </form>
 </div>
-

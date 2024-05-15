@@ -4,7 +4,7 @@
     <div class="head " dir="">
         <div class="head_1">
             <!-- ============= logo ================== -->
-            <div class="my-menu-btn row" id="_clicked">
+            <div class="my-menu-btn row " id="_clicked">
                 {{-- ___________ the main logo in the sidebar --}}
                 <div class="col sidebar-icon">
                     <i class="h4 logo-text-1 fa-solid fa-bars"></i>

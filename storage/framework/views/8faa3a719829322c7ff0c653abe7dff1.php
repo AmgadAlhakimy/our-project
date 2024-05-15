@@ -64,7 +64,7 @@
                                 <a href="#" class="li-link title-4">
                                     <i class="icon-1 fa-solid fa-trash-can"></i>
                                     <span class="menu-name"><?php echo e(__('sidebar.trash')); ?> </span>
-                                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                                    <i class="icon-1 fa-solid fa-chevron-up"></i>
                                 </a>
                             </div>
                             <div class="submenu">
@@ -461,8 +461,8 @@
         </div>
         
         <div class="section-home mt-5">
-            <div id="my_toggle" class="toggle-sidebar ">
-                <div id="myDive">
+            <div id="my_toggle" class=" ">
+                <div id="myDive" class="toggle-sidebar">
                     <?php echo $__env->yieldContent('content'); ?>
                 </div>
             </div>
@@ -471,10 +471,22 @@
     </div>
     <!-- end sidebar -->
     <!-- ====================== -->
+    <!-- ====================== -->
 
 
 <!-- start link js -->
     <?php echo $__env->make('layouts.js_links', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".containers-style"), {
+		max: 5,
+		speed: 30
+	});
+	
+	//It also supports NodeList
+	VanillaTilt.init(document.querySelectorAll(".containers-style"));
+</script>
+
 <!-- end link js -->
 </body>
 </html>
