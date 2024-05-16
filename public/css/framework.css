@@ -710,8 +710,8 @@ input[type="checkbox"].toggle:checked + input.test1 {
         margin-top: 90px;
     }
     .dropDownLang .menuLang {
-        left: 16%;
-        transform: translatex(-50%);
+        /* left: 16%;
+        transform: translatex(-50%); */
     }
     
 }
@@ -727,8 +727,8 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .line-black .li-link{
         width: 200px;
         margin: 10px 0;
-        /* font-size: 12; */
-        background-color: red;
+        font-size: 13px;
+        /* background-color: red; */
     }
 }
 
@@ -817,10 +817,9 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 14px;
     }
     .line-black .li-link{
-        width: 200px;
-        margin: 8px 0;
-        font-size: 11;
-        background-color: green;
+        width: 170px;
+        /* margin: 8px 0; */
+        font-size: 12px;
     }
     .topic-name,
     .topic-title {
@@ -901,7 +900,10 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .icon-1{
         font-size: 13px;
     }
-    
+    .line-black .li-link{
+        width: 150px;
+        font-size: 11px;
+    }
     .topic-name,
     .topic-title {
         font-size: 15px;
@@ -969,6 +971,11 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .menu-name,
     .icon-1{
         font-size: 12px;
+    }
+    .line-black .li-link{
+        width: 140px;
+        font-size: 10px;
+        background-color: #eeb149;
     }
     .list-ul{
         margin-top: 85px;
