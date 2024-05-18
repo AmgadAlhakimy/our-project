@@ -19,18 +19,17 @@
         </div>
     </div>
 </div>
-
 <div class="table-header mt-3 mb-3" id="paginated">
     <div class="d-flex justify-content-between">
         <div>
             <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()"
                     id="select_bt">{{__('public.select')}}
             </button>
-            @if($checkedLevel)
+{{--            @if($checkedLevels)--}}
                 <button class="btn btn-danger" wire:click="deleteLevels()">
-                    Selected Levels ({{ count($checkedLevel) }})
+{{--                    Selected Levels ({{ count($checkedLevels) }})--}}
                 </button>
-            @endif
+{{--            @endif--}}
         </div>
         <div>
             @if($isPaginate)
@@ -62,8 +61,7 @@
             <thead>
             <tr>
                 <th class=" me-4 ms-4">
-                    <input type="checkbox" wire:model="selectAll"
-                           wire:change="toggleSelectAll">
+                    <input type="checkbox" wire:model="selectAll" wire:change="checkAllCheckboxes">
                 </th>
                 <th>
                     <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">
@@ -120,7 +118,8 @@
             @foreach($levels as $Level)
                 <tr>
                     <td>
-                        <input type="checkbox" value="{{$Level->id}}" wire:model.live="checkedLevel">
+                        <input type="checkbox" value="{{$Level->id}}"  wire:model="checkedLevels.{{ $Level->id }}" wire:change="updateCheckAll">
+{{--                        <input type="checkbox" wire:model="checkboxes.{{ $index }}" wire:change="updateCheckAll">--}}
                     </td>
                     <td>{{$Level->id}}</td>
                     <td>{{$Level->name}}</td>

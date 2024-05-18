@@ -19,7 +19,7 @@ class SearchEduLevel extends Component
     public $arrow = false;
     public $showArrow = 'id';
     public bool $isPaginate;
-    public $checkedLevel = [];
+    public $checkedLevels = [];
     public $selectAll = false;
 
     public function ordering($item)
@@ -58,7 +58,7 @@ class SearchEduLevel extends Component
     }
     public function deleteLevels()
     {
-        dd($this->checkedLevel);
+        dd($this->checkedLevels);
     }
     public function toggleSelectAll()
     {
@@ -69,7 +69,31 @@ class SearchEduLevel extends Component
         if ($value){
 
         }else{
-            $this->checkedLevel = [];
+            $this->checkedLevels = [];
         }
+    }
+    public function mount()
+    {
+        $this->fetchCheckboxes();
+    }
+    public function fetchCheckboxes()
+    {
+        $this->checkedLevels = EducationalLevel::pluck('id')->toArray();
+    }
+    public function checkAllCheckboxes()
+    {
+        if ($this->selectAll) {
+            $this->checkedLevels = array_map(function () {
+                return true;
+            }, $this->checkedLevels);
+        } else {
+            $this->checkedLevels = array_map(function () {
+                return false;
+            }, $this->checkedLevels);
+        }
+    }
+    public function updateCheckAll()
+    {
+        $this->checkedLevels = (count($this->checkedLevels) === count(array_filter($this->checkedLevels)));
     }
 }

@@ -67,7 +67,8 @@
                             <td><img
                                     {{--                                    src="{{asset('storage/public/images/students/1715341178_0_tS9xstZf3FaIWhpS.jpg')}}"--}}
                                     {{--                                    src="{{asset('storage/public/images/students/1715340777_IMG_20230304_151241_984.jpg')}}"--}}
-                                                                        src="{{asset($student->photo)}}"
+{{--                                                                        src="{{asset($student->photo)}}"--}}
+                                                                        src="{{asset('storage/images/students/U3LVbsczCBmpdRV1gG29pTHnuX1XOap2cqLchTuJ.jpg')}}"
 {{--                                    src="{{ asset('storage/'.$student->photo) }}"--}}
                                     class="student-img" alt="photo"></td>
                             <td>{{$student->address}}</td>
