@@ -65,9 +65,7 @@
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 
 }
-.sidebar.close {
-    width: 0px;
-}
+
 
 /* ----------------- the second menu of sidebar -------------------- */
 .my-scroll {
@@ -83,9 +81,30 @@
     /* can be deleted */
     width: 0;
 }
+.sidebar.close .menu-name,
+.sidebar.close .title{
+    display: none;
+}
+.sidebar.close:hover .menu-name,
+.sidebar.close:hover .title{
+    display: block;
+}
+.sidebar.close:hover {
+    width: 200px;
+}
+.sidebar.close li.dropdown.active .submenu{
+    display: none;
+    transition: all 0.5s;
+
+}
+.sidebar.close:hover li.dropdown.active .submenu{
+    display: block;
+    transition: all 0.5s;
+
+}
 .sidebar.close .list-ul {
     /* can be deleted */
-    display: none;
+    /* display: none; */
 }
 
 .list-ul::-webkit-scrollbar {
@@ -183,6 +202,7 @@
     border: none;
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.5s ease;
+    background-color: var(--sidebar-bg);
 }
 body[dir="rtl"] .submenu .li-link{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -221,9 +241,6 @@ body[dir="rtl"] .submenu .li-link:hover{
     color: var(--orange-color);
 }
 .sidebar.close .my-menu-btn .sidebar-icon {
-    /* width: 40px;
-  height: 40px; */
-    /* left: 500px; */
     right: -35px;
     top: 30px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);

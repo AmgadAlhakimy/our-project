@@ -706,6 +706,9 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .sidebar{
         width: 260px;
     }
+    .head{
+        padding: 15px 0px;
+    }
     .list-ul{
         margin-top: 90px;
     }
@@ -734,6 +737,10 @@ input[type="checkbox"].toggle:checked + input.test1 {
 
 /* ------------------------------------- */
 @media (min-width: 560px) {
+    .sidebar.close {
+        width: 90px;
+    }
+    
     .ph-search_m {
         display: none;
     }
@@ -748,6 +755,12 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
 }
 
+/* ------------------------------------- */
+@media (min-width: 400px) {
+    
+}
+
+/* ----------------------------------------------------------------- */
 /* when the screen from 769 to lower */
 @media (max-width: 780px) {
     .sidebar{
@@ -761,9 +774,6 @@ input[type="checkbox"].toggle:checked + input.test1 {
         margin-top: 100px;
     }
 
-    .head{
-        padding: 10px 0px;
-    }
     .topic-name,
     .topic-title {
         font-size: 20px;
@@ -888,13 +898,21 @@ input[type="checkbox"].toggle:checked + input.test1 {
         width: 130px;
     }
 }
+/* 88888888888 */
 /* 560 */
 @media (max-width: 560px) {
     .sidebar{
         width: 210px;
     }
+    .sidebar.close .list-ul {
+        /* can be deleted */
+        display: none;
+    }
+    .sidebar.close {
+        width: 0;
+    }
     .head{
-        padding: 15px 0px;
+        padding: 10px 0px;
     }
     .menu-name,
     .icon-1{
@@ -968,6 +986,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .sidebar{
         width: 200px;
     }
+
     .menu-name,
     .icon-1{
         font-size: 12px;
@@ -981,7 +1000,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
         margin-top: 85px;
     }
     .head{
-        padding: 10px 0px;
+        padding: 8px 0px;
     }
     .topic-name,
     .topic-title {
