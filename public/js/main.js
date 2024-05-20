@@ -12,7 +12,7 @@ listItems.forEach((item) => {
         else item.classList.add("active");
     });
 });
-// const toggleSidebar = document.querySelector(".toggle-sidebar");
+const toggleSidebar = document.querySelector(".toggle-sidebar");
 const logo = document.querySelector(".my-menu-btn");
 const sidebar = document.querySelector(".sidebar");
 
@@ -27,56 +27,18 @@ logo.addEventListener("click", () => {
 // sidebar.classList.toggle("close");
 
 // ====================
-
-
-// (function () {
-//     document.addEventListener("DOMContentLoaded", function () {
-//         const my_toggle = document.getElementById("my_toggle");
-//         const _clicked = document.getElementById("_clicked");
-//         const body = document.querySelector("body");
-
-//         function checkScreenWidth() {
-//             if (window.innerWidth < 600) {
-//                 my_toggle.style.width = "100%";
-//             }
-//         }
-
-//         checkScreenWidth();
-//         window.addEventListener("resize", checkScreenWidth);
-
-//         if (body.dir === "rtl") {
-//             my_toggle.style.margin = "0px 240px 0px 0px";
-//         } else {
-//             my_toggle.style.margin = "0px 0px 0px 240px";
-//         }
-
-//         my_toggle.style.transition = "all .5s ease";
-
-//         _clicked.addEventListener("click", function () {
-//             if (my_toggle.classList.contains("active")) {
-//                 my_toggle.classList.remove("active");
-//                 my_toggle.style.transition = "all .5s ease";
-//                 if (body.dir === "rtl") {
-//                     my_toggle.style.margin = "0px 240px 0px 0px";
-//                 } else {
-//                     my_toggle.style.margin = "0px 0px 0px 240px";
-//                 }
-//             } else {
-//                 my_toggle.classList.add("active");
-//                 my_toggle.style.transition = "all 0.5s ease";
-//                 my_toggle.style.margin = "0px 0px 0px 0px";
-//             }
-//         });
-//     });
-// })();
+// ====================
+// ====================
 
 
 window.addEventListener("DOMContentLoaded", function () {
     var my_toggle = document.getElementById("my_toggle");
+    const _clicked = document.getElementById("_clicked");
+
     
     function checkScreenWidth() {
-        if (window.innerWidth < 600) {
-            my_toggle.style.width = "100%";
+        if (window.innerWidth < 560) {
+            my_toggle.style.margin = "0px 0px 0px 0px";
         }
     }
     checkScreenWidth();
@@ -104,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 my_toggle.classList.add("active");
                 my_toggle.style.transition = "all 0.5s ease";
-                my_toggle.style.margin = "0px 0px 0px 0px";
+                my_toggle.style.margin = "0px 100px 0px 0px";
                 // my_toggle.style.backgroundColor = "blue";
             }
         });
@@ -121,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 my_toggle.classList.add("active");
                 my_toggle.style.transition = "all 0.5s ease";
-                my_toggle.style.margin = "0px 0px 0px 0px";
+                my_toggle.style.margin = "0px 0px 0px 100px";
                 // my_toggle.style.backgroundColor = "green";
             }
         });

@@ -1,4 +1,8 @@
 
+
+
+
+
 <script src="{{URL::asset('js/all.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{URL::asset('js/bootstrap.js')}}"></script>
