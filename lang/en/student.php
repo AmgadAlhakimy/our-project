@@ -94,5 +94,6 @@ return [
     'the father already exists'=>'The Father Already Exists',
     'please select from the list and the number of father only'=>
     'please select from the list and the number of father only',
+    'select educational level first'=>'Select Educational Level First',
 
 ];

@@ -167,9 +167,9 @@
                 </div>
 
                 <div class="box col-lg-6 col-md-6">
-                    <label for="classroom">Select a Classroom:</label>
+                    <label for="classroom">{{__('classroom.classroom')}}</label>
                     <select id="classroom" class="form-control"wire:model.live.debounce.500ms="studentForm.classroom_id">
-                        <option value="" selected>Select Educational Level First</option>
+                        <option value="" selected>{{__('student.select educational level first')}}</option>
                         @if(!is_null($selectedLevel))
                             @foreach($classrooms as $classroom)
                                 <option value="{{$classroom->id}}">{{$classroom->name}}</option>
