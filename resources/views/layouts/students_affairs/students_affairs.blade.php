@@ -28,6 +28,8 @@
         <a href='/student_form' class="li-link">معلومات الطلاب</a>
         <a href="#" class="li-link">الطلاب الأوائل</a>
 
+        
+
         {{-- START THE SECOND DROPDOWN --}}
         <div class="dropDownLang my-element" onclick="cancelclick(event)">
             <div class="select">

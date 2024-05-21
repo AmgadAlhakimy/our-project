@@ -5,6 +5,7 @@
 <p class="title">{{__('sidebar.parent section')}}<i class="ms-1 me-1 fa-solid fa-people-roof"></i></p>
 <li class="dropdown">
     <!-- ========== 2 ============ -->
+    
     <div class="sidebar-title">
         <a href="#" class="li-link title-4">
             <i
