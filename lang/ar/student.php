@@ -94,6 +94,7 @@ return [
     'the father already exists'=>'إذا كان الأب موجود مسبقاً',
     'please select from the list and the number of father only'=>
         'يرجى الاختيار من القائمة ويجب أن يكون رقم الأب فقط',
+    'select educational level first'=>'يرجى اختيار مرحلة دارسية أولا',
 
 
 ];

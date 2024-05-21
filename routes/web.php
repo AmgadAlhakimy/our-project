@@ -1,13 +1,10 @@
 <?php
 
 
-use App\Livewire\SearchEduLevel;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Classroom\Classroom;
-use App\Livewire\Counter;
-use App\Livewire\Student;
 use Livewire\Livewire;
 
 /*
@@ -39,10 +36,6 @@ Route::group(
             return view('layouts/sidebar');
         });
 
-      Route::get('/counter',Counter::class);
-      Route::get('/level',SearchEduLevel::class);
-      Route::get('/student',Student::class)
-          ->name('createStudent');
 
         include 'follow_up.php';
         include 'marks.php';
@@ -50,10 +43,8 @@ Route::group(
         include 'resources.php';
         include 'restore.php';
         include 'force_delete.php';
+        include 'display-items.php';
 
-
-//        Route::get('/classrooms/{id}',
-//            [StudentController::class, 'getClassrooms']);
 
         Route::get('/classrooms/{educationalLevelId}', function ($educationalLevelId) {
             $classrooms = Classroom::where('edu_id', $educationalLevelId)->get()->toArray();

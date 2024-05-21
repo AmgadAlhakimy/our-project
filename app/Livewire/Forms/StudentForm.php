@@ -122,7 +122,7 @@ use WithFileUploads;
     {
         if($this->photo){
 
-            return $this->photo->store('/storage/images/students', 'public');
+            return $this->photo->store('images/students/'.time().'_', 'public');
         }
         return null;
     }
