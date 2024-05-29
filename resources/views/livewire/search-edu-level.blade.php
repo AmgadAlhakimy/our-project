@@ -57,6 +57,9 @@
 
 <div class="table-section shadow-none">
     <div class="card table-section">
+        <div class="mb-4">
+            <input type="checkbox" wire:click="toggleSelectAll" {{ count($selectedRows) === count($levels) ? 'checked' : '' }}> Select All
+        </div>
         <table class=" " id="check_table">
             <thead>
             <tr>
@@ -117,9 +120,13 @@
             <tbody>
             @foreach($levels as $Level)
                 <tr>
-                    <td>
-                        <input type="checkbox" value="{{$Level->id}}"  wire:model="checkedLevels.{{ $Level->id }}" wire:change="updateCheckAll">
+{{--                    <td>--}}
+{{--                        <input type="checkbox" value="{{$Level->id}}"  wire:model="checkedLevels.{{ $Level->id }}" wire:change="updateCheckAll">--}}
 {{--                        <input type="checkbox" wire:model="checkboxes.{{ $index }}" wire:change="updateCheckAll">--}}
+
+{{--                    </td>--}}
+                    <td>
+                        <input type="checkbox" wire:click="toggleRow({{ $Level->id }})" {{ in_array($Level->id, $selectedRows) ? 'checked' : '' }}>
                     </td>
                     <td>{{$Level->id}}</td>
                     <td>{{$Level->name}}</td>

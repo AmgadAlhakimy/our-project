@@ -21,6 +21,25 @@ class SearchEduLevel extends Component
     public bool $isPaginate;
     public $checkedLevels = [];
     public $selectAll = false;
+    public $selectedRows = [];
+
+    public function toggleSelectAll()
+    {
+        if (count($this->selectedRows) === count(array_filter($this->selectedRows))) {
+            $this->selectedRows = [];
+        } else {
+            $this->selectedRows = array_keys($this->selectedRows);
+        }
+    }
+
+    public function toggleRow($index)
+    {
+        if (($key = array_search($index, $this->selectedRows)) !== false) {
+            unset($this->selectedRows[$key]);
+        } else {
+            $this->selectedRows[] = $index;
+        }
+    }
 
     public function ordering($item)
     {
@@ -56,30 +75,34 @@ class SearchEduLevel extends Component
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
+
     public function deleteLevels()
     {
         dd($this->checkedLevels);
     }
-    public function toggleSelectAll()
-    {
-//        $this->checkboxes = array_fill(0, count($this->checkboxes), $this->selectAll);
-    }
+//    public function toggleSelectAll()
+//    {
+////        $this->checkboxes = array_fill(0, count($this->checkboxes), $this->selectAll);
+//    }
     public function updatedSelectAll($value)
     {
-        if ($value){
+        if ($value) {
 
-        }else{
+        } else {
             $this->checkedLevels = [];
         }
     }
+
     public function mount()
     {
         $this->fetchCheckboxes();
     }
+
     public function fetchCheckboxes()
     {
         $this->checkedLevels = EducationalLevel::pluck('id')->toArray();
     }
+
     public function checkAllCheckboxes()
     {
         if ($this->selectAll) {
@@ -92,6 +115,7 @@ class SearchEduLevel extends Component
             }, $this->checkedLevels);
         }
     }
+
     public function updateCheckAll()
     {
         $this->checkedLevels = (count($this->checkedLevels) === count(array_filter($this->checkedLevels)));
