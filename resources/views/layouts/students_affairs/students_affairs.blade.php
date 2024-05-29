@@ -27,11 +27,9 @@
         <a href='/absence' class="li-link">{{__('sidebar.Student absence')}}</a>
         <a href='/student_form' class="li-link">معلومات الطلاب</a>
         <a href="#" class="li-link">الطلاب الأوائل</a>
-
         
-
         {{-- START THE SECOND DROPDOWN --}}
-        <div class="dropDownLang my-element" onclick="cancelclick(event)">
+        {{-- <div class="dropDownLang my-element" onclick="cancelclick(event)">
             <div class="select">
                 <span class="selected">Lang</span>
                 <div class="caret"></div>
@@ -42,46 +40,10 @@
                 <a href="#" class="li-link_2">3</a>
                 <a href='#' class="li-link_2">4</a>
                 <a href="#" class="li-link_2">5</a>
-            </ul>  {{-- END THE SECOND DROPDOWN --}}
-        </div>
+            </ul> 
+        </div> --}}
     </div>
 
-<li class="dropdown">
-    <!-- ========== 2 ============ -->
-    <div class="sidebar-title">
-        <a href="#" class="li-link title-4">
-            <i
-                class="icon-1 fa-solid fa-window-restore"></i>
-            <span class="menu-name"> قسم 1</span>
-            <i class="icon-1 fa-solid fa-chevron-down"></i>
-        </a>
-    </div>
-    <div class="submenu">
-        <div class="line-black">
-            <a href="{{route('subject_teacher.index')}}" class="li-link">relationship</a>
-            <span href='#' class="li-link">2</span>
-            <a href='#' class="li-link">3</a>
-        </div>
-    </div>
-</li>
-{{-- ------------------------------ --}}
-<li class="dropdown">
-    <!-- ========== 2 ============ -->
-    <div class="sidebar-title">
-        <a href="#" class="li-link title-4">
-            <i
-                class="icon-1 fa-solid fa-window-restore"
-            ></i>
-            <span class="menu-name"> قسم 2</span>
-            <i class="icon-1 fa-solid fa-chevron-down"></i>
-        </a>
-    </div>
-    <div class="submenu">
-        <div class="line-black">
-
-        </div>
-    </div>
-</li>
 <!-- ====================== -->
 </div>
 </li>

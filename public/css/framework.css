@@ -706,12 +706,6 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .sidebar{
         width: 260px;
     }
-    .head{
-        padding: 15px 0px;
-    }
-    .list-ul{
-        margin-top: 90px;
-    }
     .dropDownLang .menuLang {
         /* left: 16%;
         transform: translatex(-50%); */
@@ -738,9 +732,14 @@ input[type="checkbox"].toggle:checked + input.test1 {
 /* ------------------------------------- */
 @media (min-width: 560px) {
     .sidebar.close {
-        width: 90px;
+        width: 65px;
     }
-    
+    .head{
+        padding: 15px 0px;
+    } 
+    .sidebar{
+        margin-top: 90px;
+    }   
     .ph-search_m {
         display: none;
     }
@@ -769,9 +768,6 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .menu-name,
     .icon-1{
         font-size: 15px;
-    }
-    .list-ul{
-        margin-top: 100px;
     }
 
     .topic-name,
@@ -818,9 +814,6 @@ input[type="checkbox"].toggle:checked + input.test1 {
 @media (max-width: 680px) {
     .sidebar{
         width: 230px;
-    }
-    .list-ul{
-        margin-top: 90px;
     }
     .menu-name,
     .icon-1{
@@ -914,6 +907,9 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .head{
         padding: 10px 0px;
     }
+    .sidebar{
+        margin-top: 70px;
+    } 
     .menu-name,
     .icon-1{
         font-size: 13px;
@@ -996,11 +992,11 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 10px;
         background-color: #eeb149;
     }
-    .list-ul{
-        margin-top: 85px;
-    }
     .head{
         padding: 8px 0px;
+    }
+    .sidebar{
+        margin-top: 70px;
     }
     .topic-name,
     .topic-title {

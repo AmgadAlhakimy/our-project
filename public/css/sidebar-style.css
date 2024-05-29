@@ -82,7 +82,8 @@
     width: 0;
 }
 .sidebar.close .menu-name,
-.sidebar.close .title{
+.sidebar.close .title,
+.sidebar.close .fa-chevron-down{
     display: none;
 }
 .sidebar.close:hover .menu-name,
@@ -90,7 +91,7 @@
     display: block;
 }
 .sidebar.close:hover {
-    width: 200px;
+    width: 220px;
 }
 .sidebar.close li.dropdown.active .submenu{
     display: none;
@@ -109,6 +110,10 @@
 
 .list-ul::-webkit-scrollbar {
     /*display: none;*/
+}
+
+.sidebar.sidebar.close .icon-1{
+    font-size: 20px;
 }
 .li-link {
     display: flex;
@@ -163,6 +168,7 @@
 
 }
 
+
 /* .list-ul li .sidebar-title:hover .icon-1, */
 .list-ul li .sidebar-title:hover .menu-name {
     color: var(--school-color-3);
@@ -179,18 +185,24 @@
 }
 
 /* --------------------- submenu --------------------- */
+.list-ul {
+    margin-top: 15px;
+}
 .list-ul li .submenu {
     width: 0;
     height: 0;
     opacity: 0;
     transition: all 0.2s ease;
 }
+.list-ul li .submenu {
+    /* display: none; */
+}
 .list-ul li.dropdown.active .submenu {
+    /* display: block; */
     width: unset;
     height: unset;
     opacity: 1;
     /* padding: 5px 6px; */
-
     margin: 0 20px ;
     /* background-color: #8b0985; */
 }
