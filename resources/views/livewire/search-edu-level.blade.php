@@ -58,13 +58,12 @@
 <div class="table-section shadow-none">
     <div class="card table-section">
         <div class="mb-4">
-            <input type="checkbox" wire:click="toggleSelectAll" {{ count($selectedRows) === count($levels) ? 'checked' : '' }}> Select All
         </div>
         <table class=" " id="check_table">
             <thead>
             <tr>
                 <th class=" me-4 ms-4">
-                    <input type="checkbox" wire:model="selectAll" wire:change="checkAllCheckboxes">
+                    <input type="checkbox" wire:model="selectAll" wire:click="toggleSelectAll" />
                 </th>
                 <th>
                     <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">
@@ -120,13 +119,8 @@
             <tbody>
             @foreach($levels as $Level)
                 <tr>
-{{--                    <td>--}}
-{{--                        <input type="checkbox" value="{{$Level->id}}"  wire:model="checkedLevels.{{ $Level->id }}" wire:change="updateCheckAll">--}}
-{{--                        <input type="checkbox" wire:model="checkboxes.{{ $index }}" wire:change="updateCheckAll">--}}
-
-{{--                    </td>--}}
                     <td>
-                        <input type="checkbox" wire:click="toggleRow({{ $Level->id }})" {{ in_array($Level->id, $selectedRows) ? 'checked' : '' }}>
+                        <input type="checkbox" wire:model="levels.{{ $loop->index }}.selected" />
                     </td>
                     <td>{{$Level->id}}</td>
                     <td>{{$Level->name}}</td>
@@ -180,6 +174,14 @@
             {{$levels->links()}}
         </div>
     @endif
+
+    @push('scripts')
+        <script>
+            Livewire.on('levelSelectionChanged', () => {
+                // Handle level selection change
+            });
+        </script>
+    @endpush
 </div>
 
 {{-- <div> --}}
