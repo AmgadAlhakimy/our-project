@@ -57,11 +57,13 @@
 
 <div class="table-section shadow-none">
     <div class="card table-section">
+        <div class="mb-4">
+        </div>
         <table class=" " id="check_table">
             <thead>
             <tr>
                 <th class=" me-4 ms-4">
-                    <input type="checkbox" wire:model="selectAll" wire:change="checkAllCheckboxes">
+                    <input type="checkbox" wire:model="selectAll" wire:click="toggleSelectAll" />
                 </th>
                 <th>
                     <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">
@@ -118,8 +120,7 @@
             @foreach($levels as $Level)
                 <tr>
                     <td>
-                        <input type="checkbox" value="{{$Level->id}}"  wire:model="checkedLevels.{{ $Level->id }}" wire:change="updateCheckAll">
-{{--                        <input type="checkbox" wire:model="checkboxes.{{ $index }}" wire:change="updateCheckAll">--}}
+                        <input type="checkbox" wire:model="levels.{{ $loop->index }}.selected" />
                     </td>
                     <td>{{$Level->id}}</td>
                     <td>{{$Level->name}}</td>
@@ -173,6 +174,14 @@
             {{$levels->links()}}
         </div>
     @endif
+
+    @push('scripts')
+        <script>
+            Livewire.on('levelSelectionChanged', () => {
+                // Handle level selection change
+            });
+        </script>
+    @endpush
 </div>
 
 {{-- <div> --}}

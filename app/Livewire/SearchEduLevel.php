@@ -19,8 +19,18 @@ class SearchEduLevel extends Component
     public $arrow = false;
     public $showArrow = 'id';
     public bool $isPaginate;
-    public $checkedLevels = [];
     public $selectAll = false;
+
+    public $selectedRows = [];
+
+    public function toggleRow($index)
+    {
+        if (($key = array_search($index, $this->selectedRows)) !== false) {
+            unset($this->selectedRows[$key]);
+        } else {
+            $this->selectedRows[] = $index;
+        }
+    }
 
     public function ordering($item)
     {
@@ -33,67 +43,48 @@ class SearchEduLevel extends Component
     }
 
 
-    public function render()
-    {
-        try {
+        public function render()
+        {
+            try {
 
-            $lang = LaravelLocalization::setLocale();
-            if (strlen($this->search) >= 1) {
-                $this->isPaginate = false;
-                $levels = EducationalLevel::where('name->en', 'like', "%$this->search%")
-                    ->orwhere('name->ar', 'like', "%$this->search%")->get();
-                return view('livewire.search-edu-level',
-                    compact('levels'));
-            } else {
-                $this->isPaginate = true;
-                $levels = EducationalLevel::orderBy(
-                    ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
-                    $this->sortOrder)->paginate($this->pagination);
-                return view('livewire.search-edu-level',
-                    compact('levels'));
+                $lang = LaravelLocalization::setLocale();
+                if (strlen($this->search) >= 1) {
+                    $this->isPaginate = false;
+                    $levels = EducationalLevel::where('name->en', 'like', "%$this->search%")
+                        ->orwhere('name->ar', 'like', "%$this->search%")->get();
+                    return view('livewire.search-edu-level',
+                        [
+                            'levels' => $levels,
+                            'selectAll' => $this->selectAll,
+                        ]);
+                } else {
+                    $this->isPaginate = true;
+                    $levels = EducationalLevel::orderBy(
+                        ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
+                        $this->sortOrder)->paginate($this->pagination);
+                    return view('livewire.search-edu-level', [
+                        'levels' => $levels,
+                        'selectAll' => $this->selectAll,
+                    ]);
+                }
+            } catch (\Exception $e) {
+                return redirect()->back()->with(['error' => $e->getMessage()]);
             }
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
-    }
-    public function deleteLevels()
-    {
-        dd($this->checkedLevels);
-    }
+
+//    public function toggleSelectAll()
+//    {
+//        $this->selectAll = !$this->selectAll;
+//
+//        $this->levels = collect($this->levels)->map(function ($level) {
+//            $level['selected'] = $this->selectAll;
+//            return $level;
+//        });
+//    }
+
     public function toggleSelectAll()
     {
-//        $this->checkboxes = array_fill(0, count($this->checkboxes), $this->selectAll);
-    }
-    public function updatedSelectAll($value)
-    {
-        if ($value){
-
-        }else{
-            $this->checkedLevels = [];
-        }
-    }
-    public function mount()
-    {
-        $this->fetchCheckboxes();
-    }
-    public function fetchCheckboxes()
-    {
-        $this->checkedLevels = EducationalLevel::pluck('id')->toArray();
-    }
-    public function checkAllCheckboxes()
-    {
-        if ($this->selectAll) {
-            $this->checkedLevels = array_map(function () {
-                return true;
-            }, $this->checkedLevels);
-        } else {
-            $this->checkedLevels = array_map(function () {
-                return false;
-            }, $this->checkedLevels);
-        }
-    }
-    public function updateCheckAll()
-    {
-        $this->checkedLevels = (count($this->checkedLevels) === count(array_filter($this->checkedLevels)));
+        $this->selectAll = !$this->selectAll;
+        $this->redirect('levelSelectionChanged');
     }
 }

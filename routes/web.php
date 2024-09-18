@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
