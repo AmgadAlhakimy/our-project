@@ -62,11 +62,7 @@
                             </td>
                             <td><?php echo e($student->id); ?></td>
                             <td><?php echo e($student->name); ?></td>
-                            <td><img
-                                    
-                                    
-                                                                        src="<?php echo e(asset($student->photo)); ?>"
-
+                            <td><img src="<?php echo e(asset('storage/' . $student->photo)); ?>"
                                     class="student-img" alt="photo"></td>
                             <td><?php echo e($student->address); ?></td>
                             <td><?php echo e($student->gender); ?></td>

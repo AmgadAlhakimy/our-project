@@ -1,11 +1,9 @@
 
-
-
-
 {{--                                    teachers                             --}}
             
     <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
             {{-- ---المعلمين--- --}}
+    
     <!-- ======================== TEACHERS ========================== -->
     <li class="dropdown">
     <!-- ========== 1 ============ -->
@@ -85,4 +83,3 @@
         </div>
     </li>
     {{-- ---الآباء--- --}}
-

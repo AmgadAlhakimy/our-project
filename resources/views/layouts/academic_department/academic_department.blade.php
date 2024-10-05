@@ -49,7 +49,7 @@
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-trash-can"></i>
                 <span class="menu-name">{{__('sidebar.trash')}} </span>
-                <i class="icon-1 fa-solid fa-chevron-up"></i>
+                <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
@@ -105,9 +105,7 @@
         <!-- ========== 4 ============ -->
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
-                <i
-                    class="icon-1 fa-solid fa-code-merge"
-                ></i>
+                <i class="icon-1 fa-solid fa-code-merge" ></i>
                 <span class="menu-name">{{__('sidebar.display relationships')}} </span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
