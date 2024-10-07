@@ -44,7 +44,7 @@
                             <input class="save-button" type="submit" value="{{__('public.update')}}">
                         </div>
                         <div class="box  col">
-                            <a href="{{route('educational_levels.index')}}" class="btn clear-button"><i
+                            <a href="{{route('show-levels')}}" class="btn clear-button"><i
                                     class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                         </div>
                     </div>
