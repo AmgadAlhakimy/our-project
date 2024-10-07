@@ -18,21 +18,13 @@
 
                         
                         <?php echo $__env->make('layouts.academic_department.academic_department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                        
-                        
-                        
-                        
                         <!-- ========== 5 ============ -->
                         <?php echo $__env->make('layouts.control_department.control_department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         <!-- ========== 5 ============ -->
                         <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         
-                        
-                        
-                        
                         <!-- ======================== PARENTS ========================== -->
                         <?php echo $__env->make('layouts.parents.parents', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                        
                         
                         
                         <!-- ======================== EMB ========================== -->
@@ -67,13 +59,13 @@
     <?php echo $__env->make('layouts.js_links', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 <script type="text/javascript">
-	VanillaTilt.init(document.querySelector(".containers-style"), {
-		max: 5,
-		speed: 30
+	VanillaTilt.init(document.querySelector(".container-title"), {
+		max: 4,
+		speed: 20
 	});
 
 	//It also supports NodeList
-	VanillaTilt.init(document.querySelectorAll(".containers-style"));
+	VanillaTilt.init(document.querySelectorAll(".container-title"));
 </script>
 <!-- end link js -->
 </body>

@@ -18,21 +18,13 @@
 
                         {{-- academic department --}}
                         @include('layouts.academic_department.academic_department')
-                        
-                        
-                        
-                        
                         <!-- ========== 5 ============ -->
                         @include('layouts.control_department.control_department')
                         <!-- ========== 5 ============ -->
                         @include('layouts.teachers.teachers')
                         
-                        
-                        
-                        
                         <!-- ======================== PARENTS ========================== -->
                         @include('layouts.parents.parents')
-                        
                         
                         {{-- ---شؤون الموظفين--- --}}
                         <!-- ======================== EMB ========================== -->
@@ -67,13 +59,13 @@
     @include('layouts.js_links')
 
 <script type="text/javascript">
-	VanillaTilt.init(document.querySelector(".containers-style"), {
-		max: 5,
-		speed: 30
+	VanillaTilt.init(document.querySelector(".container-title"), {
+		max: 4,
+		speed: 20
 	});
 
 	//It also supports NodeList
-	VanillaTilt.init(document.querySelectorAll(".containers-style"));
+	VanillaTilt.init(document.querySelectorAll(".container-title"));
 </script>
 <!-- end link js -->
 </body>

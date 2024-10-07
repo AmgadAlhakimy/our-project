@@ -17,8 +17,8 @@
 <div class="submenu">
     <div class="line-black">
         {{-- Add Student --}}
-        <a href='{{route('students.create')}}' class="li-link">{{__('sidebar.add a Student')}}</a>
-        <a href='{{route('createStudent')}}' class="li-link">{{__('add a Student with livewire')}}</a>
+        <a href='{{route("students.create")}}' class="li-link">{{__('sidebar.add a Student')}}</a>
+        <a href='{{route("createStudent")}}' class="li-link">{{__('add a Student with livewire')}}</a>
         {{-- review students --}}
         <a href="{{route('students.index')}}" class="li-link">{{__('sidebar.review students')}}</a>
         <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>
@@ -28,8 +28,7 @@
         <a href='/student_form' class="li-link">معلومات الطلاب</a>
         <a href="#" class="li-link">الطلاب الأوائل</a>
         
-        {{-- START THE SECOND DROPDOWN --}}
-        {{-- <div class="dropDownLang my-element" onclick="cancelclick(event)">
+        <div class="dropDownLang my-element" onclick="cancelclick(event)">
             <div class="select">
                 <span class="selected">Lang</span>
                 <div class="caret"></div>
@@ -41,7 +40,7 @@
                 <a href='#' class="li-link_2">4</a>
                 <a href="#" class="li-link_2">5</a>
             </ul> 
-        </div> --}}
+        </div> 
     </div>
 
 <!-- ====================== -->
