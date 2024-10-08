@@ -1,7 +1,8 @@
  <?php
 
 
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+ use App\Livewire\SearchEduLevel;
+ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Classroom\Classroom;
@@ -35,7 +36,6 @@ Route::group(
         Route::get('/', function () {
             return view('layouts/sidebar');
         });
-
 
         include 'follow_up.php';
         include 'marks.php';
