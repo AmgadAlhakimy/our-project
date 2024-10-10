@@ -1,5 +1,8 @@
 @extends('layouts.sidebar')
 @section('content')
+
+{{-- <div class="mt-5"> --}}
+
     <div class="my-table mt-5">
         <!-- table-hover table-striped -->
         <div class="card table-section">
@@ -15,6 +18,9 @@
                     </div>
                 </form>
             </div>
+        </div>
+
+
         <!-- table-hover table-striped -->
         <div class="table-header mt-3 mb-3">
             <button class="save-button btn-info select_bt me-1 ms-1" onclick="toggleCheckboxes()" id="select_bt">{{__('public.select')}}</button>
@@ -51,15 +57,40 @@
                     <tbody>
                     <tr>
                         <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
-                        <td>{{$teacher->id}}</td>
-                        <td>{{$teacher->name}}</td>
-                        <td><img src="{{asset($teacher->photo)}}"
+                        <td>
+                            <div class="squeer_test1">
+                            {{$teacher->id}}
+                        </div>
+                        </td>
+                        <td>
+                            <div class="squeer_test1">
+                            {{$teacher->name}}</td>
+                        </div>
+                        <td>
+                            <div class="squeer_test1">
+                            <img src="{{asset($teacher->photo)}}"
                                  class="student-img" alt="photo"></td>
-                        <td>{{$teacher->contact}}</td>
-                        <td>{{$teacher->gender}}</td>
-                        <td>{{$teacher->address}}</td>
-                        <td>{{$teacher->qualification}}</td>
-                        <td>{{$teacher->salary}}</td>
+                                </div>
+                        <td>
+                            <div class="squeer_test1">
+                            {{$teacher->contact}}</td>
+                        </div>
+                        <td>
+                            <div class="squeer_test1">
+                            {{$teacher->gender}}</td>
+                        </div>
+                        <td>
+                            <div class="squeer_test1">
+                            {{$teacher->address}}</td>
+                        </div>
+                        <td>
+                            <div class="squeer_test1">
+                            {{$teacher->qualification}}</td>
+                        </div>
+                        <td>
+                            <div class="squeer_test1">
+                            {{$teacher->salary}}</td>
+                        </div>
                         <td>{{$teacher->major}}</td>
                         <td>{{$teacher->note}}</td>
                         <td>{{$teacher->created_at}}</td>
@@ -103,8 +134,9 @@
                     </tr>
                     @endforeach
                     </tbody>
-            </table>
+                </table>
+            </div>
         </div>
     </div>
-    </div>
+{{-- </div> --}}
 @endsection

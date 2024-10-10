@@ -9,7 +9,7 @@ body {
     /* position: absolute; */
 
     /* top: 50px; */
-    margin: 0 50px 0 50px;
+    margin: 0 40px 0 40px;
 }
 
 .table-header {
@@ -63,9 +63,10 @@ thead th button {
 thead th button {
     background-color: transparent;
 }
-thead th button:hover , button:hover .icon-arrow{
+thead th button:hover,
+button:hover .icon-arrow {
     color: var(--S-Color-2);
-    border-color:  var(--S-Color-2);
+    border-color: var(--S-Color-2);
 }
 th,
 td {
@@ -214,17 +215,17 @@ tr:hover img {
     -webkit-appearance: none;
 }
 /* END THE CHECK BOX STYLE */
-.num_rows{
+.num_rows {
     border-color: var(--S-Color-1);
     font-weight: bold;
     border-radius: 5px;
     /* margin: 0px 5px; */
 }
-.icon-arrow{
+.icon-arrow {
     display: inline-block;
     width: 1.3rem;
     height: 1.3rem;
-    border-radius: 50% ;
+    border-radius: 50%;
     text-align: center;
     font-size: 1rem;
     border: 1.4px solid var(--S-Color-1);
@@ -233,25 +234,35 @@ tr:hover img {
 th button.active .icon-arrow {
     transform: rotate(180deg);
 }
-.icon_arrow_test{
-    border-left: 1px solid ;
-    border-top: 1px solid ;
+.icon_arrow_test {
+    border-left: 1px solid;
+    border-top: 1px solid;
     width: 7px;
     height: 7px;
     transform: rotate(45deg);
-    transform: rotate(45deg);    
+    transform: rotate(45deg);
 }
 
-.icon_arrow_test_down{
-    border-left: 1px solid ;
-    border-top: 1px solid ;
+.icon_arrow_test_down {
+    border-left: 1px solid;
+    border-top: 1px solid;
     width: 7px;
     height: 7px;
     transform: rotate(225deg);
 }
-.table_test{
+.table_test {
     display: flex;
     /* flex-direction: column; */
     justify-content: space-around;
     /* justify-content: space-between; */
+}
+
+.squeer_test1 {
+    background-color: var(--border-color);
+    /* border: 1px solid gray; */
+    padding: 10px 0;
+    border-radius: 15px;
+}
+.squeer_test1:hover {
+    background-color: none;
 }

@@ -6,14 +6,13 @@
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
 
-
 {{--        <livewire:search-edu-level/>--}}
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
 
         <!-- table-hover table-striped -->
         <div class="modal fade" id="delete_all"
-             tabindex="-1" aria-labelledby="exampleModalLabel"
-             aria-hidden="true">
+            tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

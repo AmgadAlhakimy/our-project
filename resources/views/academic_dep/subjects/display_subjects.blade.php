@@ -9,7 +9,7 @@
             <div class="row first-card mt-4">
                 <form method="post" action="{{route('subjects.search')}}">
                     @method('GET')
-                    @csrf
+                    @csrf 
                     <div class="row">
                         <label class="col-10">
                             <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
