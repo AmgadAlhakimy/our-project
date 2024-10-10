@@ -10,6 +10,7 @@ use App\Livewire\Student;
 
 Route::get('/counter',Counter::class);
 Route::get('/level',SearchEduLevel::class)->name('show-levels');
-Route::get('/displayStudents',DisplayStudents::class);
+Route::get('/displayStudents',DisplayStudents::class)
+->name('displayStudents');
 Route::get('/student',Student::class)
     ->name('createStudent');
