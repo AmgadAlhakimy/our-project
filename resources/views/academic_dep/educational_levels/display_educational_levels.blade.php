@@ -2,10 +2,9 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-
+    
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
-
 {{--        <livewire:search-edu-level/>--}}
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
 

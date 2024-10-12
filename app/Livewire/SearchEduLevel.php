@@ -19,18 +19,9 @@ class SearchEduLevel extends Component
     public $arrow = false;
     public $showArrow = 'id';
     public bool $isPaginate;
-    public $selectAll = false;
 
-    public $selectedRows = [];
 
-    public function toggleRow($index)
-    {
-        if (($key = array_search($index, $this->selectedRows)) !== false) {
-            unset($this->selectedRows[$key]);
-        } else {
-            $this->selectedRows[] = $index;
-        }
-    }
+
 
     public function ordering($item)
     {
@@ -52,19 +43,17 @@ class SearchEduLevel extends Component
                     $this->isPaginate = false;
                     $levels = EducationalLevel::where('name->en', 'like', "%$this->search%")
                         ->orwhere('name->ar', 'like', "%$this->search%")->get();
-                    return view('livewire.search-edu-level',
+                    return view('academic_dep.educational_levels.search-edu-level',
                         [
                             'levels' => $levels,
-                            'selectAll' => $this->selectAll,
                         ]);
                 } else {
                     $this->isPaginate = true;
                     $levels = EducationalLevel::orderBy(
                         ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
                         $this->sortOrder)->paginate($this->pagination);
-                    return view('livewire.search-edu-level', [
+                    return view('academic_dep.educational_levels.search-edu-level', [
                         'levels' => $levels,
-                        'selectAll' => $this->selectAll,
                     ]);
                 }
             } catch (\Exception $e) {
@@ -72,19 +61,5 @@ class SearchEduLevel extends Component
             }
         }
 
-//    public function toggleSelectAll()
-//    {
-//        $this->selectAll = !$this->selectAll;
-//
-//        $this->levels = collect($this->levels)->map(function ($level) {
-//            $level['selected'] = $this->selectAll;
-//            return $level;
-//        });
-//    }
 
-    public function toggleSelectAll()
-    {
-        $this->selectAll = !$this->selectAll;
-        $this->redirect('levelSelectionChanged');
-    }
 }

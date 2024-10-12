@@ -266,3 +266,8 @@ th button.active .icon-arrow {
 .squeer_test1:hover {
     background-color: none;
 }
+
+.links{
+    margin-top: 100px;
+    background-color: red;
+}
