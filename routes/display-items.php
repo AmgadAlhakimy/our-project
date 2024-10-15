@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Classes;
 use App\Livewire\DisplayStudents;
 use App\Livewire\SearchEduLevel;
 use Illuminate\Support\Facades\Route;
@@ -14,3 +15,5 @@ Route::get('/displayStudents',DisplayStudents::class)
 ->name('displayStudents');
 Route::get('/student',Student::class)
     ->name('createStudent');
+Route::get('/classes',Classes::class)
+    ->name('displayClass');

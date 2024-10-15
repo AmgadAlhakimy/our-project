@@ -35,7 +35,7 @@
         <div class="submenu">
             <div class="line-black">
                 <a href="{{route('show-levels')}}" class="li-link">{{__('sidebar.review of educational Level')}}</a>
-                <a href="{{route('classrooms.index')}}" class="li-link">{{__('sidebar.review of classrooms')}}</a>
+                <a href="{{route('displayClass')}}" class="li-link">{{__('sidebar.review of classrooms')}}</a>
                 <a href="{{route('subjects.index')}}" class="li-link"> {{__('sidebar.review of subjects')}}</a>
                 <a href="{{route('activities.index')}}" class="li-link">{{__('sidebar.review activities')}}</a>
             </div>
