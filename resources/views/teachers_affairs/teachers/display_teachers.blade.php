@@ -58,37 +58,38 @@
                     <tr>
                         <td ><input type="checkbox" class="check_item ms-2 me-2" id="checkbox" style="display: none"></td>
                         <td>
-                            <div class="squeer_test1">
+                            <div class="td_rect">
                             {{$teacher->id}}
                         </div>
                         </td>
                         <td>
-                            <div class="squeer_test1">
-                            {{$teacher->name}}</td>
-                        </div>
+                            <div class="td_rect">
+                                {{$teacher->name}}
+                            </div>
+                        </td>
                         <td>
-                            <div class="squeer_test1">
+                            <div class="td_rect">
                             <img src="{{asset($teacher->photo)}}"
-                                 class="student-img" alt="photo"></td>
+                                class="student-img" alt="photo"></td>
                                 </div>
                         <td>
-                            <div class="squeer_test1">
+                            <div class="td_rect">
                             {{$teacher->contact}}</td>
                         </div>
                         <td>
-                            <div class="squeer_test1">
+                            <div class="td_rect">
                             {{$teacher->gender}}</td>
                         </div>
                         <td>
-                            <div class="squeer_test1">
+                            <div class="td_rect">
                             {{$teacher->address}}</td>
                         </div>
                         <td>
-                            <div class="squeer_test1">
+                            <div class="td_rect">
                             {{$teacher->qualification}}</td>
                         </div>
                         <td>
-                            <div class="squeer_test1">
+                            <div class="td_rect">
                             {{$teacher->salary}}</td>
                         </div>
                         <td>{{$teacher->major}}</td>

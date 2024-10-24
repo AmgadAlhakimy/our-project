@@ -8,7 +8,7 @@
         <!-- Start parent info  -->
         @if($currentStep === 1)
         <div class="box row me-5 ms-5 mb-2">
-            <button class="col save-button" wire:click="increment">
+            <button class="col save-button me-5 ms-5 " wire:click="increment">
                 {{__('student.the father already exists')}}
             </button>
         </div>
@@ -142,7 +142,7 @@
                         <div class="box col-lg-6 col-md-6">
                             <label for="relation-a">{{__('Student.kin relationship in english')}}</label>
                             <input type="text" class="form-control" id='relation-a' wire:model="relativeForm.kin_relationship"
-                                   value="{{old('kin_relationship')}}">
+                                value="{{old('kin_relationship')}}">
                             @error('relativeForm.kin_relationship')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -150,8 +150,8 @@
                         <div class="box col-lg-6 col-md-6">
                             <label for="relation-e">{{__('Student.kin relationship in arabic')}}</label>
                             <input type="text" class="form-control" id='relation-e'
-                                   wire:model="relativeForm.kin_relationship_ar"
-                                   value="{{old('kin_relationship_ar')}}">
+                                wire:model="relativeForm.kin_relationship_ar"
+                                value="{{old('kin_relationship_ar')}}">
                             @error('relativeForm.kin_relationship_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -160,7 +160,7 @@
                         <div class="box col-12">
                             <label for="number">{{__('Student.kin contact')}}</label>
                             <input type="number" class="form-control " id='number' wire:model="relativeForm.kin_contact"
-                                   value="{{old('kin_contact')}}">
+                                value="{{old('kin_contact')}}">
                             @error('relativeForm.kin_contact')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror

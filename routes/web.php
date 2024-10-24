@@ -1,8 +1,8 @@
- <?php
+<?php
 
 
- use App\Livewire\SearchEduLevel;
- use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Livewire\SearchEduLevel;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Classroom\Classroom;
@@ -51,11 +51,11 @@ Route::group(
             return response()->json($classrooms);
         });
 
-        // absence
+        // school
         Route::get('school', function () {
             return view('teachers_affairs/follow_up_students/school-follow-up');
         });
-        // absence
+        // students_view
         Route::get('students_view', function () {
             return view('teachers_affairs/follow_up_students/index_school_follow_up');
         });
@@ -72,20 +72,22 @@ Route::group(
         });
 
 
-        // absence
+        // add_marks
         Route::get('add_marks', function () {
             return view('teachers_affairs/marks/add');
         });
-        // absence
+        // absence_class
         Route::get('absence_class', function () {
             return view('teachers_affairs/absence/absent_student_class');
         });
         // -----------------------
-        // absence
+        // student_info
         Route::get('student_info', function () {
             return view('parents/student_info');
         });
 
+
+        // you have check on this code
         // absence
         Route::get('absence', function () {
             return view('students_affairs/absence/absent_students');
@@ -93,11 +95,11 @@ Route::group(
 
         // ========================
         // control
-        // marks of month
+        // m_marks
         Route::get('m_marks', function () {
             return view('control/monthly/marks_of_month');
         });
-        // all m arks of month
+        // all_m_marks
         Route::get('all_m_marks', function () {
             return view('control/monthly/all_marks_of_month');
         });

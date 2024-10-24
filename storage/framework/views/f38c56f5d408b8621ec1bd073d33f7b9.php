@@ -7,14 +7,14 @@
 
                 </div>
             <?php endif; ?>
-            <h3 class="container-title"><?php echo e(__('classroom.create new classroom')); ?></h3>
+            <h3 class="container-title"><?php echo e(__('classroom.create new class')); ?></h3>
             <form method="post" action="<?php echo e(route('classrooms.store')); ?>">
                 <?php echo csrf_field(); ?>
                 <div class="container containers-style">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label for="c-name_ar"><?php echo e(__('classroom.classroom name in arabic')); ?></label>
+                            <label for="c-name_ar"><?php echo e(__('classroom.class name in arabic')); ?></label>
                             <input type="text" id="c-name_ar" class="form-control" name="name_ar"
                             value="<?php echo e(old('name_ar')); ?>">
                             <?php $__errorArgs = ['name_ar'];
@@ -29,8 +29,8 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         
-                        <div class="box col-lg-6 col-md-12">
-                            <label for="c-name"><?php echo e(__('classroom.classroom name in english')); ?></label>
+                        <div class="box col-lg-6 col-md-12"> 
+                            <label for="c-name"><?php echo e(__('classroom.class name in english')); ?></label>
                             <input type="text" id="c-name" class="form-control " name="name" value="<?php echo e(old('name')); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -64,7 +64,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         
                         <div class="box col-lg-6 col-md-12 ">
-                            <label for="cost"><?php echo e(__('classroom.classroom cost')); ?></label>
+                            <label for="cost"><?php echo e(__('classroom.class cost')); ?></label>
                             <input type="number" id="cost" class="form-control" name="cost" minlength="0"
                                     placeholder="$"
                                     value="<?php echo e(old('cost')); ?>">

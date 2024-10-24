@@ -97,7 +97,7 @@ tr:hover td {
     /* font-weight: bold; */
     color: var(--S-Color-2);
     cursor: pointer;
-    background-color: #f6f9fc;
+    /* background-color: var(--container-color); */
 }
 ::placeholder {
     color: #0298cf;
@@ -257,17 +257,26 @@ th button.active .icon-arrow {
     /* justify-content: space-between; */
 }
 
-.squeer_test1 {
-    background-color: var(--border-color);
-    /* border: 1px solid gray; */
+.td_rect {
+    background-color:var(--container-color) ;
+    border: 0.5px solid var(--border-color);
+
     padding: 10px 0;
     border-radius: 15px;
 }
-.squeer_test1:hover {
-    background-color: none;
-}
+tbody tr:hover .td_rect {
+    background-color: var(--sidebar-bg);
+    /* border: none; */
 
-.links{
-    margin-top: 100px;
+}
+.td{
     background-color: red;
 }
+
+/* links and nuber of rows style */
+.links{
+    margin-top: 100px;
+    background-color: green;
+}
+
+/* #f6f9fc the td color */
