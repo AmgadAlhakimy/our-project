@@ -88,5 +88,10 @@ return [
     'please select the gender'=>'الرجاء اختيار النوع',
     'number of rows:'=>'عدد الصفوف:',
     'next'=>'التالي',
+    'results'=>'اسم',
+    'Showing'=>'اضهار',
+    'to'=>'إلى',
+    'of'=>'من',
+    
 
 ];

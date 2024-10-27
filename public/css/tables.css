@@ -24,7 +24,7 @@ body {
     white-space: nowrap;
     height: 100%;
     overflow: auto;
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 20px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     background-color: var(--sidebar-bg);
@@ -85,6 +85,7 @@ td {
     border-left: 1px solid #dddddd;
     border-right: 1px solid #dddddd;
 }
+
 
 td .student-img {
     height: 60px;
@@ -177,7 +178,7 @@ tr:hover img {
     transform: rotateX(0);
 }
 .num_table {
-    background-color: var(--S-Color-1);
+    background-color: var(--S-Color-8);
     color: #fff;
     width: 1px;
     font-weight: bold;
@@ -216,11 +217,12 @@ tr:hover img {
 }
 /* END THE CHECK BOX STYLE */
 .num_rows {
-    border-color: var(--S-Color-1);
-    font-weight: bold;
+    border-color: var(--grey-color);
     border-radius: 5px;
-    /* margin: 0px 5px; */
+    color: var(--color_blue);
 }
+
+/* +++++ check if this class used or no */
 .icon-arrow {
     display: inline-block;
     width: 1.3rem;
@@ -250,33 +252,44 @@ th button.active .icon-arrow {
     height: 7px;
     transform: rotate(225deg);
 }
-.table_test {
+.table_test
+/* delet this class from your pages */
+{
     display: flex;
     /* flex-direction: column; */
     justify-content: space-around;
     /* justify-content: space-between; */
 }
-
+.n_rect{
+    background-color: var(--color_blue);
+    border-radius: 20px;
+    padding: 20px;
+}
 .td_rect {
     background-color:var(--container-color) ;
     border: 0.5px solid var(--border-color);
-
     padding: 10px 0;
     border-radius: 15px;
 }
 tbody tr:hover .td_rect {
     background-color: var(--sidebar-bg);
     /* border: none; */
-
-}
-.td{
-    background-color: red;
 }
 
+.sections_rows{
+    
+}
 /* links and nuber of rows style */
 .links{
-    margin-top: 100px;
-    background-color: green;
+
 }
+.rows_style{
+}
+.sm_rows_botton{
+    padding: 10px;
+}
+.next_text{
+    font-size: 10px;
+    }
 
 /* #f6f9fc the td color */

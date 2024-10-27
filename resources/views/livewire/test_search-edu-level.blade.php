@@ -120,22 +120,44 @@
             @foreach($levels as $Level)
                 <tr>
                     <td>
-                        <input type="checkbox" wire:model="levels.{{ $loop->index }}.selected" />
+                        <div class="td_rect">
+                            <input type="checkbox" wire:model="levels.{{ $loop->index }}.selected" />
+                        </div>
                     </td>
-                    <td>{{$Level->id}}</td>
-                    <td>{{$Level->name}}</td>
-                    <td>{{$Level->created_at}}</td>
-                    <td>{{$Level->updated_at}}</td>
-                    <td><a href="{{route('educational_levels.edit',$Level->id)}}"
-                           class="btn save-button btn-success w-100">
-                            <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
+                    <td>
+                        <div class="td_rect">
+                            {{$Level->id}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td_rect">
+                            {{$Level->name}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td_rect">
+                            {{$Level->created_at}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td_rect">
+                            {{$Level->updated_at}}
+                        </div>
+                    </td>
+                    <td>
+                        <div class="td_rect">
+                            <a href="{{route('educational_levels.edit',$Level->id)}}"
+                                class="btn save-button btn-success w-100">
+                                    <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}}
+                            </a>
+                        </div>
                     </td>
                     <td>
                         <button wire:confirm="are you sure you want to delete" class="btn clear-button btn-danger w-100"
-                                data-bs-toggle="modal"
-                                data-bs-target="#delete{{$Level->id}}">
-                            <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
-                        </button>
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#delete{{$Level->id}}">
+                                <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
+                            </button>
                         <!-- Modal -->
                         <div class="modal fade" id="delete{{$Level->id}}"
                              tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -184,12 +206,3 @@
     @endpush
 </div>
 
-{{-- <div> --}}
-{{-- <div class="row"> --}}
-
-
-{{--
-السكرول
-البحث العدسة بالداخل او غيرها
-السهم في رأس الجدول
---}}

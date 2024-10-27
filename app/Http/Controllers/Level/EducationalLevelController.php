@@ -93,7 +93,7 @@ class EducationalLevelController extends Controller
      */
     public function update(UpdateEducationalLevelRequest $request, $id)
     {
-        try {
+        try { 
         $level = EducationalLevel::findorFail($id);
             $level->name = [
                 'en' => $request->name,

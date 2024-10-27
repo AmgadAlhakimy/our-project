@@ -11,7 +11,7 @@
         <!-- table-hover table-striped -->
         <div class="modal fade" id="delete_all"
             tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+            aria-hidden="true"> 
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

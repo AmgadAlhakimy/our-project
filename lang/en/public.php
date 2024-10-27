@@ -83,7 +83,10 @@ return [
     'description'=>'Description',
     'please select the gender'=>'please select the gender',
     'next'=>'Next',
-
+    'results'=>'results',
+    'Showing'=>'Showing',
+    'to'=>'to',
+    'of'=>'of',
     'number of rows:'=>'Number of Rows:',
 
 ];

@@ -23,20 +23,38 @@
         </div>
     </div>
     <!-- table-hover table-striped -->
-
-    <div class="table-section shadow-none">
+    <div class="small text-muted rows_3 num_rows mt-3 ms-4 me-4">
+        @if($isPaginate)
+            <label class=""> {{__('public.number of rows:')}} </label>
+            <select class=" num_rows" wire:model.live="pagination">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="75">75</option>
+                <option value="100">100</option>
+            </select>
+        @endif
+    </div> 
+    {{-- the table --}}
+    <div class="table-section shadow-none ">
         <div class="card table-section">
             <table class=" " id="check_table">
                 <thead>
                 <tr>
 
                     <th>
-                        <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label">
+                        <label for="" class=" n_rect">
+                            {{__('public.num')}}
+                        </label>
+                    </th>
+                    <th>
+                        <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label ">
                             {{__('public.id')}}
                             @if($arrow and $showArrow === 'id')
-                                <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                                <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                             @elseif(!$arrow and $showArrow === 'id')
-                                <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
+                                <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                             @endif
                         </button>
                     </th>
@@ -45,9 +63,9 @@
                             <div class="table_test form-label ">
                                 {{__('public.name')}}
                                 @if($arrow and $showArrow === 'name')
-                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'name')
-                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
                         </button>
@@ -57,9 +75,9 @@
                             <div class="table_test form-label ">
                                 {{__('public.created at')}}
                                 @if($arrow and $showArrow === 'created_at')
-                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'created_at')
-                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
                         </button>
@@ -69,9 +87,9 @@
                             <div class="table_test form-label ">
                                 {{__('public.updated at')}}
                                 @if($arrow and $showArrow === 'updated_at')
-                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-down"></i>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'updated_at')
-                                    <i class="me-4 ms-4 mt-1 fa-solid fa-chevron-up"></i>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
                         </button>
@@ -84,14 +102,34 @@
                 <tbody>
                 @foreach($levels as $Level)
                     <tr>
-
-                        <td>{{$Level->id}}</td>
-                        <td>{{$Level->name}}</td>
-                        <td>{{$Level->created_at}}</td>
-                        <td>{{$Level->updated_at}}</td>
-                        <td><a href="{{route('educational_levels.edit',$Level->id)}}"
-                               class="btn save-button btn-success w-100">
-                                <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}} </a>
+                        <td>
+                            <div for="" class="td_rect "> 1 </div>
+                        </td>
+                        <td>
+                            <div class="td_rect">
+                                {{$Level->id}}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td_rect">
+                                {{$Level->name}}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td_rect">
+                                {{$Level->created_at}}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td_rect">
+                                {{$Level->updated_at}}
+                            </div>
+                        </td>
+                        <td>
+                            <a href="{{route('educational_levels.edit',$Level->id)}}"
+                                class="btn save-button btn-success w-100">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                {{__('public.edit')}}</a>
                         </td>
                         <td>
                             <button wire:confirm="are you sure you want to delete"
@@ -133,28 +171,33 @@
                 </tbody>
             </table>
         </div>
+    
+        
+        
 
-        {{--   I have to work on this later  --}}
-
-        @if($isPaginate)
-            <div class="links me-4 ms-4 mt-3 ">
-                {{$levels->links()}}
+        <div class=" rows_style mt-2 ms-2 me-2">
+            <div class="rows_1 sections_rows  ">
+                @if($isPaginate)
+                    <div class="links  ">
+                        {{$levels->links()}}
+                    </div>
+                @endif
             </div>
-        @endif
-        @if($isPaginate)
-            <div class="mt-2">
-                <label class=""> {{__('public.number of rows:')}} </label>
-                <select class="num_rows " wire:model.live="pagination">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="75">75</option>
-                    <option value="100">100</option>
-                </select>
-            </div>
-        @endif
 
-    </div>
+            <div class="small text-muted rows_2 num_rows ">
+                @if($isPaginate)
+                    <label class=""> {{__('public.number of rows:')}} </label>
+                    <select class=" num_rows" wire:model.live="pagination">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="75">75</option>
+                        <option value="100">100</option>
+                    </select>
+                @endif
+            </div>            
+        </div>
+    </div>    
 </div>
 
