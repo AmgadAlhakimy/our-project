@@ -263,7 +263,7 @@ th button.active .icon-arrow {
 .n_rect{
     background-color: var(--color_blue);
     border-radius: 20px;
-    padding: 20px;
+    padding: 5px 15PX;
 }
 .td_rect {
     background-color:var(--container-color) ;
@@ -291,5 +291,7 @@ tbody tr:hover .td_rect {
 .next_text{
     font-size: 10px;
     }
-
+.table-section{
+    margin-top: -5px;
+}
 /* #f6f9fc the td color */

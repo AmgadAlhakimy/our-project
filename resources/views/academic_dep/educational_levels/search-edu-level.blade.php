@@ -1,24 +1,22 @@
 <div class="my-table mt-5">
-    <div>
-        <div class="table-header">
-            {{-- the title and search --}}
-            <h4 class="form-group container-title">{{__('eduLevel.educational Level info')}}</h4>
-            <div class="row first-card mt-4">
-                <div class="row">
-                    <label class="col">
-                        <div class="row">
+    <div class="table-header ">
+        {{-- the title and search --}}
+        <h4 class="form-group container-title">{{__('eduLevel.educational Level info')}}</h4>
+        <div class="row first-card mt-4">
+            <div class="row">
+                <label class="col">
+                    <div class="row">
 
-                            <label class="col">
-                                <div class="search p-relative">
-                                    {{-- <i class="fa-solid fa-magnifying-glass"></i> --}}
-                                    <input wire:model.live.debounce.500ms="search"
-                                           type="text" class="form-control " name="search"
-                                           placeholder="{{__('sidebar.search')}}">
-                                </div>
-                            </label>
-                        </div>
-                    </label>
-                </div>
+                        <label class="col">
+                            <div class="search p-relative">
+                                {{-- <i class="fa-solid fa-magnifying-glass"></i> --}}
+                                <input wire:model.live.debounce.500ms="search"
+                                        type="text" class="form-control " name="search"
+                                        placeholder="{{__('sidebar.search')}}">
+                            </div>
+                        </label>
+                    </div>
+                </label>
             </div>
         </div>
     </div>
@@ -37,12 +35,11 @@
         @endif
     </div> 
     {{-- the table --}}
-    <div class="table-section shadow-none ">
-        <div class="card table-section">
+    <div class=" shadow-none mt-4 ">
+        <div class="table-section card  ">
             <table class=" " id="check_table">
                 <thead>
                 <tr>
-
                     <th>
                         <label for="" class=" n_rect">
                             {{__('public.num')}}
@@ -171,10 +168,6 @@
                 </tbody>
             </table>
         </div>
-    
-        
-        
-
         <div class=" rows_style mt-2 ms-2 me-2">
             <div class="rows_1 sections_rows  ">
                 @if($isPaginate)
@@ -183,7 +176,6 @@
                     </div>
                 @endif
             </div>
-
             <div class="small text-muted rows_2 num_rows ">
                 @if($isPaginate)
                     <label class=""> {{__('public.number of rows:')}} </label>

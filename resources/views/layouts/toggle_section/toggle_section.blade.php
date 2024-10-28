@@ -10,24 +10,11 @@
 
 
                 
+                {{-- students/ male/ famel --}}
+                {{-- educaton levels --}}
+                {{-- classes --}}
+                {{-- subjects --}}
 
-
-                {{-- <div class="toggle section">
-                    <div class="row">
-                        <div class="col w-100 head p-5 containers-style  me-1 ms-1">
-            
-                        </div>
-                        <div class="col w-100 head p-5 containers-style me-1 ms-1">
-            
-                        </div>
-                        <div class="col w-100 head p-5 containers-style me-1 ms-1">
-            
-                        </div>
-                        <div class="col w-100 head p-5 containers-style me-1 ms-1">
-            
-                        </div>
-                    </div>
-                </div> --}}
 
                                                 
         </div>

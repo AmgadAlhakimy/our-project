@@ -546,3 +546,24 @@ body[dir="rtl"] .search .search1 {
 .me-300 {
     margin-right: 300px;
 }
+/* ________________ start toggle style _________________ */
+.toggle{
+    display: flex;
+    justify-content: space-around;
+}
+.toggle_card_master{
+    border-left: 8px solid var(--color_blue);
+    text-align: center;
+}
+.toggle_card{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.toggle_box{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* ________________ End toggle style _________________ */

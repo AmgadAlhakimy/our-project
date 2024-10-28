@@ -34,7 +34,7 @@ Route::group(
         });
 
         Route::get('/', function () {
-            return view('layouts/sidebar');
+            return view('layouts/home');
         });
 
         include 'follow_up.php';

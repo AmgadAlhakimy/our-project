@@ -93,7 +93,7 @@ input::-webkit-inner-spin-button {
 .section {
     /* flex: 1 1 auto; */
     padding: 0 2rem;
-    margin-top: 110px;
+    margin-top: 130px;
 }
 .containers-style {
     padding: 0.5rem 1rem;
@@ -733,6 +733,9 @@ input[type="checkbox"].toggle:checked + input.test1 {
         /* left: 16%;
         transform: translatex(-50%); */
     }
+    .toggle_icon{
+        font-size: 80px;
+    }
     
 }
 /* ------------------------------------- */
@@ -864,6 +867,9 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .logo-img{
         /* width: 150px; */
     }
+    .toggle_icon{
+        font-size: 70px;
+    }
     
 }
 /* 690 */
@@ -959,12 +965,18 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .n_rect,.form-label{
         font-size: 16px;
     }
+    .toggle_icon{
+        font-size: 60px;
+    }
 }
 /* _____________________________________________ */
 /* 560 */
 @media (max-width: 575px) {
     .number_rows_links_1{
         display: none;
+    }
+    .toggle_icon{
+        font-size: 50px;
     }
     
     
@@ -1144,5 +1156,8 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
     .n_rect,.form-label{
         font-size: 13px;
+    }
+    .toggle_icon{
+        font-size: 40px;
     }
 }
