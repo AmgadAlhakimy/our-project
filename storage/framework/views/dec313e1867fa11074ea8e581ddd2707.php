@@ -2,7 +2,7 @@
     <div class="my-table mt-5">
 
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('DELETED SUBJECTS')); ?></h4>
                 <div class="row first-card mt-4">
@@ -127,4 +127,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/subjects/deleted_subjects.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic-dep/subjects/deleted_subjects.blade.php ENDPATH**/ ?>

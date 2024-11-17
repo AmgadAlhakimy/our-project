@@ -11,9 +11,9 @@ use App\Http\Controllers\Teacher\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('educational_levels/search',
+Route::get('educational-levels/search',
     [EducationalLevelController::class, 'search'])
-    ->name('educational_levels.search');
+    ->name('educational-levels.search');
 
 Route::get('classrooms/search',
     [ClassroomController::class, 'search'])

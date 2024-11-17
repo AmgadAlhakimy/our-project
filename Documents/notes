@@ -1,0 +1,5 @@
+The icon search is not in the right position when lang is Arabic.
+When changing the language.
+
+Make this page (resources/views/components/layouts/app.blade.php)
+    looks exactly like the main page

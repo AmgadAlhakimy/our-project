@@ -13,14 +13,14 @@ return [
     |
     */
     'create new class'=>'إنشاء فصل جديد',
-    'class name in english'=>'اسم الفصل بالإنجليزية',
-    'class name in arabic'=>'اسم الفصل بالعربية',
+    'classroom name in english'=>'اسم الفصل بالإنجليزية',
+    'classroom name in arabic'=>'اسم الفصل بالعربية',
     'educational Level'=>'المرحلة الدراسية',
-    'class cost'=>'تكلفة الفصل',
-    'class info'=>'معلومات الصف',
+    'classroom cost'=>'تكلفة الفصل',
+    'classroom info'=>'معلومات الصف',
     'classroom'=>'الصف',
     'classrooms'=>'الصفوف',
-    'update class'=>'تعديل الصف: ',
+    'update classroom'=>'تعديل الصف: ',
     'please select a classroom'=>'الرجاء تحديد فصل',
     'you have already chosen this classroom'=>'لقد تم توزيع المواد لهذا الصف مسبقاً لايمكنك الأن سوى التعديل عليه',
 ];

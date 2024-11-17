@@ -82,6 +82,7 @@ return [
     'absent'=>'Absent',
     'description'=>'Description',
     'please select the gender'=>'please select the gender',
+    'please select the educational level'=>'Please Select the Educational Level',
     'next'=>'Next',
     'results'=>'results',
     'Showing'=>'Showing',

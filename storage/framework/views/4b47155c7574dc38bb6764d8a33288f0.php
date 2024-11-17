@@ -2,7 +2,7 @@
     <div class="my-table mt-5">
         <!-- table-hover table-striped -->
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('DELETED ACTIVITIES')); ?> </h4>
                 <div class="row first-card mt-4">
@@ -77,6 +77,7 @@
                     <?php $__currentLoopData = $activities; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $activity): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tbody>
                         <tr>
+<<<<<<< HEAD
                             
                             <td>
                                 <div class="td_rect">
@@ -131,6 +132,17 @@
 
                                 </div>
                             </td>
+=======
+
+                            <td><?php echo e($activity->id); ?></td>
+                            <td><?php echo e($activity->name); ?></td>
+                            <td><?php echo e($activity->location); ?></td>
+                            <td ><?php echo e($activity->contact); ?> </td>
+                            <td><?php echo e($activity->date); ?></td>
+                            <td><?php echo e($activity->note); ?> </td>
+                            <td><?php echo e($activity->created_at); ?></td>
+                            <td><?php echo e($activity->updated_at); ?></td>
+>>>>>>> 525501179e44f41411f81fc1c5f34bf9756c093b
                             <td>
                                 <a href="<?php echo e(route('activities.restore',$activity->id)); ?>"
                                    class="btn save-button btn-success w-100">
@@ -177,4 +189,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/activities/deleted_activities.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic-dep/activities/deleted_activities.blade.php ENDPATH**/ ?>

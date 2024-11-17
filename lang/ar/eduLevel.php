@@ -20,5 +20,6 @@ return [
     'educational Level name in arabic'=>'اسم المرحلة الدراسية بالعربية',
     'educational Level info'=>'معلومات المرحلة الدراسية',
     'Sorry! you have to create Educational Level first'=>'عذرا يجب اولا إنشاء مراحل دراسية',
+    'educational level'=>'المرحلة الدراسية',
 
 ];

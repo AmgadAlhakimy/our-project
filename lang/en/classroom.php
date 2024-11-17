@@ -14,14 +14,14 @@ return [
     */
 
     'create new class'=>'CREATE NEW CLASS',
-    'class name in english'=>'Class Name in English',
-    'class name in arabic'=>'Class Name in Arabic',
+    'classroom name in english'=>'Class Name in English',
+    'classroom name in arabic'=>'Class Name in Arabic',
     'educational Level'=>'Education Level',
-    'class cost'=>'Class Cost',
-    'class info'=>'Class Info',
+    'classroom cost'=>'Classroom Cost',
+    'classroom info'=>'Classroom Info',
     'classroom'=>'Classroom',
     'classrooms'=>'Classrooms',
-    'update class'=>'Update Class: ',
+    'update classroom'=>'Update Classroom: ',
     'please select a classroom'=>'Please Select a Classroom',
     'you have already chosen this classroom'=>'The Subjects for this
     Classroom Have Already Been Distributed, and You Can Now Only Modify Them',

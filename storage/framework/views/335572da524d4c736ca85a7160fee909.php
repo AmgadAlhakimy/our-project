@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="submenu">
                                     <div class="line-black">
-                                        <a href="<?php echo e(route('educational_levels.create')); ?>" class="li-link">اضافة مرحلة دراسية</a>
+                                        <a href="<?php echo e(route('educational-levels.create')); ?>" class="li-link">اضافة مرحلة دراسية</a>
                                         <a href="<?php echo e(route('classrooms.create')); ?>" class="li-link">اضافة فصل دراسي</a>
                                         <a href="<?php echo e(route('subjects.create')); ?>"class="li-link">اضافة مواد</a>
                                         <a href="<?php echo e(route('activities.create')); ?>"class="li-link" >اضافة نشاط</a>

@@ -19,7 +19,7 @@ use App\Http\Controllers\MarkController;
 use Illuminate\Support\Facades\Route;
 
 Route::resource('activity_classroom', ActivityClassroomController::class);
-Route::resource('educational_levels', EducationalLevelController::class);
+Route::resource('educational-levels', EducationalLevelController::class);
 Route::resource('classroom_teacher', ClassroomTeacherController::class);
 Route::resource('classroom_subject', ClassroomSubjectController::class);
 Route::resource('follow_up_students', FollowUpStudentController::class);

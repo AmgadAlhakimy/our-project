@@ -28,8 +28,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
-                        <div class="box col-lg-6 col-md-12"> 
+
+                        <div class="box col-lg-6 col-md-12">
                             <label for="c-name"><?php echo e(__('classroom.class name in english')); ?></label>
                             <input type="text" id="c-name" class="form-control " name="name" value="<?php echo e(old('name')); ?>">
                             <?php $__errorArgs = ['name'];
@@ -62,7 +62,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-12 ">
                             <label for="cost"><?php echo e(__('classroom.class cost')); ?></label>
                             <input type="number" id="cost" class="form-control" name="cost" minlength="0"
@@ -81,7 +81,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row mt-2">
                     <div class=" row">
                         <div class="box col ">
@@ -97,4 +97,4 @@ unset($__errorArgs, $__bag); ?>
     </main>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/classrooms/create_classroom.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic-dep/classrooms/create-classroom.blade.php ENDPATH**/ ?>

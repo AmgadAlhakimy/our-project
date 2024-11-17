@@ -7,7 +7,7 @@
 
                 </div>
             <?php endif; ?>
-                <form method="post" action="<?php echo e(route('educational_levels.update',$level->id)); ?>">
+                <form method="post" action="<?php echo e(route('educational-levels.update',$level->id)); ?>">
                 <?php echo method_field('PUT'); ?>
                 <?php echo csrf_field(); ?>
                 <h3 class="container-title"><?php echo e(__('eduLevel.update educational Level')); ?></h3>
@@ -57,7 +57,7 @@ unset($__errorArgs, $__bag); ?>
                             <input class="save-button" type="submit" value="<?php echo e(__('public.update')); ?>">
                         </div>
                         <div class="box  col">
-                            <a href="<?php echo e(route('educational_levels.index')); ?>" class="btn clear-button"><i
+                            <a href="<?php echo e(route('educational-levels.index')); ?>" class="btn clear-button"><i
                                     class="fa-solid fa-ban"></i> <?php echo e(__('public.cancel')); ?></a>
                         </div>
                     </div>
@@ -67,4 +67,4 @@ unset($__errorArgs, $__bag); ?>
     </main>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/edit_educational_level.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic-dep/educational-levels/edit-edu-level.blade.php ENDPATH**/ ?>

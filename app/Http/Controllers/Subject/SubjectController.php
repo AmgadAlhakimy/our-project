@@ -17,7 +17,7 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::all();
-            return view('academic_dep/subjects.display_subjects',
+            return view('academic-dep/subjects.display_subjects',
                 compact('subjects'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -31,7 +31,7 @@ class SubjectController extends Controller
     public function create()
     {
         try {
-            return view('academic_dep/subjects.create_subject');
+            return view('academic-dep/subjects.create_subject');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -62,7 +62,7 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::onlyTrashed()->get();
-            return view('academic_dep/subjects.deleted_subjects',
+            return view('academic-dep/subjects.deleted_subjects',
                 compact('subjects'));
 
         } catch (\Exception $e) {
@@ -77,7 +77,7 @@ class SubjectController extends Controller
     {
         try {
             $subject = Subject::findorFail($id);
-            return view('academic_dep/subjects.edit_subject',
+            return view('academic-dep/subjects.edit_subject',
                 compact('subject'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -162,7 +162,7 @@ class SubjectController extends Controller
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
-            return view('academic_dep/subjects.display_subjects',
+            return view('academic-dep/subjects.display_subjects',
                 compact('search','subjects'));
 
         }catch (\Exception $e){
