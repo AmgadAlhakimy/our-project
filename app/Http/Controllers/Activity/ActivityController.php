@@ -17,7 +17,7 @@ class ActivityController extends Controller
     {
         try {
             $activities= Activity::all();
-            return view('academic_dep/activities.display_activities',
+            return view('academic-dep/activities.display_activities',
                 compact('activities'));
         }catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -30,7 +30,7 @@ class ActivityController extends Controller
     public function create()
     {
         try {
-        return view('academic_dep/activities.create_activity');
+        return view('academic-dep/activities.create_activity');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -63,7 +63,7 @@ class ActivityController extends Controller
     {
         try {
             $activities = Activity::onlyTrashed()->get();
-            return view('academic_dep/activities.deleted_activities',
+            return view('academic-dep/activities.deleted_activities',
                 compact('activities'));
 
         } catch (\Exception $e) {
@@ -78,7 +78,7 @@ class ActivityController extends Controller
     {
         try {
             $activity=Activity::findorFail($id);
-            return view('academic_dep/activities.edit_activity'
+            return view('academic-dep/activities.edit_activity'
                 ,compact('activity'));
         }catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -166,7 +166,7 @@ class ActivityController extends Controller
                     ->orwhere('contact','like',"%$search%")
                     ->orwhere('date','like',"%$search%");
             })->get();
-            return view('academic_dep/activities.display_activities',
+            return view('academic-dep/activities.display_activities',
                 compact('search','activities'));
 
         }catch (\Exception $e){

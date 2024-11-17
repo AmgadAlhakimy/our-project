@@ -55,7 +55,7 @@
                             <td><?php echo e($Level->created_at); ?></td>
                             <td><?php echo e($Level->updated_at); ?></td>
                             <td>
-                                <a href="<?php echo e(route('educational_levels.restore',$Level->id)); ?>"
+                                <a href="<?php echo e(route('educational-levels.restore',$Level->id)); ?>"
                                    class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> <?php echo e(__('public.restore')); ?> </a>
                             </td>
@@ -82,7 +82,7 @@
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     <?php echo e(__('public.cancel')); ?></button>
                                                 <form method="post"
-                                                      action="<?php echo e(route('educational_levels.forceDelete',$Level->id)); ?>">
+                                                      action="<?php echo e(route('educational-levels.forceDelete',$Level->id)); ?>">
                                                     <?php echo method_field('get'); ?>
                                                     <?php echo csrf_field(); ?>.
                                                     <button type="submit"
@@ -103,4 +103,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/deleted_educational_levels.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic-dep/educational-levels/deleted-edu-level.blade.php ENDPATH**/ ?>

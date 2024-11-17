@@ -63,7 +63,7 @@ Route::group(
         // -----------------
         // teacher_classes
         Route::get('teacher_classes', function () {
-            return view('academic_dep/relationships/class-teatcher');
+            return view('academic-dep/relationships/class-teatcher');
         });
 
         // index_absence

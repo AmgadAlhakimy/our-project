@@ -26,7 +26,7 @@ class EduClassroomController extends Controller
         try {
             $classrooms = Classroom::all();
             $levels = EducationalLevel::all();
-            return view('academic_dep/relationships.',
+            return view('academic-dep/relationships.',
                 compact('classrooms','levels'));
         }catch (\Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);

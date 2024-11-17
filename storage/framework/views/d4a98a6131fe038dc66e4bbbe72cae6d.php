@@ -7,7 +7,7 @@
 
             <h4 class="form-group container-title"><?php echo e(__('eduLevel.educational Level info')); ?></h4>
             <div class="row first-card mt-4">
-                <form method="post" action="<?php echo e(route('educational_levels.search')); ?>">
+                <form method="post" action="<?php echo e(route('educational-levels.search')); ?>">
                     <?php echo method_field('GET'); ?>
                     <?php echo csrf_field(); ?>
                     <div class="row">
@@ -69,7 +69,7 @@
                             <td><?php echo e($Level->name); ?></td>
                             <td><?php echo e($Level->created_at); ?></td>
                             <td><?php echo e($Level->updated_at); ?></td>
-                            <td><a href="<?php echo e(route('educational_levels.edit',$Level->id)); ?>"
+                            <td><a href="<?php echo e(route('educational-levels.edit',$Level->id)); ?>"
                                    class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> <?php echo e(__('public.edit')); ?> </a>
                             </td>
@@ -97,7 +97,7 @@
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     <?php echo e(__('public.cancel')); ?></button>
                                                 <form method="post"
-                                                      action="<?php echo e(route('educational_levels.destroy',$Level->id)); ?>">
+                                                      action="<?php echo e(route('educational-levels.destroy',$Level->id)); ?>">
                                                     <?php echo method_field('DELETE'); ?>
                                                     <?php echo csrf_field(); ?>
                                                     <button type="submit"
@@ -130,7 +130,7 @@
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                     <?php echo e(__('public.cancel')); ?></button>
                                 <form method="post"
-                                      action="<?php echo e(route('educational_levels.destroy',$Level->id)); ?>">
+                                      action="<?php echo e(route('educational-levels.destroy',$Level->id)); ?>">
                                     <?php echo method_field('DELETE'); ?>
                                     <?php echo csrf_field(); ?>
                                     <button type="submit"
@@ -161,4 +161,4 @@
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/display_educational_levels.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic-dep/educational-levels/display-edu-level.blade.php ENDPATH**/ ?>

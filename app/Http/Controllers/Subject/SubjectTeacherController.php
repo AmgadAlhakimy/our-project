@@ -19,7 +19,7 @@ class SubjectTeacherController extends Controller
     {
         try {
             $teachers = Teacher::all();
-            return view('academic_dep/relationships/subject_teacher.display_subjects_teachers',
+            return view('academic-dep/relationships/subject_teacher.display_subjects_teachers',
                 compact('teachers'));
 
         } catch (\Exception $e) {
@@ -35,7 +35,7 @@ class SubjectTeacherController extends Controller
         try {
             $teachers = Teacher::all();
             $subjects = Subject::all();
-            return view('academic_dep/relationships/subject_teacher.create_subject_teacher',
+            return view('academic-dep/relationships/subject_teacher.create_subject_teacher',
                 compact('teachers', 'subjects'));
 
         } catch (Exception $e) {
@@ -84,7 +84,7 @@ class SubjectTeacherController extends Controller
             foreach ($teacher_subject as $subject) {
                 $teacher_subjects[] = $subject->subject_id;
             }
-            return view('academic_dep/relationships/teacher_subjects.edit_subject_teacher',
+            return view('academic-dep/relationships/teacher_subjects.edit_subject_teacher',
                 compact('teacher', 'subjects', 'teacher_subjects'));
 
         } catch (Exception $e) {

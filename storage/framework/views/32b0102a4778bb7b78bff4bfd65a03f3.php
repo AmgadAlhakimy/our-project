@@ -7,7 +7,7 @@
 
                 </div>
             <?php endif; ?>
-            <form method="post" action="<?php echo e(route('educational_levels.store')); ?>">
+            <form method="post" action="<?php echo e(route('educational-levels.store')); ?>">
                 <?php echo csrf_field(); ?>
                 <h3 class="container-title"><?php echo e(__('eduLevel.create new educational Level')); ?></h3>
                 <div class="container containers-style">
@@ -64,4 +64,4 @@ unset($__errorArgs, $__bag); ?>
         </section>
     </main>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic_dep/educational_levels/create_student.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/academic-dep/educational-levels/create_student.blade.php ENDPATH**/ ?>

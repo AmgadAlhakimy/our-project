@@ -146,7 +146,7 @@
                     </td>
                     <td>
                         <div class="td_rect">
-                            <a href="{{route('educational_levels.edit',$Level->id)}}"
+                            <a href="{{route('educational-levels.edit',$Level->id)}}"
                                 class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.edit')}}
                             </a>
@@ -175,7 +175,7 @@
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                             {{__('public.cancel')}}</button>
                                         <form method="post"
-                                              action="{{route('educational_levels.destroy',$Level->id)}}">
+                                              action="{{route('educational-levels.destroy',$Level->id)}}">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit"

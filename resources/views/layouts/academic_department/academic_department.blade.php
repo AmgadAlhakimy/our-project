@@ -14,7 +14,7 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a id="" href="{{route('educational_levels.create')}}" class="li-link ">{{__('sidebar.add educational Level')}}</a>
+                <a id="" href="{{route('educational-levels.create')}}" class="li-link ">{{__('sidebar.add educational Level')}}</a>
                 <a id="" href="{{route('classrooms.create')}}" class="li-link">{{__('sidebar.add a class')}}</a>
                 <a href="{{route('subjects.create')}}" class="li-link">{{__('sidebar.add Subject')}}</a>
                 <a href="{{route('activities.create')}}" class="li-link">{{__('sidebar.add Activity')}}</a>
@@ -34,8 +34,8 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href="{{route('show-levels')}}" class="li-link">{{__('sidebar.review of educational Level')}}</a>
-                <a href="{{route('displayClass')}}" class="li-link">{{__('sidebar.review of classrooms')}}</a>
+                <a href="{{route('display-levels')}}" class="li-link">{{__('sidebar.review of educational Level')}}</a>
+                <a href="{{route('display-classrooms')}}" class="li-link">{{__('sidebar.review of classrooms')}}</a>
                 <a href="{{route('subjects.index')}}" class="li-link"> {{__('sidebar.review of subjects')}}</a>
                 <a href="{{route('activities.index')}}" class="li-link">{{__('sidebar.review activities')}}</a>
             </div>
@@ -54,7 +54,7 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href="{{route('educational_levels.show','deleted')}}" class="li-link">{{__('sidebar.deleted educational Level')}}</a>
+                <a href="{{route('educational-levels.show','deleted')}}" class="li-link">{{__('sidebar.deleted educational Level')}}</a>
                 <a href="{{route('classrooms.show','deleted')}}" class="li-link">{{__('sidebar.deleted classrooms')}}</a>
                 <a href="{{route('subjects.show','deleted')}}" class="li-link">{{__('sidebar.deleted subjects')}}</a>
                 <a href="{{route('activities.show','deleted')}}" class="li-link">{{__('sidebar.deleted activities')}}</a>

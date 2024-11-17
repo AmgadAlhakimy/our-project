@@ -10,9 +10,9 @@ use App\Http\Controllers\Teacher\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('educational_levels/forceDelete/{id}',
+Route::get('educational-levels/forceDelete/{id}',
     [EducationalLevelController::class, 'forceDelete'])
-    ->name('educational_levels.forceDelete');
+    ->name('educational-levels.forceDelete');
 
 Route::get('classrooms/forceDelete/{id}',
     [ClassroomController::class, 'forceDelete'])

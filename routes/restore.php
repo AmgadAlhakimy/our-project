@@ -10,9 +10,9 @@ use App\Http\Controllers\Teacher\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('educational_levels/restore/{id}',
+Route::get('educational-levels/restore/{id}',
     [EducationalLevelController::class, 'restore'])
-    ->name('educational_levels.restore');
+    ->name('educational-levels.restore');
 
 Route::get('classrooms/restore/{id}',
     [ClassroomController::class, 'restore'])

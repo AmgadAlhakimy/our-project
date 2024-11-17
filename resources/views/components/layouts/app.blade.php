@@ -144,7 +144,7 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
-                            <a id="" href="{{route('educational_levels.create')}}"
+                            <a id="" href="{{route('educational-levels.create')}}"
                                class="li-link ">{{__('sidebar.add educational Level')}}</a>
                             <a id="" href="{{route('classrooms.create')}}"
                                class="li-link">{{__('sidebar.add a class')}}</a>
@@ -166,9 +166,9 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
-                            <a href="{{route('educational_levels.index')}}"
+                            <a href="{{route('display-levels')}}"
                                class="li-link">{{__('sidebar.review of educational Level')}}</a>
-                            <a href="{{route('classrooms.index')}}"
+                            <a href="{{route('display-classrooms')}}"
                                class="li-link">{{__('sidebar.review of classrooms')}}</a>
                             <a href="{{route('subjects.index')}}"
                                class="li-link"> {{__('sidebar.review of subjects')}}</a>
@@ -190,7 +190,7 @@
                     </div>
                     <div class="submenu">
                         <div class="line-black">
-                            <a href="{{route('educational_levels.show','deleted')}}"
+                            <a href="{{route('educational-levels.show','deleted')}}"
                                class="li-link">{{__('sidebar.deleted educational Level')}}</a>
                             <a href="{{route('classrooms.show','deleted')}}"
                                class="li-link">{{__('sidebar.deleted classrooms')}}</a>

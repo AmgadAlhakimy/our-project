@@ -22,7 +22,7 @@ class ClassroomController extends Controller
     {
         try {
             $classrooms = Classroom::paginate(5);
-            return view('academic_dep/classrooms.display_classrooms',
+            return view('academic-dep/classrooms.display-classrooms',
                 compact('classrooms'));
 
         }catch (Exception $e){
@@ -37,7 +37,7 @@ class ClassroomController extends Controller
     {
         try {
         $levels = EducationalLevel::all();
-        return view('academic_dep/classrooms.create_classroom',
+        return view('academic-dep/classrooms.create-classroom',
             compact('levels'));
 
         }catch (Exception $e){
@@ -72,7 +72,7 @@ class ClassroomController extends Controller
     {
         try {
         $classrooms = Classroom::onlyTrashed()->get();
-        return view('academic_dep/classrooms.deleted_classrooms',
+        return view('academic-dep/classrooms.deleted-classrooms',
             compact('classrooms'));
         }catch (Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -87,7 +87,7 @@ class ClassroomController extends Controller
         try {
         $classroom = Classroom::findorFail($id);
         $levels = EducationalLevel::all();
-        return view('academic_dep/classrooms.edit_classroom',
+        return view('academic-dep/classrooms.edit-classroom',
             compact('classroom', 'levels'));
 
         }catch (Exception $e){
@@ -110,7 +110,7 @@ class ClassroomController extends Controller
             'edu_id'=>$request->level,
             'cost'=>$request->cost,
         ]);
-        return redirect()->route('classrooms.index')
+        return redirect()->route('display-classrooms')
             ->with(['success' => __('message.update')]);
 
         }catch (Exception $e){
@@ -128,7 +128,7 @@ class ClassroomController extends Controller
                 ->pluck('classroom_id');
             if($student_id->count() == 0){
             Classroom::destroy($id);
-            return redirect()->route('classrooms.index')
+            return redirect()->route('display-classrooms')
                 ->with(['warning' => trans('message.delete')]);
             }else{
                 return redirect()->back() ->with(['error' =>
@@ -195,7 +195,7 @@ class ClassroomController extends Controller
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
-            return view('academic_dep/classrooms.display_classrooms',
+            return view('academic-dep/classrooms.display_classrooms',
                 compact('search','classrooms'));
 
         }catch (\Exception $e){

@@ -20,4 +20,5 @@ return [
     'educational Level name in arabic'=>'Educational Level Name in Arabic',
     'educational Level info'=>'Educational Level Info',
     'Sorry! you have to create Educational Level first'=>'Sorry! you have to create Educational Level first',
+    'educational level' => 'Educational Level',
 ];

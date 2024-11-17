@@ -19,7 +19,7 @@ class ActivityClassroomController extends Controller
     {
         try {
             $classrooms = Classroom::all();
-            return view('academic_dep/relationships/activity_classroom.display_activities_classrooms',
+            return view('academic-dep/relationships/activity_classroom.display_activities_classrooms',
                 compact('classrooms'));
 
         } catch (\Exception $e) {
@@ -35,7 +35,7 @@ class ActivityClassroomController extends Controller
         try {
             $classrooms = Classroom::all();
             $activities = Activity::all();
-            return view('academic_dep/relationships/activity_classroom.create_activity_classroom',
+            return view('academic-dep/relationships/activity_classroom.create_activity_classroom',
                 compact('classrooms', 'activities'));
 
         } catch (Exception $e) {
@@ -84,7 +84,7 @@ class ActivityClassroomController extends Controller
             foreach ($activity_classroom as $activity) {
                 $activity_classrooms[] = $activity->activity_id;
             }
-            return view('academic_dep/relationships/activity_classroom.edit_activity_classroom',
+            return view('academic-dep/relationships/activity_classroom.edit_activity_classroom',
                 compact('classroom', 'activities', 'activity_classrooms'));
 
         } catch (Exception $e) {
