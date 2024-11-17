@@ -1,3 +1,5 @@
+{{-- the final one --}}
+
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}

@@ -22,11 +22,16 @@
             </div>
         </div>
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none">
-            <div class="card table-section ">
-                <table class=" ">
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
                     <thead>
                     <tr>
+                        <th>
+                            <label for="" class=" n_rect">
+                                {{__('public.num')}}
+                            </label>
+                        </th>
                         <th><div class="th-head-1">{{__('public.id')}}</div></th>
                         <th><div class="th-head-3">{{__('public.name')}}</div></th>
                         <th><div class="th-head-1">{{__('public.cost')}}</div></th>
@@ -39,11 +44,36 @@
                         <tbody>
                         <tr>
                             {{-- <td class="num_table ">{{$counter}}</td> --}}
-                            <td>{{$classroom->id}}</td>
-                            <td>{{$classroom->name}}</td>
-                            <td>{{$classroom->cost}}</td>
-                            <td>{{$classroom->created_at}}</td>
-                            <td>{{$classroom->updated_at}}</td>
+                            <td>
+                                <div class="td_rect">
+                                1
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$classroom->id}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$classroom->name}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$classroom->cost}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$classroom->created_at}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$classroom->updated_at}}
+                                </div>
+                            </td>
                             <td>
                                 <a href="{{route('classrooms.restore',$classroom->id)}}" class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.restore')}} </a>

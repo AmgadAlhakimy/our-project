@@ -1,9 +1,6 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-
-
-
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
@@ -22,12 +19,20 @@
                 </div>
             </div>
         </div>
+        
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none">
-            <div class="card table-section">
-                <table class=" ">
+    {{-- the table --}}
+    <div class=" shadow-none mt-4 ">
+        <div class="table-section card  ">
+            <table class=" " id="check_table">
                     <thead>
                     <tr>
+                        <th>
+                            <label for="" class=" n_rect">
+                                {{__('public.num')}}
+                            </label>
+                        </th>
+                        
                         <th>
                             <div class="th-head-1">{{__('public.id')}}</div>
                         </th>
@@ -43,18 +48,36 @@
                         <th colspan="2">
                             <div class="th-head-4">{{__('public.processes')}}</div>
                         </th>
-                        <th>
-                            <div class="th-head-1"></div>
-                        </th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($levels as $Level)
                         <tr>
-                            <td>{{$Level->id}}</td>
-                            <td>{{$Level->name}}</td>
-                            <td>{{$Level->created_at}}</td>
-                            <td>{{$Level->updated_at}}</td>
+                            <td>
+                                <div class="td_rect">
+                                1
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$Level->id}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$Level->name}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$Level->created_at}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$Level->updated_at}}
+                                </div>
+                            </td>
                             <td>
                                 <a href="{{route('educational_levels.restore',$Level->id)}}"
                                    class="btn save-button btn-success w-100">
@@ -85,14 +108,14 @@
                                                     @method('get')
                                                     @csrf.
                                                     <button type="submit"
-                                                            class="btn btn-primary">{{__('public.ok')}}</button>
+                                                            class="btn btn-primary">{{__('public.ok')}}
+                                                    </button>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
                         </tr>
                     @endforeach
                     </tbody>

@@ -21,13 +21,25 @@
                 </div>
             </div>
         </div>
-        <div class="table-section shadow-none">
-            <div class="card table-section ">
-                <table class=" ">
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
                     <thead>
-                        <tr>
+                    <tr>
+                        <th>
+                            <label for="" class=" n_rect">
+                                {{__('public.num')}}
+                            </label>
+                        </th>
                         <th class="th-head-1">
-                            {{__('public.id')}}
+                            <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label ">
+                                {{__('public.id')}}
+                                @if($arrow and $showArrow === 'id')
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
+                                @elseif(!$arrow and $showArrow === 'id')
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
+                                @endif
+                            </button>
                         </th>
                         <th class="th-head-3">
                             {{__('public.name')}}
@@ -59,14 +71,51 @@
                         <tbody>
                         <tr>
                             {{-- <td class="num_table ">{{$counter}}</td> --}}
-                            <td>{{$activity->id}}</td>
-                            <td>{{$activity->name}}</td>
-                            <td>{{$activity->location}}</td>
-                            <td >{{$activity->contact}} </td>
-                            <td>{{$activity->date}}</td>
-                            <td>{{$activity->note}} </td>
-                            <td>{{$activity->created_at}}</td>
-                            <td>{{$activity->updated_at}}</td>
+                            <td>
+                                <div class="td_rect">
+                                1
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$activity->id}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$activity->name}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$activity->location}}
+                                </div>
+                            </td>
+                            <td >
+                                <div class="td_rect">
+                                {{$activity->contact}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$activity->date}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$activity->note}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$activity->created_at}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$activity->updated_at}}
+                                </div>
+                            </td>
                             <td>
                                 <a href="{{route('activities.restore',$activity->id)}}"
                                    class="btn save-button btn-success w-100">

@@ -20,11 +20,17 @@
             </div>
         </div>
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none">
-            <div class="card table-section">
-                <table class=" ">
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
                     <thead>
                     <tr>
+                        <th>
+                            <label for="" class=" n_rect">
+                                <?php echo e(__('public.num')); ?>
+
+                            </label>
+                        </th>
                         <th>
                             <div class="th-head-1"><?php echo e(__('public.id')); ?></div>
                         </th>
@@ -45,10 +51,35 @@
                     <tbody>
                     <?php $__currentLoopData = $subjects; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $subject): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td><?php echo e($subject->id); ?></td>
-                            <td><?php echo e($subject->name); ?></td>
-                            <td><?php echo e($subject->created_at); ?></td>
-                            <td><?php echo e($subject->updated_at); ?></td>
+                            <td>
+                                <div class="td_rect">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($subject->id); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($subject->name); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($subject->created_at); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($subject->updated_at); ?>
+
+                                </div>
+                            </td>
                             <td>
                                 <a href="<?php echo e(route('subjects.restore',$subject->id)); ?>"
                                     class="btn save-button btn-success w-100">

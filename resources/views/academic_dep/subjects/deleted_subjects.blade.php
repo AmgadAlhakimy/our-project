@@ -21,11 +21,16 @@
             </div>
         </div>
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none">
-            <div class="card table-section">
-                <table class=" ">
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
                     <thead>
                     <tr>
+                        <th>
+                            <label for="" class=" n_rect">
+                                {{__('public.num')}}
+                            </label>
+                        </th>
                         <th>
                             <div class="th-head-1">{{__('public.id')}}</div>
                         </th>
@@ -46,10 +51,31 @@
                     <tbody>
                     @foreach($subjects as $subject)
                         <tr>
-                            <td>{{$subject->id}}</td>
-                            <td>{{$subject->name}}</td>
-                            <td>{{$subject->created_at}}</td>
-                            <td>{{$subject->updated_at}}</td>
+                            <td>
+                                <div class="td_rect">
+                                    1
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$subject->id}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$subject->name}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$subject->created_at}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                {{$subject->updated_at}}
+                                </div>
+                            </td>
                             <td>
                                 <a href="{{route('subjects.restore',$subject->id)}}"
                                     class="btn save-button btn-success w-100">

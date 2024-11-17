@@ -19,14 +19,27 @@
                 </div>
             </div>
         </div>
-        <div class="table-section shadow-none">
-            <div class="card table-section ">
-                <table class=" ">
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
                     <thead>
-                        <tr>
-                        <th class="th-head-1">
-                            <?php echo e(__('public.id')); ?>
+                    <tr>
+                        <th>
+                            <label for="" class=" n_rect">
+                                <?php echo e(__('public.num')); ?>
 
+                            </label>
+                        </th>
+                        <th class="th-head-1">
+                            <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label ">
+                                <?php echo e(__('public.id')); ?>
+
+                                <?php if($arrow and $showArrow === 'id'): ?>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
+                                <?php elseif(!$arrow and $showArrow === 'id'): ?>
+                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
+                                <?php endif; ?>
+                            </button>
                         </th>
                         <th class="th-head-3">
                             <?php echo e(__('public.name')); ?>
@@ -65,14 +78,59 @@
                         <tbody>
                         <tr>
                             
-                            <td><?php echo e($activity->id); ?></td>
-                            <td><?php echo e($activity->name); ?></td>
-                            <td><?php echo e($activity->location); ?></td>
-                            <td ><?php echo e($activity->contact); ?> </td>
-                            <td><?php echo e($activity->date); ?></td>
-                            <td><?php echo e($activity->note); ?> </td>
-                            <td><?php echo e($activity->created_at); ?></td>
-                            <td><?php echo e($activity->updated_at); ?></td>
+                            <td>
+                                <div class="td_rect">
+                                1
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($activity->id); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($activity->name); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($activity->location); ?>
+
+                                </div>
+                            </td>
+                            <td >
+                                <div class="td_rect">
+                                <?php echo e($activity->contact); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($activity->date); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($activity->note); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($activity->created_at); ?>
+
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                <?php echo e($activity->updated_at); ?>
+
+                                </div>
+                            </td>
                             <td>
                                 <a href="<?php echo e(route('activities.restore',$activity->id)); ?>"
                                    class="btn save-button btn-success w-100">
