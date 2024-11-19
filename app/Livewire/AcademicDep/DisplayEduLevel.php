@@ -36,7 +36,7 @@ class DisplayEduLevel extends Component
         try {
             $lang = LaravelLocalization::setLocale();
             if (strlen($this->search) >= 1) {
-                $this->isPaginate = false;
+                $this->isPaginate = false; 
                 $levels = EducationalLevel::where('name->en', 'like', "%$this->search%")
                     ->orwhere('name->ar', 'like', "%$this->search%")->get();
             } else {

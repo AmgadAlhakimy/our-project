@@ -43,7 +43,7 @@
                 <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
             </div>
             {{-- THE DROPDOWN LUNGUAGE --}}
-            <div class=" dropDownLang ph-lang">
+            <div class=" dropDownLang ph-lang"> 
                 <div class="select">
                     <span class="lang_1 selected ">{{__('sidebar.short_lang')}}</span>
                     <span class="lang_2 selected">{{__('sidebar.Lang')}}</span>

@@ -30,12 +30,6 @@
                         <!-- ======================== EMB ========================== -->
                         @include('layouts.personnel_affairs.personnel_affairs')
                         
-                        
-                        
-                        
-                        
-                        
-                        
                         {{-- -------------شؤون الطلاب---------------  --}}
                         <!-- ======================== STUDENTS ========================== -->
                         @include('layouts.students_affairs.students_affairs')
