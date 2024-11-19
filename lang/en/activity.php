@@ -15,7 +15,7 @@ return [
 
     //shared in many pages
     'create new Activity'=>'Create New Activity',
-    'Activity info'=>'Activity Info',
+    'activity info'=>'Activity Info',
     'Activity name in english'=>'Activity Name in English',
     'Activity name in arabic'=>'Activity Name in Arabic',
     'Activity location in english'=>'Activity Location in English',

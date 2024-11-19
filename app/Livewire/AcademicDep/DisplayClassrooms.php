@@ -50,7 +50,7 @@ class DisplayClassrooms extends Component
             return view('academic-dep.classrooms.display-classrooms',
                 [
                     'classrooms' => $classrooms,
-                ]);
+                ])->title('Classrooms');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

@@ -53,7 +53,7 @@ return [
     'major'=>'Major',
     'restore'=>'Restore',
     'force delete'=>'Force Delete',
-    'class'=>'CLASS',
+    'classroom'=>'Classroom',
     'month'=>'Month',
     'Teacher'=>'Teacher',
     'all'=>'all',
