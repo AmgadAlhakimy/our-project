@@ -58,7 +58,7 @@ return [
     'restore'=>'إستعادة',
     'force delete'=>'حذف نهائي',
 
-    'class'=>'الفصل',
+    'classroom'=>'الفصل',
     'month'=>'الشهر',
     'Teacher'=>'الاستاذ',
 

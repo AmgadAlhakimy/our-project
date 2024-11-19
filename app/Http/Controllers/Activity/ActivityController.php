@@ -17,7 +17,7 @@ class ActivityController extends Controller
     {
         try {
             $activities= Activity::all();
-            return view('academic-dep/activities.display_activities',
+            return view('academic-dep/activities.display-activities',
                 compact('activities'));
         }catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -30,7 +30,7 @@ class ActivityController extends Controller
     public function create()
     {
         try {
-        return view('academic-dep/activities.create_activity');
+        return view('academic-dep/activities.create-activity');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -63,7 +63,7 @@ class ActivityController extends Controller
     {
         try {
             $activities = Activity::onlyTrashed()->get();
-            return view('academic-dep/activities.deleted_activities',
+            return view('academic-dep/activities.deleted-activities',
                 compact('activities'));
 
         } catch (\Exception $e) {
@@ -78,7 +78,7 @@ class ActivityController extends Controller
     {
         try {
             $activity=Activity::findorFail($id);
-            return view('academic-dep/activities.edit_activity'
+            return view('academic-dep/activities.edit-activity'
                 ,compact('activity'));
         }catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -97,7 +97,7 @@ class ActivityController extends Controller
             $activity->date = $request->date;
             $activity->note = $request->note;
             $activity->update();
-            return redirect()->route('activities.index')
+            return redirect()->route('display-activities')
                 ->with(['success' => __('message.update')]);
         }
         catch (\Exception $e){
@@ -112,7 +112,7 @@ class ActivityController extends Controller
         try {
             $activity= Activity::findorFail($id);
             $activity::destroy($id);
-            return redirect()->route('activities.index')
+            return redirect()->route('display-activities')
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e){
@@ -145,31 +145,6 @@ class ActivityController extends Controller
                 ->with(['warning' => trans('message.force delete')]);
 
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
-
-    /**
-     * show activities according to the search.
-     */
-    public function search(Request $request)
-    {
-        try {
-            $search = $request->search;
-            if(strtolower($search) == 'all' or $search == 'الكل')
-                return $this->index();
-            $activities = Activity::where(function ($query) use ($search){
-                $query->where('name->en','like',"%$search%")
-                    ->orwhere('name->ar','like',"%$search%")
-                    ->orwhere('location->en','like',"%$search%")
-                    ->orwhere('location->ar','like',"%$search%")
-                    ->orwhere('contact','like',"%$search%")
-                    ->orwhere('date','like',"%$search%");
-            })->get();
-            return view('academic-dep/activities.display_activities',
-                compact('search','activities'));
-
-        }catch (\Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

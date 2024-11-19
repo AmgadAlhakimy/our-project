@@ -1,5 +1,7 @@
-The icon search is not in the right position when lang is Arabic.
-When changing the language.
-
-Make this page (resources/views/components/layouts/app.blade.php)
+1-The icon search is not in the right position when lang is Arabic.
+2-When changing the language.
+3-Make this page (resources/views/components/layouts/app.blade.php)
     looks exactly like the main page
+4-When you minimize the sidebar it should stay as it is.
+
+

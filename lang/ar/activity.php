@@ -15,7 +15,7 @@ return [
 
     //shared in many pages
     'create new Activity'=>'إنشاء نشاط جديد',
-    'Activity info'=>'معلومات النشاط',
+    'activity info'=>'معلومات النشاط',
     'Activity name in english'=>'اسم النشاط بالإنجليزية',
     'Activity name in arabic'=>'اسم النشاط بالعربية',
     'Activity location in english'=>'موقع النشاط بالإنجليزية',

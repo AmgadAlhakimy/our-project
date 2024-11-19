@@ -48,7 +48,7 @@ class DisplayEduLevel extends Component
             return view('academic-dep.educational-levels.display-edu-level',
                 [
                     'levels' => $levels,
-                ]);
+                ])->title('Educational Levels');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

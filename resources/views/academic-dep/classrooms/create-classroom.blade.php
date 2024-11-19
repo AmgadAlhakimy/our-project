@@ -14,7 +14,7 @@
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12">
-                            <label for="c-name_ar">{{__('classroom.class name in arabic')}}</label>
+                            <label for="c-name_ar">{{__('classroom.classroom name in arabic')}}</label>
                             <input type="text" id="c-name_ar" class="form-control" name="name_ar"
                             value="{{old('name_ar')}}">
                             @error('name_ar')
@@ -23,7 +23,7 @@
                         </div>
                         {{-- ************* --}}
                         <div class="box col-lg-6 col-md-12">
-                            <label for="c-name">{{__('classroom.class name in english')}}</label>
+                            <label for="c-name">{{__('classroom.classroom name in english')}}</label>
                             <input type="text" id="c-name" class="form-control " name="name" value="{{old('name')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
@@ -43,7 +43,7 @@
                         </div>
                         {{-- 3 --}}
                         <div class="box col-lg-6 col-md-12 ">
-                            <label for="cost">{{__('classroom.class cost')}}</label>
+                            <label for="cost">{{__('classroom.classroom cost')}}</label>
                             <input type="number" id="cost" class="form-control" name="cost" minlength="0"
                                     placeholder="$"
                                     value="{{old('cost')}}">

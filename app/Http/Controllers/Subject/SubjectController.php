@@ -17,7 +17,7 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::all();
-            return view('academic-dep/subjects.display_subjects',
+            return view('academic-dep/subjects.display-subjects',
                 compact('subjects'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -31,7 +31,7 @@ class SubjectController extends Controller
     public function create()
     {
         try {
-            return view('academic-dep/subjects.create_subject');
+            return view('academic-dep/subjects.create-subject');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -62,7 +62,7 @@ class SubjectController extends Controller
     {
         try {
             $subjects = Subject::onlyTrashed()->get();
-            return view('academic-dep/subjects.deleted_subjects',
+            return view('academic-dep/subjects.deleted-subjects',
                 compact('subjects'));
 
         } catch (\Exception $e) {
@@ -77,7 +77,7 @@ class SubjectController extends Controller
     {
         try {
             $subject = Subject::findorFail($id);
-            return view('academic-dep/subjects.edit_subject',
+            return view('academic-dep/subjects.edit-subject',
                 compact('subject'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -97,7 +97,7 @@ class SubjectController extends Controller
                     'ar' => $request->name_ar,
                 ],
             ]);
-            return redirect()->route('subjects.index')
+            return redirect()->route('display-subjects')
                 ->with(['success' => __('message.update')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -112,7 +112,7 @@ class SubjectController extends Controller
     {
         try {
             Subject::destroy($id);
-            return redirect()->route('subjects.index')
+            return redirect()->route('display-subjects')
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
@@ -149,25 +149,4 @@ class SubjectController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
-    /**
-     * show subjects according to the search.
-     */
-    public function search(Request $request)
-    {
-        try {
-            $search = $request->search;
-            if(strtolower($search) == 'all' or $search == 'الكل')
-                return $this->index();
-            $subjects = Subject::where(function ($query) use ($search){
-                $query->where('name->en','like',"%$search%")
-                    ->orwhere('name->ar','like',"%$search%");
-            })->get();
-            return view('academic-dep/subjects.display_subjects',
-                compact('search','subjects'));
-
-        }catch (\Exception $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
-
 }
