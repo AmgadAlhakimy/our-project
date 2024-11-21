@@ -39,7 +39,7 @@
                         </a>
 
                         <div class="notes col-lg-12 col-md-12 col-sm-12">
-                            <a  href="<?php echo e(route('subject_teacher.create')); ?>" class="li-link">
+                            <a  href="<?php echo e(route('subject-teachers.create')); ?>" class="li-link">
                                 <button class="relation-button pt-5 pb-5 " id="" cols="50" rows="5">
                                     <div class="relation-title">المدرس بالمواد الخاصة بة</div>
                                 </button>

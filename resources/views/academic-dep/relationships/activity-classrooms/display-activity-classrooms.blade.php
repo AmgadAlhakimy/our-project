@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}
-        <h4 class="col container-title mt-2">{{__('relationships.display classes for teachers')}}</h4>
+        <h4 class="col container-title mt-2">{{__('relationships.display activities for classes')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -52,7 +52,7 @@
                     <th>
                         <button wire:click="ordering('name')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.teacher')}}
+                                {{__('public.classroom')}}
                                 @if($arrow and $showArrow === 'name')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'name')
@@ -63,47 +63,36 @@
                     </th>
                     <th>
                         <div class="table_test form-label ">
-                            {{__('public.photo')}}
+                            {{__('public.activities')}}
                         </div>
                     </th>
-                    <th>
-                        <div class="table_test form-label ">
-                            {{__('classroom.classrooms')}}
-                        </div>
-                    </th>
-
                     <th colspan="2">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($teachers as $teacher)
+                @foreach($classrooms as $classroom)
                     <tr>
                         <td>
                             <div class="td_rect">
-                                {{$teacher->id}}
+                                {{$classroom->id}}
                             </div>
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$teacher->name}}
+                                {{$classroom->name}}
                             </div>
                         </td>
                         <td>
                             <div class="td_rect">
-                                <img class="student-img" src="{{$teacher->photo}}" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td_rect">
-                                @foreach($teacher->classrooms as $classroom)
-                                    {{$classroom->name}} &emsp;
+                                @foreach($classroom->activities as $activity)
+                                    {{$activity->name}} &emsp;
                                 @endforeach
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('class-teachers.edit',$teacher->id)}}"
+                            <a href="{{route('activity-classrooms.edit',$classroom->id)}}"
                                class="btn save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{__('public.edit')}}</a>
@@ -117,7 +106,7 @@
             <div class="rows_1 sections_rows  ">
                 @if($isPaginate)
                     <div class="links  ">
-                        {{$teachers->links()}}
+                        {{$classrooms->links()}}
                     </div>
                 @endif
             </div>
@@ -137,5 +126,3 @@
         </div>
     </div>
 </div>
-
-

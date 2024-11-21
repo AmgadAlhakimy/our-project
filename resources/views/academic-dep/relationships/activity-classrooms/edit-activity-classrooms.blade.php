@@ -4,7 +4,8 @@
     <main class="main ">
         <section class="section" >
             <!-- <h1 class="p-relative title-1">اضافة كلاس</h1> -->
-            <<form action="{{route('activity_classroom.store')}}" method="post">
+            <form action="{{route('activity-classrooms.update',$classroom->id)}}" method="post">
+                @method('PUT')
                 @csrf
                 <h3 class="container-title">{{__('relationships.add activities for classes')}}</h3>
                 <div class="container containers-style">
@@ -13,15 +14,7 @@
                             <!-- 1 -->
                             <div class="box col-12 ">
                                 <label for="level-class">{{__('relationships.classes')}}</label>
-                                <select class="form-select form-control " id="level-class" name="classroom_id">
-                                    <option value="" selected disabled>
-                                        {{__('classroom.please select a classroom')}}</option>
-                                    @foreach($classrooms as $classroom)
-                                        <option class="text-center" value="{{$classroom->id}}"
-                                            {{ old('classroom_id') == $classroom->id ? 'selected' : '' }}>
-                                            {{$classroom->name}}</option>
-                                    @endforeach
-                                </select>
+                                {{$classroom->name}}
                                 @error('classroom_id')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -34,14 +27,15 @@
                                 <label class="" for="level-class">{{__('relationships.activities')}}</label>
                             </div>
                             <div class="box ">
-                                <div class="btn-container">
+                                <div class="btn-container ">
                                     <!-- <div class="btn-menu "> -->
-                                    <div class="btn-l-container row">
+                                    <div class="btn-l-container  row">
                                         <!-- -------- start buttons  -->
                                         @foreach($activities as $activity)
                                             <label class="btn-l-label col ">
-                                                <input class="light-btn" type="checkbox" name="activity_id[]"
-                                                       value="{{$activity->id}}" {{ old('activity_id') && in_array($activity->id, old('activity_id')) ? 'checked' : '' }}>
+                                                <input class="light-btn" type="checkbox"
+                                                       name="activity_id[]" value="{{$activity->id}}"
+                                                       @if(in_array($activity->id, $activity_classrooms))checked @endif>
                                                 <span class="btn-l-text">{{$activity->name}} </span>
                                             </label>
                                         @endforeach
@@ -56,10 +50,15 @@
                         </div>
                     </div>
                 </div>
-                <div class=" row">
-                    <div class="box ">
-                        <input class="save-button me-2 ms-2" type="submit" value="{{__('public.save')}}">
-                        <input class="clear-button me-2 ms-2" type="reset" value="{{__('public.clear')}}">
+                <div class="row mt-2">
+                    <div class=" row">
+                        <div class="box col ">
+                            <input class="save-button" type="submit" value="{{__('public.update')}}">
+                        </div>
+                        <div class="box  col">
+                            <a href="{{route('display-activity-classrooms')}}" class="btn clear-button"><i
+                                    class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                        </div>
                     </div>
                 </div>
             </form>

@@ -3,8 +3,8 @@
     <body>
     <main class="main ">
         <section class="section">
-            <form method="post" action="{{route('subject_teacher.update',$teacher->id)}}">
-                @method('PUT')
+            <!-- <h1 class="p-relative title-1">اضافة كلاس</h1> -->
+            <form method="post" action="{{route('subject-teachers.store')}}">
                 @csrf
                 <h3 class="container-title"> {{__('relationships.add subjects for teachers')}}</h3>
                 <div class="container containers-style">
@@ -13,7 +13,15 @@
                             <!-- 1 -->
                             <div class="box col-12 ">
                                 <label for="teacher"> {{__('relationships.teacher')}}</label>
-                                {{$teacher->name}}
+                                <select class="form-select form-control " id="teacher" name="teacher_id">
+                                    <option value="" selected disabled>
+                                        {{__('teacher.please select a teacher')}}</option>
+                                    @foreach($teachers as $teacher)
+                                        <option class="text-center" value="{{$teacher->id}}"
+                                            {{ old('teacher_id') == $teacher->id ? 'selected' : '' }}>
+                                            {{$teacher->name}}</option>
+                                    @endforeach
+                                </select>
                                 @error('teacher_id')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror
@@ -31,12 +39,11 @@
                                     <!-- <div class="btn-menu "> -->
                                     <div class="btn-l-container  row">
                                         <!-- -------- start buttons  -->
-                                        @foreach($subjects as $subject)
+                                        @foreach($subjects as $Subject)
                                             <label class="btn-l-label col ">
-                                                <input class="light-btn" type="checkbox"
-                                                       name="subject_id[]" value="{{$subject->id}}"
-                                                       @if(in_array($subject->id, $teacher_subjects))checked @endif>
-                                                <span class="btn-l-text">{{$subject->name}} </span>
+                                                <input class="light-btn" type="checkbox" name="subject_id[]"
+                                                       value="{{$Subject->id}}" {{ old('subject_id') && in_array($Subject->id, old('subject_id')) ? 'checked' : '' }}>
+                                                <span class="btn-l-text">{{$Subject->name}} </span>
                                             </label>
                                         @endforeach
                                         <!-- -------- end buttons  -->
@@ -52,17 +59,11 @@
 
                     </div>
                 </div>
-                <div class="row mt-2">
-                    <div class=" row">
-                        <div class="box col ">
-                            <input class="save-button" type="submit" value="{{__('public.update')}}">
-                        </div>
-                        <div class="box  col">
-                            <a href="{{route('subject_teacher.index')}}" class="btn clear-button"><i
-                                    class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                        </div>
+                <div class=" row">
+                    <div class="box ">
+                        <input class="save-button me-2 ms-2" type="submit" value="{{__('public.save')}}">
+                        <input class="clear-button me-2 ms-2" type="reset" value="{{__('public.clear')}}">
                     </div>
-                </div>
             </form>
         </section>
     </main>

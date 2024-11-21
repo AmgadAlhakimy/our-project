@@ -19,7 +19,7 @@ class SubjectTeacherController extends Controller
     {
         try {
             $teachers = Teacher::all();
-            return view('academic-dep/relationships/subject_teacher.display_subjects_teachers',
+            return view('academic-dep/relationships/subject-teachers.display-subject-teachers',
                 compact('teachers'));
 
         } catch (\Exception $e) {
@@ -35,7 +35,7 @@ class SubjectTeacherController extends Controller
         try {
             $teachers = Teacher::all();
             $subjects = Subject::all();
-            return view('academic-dep/relationships/subject_teacher.create_subject_teacher',
+            return view('academic-dep/relationships/subject-teachers.create-subject-teachers',
                 compact('teachers', 'subjects'));
 
         } catch (Exception $e) {
@@ -84,7 +84,7 @@ class SubjectTeacherController extends Controller
             foreach ($teacher_subject as $subject) {
                 $teacher_subjects[] = $subject->subject_id;
             }
-            return view('academic-dep/relationships/teacher_subjects.edit_subject_teacher',
+            return view('academic-dep/relationships/subject-teachers.edit-subject-teachers',
                 compact('teacher', 'subjects', 'teacher_subjects'));
 
         } catch (Exception $e) {
@@ -100,7 +100,7 @@ class SubjectTeacherController extends Controller
         try {
             $teacher = Teacher::findOrFail($teacher_id);
             $teacher->subjects()->sync($request->subject_id);
-            return redirect()->route('subject_teacher.index')
+            return redirect()->route('display-subject-teachers')
                 ->with(['success' => 'message.update']);
 
         } catch (Exception $e) {

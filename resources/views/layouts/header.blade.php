@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> {{__('public.title')}} </title>
-    
+
     @livewireStyles
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
@@ -11,15 +11,10 @@
     <link href="{{URL::asset('css/style.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/tables.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/normalize.css')}}" rel="stylesheet">
-    {{-- <link href="{{URL::asset('css/sidebar-header.css')}}" rel="stylesheet"> --}}
     <link href="{{URL::asset('css/sidebar-style.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/sidebar-buttons.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/cards_info.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/font-awesome.css')}}" rel="stylesheet">
-    <!-- box icons -->
-    <!-- box icons -->
-    <!-- styles -->
-    <!-- styles -->
 </head>
 
 

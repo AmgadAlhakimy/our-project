@@ -94,8 +94,8 @@
             <div class="line-black">
                 <a href='{{route('class-subjects.create')}}' class="li-link">{{__('sidebar.subjects - classes')}}</a>
                 <a href="{{route('class-teachers.create')}}" class="li-link">{{__('sidebar.teachers - classes')}}</a>
-                <a href='{{route('subject_teacher.create')}}' class="li-link">{{__('sidebar.teachers - subjects')}}</a>
-                <a href='{{route('activity_classroom.create')}}' class="li-link">{{__('sidebar.classes - activities')}}</a>
+                <a href='{{route('subject-teachers.create')}}' class="li-link">{{__('sidebar.teachers - subjects')}}</a>
+                <a href='{{route('activity-classrooms.create')}}' class="li-link">{{__('sidebar.classes - activities')}}</a>
             </div>
         </div>
     </li>
@@ -115,7 +115,7 @@
                 <a href="{{route('display-class-subjects')}}" class="li-link">{{__('sidebar.display subjects - classes')}}</a>
                 <a href="{{route('display-class-teachers')}}" class="li-link">{{__('sidebar.display classes -  teacher')}}</a>
                 <a href="{{route('display-subject-teachers')}}" class="li-link">{{__('sidebar.display subjects - teachers')}}</a>
-                <a href="{{route('display-activity-classes')}}" class="li-link">{{__('sidebar.display classes - activities')}}</a>
+                <a href="{{route('display-activity-classrooms')}}" class="li-link">{{__('sidebar.display classes - activities')}}</a>
             </div>
         </div>
     </li>

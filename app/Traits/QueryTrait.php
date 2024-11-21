@@ -17,16 +17,14 @@ trait QueryTrait
     public string $orderBy = 'id';
 
     public bool $isPaginate;
-    public function queryData($myModel)
+    public function queryData($myModel,$myQuery)
     {
         $lang = LaravelLocalization::setLocale();
         if (strlen($this->search) >= 1) {
-            $isPaginate = false;
-            $data = $myModel::where('name->en', 'like', "%$this->search%")
-                ->orwhere('name->ar', 'like', "%$this->search%")
-                ->orwhere('cost', 'like', "%$this->search%")->get();
+            $this->isPaginate = false;
+            $data = $myQuery;
         } else {
-            $isPaginate = true;
+            $this->isPaginate = true;
             $data = $myModel::orderBy(
                 ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
                 $this->sortOrder)->paginate($this->pagination);
