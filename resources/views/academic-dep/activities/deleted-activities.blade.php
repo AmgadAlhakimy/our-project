@@ -2,23 +2,12 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-        <!-- table-hover table-striped -->
+        <!-- table-hover table-striped --> 
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('DELETED ACTIVITIES')}} </h4>
-                <div class="row first-card mt-4">
-                    <form method="post" action="{{route('students.search')}}">
-                        @method('GET')
-                        @csrf
-                        <div class="row">
-                            <label class="col-10">
-                                <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
-                            </label>
-                            <button type="submit" class="col save-button ">{{__('public.search')}}</button>
-                        </div>
-                    </form>
-                </div>
+                <h4 class="col container-title mt-2">{{__('activity.DELETED ACTIVITIES')}} </h4>
+            
             </div>
         </div>
         <div class=" shadow-none mt-4 ">
@@ -26,21 +15,7 @@
                 <table class=" " id="check_table">
                     <thead>
                     <tr>
-                        <th>
-                            <label for="" class=" n_rect">
-                                {{__('public.num')}}
-                            </label>
-                        </th>
-                        <th class="th-head-1">
-                            <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label ">
-                                {{__('public.id')}}
-                                @if($arrow and $showArrow === 'id')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'id')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </button>
-                        </th>
+                        <th><div class="n_rect">{{__('public.id')}}</div></th>
                         <th class="th-head-3">
                             {{__('public.name')}}
                         </th>
@@ -70,12 +45,6 @@
                     @foreach($activities  as $activity )
                         <tbody>
                         <tr>
-                            {{-- <td class="num_table ">{{$counter}}</td> --}}
-                            <td>
-                                <div class="td_rect">
-                                1
-                                </div>
-                            </td>
                             <td>
                                 <div class="td_rect">
                                 {{$activity->id}}

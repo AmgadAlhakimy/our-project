@@ -14,6 +14,8 @@ return [
     */
 
     'create new class'=>'CREATE NEW CLASS',
+    'delete classrooms'=>'delete classrooms',
+
     'classroom name in english'=>'Class Name in English',
     'classroom name in arabic'=>'Class Name in Arabic',
     'educational Level'=>'Education Level',

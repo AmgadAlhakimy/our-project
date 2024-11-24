@@ -13,6 +13,7 @@ return [
     |
     */
     'create new class'=>'إنشاء فصل جديد',
+    'delete classrooms'=>'حذف فصل دراسي',
     'classroom name in english'=>'اسم الفصل بالإنجليزية',
     'classroom name in arabic'=>'اسم الفصل بالعربية',
     'educational Level'=>'المرحلة الدراسية',
