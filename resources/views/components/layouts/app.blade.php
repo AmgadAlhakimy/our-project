@@ -43,7 +43,7 @@
                 <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
             </div>
             {{-- THE DROPDOWN LUNGUAGE --}}
-            <div class=" dropDownLang ph-lang"> 
+            <div class=" dropDownLang ph-lang">
                 <div class="select">
                     <span class="lang_1 selected ">{{__('sidebar.short_lang')}}</span>
                     <span class="lang_2 selected">{{__('sidebar.Lang')}}</span>
@@ -129,6 +129,7 @@
         <!-- ============= LIST ============== -->
         <div class="sidebar-nav ">
             <ul class="list-ul ">
+<<<<<<< HEAD
                 <!--  dropdown list item عنوان القسم-->
                 <p class="title">{{__('sidebar.academic department')}}<i class="ms-1 me-1 fa-solid fa-school"></i></p>
                 {{-- القسم الأكاديمي --}}
@@ -618,41 +619,17 @@
                     </div>
                 </li>
 
+=======
+                @include('layouts.academic_department.academic_department')
+                @include('layouts.control_department.control_department')
+                @include('layouts.teachers.teachers')
+                @include('layouts.parents.parents')
+                @include('layouts.personnel_affairs.personnel_affairs')
+                @include('layouts.students_affairs.students_affairs')
+>>>>>>> 4096a39b5c8208316bc0c364b8438de9f6e94787
             </ul>
         </div>
     </div>
-
-    <!-- ========== THE LAST MENU ============ -->
-    {{-- <div class=" menu-footer">
-        <ul class="list-ul">
-            <!--  dropdown list item -->
-            <p class="title">admin</p>
-            <li class="dropdown">
-                <!-- ========== 1 ============ -->
-                <div class="sidebar-title">
-                    <a href="#" class="li-link title-4">
-                        <i
-                            class="icon-1 fa-solid fa-window-restore"
-                        ></i>
-                        <span class="menu-name"> من نحن </span>
-                    </a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <!-- ========== 2 ============ -->
-                <div class="sidebar-title">
-                    <a href="#" class="li-link title-4">
-                        <i
-                            class="icon-1 fa-solid fa-window-restore"
-                        ></i>
-                        <span class="menu-name"> خروج </span>
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>--}}
-    <!-- ============= home section ================= -->
-
     <div class="section-home">
         <div id="my_toggle" class="toggle-sidebar">
            {{ $slot }}
@@ -660,13 +637,7 @@
     </div>
     <!-- ====================== -->
 </div>
-<script src="{{URL::asset('js/all.min.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.js')}}"></script>
-<script src="{{URL::asset('js/bootstrap.min.js')}}"></script>
-<script src="{{URL::asset('js/jquery.js')}}"></script>
-<script src="{{URL::asset('js/jquery-3.7.1.min.js')}}"></script>
-<script src="{{URL::asset('js/main.js')}}"></script>
-<script src="{{URL::asset('js/script.js')}}"></script>
+@include('layouts.js_links')
+
 </body>
 </html>

@@ -2,13 +2,12 @@
 
 namespace App\Livewire\AcademicDep;
 
-use App\Models\Subject\Subject;
+use App\Models\EducationalLevel;
 use App\Traits\QueryTrait;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-
-class DisplaySubjects extends Component
+class DisplayEducationalLevels extends Component
 {
     use WithPagination;
     use QueryTrait;
@@ -16,13 +15,13 @@ class DisplaySubjects extends Component
     public function render()
     {
         try {
-            $myQuery = Subject::where('name->en', 'like', "%$this->search%")
+            $myQuery = EducationalLevel::where('name->en', 'like', "%$this->search%")
                 ->orwhere('name->ar', 'like', "%$this->search%")->get();
-            $subjects = $this->queryData("App\Models\Subject\Subject", $myQuery);
+            $levels = $this->queryData("App\Models\EducationalLevel", $myQuery);
 
-            return view('academic-dep.subjects.display-subjects', [
-                    'subjects' => $subjects,
-                ])->title('Subjects');
+            return view('academic-dep.educational-levels.display-edu-level', [
+                    'levels' => $levels,
+                ])->title('Educational Levels');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

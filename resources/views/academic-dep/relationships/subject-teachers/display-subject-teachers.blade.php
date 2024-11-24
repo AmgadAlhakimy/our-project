@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}
-        <h4 class="col container-title mt-2">{{__('relationships.display classes for teachers')}}</h4>
+        <h4 class="col container-title mt-2">{{__('relationships.display subjects for teachers')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -68,7 +68,7 @@
                     </th>
                     <th>
                         <div class="table_test form-label ">
-                            {{__('classroom.classrooms')}}
+                            {{__('public.subject')}}
                         </div>
                     </th>
 
@@ -97,13 +97,13 @@
                         </td>
                         <td>
                             <div class="td_rect">
-                                @foreach($teacher->classrooms as $classroom)
-                                    {{$classroom->name}} &emsp;
+                                @foreach($teacher->subjects as $subject)
+                                    {{$subject->name}} &emsp;
                                 @endforeach
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('class-teachers.edit',$teacher->id)}}"
+                            <a href="{{route('subject-teachers.edit',$teacher->id)}}"
                                class="btn save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{__('public.edit')}}</a>
@@ -137,5 +137,6 @@
         </div>
     </div>
 </div>
+
 
 

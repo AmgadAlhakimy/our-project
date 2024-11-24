@@ -19,7 +19,7 @@ class ActivityClassroomController extends Controller
     {
         try {
             $classrooms = Classroom::all();
-            return view('academic-dep/relationships/activity_classroom.display_activities_classrooms',
+            return view('academic-dep/relationships/activity-classrooms.display-activity-classrooms',
                 compact('classrooms'));
 
         } catch (\Exception $e) {
@@ -34,9 +34,8 @@ class ActivityClassroomController extends Controller
     {
         try {
             $classrooms = Classroom::all();
-            $activities = Activity::all();
-            return view('academic-dep/relationships/activity_classroom.create_activity_classroom',
-                compact('classrooms', 'activities'));
+            return view('academic-dep/relationships/activity-classrooms.create-activity-classrooms',
+                compact('classrooms'));
 
         } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -84,7 +83,7 @@ class ActivityClassroomController extends Controller
             foreach ($activity_classroom as $activity) {
                 $activity_classrooms[] = $activity->activity_id;
             }
-            return view('academic-dep/relationships/activity_classroom.edit_activity_classroom',
+            return view('academic-dep/relationships/activity-classrooms.edit-activity-classrooms',
                 compact('classroom', 'activities', 'activity_classrooms'));
 
         } catch (Exception $e) {
@@ -100,7 +99,7 @@ class ActivityClassroomController extends Controller
         try {
             $classroom = Classroom::findOrFail($classroom_id);
             $classroom->activities()->sync($request->activity_id);
-            return redirect()->route('activity_classroom.index')
+            return redirect()->route('display-activity-classrooms')
                 ->with(['success' => 'message.update']);
 
         } catch (Exception $e) {

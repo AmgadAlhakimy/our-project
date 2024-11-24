@@ -18,13 +18,13 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\MarkController;
 use Illuminate\Support\Facades\Route;
 
-Route::resource('activity_classroom', ActivityClassroomController::class);
+Route::resource('activity-classrooms', ActivityClassroomController::class);
 Route::resource('educational-levels', EducationalLevelController::class);
-Route::resource('class-teachers', ClassroomTeacherController::class);
-Route::resource('class-subjects', ClassroomSubjectController::class);
 Route::resource('follow_up_students', FollowUpStudentController::class);
 Route::resource('follow_up_children', FollowUpChildController::class);
-Route::resource('subject_teacher', SubjectTeacherController::class);
+Route::resource('class-teachers', ClassroomTeacherController::class);
+Route::resource('class-subjects', ClassroomSubjectController::class);
+Route::resource('subject-teachers', SubjectTeacherController::class);
 Route::resource('classrooms', ClassroomController::class);
 Route::resource('activities', ActivityController::class);
 Route::resource('relatives', RelativeController::class);

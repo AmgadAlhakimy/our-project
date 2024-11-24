@@ -59,8 +59,11 @@ return [
     'force delete'=>'حذف نهائي',
 
     'classroom'=>'الفصل',
+    'subject'=>'المادة',
+    'teacher'=>'الاستاذ',
+    'activity'=>'النشاط',
+    'activities'=>'النشاطات',
     'month'=>'الشهر',
-    'Teacher'=>'الاستاذ',
 
     'all'=>'الكل',
     'some'=>'بعض',

@@ -3,52 +3,25 @@
 namespace App\Livewire\AcademicDep;
 
 use App\Models\Classroom\Classroom;
+use App\Traits\QueryTrait;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 class DisplayClassrooms extends Component
 {
     use WithPagination;
-
-    public int $pagination = 5;
-
-    public string $search = '';
-    public string $orderBy = 'id';
-    public string $sortOrder = 'asc';
-    public bool $arrow = false;
-    public string $showArrow = 'id';
-    public bool $isPaginate;
-
-    public function ordering($item): void
-    {
-        $this->showArrow = $item;
-        if ($this->orderBy == $item) {
-            $this->sortOrder = $this->sortOrder === 'asc' ? 'desc' : 'asc';
-            $this->arrow = !$this->arrow;
-        }
-        $this->orderBy = $item;
-    }
-
+    use QueryTrait;
 
     public function render()
     {
         try {
-            $lang = LaravelLocalization::setLocale();
-            if (strlen($this->search) >= 1) {
-                $this->isPaginate = false;
-                $classrooms = Classroom::where('name->en', 'like', "%$this->search%")
-                    ->orwhere('name->ar', 'like', "%$this->search%")
-                    ->orwhere('cost', 'like', "%$this->search%")->get();
-            } else {
-                $this->isPaginate = true;
-                $classrooms = Classroom::orderBy(
-                    ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
-                    $this->sortOrder)->paginate($this->pagination);
-            }
-            return view('academic-dep.classrooms.display-classrooms',
-                [
+            $myQuery = Classroom::where('name->en', 'like', "%$this->search%")
+                ->orwhere('name->ar', 'like', "%$this->search%")
+                ->orwhere('cost', 'like', "%$this->search%")->get();
+            $classrooms = $this->queryData("\App\Models\Classroom\Classroom", $myQuery);
+
+            return view('academic-dep.classrooms.display-classrooms', [
                     'classrooms' => $classrooms,
                 ])->title('Classrooms');
         } catch (\Exception $e) {
