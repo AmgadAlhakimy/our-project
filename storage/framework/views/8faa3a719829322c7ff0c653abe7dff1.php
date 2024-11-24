@@ -3,7 +3,6 @@
 
 <body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
 
-
     <?php echo $__env->make('layouts.sidebar_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <!-- start sidebar -->
 

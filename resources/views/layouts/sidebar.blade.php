@@ -3,7 +3,6 @@
 
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
-
     @include('layouts.sidebar_header')
 <!-- start sidebar -->
 
