@@ -28,7 +28,8 @@
                     <tr>
                         <th>
                             <label for="" class=" n_rect">
-                                {{__('public.num')}}
+                                {{__('public.num')}} 
+                                
                             </label>
                         </th>
                         <th class="th-head-1">

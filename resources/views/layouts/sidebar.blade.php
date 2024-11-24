@@ -16,6 +16,7 @@
                     <ul class="list-ul ">
 
 
+                        
                         {{-- academic department --}}
                         @include('layouts.academic_department.academic_department')
                         <!-- ========== 5 ============ -->

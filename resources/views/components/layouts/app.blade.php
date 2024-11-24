@@ -412,7 +412,8 @@
                         </a>
                     </div>
                     <div class="submenu">
-                        <div class="line-black">
+                        <div class="line-black"> 
+                        
                             <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">KG1</a>
                             <a href="{{route('follow_up_children.displayAllChildren',1)}}"
                                class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>

@@ -15,6 +15,7 @@
                                        placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
+                        
                     </div> 
                 </label>
             </div>
