@@ -25,7 +25,7 @@ class FollowUpChildController extends Controller
         try {
             $classroom = Classroom::findorfail(1);
             $subject = Subject::findorfail(1);
-            return view('teachers_affairs/follow_up_children.follow_up_all_children',
+            return view('teachers-affairs/follow_up_children.follow_up_all_children',
                 compact('subject', 'classroom'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -44,7 +44,7 @@ class FollowUpChildController extends Controller
             $date = Carbon::now()->format('Y-m-d');
             $follow_up = FollowUpChild::where('created_at', 'like', "%$date%")->get();
 
-            return view('teachers_affairs/follow_up_children.display_follow_up_children',
+            return view('teachers-affairs/follow_up_children.display_follow_up_children',
                 compact('classroom', 'follow_up', 'month'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -59,7 +59,7 @@ class FollowUpChildController extends Controller
                 return redirect()->back()->with(['error' => __('follow_up.sorry this classroom does not have subjects')]);
             }
             $month = Carbon::now()->format('F j');
-            return view('teachers_affairs/follow_up_children.writing_in_follow_up_children',
+            return view('teachers-affairs/follow_up_children.writing_in_follow_up_children',
                 compact('classroom', 'month'));
         } catch (Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -77,7 +77,7 @@ class FollowUpChildController extends Controller
                 ->where('created_at', 'like', "%$date%")->exists()) {
                 $student = Student::findorfail($student_id);
                 $follow_up = FollowUpChild::where('student_id', $student_id)->get();
-                return view('teachers_affairs/follow_up_children.follow_up_child',
+                return view('teachers-affairs/follow_up_children.follow_up_child',
                     compact('student', 'follow_up'));
 
             } else {
@@ -175,7 +175,7 @@ class FollowUpChildController extends Controller
             $child = FollowUpChild::findorFail($id);
             $homework = $child->homework;
             $subjects_homework = array_combine($subjects, $homework);
-            return view('teachers_affairs/follow_up_children.edit_in_follow_up_child',
+            return view('teachers-affairs/follow_up_children.edit_in_follow_up_child',
                 compact('classroom', 'month', 'subjects_homework', 'child'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -230,7 +230,7 @@ class FollowUpChildController extends Controller
             $child = FollowUpChild::findorFail(1);
             $homework = $child->homework;
             $subjects_homework = array_combine($subjects, $homework);
-            return view('teachers_affairs/follow_up_children.editing_in_follow_up_children',
+            return view('teachers-affairs/follow_up_children.editing_in_follow_up_children',
                 compact('classroom', 'month', 'subjects_homework', 'child'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

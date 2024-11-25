@@ -53,11 +53,11 @@ Route::group(
 
         // school
         Route::get('school', function () {
-            return view('teachers_affairs/follow_up_students/school-follow-up');
+            return view('teachers-affairs/follow_up_students/school-follow-up');
         });
         // students_view
         Route::get('students_view', function () {
-            return view('teachers_affairs/follow_up_students/index_school_follow_up');
+            return view('teachers-affairs/follow_up_students/index_school_follow_up');
         });
 
         // -----------------
@@ -68,17 +68,17 @@ Route::group(
 
         // index_absence
         Route::get('index_absence', function () {
-            return view('teachers_affairs/absence/index_absent_children');
+            return view('teachers-affairs/absence/index_absent_children');
         });
 
 
         // add_marks
         Route::get('add_marks', function () {
-            return view('teachers_affairs/marks/add');
+            return view('teachers-affairs/marks/add');
         });
         // absence_class
         Route::get('absence_class', function () {
-            return view('teachers_affairs/absence/absent_student_class');
+            return view('teachers-affairs/absence/absent_student_class');
         });
         // -----------------------
         // student_info
@@ -90,7 +90,7 @@ Route::group(
         // you have check on this code
         // absence
         Route::get('absence', function () {
-            return view('students_affairs/absence/absent_students');
+            return view('students-affairs/absence/absent_students');
         });
 
         // ========================

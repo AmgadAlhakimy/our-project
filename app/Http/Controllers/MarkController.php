@@ -36,7 +36,7 @@ class MarkController extends Controller
 
             $marks = Mark::where('classroom_id', 1)
                 ->where('subject_id', $id)->get();
-            return view('teachers_affairs/marks.insert_marks',
+            return view('teachers-affairs/marks.insert_marks',
                 compact('marks', 'classroom'));
 
         } catch (\Exception  $e) {

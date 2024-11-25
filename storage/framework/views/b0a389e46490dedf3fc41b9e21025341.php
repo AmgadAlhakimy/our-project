@@ -14,7 +14,7 @@
                 <h3 class="container-title"><?php echo e(__('create Student')); ?></h3>
                 <div class="container containers-style ">
                     <div class="row ">
-                        
+
                         <div class="box col-lg-6 col-md-6 col-sm-12">
                             <label class="title-3 "
                             for="english-name"><?php echo e(__("Student.Student's name in arabic")); ?></label>
@@ -30,7 +30,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-6 col-sm-12">
                             <label class="text-center"
                                 for="arab-name"><?php echo e(__("Student.Student's name in english")); ?></label>
@@ -46,7 +46,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
 
                         <div class="box col-lg-2 col-md-2 col-sm-12">
                             <label class="" for="photo"><?php echo e(__('Student.photo')); ?></label>
@@ -62,8 +62,8 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
-                        
+
+
                         <div class="box col-lg-5 col-md-5 col-sm-12 ">
                             <label for="address"><?php echo e(__("Student.Student's address in arabic")); ?></label>
                             <input type="text" class=" form-control " id='address' name="address_ar" value="<?php echo e(old('address_ar')); ?>">
@@ -78,7 +78,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-5 col-md-5 col-sm-12 ">
                             <label for="address"><?php echo e(__("Student.Student's address in english")); ?></label>
                             <input type="text" class=" form-control " id="address" name="address" value="<?php echo e(old('address')); ?>">
@@ -94,7 +94,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
 
-                        
+
                         <div class="box col-lg-3 col-md-4 col-sm-6 ">
                             <label for="gender"><?php echo e(__('Student.gender')); ?></label>
                             <select class="col form-select form-control" id="gender" name="gender">
@@ -117,7 +117,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <input type="hidden" name="gender_ar_m" value="<?php echo e(__('Student.male_ar')); ?>">
                         <input type="hidden" name="gender_ar_f" value="<?php echo e(__('Student.female_ar')); ?>">
-                        
+
                         <div class="box col-lg-3 col-md-4 col-sm-6">
                             <label for="age"><?php echo e(__('Student.birthdate')); ?></label>
                             <input type="date" class="form-control" id="age" name="birthdate" value="<?php echo e(old('birthdate')); ?>">
@@ -132,7 +132,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-3 col-md-4 col-sm-6 ">
                             <label for="english-birth-place"><?php echo e(__('Student.place of birth in arabic')); ?></label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="<?php echo e(old('place_of_birth_ar')); ?>">
@@ -147,7 +147,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-3 col-md-4 col-sm-6">
                             <label for="arabic-birth-place"><?php echo e(__('Student.place of birth in english')); ?></label>
                             <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth" value="<?php echo e(old('place_of_birth')); ?>">
@@ -162,7 +162,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-8 col-sm-12">
                             <label for="className" class="title-3"><?php echo e(__('Student.level')); ?></label>
                             <select id="educational_level" class="form-control" name="educational_level" onchange="populateClassrooms()">
@@ -203,7 +203,7 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <!-- End personal info  -->
 
-                
+
                 <h3 class="container-title"><?php echo e(__('Student.parent info')); ?></h3>
                 <div class="container  containers-style ">
                     <div class="row">
@@ -244,15 +244,15 @@ unset($__errorArgs, $__bag); ?>
                         <div class="box col-lg-12 col-md-12">
                             <h4 class="p-1 "><?php echo e(__('Student.does the Student')); ?></h4>
 
-                            
+
                             <label class="mt-4"><?php echo e(__('Student.take any medicine ?')); ?></label>
-                            
+
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="take_medicine" id="takeMedicineE" value="<?php echo e(old('take_medicine')); ?>" onchange="toggleInput()">
                                     <label class="title-3 col rounded" for="takeMedicineE" ></label>
                                 </div>
-                                
+
                                 <?php $__errorArgs = ['take_medicine'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -263,7 +263,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                
+
                                 <input type="text" class=" form-control ms-1 me-1 col " name="medicine_desc" id="std_medicine_desc_1" value="<?php echo e(old('medicine_desc')); ?>"
                                     aria-label="Text input with radio button" placeholder="desc in english" hidden >
                                 <?php $__errorArgs = ['medicine_desc'];
@@ -276,7 +276,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                
+
                                 <input type="text" class=" form-control ms-1 me-1 col" name="medicine_desc_ar" id="std_medicine_desc_2" value="<?php echo e(old('medicine_desc_ar')); ?>"
                                     aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 <?php $__errorArgs = ['medicine_desc_ar'];
@@ -291,17 +291,17 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
 
-                            
-                            
+
+
                             <label class="mt-4"><?php echo e(__('Student.have an allergy ?')); ?></label>
-                            
+
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="have_allergy" id="haveAllergy" value="<?php echo e(old('have_allergy')); ?>" onchange="toggleInput()">
 
                                     <label class="title-3 col rounded" for="haveAllergy" ></label>
                                 </div>
-                                
+
                                 <?php $__errorArgs = ['have_allergy'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -312,7 +312,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                
+
                                 <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc" id="std_allergy_desc_1"
                                     aria-label="Text input with radio button" value="<?php echo e(old('allergy_desc')); ?>" placeholder="desc in english" hidden>
                                 <?php $__errorArgs = ['allergy_desc'];
@@ -325,7 +325,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                
+
                                 <input type="text" class=" form-control ms-1 me-1 col" name="allergy_desc_ar" id="std_allergy_desc_2" value="<?php echo e(old('allergy_desc_ar')); ?>"
                                     aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
                                 <?php $__errorArgs = ['allergy_desc_ar'];
@@ -339,16 +339,16 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            
-                            
+
+
                             <label class="mt-4"><?php echo e(__('Student.have any health problem ?')); ?></label>
-                            
+
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                     <input class="toggle col" type="checkbox" name="have_health_problem"  id="healthProblem" value="<?php echo e(old('have_health_problem')); ?>" onchange="toggleInput()" >
                                     <label class="title-3 col rounded" for="healthProblem" id="healthProblem"></label>
                                 </div>
-                                
+
                                 <?php $__errorArgs = ['have_health_problem'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -359,7 +359,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                
+
                                 <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc" id="std_health_desc_1"
                                     aria-label="Text input with radio button" value="<?php echo e(old('health_problem_desc')); ?>" placeholder="desc in english" hidden>
                                 <?php $__errorArgs = ['health_problem_desc'];
@@ -372,7 +372,7 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                
+
                                 <input type="text" class=" form-control ms-1 me-1 col" name="health_problem_desc_ar" id="std_health_desc_2"
                                        value="<?php echo e(old('health_problem_desc_ar')); ?>"
                                        aria-label="Text input with radio button" placeholder="desc in arabic" hidden>
@@ -387,7 +387,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -413,7 +413,7 @@ unset($__errorArgs, $__bag); ?>
                 <!-- End final box -->
             </form>
         </section>
-    </main> 
+    </main>
 
 
     <script>
@@ -469,4 +469,4 @@ unset($__errorArgs, $__bag); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students_affairs/students/create_student.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students-affairs/students/create_student.blade.php ENDPATH**/ ?>

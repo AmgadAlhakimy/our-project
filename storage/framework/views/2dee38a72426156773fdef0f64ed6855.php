@@ -1,16 +1,16 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
-        
-        
+
+
 
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">Deleted students</h4>
             </div>
         </div>
 
-        
+
         <!-- table-hover table-striped -->
         <div class="table-section shadow-none">
             <div class="card table-section ">
@@ -80,7 +80,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </tbody>
@@ -90,4 +90,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students_affairs/students/deleted_students.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students-affairs/students/deleted_students.blade.php ENDPATH**/ ?>

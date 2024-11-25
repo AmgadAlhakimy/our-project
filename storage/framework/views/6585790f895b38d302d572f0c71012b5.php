@@ -10,7 +10,7 @@
             <form method="post" action="<?php echo e(route('relatives.store')); ?>">
                 <?php echo csrf_field(); ?>
 
-                
+
                 <h3 class="container-title"><?php echo e(__('Student.parent info')); ?></h3>
                 <div class="container  containers-style ">
                     <div class="row">
@@ -261,7 +261,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-                
+
 
                 <div class=" row">
                     <div class="box col ">
@@ -271,7 +271,7 @@ unset($__errorArgs, $__bag); ?>
                         <input class="clear-button " type="reset" value="<?php echo e(__('public.clear')); ?>">
                     </div>
                 </div>
-                
+
                 <!-- End parent info  -->
             </form>
         </section>
@@ -281,4 +281,4 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students_affairs/relatives/create_relative.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students-affairs/relatives/create_relative.blade.php ENDPATH**/ ?>

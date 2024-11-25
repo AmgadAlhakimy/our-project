@@ -16,7 +16,7 @@ class FollowUpStudentController extends Controller
     {
         try {
             $students = Student::all();
-            return view('teachers_affairs/daily.show_students',
+            return view('teachers-affairs/daily.show_students',
                 compact('students'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -30,7 +30,7 @@ class FollowUpStudentController extends Controller
     {
         try {
             $student = Student::findorfail($id);
-            return view('teachers_affairs/daily.follow_up_children',
+            return view('teachers-affairs/daily.follow_up_children',
                 compact('student'));
         } catch (\Exception  $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -43,7 +43,7 @@ class FollowUpStudentController extends Controller
     public function create()
     {
         try {
-            return view('teachers_affairs/daily.follow_up_children');
+            return view('teachers-affairs/daily.follow_up_children');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
-        
-        
+
+
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">Students Information</h4>
                 <div class="row first-card mt-4">
@@ -112,7 +112,7 @@
                                     </div>
                                 </div>
                             </td>
-                            
+
                             <td>
                                 <a href="<?php echo e(route('students.more',$student->id)); ?>"
                                    class="btn save-button btn-info w-100">
@@ -129,4 +129,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students_affairs/students/show_students.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students-affairs/students/show_students.blade.php ENDPATH**/ ?>

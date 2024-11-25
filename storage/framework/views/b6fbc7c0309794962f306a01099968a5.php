@@ -15,7 +15,7 @@
                 <h3 class="container-title"><?php echo e(__('Student.Student info')); ?></h3>
                 <div class="container containers-style ">
                     <div class="row">
-                        
+
                         <div class="box col-lg-6 col-md-12">
                             <label class="  title-3 "
                             for="english-name"><?php echo e(__("Student.Student's name in arabic")); ?></label>
@@ -31,7 +31,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-12">
                             <label class="text-center"
                                 for="arab-name"><?php echo e(__("Student.Student's name in english")); ?></label>
@@ -47,7 +47,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box row me-2 mb-3 col-lg-6 col-md-12 ">
                             <label class="" for="photo"><?php echo e(__('change students photo')); ?></label>
                             <input type="file" class="form-control col-8" id="photo" name="photo" value="<?php echo e($student->photo); ?>">
@@ -80,7 +80,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            
+
                             <div class="col-lg-6 col-md-6 ">
                                 <span
                                     class=" text-center title-3 "><?php echo e(__("Student.Student's address in english")); ?></span>
@@ -97,7 +97,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-6 ">
                             <label for="gender"><?php echo e(__('Student.gender')); ?></label>
                             <select class="col form-select form-control" id="gender" name="gender">
@@ -119,7 +119,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-6">
                             <label for="age"><?php echo e(__('Student.birthdate')); ?></label>
                             <input type="date" class="form-control" id="age" name="birthdate" value="<?php echo e($student->birthdate); ?>">
@@ -134,7 +134,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-6">
                             <label for="english-birth-place"><?php echo e(__('Student.place of birth in arabic')); ?></label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar"
@@ -150,7 +150,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box col-lg-6 col-md-6">
                             <label for="arabic-birth-place"><?php echo e(__('Student.place of birth in english')); ?></label>
                             <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth"
@@ -166,7 +166,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        
+
                         <div class="box ">
                             <label for="className " class="form-label"><?php echo e(__('Student.class')); ?></label>
                             <select id="className " class="form-control" name="classroom_id">
@@ -318,4 +318,4 @@ unset($__errorArgs, $__bag); ?>
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students_affairs/students/edit_student.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students-affairs/students/edit_student.blade.php ENDPATH**/ ?>

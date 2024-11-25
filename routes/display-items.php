@@ -8,6 +8,7 @@ use App\Livewire\AcademicDep\DisplayClassSubjects;
 use App\Livewire\AcademicDep\DisplayClassrooms;
 use App\Livewire\AcademicDep\DisplayActivities;
 use App\Livewire\AcademicDep\DisplaySubjects;
+use App\Livewire\DisplayTeachers;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\DisplayStudents;
 use App\Livewire\Student;
@@ -18,8 +19,9 @@ Route::get('/class-subjects',DisplayClassSubjects::class)->name('display-class-s
 Route::get('/class-teachers',DisplayClassTeachers::class)->name('display-class-teachers');
 Route::get('/classrooms',DisplayClassrooms::class)->name('display-classrooms');
 Route::get('/activities',DisplayActivities::class)->name('display-activities');
-Route::get('/subjects',DisplaySubjects::class)->name('display-subjects');
 Route::get('/levels',DisplayEducationalLevels::class)->name('display-levels');
+Route::get('/subjects',DisplaySubjects::class)->name('display-subjects');
+Route::get('/teachers',DisplayTeachers::class)->name('display-teachers');
 
 Route::get('/displayStudents',DisplayStudents::class)
 ->name('displayStudents');

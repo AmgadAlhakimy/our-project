@@ -1,17 +1,17 @@
 <?php $__env->startSection('content'); ?>
     <?php $counter = 1 ?>
         <!--    --><?php //$month = "2024-01-31" ?><!---->
-    
-    
-    
-    
-    
+
+
+
+
+
 
     <div class="my-table">
-        
-        
+
+
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2"> Outcome for the month</h4>
                 <div class="row first-card mt-4">
@@ -29,23 +29,23 @@
                 </div>
             </div>
 
-            
+
             <form method="post" action="<?php echo e(route('marks.update',$classroom->id)); ?>">
                 <?php echo method_field('PUT'); ?>
                 <?php echo csrf_field(); ?>
                 <div class="cards-container  third-card">
                     <div class="card-info card-info_2 col ">
                         <h4 class=" Names"> <?php echo e($classroom->name); ?></h4>
-                        
+
                     </div>
 
                     <div class="card-info card-info_2 col ">
                         <h4 class=" text-center">Month</h4>
-                        
+
                     </div>
                 </div>
 
-                
+
                 <!-- table-hover table-striped -->
                 <div class=" table-section shadow-none">
                     <div class="card table-section ">
@@ -175,11 +175,11 @@ unset($__errorArgs, $__bag); ?></td>
                 </div>
                 <div class=" box row mt-5">
                     <div class=" col mt-1 ">
-                        
+
                         <input class="save-button  " type="button" value="<?php echo e(__('public.ترحيل')); ?>">
                     </div>
                     <div class=" col mt-1">
-                        
+
                         <input class="save-button " type="submit" value="<?php echo e(__('public.save')); ?>">
                     </div>
                     <div class="  col mt-1">
@@ -189,4 +189,4 @@ unset($__errorArgs, $__bag); ?></td>
 <?php $__env->stopSection(); ?>
 
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/marks/insert_marks.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers-affairs/marks/insert_marks.blade.php ENDPATH**/ ?>

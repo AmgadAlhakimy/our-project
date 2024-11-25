@@ -24,7 +24,7 @@ class StudentController extends Controller
         try {
         $students = Student::paginate(20);
         $classrooms= Classroom::all();
-        return view('students_affairs/students.show_students',
+        return view('students-affairs/students.show_students',
             compact('students', 'classrooms'));
 
         }catch (\Exception  $e){
@@ -41,7 +41,7 @@ class StudentController extends Controller
         $classrooms = Classroom::all();
         $relatives = Relative::all();
         $levels = EducationalLevel::all();
-        return view('students_affairs/students.create_student',
+        return view('students-affairs/students.create_student',
             compact('classrooms','relatives', 'levels'));
 
         }catch (Exception $e){
@@ -106,7 +106,7 @@ class StudentController extends Controller
     {
         try {
             $students = Student::onlyTrashed()->get();
-            return view('students_affairs/students.deleted_students',
+            return view('students-affairs/students.deleted_students',
                 compact('students', ));
 
         }catch (Exception $e){
@@ -122,7 +122,7 @@ class StudentController extends Controller
         try {
             $student = Student::findorFail($id);
             $classrooms = Classroom::all();
-            return view('students_affairs/students.edit_student',
+            return view('students-affairs/students.edit_student',
                 compact('student','classrooms'));
 
         }catch (\Exception $e){
@@ -258,7 +258,7 @@ class StudentController extends Controller
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");
             })->get();
-            return view('students_affairs/students.show_students',
+            return view('students-affairs/students.show_students',
                 compact('search','students'));
 
         }catch (\Exception $e){
@@ -273,7 +273,7 @@ class StudentController extends Controller
     {
         try {
             $student = Student::findorFail($id);
-            return view('students_affairs/students.student_more_info',
+            return view('students-affairs/students.student_more_info',
                 compact('student',));
 
         }catch (\Exception $e){

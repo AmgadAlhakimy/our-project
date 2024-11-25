@@ -1,11 +1,11 @@
 <?php $__env->startSection('content'); ?>
     <div class="my-table">
 
-        
-        
-        
+
+
+
         <div class="table-header">
-            
+
             <div class="row first-card ">
                 <h4 class="col container-title mt-2"><?php echo e(__('teacher.absent children')); ?></h4>
                 <div class="row first-card mt-4">
@@ -21,7 +21,7 @@
                     </form>
                 </div>
             </div>
-            
+
 
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- table-hover table-striped -->
         <div class=" table-section shadow-none">
             <div class="card table-section ">
@@ -47,7 +47,7 @@
                         <th class="th-head-1 "><?php echo e(__('public.absent')); ?></th>
                         <th class="th-head-1"><?php echo e(__('teacher.absent reason')); ?></th>
                         <th class="th-head-1"><?php echo e(__('teacher.departure time')); ?></th>
-                        
+
 
                     </tr>
                 </thead>
@@ -78,15 +78,15 @@
             </table>
             </div>
         </div>
-        
+
         <div class=" mt-5 row">
             <div class="box col ">
                 <input class="save-button me-5 ms-5 " type="submit" value="<?php echo e(__('public.save')); ?>">
                 <input class="clear-button me-5 ms-5 " type="reset" value="<?php echo e(__('public.clear')); ?>">
             </div>
         </div>
-        
+
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers_affairs/absence/absent_student_class.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/teachers-affairs/absence/absent_student_class.blade.php ENDPATH**/ ?>

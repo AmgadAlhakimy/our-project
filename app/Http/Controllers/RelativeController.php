@@ -30,7 +30,7 @@ class RelativeController extends Controller
     public function create()
     {
         try {
-            return view('students_affairs/relatives.create_relative');
+            return view('students-affairs/relatives.create_relative');
         }catch (\Exception $e)
         {
             return redirect()->back()->with(['error' => $e->getMessage()]);
