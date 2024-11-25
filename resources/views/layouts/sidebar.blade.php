@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="">
 @include('layouts.header')
 
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
@@ -51,6 +52,14 @@
 <!-- start link js -->
     @include('layouts.js_links')
 
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".container-title"), {
+            max: 4,
+            speed: 20
+        });
+        //It also supports NodeList
+        VanillaTilt.init(document.querySelectorAll(".container-title"));
+    </script>
 <!-- end link js -->
 </body>
 </html>
