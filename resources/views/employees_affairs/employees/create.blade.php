@@ -1,5 +1,5 @@
 @extends('layouts.sidebar')
-@section('content')
+@section('content') 
     <main class="main ">
         <section class="section card-body">
             @if(Session::has('success'))

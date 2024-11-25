@@ -15,6 +15,7 @@ return [
 
     //create educational Level
     'create new Subject'=>'إنشاء مادة جديدة',
+    'DELETED SUBJECTS'=>'حذف مادة دراسية',
     'update Subject'=>'تعديل مادة',
     'Subject name in english'=>'اسم المادة بالإنجليزية',
     'Subject name in arabic'=>'اسم المادة بالعربية',

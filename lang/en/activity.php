@@ -11,7 +11,7 @@ return [
     | the validator class. Some of these rules have multiple versions such
     | as the size rules. Feel free to tweak each of these messages here.
     |
-    */
+    */ 
 
     //shared in many pages
     'create new Activity'=>'Create New Activity',
@@ -24,6 +24,7 @@ return [
     'date of Activity'=>'Date of Activity',
     'other info'=>'Other Info',
     'activity'=>'Activity',
+    'DELETED ACTIVITIES'=>'DELETED ACTIVITIES',
     'activities'=>'Activities',
     'update Activity'=>'Update Activity: ',
     'please select an activity'=>'Please Select an Activity',

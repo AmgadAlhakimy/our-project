@@ -1,22 +1,10 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-        <div class="table-header">
+        <div class="table-header"> 
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('DELETED EDUCATIONAL LEVELS')}}</h4>
-                <div class="row first-card mt-4">
-                    <form method="post" action="{{route('students.search')}}">
-                        @method('GET')
-                        @csrf
-                        <div class="row">
-                            <label class="col-10">
-                                <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
-                            </label>
-                            <button type="submit" class="col save-button ">{{__('public.search')}}</button>
-                        </div>
-                    </form>
-                </div>
+                <h4 class="col container-title mt-2">{{__('edulevel.DELETED EDUCATIONAL LEVELS')}}</h4>
             </div>
         </div>
         
@@ -27,14 +15,9 @@
             <table class=" " id="check_table">
                     <thead>
                     <tr>
-                        <th>
-                            <label for="" class=" n_rect">
-                                {{__('public.num')}}
-                            </label>
-                        </th>
                         
                         <th>
-                            <div class="th-head-1">{{__('public.id')}}</div>
+                            <div class=" n_rect">{{__('public.id')}}</div>
                         </th>
                         <th>
                             <div class="th-head-3">{{__('public.name')}}</div>
@@ -53,11 +36,6 @@
                     <tbody>
                     @foreach($levels as $Level)
                         <tr>
-                            <td>
-                                <div class="td_rect">
-                                1
-                                </div>
-                            </td>
                             <td>
                                 <div class="td_rect">
                                 {{$Level->id}}
@@ -80,8 +58,8 @@
                             </td>
                             <td>
                                 <a href="{{route('educational-levels.restore',$Level->id)}}"
-                                   class="btn save-button btn-success w-100">
-                                    <i class="fa-solid fa-pen-to-square"></i> {{__('public.restore')}} </a>
+                                    class="btn save-button btn-success w-100">
+                                        <i class="fa-solid fa-pen-to-square"></i> {{__('public.restore')}} </a>
                             </td>
                             <td>
                                 <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"
@@ -90,8 +68,8 @@
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$Level->id}}"
-                                     tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
+                                        tabindex="-1" aria-labelledby="exampleModalLabel"
+                                        aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -104,7 +82,7 @@
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
                                                 <form method="post"
-                                                      action="{{route('educational-levels.forceDelete',$Level->id)}}">
+                                                        action="{{route('educational-levels.forceDelete',$Level->id)}}">
                                                     @method('get')
                                                     @csrf.
                                                     <button type="submit"

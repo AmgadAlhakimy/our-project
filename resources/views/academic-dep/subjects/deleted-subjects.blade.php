@@ -5,19 +5,8 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('DELETED SUBJECTS')}}</h4>
-                <div class="row first-card mt-4">
-                    <form method="post" action="{{route('students.search')}}">
-                        @method('GET')
-                        @csrf
-                        <div class="row">
-                            <label class="col-10">
-                                <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
-                            </label>
-                            <button type="submit" class="col save-button ">{{__('public.search')}}</button>
-                        </div>
-                    </form>
-                </div>
+                <h4 class="col container-title mt-2">{{__('subject.DELETED SUBJECTS')}}</h4>
+
             </div>
         </div>
         <!-- table-hover table-striped -->
@@ -27,12 +16,7 @@
                     <thead>
                     <tr>
                         <th>
-                            <label for="" class=" n_rect">
-                                {{__('public.num')}}
-                            </label>
-                        </th>
-                        <th>
-                            <div class="th-head-1">{{__('public.id')}}</div>
+                            <div class="n_rect">{{__('public.id')}}</div>
                         </th>
                         <th>
                             <div class="th-head-3">{{__('public.name')}}</div>
@@ -51,11 +35,7 @@
                     <tbody>
                     @foreach($subjects as $subject)
                         <tr>
-                            <td>
-                                <div class="td_rect">
-                                    1
-                                </div>
-                            </td>
+                            
                             <td>
                                 <div class="td_rect">
                                 {{$subject->id}}

@@ -4,7 +4,6 @@
 
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
-
     @include('layouts.sidebar_header')
 <!-- start sidebar -->
 
@@ -16,6 +15,7 @@
                     <ul class="list-ul ">
 
 
+                        
                         {{-- academic department --}}
                         @include('layouts.academic_department.academic_department')
                         <!-- ========== 5 ============ -->
