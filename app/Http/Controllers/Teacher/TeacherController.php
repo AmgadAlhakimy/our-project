@@ -22,7 +22,7 @@ class TeacherController extends Controller
     {
         try {
             $teachers = Teacher::all();
-            return view('teachers-affairs/teachers.display-teachers',
+            return view('employees-affairs.teachers.display-teachers',
                 compact('teachers'));
 
         } catch (\Exception $e) {
@@ -36,7 +36,7 @@ class TeacherController extends Controller
     public function create()
     {
         try {
-            return view('teachers-affairs/teachers.create-teacher');
+            return view('employees-affairs.teachers.create-teacher');
 
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -90,7 +90,7 @@ class TeacherController extends Controller
     {
         try {
             $teachers = Teacher::onlyTrashed()->get();
-            return view('teachers-affairs/teachers.deleted-teachers',
+            return view('employees-affairs.teachers.deleted-teachers',
                 compact('teachers', ));
 
         }catch (\Exception $e){
@@ -105,7 +105,7 @@ class TeacherController extends Controller
     {
         try {
             $teacher = Teacher::findorFail($id);
-            return view('teachers-affairs/teachers.edit-teacher',
+            return view('employees-affairs.teachers.edit-teacher',
                 compact('teacher'));
 
         } catch (\Exception $e) {

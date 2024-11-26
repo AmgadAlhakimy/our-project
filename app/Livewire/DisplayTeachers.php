@@ -29,7 +29,7 @@ class DisplayTeachers extends Component
                 ->orwhere('salary','like',"%$this->search%")->get();
             $teachers = $this->queryData("App\Models\Teacher\Teacher", $myQuery);
 
-            return view('teachers-affairs.teachers.display-teachers', [
+            return view('employees-affairs.teachers.display-teachers', [
                 'teachers' => $teachers,
             ])->title('Teachers');
         } catch (\Exception $e) {
