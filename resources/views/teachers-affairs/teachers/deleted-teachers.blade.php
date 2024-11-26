@@ -8,10 +8,10 @@
             <h4 class="col container-title mt-2">{{__('activity.DELETED ACTIVITIES')}} </h4>
         </div>
     </div>
-    <div class="my-table mt-5">
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none ">
-            <div class="card table-section">
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                
                 <table class=" ">
                     <thead>
                     <tr>
@@ -28,34 +28,76 @@
                         <th><div class="th-head-3">{{__('public.created at')}}</div></th>
                         <th><div class="th-head-3">
                             {{__('public.updated at')}}</div></th>
-                        <th><div class="th-head-2" >{{__('public.processes')}}</div></th>
-                        <th><div class="th-head-2"></div></th>
+                        <th colspan="2"><div class="th-head-4" >{{__('public.processes')}}</div></th>
+                        {{-- <th><div class="th-head-2"></div></th> --}}
                         {{-- <th><div class="th-head-1"></div></th> --}}
                     </tr>
                     </thead>
                     @foreach($teachers  as $teacher )
                         <tbody>
                         <tr>
-                            <td>{{$teacher->id}}</td>
-                            <td>{{$teacher->name}}</td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->id}}</td>
+                                </div>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->name}}</td>
+                                </div>
                             <td><img src="{{asset($teacher->photo)}}"
                                      class="student-img" alt="photo"></td>
-                            <td>{{$teacher->contact}}</td>
-                            <td>{{$teacher->gender}}</td>
-                            <td>{{$teacher->address}}</td>
-                            <td>{{$teacher->qualification}}</td>
-                            <td>{{$teacher->salary}}</td>
-                            <td>{{$teacher->major}}</td>
-                            <td>{{$teacher->note}}</td>
-                            <td>{{$teacher->created_at}}</td>
-                            <td>{{$teacher->updated_at}}</td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->contact}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->gender}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->address}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->qualification}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->salary}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->major}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->note}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->created_at}}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="td_rect">
+                                    {{$teacher->updated_at}}
+                                </div>
+                            </td>
                             <td>
                                 <a href="{{route('teachers.restore',$teacher->id)}}"
-                                   class="btn my-save-button btn-success w-100">
+                                   class="btn save-button btn-success w-100">
                                     <i class="fa-solid fa-pen-to-square"></i> {{__('public.restore')}} </a>
                             </td>
                             <td>
-                                <button class="btn my-clear-button btn-danger w-100" data-bs-toggle="modal"
+                                <button class="btn clear-button btn-danger w-100 " data-bs-toggle="modal"
                                         data-bs-target="#delete{{$teacher->id}}">
                                     <i class="fa-solid fa-trash"></i> {{__('public.force delete')}}
                                 </button>
@@ -73,7 +115,8 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                    {{__('public.cancel')}}</button>
+                                                    {{__('public.cancel')}}
+                                                </button>
                                                 <form method="post" action="{{route('teachers.forceDelete',$teacher->id)}}">
                                                     @method('GET')
                                                     @csrf
@@ -84,13 +127,12 @@
                                     </div>
                                 </div>
                             </td>
-                            <td></td>
+                            {{-- <td></td> --}}
                         </tr>
                         @endforeach
                         </tbody>
                 </table>
             </div>
         </div>
-    </div>
 </div>
 @endsection

@@ -14,7 +14,11 @@
                 <table class=" " id="check_table">
                     <thead>
                     <tr>
-                        <th><div class="n_rect">{{__('public.id')}}</div></th>
+                        <th>
+                            <div class="n_rect">
+                                {{__('public.id')}}
+                            </div>
+                        </th>
                         <th class="th-head-3">
                             {{__('public.name')}}
                         </th>
