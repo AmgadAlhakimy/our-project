@@ -20,6 +20,7 @@ trait QueryTrait
     public function queryData($myModel,$myQuery)
     {
         $lang = LaravelLocalization::setLocale();
+
         if (strlen($this->search) >= 1) {
             $this->isPaginate = false;
             $data = $myQuery;

@@ -31,7 +31,7 @@
     </div>
     <div class="submenu">
         <div class="line-black">
-            <a href='/add-emp' class="li-link">{{__('sidebar.add new emb')}}</a>
+            <a href="{{route('employees.create')}}" class="li-link">{{__('sidebar.add new emb')}}</a>
             <a href="#" class="li-link">{{__('sidebar.view emb')}}</a>
             <a href="#" class="li-link">{{__('sidebar.deleted emb')}}</a>
         </div>
