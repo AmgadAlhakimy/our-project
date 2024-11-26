@@ -1,8 +1,16 @@
 @extends('layouts.sidebar')
 @section('content')
+<div class="my-table mt-5">
+    <!-- table-hover table-striped --> 
+    <div class="table-header">
+        {{-- the title and search --}}
+        <div class="row first-card ">
+            <h4 class="col container-title mt-2">{{__('activity.DELETED ACTIVITIES')}} </h4>
+        </div>
+    </div>
     <div class="my-table mt-5">
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none">
+        <div class="table-section shadow-none ">
             <div class="card table-section">
                 <table class=" ">
                     <thead>
@@ -18,10 +26,11 @@
                         <th><div class="th-head-2">{{__('public.major')}}</div></th>
                         <th><div class="th-head-3">{{__('public.note')}}</div></th>
                         <th><div class="th-head-3">{{__('public.created at')}}</div></th>
-                        <th><div class="th-head-3">{{__('public.updated at')}}</div></th>
-                        <th><div class="th-head-2">{{__('public.processes')}}</div></th>
+                        <th><div class="th-head-3">
+                            {{__('public.updated at')}}</div></th>
+                        <th><div class="th-head-2" >{{__('public.processes')}}</div></th>
                         <th><div class="th-head-2"></div></th>
-                        <th><div class="th-head-1"></div></th>
+                        {{-- <th><div class="th-head-1"></div></th> --}}
                     </tr>
                     </thead>
                     @foreach($teachers  as $teacher )
@@ -83,4 +92,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

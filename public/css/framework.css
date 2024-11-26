@@ -1161,3 +1161,15 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 40px;
     }
 }
+
+
+
+
+/* msg_delete style */
+.msg_delete{
+    /* background-color: red; */
+
+}
+.modal-dialog{
+    margin-top: 190px;
+}

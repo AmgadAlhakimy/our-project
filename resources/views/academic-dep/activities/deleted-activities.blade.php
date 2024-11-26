@@ -7,7 +7,6 @@
             {{-- the title and search --}}
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">{{__('activity.DELETED ACTIVITIES')}} </h4>
-            
             </div>
         </div>
         <div class=" shadow-none mt-4 ">
