@@ -7,7 +7,6 @@
             {{-- the title and search --}}
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">{{__('activity.DELETED ACTIVITIES')}} </h4>
-            
             </div>
         </div>
         <div class=" shadow-none mt-4 ">
@@ -15,7 +14,11 @@
                 <table class=" " id="check_table">
                     <thead>
                     <tr>
-                        <th><div class="n_rect">{{__('public.id')}}</div></th>
+                        <th>
+                            <div class="n_rect">
+                                {{__('public.id')}}
+                            </div>
+                        </th>
                         <th class="th-head-3">
                             {{__('public.name')}}
                         </th>
