@@ -14,22 +14,22 @@
         <div class="sidebar-nav ">
             <ul class="list-ul ">
 
-{{--                @include('layouts.academic-department.academic-department')--}}
-{{--                @include('layouts.control-department.control-department')--}}
-{{--                @include('layouts.teachers.teachers')--}}
-{{--                @include('layouts.parents.parents')--}}
+                @include('layouts.academic-department.academic-department')
+                {{--                @include('layouts.control-department.control-department')--}}
+                {{--                @include('layouts.teachers.teachers')--}}
+                {{--                @include('layouts.parents.parents')--}}
                 @include('layouts.personnel-affairs.personnel-affairs')
                 @include('layouts.students-affairs.students-affairs')
             </ul>
         </div>
     </div>
-    <div class="section-home">
-        <div id="my_toggle" class="toggle-sidebar">
-            {{ $slot }}
-        </div>
-    </div>
-    <!-- ====================== -->
 </div>
+<div class="section-home">
+    <div id="my_toggle" class="toggle-sidebar">
+        {{ $slot }}
+    </div>
+</div>
+<!-- ====================== -->
 @include('layouts.js_links')
 
 </body>

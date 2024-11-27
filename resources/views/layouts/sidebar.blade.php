@@ -36,13 +36,12 @@
             </ul>
         </div>
     </div>
-
+</div>
     @include('layouts.toggle-section.toggle-section')
 
 
     {{-- start toggle section --}}
 
-</div>
 <!-- end sidebar -->
 <!-- ====================== -->
 <!-- ====================== -->
