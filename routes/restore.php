@@ -3,6 +3,7 @@
 use App\Http\Controllers\Activity\ActivityController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Level\EducationalLevelController;
+use App\Http\Controllers\MajorController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
@@ -37,3 +38,7 @@ Route::get('semesters/restore/{id}',
 Route::get('teachers/restore/{id}',
     [TeacherController::class, 'restore'])
     ->name('teachers.restore');
+
+Route::get('majors/restore/{id}',
+    [MajorController::class, 'restore'])
+    ->name('majors.restore');
