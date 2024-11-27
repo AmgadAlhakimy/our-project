@@ -91,8 +91,8 @@ input::-webkit-inner-spin-button {
 /* End scroll style  */
 /* Start section  */
 .section {
-    /* flex: 1 1 auto; */
-    padding: 0 2rem;
+    flex: 1 1 auto;
+    padding: 0 2rem; 
     margin-top: 130px;
 }
 .containers-style {
@@ -1172,4 +1172,12 @@ input[type="checkbox"].toggle:checked + input.test1 {
 }
 .modal-dialog{
     margin-top: 190px;
+}
+.modal-header {
+    display: block;
+    border: none;
+}
+.modal-title .danger_msg{
+    font-size: 90px;
+    
 }

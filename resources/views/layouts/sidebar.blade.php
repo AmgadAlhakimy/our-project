@@ -11,7 +11,7 @@
     <div class="sidebar my-scroll">
 
         <!-- ============= LIST ============== -->
-        <div class="sidebar-nav ">
+        <div class="sidebar-nv ">
             <ul class="list-ul ">
 
 

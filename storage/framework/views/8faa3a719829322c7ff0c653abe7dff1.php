@@ -11,19 +11,19 @@
     <div class="sidebar my-scroll">
 
         <!-- ============= LIST ============== -->
-        <div class="sidebar-nav ">
+        <div class="sidebar-nv ">
             <ul class="list-ul ">
 
 
                 
-                <?php echo $__env->make('layouts.academic-department.academic-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
                 <!-- ========== 5 ============ -->
-                <?php echo $__env->make('layouts.control-department.control-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
                 <!-- ========== 5 ============ -->
-                <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 
                 <!-- ======================== PARENTS ========================== -->
-                <?php echo $__env->make('layouts.parents.parents', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 
                 
                 <!-- ======================== EMB ========================== -->
