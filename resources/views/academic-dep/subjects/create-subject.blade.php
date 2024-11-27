@@ -1,4 +1,3 @@
-{{-- انشاء مادة جديدة --}}
 @extends('layouts.sidebar')
 @section('content')
     <main class="main ">

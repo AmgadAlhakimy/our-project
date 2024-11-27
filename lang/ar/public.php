@@ -16,6 +16,7 @@ return [
     //shared in many pages
     'title'=>'روضة كوكب الصغار',
     'save'=>'حفظ',
+    'add'=>'إضافة',
     'ok'=>'موافق',
     'clear'=>'إفارغ',
     'edit'=>'تعديل',

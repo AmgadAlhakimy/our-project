@@ -1,5 +1,6 @@
 @extends('layouts.sidebar')
 @section('content')
+
     <main class="main ">
         <section class="section ">
             @if(Session::has('success'))
@@ -131,7 +132,103 @@
                             @enderror
                         </div>
                     </div>
-                </div>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            margin: 20px;
+                        }
+                        .btn {
+                            padding: 10px 20px;
+                            background-color: #007BFF;
+                            color: white;
+                            border: none;
+                            cursor: pointer;
+                            border-radius: 5px;
+                        }
+                        .popup {
+                            display: none;
+                            position: fixed;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                            background-color: white;
+                            border: 1px solid #ccc;
+                            padding: 20px;
+                            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                            z-index: 1000;
+                            width: 300px;
+                        }
+                        .overlay {
+                            display: none;
+                            position: fixed;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, 0.5);
+                            z-index: 999;
+                        }
+                        .close {
+                            cursor: pointer;
+                            color: red;
+                            float: right;
+                        }
+                        .input-field {
+                            margin: 10px 0;
+                            width: calc(100% - 20px);
+                        }
+                    </style>
+                    <label class="btn save-button" onclick="showPopup()">Add Major</label>
+
+                    <div class="overlay" id="overlay" onclick="hidePopup()"></div>
+                    <div class="popup" id="popup">
+                        <span class="close" onclick="hidePopup()">&times;</span>
+                        <h3>Add Major</h3>
+                        <label for="majorEnglish">Major Name (English):</label>
+                        <input type="text" id="majorEnglish" name="majorEn" class="input-field" placeholder="Enter major in English">
+                        @error('majorEn')
+                        <small class="form-text text-danger">{{$message}}</small>
+                        @enderror
+                        <label for="majorArabic">Major Name (Arabic):</label>
+                        <input type="text" id="majorArabic" name="majorAr" class="input-field" placeholder="ادخل التخصص بالعربية">
+                        <button class="btn" onclick="saveMajor()">Save</button>
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        function showPopup() {
+                            document.getElementById('popup').style.display = 'block';
+                            document.getElementById('overlay').style.display = 'block';
+                        }
+
+                        function hidePopup() {
+                            document.getElementById('popup').style.display = 'none';
+                            document.getElementById('overlay').style.display = 'none';
+                        }
+
+                        function saveMajor() {
+                            const majorEng = $('#majorEnglish').val();
+                            const majorArab = $('#majorArabic').val();
+
+                            $.ajax({
+                                url: '/majors', // Your Laravel route to handle saving majors
+                                type: 'POST',
+                                data: {
+                                    _token: '{{ csrf_token() }}', // CSRF token for security
+                                    english: majorEng,
+                                    arabic: majorArab
+                                },
+                                success: function(response) {
+                                    alert('Major saved successfully!');
+                                    hidePopup();
+                                },
+                                error: function(xhr) {
+                                    alert('Error saving major: ' + xhr.responseText);
+                                }
+                            });
+                        }
+                    </script>
+                  </div>
                 <!-- End functional info  -->
                 <!-- Start final box -->
                 <h3 class="container-title">{{__('teacher.other info')}}</h3>
@@ -161,4 +258,10 @@
             </form>
         </section>
     </main>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 @endsection

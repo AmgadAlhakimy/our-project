@@ -52,27 +52,30 @@ return [
         'subjects - classes'=>'Subjects -Classes',
         'classes - activities'=>'Classes - Activities',
         'teachers - subjects'=>'Teachers - Subjects',
-        'teachers - classes'=>'Teachers - Classes', 
+        'teachers - classes'=>'Teachers - Classes',
 
         'display relationships'=>'Display Relations',
         'display subjects - teachers'=>'Display Teacher-Subjects',
         'display classes -  teacher'=>'Display Teacher-Classes',
         'display subjects - classes'=>'Display Class-Subjects',
         'display classes - activities'=>'Display Class-Activities',
-        
+
         'parent'=>'parent',
         'parent section'=>'parent section',
         'personnel affairs'=>'Personnel Affairs',
         'personnel affairs section'=>'Personnel Affairs Section',
-        
+
         'son info'=>'Son Information',
         'daily follow up '=>'Absent & Daily Follow Up',
         'monthly marks'=>'Monthly Marks',
         'final marks'=>'Final Marks',
 
         'add new teacher'=>'Add a New Teacher',
+        'add new major'=>'Add a New Major',
         'view teachers'=>'View Teachers',
+        'view majors'=>'View Majors',
         'deleted teachers'=>'Deleted Teachers',
+        'deleted majors'=>'Deleted Majors',
         'add new emb'=>'Add a New Emb',
         'view emb'=>'View Emb',
         'deleted emb'=>'Deleted Emb',
@@ -83,18 +86,11 @@ return [
         'first term income'=>'First Term Income',
         'second term income'=>'Second Term Income',
         'the first students'=>'The First Students',
-        'hhhh'=>'hhhh',
-        'hhhh'=>'hhhh',
-
-
-
-        'hhhh'=>'hhhh',
-        'hhhh'=>'hhhh',
-
 
 
         // work
     'teacher section' => 'Teacher Section',
+    'major section' => 'Major Section',
     'view records' => 'View Records',
 
 ];
