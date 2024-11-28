@@ -1,7 +1,5 @@
 @extends('layouts.sidebar')
 @section('content')
-
-
 <div class=" section ">
     <div class="row toggle">
         {{-- 1 --}}

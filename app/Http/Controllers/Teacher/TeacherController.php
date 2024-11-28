@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Teacher;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\StoreTeacherRequest;
 use App\Http\Requests\Teacher\UpdateTeacherRequest;
+use App\Models\Major;
 use App\Models\Teacher\Teacher;
 use App\Traits\EmployeeTrait;
 use App\Traits\PhotoTrait;
@@ -36,8 +37,9 @@ class TeacherController extends Controller
     public function create()
     {
         try {
-            return view('employees-affairs.teachers.create-teacher');
-
+            $majors = Major::all();
+            return view('employees-affairs.teachers.create-teacher',
+                compact('majors'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

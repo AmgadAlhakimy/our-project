@@ -30,7 +30,6 @@ class MajorController extends Controller
     {
         try {
             return view('employees-affairs.majors.create-major');
-
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -62,9 +61,9 @@ class MajorController extends Controller
         try {
             $majors = Major::onlyTrashed()->get();
             return view('employees-affairs.majors.deleted-majors',
-                compact('majors', ));
+                compact('majors',));
 
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -129,7 +128,7 @@ class MajorController extends Controller
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
 
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -144,7 +143,7 @@ class MajorController extends Controller
             return redirect()->back()
                 ->with(['warning' => trans('message.force delete')]);
 
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

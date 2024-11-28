@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="">
-@include('layouts.header')
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+@include('layouts.header')
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
 @include('layouts.sidebar-header')
-<!-- start sidebar -->
 
 <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="" @endif>
     <div class="sidebar my-scroll">
 
         <!-- ============= LIST ============== -->
-        <div class="sidebar-nv ">
-            <ul class="list-ul ">
+        <div class="sidebar-nav">
+            <ul class="list-ul">
 
 
                 {{-- academic department --}}
