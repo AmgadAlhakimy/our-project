@@ -1,6 +1,5 @@
 @extends('layouts.sidebar')
 @section('content')
-
     <main class="main ">
         <section class="section ">
             @if(Session::has('success'))
@@ -115,23 +114,21 @@
                             @enderror
                         </div>
                         <!-- 3 -->
-                        <div class="box row">
-                            <label for="t-address">{{__('teacher.major in english')}}</label>
-                            <input type="text" class=" form-control ms-2 me-2" id='t-address' name="major"
-                                value="{{old('major')}}">
+                        <div class="box col-lg-6 col-md-12">
+                            <label for="major">{{__('major.major')}}</label>
+                            <select class="form-control" id="major" name="major">
+                                <option value="" disabled {{ old('major') ? '' : 'selected' }}>{{ __('major.please select the major') }}</option>
+                            @foreach($majors as $major)
+                                    <option class="text-center" value="{{$major->id}}"
+                                        {{ old('major') }}>{{$major->name}}</option>
+                                @endforeach
+                            </select>
                             @error('major')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <div class="box row">
-                            <label for="t-address">{{__('teacher.major in arabic')}}</label>
-                            <input type="text" class=" form-control ms-2 me-2" id='t-address'
-                                name="major_ar" value="{{old('major_ar')}}">
-                            @error('major_ar')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
                     </div>
+<<<<<<< HEAD
 
                     {{-- working on this after discation with my partner --}}
                     <style>
@@ -229,6 +226,8 @@
                             });
                         }
                     </script>
+=======
+>>>>>>> 8708c2b1498073920fb33fafd058136368f6aad2
                   </div>
                 <!-- End functional info  -->
                 <!-- Start final box -->
@@ -259,10 +258,4 @@
             </form>
         </section>
     </main>
-    <script>
-        function toggleDropdown() {
-            const dropdown = document.getElementById('dropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
 @endsection
