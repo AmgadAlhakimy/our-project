@@ -17,7 +17,7 @@
                                 <input type="text" required class="form-control "  name="search" value="{{isset($search) ? $search : ''}}">
                             </label>
                             <button type="submit" class="col save-button ">{{__('public.search')}}</button>
-                            
+
                         </div>
                     </form>
                 </div>
@@ -53,7 +53,7 @@
                                 <div class=" ">
                                     {{__('public.num')}}
                                 </div>
-                                
+
                             </th>
                             <th class="" >id</th>
                             <th class="" >  Name </th>
@@ -72,7 +72,7 @@
                             <th class="th-hea text-success" >الترتيب <div>700</div></th>
                             <th class="th-hea " >mor info</th>
                                 {{-- buttons --}}
-                                    
+
                         </tr>
                     </thead>
                     {{-- ====================== --}}
@@ -89,7 +89,7 @@
                             <td>10</td>
                             <td>20</td>
                             <td>20</td>
-                            
+
                             <td class="text-dark font_bold">20</td>
                             <td class="text-dark font_bold">30</td>
                             <td class="text-danger font_bold">700</td>
@@ -102,7 +102,7 @@
                             <td class="">
                                 <a href='/all_marks_of_first_term'
                                     class="btn save-button text-info ">
-                                    <i class="text-info fa-solid fa-info-circle"></i> {{__('Student.more info')}} </a>
+                                    <i class="text-info fa-solid fa-info-circle"></i> {{__('CreateStudent.more info')}} </a>
                             </td>
                         </tr>
                     </tbody>

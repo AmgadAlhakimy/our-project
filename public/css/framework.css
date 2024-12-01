@@ -92,7 +92,7 @@ input::-webkit-inner-spin-button {
 /* Start section  */
 .section {
     flex: 1 1 auto;
-    padding: 0 2rem; 
+    padding: 0 2rem;
     margin-top: 130px;
 }
 .containers-style {
@@ -434,7 +434,7 @@ input::-webkit-inner-spin-button {
     transition: all 1s ease;
     transform: rotate(360deg);
 }
-/* .Student-img:hover{
+/* .CreateStudent-img:hover{
 
   transition: all 1s ease;
   transform: rotate(-20deg);
@@ -446,7 +446,7 @@ input::-webkit-inner-spin-button {
     justify-content: space-between;
     align-items: center;
 }
- 
+
 
 /* Start Check box Styles */
 
@@ -590,7 +590,7 @@ input::-webkit-inner-spin-button {
 }
 /* test */
 /* End Check box Styles */
-/* Start Student checkbox */
+/* Start CreateStudent checkbox */
 .toggle[type="checkbox"].toggle {
     display: none;
 }
@@ -650,7 +650,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     background-color: red;
 }
 
-/* End Student checkbox */
+/* End CreateStudent checkbox */
 .center_y_x {
     display: flex;
     justify-content: center;
@@ -736,7 +736,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .toggle_icon{
         font-size: 80px;
     }
-    
+
 }
 /* ------------------------------------- */
 @media (min-width: 680px) {
@@ -762,10 +762,10 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
     .head{
         padding: 15px 0px;
-    } 
+    }
     .sidebar{
         margin-top: 90px;
-    }   
+    }
     .ph-search_m {
         display: none;
     }
@@ -782,14 +782,14 @@ input[type="checkbox"].toggle:checked + input.test1 {
 
 /* ------------------------------------- */
 @media (min-width: 400px) {
-    
+
 }
 /* ------------------------------------- */
 @media (min-width: 575.9px) {
     .number_rows_links_2{
         display: none;
     }
-    
+
 }
 
 /* ----------------------------------------------------------------- */
@@ -803,7 +803,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .rows_2{
         display: none;
     }
-    
+
 }
 
 
@@ -870,7 +870,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .toggle_icon{
         font-size: 70px;
     }
-    
+
 }
 /* 690 */
 @media (max-width: 680px) {
@@ -978,8 +978,8 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .toggle_icon{
         font-size: 50px;
     }
-    
-    
+
+
 }
 /* _____________________________________________ */
 /* 560 */
@@ -999,7 +999,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
     .sidebar{
         margin-top: 70px;
-    } 
+    }
     .menu-name,
     .icon-1{
         font-size: 13px;
@@ -1179,5 +1179,5 @@ input[type="checkbox"].toggle:checked + input.test1 {
 }
 .modal-title .danger_msg{
     font-size: 90px;
-    
+
 }

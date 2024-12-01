@@ -13,15 +13,15 @@ return [
     |
     */
 
-    //create Student
-    'Register a new Student'=>'Register a new Student',
-    'Student info'=>'Student info',
-    "Student's name in arabic"=>"Student's name in Arabic",
-    "Student's name in english"=>"Student's name in English",
+    //create student
+    'Register a new student'=>'Register a new student',
+    'student info'=>'student info',
+    "student's name in arabic"=>"Student's name in Arabic",
+    "student's name in english"=>"Student's name in English",
     'photo'=>'Photo',
     'addresses'=>'Addresses',
-    "Student's address in arabic"=>"Student's address in Arabic",
-    "Student's address in english"=>"Student's address in English",
+    "student's address in arabic"=>"Student's address in Arabic",
+    "student's address in english"=>"Student's address in English",
     'gender'=>'gender',
     'male'=>'male',
     'female'=>'female',
@@ -49,7 +49,7 @@ return [
     'kin relationship in english'=>'kin relationship in English',
     'kin contact'=>'kin Contact',
     'health info'=>'Health Info',
-    'does the Student'=>'Does the Student',
+    'does the student'=>'Does the student',
     'take any medicine ?'=>'Take any Medicine ?',
     'no'=>'No',
     'yes'=>'Yes',
@@ -61,7 +61,7 @@ return [
     'parents'=>'Parents',
     'more info'=>'More info',
 
-    'student information'=>'Student Information',
+    'student information'=>'student Information',
     'personal info'=>'personal Information',
 
     "father name"=>"father name",

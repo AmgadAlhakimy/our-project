@@ -42,7 +42,7 @@
                     <thead >
                         <tr class="">
                             <th rowspan="2" class="num_table">
-                                <div class="check_style">                            
+                                <div class="check_style">
                                     <label >
                                         <input class=" " type="checkbox" name=""  id="select_all" value="">
                                         <i></i>
@@ -119,7 +119,7 @@
                     <tbody>
                         <tr class="test_1 ">
                             <td class="num_table">
-                                <div class="check_style">                            
+                                <div class="check_style">
                                     <label >
                                         <input class="check_item" type="checkbox" name=""  id=" checkbox" value="">
                                         <i></i>
@@ -137,31 +137,31 @@
                             {{-- td sub 1 --}}
                             <td>89</td>
                             <td>20</td>
-                            
+
                             {{-- td sub 2 --}}
                             <td>89</td>
                             <td>20</td>
-                            
+
                             {{-- td sub 3 --}}
                             <td>89</td>
                             <td>20</td>
-                            
+
                             {{-- td sub 4 --}}
                             <td>89</td>
                             <td>20</td>
-                            
+
                             {{-- td sub 5 --}}
                             <td>89</td>
                             <td>20</td>
-                            
+
                             {{-- td sub 6 --}}
                             <td>89</td>
                             <td>20</td>
-                            
+
                             {{-- td sub 7 --}}
                             <td>89</td>
                             <td>20</td>
-                            
+
                             {{-- td info 8 --}}
                             <td class="text-dark font_bold">89</td>
                             <td class="text-success font_bold">100%</td>
@@ -171,7 +171,7 @@
                             <td class="">
                                 <a href='/all_m_marks'
                                     class="btn save-button btn-info ">
-                                    <i class="fa-solid fa-info-circle"></i> {{__('Student.more info')}} </a>
+                                    <i class="fa-solid fa-info-circle"></i> {{__('CreateStudent.more info')}} </a>
                             </td>
                         </tr>
                     </tbody>

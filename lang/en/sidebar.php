@@ -42,10 +42,10 @@ return [
     'deleted activities'=>'Delete Activities',
 
     'students affairs'=>'Students Affairs',
-    'add a Student'=>'Add A Student',
-    'review students'=>'Review Student',
-    'deleted Student'=>'Delete Student',
-    'Student absence'=>'Student Absence',
+    'add a CreateStudent'=>'Add A CreateStudent',
+    'review students'=>'Review CreateStudent',
+    'deleted CreateStudent'=>'Delete CreateStudent',
+    'CreateStudent absence'=>'CreateStudent Absence',
 
         // relationships
         'relationships'=>'Relations',

@@ -33,7 +33,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Show creating new Student page.
+     * Show creating new CreateStudent page.
      */
     public function create()
     {
@@ -50,7 +50,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Store a new Student.
+     * Store a new CreateStudent.
      */
     public function store(StoreStudentRequest $request)
     {
@@ -115,7 +115,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Show the form for editing Student page.
+     * Show the form for editing CreateStudent page.
      */
     public function edit($id)
     {
@@ -131,7 +131,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Update the specified Student.
+     * Update the specified CreateStudent.
      */
     public function update(UpdateStudentRequest $request, $id)
     {
@@ -183,7 +183,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Remove the specified Student.
+     * Remove the specified CreateStudent.
      */
     public function destroy($id)
     {
@@ -199,7 +199,7 @@ class StudentController extends Controller
 
 
     /**
-     * Restore the specified Student.
+     * Restore the specified CreateStudent.
      */
     public function restore($id)
     {
@@ -219,7 +219,7 @@ class StudentController extends Controller
     }
 
     /**
-     * Remove by force the specified Student.
+     * Remove by force the specified CreateStudent.
      */
     public function forceDelete($id)
     {
@@ -236,7 +236,7 @@ class StudentController extends Controller
     }
 
     /**
-     * show Student according to the search.
+     * show CreateStudent according to the search.
      */
     public function search(Request $request)
     {
@@ -267,7 +267,7 @@ class StudentController extends Controller
     }
 
     /**
-     * show Student according to the search.
+     * show CreateStudent according to the search.
      */
     public function more($id)
     {

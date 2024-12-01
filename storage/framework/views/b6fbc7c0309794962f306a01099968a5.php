@@ -7,18 +7,18 @@
 
                 </div>
             <?php endif; ?>
-                <h3 class="container-title"><?php echo e(__('Student.update Student: ').$student->name); ?></h3>
+                <h3 class="container-title"><?php echo e(__('CreateStudent.update CreateStudent: ').$student->name); ?></h3>
                 <form method="post" action="<?php echo e(route('students.update', $student->id)); ?>" enctype="multipart/form-data">
                 <?php echo method_field('PUT'); ?>
                 <?php echo csrf_field(); ?>
                 <!-- Start personal info  -->
-                <h3 class="container-title"><?php echo e(__('Student.Student info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('CreateStudent.CreateStudent info')); ?></h3>
                 <div class="container containers-style ">
                     <div class="row">
 
                         <div class="box col-lg-6 col-md-12">
                             <label class="  title-3 "
-                            for="english-name"><?php echo e(__("Student.Student's name in arabic")); ?></label>
+                            for="english-name"><?php echo e(__("CreateStudent.CreateStudent's name in arabic")); ?></label>
                             <input type="text" class="form-control " id='english-name' name="name_ar" value="<?php echo e($student->getTranslation('name','ar')); ?>">
                             <?php $__errorArgs = ['name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -34,7 +34,7 @@ unset($__errorArgs, $__bag); ?>
 
                         <div class="box col-lg-6 col-md-12">
                             <label class="text-center"
-                                for="arab-name"><?php echo e(__("Student.Student's name in english")); ?></label>
+                                for="arab-name"><?php echo e(__("CreateStudent.CreateStudent's name in english")); ?></label>
                             <input type="text" class="form-control " id='arab-name' name="name"  value="<?php echo e($student->getTranslation('name','en')); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -65,9 +65,9 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box row">
-                            <label for="address"><?php echo e(__('Student.addresses')); ?></label>
+                            <label for="address"><?php echo e(__('CreateStudent.addresses')); ?></label>
                             <div class="col-lg-6 col-md-6">
-                                <span class=" text-center title-3 "><?php echo e(__("Student.Student's address in arabic")); ?></span>
+                                <span class=" text-center title-3 "><?php echo e(__("CreateStudent.CreateStudent's address in arabic")); ?></span>
                                 <input type="text" class=" form-control ms-2 me-2" id='address' name="address_ar"  value="<?php echo e($student->getTranslation('address','ar')); ?>">
                                 <?php $__errorArgs = ['address_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -83,7 +83,7 @@ unset($__errorArgs, $__bag); ?>
 
                             <div class="col-lg-6 col-md-6 ">
                                 <span
-                                    class=" text-center title-3 "><?php echo e(__("Student.Student's address in english")); ?></span>
+                                    class=" text-center title-3 "><?php echo e(__("CreateStudent.CreateStudent's address in english")); ?></span>
                                 <input type="text" class=" form-control ms-2 me-2" id="address" name="address"  value="<?php echo e($student->getTranslation('address','en')); ?>">
                                 <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -99,14 +99,14 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-6 col-md-6 ">
-                            <label for="gender"><?php echo e(__('Student.gender')); ?></label>
+                            <label for="gender"><?php echo e(__('CreateStudent.gender')); ?></label>
                             <select class="col form-select form-control" id="gender" name="gender">
                                 <option class="text-center"
-                                        value="<?php echo e(__('Student.male')); ?>" <?php if($student->getTranslation('gender','en') == 'male'): ?> selected <?php endif; ?>>
-                                    <?php echo e(__('Student.male')); ?></option>
+                                        value="<?php echo e(__('CreateStudent.male')); ?>" <?php if($student->getTranslation('gender','en') == 'male'): ?> selected <?php endif; ?>>
+                                    <?php echo e(__('CreateStudent.male')); ?></option>
                                 <option class="text-center"
-                                        value="<?php echo e(__('Student.female')); ?>"  <?php if($student->getTranslation('gender','en') == 'female'): ?> selected <?php endif; ?>>
-                                    <?php echo e(__('Student.female')); ?></option>
+                                        value="<?php echo e(__('CreateStudent.female')); ?>"  <?php if($student->getTranslation('gender','en') == 'female'): ?> selected <?php endif; ?>>
+                                    <?php echo e(__('CreateStudent.female')); ?></option>
                             </select>
                             <?php $__errorArgs = ['gender'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -121,7 +121,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-6 col-md-6">
-                            <label for="age"><?php echo e(__('Student.birthdate')); ?></label>
+                            <label for="age"><?php echo e(__('CreateStudent.birthdate')); ?></label>
                             <input type="date" class="form-control" id="age" name="birthdate" value="<?php echo e($student->birthdate); ?>">
                             <?php $__errorArgs = ['birthdate'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -136,7 +136,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-6 col-md-6">
-                            <label for="english-birth-place"><?php echo e(__('Student.place of birth in arabic')); ?></label>
+                            <label for="english-birth-place"><?php echo e(__('CreateStudent.place of birth in arabic')); ?></label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar"
                                    value="<?php echo e($student->getTranslation('place_of_birth','ar')); ?>">
                             <?php $__errorArgs = ['place_of_birth_ar'];
@@ -152,7 +152,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-6 col-md-6">
-                            <label for="arabic-birth-place"><?php echo e(__('Student.place of birth in english')); ?></label>
+                            <label for="arabic-birth-place"><?php echo e(__('CreateStudent.place of birth in english')); ?></label>
                             <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth"
                                    value="<?php echo e($student->getTranslation('place_of_birth','en')); ?>">
                             <?php $__errorArgs = ['place_of_birth'];
@@ -168,7 +168,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box ">
-                            <label for="className " class="form-label"><?php echo e(__('Student.class')); ?></label>
+                            <label for="className " class="form-label"><?php echo e(__('CreateStudent.class')); ?></label>
                             <select id="className " class="form-control" name="classroom_id">
                                 <?php $__currentLoopData = $classrooms; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $classroom): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option class="text-center" value="<?php echo e($classroom->id); ?>"
@@ -194,12 +194,12 @@ unset($__errorArgs, $__bag); ?>
                 <!-- End personal info  -->
 
                 <!-- Start health info  -->
-                <h3 class="container-title"><?php echo e(__('Student.health info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('CreateStudent.health info')); ?></h3>
                 <div class="container containers-style mb-5">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <h4 class="p-2"><?php echo e(__('Student.does the Student')); ?></h4>
-                            <label class="mt-3"><?php echo e(__('Student.take any medicine ?')); ?></label>
+                            <h4 class="p-2"><?php echo e(__('CreateStudent.does the CreateStudent')); ?></h4>
+                            <label class="mt-3"><?php echo e(__('CreateStudent.take any medicine ?')); ?></label>
                             <div class="input-group mt-2 mb-2">
                                 <input type="text" name="medicine_desc" id="std_medicine_desc" class="form-control"
                                     aria-label="Text input with radio button"  value="<?php echo e($student->getTranslation('medicine_desc','en')); ?>">
@@ -227,7 +227,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            <label class="mt-3"><?php echo e(__('Student.have an allergy ?')); ?></label>
+                            <label class="mt-3"><?php echo e(__('CreateStudent.have an allergy ?')); ?></label>
                             <div class="input-group mt-2 mb-2">
                                 <input type="text" name="allergy_desc" id="std_medicine_desc" class="form-control" value="<?php echo e($student->getTranslation('allergy_desc','en')); ?>"
                                     aria-label="Text input with radio button" >
@@ -255,7 +255,7 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                             </div>
-                            <label class="mt-3"><?php echo e(__('Student.have any health problem ?')); ?></label>
+                            <label class="mt-3"><?php echo e(__('CreateStudent.have any health problem ?')); ?></label>
                             <div class="input-group mt-2 mb-2">
 
                                 <input type="text" name="health_problem_desc" id="std_medicine_desc"
@@ -291,11 +291,11 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <!-- End health info  -->
                 <!-- Start final box -->
-                <h3 class="container-title"><?php echo e(__('Student.other info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('CreateStudent.other info')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="form-label" for="std_Note"><?php echo e(__('Student.note')); ?></label>
+                            <label class="form-label" for="std_Note"><?php echo e(__('CreateStudent.note')); ?></label>
                             <textarea name="note" class="form-control" id="std_Note" cols="50" rows="5"><?php echo e($student->note); ?></textarea>
                         </div>
                     </div>

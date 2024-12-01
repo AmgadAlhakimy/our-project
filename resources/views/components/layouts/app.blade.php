@@ -13,19 +13,12 @@
         <div class="sidebar-nav">
             <ul class="list-ul">
 
-<<<<<<< HEAD
-                @include('layouts.academic-department.academic-department')
-                @include('layouts.control-department.control-department')
-                @include('layouts.teachers.teachers')
-                @include('layouts.parents.parents')
-=======
-                {{--                @include('layouts.academic-department.academic-department')--}}
-                {{--                @include('layouts.control-department.control-department')--}}
-                {{--                @include('layouts.teachers.teachers')--}}
-                {{--                @include('layouts.parents.parents')--}}
->>>>>>> 8708c2b1498073920fb33fafd058136368f6aad2
-                @include('layouts.personnel-affairs.personnel-affairs')
                 @include('layouts.students-affairs.students-affairs')
+                                @include('layouts.academic-department.academic-department')
+                                @include('layouts.control-department.control-department')
+                                @include('layouts.teachers.teachers')
+                                @include('layouts.parents.parents')
+                @include('layouts.personnel-affairs.personnel-affairs')
             </ul>
         </div>
     </div>

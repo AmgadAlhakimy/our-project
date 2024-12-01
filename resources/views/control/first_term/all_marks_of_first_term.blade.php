@@ -35,8 +35,8 @@
                             <th class="th-hea text-dark" rowspan="">total <div>100</div></th>
                             <th class="th-hea text-success">كتابة</th>
                             <th class="th-hea text-danger">التقدير</th>
-                            
-                            
+
+
                         </tr>
                     </thead>
                     {{-- ====================== --}}
@@ -122,7 +122,7 @@
                 </table>
             </div>
         </div>
-        
+
         <div class="table-section">
             <div class="card table-section ">
                 <table class=" mark_table" id="check_table" >
@@ -149,7 +149,7 @@
         <div class="box mt-4">
             <a href='/'
                     class="btn save-button btn-info me-2 ms-2 ">
-                    <i class="fa-solid fa-info-circle"></i> {{__('Student.more info')}} </a>
+                    <i class="fa-solid fa-info-circle"></i> {{__('CreateStudent.more info')}} </a>
 
                 <a href="#"
                     class="btn save-button btn-success me-2 ms-2">

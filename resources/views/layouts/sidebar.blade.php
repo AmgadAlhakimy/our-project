@@ -13,9 +13,10 @@
         <div class="sidebar-nav">
             <ul class="list-ul">
 
+                @include('layouts.students-affairs.students-affairs')
+
                 {{-- -------------شؤون الطلاب---------------  --}}
                 <!-- ======================== STUDENTS ========================== -->
-                @include('layouts.students-affairs.students-affairs')
 
                 {{-- academic department --}}
                @include('layouts.academic-department.academic-department')
@@ -25,12 +26,12 @@
                @include('layouts.teachers.teachers')
 
                 <!-- ======================== PARENTS ========================== -->
-               {{-- @include('layouts.parents.parents') --}}
+                @include('layouts.parents.parents')
 
                 {{-- ---شؤون الموظفين--- --}}
                 <!-- ======================== EMB ========================== -->
-                {{-- @include('layouts.personnel-affairs.personnel-affairs') --}}
-                
+                 @include('layouts.personnel-affairs.personnel-affairs')
+
 
             </ul>
         </div>
@@ -38,25 +39,6 @@
 </div>
     @include('layouts.toggle-section.toggle-section')
 
-
-    {{-- start toggle section --}}
-
-<!-- end sidebar -->
-<!-- ====================== -->
-<!-- ====================== -->
-
-
-<!-- start link js -->
 @include('layouts.js_links')
-
-<script type="text/javascript">
-    VanillaTilt.init(document.querySelector(".container-title"), {
-        max: 4,
-        speed: 20
-    });
-    //It also supports NodeList
-    VanillaTilt.init(document.querySelectorAll(".container-title"));
-</script>
-<!-- end link js -->
 </body>
 </html>

@@ -11,13 +11,13 @@
             <form method="post" action="<?php echo e(route('students.store')); ?>" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <!-- Start personal info  -->
-                <h3 class="container-title"><?php echo e(__('create Student')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('create CreateStudent')); ?></h3>
                 <div class="container containers-style ">
                     <div class="row ">
 
                         <div class="box col-lg-6 col-md-6 col-sm-12">
                             <label class="title-3 "
-                            for="english-name"><?php echo e(__("Student.Student's name in arabic")); ?></label>
+                            for="english-name"><?php echo e(__("CreateStudent.CreateStudent's name in arabic")); ?></label>
                             <input type="text" class="form-control " id='english-name' name="name_ar" value="<?php echo e(old('name_ar')); ?>">
                             <?php $__errorArgs = ['name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -33,7 +33,7 @@ unset($__errorArgs, $__bag); ?>
 
                         <div class="box col-lg-6 col-md-6 col-sm-12">
                             <label class="text-center"
-                                for="arab-name"><?php echo e(__("Student.Student's name in english")); ?></label>
+                                for="arab-name"><?php echo e(__("CreateStudent.CreateStudent's name in english")); ?></label>
                             <input type="text" class="form-control " id='arab-name' name="name" value="<?php echo e(old('name')); ?>">
                             <?php $__errorArgs = ['name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -49,7 +49,7 @@ unset($__errorArgs, $__bag); ?>
 
 
                         <div class="box col-lg-2 col-md-2 col-sm-12">
-                            <label class="" for="photo"><?php echo e(__('Student.photo')); ?></label>
+                            <label class="" for="photo"><?php echo e(__('CreateStudent.photo')); ?></label>
                             <input type="file" class="form-control " id="photo" name="photo" value="<?php echo e(old('photo')); ?>">
                             <?php $__errorArgs = ['photo'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -65,7 +65,7 @@ unset($__errorArgs, $__bag); ?>
 
 
                         <div class="box col-lg-5 col-md-5 col-sm-12 ">
-                            <label for="address"><?php echo e(__("Student.Student's address in arabic")); ?></label>
+                            <label for="address"><?php echo e(__("CreateStudent.CreateStudent's address in arabic")); ?></label>
                             <input type="text" class=" form-control " id='address' name="address_ar" value="<?php echo e(old('address_ar')); ?>">
                             <?php $__errorArgs = ['address_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -80,7 +80,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-5 col-md-5 col-sm-12 ">
-                            <label for="address"><?php echo e(__("Student.Student's address in english")); ?></label>
+                            <label for="address"><?php echo e(__("CreateStudent.CreateStudent's address in english")); ?></label>
                             <input type="text" class=" form-control " id="address" name="address" value="<?php echo e(old('address')); ?>">
                             <?php $__errorArgs = ['address'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -96,13 +96,13 @@ unset($__errorArgs, $__bag); ?>
 
 
                         <div class="box col-lg-3 col-md-4 col-sm-6 ">
-                            <label for="gender"><?php echo e(__('Student.gender')); ?></label>
+                            <label for="gender"><?php echo e(__('CreateStudent.gender')); ?></label>
                             <select class="col form-select form-control" id="gender" name="gender">
                                 <option value="" selected disabled><?php echo e(__('public.please select the gender')); ?></option>
                                 <option class="text-center"
-                                        value="<?php echo e(__('Student.male')); ?>"><?php echo e(__('Student.male')); ?></option>
+                                        value="<?php echo e(__('CreateStudent.male')); ?>"><?php echo e(__('CreateStudent.male')); ?></option>
                                 <option class="text-center"
-                                        value="<?php echo e(__('Student.female')); ?>"><?php echo e(__('Student.female')); ?></option>
+                                        value="<?php echo e(__('CreateStudent.female')); ?>"><?php echo e(__('CreateStudent.female')); ?></option>
                             </select>
                             <?php $__errorArgs = ['gender'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -115,11 +115,11 @@ if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
-                        <input type="hidden" name="gender_ar_m" value="<?php echo e(__('Student.male_ar')); ?>">
-                        <input type="hidden" name="gender_ar_f" value="<?php echo e(__('Student.female_ar')); ?>">
+                        <input type="hidden" name="gender_ar_m" value="<?php echo e(__('CreateStudent.male_ar')); ?>">
+                        <input type="hidden" name="gender_ar_f" value="<?php echo e(__('CreateStudent.female_ar')); ?>">
 
                         <div class="box col-lg-3 col-md-4 col-sm-6">
-                            <label for="age"><?php echo e(__('Student.birthdate')); ?></label>
+                            <label for="age"><?php echo e(__('CreateStudent.birthdate')); ?></label>
                             <input type="date" class="form-control" id="age" name="birthdate" value="<?php echo e(old('birthdate')); ?>">
                             <?php $__errorArgs = ['birthdate'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -134,7 +134,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-3 col-md-4 col-sm-6 ">
-                            <label for="english-birth-place"><?php echo e(__('Student.place of birth in arabic')); ?></label>
+                            <label for="english-birth-place"><?php echo e(__('CreateStudent.place of birth in arabic')); ?></label>
                             <input type="text" class="form-control" id="english-birth-place" name="place_of_birth_ar" value="<?php echo e(old('place_of_birth_ar')); ?>">
                             <?php $__errorArgs = ['place_of_birth_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -149,7 +149,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-3 col-md-4 col-sm-6">
-                            <label for="arabic-birth-place"><?php echo e(__('Student.place of birth in english')); ?></label>
+                            <label for="arabic-birth-place"><?php echo e(__('CreateStudent.place of birth in english')); ?></label>
                             <input type="text" class="form-control" id="arabic-birth-place" name="place_of_birth" value="<?php echo e(old('place_of_birth')); ?>">
                             <?php $__errorArgs = ['place_of_birth'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -164,7 +164,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
 
                         <div class="box col-lg-6 col-md-8 col-sm-12">
-                            <label for="className" class="title-3"><?php echo e(__('Student.level')); ?></label>
+                            <label for="className" class="title-3"><?php echo e(__('CreateStudent.level')); ?></label>
                             <select id="educational_level" class="form-control" name="educational_level" onchange="populateClassrooms()">
                                 <option value="">Select</option>
                                 <?php $__currentLoopData = $levels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $level): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -204,18 +204,18 @@ unset($__errorArgs, $__bag); ?>
                 <!-- End personal info  -->
 
 
-                <h3 class="container-title"><?php echo e(__('Student.parent info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('CreateStudent.parent info')); ?></h3>
                 <div class="container  containers-style ">
                     <div class="row">
                         <!-- father name  -->
                         <div class="box ">
-                            <label for="father"><?php echo e(__('Student.parent info')); ?></label>
+                            <label for="father"><?php echo e(__('CreateStudent.parent info')); ?></label>
                             <div class="w-100 mt-5">
-                                <a href="<?php echo e(route('relatives.create')); ?>" class=" save-button  w-full mt-3 p-3"><?php echo e(__('Student.parent info')); ?></a>
+                                <a href="<?php echo e(route('relatives.create')); ?>" class=" save-button  w-full mt-3 p-3"><?php echo e(__('CreateStudent.parent info')); ?></a>
                             </div>
                         </div>
                         <div class="box ">
-                            <label for="className " class="title-3"><?php echo e(__('Student.parent info')); ?></label>
+                            <label for="className " class="title-3"><?php echo e(__('CreateStudent.parent info')); ?></label>
                             <select id="className " class="form-control" name="relative_id" value="<?php echo e(old('relative_id')); ?>">
                                 <?php $__currentLoopData = $relatives; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $relative): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option class="text-center" value="<?php echo e($relative->id); ?>"><?php echo e($relative->father_name); ?></option>
@@ -238,14 +238,14 @@ unset($__errorArgs, $__bag); ?>
                 <!-- End parent info  -->
 
                 <!-- Start health info  -->
-                <h3 class="container-title "><?php echo e(__('Student.health info')); ?></h3>
+                <h3 class="container-title "><?php echo e(__('CreateStudent.health info')); ?></h3>
                 <div class="container containers-style mb-5">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <h4 class="p-1 "><?php echo e(__('Student.does the Student')); ?></h4>
+                            <h4 class="p-1 "><?php echo e(__('CreateStudent.does the CreateStudent')); ?></h4>
 
 
-                            <label class="mt-4"><?php echo e(__('Student.take any medicine ?')); ?></label>
+                            <label class="mt-4"><?php echo e(__('CreateStudent.take any medicine ?')); ?></label>
 
                             <div class="row ">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
@@ -293,7 +293,7 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-                            <label class="mt-4"><?php echo e(__('Student.have an allergy ?')); ?></label>
+                            <label class="mt-4"><?php echo e(__('CreateStudent.have an allergy ?')); ?></label>
 
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
@@ -341,7 +341,7 @@ unset($__errorArgs, $__bag); ?>
                             </div>
 
 
-                            <label class="mt-4"><?php echo e(__('Student.have any health problem ?')); ?></label>
+                            <label class="mt-4"><?php echo e(__('CreateStudent.have any health problem ?')); ?></label>
 
                             <div class="row">
                                 <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
@@ -393,11 +393,11 @@ unset($__errorArgs, $__bag); ?>
                 </div>
                 <!-- End health info  -->
                 <!-- Start final box -->
-                <h3 class="container-title"><?php echo e(__('Student.other info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('CreateStudent.other info')); ?></h3>
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="title-3" for="std_Note"><?php echo e(__('Student.note')); ?></label>
+                            <label class="title-3" for="std_Note"><?php echo e(__('CreateStudent.note')); ?></label>
                             <textarea name="note" class="form-control" id="std_Note" cols="50" rows="5"><?php echo e(old('note')); ?></textarea>
                         </div>
                     </div>

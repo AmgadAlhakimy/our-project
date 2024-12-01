@@ -24,9 +24,9 @@
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="<?php echo e(old('sex')); ?>">
                     <option class="text-center d-"
-                            value="<?php echo e(__('Student.male')); ?>"><?php echo e(__('Student.male')); ?></option>
+                            value="<?php echo e(__('CreateStudent.male')); ?>"><?php echo e(__('CreateStudent.male')); ?></option>
                     <option class="text-center d-"
-                            value="<?php echo e(__('Student.female')); ?>"><?php echo e(__('Student.female')); ?></option>
+                            value="<?php echo e(__('CreateStudent.female')); ?>"><?php echo e(__('CreateStudent.female')); ?></option>
                     <option class="d d-" value="male"></option>
                 </select>
                 <?php $__errorArgs = ['sex'];

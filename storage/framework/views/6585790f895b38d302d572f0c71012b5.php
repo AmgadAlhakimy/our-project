@@ -11,12 +11,12 @@
                 <?php echo csrf_field(); ?>
 
 
-                <h3 class="container-title"><?php echo e(__('Student.parent info')); ?></h3>
+                <h3 class="container-title"><?php echo e(__('CreateStudent.parent info')); ?></h3>
                 <div class="container  containers-style ">
                     <div class="row">
                         <!-- father name  -->
                         <div class="box col-lg-6 col-md-12">
-                            <label for="father"><?php echo e(__("Student.father's name in english")); ?></label>
+                            <label for="father"><?php echo e(__("CreateStudent.father's name in english")); ?></label>
                             <input type="text" class="form-control" id='father' name="father_name" value="<?php echo e(old('father_name')); ?>">
                             <?php $__errorArgs = ['father_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -30,7 +30,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label for="father_ar"><?php echo e(__("Student.father's name in arabic")); ?></label>
+                            <label for="father_ar"><?php echo e(__("CreateStudent.father's name in arabic")); ?></label>
                             <input type="text" class="form-control" id='father_ar' name="father_name_ar" value="<?php echo e(old('father_name_ar')); ?>">
                             <?php $__errorArgs = ['father_name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -45,7 +45,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- father work  -->
                         <div class="box col-lg-6 col-md-6">
-                            <label for="father_work"><?php echo e(__("Student.father's work in english")); ?></label>
+                            <label for="father_work"><?php echo e(__("CreateStudent.father's work in english")); ?></label>
                             <input type="text" class="form-control" id='father_work' name="father_work" value="<?php echo e(old('father_work')); ?>">
                             <?php $__errorArgs = ['father_work'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -59,7 +59,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-6">
-                            <label for="father_work_ar"><?php echo e(__("Student.father's work in arabic")); ?></label>
+                            <label for="father_work_ar"><?php echo e(__("CreateStudent.father's work in arabic")); ?></label>
                             <input type="text" class="form-control" id='father_work_ar' name="father_work_ar" value="<?php echo e(old('father_work_ar')); ?>">
                             <?php $__errorArgs = ['father_work_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -74,7 +74,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- father contacts  -->
                         <div class="box ">
-                            <label for="f-numbers"><?php echo e(__("Student.father's contacts")); ?></label>
+                            <label for="f-numbers"><?php echo e(__("CreateStudent.father's contacts")); ?></label>
                             <div class="row ">
                                 <input type="number" class="col form-control ms-2 me-2" id='f-numbers' name="father_contact1" value="<?php echo e(old('father_contact1')); ?>">
                                 <?php $__errorArgs = ['father_contact1'];
@@ -102,7 +102,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- mother name  -->
                         <div class="box col-lg-6 col-md-12">
-                            <label for="arab-mother-name"><?php echo e(__("Student.mother's name in english")); ?></label>
+                            <label for="arab-mother-name"><?php echo e(__("CreateStudent.mother's name in english")); ?></label>
                             <input type="text" class="form-control" id='arab-mother-name' name="mother_name" value="<?php echo e(old('mother_name')); ?>">
                             <?php $__errorArgs = ['mother_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -116,7 +116,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label for="english-mother-name"><?php echo e(__("Student.mother's name in arabic")); ?></label>
+                            <label for="english-mother-name"><?php echo e(__("CreateStudent.mother's name in arabic")); ?></label>
                             <input type="text" class="form-control" id='english-mother-name' name="mother_name_ar" value="<?php echo e(old('mother_name_ar')); ?>">
                             <?php $__errorArgs = ['mother_name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -131,7 +131,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- mother work  -->
                         <div class="box col-lg-6 col-md-6">
-                            <label for="arab-mother-work"><?php echo e(__("Student.mother's work in english")); ?></label>
+                            <label for="arab-mother-work"><?php echo e(__("CreateStudent.mother's work in english")); ?></label>
                             <input type="text" class="form-control" id='arab-mother-work' name="mother_work" value="<?php echo e(old('mother_work')); ?>">
                             <?php $__errorArgs = ['mother_work'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -145,7 +145,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-6">
-                            <label for="work"><?php echo e(__("Student.mother's work in arabic")); ?></label>
+                            <label for="work"><?php echo e(__("CreateStudent.mother's work in arabic")); ?></label>
                             <input type="text" class="form-control" id='work' name="mother_work_ar" value="<?php echo e(old('mother_work_ar')); ?>">
                             <?php $__errorArgs = ['mother_work_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -160,7 +160,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- mother contacts  -->
                         <div class="box ">
-                            <label for="m-numbers"><?php echo e(__("Student.mother's contacts")); ?></label>
+                            <label for="m-numbers"><?php echo e(__("CreateStudent.mother's contacts")); ?></label>
                             <div class="row ">
                                 <input type="number" class="col form-control ms-2 me-2" id='m-numbers' name="mother_contact1" value="<?php echo e(old('mother_contact1')); ?>">
                                 <?php $__errorArgs = ['mother_contact1'];
@@ -188,7 +188,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- garden name  -->
                         <div class="box col-lg-6 col-md-12">
-                            <label for="name-a"><?php echo e(__('Student.kin name in english')); ?></label>
+                            <label for="name-a"><?php echo e(__('CreateStudent.kin name in english')); ?></label>
                             <input type="text" class="form-control" id='name-a' name="kin_name"  value="<?php echo e(old('kin_name')); ?>">
                             <?php $__errorArgs = ['kin_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -202,7 +202,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-12">
-                            <label for="name-e"><?php echo e(__('Student.kin name in arabic')); ?></label>
+                            <label for="name-e"><?php echo e(__('CreateStudent.kin name in arabic')); ?></label>
                             <input type="text" class="form-control" id='name-e' name="kin_name_ar"  value="<?php echo e(old('kin_name_ar')); ?>">
                             <?php $__errorArgs = ['kin_name_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -217,7 +217,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- garden relationship -->
                         <div class="box col-lg-6 col-md-6">
-                            <label for="relation-a"><?php echo e(__('Student.kin relationship in english')); ?></label>
+                            <label for="relation-a"><?php echo e(__('CreateStudent.kin relationship in english')); ?></label>
                             <input type="text" class="form-control" id='relation-a' name="kin_relationship" value="<?php echo e(old('kin_relationship')); ?>">
                             <?php $__errorArgs = ['kin_relationship'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -231,7 +231,7 @@ endif;
 unset($__errorArgs, $__bag); ?>
                         </div>
                         <div class="box col-lg-6 col-md-6">
-                            <label for="relation-e"><?php echo e(__('Student.kin relationship in arabic')); ?></label>
+                            <label for="relation-e"><?php echo e(__('CreateStudent.kin relationship in arabic')); ?></label>
                             <input type="text" class="form-control" id='relation-e' name="kin_relationship_ar" value="<?php echo e(old('kin_relationship_ar')); ?>">
                             <?php $__errorArgs = ['kin_relationship_ar'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -246,7 +246,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                         <!-- garden number  -->
                         <div class="box col">
-                            <label for="number"><?php echo e(__('Student.kin contact')); ?></label>
+                            <label for="number"><?php echo e(__('CreateStudent.kin contact')); ?></label>
                             <input type="number" class="form-control " id='number' name="kin_contact" value="<?php echo e(old('kin_contact')); ?>">
                             <?php $__errorArgs = ['kin_contact'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

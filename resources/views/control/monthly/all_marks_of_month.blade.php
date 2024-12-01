@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
         <!-- table-hover table-striped -->
         <div class="table-section">
             <div class="card table-section ">
@@ -35,8 +35,8 @@
                             <th class="th-hea text-dark" rowspan="">total <div>100</div></th>
                             <th class="th-hea text-success">كتابة</th>
                             <th class="th-hea text-danger">التقدير</th>
-                            
-                            
+
+
                         </tr>
                     </thead>
                     {{-- ====================== --}}
@@ -122,7 +122,7 @@
                 </table>
             </div>
         </div>
-        
+
         <div class="table-section shadow-none">
             <div class="card table-section ">
                 <table class=" mark_table" id="check_table" >
@@ -134,7 +134,7 @@
                             <th class="text-warning" colspan="1"> 8 </th>
                         </tr>
                         <tr>
-                            
+
                             <th class="text-dark" colspan="4"> المجموع بعد خصم الغياب </th>
                             <th class="th-hea text-success " colspan="2">700</th>
                             <th class="th-hea " colspan="2">سبعمائة درجه</th>
@@ -155,7 +155,7 @@
 
             {{-- <a href='/'
                     class="btn save-button btn-info me-2 ms-2 ">
-                    <i class="fa-solid fa-info-circle"></i> {{__('Student.more info')}} </a> --}}
+                    <i class="fa-solid fa-info-circle"></i> {{__('CreateStudent.more info')}} </a> --}}
 
                 <a href="#"
                     class="btn save-button btn-success me-2 ms-2 ">
