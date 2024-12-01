@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="">
-<?php echo $__env->make('layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
 
+<?php echo $__env->make('layouts.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <body <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
 
 <?php echo $__env->make('layouts.sidebar-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-<!-- start sidebar -->
 
 <div class="side-container" <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="" <?php endif; ?>>
     <div class="sidebar my-scroll">
 
         <!-- ============= LIST ============== -->
-        <div class="sidebar-nv ">
-            <ul class="list-ul ">
+        <div class="sidebar-nav">
+            <ul class="list-ul">
 
                 
                 <!-- ======================== STUDENTS ========================== -->

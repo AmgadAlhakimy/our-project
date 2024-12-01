@@ -72,7 +72,7 @@
                             <td><img class="student-img" 
                                 {{-- src="{{$student->photo}}" alt="" --}}></td>
                             <td>
-                                    <div class="mt-2 check_style">
+                                <div class="mt-2 check_style">
                                     <label >
                                         <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
                                         <i></i>
