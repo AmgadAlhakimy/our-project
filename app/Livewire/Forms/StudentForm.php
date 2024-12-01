@@ -65,7 +65,7 @@ use WithFileUploads;
             'name_ar.regex' => __('validation.arabic letters'),
             'address.regex' => __('validation.english letters'),
             'address_ar.regex' => __('validation.arabic letters'),
-            'class.required' => __('Student.first you have to add classrooms'),
+            'class.required' => __('CreateStudent.first you have to add classrooms'),
             'relative_id.exists' => __('student.please select from the list and the number of father only'),
         ];
     }

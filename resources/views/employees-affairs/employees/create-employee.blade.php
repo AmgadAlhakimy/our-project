@@ -92,7 +92,7 @@
                             @enderror
                         </div>
                         {{-- <div class="box mt-3 col">--}}
-                        {{-- <input class="btn my-save-button form-control me-0 ms-0" type="submit" value="Save Student"
+                        {{-- <input class="btn my-save-button form-control me-0 ms-0" type="submit" value="Save CreateStudent"
                             name="add">--}}
                         {{-- <input class="btn my-clear-button form-control me-0 ms-0" type="reset" value="clear "
                             name="add">--}}

@@ -61,7 +61,7 @@ class UpdateStudentRequest extends FormRequest
             'name_ar.regex' => __('validation.arabic letters'),
             'address.regex' => __('validation.english letters'),
             'address_ar.regex' => __('validation.arabic letters'),
-            'class.required' => __('Student.first you have to add classrooms'),
+            'class.required' => __('CreateStudent.first you have to add classrooms'),
         ];
     }
 }

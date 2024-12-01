@@ -13,6 +13,7 @@
         <div class="sidebar-nav">
             <ul class="list-ul">
 
+                @include('layouts.students-affairs.students-affairs')
 
                 {{-- academic department --}}
 {{--                @include('layouts.academic-department.academic-department')--}}
@@ -30,7 +31,6 @@
 
                 {{-- -------------شؤون الطلاب---------------  --}}
                 <!-- ======================== STUDENTS ========================== -->
-                @include('layouts.students-affairs.students-affairs')
 
             </ul>
         </div>

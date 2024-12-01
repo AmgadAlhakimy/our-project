@@ -116,7 +116,7 @@
                             <td>
                                 <a href="<?php echo e(route('students.more',$student->id)); ?>"
                                    class="btn save-button btn-info w-100">
-                                    <i class="fa-solid fa-info-circle"></i> <?php echo e(__('Student.more info')); ?> </a>
+                                    <i class="fa-solid fa-info-circle"></i> <?php echo e(__('CreateStudent.more info')); ?> </a>
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

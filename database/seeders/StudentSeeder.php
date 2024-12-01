@@ -22,7 +22,7 @@ class StudentSeeder extends Seeder
         for($i = 1; $i<=100; $i++ ){
             Student::create([
                 'name'=> [
-                    'en'=>"Student $i",
+                    'en'=>"CreateStudent $i",
                     'ar'=>"الطالب $i",
                 ],
                 'photo'=>'photo',

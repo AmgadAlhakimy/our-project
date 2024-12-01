@@ -40,10 +40,10 @@ return [
     'deleted activities'=>'حذف نشاط',
 
     'students affairs'=>'شؤون الطلاب',
-    'add a Student'=>'إضافة طالب',
+    'add a CreateStudent'=>'إضافة طالب',
     'review students'=>'عرض الطلاب',
-    'deleted Student'=>'سلة المهملات (الطلاب)',
-    'Student absence'=>'تحضير الطلاب',
+    'deleted CreateStudent'=>'سلة المهملات (الطلاب)',
+    'CreateStudent absence'=>'تحضير الطلاب',
 
     // relationships
     'relationships'=>'ربط العلاقات',

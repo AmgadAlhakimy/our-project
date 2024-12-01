@@ -13,12 +13,12 @@
         <div class="sidebar-nav">
             <ul class="list-ul">
 
+                @include('layouts.students-affairs.students-affairs')
                 {{--                @include('layouts.academic-department.academic-department')--}}
                 {{--                @include('layouts.control-department.control-department')--}}
                 {{--                @include('layouts.teachers.teachers')--}}
                 {{--                @include('layouts.parents.parents')--}}
                 @include('layouts.personnel-affairs.personnel-affairs')
-                @include('layouts.students-affairs.students-affairs')
             </ul>
         </div>
     </div>

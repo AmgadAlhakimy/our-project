@@ -244,7 +244,7 @@ class FollowUpChildController extends Controller
     {
         try {
             $date = Carbon::now()->format('Y-m-d');
-//            $students = Student::where('classroom_id', $classroom_id)->get();
+//            $students = CreateStudent::where('classroom_id', $classroom_id)->get();
             $children = FollowUpChild::all();
             foreach ($children as $child) {
                 $this->update($request, $child->id);

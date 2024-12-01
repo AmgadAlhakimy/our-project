@@ -47,9 +47,9 @@
             <div class="box col-lg-12 col-md-12 ">
                 <select class="  Names second-card mb-4 mt-4  card-info_2//   form-control" id="sex" name="sex" value="{{old('sex')}}">
                     <option class="text-center"
-                            value="{{__('Student.male')}}">{{__('Student.male')}}</option>
+                            value="{{__('CreateStudent.male')}}">{{__('CreateStudent.male')}}</option>
                     <option class="text-center"
-                            value="{{__('Student.female')}}">{{__('Student.female')}}</option>
+                            value="{{__('CreateStudent.female')}}">{{__('CreateStudent.female')}}</option>
                 </select>
                 @error('sex')
                 <small class="form-text text-danger">{{$message}}</small>
@@ -184,7 +184,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <h3 class="container-title">Add Info</h3>
             <div class="container containers-style">
                     <div class="box row">

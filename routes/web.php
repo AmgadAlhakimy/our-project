@@ -43,7 +43,8 @@ Route::group(
         include 'resources.php';
         include 'restore.php';
         include 'force_delete.php';
-        include 'display-items.php';
+        include 'create-pages.php';
+        include 'display-pages.php';
 
 
         Route::get('/classrooms/{educationalLevelId}', function ($educationalLevelId) {
@@ -113,7 +114,7 @@ Route::group(
             return view('control/first_term/all_marks_of_first_term');
         });
 
-        // a route to show more info about a Student
+        // a route to show more info about a CreateStudent
         Route::get('students/more/{id}',
             [StudentController::class, 'more'])
             ->name('students.more');
