@@ -106,7 +106,7 @@
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$teacher->id}}"
                                      tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true">
+                                     aria-hidden="true"> 
                                     <div class="modal-dialog">
 
 

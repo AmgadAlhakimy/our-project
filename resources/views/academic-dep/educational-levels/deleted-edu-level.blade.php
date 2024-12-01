@@ -28,8 +28,8 @@
                         <th>
                             <div class="th-head-2">{{__('public.updated at')}}</div>
                         </th>
-                        <th colspan="2">
-                            <div class="th-head-4">{{__('public.processes')}}</div>
+                        <th colspan="">
+                            <div class="th-head-3">{{__('public.processes')}}</div>
                         </th>
                     </tr>
                     </thead>
@@ -58,13 +58,14 @@
                             </td>
                             <td>
                                 <a href="{{route('educational-levels.restore',$Level->id)}}"
-                                    class="btn save-button btn-success w-100">
-                                        <i class="fa-solid fa-pen-to-square"></i> {{__('public.restore')}} </a>
-                            </td>
-                            <td>
-                                <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"
+                                    class="btn save-button btn-success  w-25 me-1 ms-1">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        {{-- {{__('public.restore')}}  --}}
+                                    </a>
+                                <button class="btn clear-button btn-danger  w-25 me-1 ms-1" data-bs-toggle="modal"
                                         data-bs-target="#delete{{$Level->id}}">
-                                    <i class="fa-solid fa-trash"></i> {{__('public.force delete')}}
+                                    <i class="fa-solid fa-trash"></i>
+                                     {{-- {{__('public.force delete')}} --}}
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$Level->id}}"

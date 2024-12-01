@@ -14,35 +14,34 @@
         <div class="sidebar-nv ">
             <ul class="list-ul ">
 
-
-                
-
-                <!-- ========== 5 ============ -->
-
-                <!-- ========== 5 ============ -->
-
-
-                <!-- ======================== PARENTS ========================== -->
-
-
-                
-                <!-- ======================== EMB ========================== -->
-                <?php echo $__env->make('layouts.personnel-affairs.personnel-affairs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
                 
                 <!-- ======================== STUDENTS ========================== -->
                 <?php echo $__env->make('layouts.students-affairs.students-affairs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
+                
+               <?php echo $__env->make('layouts.academic-department.academic-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <!-- ========== 5 ============ -->
+               <?php echo $__env->make('layouts.control-department.control-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <!-- ========== 5 ============ -->
+               <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+                <!-- ======================== PARENTS ========================== -->
+               
+
+                
+                <!-- ======================== EMB ========================== -->
+                
+                
+
             </ul>
         </div>
     </div>
-
+</div>
     <?php echo $__env->make('layouts.toggle-section.toggle-section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 
     
 
-</div>
 <!-- end sidebar -->
 <!-- ====================== -->
 <!-- ====================== -->

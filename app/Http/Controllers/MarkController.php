@@ -32,10 +32,10 @@ class MarkController extends Controller
     public function insert($id)
     {
         try {
-            $classroom = Classroom::findorfail(1);
+            $classroom = Classroom::findorfail(2);
 
             $marks = Mark::where('classroom_id', 1)
-                ->where('subject_id', $id)->get();
+                ->where('subject_id', 6)->get();
             return view('teachers-affairs/marks.insert_marks',
                 compact('marks', 'classroom'));
 

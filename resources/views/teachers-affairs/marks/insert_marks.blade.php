@@ -75,7 +75,7 @@
                                     <div class="">Oral</div>
                                     <div>10</div>
                                 </th>
-                                <th>
+                                <th> 
                                     <div class="">سلوك</div>
                                     <div>10</div>
                                 </th>

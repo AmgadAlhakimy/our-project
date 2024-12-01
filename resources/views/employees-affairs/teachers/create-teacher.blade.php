@@ -11,7 +11,7 @@
             <!-- Start personal info  -->
             <h3 class="container-title">{{__('teacher.create a new teacher')}}</h3>
             <form method="post" action="{{route('teachers.store')}}" enctype="multipart/form-data">
-                @csrf
+                @csrf 
                 <div class="container containers-style">
                     <div class="row">
                         <!-- 1 -->
@@ -132,10 +132,11 @@
                             @enderror
                         </div>
                     </div>
+
+                    {{-- working on this after discation with my partner --}}
                     <style>
                         body {
                             font-family: Arial, sans-serif;
-                            margin: 20px;
                         }
                         .btn {
                             padding: 10px 20px;

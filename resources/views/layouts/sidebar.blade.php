@@ -14,24 +14,24 @@
         <div class="sidebar-nv ">
             <ul class="list-ul ">
 
-
-                {{-- academic department --}}
-{{--                @include('layouts.academic-department.academic-department')--}}
-                <!-- ========== 5 ============ -->
-{{--                @include('layouts.control-department.control-department')--}}
-                <!-- ========== 5 ============ -->
-{{--                @include('layouts.teachers.teachers')--}}
-
-                <!-- ======================== PARENTS ========================== -->
-{{--                @include('layouts.parents.parents')--}}
-
-                {{-- ---شؤون الموظفين--- --}}
-                <!-- ======================== EMB ========================== -->
-                @include('layouts.personnel-affairs.personnel-affairs')
-
                 {{-- -------------شؤون الطلاب---------------  --}}
                 <!-- ======================== STUDENTS ========================== -->
                 @include('layouts.students-affairs.students-affairs')
+
+                {{-- academic department --}}
+               @include('layouts.academic-department.academic-department')
+                <!-- ========== 5 ============ -->
+               @include('layouts.control-department.control-department')
+                <!-- ========== 5 ============ -->
+               @include('layouts.teachers.teachers')
+
+                <!-- ======================== PARENTS ========================== -->
+               {{-- @include('layouts.parents.parents') --}}
+
+                {{-- ---شؤون الموظفين--- --}}
+                <!-- ======================== EMB ========================== -->
+                {{-- @include('layouts.personnel-affairs.personnel-affairs') --}}
+                
 
             </ul>
         </div>

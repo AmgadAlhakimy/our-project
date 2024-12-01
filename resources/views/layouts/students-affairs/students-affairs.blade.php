@@ -27,19 +27,7 @@
         <a href='/student_form' class="li-link">معلومات الطلاب</a>
         <a href="#" class="li-link">الطلاب الأوائل</a>
 
-        <div class="dropDownLang my-element" onclick="cancelclick(event)">
-            <div class="select">
-                <span class="selected">Lang</span>
-                <div class="caret"></div>
-            </div>
-            <ul class="menuLang">
-                <a href="#" class="li-link_2">1</a>
-                <a href="#" class="li-link_2">2</a>
-                <a href="#" class="li-link_2">3</a>
-                <a href='#' class="li-link_2">4</a>
-                <a href="#" class="li-link_2">5</a>
-            </ul>
-        </div>
+
     </div>
 
 <!-- ====================== -->

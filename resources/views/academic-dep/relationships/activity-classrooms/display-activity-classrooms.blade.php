@@ -93,9 +93,10 @@
                         </td>
                         <td>
                             <a href="{{route('activity-classrooms.edit',$classroom->id)}}"
-                               class="btn save-button btn-success w-100">
+                               class="btn save-button btn-success  w-50 me-1 ms-1   ">
                                 <i class="fa-solid fa-pen-to-square"></i>
-                                {{__('public.edit')}}</a>
+                                {{-- {{__('public.edit')}} --}}
+                            </a>
                         </td>
                     </tr>
                 @endforeach
