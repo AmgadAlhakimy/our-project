@@ -14,10 +14,10 @@
             <ul class="list-ul">
 
                 @include('layouts.students-affairs.students-affairs')
-                {{--                @include('layouts.academic-department.academic-department')--}}
-                {{--                @include('layouts.control-department.control-department')--}}
-                {{--                @include('layouts.teachers.teachers')--}}
-                {{--                @include('layouts.parents.parents')--}}
+                                @include('layouts.academic-department.academic-department')
+                                @include('layouts.control-department.control-department')
+                                @include('layouts.teachers.teachers')
+                                @include('layouts.parents.parents')
                 @include('layouts.personnel-affairs.personnel-affairs')
             </ul>
         </div>

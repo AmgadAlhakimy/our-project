@@ -15,7 +15,7 @@
                                        placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
-                    </div>
+                    </div> 
                 </label>
             </div>
         </div>
@@ -86,9 +86,10 @@
                             </div>
                         </button>
                     </th>
-                    <th colspan="2">
+                    <th colspan="">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
+                    
                 </tr>
                 </thead>
                 <tbody>
@@ -116,21 +117,21 @@
                         </td>
                         <td>
                             <a href="{{route('subjects.edit',$subject->id)}}"
-                               class="btn save-button btn-success w-100">
+                                class="btn save-button btn-success  w-25 me-1 ms-1">
                                 <i class="fa-solid fa-pen-to-square"></i>
-                                {{__('public.edit')}}</a>
-                        </td>
-                        <td>
+                                {{-- {{__('public.edit')}} --}}
+                            </a>
                             <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger w-100"
+                                    class="btn clear-button btn-danger  w-25 me-1 ms-1"
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$subject->id}}">
-                                <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
+                                <i class="fa-solid fa-trash"></i>
+                                {{-- {{__('public.delete')}} --}}
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$subject->id}}"
-                                 tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
+                                    tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -144,7 +145,7 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
-                                                  action="{{route('subjects.destroy',$subject->id)}}">
+                                                    action="{{route('subjects.destroy',$subject->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit"

@@ -92,7 +92,7 @@
                             </div>
                         </button>
                     </th>
-                    <th colspan="2">
+                    <th colspan="">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
                 </tr>
@@ -125,16 +125,16 @@
                         </td>
                         <td>
                             <a href="{{route('educational-levels.edit',$Level->id)}}"
-                               class="btn save-button btn-success w-100">
+                               class="btn save-button btn-success w-25 me-1 ms-1 ">
                                 <i class="fa-solid fa-pen-to-square"></i>
-                                {{__('public.edit')}}</a>
-                        </td>
-                        <td>
+                                {{-- {{__('public.edit')}} --}}
+                            </a>
                             <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger w-100"
+                                    class="btn clear-button btn-danger  w-25 me-1 ms-1 "
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$Level->id}}">
-                                <i class="fa-solid fa-trash"></i> {{__('public.delete')}}
+                                <i class="fa-solid fa-trash"></i>
+                                 {{-- {{__('public.delete')}} --}}
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$Level->id}}"

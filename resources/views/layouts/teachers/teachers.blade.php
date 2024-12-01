@@ -14,7 +14,7 @@
                 <span class="menu-name">دفتر متابعة مدرسة</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
-        </div>
+        </div> 
         <div class="submenu">
             <div class="line-black">
                 <a href='/school' class="li-link">علوم \ سادس </a>
@@ -55,9 +55,8 @@
         <div class="submenu">
             <div class="line-black">
                 {{-- <a href="{{route('marks.insertMarks',2)}}" class="li-link">رياضيات \ ثالث</a> --}}
-                <a href='#' class="li-link">علوم الحاسوب \ اول</a>
-                <a href='#' class="li-link">علوم الحاسوب \ ثاني</a>
-                <a href='#' class="li-link">علوم الحاسوب \ ثالث</a>
+                <a href='{{route('marks.insert',1)}}' class="li-link">علوم الحاسوب \ اول</a>
+
                 <a href="#" class="li-link"> تقارير </a>
             </div>
         </div>
