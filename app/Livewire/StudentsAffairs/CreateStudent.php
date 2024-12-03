@@ -14,6 +14,9 @@ class CreateStudent extends Component
 {
     use WithFileUploads;
 
+    public $check1 = false;
+    public $check2 = false;
+    public $check3 = false;
     public RelativesForm $relativeForm;
     public StudentForm $studentForm;
 
@@ -42,10 +45,22 @@ class CreateStudent extends Component
         )->title('Create Student');
     }
 
+    public function flip($check)
+    {
+        if ($check == 1){
+        $this->check1 = !$this->check1;
+        } if ($check == 2){
+        $this->check2 = !$this->check2;
+        }if ($check == 3){
+        $this->check3 = !$this->check3;
+        }
+    }
+
     public function increment(): int
     {
-         return $this->currentStep = 2;
+        return $this->currentStep = 2;
     }
+
     public function updatedSelectedLevel()
     {
         return $this->classrooms = Classroom::
@@ -60,8 +75,8 @@ class CreateStudent extends Component
 
     public function storeStudent(): void
     {
-            $this->studentForm->store();
-            $this->currentStep++;
+        $this->studentForm->store();
+        $this->currentStep++;
     }
 
     public function resetImage(): string
