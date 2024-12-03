@@ -136,6 +136,8 @@ function check_test(my_checkbox, my_input1, my_input2) {
         my_input2.hidden = true;
     }
 }
+
+// deleted if you want _ its not used inymore
 function toggleInput() {
     var checkbox1 = document.getElementById("takeMedicineE");
     var checkbox2 = document.getElementById("haveAllergy");
