@@ -14,9 +14,7 @@ class CreateStudent extends Component
 {
     use WithFileUploads;
 
-    public $check1 = false;
-    public $check2 = false;
-    public $check3 = false;
+    public $checks = [false, false, false];
     public RelativesForm $relativeForm;
     public StudentForm $studentForm;
 
@@ -27,8 +25,7 @@ class CreateStudent extends Component
     public string $search = "";
     public $image;
     public $showSelect = false;
-
-
+    
     public function render()
     {
         $fathers = [];
@@ -47,13 +44,7 @@ class CreateStudent extends Component
 
     public function flip($check)
     {
-        if ($check == 1){
-        $this->check1 = !$this->check1;
-        } if ($check == 2){
-        $this->check2 = !$this->check2;
-        }if ($check == 3){
-        $this->check3 = !$this->check3;
-        }
+        $this->checks[$check] = !$this->checks[$check];
     }
 
     public function increment(): int

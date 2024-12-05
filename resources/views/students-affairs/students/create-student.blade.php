@@ -11,11 +11,10 @@
             <div class="row box">
                 <label>
                     <input class="form-control col-12" type="text" list="relative"
-                           wire:model.live.debounce.500ms="studentForm.relative_id"
-                           placeholder={{__('student.please select the father')}}/>
+                           wire:model.live.debounce.500ms="relativeForm.father_name"
+                           placeholder="{{__('student.please select the father')}}"/>
                 </label>
                 <datalist id="relative">
-                    <option value="" selected>{{__('student.please select the father')}}</option>
                     @foreach($relatives as $relative)
                         <option value="{{$relative->id}}">{{$relative->father_name}}</option>
                     @endforeach
@@ -196,13 +195,13 @@
                     {{-- 1 --}}
                     <label class="col d-flex justify-content-end">{{__('student.take any medicine ?')}}</label>
                     <div class="col mt-2 d-flex justify-content-start">
-                        <input class="toggle" type="checkbox" wire:click="flip(1)"
+                        <input class="toggle" type="checkbox" wire:click="flip(0)"
                                id="takeMedicineE"
                                value="{{old('take_medicine')}}">
                         <label class="form-label  rounded" for="takeMedicineE"></label>
                     </div>
                     {{-- ---- --}}
-                    @if($check1)
+                    @if($checks[0])
                         <div class="row">
                             {{-- -*- --}}
                             @error('studentForm.take_medicine')
@@ -232,7 +231,7 @@
                     <label class="mt-4">{{__('student.have an allergy ?')}}</label>
                     {{-- ---- --}}
                     <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                        <input class="toggle col" type="checkbox" wire:click="flip(2)"
+                        <input class="toggle col" type="checkbox" wire:click="flip(1)"
                                id="haveAllergy"
                                value="{{old('have_allergy')}}">
 
@@ -245,7 +244,7 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
-                        @if($check2)
+                        @if($checks[1])
                             <input type="text" class=" form-control ms-1 me-1 col"
                                    wire:model.live.debounce.500ms="studentForm.allergy_desc"
                                    id="std_allergy_desc_1"
@@ -269,7 +268,7 @@
                     <label class="mt-4">{{__('student.have any health problem ?')}}</label>
                     {{-- ---- --}}
                     <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                        <input class="toggle col" type="checkbox" wire:click="flip(3)"
+                        <input class="toggle col" type="checkbox" wire:click="flip(2)"
                                id="healthProblem" value="{{old('have_health_problem')}}"
                              >
                         <label class="form-label col rounded" for="healthProblem"
@@ -282,7 +281,7 @@
                         <small class="form-text text-danger">{{$message}}</small>
                         @enderror
                         {{-- -*- --}}
-                        @if($check3)
+                        @if($checks[2])
 
 
                                 <input type="text" class=" form-control ms-1 me-1 col"
