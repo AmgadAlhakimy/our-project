@@ -399,7 +399,7 @@ body[dir="rtl"] .menuLang li:hover {
 body[dir="rtl"] .search::before {
     right: 20px;
     top: 16%;
-    transform: translateY(50%);
+    transform: translateY(25%);
 }
 body[dir="rtl"] .search .search1 {
     padding-right: 30px;
