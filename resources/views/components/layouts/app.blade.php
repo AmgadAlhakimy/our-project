@@ -10,7 +10,7 @@
     <div class="sidebar my-scroll">
 
         <!-- ============= LIST ============== -->
-        <div class="sidebar-nav">
+        <div class="sidebar-nav"> 
             <ul class="list-ul">
 
                 @include('layouts.students-affairs.students-affairs')
@@ -23,13 +23,8 @@
         </div>
     </div>
 </div>
-<div class="section-home mt-5">
-    <div id="my_toggle" class="">
-        <div id="myDive" class="toggle-sidebar">
-            {{ $slot }}
-        </div>
-    </div>
-</div>
+@include('layouts.toggle-section.toggle-section')
+
 <!-- ====================== -->
 @include('layouts.js_links')
 
