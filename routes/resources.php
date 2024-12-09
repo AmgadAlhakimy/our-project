@@ -28,7 +28,7 @@ Route::resource('class-subjects', ClassroomSubjectController::class);
 Route::resource('subject-teachers', SubjectTeacherController::class);
 Route::resource('classrooms', ClassroomController::class);
 Route::resource('activities', ActivityController::class);
-Route::resource('relatives', RelativeController::class);
+Route::resource('parents', RelativeController::class);
 Route::resource('semesters', SemesterController::class);
 Route::resource('employees', EmployeeController::class);
 Route::resource('students', StudentController::class);
