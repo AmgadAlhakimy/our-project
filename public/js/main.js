@@ -30,66 +30,114 @@ logo.addEventListener("click", () => {
 // ====================
 // ====================
 
-
 window.addEventListener("DOMContentLoaded", function () {
-    var my_toggle = document.getElementById("my_toggle");
+    const my_toggle = document.getElementById("my_toggle");
     const _clicked = document.getElementById("_clicked");
+    const body = document.querySelector("body");
 
-    
     function checkScreenWidth() {
         if (window.innerWidth < 560) {
             my_toggle.style.margin = "0px 0px 0px 0px";
+            my_toggle.classList.remove("active");
         }
     }
-    checkScreenWidth();
-    window.addEventListener("resize", function () {
-        checkScreenWidth();
-    });
-});
 
-(function () { 
-document.addEventListener("DOMContentLoaded", function () {
-    const _clicked = document.getElementById("_clicked");
-    const my_toggle = document.getElementById("my_toggle");
-    var body = document.querySelector("body");
-
-    if (body.dir === "rtl") {
-        my_toggle.style.margin = "0px 240px 0px 0px";
-        my_toggle.style.transition = "all .5s ease";
-        
-        _clicked.addEventListener("click", () => {
-            if (my_toggle.classList.contains("active")) {
-                my_toggle.classList.remove("active");
+    function setToggleStyles(isActive) {
+        if (window.innerWidth >= 560) { 
+            if (body.dir === "rtl") {
                 my_toggle.style.transition = "all .5s ease";
-                my_toggle.style.margin = "0px 240px 0px 0px";
-                // my_toggle.style.backgroundColor = "black";
+                if (isActive) {
+                    my_toggle.style.margin = "0px 90px 0px 0px";
+                    // my_toggle.style.backgroundColor = "blue";
+                } else {
+                    my_toggle.style.margin = "0px 240px 0px 0px";
+                    // my_toggle.style.backgroundColor = "black";
+                }
             } else {
-                my_toggle.classList.add("active");
-                my_toggle.style.transition = "all 0.5s ease";
-                my_toggle.style.margin = "0px 100px 0px 0px";
-                // my_toggle.style.backgroundColor = "blue";
-            }
-        });
-    } else {
-        my_toggle.style.margin = "0px 0px 0px 240px";
-        my_toggle.style.transition = "all .5s ease";
-
-        _clicked.addEventListener("click", () => {
-            if (my_toggle.classList.contains("active")) {
-                my_toggle.classList.remove("active");
                 my_toggle.style.transition = "all .5s ease";
-                my_toggle.style.margin = "0px 0px 0px 240px";
-                // my_toggle.style.backgroundColor = "yellow";
-            } else {
-                my_toggle.classList.add("active");
-                my_toggle.style.transition = "all 0.5s ease";
-                my_toggle.style.margin = "0px 0px 0px 100px";
-                // my_toggle.style.backgroundColor = "green";
+                if (isActive) {
+                    my_toggle.style.margin = "0px 0px 0px 90px";
+                    // my_toggle.style.backgroundColor = "green";
+                } else {
+                    my_toggle.style.margin = "0px 0px 0px 240px";
+                    // my_toggle.style.backgroundColor = "yellow";
+                }
             }
-        });
+        }
     }
+
+    checkScreenWidth();
+    window.addEventListener("resize", checkScreenWidth);
+
+    _clicked.addEventListener("click", () => {
+        const isActive = my_toggle.classList.toggle("active");
+        setToggleStyles(isActive);
+    });
+
+    // ضبط الأسلوب الابتدائي عند التحميل
+    setToggleStyles(false);
 });
-})(); 
+
+// الكود السابق
+// window.addEventListener("DOMContentLoaded", function () {
+//     var my_toggle = document.getElementById("my_toggle");
+//     const _clicked = document.getElementById("_clicked");
+
+    
+//     function checkScreenWidth() {
+//         if (window.innerWidth < 560) {
+//             my_toggle.style.margin = "0px 0px 0px 0px";
+//         }
+//     }
+//     checkScreenWidth();
+//     window.addEventListener("resize", function () {
+//         checkScreenWidth();
+//     });
+// });
+
+// (function () { 
+// document.addEventListener("DOMContentLoaded", function () {
+//     const _clicked = document.getElementById("_clicked");
+//     const my_toggle = document.getElementById("my_toggle");
+//     var body = document.querySelector("body");
+
+//     if (body.dir === "rtl") {
+//         my_toggle.style.margin = "0px 240px 0px 0px";
+//         my_toggle.style.transition = "all .5s ease";
+        
+//         _clicked.addEventListener("click", () => {
+//             if (my_toggle.classList.contains("active")) {
+//                 my_toggle.classList.remove("active");
+//                 my_toggle.style.transition = "all .5s ease";
+//                 my_toggle.style.margin = "0px 240px 0px 0px";
+//                 my_toggle.style.backgroundColor = "black";
+//             } else {
+//                 my_toggle.classList.add("active");
+//                 my_toggle.style.transition = "all 0.5s ease";
+//                 my_toggle.style.margin = "0px 100px 0px 0px";
+//                 my_toggle.style.backgroundColor = "blue";
+//             }
+//         });
+//     } else {
+//         my_toggle.style.margin = "0px 0px 0px 240px";
+//         my_toggle.style.transition = "all .5s ease";
+
+//         _clicked.addEventListener("click", () => {
+//             if (my_toggle.classList.contains("active")) {
+//                 my_toggle.classList.remove("active");
+//                 my_toggle.style.transition = "all .5s ease";
+//                 my_toggle.style.margin = "0px 0px 0px 240px";
+//                 my_toggle.style.backgroundColor = "yellow";
+//             } else {
+//                 my_toggle.classList.add("active");
+//                 my_toggle.style.transition = "all 0.5s ease";
+//                 my_toggle.style.margin = "0px 0px 0px 100px";
+//                 my_toggle.style.backgroundColor = "green";
+//             }
+//         });
+//     }
+// });
+// })(); 
 
 // --------------------------------------------------------------------------------
 

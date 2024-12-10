@@ -8,7 +8,7 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-            <form method="post" action="{{route('relatives.store')}}">
+            <form method="post" action="{{route('parents.store')}}">
                 @csrf
 
                 {{-- <!-- Start parent info  --> --}}

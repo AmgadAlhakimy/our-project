@@ -8,47 +8,9 @@
     text-decoration: none;
 }
 
-/* ============ start sidebar footer */
-.sidebar .menu-footer {
-    /* position: sticky;
-    bottom: -0.5px;
-    margin: 0px;
-    margin-left: 1px;
-    background-color: var(--sidebar-bg);
-    width: 245px;
-    margin-bottom: 0;
-    border-bottom-left-radius: 19px;
-    border-bottom-right-radius: 19px;
-    transition: all 0.5s ease; */
-}
 /* ============ End sidebar footer */
 /* ==================== sidebar ========================== */
 
-
-/* body[dir="rtl"] .toggle-sidebar{
-    margin: 0px 240px 0px 0px;
-    background-color: aqua;
-} */
-
-
-/* .myDiv_rtl{
-    margin: 0px 0px 240px 0px;
-    background-color: red;
-}
-.myDiv_ltr{
-    background-color: green;
-} */
-
-/* 
-.dir_1{
-    margin: 0px 240px 0px 0px;
-    background-color: aqua;
-}
-.dir_2{
-    margin: 0px 0px 0px 240px;
-    background-color: blueviolet;
-}
- */
 .side-container {
     display: flex;
     /*  */
@@ -173,17 +135,9 @@
     border-color: var(--green-color);;
     color: var(--green-color);;
 }
- /* {
-    color: var(--sidebar-bg);
-} */
 .list-ul li .sidebar-title .icon-1 {
     min-width: 30px;
     color: var(--color_dark2);
-    /* display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    transition: all 0.5s ease; */
     transition: all 0.5s ease;
 
 }
@@ -194,12 +148,10 @@
     color: var(--school-color-3);
 }
 .list-ul li .sidebar-title .menu-name {
-    /* font-size: 15px; */
     font-weight: bold;
     color: var(--color_dark2);
     text-transform: uppercase;
     transition: all 0.5s ease;
-    /* text-align: center; */
     flex: 1;
     margin:0 5px;
 }
@@ -214,15 +166,10 @@
     opacity: 0;
     transition: all 0.2s ease;
 }
-.list-ul li .submenu {
-    /* display: none; */
-}
 .list-ul li.dropdown.active .submenu {
-    /* display: block; */
     width: unset;
     height: unset;
     opacity: 1;
-    /* padding: 5px 6px; */
     margin: 0 20px ;
     /* background-color: #8b0985; */
 }
@@ -384,6 +331,7 @@ body[dir="rtl"] .menuLang li:hover {
     align-items: center;
     justify-content: right;
 }
+
 /* search icon */
 .search::before {
     font-family: var(--fa-style-family-classic);

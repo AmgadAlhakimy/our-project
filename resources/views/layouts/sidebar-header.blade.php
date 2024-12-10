@@ -20,7 +20,7 @@
         <div class="head_1">
             <div class=" icons ph-account">
                         <span class="notification p-relative">
-                            <i class="fa-regular fa-bell fa-fw"></i>
+                            <i class="fa-regular fa-bell fa-fw "></i>
                         </span>
                 <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
             </div>

@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+ 
     'search'=>'SEARCH',
     'Lang' => 'English',
     'short_lang' => 'E',
@@ -41,11 +41,20 @@ return [
     'deleted subjects'=>'Delete Subjects',
     'deleted activities'=>'Delete Activities',
 
-    'students affairs'=>'Students Affairs',
-    'add a CreateStudent'=>'Add A CreateStudent',
-    'review students'=>'Review CreateStudent',
-    'deleted CreateStudent'=>'Delete CreateStudent',
-    'CreateStudent absence'=>'CreateStudent Absence',
+
+    
+        // students affairs
+        'students affairs'=>'Students Affairs',
+        'create parents'=>'Create Parents',
+        'display parents'=>'Display Parents',
+        'deleted parents'=>'Deleted Parents',
+        'parents'=>'Parents',
+        'add a new student'=>'add a New Student',
+        'view students'=>'view Students',
+        'deleted Student'=>'deleted Student',
+        'Student absence'=>'Student Absence',
+
+    // my be deleted
 
         // relationships
         'relationships'=>'Relations',
@@ -80,12 +89,14 @@ return [
         'view emb'=>'View Emb',
         'deleted emb'=>'Deleted Emb',
         'emb and teachers absent'=>'Emb And Teachers Absent',
-
+        
         'control section'=>'Control Section',
         'monthly income'=>'Monthly Income',
         'first term income'=>'First Term Income',
         'second term income'=>'Second Term Income',
         'the first students'=>'The First Students',
+        
+
 
 
         // work

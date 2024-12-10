@@ -211,7 +211,7 @@ unset($__errorArgs, $__bag); ?>
                         <div class="box ">
                             <label for="father"><?php echo e(__('CreateStudent.parent info')); ?></label>
                             <div class="w-100 mt-5">
-                                <a href="<?php echo e(route('relatives.create')); ?>" class=" save-button  w-full mt-3 p-3"><?php echo e(__('CreateStudent.parent info')); ?></a>
+                                <a href="<?php echo e(route('parents.create')); ?>" class=" save-button  w-full mt-3 p-3"><?php echo e(__('CreateStudent.parent info')); ?></a>
                             </div>
                         </div>
                         <div class="box ">

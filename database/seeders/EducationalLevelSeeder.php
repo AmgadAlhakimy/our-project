@@ -13,7 +13,7 @@ class EducationalLevelSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i = 1; $i<=50; $i++ ){
+        for($i = 1; $i<=5; $i++ ){
         EducationalLevel::create([
             'name'=> [
                 'en'=>"Level $i",

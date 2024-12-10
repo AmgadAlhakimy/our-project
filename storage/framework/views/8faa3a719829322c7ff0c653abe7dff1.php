@@ -6,39 +6,42 @@
 
 <?php echo $__env->make('layouts.sidebar-header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-<div class="side-container" <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="" <?php endif; ?>>
+<div class="side-container" <?php if(LaravelLocalization::setLocale()=='ar'): ?> dir="rtl" <?php endif; ?>>
     <div class="sidebar my-scroll">
 
         <!-- ============= LIST ============== -->
         <div class="sidebar-nav">
-            <ul class="list-ul">
+            <ul class="list-ul"> 
 
-                <?php echo $__env->make('layouts.students-affairs.students-affairs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('layouts.students-affairs.students', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                 
                 <!-- ======================== STUDENTS ========================== -->
 
                 
-               <?php echo $__env->make('layouts.academic-department.academic-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('layouts.academic-department.academic-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <!-- ========== 5 ============ -->
-               <?php echo $__env->make('layouts.control-department.control-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('layouts.control-department.control-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <!-- ========== 5 ============ -->
-               <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                 <!-- ======================== PARENTS ========================== -->
                 <?php echo $__env->make('layouts.parents.parents', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                 
                 <!-- ======================== EMB ========================== -->
-                 <?php echo $__env->make('layouts.personnel-affairs.personnel-affairs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-
+                <?php echo $__env->make('layouts.personnel-affairs.personnel-affairs', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </ul>
         </div>
     </div>
 </div>
-    <?php echo $__env->make('layouts.toggle-section.toggle-section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
+<div class="section-home mt-5">
+    <div id="my_toggle" class="">
+        <div id="myDive" class="toggle-sidebar">
+            <?php echo $__env->make('layouts.toggle-section.toggle-section', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+        </div>
+    </div>
+</div>
 <?php echo $__env->make('layouts.js_links', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
 </html>

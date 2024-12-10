@@ -16,7 +16,7 @@ class RelativeController extends Controller
     {
         try {
             $relatives = Relative::all();
-            return view('students/relatives.index_relatives',
+            return view('students/parents.index_relatives',
                 compact('relatives'));
 
         }catch (\Exception $e){
@@ -30,7 +30,7 @@ class RelativeController extends Controller
     public function create()
     {
         try {
-            return view('students-affairs/relatives.create_relative');
+            return view('students-affairs/parents.create_relative');
         }catch (\Exception $e)
         {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -114,7 +114,7 @@ class RelativeController extends Controller
             $relative_id = Student::where('relative_id', $id)->pluck('relative_id');
             if($relative_id->count() == 0){
                 Relative::destroy($id);
-                return redirect()->route('relatives.index')
+                return redirect()->route('parents.index')
                     ->with(['warning' => trans('message.delete')]);
             }else{
                 return redirect()->back() ->with(['error' => trans('message.delete_relative_error')]);
