@@ -135,7 +135,7 @@
                         <div class="box ">
                             <label for="father">{{__('CreateStudent.parent info')}}</label>
                             <div class="w-100 mt-5">
-                                <a href="{{route('relatives.create')}}" class=" save-button  w-full mt-3 p-3">{{__('CreateStudent.parent info')}}</a>
+                                <a href="{{route('parents.create')}}" class=" save-button  w-full mt-3 p-3">{{__('CreateStudent.parent info')}}</a>
                             </div>
                         </div>
                         <div class="box ">

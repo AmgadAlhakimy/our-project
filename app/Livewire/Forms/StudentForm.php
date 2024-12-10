@@ -10,7 +10,7 @@ use Livewire\WithFileUploads;
 class StudentForm extends Form
 {
 use WithFileUploads;
-    #[Rule('required|exists:relatives,id')]
+    #[Rule('required|exists:parents,id')]
     public $relative_id;
     #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
     public string $name;

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\StudentsAffairs;
 
-use App\Livewire\Forms\RelativesForm;
+use App\Livewire\Forms\ParentsForm;
 use App\Livewire\Forms\StudentForm;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
@@ -15,7 +15,7 @@ class CreateStudent extends Component
     use WithFileUploads;
 
     public $checks = [false, false, false];
-    public RelativesForm $relativeForm;
+
     public StudentForm $studentForm;
 
     public $selectedLevel = null;
@@ -25,7 +25,7 @@ class CreateStudent extends Component
     public string $search = "";
     public $image;
     public $showSelect = false;
-    
+
     public function render()
     {
         $fathers = [];
@@ -36,7 +36,7 @@ class CreateStudent extends Component
 
         $levels = EducationalLevel::all();
         $relatives = Relative::all();
-        return view('students-affairs.students.create-relative',
+        return view('students-affairs.students.create-student',
             compact('levels', 'relatives',
                 'fathers')
         )->title('Create Student');

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreignId('classroom_id')
                 ->constrained('classrooms')->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('relative_id')
-                ->constrained('relatives')->cascadeOnUpdate()->cascadeOnDelete();
+                ->constrained('parents')->cascadeOnUpdate()->cascadeOnDelete();
             $table->softDeletes();
             $table->timestamps();
         });

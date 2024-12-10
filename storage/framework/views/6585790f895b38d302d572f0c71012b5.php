@@ -7,7 +7,7 @@
 
                 </div>
             <?php endif; ?>
-            <form method="post" action="<?php echo e(route('relatives.store')); ?>">
+            <form method="post" action="<?php echo e(route('parents.store')); ?>">
                 <?php echo csrf_field(); ?>
 
 
@@ -281,4 +281,4 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students-affairs/relatives/create_relative.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\My-Github\our-project\resources\views/students-affairs/parents/create_relative.blade.php ENDPATH**/ ?>
