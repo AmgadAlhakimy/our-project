@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Classroom\Classroom;
+use App\Models\Parents;
 use App\Models\Relative;
 use App\Models\Student;
 use Illuminate\Database\Seeder;
@@ -18,7 +19,7 @@ class StudentSeeder extends Seeder
         $gender_ar = [ 'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',];
 
         $classrooms = Classroom::all();
-        $relatives = Relative::all();
+        $parents = Parents::all();
         for($i = 1; $i<=100; $i++ ){
             Student::create([
                 'name'=> [
@@ -40,7 +41,7 @@ class StudentSeeder extends Seeder
                     'ar'=>"مكان $i",
                 ],
                 'classroom_id'=>$classrooms->random()->id,
-                'relative_id'=>$relatives->random()->id,
+                'parents_id'=>$parents->random()->id,
                 'note'=>'no note',
             ]);
         }

@@ -24,9 +24,11 @@ return new class extends Migration
             $table->json('health_problem_desc')->nullable();
             $table->string('note')->nullable();
             $table->foreignId('classroom_id')
-                ->constrained('classrooms')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId('relative_id')
-                ->constrained('parents')->cascadeOnUpdate()->cascadeOnDelete();
+                ->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('parents_id');
+//                ->constrained()
+//                ->cascadeOnUpdate()->cascadeOnDelete();
+//                ->constrained('parents');
             $table->softDeletes();
             $table->timestamps();
         });

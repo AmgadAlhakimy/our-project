@@ -7,6 +7,7 @@
     <h3 class="container-title">{{__('student.parent info')}}</h3>
     <div class="container  containers-style ">
         <form wire:submit.prevent="store">
+            @csrf
             <div class="row">
                 <!-- father name  -->
                 <div class="box col-lg-6 col-md-12">
@@ -163,7 +164,7 @@
             </div>
     </div>
     <div class="box mt-4 col-12">
-        <button type="submit" class=" save-button text-center">
+        <button type="submit" wire:click="store" class=" save-button text-center">
             {{__('public.next')}}
             <div wire:loading class="spinner-border spinner-border-sm"></div>
         </button>

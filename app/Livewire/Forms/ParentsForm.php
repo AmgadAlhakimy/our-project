@@ -2,14 +2,10 @@
 
 namespace App\Livewire\Forms;
 
-use App\Models\Relative;
+use App\Models\Parents;
 use Illuminate\Support\Facades\Log;
 use Livewire\Attributes\Rule;
 use Livewire\Form;
-
-//use Livewire\Features\SupportFormObjects\Form;
-
-//use Illuminate\Validation\Rule;
 
 
 class ParentsForm extends form
@@ -75,46 +71,46 @@ class ParentsForm extends form
     /**
      * Store a new relative.
      */
-    public function store()
-    {
-        $this->validate();
-        try {
-            Relative::create([
-                'father_name' => [
-                    'en' => $this->father_name,
-                    'ar' => $this->father_name_ar
-                ],
-                'father_work' => [
-                    'en' => $this->father_work,
-                    'ar' => $this->father_work_ar
-                ],
-                'father_contact1' => $this->father_contact1,
-                'father_contact2' => $this->father_contact2,
-                'mother_name' => [
-                    'en' => $this->mother_name,
-                    'ar' => $this->mother_name_ar
-                ],
-                'mother_work' => [
-                    'en' => $this->mother_work,
-                    'ar' => $this->mother_work_ar,
-                ],
-                'mother_contact1' => $this->mother_contact1,
-                'mother_contact2' => $this->mother_contact2,
-                'kin_name' => [
-                    'en' => $this->kin_name,
-                    'ar' => $this->kin_name_ar,
-                ],
-                'kin_relationship' => [
-                    'en' => $this->kin_relationship,
-                    'ar' => $this->kin_relationship_ar,
-                ],
-                'kin_contact' => $this->kin_contact,
-            ]);
-            session()->flash('message', 'Student created successfully.');
-            $this->reset();
-        } catch (\Exception $e) {
-            Log::error('Error creating student: ' . $e->getMessage());
-            session()->flash('error', 'An error occurred while creating the student.');
-        }
-    }
+//    public function store()
+//    {
+//        $this->validate();
+//        try {
+//            Parents::create([
+//                'father_name' => [
+//                    'en' => $this->father_name,
+//                    'ar' => $this->father_name_ar
+//                ],
+//                'father_work' => [
+//                    'en' => $this->father_work,
+//                    'ar' => $this->father_work_ar
+//                ],
+//                'father_contact1' => $this->father_contact1,
+//                'father_contact2' => $this->father_contact2,
+//                'mother_name' => [
+//                    'en' => $this->mother_name,
+//                    'ar' => $this->mother_name_ar
+//                ],
+//                'mother_work' => [
+//                    'en' => $this->mother_work,
+//                    'ar' => $this->mother_work_ar,
+//                ],
+//                'mother_contact1' => $this->mother_contact1,
+//                'mother_contact2' => $this->mother_contact2,
+//                'kin_name' => [
+//                    'en' => $this->kin_name,
+//                    'ar' => $this->kin_name_ar,
+//                ],
+//                'kin_relationship' => [
+//                    'en' => $this->kin_relationship,
+//                    'ar' => $this->kin_relationship_ar,
+//                ],
+//                'kin_contact' => $this->kin_contact,
+//            ]);
+//            session()->flash('message', 'Student created successfully.');
+//            $this->reset();
+//        } catch (\Exception $e) {
+//            Log::error('Error creating student: ' . $e->getMessage());
+//            session()->flash('error', 'An error occurred while creating the student.');
+//        }
+//    }
 }
