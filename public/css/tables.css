@@ -64,14 +64,13 @@ button:hover .icon-arrow {
     color: var(--S-Color-2);
     border-color: var(--S-Color-2);
 }
-th,
-td {
+th,td {
     border-bottom: 1px solid #dddddd;
     padding: 10px 5px;
     text-align: center;
     overflow-wrap: break-word;
     word-break: break-all;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 td {
     /* border-left: 0.03px double var(--border-color); */

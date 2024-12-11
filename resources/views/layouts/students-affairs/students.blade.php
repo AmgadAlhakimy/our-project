@@ -9,7 +9,7 @@
         <span class="menu-name">{{__('sidebar.parents')}}</span>
         <i class="icon-1 fa-solid fa-chevron-down"></i>
     </a>
-</div>
+</div> 
 <div class="submenu">
     <div class="line-black">
         {{-- Add Student --}}
@@ -34,9 +34,9 @@
 <div class="submenu">
     <div class="line-black">
         {{-- Add Student --}}
-        <a href='{{route("create-student")}}' class="li-link">{{__('sidebar.add a Student')}}</a>
-        {{-- review students --}}
-        <a href="{{route('display-students')}}" class="li-link">{{__('sidebar.review students')}}</a>
+        <a href='{{route("create-student")}}' class="li-link">{{__('sidebar.add a new student')}}</a>
+        {{-- view students --}}
+        <a href="{{route('display-students')}}" class="li-link">{{__('sidebar.view students')}}</a>
         <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>
         <a href='/absence' class="li-link">{{__('sidebar.Student absence')}}</a>
         <a href='/student_form' class="li-link">معلومات الطلاب</a>

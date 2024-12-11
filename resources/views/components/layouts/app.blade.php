@@ -9,8 +9,8 @@
 <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
     <div class="sidebar my-scroll">
 
-        <!-- ============= LIST ============== -->
-        <div class="sidebar-nav">
+        <!-- ============= LIST ============== --> 
+        <div class="sidebar-nav"> 
             <ul class="list-ul">
                 @include('layouts.students-affairs.students')
                 @include('layouts.academic-department.academic-department')
@@ -25,7 +25,7 @@
 <div class="section-home mt-5">
     <div id="my_toggle" class="">
         <div id="myDive" class="toggle-sidebar">
-            {{ $slot }}
+            {{$slot}}
         </div>
     </div>
 </div>

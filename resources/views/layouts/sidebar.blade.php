@@ -11,7 +11,7 @@
 
         <!-- ============= LIST ============== -->
         <div class="sidebar-nav">
-            <ul class="list-ul">
+            <ul class="list-ul"> 
 
                 @include('layouts.students-affairs.students')
 
@@ -31,8 +31,6 @@
                 {{-- ---شؤون الموظفين--- --}}
                 <!-- ======================== EMB ========================== -->
                 @include('layouts.personnel-affairs.personnel-affairs')
-
-
             </ul>
         </div>
     </div>
