@@ -34,7 +34,7 @@
                 <ul class="menuLang ">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li class="">
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
+                            <a rel="alternate" class="ps-4 pe-4 p-2" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }} "
                             class="lung_test">
                                 {{ $properties['native'] }}
                             </a>
@@ -46,29 +46,33 @@
             {{-- home --}}
             <div class=" me-1 ms-1 ph-home border-left">
                 <a class="card-info  " aria-current="page" href='/'>
-                    <i class="mt-2 h3 icon-1 fa-solid fa-home-lg-alt"></i>
+                    <i class="mt-2 h2 icon-1 fa-solid fa-home-lg-alt"></i>
                 </a>
             </div>
             {{-- -------------------- --}}
-            <div class=" dropDownLang sec_menu">
-                <div class="select w-100 ">
+            <div class=" dropDownLang sec_menu ">
+                <div class="select shadow-none border-none">
                     {{-- title --}}
-                    <i class="h4 mt-1 mb-1 icon-1 fa-solid fa-bars"></i>
-
-                    <div class="caret d-none"></div>
+                    <i class="d-none fa-solid fa-bars"></i>
+                    <div class="caret  h1 mt-1 mb-1 sidebar-icon"></div>
                 </div>
-                <ul class="menuLang w-200 ">
+                <ul class="menuLang sub_head_menu ">
                     {{-- HOME --}}
                     <li>
-                        <a class="mt-1 ph-home_m " aria-current="page" href='/'>
-                        <i class="h2 mt-1 mb-1 icon-1 fa-solid fa-home-lg-alt"></i> </a>
+                        <a class="ph-home_m pe-3 ps-3 " aria-current="page" href='/'>{{__('sidebar.home')}}</a>
                     </li>
                     {{-- 1 --}}
                     <hr class="ph-home_m">
                     <li>
                         <div id="sidebar_1" class="icons ">
-                            <img class=" " src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
-                            <a class="title-4 ms-1 me-1">{{__('sidebar.my account')}} </i></a>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a class=" ">{{__('sidebar.my account')}} </i></a>
+                                </div>
+                                <div class="col-6">
+                                    <img class="" src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     {{-- 2 --}}
@@ -78,19 +82,15 @@
                     </li>
                     {{-- 3 --}}
                     <hr class="">
-{{--                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)--}}
-{{--                        <li class="">--}}
-{{--                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">--}}
-{{--                                {{ $properties['native'] }}--}}
-{{--                            </a>--}}
-{{--                        </li>--}}
-{{--                    @endforeach--}}
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <li class="">
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" 
+                            class=" ps-4 pe-5 4-2">
+                                {{ $properties['native'] }}
+                            </a>
+                        </li>
+                    @endforeach
                     {{-- 4 --}}
-                    <hr class="ph-search_m">
-                    <div class="search p-relative mt-1 ph-search_m">
-                        <input class="search1 w-100 " type="search"
-                            placeholder="{{__('sidebar.search')}}" id="rtl" />
-                    </div>
                 </ul>
             </div>
         </div>

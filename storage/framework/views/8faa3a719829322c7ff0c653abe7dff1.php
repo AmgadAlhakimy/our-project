@@ -13,6 +13,15 @@
         <div class="sidebar-nav">
             <ul class="list-ul"> 
 
+                
+                <div class="search p-relative ph-search_m">
+                    <input class="search1 ms-2 me-2 " type="search"
+                    placeholder="<?php echo e(__('sidebar.search')); ?>" id="rtl" />
+                </div>
+                <hr class="ph-search_m">
+
+
+                
                 <?php echo $__env->make('layouts.students-affairs.students', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                 

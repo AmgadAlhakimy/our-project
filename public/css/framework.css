@@ -26,6 +26,7 @@ ul {
     --orange2-color: #eeb149;
     --red-color: #f44336;
     --grey-color: #888;
+    --title-5: #888;
     --section-bg-1: #ebeef1;
     --S-Color-2: #d12c5c;
     --S-Color-3: rgb(96, 178, 191);
@@ -720,21 +721,20 @@ input[type="checkbox"].toggle:checked + input.test1 {
 }
 /* when the screen from 769 larger */
 @media (min-width: 780px) {
+    /* start the langmenu style */
     .dropDownLang .select .lang_1 {
         display: none;
     }
+
+    /* start the langmenu style */
     .sec_menu {
         display: none;
     }
     .sidebar{
         width: 260px;
     }
-    .dropDownLang .menuLang {
-        /* left: 16%;
-        transform: translatex(-50%); */
-    }
     .toggle_icon{
-        font-size: 80px;
+        font-size: 50px;
     }
 
 }
@@ -868,12 +868,15 @@ input[type="checkbox"].toggle:checked + input.test1 {
         /* width: 150px; */
     }
     .toggle_icon{
-        font-size: 70px;
+        font-size: 40px;
     }
     tbody tr td,thead tr th {
         font-size: 15;
     }
-
+    /* the sec_menu style for lang and account and home button */
+    .sec_menu{
+        
+        }
 }
 /* 690 */
 @media (max-width: 680px) {
@@ -972,7 +975,12 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 16px;
     }
     .toggle_icon{
-        font-size: 60px;
+        font-size: 30px;
+    }
+    /* sidebar head */
+    
+    .sub_head_menu{
+        width: 150px;
     }
 }
 /* _____________________________________________ */
@@ -981,9 +989,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .number_rows_links_1{
         display: none;
     }
-    .toggle_icon{
-        font-size: 50px;
-    }
+
 
 
 }
@@ -1076,10 +1082,19 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .n_rect,.form-label{
         font-size: 15px;
     }
+    .toggle_icon{
+        font-size: 25px;
+    }
     /* table */
     tbody tr td,thead tr th{
         font-size: 11;
     }
+        /* sidebar head */
+    
+        .sub_head_menu{
+            width: 120px;
+            background-color: black;
+        }
 }
 /* ---------------------------------------------- */
 /* phone screen */
@@ -1168,7 +1183,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 13px;
     }
     .toggle_icon{
-        font-size: 40px;
+        font-size: 20px;
     }
     /* table */
     tbody tr td,thead tr th{

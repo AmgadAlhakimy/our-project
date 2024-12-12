@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
         setToggleStyles(isActive);
     });
 
-    // ضبط الأسلوب الابتدائي عند التحميل
+    
     setToggleStyles(false);
 });
 

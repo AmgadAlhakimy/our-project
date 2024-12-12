@@ -72,11 +72,16 @@
 }
 .sidebar.close .list-ul li .sidebar-title .li-link {
     box-shadow: none;
-    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
     border: none;
+    border-bottom: 1px solid black;
 }
 .sidebar.close .list-ul li .sidebar-title .li-link .icon-1 {
     font-size: 25px ;
+
 }
 
 
@@ -123,7 +128,7 @@
     transform: rotate(360deg);
 }
 .list-ul li .sidebar-title .li-link {
-    margin-right: 10px;
+    /* margin-right: 10px; */
     margin-bottom: 5px;
     flex: 1;
     box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
@@ -142,7 +147,6 @@
 
 }
 
-
 /* .list-ul li .sidebar-title:hover .icon-1, */
 .list-ul li .sidebar-title:hover .menu-name {
     color: var(--school-color-3);
@@ -153,7 +157,7 @@
     text-transform: uppercase;
     transition: all 0.5s ease;
     flex: 1;
-    margin:0 5px;
+    margin:0 0px;
 }
 
 /* --------------------- submenu --------------------- */
@@ -265,6 +269,7 @@ body[dir="rtl"] .submenu .li-link:hover{
     border-right: 5px solid transparent;
     border-top: 6px solid var(--grey-color);
     transition: 0.3s;
+    font-size: 14px;
 }
 .caret-rotate {
     transform: rotate(180deg);
@@ -305,6 +310,19 @@ body[dir="rtl"] .submenu .li-link:hover{
 body[dir="rtl"] .menuLang li:hover {
     margin-right: 10px;
 }
+body[dir="rtl"] .sub_head_menu li:hover {
+    margin-right: 10px;
+}
+body[dir="rtl"] .sub_head_menu {
+    position: absolute;  
+    left: 50px;
+}
+.sub_head_menu {
+    position: absolute; 
+    left: -120px;
+    width: 200px;
+}
+
 .menuLang li:hover a {
     color: var(--sidebar-bg);
 }
@@ -331,7 +349,12 @@ body[dir="rtl"] .menuLang li:hover {
     align-items: center;
     justify-content: right;
 }
-
+.sec_menu .select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+}
 /* search icon */
 .search::before {
     font-family: var(--fa-style-family-classic);
@@ -354,6 +377,9 @@ body[dir="rtl"] .search .search1 {
     padding-left: 10px;
     margin-right: 5px;
     
+}
+.title-5{
+    color: var(--title-5);
 }
 /* the sidebar search */
 .search .search1 {
@@ -493,6 +519,12 @@ body[dir="rtl"] .search .search1 {
 }
 .me-300 {
     margin-right: 300px;
+}
+.shadow-none{
+    box-shadow: none;
+}
+.border-none{
+    border: none;
 }
 /* ________________ start toggle style _________________ */
 .toggle{
