@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        {{--  --}}
+
         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 mt-4 radus-10  shadow toggle_card_master  me-1 ms-1">
             <div class="row toggle_card p-3  ">
                 <i class="col fa-solid fa-user-tie toggle_icon "></i>
@@ -54,4 +54,5 @@
         </div>
     </div>
 </div>
+
 @endsection

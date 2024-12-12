@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
+        //     'name' => 'MyTest User',
         //     'email' => 'test@example.com',
         // ]);
 
@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             ClassroomSeeder::class,
             SubjectSeeder::class,
             ActivitySeeder::class,
-            RelativeSeeder::class,
+            ParentsSeeder::class,
             StudentSeeder::class,
             TeacherSeeder::class,
             ClassroomSubjectSeeder::class,

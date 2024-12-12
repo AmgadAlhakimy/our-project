@@ -10,13 +10,10 @@ class CreateParents extends Component
 {
     public ParentsForm $parentsForm;
 
-    public function mount()
+    public function store()
     {
-//        $this->parentsForm = new ParentsForm(15);
-    }
-    public function store(): void
-    {
-//        $this->parentsForm->store();
+        return 'hello';
+        route('parents.store');
     }
 
     public function render()
