@@ -12,7 +12,6 @@ trait QueryTrait
     public string $showArrow = 'id';
     public int $pagination = 5;
 
-
     public string $search = '';
     public string $orderBy = 'id';
 
