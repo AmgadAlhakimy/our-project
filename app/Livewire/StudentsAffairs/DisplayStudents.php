@@ -2,18 +2,58 @@
 
 namespace App\Livewire\StudentsAffairs;
 
-use App\Models\Classroom\Classroom;
 use App\Models\Student;
+use App\Traits\QueryTrait;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class DisplayStudents extends Component
 {
+    use WithPagination;
+    use QueryTrait;
+
     public function render()
     {
-        $students = Student::paginate(20);
-        $classrooms= Classroom::all();
-        return view('livewire.display-students',
-        compact('students','classrooms')
-        )->title('Students');
+        try {
+            $myQuery = Student::where( 
+                'name->en', 'like', "%$this->search%")
+                    ->orwhere('name->ar','like',"%$this->search%")
+
+                    ->orwhere('address->en','like',"%$this->search%")
+                    ->orwhere('address->ar','like',"%$this->search%")
+                    
+                    ->orwhere('gender->en','like',"%$this->search%")
+                    ->orwhere('gender->ar','like',"%$this->search%")
+                    
+                    ->orwhere('birthdate->en','like',"%$this->search%")
+                    ->orwhere('birthdate->ar','like',"%$this->search%")
+                    
+                    ->orwhere('place_of_birth->en','like',"%$this->search%")
+                    ->orwhere('place_of_birth->ar','like',"%$this->search%")
+                    
+                    ->orwhere('medicine_desc->en','like',"%$this->search%")
+                    ->orwhere('medicine_desc->ar','like',"%$this->search%")
+                    
+                    ->orwhere('allergy_desc->en','like',"%$this->search%")
+                    ->orwhere('allergy_desc->ar','like',"%$this->search%")
+                    
+                    ->orwhere('health_problem_desc->en','like',"%$this->search%")
+                    ->orwhere('health_problem_desc->ar','like',"%$this->search%")
+                    
+                    ->orwhere('classroom_id->en','like',"%$this->search%")
+                    ->orwhere('classroom_id->ar','like',"%$this->search%")
+                    
+                    ->orwhere('parents_id->en','like',"%$this->search%")
+                    ->orwhere('parents_id->ar','like',"%$this->search%")
+
+                ->get();
+
+            $students =  $this->queryData("\App\Models\Student", $myQuery);
+            return view('students-affairs.Students.display-Students', [
+                    'students' => $students,
+                ])->title('Students');
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 }

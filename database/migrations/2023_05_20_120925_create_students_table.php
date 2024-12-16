@@ -19,8 +19,11 @@ return new class extends Migration
             $table->json('gender');
             $table->date('birthdate');
             $table->json('place_of_birth');
+            $table->json('chick_medicine')->nullable();
             $table->json('medicine_desc')->nullable();
+            $table->json('chick_allergy')->nullable();
             $table->json('allergy_desc')->nullable();
+            $table->json('chick_health_problem')->nullable();
             $table->json('health_problem_desc')->nullable();
             $table->string('note')->nullable();
             $table->foreignId('classroom_id')

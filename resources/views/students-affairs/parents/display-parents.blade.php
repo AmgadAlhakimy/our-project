@@ -6,7 +6,6 @@
             <div class="row">
                 <label class="col">
                     <div class="row">
-
                         <label class="col">
                             <div class="search p-relative">
                                 <input wire:model.live.debounce.500ms="search"
