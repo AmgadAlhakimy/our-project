@@ -10,17 +10,17 @@
             <!-- father name  -->
             <div class="row box">
                 <label>
-                    <input class="form-control col-12" type="text" list="relative"
-                           wire:model.live.debounce.500ms="relativeForm.father_name"
+                    <input class="form-control col-12" type="text" list="parent"
+                           wire:model.live.debounce.500ms="parentsForm.father_name"
                            placeholder="{{__('student.please select the father')}}"/>
                 </label>
-                <datalist id="relative">
-                    @foreach($relatives as $relative)
-                        <option value="{{$relative->id}}">{{$relative->father_name}}</option>
+                <datalist id="parent">
+                    @foreach($parents as $parent)
+                        <option value="{{$parent->id}}">{{$parent->father_name}}</option>
                     @endforeach
                 </datalist>
                 <br>
-                @error('studentForm.relative_id')
+                @error('studentForm.parent_id')
                 <small class="form-text text-danger">{{$message}}</small>
                 @enderror
 
@@ -191,30 +191,31 @@
                     <label class="col d-flex justify-content-end">{{__('student.take any medicine ?')}}</label>
                     <div class="col mt-2 d-flex justify-content-start">
                         <input class="toggle" type="checkbox" wire:click="flip(0)"
-                            id="takeMedicineE"
-                            value="{{old('take_medicine')}}">
+                               id="takeMedicineE"
+                               value="{{old('take_medicine')}}">
                         <label class="form-label  rounded" for="takeMedicineE"></label>
                     </div>
                     {{-- ---- --}}
+
+                    @error('studentForm.take_medicine')
+                    <small class="form-text text-danger">{{$message}}</small>
+                    @enderror
+                    {{-- -*- --}}
+                    {{-- -*- --}}
                     @if($checks[0])
                         <div class="row">
-                            {{-- -*- --}}
-                            @error('studentForm.take_medicine')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                            {{-- -*- --}}
                             <input type="text" class=" form-control ms-1 me-1 col"
-                                wire:model.live.debounce.500ms="studentForm.medicine_desc"
-                                id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
-                                aria-label="Text input with radio button" placeholder="desc in english">
+                                   wire:model.live.debounce.500ms="studentForm.medicine_desc"
+                                   id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
+                                   aria-label="Text input with radio button" placeholder="desc in english">
                             @error('studentForm.medicine_desc')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                             {{-- -*- --}}
                             <input type="text" class=" form-control ms-1 me-1 col"
-                                wire:model.live.debounce.500ms="studentForm.medicine_desc_ar"
-                                id="" value="{{old('medicine_desc_ar')}}"
-                                aria-label="Text input with radio button" placeholder="desc in arabic">
+                                   wire:model.live.debounce.500ms="studentForm.medicine_desc_ar"
+                                   id="" value="{{old('medicine_desc_ar')}}"
+                                   aria-label="Text input with radio button" placeholder="desc in arabic">
                             @error('studentForm.medicine_desc_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -227,36 +228,36 @@
                     {{-- ---- --}}
                     <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                         <input class="toggle col" type="checkbox" wire:click="flip(1)"
-                            id="haveAllergy"
-                            value="{{old('have_allergy')}}">
+                               id="haveAllergy"
+                               value="{{old('have_allergy')}}">
 
                         <label class="form-label col rounded" for="haveAllergy"></label>
                     </div>
-                    <div class="row">
+                    @error('studentForm.have_allergy')
+                    <small class="form-text text-danger">{{$message}}</small>
+                    @enderror
 
-                        {{-- -*- --}}
-                        @error('studentForm.have_allergy')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                        {{-- -*- --}}
-                        @if($checks[1])
+                    {{-- -*- --}}
+                    {{-- -*- --}}
+                    @if($checks[1])
+                        <div class="row">
                             <input type="text" class=" form-control ms-1 me-1 col"
-                                wire:model.live.debounce.500ms="studentForm.allergy_desc"
-                                id="std_allergy_desc_1"
-                                aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
-                                placeholder="desc in english">
+                                   wire:model.live.debounce.500ms="studentForm.allergy_desc"
+                                   id="std_allergy_desc_1"
+                                   aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
+                                   placeholder="desc in english">
                             @error('studentForm.allergy_desc')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                             {{-- -*- --}}
                             <input type="text" class=" form-control ms-1 me-1 col"
-                                wire:model.live.debounce.500ms="studentForm.allergy_desc_ar"
-                                id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
-                                aria-label="Text input with radio button" placeholder="desc in arabic">
+                                   wire:model.live.debounce.500ms="studentForm.allergy_desc_ar"
+                                   id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
+                                   aria-label="Text input with radio button" placeholder="desc in arabic">
                             @error('studentForm.allergy_desc_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
-                    </div>
+                        </div>
                     @endif
                     {{-- 3 --}}
                     {{-- -------------------------------- --}}
@@ -264,40 +265,36 @@
                     {{-- ---- --}}
                     <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                         <input class="toggle col" type="checkbox" wire:click="flip(2)"
-                            id="healthProblem" value="{{old('have_health_problem')}}"
-                            >
+                               id="healthProblem" value="{{old('have_health_problem')}}"
+                        >
                         <label class="form-label col rounded" for="healthProblem"
-                            id="healthProblem"></label>
+                               id="healthProblem"></label>
                     </div>
-                    <div class="row">
-
-                        {{-- -*- --}}
-                        @error('studentForm.have_health_problem')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                        {{-- -*- --}}
-                        @if($checks[2])
-
-
-                                <input type="text" class=" form-control ms-1 me-1 col"
-                                    wire:model.live.debounce.500ms="studentForm.health_problem_desc"
-                                    id="std_health_desc_1"
-                                    aria-label="Text input with radio button" value="{{old('health_problem_desc')}}"
-                                    placeholder="desc in english">
-                                @error('studentForm.health_problem_desc')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-                                {{-- -*- --}}
-                                <input type="text" class=" form-control ms-1 me-1 col"
-                                    wire:model.live.debounce.500ms="studentForm.health_problem_desc_ar"
-                                    id="std_health_desc_2"
-                                    value="{{old('health_problem_desc_ar')}}"
-                                    aria-label="Text input with radio button" placeholder="desc in arabic">
-                                @error('studentForm.health_problem_desc_ar')
-                                <small class="form-text text-danger">{{$message}}</small>
-                                @enderror
-
-                    </div>
+                    @error('studentForm.have_health_problem')
+                    <small class="form-text text-danger">{{$message}}</small>
+                    @enderror
+                    {{-- -*- --}}
+                    {{-- -*- --}}
+                    @if($checks[2])
+                        <div class="row">
+                            <input type="text" class=" form-control ms-1 me-1 col"
+                                   wire:model.live.debounce.500ms="studentForm.health_problem_desc"
+                                   id="std_health_desc_1"
+                                   aria-label="Text input with radio button" value="{{old('health_problem_desc')}}"
+                                   placeholder="desc in english">
+                            @error('studentForm.health_problem_desc')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                            {{-- -*- --}}
+                            <input type="text" class=" form-control ms-1 me-1 col"
+                                   wire:model.live.debounce.500ms="studentForm.health_problem_desc_ar"
+                                   id="std_health_desc_2"
+                                   value="{{old('health_problem_desc_ar')}}"
+                                   aria-label="Text input with radio button" placeholder="desc in arabic">
+                            @error('studentForm.health_problem_desc_ar')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
                     @endif
                     {{-- ----------------------------------- --}}
                 </div>
@@ -311,8 +308,8 @@
                 <div class="box col-lg-12 col-md-12">
                     <label class="form-label" for="std_Note">{{__('student.note')}}</label>
                     <textarea wire:model.live.debounce.500ms="studentForm.note" class="form-control" id="std_Note"
-                            cols="50"
-                            rows="5">{{old('note')}}</textarea>
+                              cols="50"
+                              rows="5">{{old('note')}}</textarea>
                 </div>
             </div>
         </div>

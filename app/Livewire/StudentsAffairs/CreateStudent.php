@@ -6,7 +6,7 @@ use App\Livewire\Forms\ParentsForm;
 use App\Livewire\Forms\StudentForm;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
-use App\Models\Relative;
+use App\Models\Parents;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -17,10 +17,11 @@ class CreateStudent extends Component
     public $checks = [false, false, false];
 
     public StudentForm $studentForm;
+    public StudentForm $parentForm;
 
     public $selectedLevel = null;
     public $classrooms;
-    public int $currentStep = 1;
+    public int $currentStep = 2;
     public int $totalSteps = 3;
     public string $search = "";
     public $image;
@@ -30,14 +31,14 @@ class CreateStudent extends Component
     {
         $fathers = [];
         if (strlen($this->search) > 0) {
-            $fathers = Relative::where('father_name->en', 'like', "%$this->search%")
+            $fathers = Parents::where('father_name->en', 'like', "%$this->search%")
                 ->orwhere('father_name->ar', 'like', "%$this->search%")->get();
         }
 
         $levels = EducationalLevel::all();
-        $relatives = Relative::all();
+        $parents = Parents::all();
         return view('students-affairs.students.create-student',
-            compact('levels', 'relatives',
+            compact('levels', 'parents',
                 'fathers')
         )->title('Create Student');
     }
@@ -58,9 +59,9 @@ class CreateStudent extends Component
         where('edu_id', $this->selectedLevel)->get();
     }
 
-    public function storeRelative(): void
+    public function storeParents(): void
     {
-        $this->relativeForm->store();
+        $this->parentForm->store();
         $this->currentStep++;
     }
 

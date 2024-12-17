@@ -875,7 +875,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
     /* the sec_menu style for lang and account and home button */
     .sec_menu{
-        
+
         }
 }
 /* 690 */
@@ -978,7 +978,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 30px;
     }
     /* sidebar head */
-    
+
     .sub_head_menu{
         width: 150px;
     }
@@ -1090,7 +1090,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
         font-size: 11;
     }
         /* sidebar head */
-    
+
         .sub_head_menu{
             width: 120px;
             background-color: black;
