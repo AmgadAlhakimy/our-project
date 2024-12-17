@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models; 
 
 use App\Models\Classroom\Classroom;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,14 +15,16 @@ class Student extends Model
     use HasTranslations;
 
     protected $fillable = ['name', 'photo', 'address', 'gender',
-                            'birthdate', 'place_of_birth',
-                            'medicine_desc', 'allergy_desc',
+                            'birthdate', 'place_of_birth','chick_medicine',
+                            'chick_allergy','medicine_desc', 'allergy_desc',
+                            'chick_health_problem',
                             'health_problem_desc', 'note',
                             'classroom_id','relative_id'];
 
     public array $translatable = ['name', 'address', 'gender',
-                                  'place_of_birth', 'medicine_desc',
-                                  'allergy_desc', 'health_problem_desc',];
+                                'place_of_birth', 'medicine_desc',
+                                'chick_medicine','chick_allergy','chick_health_problem',
+                                'allergy_desc', 'health_problem_desc',];
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);

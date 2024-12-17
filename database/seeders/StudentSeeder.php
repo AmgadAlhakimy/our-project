@@ -15,8 +15,13 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
+        
         $gender_en = [ 'male','female','male','female','male','female','male','female','male','female',];
         $gender_ar = [ 'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',];
+
+        $chick_en = [ 'yes','no','yes','no','yes','no','yes','no','yes','no',];
+        $chick_ar = [ 'نعم','لا','نعم','لا','نعم','لا','نعم','لا','نعم','لا',];
+
 
         $classrooms = Classroom::all();
         $parents = Parents::all();
@@ -40,6 +45,32 @@ class StudentSeeder extends Seeder
                     'en'=>"place $i",
                     'ar'=>"مكان $i",
                 ],
+                'chick_medicine'=> [
+                    'en'=>$chick_en[rand(0,9)],
+                    'ar'=>$chick_ar[rand(0,9)],
+                ],
+                'medicine_desc'=> [
+                    'en'=>"he dos't take anything $i",
+                    'ar'=>"هو لا ياخذ اي علاج $i",
+                ],
+                'chick_allergy'=> [
+                    'en'=>$chick_en[rand(0,9)],
+                    'ar'=>$chick_ar[rand(0,9)],
+                ],
+                'allergy_desc'=> [
+                    'en'=>"He have a allergy $i",
+                    'ar'=>"لدية حساسية من الفول الفلافل $i", 
+                ],
+                'chick_health_problem'=> [
+                    'en'=>$chick_en[rand(0,9)],
+                    'ar'=>$chick_ar[rand(0,9)],
+                ],
+                'health_problem_desc'=> [
+                    'en'=>"he can't walk like any kid $i",
+                    'ar'=>"لا يستطيع المشي على قدمية كاي طفل اخر $i", 
+                ],
+
+
                 'classroom_id'=>$classrooms->random()->id,
                 'parents_id'=>$parents->random()->id,
                 'note'=>'no note',
