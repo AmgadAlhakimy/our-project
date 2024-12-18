@@ -270,55 +270,9 @@
     </main>
 
 
-    <script>
-        function populateClassrooms() {
-            var educationalLevelId = document.getElementById('educational_level').value;
-            var classroomSelect = document.getElementById('classroom');
-
-            // Clear existing options
-            classroomSelect.innerHTML = '';
-
-            if (educationalLevelId !== '') {
-                // Send an AJAX request to fetch the classrooms
-                $.ajax({
-                    url: '/classrooms/' + educationalLevelId,
-                    type: 'GET',
-                    success: function(data) {
-                        // Ensure the response data is an array
-                        if (Array.isArray(data)) {
-                            // Populate classrooms based on the response
-                            data.forEach(function(classroom) {
-                                classroomSelect.innerHTML += '<option value="' + classroom.id + '">' + classroom.name + '</option>';
-                            });
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error(error);
-                    }
-                });
-            }
-        }
-    </script>
-{{--    <script>--}}
-{{--        $(document.ready(function (){--}}
-{{--            $('select[name="level_id"]').on('change', function (){--}}
-{{--                let level_id = $(this).val();--}}
-{{--                if(level_id){--}}
-{{--                    $.ajax({--}}
-{{--                        url: "{{URL::to('classrooms')}}/" + level_id,--}}
-{{--                        type: "GET",--}}
-{{--                        dataType: "json",--}}
-{{--                        success: function (data){--}}
-{{--                            $('select[name="classroom_id"]').empty();--}}
-{{--                            $.each(data, function (key, value){--}}
-{{--                                $('select[name="classroom_id"]').append('<option value="' + key +'">' + value + '</option>');--}}
-{{--                            });--}}
-{{--                        },--}}
-{{--                    });--}}
-{{--                }else {--}}
-{{--                    console.log('AJAX load did not work');--}}
-{{--                }--}}
-{{--            });--}}
-{{--        }));--}}
-{{--    </script>--}}
 @endsection
+
+
+
+
+

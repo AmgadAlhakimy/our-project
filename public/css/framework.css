@@ -702,6 +702,39 @@ input[type="checkbox"].toggle:checked + input.test1 {
 /*}*/
 
 
+/* start parets list dropdown */
+    .parents_dropdown {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+    }
+    .parents_dropdown input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+.parent {
+    display: none;
+    position: absolute;
+    display: none;
+    position: absolute;
+    left: 2px;
+    width: 100%;
+    width: 100%;
+    z-index: 1;
+}
+.parent .form-label {
+    padding: 4px;
+    cursor: pointer;
+}
+.parent .form-label:hover {
+    background-color: #f0f0f0;
+}
+/* end parets list dropdown */
+
+
 
 /* ============= responsive / breakpoints    ============= */
 
@@ -929,6 +962,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .cards_title,
     .cards_sup_title {
         font-size: 20px;
+        text-shadow: none;
     }
     .cards_img {
         width: 120px;
@@ -1024,6 +1058,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .topic-title {
         font-size: 15px;
         margin-top: 0px;
+        text-shadow: none;
     }
     .student-img {
         height: 70px;
@@ -1031,9 +1066,11 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
     .title-1 {
         font-size: 20px;
+        text-shadow: none;
     }
     .container-title {
         font-size: 20px;
+        text-shadow: none;
     }
     .s_info_1 {
         flex: 0 0 auto;
@@ -1127,6 +1164,7 @@ input[type="checkbox"].toggle:checked + input.test1 {
     .topic-title {
         font-size: 16px;
         margin-top: 0px;
+        text-shadow: none;
     }
     .student-img {
         height: 70px;
@@ -1134,9 +1172,12 @@ input[type="checkbox"].toggle:checked + input.test1 {
     }
     .title-1 {
         font-size: 15px;
+        text-shadow: none;
     }
     .container-title {
         font-size: 15px;
+        text-shadow: none;
+
     }
     .dropDownLang .select-clicked {
         width: 80px;
