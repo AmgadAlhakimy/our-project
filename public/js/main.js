@@ -246,3 +246,74 @@ function hidOptions() {
     }
 }
 
+
+// AMGAD CODE
+function populateClassrooms() {
+    var educationalLevelId = document.getElementById('educational_level').value;
+    var classroomSelect = document.getElementById('classroom');
+
+    // Clear existing options
+    classroomSelect.innerHTML = '';
+
+    if (educationalLevelId !== '') {
+        // Send an AJAX request to fetch the classrooms
+        $.ajax({
+            url: '/classrooms/' + educationalLevelId,
+            type: 'GET',
+            success: function(data) {
+                // Ensure the response data is an array
+                if (Array.isArray(data)) {
+                    // Populate classrooms based on the response
+                    data.forEach(function(classroom) {
+                        classroomSelect.innerHTML += '<option value="' + classroom.id + '">' + classroom.name + '</option>';
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
+}
+
+
+// parent list code
+
+    function showOptions() {
+        const select = document.getElementById('parent');
+        select.style.display = 'block';
+    }
+
+    function hideOptions() {
+        const select = document.getElementById('parent');
+        select.style.display = 'none';
+    }
+
+    function filterOptions() {
+        const input = document.getElementById('customInput');
+        const select = document.getElementById('parent');
+        const options = select.options;
+
+        for (let i = 0; i < options.length; i++) {
+            const option = options[i];
+            option.style.display = option.text.toLowerCase().includes(input.value.toLowerCase()) ? 'block' : 'none';
+        }
+    }
+
+    function selectParent() {
+        const select = document.getElementById('parent');
+        const input = document.getElementById('customInput');
+        input.value = select.options[select.selectedIndex].text;
+        hideOptions();
+    }
+
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.parents_dropdown')) {
+            hideOptions();
+        }
+    });
+
+// wratting a single name with out space for stuedents name
+    document.getElementById('singleWordInput').addEventListener('input', function() {
+    this.value = this.value.replace(/\s+/g, '');
+});
