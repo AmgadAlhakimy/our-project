@@ -6,16 +6,12 @@ use App\Models\test;
 
 class TestForm
 {
-    public string $name='a';
+    public $name;
+    public $email;
 
-    public function save()
+    public function __construct($name, $email)
     {
-        Test::create([
-            'name' => $this->name,
-        ]);
-
-        // Redirect or show a success message
-        session()->flash('message', 'Data saved successfully!');
-        redirect()->route('your-route'); // Replace with your desired route
+        $this->name = $name;
+        $this->email = $email;
     }
 }

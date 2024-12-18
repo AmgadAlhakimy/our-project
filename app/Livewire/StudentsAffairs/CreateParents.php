@@ -2,32 +2,27 @@
 
 namespace App\Livewire\StudentsAffairs;
 
-use App\Livewire\Forms\ParentsForm;
+use App\Livewire\Forms\ParentsFormTest;
 use Livewire\Component;
 use PHPUnit\Exception;
 
 
 class CreateParents extends Component
 {
-    public ParentsForm $parentsForm;
-    public $test = 0;
 
-    public function storeParents()
+    public ParentsFormTest $parentsForm;
+
+    public function save()
     {
-        $this->test++;
-        try {
-//            return
-        return view('academic-dep.educational-levels.create-edu-level');
-        }catch (Exception $e){
-            return $e;
-        }
-//        route('parents.store');
+        $this->parentsForm->validate();
+        dd(123);
+//        $this->parentsForm->saveParents();
     }
 
     public function render()
     {
-        return view('students-affairs.parents.create-parents',[
-        'parentsForm' => $this->parentsForm
+        return view('students-affairs.parents.create-parents', [
+            'parentsForm' => $this->parentsForm
         ]);
 
     }

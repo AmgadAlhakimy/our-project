@@ -2,7 +2,7 @@
 
 namespace App\Livewire\StudentsAffairs;
 
-use App\Livewire\Forms\ParentsForm;
+use App\Livewire\Forms\ParentsFormTest;
 use App\Livewire\Forms\StudentForm;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;

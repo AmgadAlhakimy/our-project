@@ -9,11 +9,12 @@
         <span class="menu-name">{{__('sidebar.parents')}}</span>
         <i class="icon-1 fa-solid fa-chevron-down"></i>
     </a>
-</div> 
+</div>
 <div class="submenu">
     <div class="line-black">
         {{-- Add Student --}}
         <a href='{{route("create-parents")}}' class="li-link">{{__('sidebar.create parents')}}</a>
+        <a href='{{route("for-me")}}' class="li-link">{{__('sidebar.create forMe')}}</a>
         {{-- review students --}}
         <a href="{{route('display-parents')}}" class="li-link">{{__('sidebar.display parents')}}</a>
         <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted parents')}}</a>
