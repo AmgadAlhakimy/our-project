@@ -194,7 +194,7 @@
                         <input class="save-button " type="submit" value="{{__('public.update')}}">
                     </div>
                     <div class="box  col">
-                        <a href="{{route('students.index')}}" class="btn clear-button"><i
+                        <a href="{{route('display-students')}}" class="btn clear-button"><i
                                 class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                     </div>
                 </div>
@@ -202,7 +202,4 @@
             </form>
         </section>
     </main>
-    <script>
-
-    </script>
 @endsection

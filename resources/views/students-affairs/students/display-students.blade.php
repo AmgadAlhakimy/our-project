@@ -15,7 +15,7 @@
                         </label>
                     </div>
                 </label>
-            </div> 
+            </div>
         </div>
     </div>
     <!-- table-hover table-striped -->
@@ -356,7 +356,7 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$student->id}}">
                                 <i class="fa-solid fa-trash"></i>
-                                    {{-- {{__('public.delete')}} --}}
+{{--                                     {{__('public.delete')}}--}}
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$student->id}}"

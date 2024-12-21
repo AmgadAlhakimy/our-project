@@ -189,7 +189,7 @@ class StudentController extends Controller
     {
         try {
             Student::destroy($id);
-            return redirect()->route('students.index')
+            return redirect()->route('display-students')
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {

@@ -35,6 +35,6 @@ Route::resource('employees', EmployeeController::class);
 Route::resource('students', StudentController::class);
 Route::resource('subjects', SubjectController::class);
 Route::resource('teachers', TeacherController::class);
+Route::resource('parents', ParentsController::class);
 Route::resource('majors', MajorController::class);
 Route::resource('marks', MarkController::class);
-Route::resource('parents', ParentsController::class);

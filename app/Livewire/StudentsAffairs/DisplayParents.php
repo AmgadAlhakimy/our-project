@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\StudentsAffairs;
 
 use App\Models\Parents;
 use App\Traits\QueryTrait;

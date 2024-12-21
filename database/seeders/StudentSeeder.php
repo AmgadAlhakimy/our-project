@@ -15,7 +15,7 @@ class StudentSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
         $gender_en = [ 'male','female','male','female','male','female','male','female','male','female',];
         $gender_ar = [ 'ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى',];
 
@@ -28,12 +28,12 @@ class StudentSeeder extends Seeder
         for($i = 1; $i<=100; $i++ ){
             Student::create([
                 'name'=> [
-                    'en'=>"CreateStudent $i",
+                    'en'=>"Student $i",
                     'ar'=>"الطالب $i",
                 ],
                 'photo'=>'photo',
                 'address'=> [
-                    'en'=>"Al-thlatheen $i",
+                    'en'=>"Al-Thlatheen $i",
                     'ar'=>"الثلاثين $i",
                 ],
                 'gender'=> [
@@ -50,7 +50,7 @@ class StudentSeeder extends Seeder
                     'ar'=>$chick_ar[rand(0,9)],
                 ],
                 'medicine_desc'=> [
-                    'en'=>"he dos't take anything $i",
+                    'en'=>"he doesn't take anything $i",
                     'ar'=>"هو لا ياخذ اي علاج $i",
                 ],
                 'chick_allergy'=> [
@@ -59,7 +59,7 @@ class StudentSeeder extends Seeder
                 ],
                 'allergy_desc'=> [
                     'en'=>"He have a allergy $i",
-                    'ar'=>"لدية حساسية من الفول الفلافل $i", 
+                    'ar'=>"لدية حساسية من الفول الفلافل $i",
                 ],
                 'chick_health_problem'=> [
                     'en'=>$chick_en[rand(0,9)],
@@ -67,7 +67,7 @@ class StudentSeeder extends Seeder
                 ],
                 'health_problem_desc'=> [
                     'en'=>"he can't walk like any kid $i",
-                    'ar'=>"لا يستطيع المشي على قدمية كاي طفل اخر $i", 
+                    'ar'=>"لا يستطيع المشي على قدمية كاي طفل اخر $i",
                 ],
 
 

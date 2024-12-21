@@ -1,18 +1,18 @@
 <?php
 
+use App\Livewire\AcademicDep\DisplayActivities;
 use App\Livewire\AcademicDep\DisplayActivityClassrooms;
-use App\Livewire\AcademicDep\DisplayEducationalLevels;
-use App\Livewire\AcademicDep\DisplaySubjectTeachers;
+use App\Livewire\AcademicDep\DisplayClassrooms;
 use App\Livewire\AcademicDep\DisplayClassSubjects;
 use App\Livewire\AcademicDep\DisplayClassTeachers;
-use App\Livewire\StudentsAffairs\DisplayStudents;
-use App\Livewire\AcademicDep\DisplayActivities;
-use App\Livewire\AcademicDep\DisplayClassrooms;
+use App\Livewire\AcademicDep\DisplayEducationalLevels;
 use App\Livewire\AcademicDep\DisplaySubjects;
-use Illuminate\Support\Facades\Route;
-use App\Livewire\DisplayTeachers;
-use App\Livewire\DisplayParents;
+use App\Livewire\AcademicDep\DisplaySubjectTeachers;
 use App\Livewire\DisplayMajors;
+use App\Livewire\DisplayTeachers;
+use App\Livewire\StudentsAffairs\DisplayParents;
+use App\Livewire\StudentsAffairs\DisplayStudents;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/activity-classrooms',DisplayActivityClassrooms::class)->name('display-activity-classrooms');
 Route::get('/subject-teachers',DisplaySubjectTeachers::class)->name('display-subject-teachers');
