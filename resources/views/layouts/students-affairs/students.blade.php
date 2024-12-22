@@ -3,9 +3,8 @@
 <!-- ========== 2 ============ -->
 <div class="sidebar-title">
     <a href="#" class="li-link title-4">
-        <i
-            class="icon-1 fa-solid fa-window-restore"
-        ></i>
+        <i class="icon-1 fa-solid fa-children"></i>
+
         <span class="menu-name">{{__('sidebar.parents')}}</span>
         <i class="icon-1 fa-solid fa-chevron-down"></i>
     </a>
@@ -24,9 +23,7 @@
 <!-- ========== 2 ============ -->
 <div class="sidebar-title">
     <a href="#" class="li-link title-4">
-        <i
-            class="icon-1 fa-solid fa-window-restore"
-        ></i>
+        <i class="icon-1 fa-solid fa-graduation-cap"></i>
         <span class="menu-name">{{__('sidebar.students affairs')}}</span>
         <i class="icon-1 fa-solid fa-chevron-down"></i>
     </a>

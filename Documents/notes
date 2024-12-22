@@ -1,16 +1,20 @@
 3-Make this page (resources/views/components/layouts/app.blade.php)
-5-change the design of the datalist in create students (kh)
+5-change the design of the datalist in create students (kh) and The select that show father in student page is fixed size(KH)
 6-make the datalist as text not number(A)
 6-when saving the data in create students the page should state in the same page
     and not go back to relatives page. (A)
-7-fixing the home page(Kh)
-8-Go to this website https://www.onlinehashcrack.com/ and make the dropdown looks like it. (Kh)
 9-create a new page or edit on the old one (page for more students info and delete the extra columns) (kh)
 10-fix the error message on father_contact1 and health part too(KH)
 11-The initialization 0 value should be removed.(A)
-12-When there is a filed left the page should return directly to that field(A)
-13-The select that show father in student page is fixed size(KH)
+12-When there is a filed left the page should return directly to that field(A) 
 14-the classroom select in student page is not in the right position(KH)
+15- create a new section for deletd items for all project
+16-make a new page for pagenation of table rows.
+
+
+
+
+
 
 
 

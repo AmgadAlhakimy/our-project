@@ -36,10 +36,10 @@ return [
     'review activities'=>'View Activities',
 
     'trash'=>'trash',
-    'deleted educational Level'=>'Delete Educational Level ',
-    'deleted classrooms'=>'Delete Class',
-    'deleted subjects'=>'Delete Subjects',
-    'deleted activities'=>'Delete Activities',
+    'deleted educational Level'=>'Deleted Educational Level ',
+    'deleted classrooms'=>'Deleted Class',
+    'deleted subjects'=>'Deleted Subjects',
+    'deleted activities'=>'Deleted Activities',
 
 
     

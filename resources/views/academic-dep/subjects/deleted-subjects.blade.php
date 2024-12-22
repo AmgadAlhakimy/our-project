@@ -59,7 +59,8 @@
                             <td>
                                 <a href="{{route('subjects.restore',$subject->id)}}"
                                     class="btn save-button btn-success  w-25 me-1 ms-1">
-                                    <i class="fa-solid fa-pen-to-square"></i> 
+                                    <i class="fa-solid fa-trash-can-arrow-up"></i>
+
                                     {{-- {{__('public.restore')}} --}}
                                 </a>
                             </td>

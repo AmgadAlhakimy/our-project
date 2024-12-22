@@ -108,15 +108,12 @@
                                      tabindex="-1" aria-labelledby="exampleModalLabel"
                                      aria-hidden="true"> 
                                     <div class="modal-dialog">
-
-
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                {{-- <h5 class="modal-title" id="exampleModalLabel">
-                                                    {{__('public.force delete')}}
-                                                </h5> --}}
                                                 <div class="modal-title">
-                                                    <i class="fa-solid fa-book-to-square danger_msg "></i>
+                                                    {{-- <i class="fa-solid fa-x danger_msg"></i> --}}
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>
+                                                    {{-- <i class="fa-solid fa-book-to-square danger_msg "></i> --}}
                                                     
                                                 </div>
                                             </div>
@@ -124,7 +121,7 @@
                                                 {{__('public.are you sure you want to delete').$teacher->name}}
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary clear-button ms-2 me-2" data-bs-dismiss="modal">
+                                                <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}
                                                 </button>
                                                 <form method="post" action="{{route('teachers.forceDelete',$teacher->id)}}">

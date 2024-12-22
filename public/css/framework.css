@@ -285,6 +285,10 @@ input::-webkit-inner-spin-button {
     border-radius: 10px;
     box-shadow: 5px 5px 5px -1px rgba(10, 99, 169, 0.16),
         -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+
+
+    
+
 }
 .save-button:active {
     transition: 1s;
@@ -716,10 +720,8 @@ input[type="checkbox"].toggle:checked + input.test1 {
         box-sizing: border-box;
     }
 .parent {
-    display: none;
-    position: absolute;
-    display: none;
-    position: absolute;
+    /* display: none;
+    position: absolute; */
     left: 2px;
     width: 100%;
     width: 100%;
@@ -1242,6 +1244,12 @@ input[type="checkbox"].toggle:checked + input.test1 {
 }
 .modal-dialog{
     margin-top: 190px;
+    z-index: 9999;
+    /* width: 380px; */
+    left: 115px;
+}
+body[dir="rtl"] .modal-dialog{
+    left: -115px;
 }
 .modal-header {
     display: block;

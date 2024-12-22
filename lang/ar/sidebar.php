@@ -34,10 +34,10 @@ return [
     'review activities'=>'الأنشطة',
 
     'trash'=>'سلة المهملات',
-    'deleted educational Level'=>'حذف مرحلة دراسية',
-    'deleted classrooms'=>'حذف فصل دراسي',
-    'deleted subjects'=>'حذف مادة',
-    'deleted activities'=>'حذف نشاط',
+    'deleted educational Level'=>'المراحل الدراسية المحذوفة',
+    'deleted classrooms'=>'الفصول الدراسية المحذوفه',
+    'deleted subjects'=>'المواد المحذوفه',
+    'deleted activities'=>'الانشطة المحذوفه',
 
     'students affairs'=>'شؤون الطلاب',
     'add a new student'=>'إضافة طالب',
