@@ -44,6 +44,7 @@ Route::group(
         include 'restore.php';
         include 'force_delete.php';
         include 'create-pages.php';
+        include 'edit-pages.php';
         include 'display-pages.php';
 
 

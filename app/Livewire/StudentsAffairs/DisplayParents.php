@@ -16,18 +16,29 @@ class DisplayParents extends Component
     public function render()
     {
         try {
-            $myQuery = Parents::where( 'father_name->en', 'like', "%$this->search%")
-                    ->orwhere('father_name->ar','like',"%$this->search%")
-                    ->orwhere('mother_name->en','like',"%$this->search%")
-                    ->orwhere('mother_name->ar','like',"%$this->search%")
-                ->get();
+            $myQuery = Parents::where('father_name->en', 'like', "%$this->search%")
+                ->orwhere('father_name->ar', 'like', "%$this->search%")
+                ->orwhere('father_work->en', 'like', "%$this->search%")
+                ->orwhere('father_work->ar', 'like', "%$this->search%")
+                ->orwhere('father_contact1', 'like', "%$this->search%")
+                ->orwhere('father_contact2', 'like', "%$this->search%")
+                ->orwhere('mother_name->en', 'like', "%$this->search%")
+                ->orwhere('mother_name->ar', 'like', "%$this->search%")
+                ->orwhere('mother_work->en', 'like', "%$this->search%")
+                ->orwhere('mother_work->ar', 'like', "%$this->search%")
+                ->orwhere('mother_contact1', 'like', "%$this->search%")
+                ->orwhere('mother_contact2', 'like', "%$this->search%")
+                ->orwhere('kin_name->en', 'like', "%$this->search%")
+                ->orwhere('kin_name->ar', 'like', "%$this->search%")
+                ->orwhere('kin_relationship->en', 'like', "%$this->search%")
+                ->orwhere('kin_relationship->ar', 'like', "%$this->search%")
+                ->orwhere('kin_contact', 'like', "%$this->search%")->get();
 
 
-
-            $parents =  $this->queryData("\App\Models\Parents", $myQuery);
+            $parents = $this->queryData("\App\Models\Parents", $myQuery);
             return view('students-affairs.parents.display-parents', [
-                    'parents' => $parents,
-                ])->title('parents');
+                'parents' => $parents,
+            ])->title('parents');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

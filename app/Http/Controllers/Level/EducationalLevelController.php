@@ -81,7 +81,7 @@ class EducationalLevelController extends Controller
     {
         try {
         $level = EducationalLevel::findorFail($id);
-        return view('academic-dep/educational-levels.edit-edu-level',
+        return view('academic-dep.educational-levels.edit-edu-level',
             compact('level'));
         }catch (\Exception $e) {
                     return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -134,7 +134,7 @@ class EducationalLevelController extends Controller
     public function restore($id){
         try {
             EducationalLevel::withTrashed()->where('id', $id)->restore();
-            return redirect()->back()
+            return redirect()->route('display-levels')
                 ->with(['success' => trans('message.restore')]);
 
         } catch (\Exception $e){

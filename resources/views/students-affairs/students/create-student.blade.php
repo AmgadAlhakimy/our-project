@@ -52,9 +52,7 @@
                                 for="english-name">{{__("student.student's name in arabic")}}</label>
 
                             <input type="text" class="form-control"
-                                id="singleWordInput" onkeydown="return event.key !== ' '"
-                                wire:model.live.debounce.500ms="name_ar"
-                                value="{{old('name_ar')}}">
+                                wire:model.live.debounce.500ms="name_ar">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror

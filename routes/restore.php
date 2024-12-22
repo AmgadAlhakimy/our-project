@@ -4,6 +4,7 @@ use App\Http\Controllers\Activity\ActivityController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Level\EducationalLevelController;
 use App\Http\Controllers\MajorController;
+use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
@@ -42,3 +43,7 @@ Route::get('teachers/restore/{id}',
 Route::get('majors/restore/{id}',
     [MajorController::class, 'restore'])
     ->name('majors.restore');
+
+Route::get('parents/restore/{id}',
+    [ParentsController::class, 'restore'])
+    ->name('parents.restore');

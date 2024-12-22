@@ -16,7 +16,7 @@
         <a href='{{route("create-parents")}}' class="li-link">{{__('sidebar.create parents')}}</a>
         {{-- review students --}}
         <a href="{{route('display-parents')}}" class="li-link">{{__('sidebar.display parents')}}</a>
-        <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted parents')}}</a>
+        <a href="{{route('parents.show','deleted')}}" class="li-link">{{__('sidebar.deleted parents')}}</a>
     </div>
 </div>
 </li>

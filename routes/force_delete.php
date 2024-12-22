@@ -4,10 +4,12 @@ use App\Http\Controllers\Activity\ActivityController;
 use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Level\EducationalLevelController;
 use App\Http\Controllers\MajorController;
+use App\Http\Controllers\ParentsController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\TeacherController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -42,3 +44,7 @@ Route::get('teachers/forceDelete/{id}',
 Route::get('majors/forceDelete/{id}',
     [MajorController::class, 'forceDelete'])
     ->name('majors.forceDelete');
+
+Route::get('parents/forceDelete/{id}',
+    [ParentsController::class, 'forceDelete'])
+    ->name('parents.forceDelete');
