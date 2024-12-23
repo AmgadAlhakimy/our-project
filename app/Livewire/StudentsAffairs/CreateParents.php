@@ -12,9 +12,9 @@ use PHPUnit\Exception;
 
 class CreateParents extends Component
 {
-    #[Rule('required|max:50|regex:/^[a-zA-Z\s]+$/')]
+    #[Rule('required|max:50|unique:parents,father_name->en|regex:/^[a-zA-Z\s]+$/')]
     public string $father_name;
-    #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+$/u')]
+    #[Rule('required|max:50|unique:parents,father_name->ar|regex:/^[\p{Arabic}\s]+$/u')]
     public string $father_name_ar;
     #[Rule('nullable|max:50|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
     public string $father_work = "";
