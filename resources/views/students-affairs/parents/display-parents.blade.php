@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
 
-        <h4 class="form-group container-title">{{__('parents.parents info')}}</h4>
+        <h4 class="form-group container-title">{{__('student.parents info')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -18,20 +18,9 @@
             </div>
         </div>
     </div>
-    <!-- table-hover table-striped -->
-    <div class="small text-muted rows_3 num_rows mt-3 ms-4 me-4">
-        @if($isPaginate)
-            <label class=""> {{__('public.number of rows:')}} </label>
-            <select class=" num_rows" wire:model.live="pagination">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="75">75</option>
-                <option value="100">100</option>
-            </select>
-        @endif
-    </div>
+        <!-- pagination up code -->
+        @include('layouts.paginations.pagination_up')
+
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
         <div class="table-section card  ">
@@ -55,7 +44,7 @@
                     <th>
                         <button wire:click="ordering('father_name')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.father name')}}
+                                {{__('student.father name')}}
                                 @if($arrow and $showArrow === 'father_name')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'father_name')
@@ -68,7 +57,7 @@
                     <th>
                         <button wire:click="ordering('father_work')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.father_work')}}
+                                {{__('student.father work')}}
                                 @if($arrow and $showArrow === 'father_work')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'father_work')
@@ -81,7 +70,7 @@
                     <th>
                         <button wire:click="ordering('father_contact1')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.father_contact1')}}
+                                {{__('student.father contact 1')}}
                                 @if($arrow and $showArrow === 'father_contact1')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'father_contact1')
@@ -94,7 +83,7 @@
                     <th>
                         <button wire:click="ordering('father_contact2')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.father_contact2')}}
+                                {{__('student.father contact 2')}}
                                 @if($arrow and $showArrow === 'father_contact2')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'father_contact2')
@@ -107,7 +96,7 @@
                     <th>
                         <button wire:click="ordering('mother_name')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.mother_name')}}
+                                {{__('student.mother name')}}
                                 @if($arrow and $showArrow === 'mother_name')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'mother_name')
@@ -120,7 +109,7 @@
                     <th>
                         <button wire:click="ordering('mother_work')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.mother_work')}}
+                                {{__('student.mother work')}}
                                 @if($arrow and $showArrow === 'mother_work')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'mother_work')
@@ -133,7 +122,7 @@
                     <th>
                         <button wire:click="ordering('mother_contact1')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.mother_contact1')}}
+                                {{__('student.mother contact 1')}}
                                 @if($arrow and $showArrow === 'mother_contact1')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'mother_contact1')
@@ -146,7 +135,7 @@
                     <th>
                         <button wire:click="ordering('mother_contact2')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.mother_contact2')}}
+                                {{__('student.mother contact 2')}}
                                 @if($arrow and $showArrow === 'mother_contact2')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'mother_contact2')
@@ -159,7 +148,7 @@
                     <th>
                         <button wire:click="ordering('kin_name')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.kin_name')}}
+                                {{__('student.kin name')}}
                                 @if($arrow and $showArrow === 'kin_name')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'kin_name')
@@ -172,7 +161,7 @@
                     <th>
                         <button wire:click="ordering('kin_relationship')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.kin_relationship')}}
+                                {{__('student.kin relationship')}}
                                 @if($arrow and $showArrow === 'kin_relationship')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'kin_relationship')
@@ -185,7 +174,7 @@
                     <th>
                         <button wire:click="ordering('kin_contact')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.kin_contact')}}
+                                {{__('student.kin contact')}}
                                 @if($arrow and $showArrow === 'kin_contact')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'kin_contact')
@@ -353,19 +342,10 @@
                     </div>
                 @endif
             </div>
-            <div class="small text-muted rows_2 num_rows ">
-                @if($isPaginate)
-                    <label class=""> {{__('public.number of rows:')}} </label>
-                    <select class=" num_rows" wire:model.live="pagination">
-                        <option value="5">5</option>
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="75">75</option>
-                        <option value="100">100</option>
-                    </select>
-                @endif
-            </div>
+            
+            {{-- pagination down code --}}
+            @include('layouts.paginations.pagination_down')
+
         </div>
     </div>
 </div>

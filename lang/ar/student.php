@@ -16,12 +16,14 @@ return [
     //create Student
     'Register a new Student'=>'تسجيل طالب جديد',
     'Student info'=>'معلومات الطالب',
-    "Student's name in arabic"=>'اسم الطالب بالعربي',
-    "Student's name in english"=>'اسم الطالب بالإنجليزية',
+
+
+    "student's name in arabic"=>'اسم الطالب بالعربي',
+    "student's name in english"=>'اسم الطالب بالإنجليزية',
     'photo'=>'صورة',
     'addresses'=>'العناوين',
-    "Student's address in arabic"=>'عنوان الطالب بالعربي',
-    "Student's address in english"=>'عنوان الطالب بالإنجليزية',
+    "student's address in arabic"=>'عنوان الطالب بالعربي',
+    "student's address in english"=>'عنوان الطالب بالإنجليزية',
     'gender'=>'النوع',
     'male'=>'ذكر',
     'female'=>'أنثى',
@@ -38,11 +40,17 @@ return [
     "father's name in english"=>"اسم الأب بالإنجليزية",
     "father's work in arabic"=>"عمل الأب بالعربي",
     "father's work in english"=>"عمل الأب بالإنجليزية",
-    "father's contacts"=>"أرقام الأب",
+    "father's contact 1"=>"رقم الأب",
     "mother's name in arabic"=>"اسم الأم بالعربي",
     "mother's name in english"=>"اسم الأم بالإنجليزية",
     "mother's work in arabic"=>"عمل الأم بالعربي",
     "mother's work in english"=>"عمل الأم بالإنجليزية",
+
+
+    'choose parents'=>'قم بالختيار اب للطالب الجديد',
+    'create student'=>'تسجيل طالب جديد',
+
+
     "mother's contacts"=>"أرقام الأم",
     'kin name in arabic'=>' أسم أحد الأقارب بالعربي',
     'kin name in english'=>'اسم احد الأقارب بالإنجليزية',
@@ -50,11 +58,11 @@ return [
     'kin relationship in english'=>'علاقة هذا القريب بالطالب بالإنجليزية',
     'health info'=>'المعلومات الصحية',
     'does the Student'=>'هل الطالب',
-    'take any medicine ?'=>'يأخذ علاج؟',
+    'take any medicine ?'=>'هل يأخذ علاج؟',
     'no'=>'لا',
     'yes'=>'نعم',
-    'have an allergy ?'=>'لديه حساسية؟',
-    'have any health problem ?'=>'لديه مشاكل صحية؟',
+    'have an allergy ?'=>'هل لديه حساسية؟',
+    'have any health problem ?'=>'هل لديه مشاكل صحية؟',
     'other info'=>'معلومات أخرى',
     'note'=>'ملاحظة',
     'first you have to add classrooms'=>'يجب إضافة فصول أولا',
@@ -65,18 +73,18 @@ return [
     'Daily Follow-Up' => 'دفتر المتابعة',
     'level'=>'المرحلة الدراسية',
 
-    'student information'=>'معلومات الطالب',
+    'student info'=>'معلومات الطالب',
     'personal info'=>'معلومات شخصية',
 
     'father name'=>'اسم الأب',
     'father work'=>'عمل الأب',
-    'father contacts 1'=>'رقم الأب 1',
-    'father contacts 2'=>'رقم الأب 2',
+    'father contact 1'=>'رقم الأب 1',
+    'father contact 2'=>'رقم الأب 2',
 
     'mother name'=>'اسم الأم',
     'mother work'=>'عمل الأم',
-    'mother contacts 1'=>'رقم الأم 1',
-    'mother contacts 2'=>'رقم الأم 2',
+    'mother contact 1'=>'رقم الأم 1',
+    'mother contact 2'=>'رقم الأم 2',
 
     'student allergy'=>'الحساسية',
     'student health problem'=>'مشاكل صحية',
@@ -95,6 +103,9 @@ return [
     'please select from the list and the number of father only'=>
         'يرجى الاختيار من القائمة ويجب أن يكون رقم الأب فقط',
     'select educational level first'=>'يرجى اختيار مرحلة دارسية أولا',
+
+    'parents info'=> 'معلومات الآبـــاء'
+
 
 
 ];

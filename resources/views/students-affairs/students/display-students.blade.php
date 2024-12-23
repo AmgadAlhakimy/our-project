@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}
-        <h4 class="form-group container-title">{{__('students.students info JJJ')}}</h4>
+        <h4 class="form-group container-title">{{__('student.student info')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -18,20 +18,10 @@
             </div>
         </div>
     </div>
-    <!-- table-hover table-striped -->
-    <div class="small text-muted rows_3 num_rows mt-3 ms-4 me-4">
-        @if($isPaginate)
-            <label class=""> {{__('public.number of rows:')}} </label>
-            <select class=" num_rows" wire:model.live="pagination">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="75">75</option>
-                <option value="100">100</option>
-            </select>
-        @endif
-    </div>
+
+        <!-- pagination up code -->
+        @include('layouts.paginations.pagination_up')
+
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
         <div class="table-section card  ">
@@ -102,7 +92,7 @@
                     <th>
                         <button wire:click="ordering('birthdate')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.birthdate')}}
+                                {{__('student.birthdate')}}
                                 @if($arrow and $showArrow === 'birthdate')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'birthdate')
@@ -115,7 +105,7 @@
                     <th>
                         <button wire:click="ordering('place_of_birth')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.place_of_birth')}}
+                                {{__('student.birth place')}}
                                 @if($arrow and $showArrow === 'place_of_birth')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'place_of_birth')
@@ -130,7 +120,7 @@
                     <th>
                         <button wire:click="ordering('chick_medicine')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.chick_medicine')}}
+                                {{__('student.take any medicine ?')}}
                                 @if($arrow and $showArrow === 'chick_medicine')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'chick_medicine')
@@ -142,7 +132,7 @@
                     <th>
                         <button wire:click="ordering('medicine_desc')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.medicine_desc')}}
+                                {{__('student.student medicines')}}
                                 @if($arrow and $showArrow === 'medicine_desc')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'medicine_desc')
@@ -155,7 +145,7 @@
                     <th>
                         <button wire:click="ordering('chick_allergy')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.chick_allergy')}}
+                                {{__('student.have an allergy ?')}}
                                 @if($arrow and $showArrow === 'chick_allergy')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'chick_allergy')
@@ -167,7 +157,7 @@
                     <th>
                         <button wire:click="ordering('allergy_desc')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.allergy_desc')}}
+                                {{__('student.student allergy')}}
                                 @if($arrow and $showArrow === 'allergy_desc')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'allergy_desc')
@@ -180,7 +170,7 @@
                     <th>
                         <button wire:click="ordering('health_problem_desc')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.health_problem_desc')}}
+                                {{__('student.have any health problem ?')}}
                                 @if($arrow and $showArrow === 'health_problem_desc')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'health_problem_desc')
@@ -192,7 +182,7 @@
                     <th>
                         <button wire:click="ordering('chick_health_problem')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.chick_health_problem')}}
+                                {{__('student.student health problem')}}
                                 @if($arrow and $showArrow === 'chick_health_problem')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'chick_health_problem')
@@ -218,7 +208,7 @@
                     <th>
                         <button wire:click="ordering('classroom_id')" class="">
                             <div class="table_test form-label ">
-                                {{__('public.classroom_id')}}
+                                {{__('classroom.classroom id')}}
                                 @if($arrow and $showArrow === 'classroom_id')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'classroom_id')
@@ -400,18 +390,9 @@
                 </div>
             @endif
         </div>
-        <div class="small text-muted rows_2 num_rows ">
-            @if($isPaginate)
-                <label class=""> {{__('public.number of rows:')}} </label>
-                <select class=" num_rows" wire:model.live="pagination">
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="75">75</option>
-                    <option value="100">100</option>
-                </select>
-            @endif
-        </div>
+            
+            {{-- pagination down code --}}
+            @include('layouts.paginations.pagination_down')
+
     </div>
 </div>

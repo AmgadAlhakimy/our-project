@@ -21,6 +21,7 @@ return [
     'classroom info'=>'معلومات الصف',
     'classroom'=>'الصف',
     'classrooms'=>'الصفوف',
+    'classroom id'=>'رقم الفصل',
     'update classroom'=>'تعديل الصف: ',
     'please select a classroom'=>'الرجاء تحديد فصل',
     'you have already chosen this classroom'=>'لقد تم توزيع المواد لهذا الصف مسبقاً لايمكنك الأن سوى التعديل عليه',
