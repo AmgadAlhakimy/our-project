@@ -72,9 +72,15 @@ class ParentsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Parents $parents)
+    public function show()
     {
-        //
+        try {
+            $parents = Parents::onlyTrashed()->get();
+            return view('students-affairs.parents.deleted-parents',
+                compact('parents'));
+        }catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -110,6 +116,34 @@ class ParentsController extends Controller
                     trans('message.delete_parents_error')]);
             }
         }catch (\Exception $e){
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+
+    /**
+     * Restore the specified Educational Level.
+     */
+    public function restore($id){
+        try {
+            Parents::withTrashed()->where('id', $id)->restore();
+            return redirect()->route('display-parents')
+                ->with(['success' => trans('message.restore')]);
+
+        } catch (\Exception $e){
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+    /**
+     * Remove by force the specified Educational Level.
+     */
+    public function forceDelete($id)
+    {
+        try {
+            Parents::withTrashed()->where('id', $id)->forceDelete();
+            return redirect()->back()
+                ->with(['warning' => trans('message.force delete')]);
+
+        } catch (\Exception $e){
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

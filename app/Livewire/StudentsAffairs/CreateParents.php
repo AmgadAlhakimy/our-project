@@ -45,7 +45,7 @@ class CreateParents extends Component
     #[Rule('nullable|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public string $kin_relationship_ar = "";
     #[Rule('nullable|numeric')]
-    public int $kin_contact =0;
+    public int $kin_contact = 0;
 
     public function save()
     {
@@ -82,12 +82,6 @@ class CreateParents extends Component
                 ],
                 'kin_contact' => $this->kin_contact,
             ]);
-
-//            session()->flash('message', 'Student created successfully.');
-//        } catch (\Exception $e) {
-//            Log::error('Error creating student: ' . $e->getMessage());
-//            session()->flash('error', 'An error occurred while creating the student.');
-//        }
             $this->reset();
             return redirect()->route('create-student')->with(['success' => __('message.success')]);
         } catch (\Exception $e) {

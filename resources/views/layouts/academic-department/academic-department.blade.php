@@ -18,7 +18,6 @@
                 <a id="" href="{{route('classrooms.create')}}" class="li-link">{{__('sidebar.add a class')}}</a>
                 <a href="{{route('subjects.create')}}" class="li-link">{{__('sidebar.add Subject')}}</a>
                 <a href="{{route('activities.create')}}" class="li-link">{{__('sidebar.add Activity')}}</a>
-                <a href="{{route('my-test')}}" class="li-link">{{__('sidebar.add test')}}</a>
             </div>
         </div>
     </li>

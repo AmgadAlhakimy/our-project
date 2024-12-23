@@ -1,6 +1,6 @@
 <div class="my-table mt-5">
     <div class="table-header ">
-        
+
         <h4 class="form-group container-title">{{__('parents.parents info')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
@@ -15,7 +15,7 @@
                         </label>
                     </div>
                 </label>
-            </div> 
+            </div>
         </div>
     </div>
     <!-- table-hover table-striped -->
@@ -300,7 +300,7 @@
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('parents.edit',$parent->id)}}"
+                            <a href="{{route('edit-parents',$parent->id)}}"
                                 class="btn save-button btn-success  w-25 me-1 ms-1 ">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 {{-- {{__('public.edit')}} --}}
