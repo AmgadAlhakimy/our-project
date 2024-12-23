@@ -6,7 +6,7 @@
     @endif
     <h3 class="container-title">{{__('student.Edit Parents')}}</h3>
     <div class="container  containers-style ">
-        <form wire:submit="save" action="">
+        <form wire:submit="update" action="">
             @csrf
             <div class="row">
                 <!-- father name  -->

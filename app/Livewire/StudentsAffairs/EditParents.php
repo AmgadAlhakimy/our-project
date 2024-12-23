@@ -45,51 +45,74 @@ class EditParents extends Component
     public int $kin_contact = 0;
 
 
+    /**
+     * @throws \Exception
+     */
     public function mount()
     {
         try {
-        $parent = Parents::findorFail($this->id);
-        $this->father_name = $parent->getTranslation('father_name','en');
-        $this->father_name_ar = $parent->getTranslation('father_name','ar');
-        $this->father_work = $parent->getTranslation('father_work','en');
-        $this->father_work_ar = $parent->getTranslation('father_work','ar');
-        $this->father_contact1 =$parent->father_contact1;
-        $this->father_contact2 = $parent->father_contact2;
-        $this->mother_name = $parent->getTranslation('mother_name','en');
-        $this->mother_name_ar = $parent->getTranslation('mother_name','ar');
-        $this->mother_work = $parent->getTranslation('mother_work','en');
-        $this->mother_work_ar = $parent->getTranslation('mother_work','ar');
-        $this->mother_contact1 = $parent->mother_contact1;
-        $this->mother_contact2 = $parent->mother_contact2;
-        $this->kin_name = $parent->getTranslation('kin_name','en');
-        $this->kin_name_ar = $parent->getTranslation('kin_name','ar');
-        $this->kin_relationship = $parent->getTranslation('kin_relationship','en');
-        $this->kin_relationship_ar = $parent->getTranslation('kin_relationship','ar');
-        $this->kin_contact = $parent->kin_contact;
-    }catch (\Exception $e){
-            echo $e;
+            $parent = Parents::findorFail($this->id);
+            $this->father_name = $parent->getTranslation('father_name', 'en');
+            $this->father_name_ar = $parent->getTranslation('father_name', 'ar');
+            $this->father_work = $parent->getTranslation('father_work', 'en');
+            $this->father_work_ar = $parent->getTranslation('father_work', 'ar');
+            $this->father_contact1 = $parent->father_contact1;
+            $this->father_contact2 = $parent->father_contact2;
+            $this->mother_name = $parent->getTranslation('mother_name', 'en');
+            $this->mother_name_ar = $parent->getTranslation('mother_name', 'ar');
+            $this->mother_work = $parent->getTranslation('mother_work', 'en');
+            $this->mother_work_ar = $parent->getTranslation('mother_work', 'ar');
+            $this->mother_contact1 = $parent->mother_contact1;
+            $this->mother_contact2 = $parent->mother_contact2;
+            $this->kin_name = $parent->getTranslation('kin_name', 'en');
+            $this->kin_name_ar = $parent->getTranslation('kin_name', 'ar');
+            $this->kin_relationship = $parent->getTranslation('kin_relationship', 'en');
+            $this->kin_relationship_ar = $parent->getTranslation('kin_relationship', 'ar');
+            $this->kin_contact = $parent->kin_contact;
+        } catch (\Exception $e) {
+            throw new ($e);
         }
     }
 
-    public function save()
+    public function update()
     {
-        try {
-
-
-
         $this->validate();
-        dd('cool');
-
-
-        // Update the model
-        $parent = Parents::findorFail($this->id);
-        $parent->father_name = $this->father_name;
-        $parent->father_name_ar = $this->father_name_ar;
-            $parent->update();
-            return redirect()->route('display-parents')
-                ->with(['success' => __('message.update')]);
-        }
-        catch (\Exception $e){
+        try {
+            $parents = Parents::findorFail($this->id);
+            $parents->update([
+                'father_name' => [
+                    'en' => $this->father_name,
+                    'ar' => $this->father_name_ar
+                ],
+                'father_work' => [
+                    'en' => $this->father_work,
+                    'ar' => $this->father_work_ar
+                ],
+                'father_contact1' => $this->father_contact1,
+                'father_contact2' => $this->father_contact2,
+                'mother_name' => [
+                    'en' => $this->mother_name,
+                    'ar' => $this->mother_name_ar
+                ],
+                'mother_work' => [
+                    'en' => $this->mother_work,
+                    'ar' => $this->mother_work_ar,
+                ],
+                'mother_contact1' => $this->mother_contact1,
+                'mother_contact2' => $this->mother_contact2,
+                'kin_name' => [
+                    'en' => $this->kin_name,
+                    'ar' => $this->kin_name_ar,
+                ],
+                'kin_relationship' => [
+                    'en' => $this->kin_relationship,
+                    'ar' => $this->kin_relationship_ar,
+                ],
+                'kin_contact' => $this->kin_contact,
+            ]);
+            $this->reset();
+            return redirect()->route('display-parents')->with(['success' => __('message.success')]);
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

@@ -15,8 +15,8 @@ class ParentsSeeder extends Seeder
         for($i = 1; $i<=10; $i++ ){
             Parents::create([
                 'father_name'=> [
-                    'en'=>"father $i",
-                    'ar'=>"الأب $i",
+                    'en'=>"father$i",
+                    'ar'=>"الأب$i",
                 ],
                 'father_work'=> [
                     'en'=>"work $i",
@@ -26,8 +26,8 @@ class ParentsSeeder extends Seeder
                 'father_contact2'=>775515880+$i,
 
                 'mother_name'=> [
-                    'en'=>"mother $i",
-                    'ar'=>"الأم $i",
+                    'en'=>"mother$i",
+                    'ar'=>"الأم$i",
                 ],
                 'mother_work'=> [
                     'en'=>"work $i",
@@ -36,8 +36,8 @@ class ParentsSeeder extends Seeder
                 'mother_contact1'=>773215420+$i,
                 'mother_contact2'=>775515880+$i,
                 'kin_name'=> [
-                    'en'=>"kin $i",
-                    'ar'=>"قريب $i",
+                    'en'=>"kin$i",
+                    'ar'=>"قريب$i",
                 ],
                 'kin_relationship'=> [
                     'en'=>"relation $i",
