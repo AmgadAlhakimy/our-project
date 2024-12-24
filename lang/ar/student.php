@@ -52,6 +52,7 @@ return [
 
 
     "mother's contacts"=>"أرقام الأم",
+    "father's contacts"=>"أرقام الأب",
     'kin name in arabic'=>' أسم أحد الأقارب بالعربي',
     'kin name in english'=>'اسم احد الأقارب بالإنجليزية',
     'kin relationship in arabic'=>'علاقة هذا القريب بالطالب بالعربية',
@@ -104,7 +105,9 @@ return [
         'يرجى الاختيار من القائمة ويجب أن يكون رقم الأب فقط',
     'select educational level first'=>'يرجى اختيار مرحلة دارسية أولا',
 
-    'parents info'=> 'معلومات الآبـــاء'
+    'parents info'=> 'معلومات الآبـــاء',
+    'edit parents'=> 'تعديل الآبـــــاء',
+    'delete parent'=> 'الاباء المحذوفين'
 
 
 

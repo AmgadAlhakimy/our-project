@@ -191,6 +191,11 @@ input::-webkit-inner-spin-button {
     text-align: center;
     align-items: center;
 }
+td .td_rect{
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
 
 .Names {
     color: var(--grey-color);

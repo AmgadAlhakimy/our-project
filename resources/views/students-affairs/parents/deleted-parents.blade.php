@@ -6,7 +6,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('classroom.delete classrooms')}}</h4>
+                <h4 class="col container-title mt-2">{{__('student.delete parent')}}</h4>
             </div>
         </div>
         <!-- table-hover table-striped -->
@@ -15,50 +15,54 @@
                 <table class=" " id="check_table">
                     <thead>
                     <tr>
-                        <th>
-                            <div class="n_rect">{{__('public.id')}}</div>
+                        <th class="form-label">
+                            {{__('public.id')}}
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('student.father name')}}</div>
+                            <div class="th-head-4 form-label">
+                                {{__('student.father name')}}
+                            </div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.father work')}}</div>
+                            <div class="th-head-2 form-label">
+                                {{__('student.father work')}}
+                            </div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.father contact 1')}}</div>
+                            <div class="th-head-2 form-label">{{__('student.father contact 1')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.father contact 2')}}</div>
+                            <div class="th-head-2 form-label">{{__('student.father contact 2')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('student.mother name')}}</div>
+                            <div class="th-head-3 form-label">{{__('student.mother name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.mother work')}}</div>
+                            <div class="th-head-2 form-label">{{__('student.mother work')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.mother contact 1')}}</div>
+                            <div class="th-head-2 form-label">{{__('student.mother contact 1')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.mother contact 2')}}</div>
+                            <div class="th-head-2 form-label">{{__('student.mother contact 2')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('student.kin name')}}</div>
+                            <div class="th-head-3 form-label">{{__('student.kin name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.kin relationship')}}</div>
+                            <div class="th-head-2 form-label">{{__('student.kin relationship')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('student.kin contact')}}</div>
+                            <div class="th-head-2 form-label">{{__('student.kin contact')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.created at')}}</div>
+                            <div class="th-head-2 form-label">{{__('public.created at')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.updated at')}}</div>
+                            <div class="th-head-2 form-label">{{__('public.updated at')}}</div>
                         </th>
                         <th colspan="">
-                            <div class="th-head-3">{{__('public.processes')}}</div>
+                            <div class="th-head-3 form-label">{{__('public.processes')}}</div>
                         </th>
                     </tr>
                     </thead>
@@ -72,7 +76,8 @@
                             </td>
                             <td>
                                 <div class="td_rect">
-                                    {{$parent->father_name}}
+                                    {{-- {{$parent->father_name}} --}}
+                                    khaled abdulnaldskjf aldskfj aldskjf adslfkj aldsjkf
                                 </div>
                             </td>
                             <td>

@@ -23,7 +23,7 @@ return [
     'addresses'=>'Addresses',
     "student's address in arabic"=>"Student's address in Arabic",
     "student's address in english"=>"Student's address in English",
-    
+
     'gender'=>'gender',
     'male'=>'male',
     'female'=>'female',
@@ -101,6 +101,8 @@ return [
     'please select from the list and the number of father only',
     'select educational level first'=>'Select Educational Level First',
 
-    'parents info'=> 'parents info'
+    'parents info'=> 'parents info',
+    'edit parents'=> 'Edit Parents',
+    'delete parent'=> 'Deleted Parents'
 
 ];
