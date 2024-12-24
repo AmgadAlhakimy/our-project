@@ -260,11 +260,9 @@
                                 {{$student->name}}
                             </div>
                         </td>
-                        <td>
-                            <div class="td_rect">
-                                {{$student->photo}}
-                            </div>
-                        </td>
+                        <td><img
+                             src="{{asset('storage/'.$student->photo)}}"
+                                class="student-img" alt="photo"></td>
                         <td>
                             <div class="td_rect">
                                 {{$student->address}}
@@ -390,7 +388,7 @@
                 </div>
             @endif
         </div>
-            
+
             {{-- pagination down code --}}
             @include('layouts.paginations.pagination_down')
 

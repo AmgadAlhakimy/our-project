@@ -2,7 +2,6 @@
 
 namespace App\Livewire\StudentsAffairs;
 
-use App\Livewire\Forms\StudentForm;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Parents;
@@ -16,7 +15,7 @@ class CreateStudent extends Component
     use WithFileUploads;
 
     #[Rule('required|exists:parents,id')]
-    public $relative_id;
+    public $parent_id;
     #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
     public string $name;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
@@ -71,14 +70,12 @@ class CreateStudent extends Component
     public function save()
     {
         $this->validate();
-        dd('hello');
         try {
             Student::create([
                 'name' => [
                     'en' => $this->name,
                     'ar' => $this->name_ar
                 ],
-
                 'photo'=>$this->insertImage(),
                 'address' => [
                     'en' => $this->address,
@@ -107,10 +104,11 @@ class CreateStudent extends Component
                 ],
                 'note' => $this->note,
                 'classroom_id' => $this->classroom_id,
-                'relative_id' => $this->relative_id,
+                'parents_id' => $this->parent_id,
 
             ]);
-            return redirect()->back()->with(['success' => __('message.success')]);
+            $this->deletePhoto();
+            return redirect()->route('create-student')->with(['success' => __('message.success')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -118,17 +116,16 @@ class CreateStudent extends Component
 
     public function render()
     {
-        $fathers = [];
+        $fathers =  Parents::orderBy('created_at', 'desc')->get();
+
         if (strlen($this->search) > 0) {
             $fathers = Parents::where('father_name->en', 'like', "%$this->search%")
                 ->orwhere('father_name->ar', 'like', "%$this->search%")->get();
         }
 
         $levels = EducationalLevel::all();
-        $parents = Parents::all();
         return view('students-affairs.students.create-student',
-            compact('levels', 'parents',
-                'fathers')
+            compact('levels', 'fathers')
         )->title('Create Student');
     }
 
@@ -137,31 +134,28 @@ class CreateStudent extends Component
         $this->checks[$check] = !$this->checks[$check];
     }
 
-    public function increment(): int
-    {
-        return $this->currentStep = 2;
-    }
-
     public function updatedSelectedLevel()
     {
         return $this->classrooms = Classroom::
         where('edu_id', $this->selectedLevel)->get();
     }
-
-
-
-
-    public function resetImage(): string
-    {
-        return $this->photo = "";
-    }
     public function insertImage()
     {
         if($this->photo){
 
-            return $this->photo->store('images/students/'.time().'_', 'public');
+            $filename = time() . '.' . $this->photo->getClientOriginalExtension();
+            $path = $this->photo->storeAs('images/students', $filename, 'public'); // Store in storage/app/public/students
+
+            return $path;
         }
         return null;
+    }
+    public function deletePhoto()
+    {
+        if ($this->photo) {
+            $this->photo->delete(); // Delete the temporary file
+            $this->photo = null; // Reset the photo property
+        }
     }
 
     public function messages(): array

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models; 
+namespace App\Models;
 
 use App\Models\Classroom\Classroom;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,7 +19,7 @@ class Student extends Model
                             'chick_allergy','medicine_desc', 'allergy_desc',
                             'chick_health_problem',
                             'health_problem_desc', 'note',
-                            'classroom_id','relative_id'];
+                            'classroom_id','parents_id'];
 
     public array $translatable = ['name', 'address', 'gender',
                                 'place_of_birth', 'medicine_desc',
