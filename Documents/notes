@@ -6,10 +6,15 @@
 9-create a new page or edit on the old one (page for more students info and delete the extra columns) (kh)
 10-fix the error message on father_contact1 and health part too(KH)
 11-The initialization 0 value should be removed.(A)
-12-When there is a filed left the page should return directly to that field(A) 
+12-When there is a filed left the page should return directly to that field(A)
 14-the classroom select in student page is not in the right position(KH)
 15- create a new section for deletd items for all project
 16-make a new page for pagenation of table rows.
+
+
+to amjad
+The regex:validation should be on the trans files only.
+
 
 
 
