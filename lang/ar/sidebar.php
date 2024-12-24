@@ -48,7 +48,7 @@ return [
 
     'create parents'=>'اضافة الآباء',
     'display parents'=>'عرض الآباء',
-    'deleted parents'=>'حذف الآباء',
+    'deleted parents'=>'الاباء المحذوفين',
     'parents'=>'الآبــــاء',
 
     // relationships

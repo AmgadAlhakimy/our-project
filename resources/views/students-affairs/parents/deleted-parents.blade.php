@@ -1,8 +1,6 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-
-
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
@@ -76,8 +74,7 @@
                             </td>
                             <td>
                                 <div class="td_rect">
-                                    {{-- {{$parent->father_name}} --}}
-                                    khaled abdulnaldskjf aldskfj aldskjf adslfkj aldsjkf
+                                    {{$parent->father_name}}
                                 </div>
                             </td>
                             <td>

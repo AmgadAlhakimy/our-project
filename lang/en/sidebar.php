@@ -54,6 +54,7 @@ return [
         'deleted Student'=>'deleted Student',
         'Student absence'=>'Student Absence',
 
+    
     // my be deleted
 
         // relationships

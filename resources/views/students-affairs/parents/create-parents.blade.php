@@ -37,7 +37,7 @@
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
-                <div class="box col-lg-6 col-md-6">
+                <div class="box col-lg-6 col-md-6 ">
                     <label for="father_work_ar">{{__("student.father's work in arabic")}}</label>
                     <input type="text" class="form-control" id='father_work_ar'
                             wire:model.live.debounce.500ms="father_work_ar"
@@ -48,18 +48,24 @@
                 </div>
                 <!-- father contacts  -->
                 <div class="box ">
+
                     <label for="f-numbers">{{__("student.father's contacts")}}</label>
                     <div class="row ">
-                        <input type="number" class="col form-control ms-2 me-2" id='f-numbers'
-                                wire:model.live.debounce.500ms="father_contact1" >
-                        @error('father_contact1')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                        <input type="number" class="col form-control me-2 ms-2" id='f-numbers'
-                                wire:model.live.debounce.500ms="father_contact2" >
-                        @error('father_contact2')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
+                        <div class="col-lg-6 col-md-6">
+                            <input type="number" class=" form-control ms-2 me-2" id='f-numbers'
+                                    wire:model.live.debounce.500ms="father_contact1" >
+                            @error('father_contact1')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
+                        
+                        <div class="col-lg-6 col-md-6">
+                            <input type="number" class=" form-control me-2 ms-2" id='f-numbers'
+                                    wire:model.live.debounce.500ms="father_contact2" >
+                            @error('father_contact2')
+                            <small class="form-text text-danger">{{$message}}</small>
+                            @enderror
+                        </div>
                     </div>
                 </div>
                 <!-- mother name  -->
@@ -165,13 +171,13 @@
             <div class="box col ">
                 <button  type="submit" class=" save-button text-center">
                     {{__('public.save')}}
-                    <div wire:loading class="spinner-border spinner-border-sm"></div>
+                    {{-- <div wire:loading class="spinner-border spinner-border-sm"></div> --}}
                 </button>
             </div>
             <div class="box  col">
                 <button  type="reset" class=" clear-button text-center">
                     {{__('public.clear')}}
-                    <div wire:loading class="spinner-border spinner-border-sm"></div>
+                    {{-- <div wire:loading class="spinner-border spinner-border-sm"></div> --}}
                 </button>
             </div>
         </div>
