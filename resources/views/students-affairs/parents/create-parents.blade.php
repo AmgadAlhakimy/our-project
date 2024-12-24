@@ -159,14 +159,22 @@
                     @enderror
                 </div>
             </div>
-            <div class="box mt-4 col-12">
+            
+        </div>
+        <div class=" row">
+            <div class="box col ">
                 <button  type="submit" class=" save-button text-center">
-                    {{__('public.next')}}
+                    {{__('public.save')}}
                     <div wire:loading class="spinner-border spinner-border-sm"></div>
                 </button>
             </div>
-        </form>
-
-    </div>
-    </div>
+            <div class="box  col">
+                <button  type="reset" class=" clear-button text-center">
+                    {{__('public.clear')}}
+                    <div wire:loading class="spinner-border spinner-border-sm"></div>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 

@@ -23,6 +23,8 @@ return [
     'classroom info'=>'Classroom Info',
     'classroom'=>'Classroom',
     'classrooms'=>'Classrooms',
+    'classroom id'=>'Classroom ID',
+
     'update classroom'=>'Update Classroom: ',
     'please select a classroom'=>'Please Select a Classroom',
     'you have already chosen this classroom'=>'The Subjects for this

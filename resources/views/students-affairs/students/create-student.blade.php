@@ -41,7 +41,7 @@
             <form wire:submit="save">
                 @csrf
                 <!-- Start personal info  -->
-                <h3 class="container-title">{{__('create student')}}</h3>
+                <h3 class="container-title">{{__('student.create student')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         {{-- 1 --}}
@@ -327,7 +327,7 @@
                 </div>
                 <div class="box">
                     <button type="submit" class="btn save-button">
-                        {{__('public.next')}}
+                        {{__('public.save')}}
                         <div wire:loading class="spinner-border spinner-border-sm"></div>
                     </button>
                 </div>

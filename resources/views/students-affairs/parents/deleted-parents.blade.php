@@ -19,37 +19,37 @@
                             <div class="n_rect">{{__('public.id')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.father_name')}}</div>
+                            <div class="th-head-3">{{__('student.father name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.father_work')}}</div>
+                            <div class="th-head-2">{{__('student.father work')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.father_contact1')}}</div>
+                            <div class="th-head-2">{{__('student.father contact 1')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.father_contact2')}}</div>
+                            <div class="th-head-2">{{__('student.father contact 2')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.mother_name')}}</div>
+                            <div class="th-head-3">{{__('student.mother name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.mother_work')}}</div>
+                            <div class="th-head-2">{{__('student.mother work')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.mother_contact1')}}</div>
+                            <div class="th-head-2">{{__('student.mother contact 1')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.mother_contact2')}}</div>
+                            <div class="th-head-2">{{__('student.mother contact 2')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.kin_name')}}</div>
+                            <div class="th-head-3">{{__('student.kin name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.kin_relationship')}}</div>
+                            <div class="th-head-2">{{__('student.kin relationship')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-1">{{__('public.kin_contact')}}</div>
+                            <div class="th-head-2">{{__('student.kin contact')}}</div>
                         </th>
                         <th>
                             <div class="th-head-2">{{__('public.created at')}}</div>

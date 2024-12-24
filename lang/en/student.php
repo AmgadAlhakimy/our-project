@@ -14,6 +14,7 @@ return [
     */
 
     //create student
+
     'Register a new student'=>'Register a new student',
     'student info'=>'student info',
     "student's name in arabic"=>"Student's name in Arabic",
@@ -22,6 +23,7 @@ return [
     'addresses'=>'Addresses',
     "student's address in arabic"=>"Student's address in Arabic",
     "student's address in english"=>"Student's address in English",
+    
     'gender'=>'gender',
     'male'=>'male',
     'female'=>'female',
@@ -64,15 +66,18 @@ return [
     'student information'=>'student Information',
     'personal info'=>'personal Information',
 
+    'choose parents'=>'Choose Parents',
+    'create student'=>'Create Student',
+
     "father name"=>"father name",
     "father work"=>"father work",
-    "father contacts 1"=>"father contacts 1",
-    "father contacts 2"=>"father contacts 2",
+    "father contact 1"=>"father contact 1",
+    "father contact 2"=>"father contact 2",
 
     "mother name"=>"Mother name",
     "mother work"=>"Mother work",
-    "mother contacts 1"=>"mother contacts 1",
-    "mother contacts 2"=>"mother contacts 2",
+    "mother contact 1"=>"mother contacts 1",
+    "mother contact 2"=>"mother contacts 2",
 
     'student allergy'=>'student allergy',
     'student health problem'=>'student health problem',
@@ -95,5 +100,7 @@ return [
     'please select from the list and the number of father only'=>
     'please select from the list and the number of father only',
     'select educational level first'=>'Select Educational Level First',
+
+    'parents info'=> 'parents info'
 
 ];
