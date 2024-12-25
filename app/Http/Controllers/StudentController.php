@@ -54,49 +54,49 @@ class StudentController extends Controller
      */
     public function store(StoreStudentRequest $request)
     {
-        try {
-        Student::create([
-            'name' => [
-                'en' => $request->name,
-                'ar' => $request->name_ar
-            ],
-            'photo'=>$this->insertImage($request,0,
-                "\App\Models\Student",'images/students'),
-            'address'=>[
-                'en'=> $request->address,
-                'ar'=> $request->address_ar
-            ],
-            'gender'=>[
-                'en'=>__('public.'.$request->gender),
-                'ar'=>__('public.'.$request->gender.'1'),
-            ],
-            'birthdate'=>$request->birthdate,
-            'place_of_birth'=>[
-              'en'=>$request->place_of_birth,
-              'ar'=>$request->place_of_birth_ar,
-            ],
-            'medicine_desc'=>[
-                'en'=>$request->medicine_desc,
-                'ar'=>$request->medicine_desc_ar,
-            ],
-            'allergy_desc' =>[
-                'en'=>$request->allergy_desc,
-                'ar'=>$request->allergy_desc_ar,
-            ],
-            'health_problem_desc'=>[
-                'en'=>$request->health_problem_desc,
-                'ar'=>$request->health_problem_desc,
-            ],
-            'note'=>$request->note,
-            'classroom_id'=>$request->classroom_id,
-            'relative_id'=>$request->relative_id,
-
-        ]);
-        return redirect()->back()->with(['success' => __('message.success')]);
-
-        }catch (Exception $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+//        try {
+//        Student::create([
+//            'name' => [
+//                'en' => $request->name,
+//                'ar' => $request->name_ar
+//            ],
+//            'photo'=>$this->insertImage($request,0,
+//                "\App\Models\Student",'images/students'),
+//            'address'=>[
+//                'en'=> $request->address,
+//                'ar'=> $request->address_ar
+//            ],
+//            'gender'=>[
+//                'en'=>__('public.'.$request->gender),
+//                'ar'=>__('public.'.$request->gender.'1'),
+//            ],
+//            'birthdate'=>$request->birthdate,
+//            'place_of_birth'=>[
+//              'en'=>$request->place_of_birth,
+//              'ar'=>$request->place_of_birth_ar,
+//            ],
+//            'medicine_desc'=>[
+//                'en'=>$request->medicine_desc,
+//                'ar'=>$request->medicine_desc_ar,
+//            ],
+//            'allergy_desc' =>[
+//                'en'=>$request->allergy_desc,
+//                'ar'=>$request->allergy_desc_ar,
+//            ],
+//            'health_problem_desc'=>[
+//                'en'=>$request->health_problem_desc,
+//                'ar'=>$request->health_problem_desc,
+//            ],
+//            'note'=>$request->note,
+//            'classroom_id'=>$request->classroom_id,
+//            'relative_id'=>$request->relative_id,
+//
+//        ]);
+//        return redirect()->back()->with(['success' => __('message.success')]);
+//
+//        }catch (Exception $e){
+//            return redirect()->back()->with(['error' => $e->getMessage()]);
+//        }
     }
 
     /**
@@ -106,7 +106,7 @@ class StudentController extends Controller
     {
         try {
             $students = Student::onlyTrashed()->get();
-            return view('students-affairs/students.deleted_students',
+            return view('students-affairs/students.deleted-students',
                 compact('students', ));
 
         }catch (Exception $e){
@@ -135,51 +135,51 @@ class StudentController extends Controller
      */
     public function update(UpdateStudentRequest $request, $id)
     {
-        try {
-        $student = Student::findorFail($id);
-        $student->update([
-            'name' => [
-                'en' => $request->name,
-                'ar' => $request->name_ar
-            ],
-            'photo'=>$this->insertImage($request,$id,
-                "\App\Models\Student",'images/students'),
-
-            'address'=>[
-                'en'=> $request->address,
-                'ar'=> $request->address_ar
-            ],
-            'gender'=>[
-                'en'=>__('public.'.$request->gender),
-                'ar'=>__('public.'.$request->gender.'1'),
-            ],
-            'birthdate'=>$request->birthdate,
-            'place_of_birth'=>[
-                'en'=>$request->place_of_birth,
-                'ar'=>$request->place_of_birth_ar,
-            ],
-            'medicine_desc'=>[
-                'en'=>$request->medicine_desc,
-                'ar'=>$request->medicine_desc_ar,
-            ],
-            'allergy_desc' =>[
-                'en'=>$request->allergy_desc,
-                'ar'=>$request->allergy_desc_ar,
-            ],
-            'health_problem_desc'=>[
-                'en'=>$request->health_problem_desc,
-                'ar'=>$request->health_problem_desc,
-            ],
-            'note'=>$request->note,
-            'classroom_id'=>$request->classroom_id,
-            'relative_id'=>$request->relative_id,
-        ]);
-        return redirect()->route('students.index')
-            ->with(['success' => __('message.update')]);
-
-        }catch (\Exception $e){
-         return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+//        try {
+//        $student = Student::findorFail($id);
+//        $student->update([
+//            'name' => [
+//                'en' => $request->name,
+//                'ar' => $request->name_ar
+//            ],
+//            'photo'=>$this->insertImage($request,$id,
+//                "\App\Models\Student",'images/students'),
+//
+//            'address'=>[
+//                'en'=> $request->address,
+//                'ar'=> $request->address_ar
+//            ],
+//            'gender'=>[
+//                'en'=>__('public.'.$request->gender),
+//                'ar'=>__('public.'.$request->gender.'1'),
+//            ],
+//            'birthdate'=>$request->birthdate,
+//            'place_of_birth'=>[
+//                'en'=>$request->place_of_birth,
+//                'ar'=>$request->place_of_birth_ar,
+//            ],
+//            'medicine_desc'=>[
+//                'en'=>$request->medicine_desc,
+//                'ar'=>$request->medicine_desc_ar,
+//            ],
+//            'allergy_desc' =>[
+//                'en'=>$request->allergy_desc,
+//                'ar'=>$request->allergy_desc_ar,
+//            ],
+//            'health_problem_desc'=>[
+//                'en'=>$request->health_problem_desc,
+//                'ar'=>$request->health_problem_desc,
+//            ],
+//            'note'=>$request->note,
+//            'classroom_id'=>$request->classroom_id,
+//            'relative_id'=>$request->relative_id,
+//        ]);
+//        return redirect()->route('students.index')
+//            ->with(['success' => __('message.update')]);
+//
+//        }catch (\Exception $e){
+//         return redirect()->back()->with(['error' => $e->getMessage()]);
+//        }
     }
 
     /**
@@ -286,7 +286,7 @@ class StudentController extends Controller
      */
     public function getClassrooms($id)
     {
-        return 'hello world';
         return Classroom::where('edu_id', $id)->pluck("name", "id");
+        return 'hello world';
     }
 }

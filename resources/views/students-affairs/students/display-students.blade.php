@@ -9,8 +9,8 @@
                         <label class="col">
                             <div class="search p-relative">
                                 <input wire:model.live.debounce.500ms="search"
-                                        type="text" class="form-control " name="search"
-                                        placeholder="{{__('sidebar.search')}}">
+                                       type="text" class="form-control " name="search"
+                                       placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
                     </div>
@@ -19,8 +19,8 @@
         </div>
     </div>
 
-        <!-- pagination up code -->
-        @include('layouts.paginations.pagination_up')
+    <!-- pagination up code -->
+    @include('layouts.paginations.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -51,16 +51,9 @@
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('photo')" class="">
-                            <div class="table_test form-label ">
-                                {{__('public.photo')}}
-                                @if($arrow and $showArrow === 'photo')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'photo')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </div>
-                        </button>
+                        <div class="table_test form-label ">
+                            {{__('public.photo')}}
+                        </div>
                     </th>
                     {{-- 1 --}}
                     <th>
@@ -261,7 +254,7 @@
                             </div>
                         </td>
                         <td><img
-                             src="{{asset('storage/'.$student->photo)}}"
+                                src="{{asset('storage/'.$student->photo)}}"
                                 class="student-img" alt="photo"></td>
                         <td>
                             <div class="td_rect">
@@ -334,22 +327,22 @@
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('students.edit',$student->id)}}"
-                                class="btn save-button btn-success  w-25 me-1 ms-1 ">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                {{-- {{__('public.edit')}} --}}
+                            <a href="{{route('edit-student',$student->id)}}"
+                               class="btn save-button btn-success  w-25 me-1 ms-1 ">
+                                <i class="fa-solid fa-pen-to-square"></i>
+
                             </a>
                             <button wire:confirm="are you sure you want to delete"
                                     class="btn clear-button btn-danger w-25 me-1 ms-1 "
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$student->id}}">
                                 <i class="fa-solid fa-trash"></i>
-{{--                                     {{__('public.delete')}}--}}
+                                {{--                                     {{__('public.delete')}}--}}
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$student->id}}"
-                                tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
+                                 tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -363,7 +356,7 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
-                                                    action="{{route('students.destroy',$student->id)}}">
+                                                  action="{{route('students.destroy',$student->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit"
@@ -389,8 +382,8 @@
             @endif
         </div>
 
-            {{-- pagination down code --}}
-            @include('layouts.paginations.pagination_down')
+        {{-- pagination down code --}}
+        @include('layouts.paginations.pagination_down')
 
     </div>
 </div>

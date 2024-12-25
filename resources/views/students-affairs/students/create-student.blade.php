@@ -68,8 +68,7 @@
                             <label class="text-center"
                                    for="english-name">{{__("student.student's name in english")}}</label>
                             <input type="text" class="form-control"
-                                   wire:model.live.debounce.500ms="name"
-                                   value="{{old('name')}}">
+                                   wire:model.live.debounce.500ms="name">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -132,8 +131,6 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <input type="hidden" name="gender_ar_m" value="{{__('student.male_ar')}}">
-                        <input type="hidden" name="gender_ar_f" value="{{__('student.female_ar')}}">
                         {{-- 6 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="age">{{__('student.birthdate')}}</label>
