@@ -63,8 +63,6 @@ class CreateStudent extends Component
     public $selectedLevel = null;
     public $classrooms;
     public string $search = "";
-    public $image;
-    public $showSelect = false;
 
 
     public function save()
@@ -142,11 +140,9 @@ class CreateStudent extends Component
     public function insertImage()
     {
         if($this->photo){
-
             $filename = time() . '.' . $this->photo->getClientOriginalExtension();
-            $path = $this->photo->storeAs('images/students', $filename, 'public'); // Store in storage/app/public/students
-
-            return $path;
+            // Store in storage/app/public/students
+            return $this->photo->storeAs('images/students', $filename, 'public');
         }
         return null;
     }
