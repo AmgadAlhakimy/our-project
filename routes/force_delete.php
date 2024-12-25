@@ -9,7 +9,6 @@ use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\Subject\SubjectController;
 use App\Http\Controllers\Teacher\TeacherController;
-
 use Illuminate\Support\Facades\Route;
 
 

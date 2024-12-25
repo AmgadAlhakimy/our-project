@@ -36,7 +36,11 @@
         <a href="{{route('display-students')}}" class="li-link">{{__('sidebar.view students')}}</a>
         <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>
         <a href='/absence' class="li-link">{{__('sidebar.Student absence')}}</a>
-        <a href='/student_form' class="li-link">معلومات الطلاب</a>
+
+
+        <a href="{{route('student-more-info',1)}}" class="li-link">معلومات lllllllllllll</a>
+
+
         <a href="#" class="li-link">الطلاب الأوائل</a>
     </div>
 </div>

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Classroom\Classroom;
+use App\Models\Parents;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -29,9 +30,9 @@ class Student extends Model
     {
         return $this->belongsTo(Classroom::class);
     }
-    public function relative()
+    public function parents()
     {
-        return $this->belongsTo(Relative::class);
+        return $this->belongsTo(Parents::class);
     }
     public function marks(){
 

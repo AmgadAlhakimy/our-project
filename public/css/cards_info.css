@@ -23,9 +23,6 @@
     transition: all 1s ease;
     background-color: #fff;
     border: .5px solid var(--border-color);
-} 
-.big_font{
-    font-size: 50px;
 }
 
 

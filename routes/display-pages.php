@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use App\Livewire\AcademicDep\DisplayActivities;
 use App\Livewire\AcademicDep\DisplayActivityClassrooms;
 use App\Livewire\AcademicDep\DisplayClassrooms;
@@ -26,3 +27,4 @@ Route::get('/teachers',DisplayTeachers::class)->name('display-teachers');
 Route::get('/students',DisplayStudents::class)->name('display-students');
 Route::get('/majors',DisplayMajors::class)->name('display-majors');
 Route::get('/parents',DisplayParents::class)->name('display-parents');
+Route::get('/student/{id}',[StudentController::class,"more"])->name('student-more-info');
