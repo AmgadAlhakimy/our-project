@@ -17,14 +17,15 @@ class EditStudent extends Component
     use WithFileUploads;
 
     public $id;
+    public $current_photo;
 
     #[Rule('required|exists:parents,id')]
-    public $parent_id;
+    public $parents_id;
     #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
     public string $name;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
     public string $name_ar;
-    #[Rule('image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
+    #[Rule('nullable|image|mimes:jpeg,png,jpg,gif|max:2048')]
     public $photo;
     #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
     public string $address;
@@ -74,7 +75,7 @@ class EditStudent extends Component
             $student = Student::findorFail($this->id);
             $this->name = $student->getTranslation('name', 'en');
             $this->name_ar = $student->getTranslation('name', 'ar');
-            $this->photo = $student->photo;
+            $this->current_photo = $student->photo;
             $this->address = $student->getTranslation('address', 'en');
             $this->address_ar = $student->getTranslation('address', 'ar');
             $this->birthdate = $student->birthdate;
@@ -89,7 +90,8 @@ class EditStudent extends Component
             $this->health_problem_desc_ar = $student->getTranslation('health_problem_desc', 'ar');
             $this->note = $student->note;
             $this->classroom_id = $student->classroom_id;
-            $this->parent_id = $student->parent_id;
+            $this->parents_id = $student->parents_id;
+            $this->search = $student->parents->father_name;
 
         } catch (\Exception $e) {
             error($e);
@@ -99,7 +101,6 @@ class EditStudent extends Component
     public function update()
     {
         $this->validate();
-        dd('hello world');
         try {
             $student = Student::findorFail($this->id);
             $student->update([
@@ -135,12 +136,12 @@ class EditStudent extends Component
                 ],
                 'note' => $this->note,
                 'classroom_id' => $this->classroom_id,
-                'parents_id' => $this->parent_id,
+                'parents_id' => $this->parents_id,
 
             ]);
             $this->deletePhoto();
             $this->reset();
-            return redirect()->route('display-students')->with(['success' => __('message.success')]);
+            return redirect()->route('display-students')->with(['success' => __('message.update')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -148,7 +149,7 @@ class EditStudent extends Component
 
     public function render()
     {
-//        $fathers = Parents::findorFail($this->parent_id);
+//        $fathers = Parents::findorFail($this->parents_id);
         $student = Student::findorFail($this->id);
         $fathers = Parents::all();
 
@@ -205,23 +206,26 @@ class EditStudent extends Component
     public function updateImage()
     {
         if ($this->photo) {
+//            $student = Student::
             $student = Student::findorFail($this->id);
-            if ($this->photo === $student->photo) {
-                return;
-            }
             // Delete the existing image if it exists
-                Storage::disk('public')->delete('storage/images/students/' . $this->photo);
-
+//            Storage::disk('public')->delete('images/students/' . $this->currnt_photo);
+//            Storage::delete(asset('storage/'.$this->current_photo));
+//dd('hello');
+            $path = 'public/storage/' . $this->current_photo;
+            if (Storage::exists($path)) {
+                Storage::delete($path);
+                // Update the images list after deletion
+//                $this->images = array_diff($this->images, [$image]);
+//                $this->dispatchBrowserEvent('imageDeleted'); // Optional event
+            }
 
             $filename = time() . '.' . $this->photo->getClientOriginalExtension();
-            $path = $this->photo->storeAs('images/students', $filename, 'public');
-
-            $this->emit('imageUpdated'); // Emit an event to notify other components
-
-            return $path;
+            return $this->photo->storeAs('images/students', $filename, 'public');
         }
-
-        return null;
+        else{
+            return $this->current_photo;
+        }
     }
 
 }

@@ -111,7 +111,7 @@ class EditParents extends Component
                 'kin_contact' => $this->kin_contact,
             ]);
             $this->reset();
-            return redirect()->route('display-parents')->with(['success' => __('message.success')]);
+            return redirect()->route('display-parents')->with(['success' => __('message.update')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

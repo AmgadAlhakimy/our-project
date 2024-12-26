@@ -58,7 +58,7 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        
+
                         <div class="col-lg-6 col-md-6">
                             <input type="number" class=" form-control me-2 ms-2" id='f-numbers'
                                     wire:model.live.debounce.500ms="father_contact2" >
@@ -165,7 +165,7 @@
                     @enderror
                 </div>
             </div>
-            
+
         </div>
         <div class=" row">
             <div class="box col ">
