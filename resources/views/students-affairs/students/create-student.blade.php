@@ -43,7 +43,7 @@
                 </div>
             </div>
             <!-- End parent info  -->
-            <form wire:submit="save">
+            <form wire:submit="save" enctype="multipart/form-data">
                 @csrf
                 <!-- Start personal info  -->
                 <h3 class="container-title">{{__('student.create student')}}</h3>

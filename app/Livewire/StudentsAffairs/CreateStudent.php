@@ -20,7 +20,7 @@ class CreateStudent extends Component
     public string $name;
     #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
     public string $name_ar;
-    #[Rule('image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
+    #[Rule('required|image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
     public $photo;
     #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
     public string $address;
@@ -144,7 +144,6 @@ class CreateStudent extends Component
             // Store in storage/app/public/students
             return $this->photo->storeAs('images/students', $filename, 'public');
         }
-        return null;
     }
     public function deletePhoto()
     {

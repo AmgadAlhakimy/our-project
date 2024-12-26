@@ -11,61 +11,30 @@
                 <div class="">
                     <!-- father name  -->
                     <div class="row box">
-{{--                        <div class="box w-100">--}}
-{{--                            <input type="text" id="fatherSearch" list="fathersList"--}}
-{{--                                   placeholder="{{ __('student.search for father') }}"--}}
-{{--                                   wire:model.live.debounce.500ms="search" value="{{$parent_id   }}"--}}
-{{--                                   oninput="setParentId(this)">--}}
-{{--                            <datalist id="fathersList">--}}
-{{--                                @foreach($fathers as $father)--}}
-{{--                                    <option value="{{ $father->father_name }}"--}}
-{{--                                            data-id="{{ $father->id }}">{{ $father->father_name }}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </datalist>--}}
-{{--                            @error('parent_id')--}}
-{{--                            <small class="form-text text-danger">{{ $message }}</small>--}}
-{{--                            @enderror--}}
-{{--                        </div>--}}
-
-{{--                        <script>--}}
-{{--                            function setParentId(input) {--}}
-{{--                                const list = document.getElementById('fathersList');--}}
-{{--                                const options = list.getElementsByTagName('option');--}}
-{{--                                for (let option of options) {--}}
-{{--                                    if (option.value === input.value) {--}}
-{{--                                    @this.set('parent_id', option.getAttribute('data-id'))--}}
-{{--                                        ;--}}
-{{--                                        break;--}}
-{{--                                    }--}}
-{{--                                }--}}
-{{--                            }--}}
-{{--                        </script>--}}
                         <div class="box w-100">
                             <input type="text"
                                    id="fatherSearch"
                                    list="fathersList"
                                    wire:model.live.debounce.500ms="search"
-                                   value="hello world"
                                    oninput="setParentId(this)"
                                    aria-labelledby="fatherSearchLabel"
                                    aria-describedby="fatherSearchHelp">
                             <datalist id="fathersList">
                                 @foreach($fathers as $father)
-                                    <option value="{{ $father->father_name }}" data-id="{{ $father->id }}" @if($father->id == $parent_id) selected @endif>{{ $father->father_name }}</option>
+                                    <option value="{{ $father->father_name }}" data-id="{{ $father->id }}" @if($father->id == $parents_id) selected @endif>{{ $father->father_name }}</option>
                                 @endforeach
                             </datalist>
-                            @error('parent_id')
-                            <small class="form-text text-danger" id="fatherSearchHelp">{{ $message }}</small>
+                            @error('parents_id')
+                            <small class="form-text text-danger" id="fatherSearchHelp" >{{ $message }}</small>
                             @enderror
                         </div>
-
                         <script>
                             function setParentId(input) {
                                 const list = document.getElementById('fathersList');
                                 const options = list.getElementsByTagName('option');
                                 for (let option of options) {
                                     if (option.value === input.value) {
-                                    @this.set('parent_id', option.getAttribute('data-id'));
+                                    @this.set('parents_id', option.getAttribute('data-id'));
                                         break;
                                     }
                                 }
@@ -78,7 +47,7 @@
                 </div>
             </div>
             <!-- End parent info  -->
-            <form wire:submit="update">
+            <form wire:submit="update" enctype="multipart/form-data">
                 @csrf
                 <!-- Start personal info  -->
                 <h3 class="container-title">{{__('student.create student')}}</h3>
@@ -123,12 +92,12 @@
                                 </div>
                             </div>
                         </div>
-                        @if($photo === $student->photo)
+                        @if($current_photo === $student->photo and $photo == null)
                             <div class="box d-flex justify-content-center">
                                 <img class="personal_img mt-4" alt="photo"
-                                     src="{{asset('storage/'.$photo)}}">
+                                     src="{{asset('storage/'.$current_photo)}}">
                             </div>
-                        @elseif($photo != $student->photo)
+                        @elseif($photo != null and $photo != $student->photo)
                             <div class="box d-flex justify-content-center">
                                 <img class="personal_img mt-4" alt="photo"
                                      src="{{$photo->temporaryUrl()}}">
