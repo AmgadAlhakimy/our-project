@@ -14,7 +14,7 @@
                         <div class="box w-100">
                             <input type="text" id="fatherSearch" list="fathersList" placeholder="{{ __('student.search for father') }}"
                                 class="form-control"   wire:model.live.debounce.500ms="search"   oninput="setParentId(this)">
-                            <datalist id="fathersList">
+                            <datalist id="fathersList" class="">
                                 @foreach($fathers as $father)
                                     <option value="{{ $father->father_name }}" data-id="{{ $father->id }}">{{ $father->father_name }}</option>
                                 @endforeach
@@ -23,7 +23,6 @@
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
-
                         <script>
                             function setParentId(input) {
                                 const list = document.getElementById('fathersList');

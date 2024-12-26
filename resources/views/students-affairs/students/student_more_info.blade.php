@@ -4,37 +4,27 @@
 
         <section class="my-table  ">
                 <!-- Start personal info  -->
-                <h3 class="container-title mb-5">{{__('student.student information')}}</h3>
-            <div class="cards_container row">
-
-                <div class="  ">
+                <label class="container-title mb-5">{{__('student.student information')}}</label>
+                <div class="cards_container row">
+                    
                     <label class="box container-title col-12 ">{{__('student.personal info')}}</label>
                     <div class="row col">
-                        {{-- 1 --}}
-                        <div class="col col-ms-12 row  ">
-                            <div class="    cards_info_style ms-1 me-1 mb-1">
-                                    <div class=" row">
-                                        {{-- 1 --}}
-                                        <div class="box col">
-                                            <img  src="{{asset("storage/".$student->photo)}}" class="student-img mt-1 mb-2 ms-1 me-1" alt="photo"></td>
-
-                                        </div>
-                                        <div class="text-center ">
-                                            <label class="  form-label"> {{$student->name}} </label>
-                                            <label class="  title-3">({{$student->id}})</label>
-                                        </div>
-                                        <div class="text-center ">
-                                        </div>
-                                    </div>
-                            </div>
-                            <div class="    cards_info_style ms-1 me-1 mb-1">
-                                <div class="text-center row">
-                                    <label class="  title-3 col-12">8</label>
-                                    <label class="  form-label col-12">{{__('student.absent')}}</label>
+                        {{-- name and photo --}}
+                        <div class="cards_info_style">
+                            <div class=" row">
+                                {{-- 1 --}}
+                                <div class="col-4 center_row_up ">
+                                    <img  src="{{asset("storage/".$student->photo)}}" class="cards_img " alt="photo"></td>
+                                </div>
+                                <div class="center_row_up col ">
+                                    <label class="  form-label mt-2"> khaled </label>
+                                    <label class="me-2 ms-2   title-3">({{$student->id}})</label>
                                 </div>
                             </div>
-                            <div class="    cards_info_style ms-1 me-1 mb-1">
-                                {{-- 1 --}}
+                        </div>
+                        <div class="col col-ms-12 row  ">
+                            <div class="cards_info_style ">
+                                {{-- health info --}}
                                 <div class="row mb-3">
                                     <div class="col s_info_1">
                                         <label class=" mb-1 form-label">{{__('student.student allergy')}}</label>
@@ -64,9 +54,9 @@
                             </div> 
                         </div>
                         {{-- ==================================================== --}}
-                        {{-- 2 --}}
+                        {{-- the student info --}}
                         <div class=" col row ">
-                            <div class="    cards_info_style ms-1 me-1 mb-1  ">
+                            <div class="cards_info_style   ">
                                 {{-- 1 --}}
                                 <div class="row mb-3">
                                     <div class="col s_info_1">
@@ -121,18 +111,42 @@
                                         <label class=" mb-1 title-3"> {{$student->classroom->Level->name}} </label>
                                     </div>
                                 </div>
+                                {{-- 7 --}}
+                                <div class="row mb-3">
+                                    <div class="col s_info_1">
+                                        <label class=" mb-1 form-label">{{__('student.absent')}} </label>
+                                    </div>
+                                    <div class="col  s_info_1">
+                                        <label class=" mb-1 title-3">2</label>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
-                </div>
 
                         {{-- ==================================================== --}}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
                         <div class="    ">
                             <label class="box container-title col "> {{__('student.parent info')}} </label>
                             <div class="row ">
                                     {{-- =====معلومات الأب ===== --}}
-                                <div class="col-lg-4 col-md-6 col-ms-12   cards_info_style ms-1 me-1 mb-1  mb-3">
+                                <div class="col-lg-4 col-md-6 col-ms-12   cards_info_style   mb-3">
                                     {{-- 1 --}}
                                     <div class="row mb-3 mt-2">
                                         <div class="col s_info_1 ">
@@ -171,7 +185,7 @@
                                     </div>
                                 </div>
                                 {{-- =====معلومات الأم ===== --}}
-                                <div class="col-lg-4 col-md-6 col-ms-12  cards_info_style ms-1 me-1 mb-1  mb-3">
+                                <div class="col-lg-4 col-md-6 col-ms-12  cards_info_style   mb-3">
                                     {{-- 1 --}}
                                     <div class="row mb-3 mt-2 ">
                                         <div class="col s_info_1 ">
@@ -210,7 +224,7 @@
                                     </div>
                                 </div>
                                 {{-- =====معلومات القريب ===== --}}
-                                <div class="col-lg-4 col-md-6 col-ms-12  cards_info_style ms-1 me-1 mb-1 mb-3">
+                                <div class="col-lg-4 col-md-6 col-ms-12  cards_info_style  mb-3">
                                     {{-- 1 --}}
                                     <div class="row mb-3 mt-2 ms-1 me-1">
                                         <div class="col s_info_1 ">
@@ -240,7 +254,7 @@
                                     </div>
                                 </div>
                                 {{-- =====معلومات اضافية ===== --}}
-                                <div class="col  col-ms-12  cards_info_style ms-1 me-1 mb-1  mb-3">
+                                <div class="col  col-ms-12  cards_info_style   mb-3">
                                     {{-- 1 --}}
                                     <label class="box form-label mt-5">{{__('student.more info')}}</label>
                                         <div class="box col-lg-12 col-md-12 mt-3">
