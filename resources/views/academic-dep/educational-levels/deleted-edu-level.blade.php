@@ -74,10 +74,22 @@
                                         aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
+
+                                            
+{{-- ////////////////////// --}}
+
+{{--  --}}
+<div class="modal-body form-label">
+    {{--  --}}
+    <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
+    <button type="submit" class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
+
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">{{__('public.delete')}}</h5>
+                                                <div class="modal-title">
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                </div>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body form">
                                                 {{__('public.are you sure you want to delete').$Level->name}}
                                             </div>
                                             <div class="modal-footer">

@@ -1284,3 +1284,5 @@ body[dir="rtl"] .modal-dialog{
 .test_1{
     border: solid 2px red;
 }
+.test_2{
+background-color: red;}

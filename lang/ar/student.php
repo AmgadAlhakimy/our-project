@@ -49,6 +49,7 @@ return [
 
     'choose parents'=>'قم بالختيار اب للطالب الجديد',
     'create student'=>'تسجيل طالب جديد',
+    'create parents'=>'تسجيل آبــــاء جدد',
 
 
     "mother's contacts"=>"أرقام الأم",

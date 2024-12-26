@@ -16,7 +16,7 @@
                     <thead>
                     <tr>
                         <th>
-                            <div class="n_rect">{{__('public.id')}}</div>
+                            <div class="">{{__('public.id')}}</div>
                         </th>
                         <th>
                             <div class="th-head-3">{{__('public.name')}}</div>
@@ -64,7 +64,8 @@
                             <td>
                                 <button class="btn clear-button btn-danger w-100" data-bs-toggle="modal"
                                         data-bs-target="#delete{{$major->id}}">
-                                    <i class="fa-solid fa-trash"></i> {{__('public.force delete')}}
+                                    <i class="fa-solid fa-trash">
+                                        </i> {{__('public.force delete')}}
                                 </button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$major->id}}"

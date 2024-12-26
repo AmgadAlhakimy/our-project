@@ -14,6 +14,7 @@ return [
     */
 
     'teachers info'=>'معلومات المعلم',
+    'deleted teachers'=>'المعلمين المحذوفين',
     'teacher name in english'=>'اسم المعلم بالإنجليزية',
     'teacher name in arabic'=>'اسم المعلم بالعربية',
     'photo'=>'الصورة',

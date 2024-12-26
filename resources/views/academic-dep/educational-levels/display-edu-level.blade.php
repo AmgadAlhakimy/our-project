@@ -21,20 +21,10 @@
             </div>
         </div>
     </div>
-    <!-- table-hover table-striped -->
-    <div class="small text-muted rows_3 num_rows mt-3 ms-4 me-4">
-        @if($isPaginate)
-            <label class=""> {{__('public.number of rows:')}} </label>
-            <select class=" num_rows" wire:model.live="pagination">
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="75">75</option>
-                <option value="100">100</option>
-            </select>
-        @endif
-    </div>
+    
+        {{-- pagination up code --}}
+            @include('layouts.paginations.pagination_up')
+
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
         <div class="table-section card  ">
@@ -42,7 +32,7 @@
                 <thead>
                 <tr>
                     <th>
-                        <label for="" class=" n_rect">
+                        <label for="" class=" ">
                             {{__('public.num')}}
                         </label>
                     </th>
@@ -93,7 +83,7 @@
                         </button>
                     </th>
                     <th colspan="">
-                        <div class="th-head-3 form-label">{{__('public.processes')}} </div>
+                        <div class="th-head-4 form-label">{{__('public.processes')}} </div>
                     </th>
                 </tr>
                 </thead>
@@ -129,6 +119,7 @@
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{-- {{__('public.edit')}} --}}
                             </a>
+                            
                             <button wire:confirm="are you sure you want to delete"
                                     class="btn clear-button btn-danger  w-25 me-1 ms-1 "
                                     data-bs-toggle="modal"
@@ -143,21 +134,22 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title"
-                                                id="exampleModalLabel">{{__('public.delete')}}</h5>
+                                            <div class="modal-title">
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                            </div>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body form-label">
                                             {{__('public.are you sure you want to delete').$Level->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2 " data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
                                                   action="{{route('educational-levels.destroy',$Level->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit"
-                                                        class="btn btn-primary">{{__('public.ok')}}</button>
+                                                        class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>
@@ -180,6 +172,7 @@
             
             {{-- pagination down code --}}
             @include('layouts.paginations.pagination_down')
+
 
         </div>
     </div>

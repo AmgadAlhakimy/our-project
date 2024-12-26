@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}
-        <h4 class="form-group container-title">{{__('teacher.teacher info')}}</h4>
+        <h4 class="form-group container-title">{{__('teacher.fggfgf info')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -250,23 +250,22 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title"
-                                                id="exampleModalLabel">
-                                                {{__('public.delete')}}
-                                            </h5>
+                                            <div class="modal-title">
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                            </div>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-bodyform-label">
                                             {{__('public.are you sure you want to delete').$teacher->name}}
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                        <div class="modal-footer form-label">
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
                                                   action="{{route('teachers.destroy',$teacher->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit"
-                                                        class="btn btn-primary">{{__('public.ok')}}</button>
+                                                        class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>
@@ -274,7 +273,7 @@
                             </div>
                         </td>
                     </tr>
-                @endforeach
+                @endforeach 
                 </tbody>
             </table>
         </div>

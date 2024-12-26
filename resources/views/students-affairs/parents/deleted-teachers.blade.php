@@ -28,7 +28,7 @@
                         <th><div class="th-head-3 form-label">{{__('public.created at')}}</div></th>
                         <th><div class="th-head-3 form-label">
                             {{__('public.updated at')}}</div></th>
-                        <th colspan=""><div class="th-head-4 form-label" >{{__('public.processes')}}</div></th>
+                        <th colspan=""><div class="th-head-2 form-label" >{{__('public.processes')}}</div></th>
                         {{-- <th><div class="th-head-2"></div></th> --}}
                         {{-- <th><div class="th-head-1"></div></th> --}}
                     </tr>

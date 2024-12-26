@@ -16,19 +16,19 @@
                     <thead>
                     <tr>
                         <th>
-                            <div class="n_rect">{{__('public.id')}}</div>
+                            <div class=" form-label">{{__('public.id')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3">{{__('public.name')}}</div>
+                            <div class="th-head-3 form-label">{{__('public.name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.created at')}}</div>
+                            <div class="th-head-2 form-label">{{__('public.created at')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2">{{__('public.updated at')}}</div>
+                            <div class="th-head-2 form-label">{{__('public.updated at')}}</div>
                         </th>
                         <th colspan="">
-                            <div class="th-head-3">{{__('public.processes')}}</div>
+                            <div class="th-head-3 form-label">{{__('public.processes')}}</div>
                         </th>
                     </tr>
                     </thead>
@@ -63,8 +63,6 @@
 
                                     {{-- {{__('public.restore')}} --}}
                                 </a>
-                            </td>
-                            <td>
                                 <button class="btn clear-button btn-danger  w-25 me-1 ms-1" data-bs-toggle="modal"
                                         data-bs-target="#delete{{$subject->id}}">
                                     <i class="fa-solid fa-trash"></i> 
@@ -77,18 +75,20 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">{{__('public.force delete')}}</h5>
+                                                <div class="modal-title">
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                </div>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body form-label">
                                                 {{__('public.are you sure you want to delete').$subject->name}}
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
                                                 <form method="post" action="{{route('subjects.forceDelete',$subject->id)}}">
                                                     @method('get')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
+                                                    <button type="submit" class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -100,7 +100,6 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
 @endsection

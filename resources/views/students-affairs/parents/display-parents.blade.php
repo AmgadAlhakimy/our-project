@@ -211,7 +211,7 @@
                     </th>
                     {{-- 0 --}}
                     <th colspan="">
-                        <div class="th-head-3 form-label">{{__('public.processes')}} </div>
+                        <div class="th-head-4 form-label">{{__('public.processes')}} </div>
                     </th>
                 </tr>
                 </thead>
@@ -308,21 +308,21 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title"
-                                                id="exampleModalLabel">{{__('public.delete')}}</h5>
+                                            <div class="modal-title">
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                            </div>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body form-label">
                                             {{__('public.are you sure you want to delete').$parent->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                                {{__('public.cancel')}}</button>
-                                            <form method="post"
-                                                    action="{{route('parents.destroy',$parent->id)}}">
-                                                @method('DELETE')
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
+                                                {{__('public.cancel')}}
+                                            </button>
+                                            <form method="post" action="{{route('parents.forceDelete',$parent->id)}}">
+                                                @method('GET')
                                                 @csrf
-                                                <button type="submit"
-                                                        class="btn btn-primary">{{__('public.ok')}}</button>
+                                                <button type="submit" class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>

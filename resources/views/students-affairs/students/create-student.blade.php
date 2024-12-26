@@ -13,7 +13,7 @@
                     <div class="row box">
                         <div class="box w-100">
                             <input type="text" id="fatherSearch" list="fathersList" placeholder="{{ __('student.search for father') }}"
-                                   wire:model.live.debounce.500ms="search"   oninput="setParentId(this)">
+                                class="form-control"   wire:model.live.debounce.500ms="search"   oninput="setParentId(this)">
                             <datalist id="fathersList">
                                 @foreach($fathers as $father)
                                     <option value="{{ $father->father_name }}" data-id="{{ $father->id }}">{{ $father->father_name }}</option>

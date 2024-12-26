@@ -15,19 +15,19 @@
                 <table class=" " id="check_table">
                     <thead>
                     <tr>
-                        <th><div class="n_rect">{{__('public.id')}}</div></th>
-                        <th><div class="th-head-3">{{__('public.name')}}</div></th>
-                        <th><div class="th-head-1">{{__('public.cost')}}</div></th>
-                        <th><div class="th-head-2">{{__('public.created at')}}</div></th>
-                        <th><div class="th-head-2">{{__('public.updated at')}}</div></th>
-                        <th colspan=""><div class="th-head-3">{{__('public.processes')}}</div></th>
+                        <th><div class=" form-label">{{__('public.id')}}</div></th>
+                        <th><div class="th-head-3 form-label">{{__('public.name')}}</div></th>
+                        <th><div class="th-head-1 form-label">{{__('public.cost')}}</div></th>
+                        <th><div class="th-head-2 form-label">{{__('public.created at')}}</div></th>
+                        <th><div class="th-head-2 form-label">{{__('public.updated at')}}</div></th>
+                        <th colspan=""><div class="th-head-3 form-label">{{__('public.processes')}}</div></th>
                     </tr>
                     </thead>
                     @foreach($classrooms  as $classroom )
                         <tbody>
                         <tr>
                             <td>
-                                <div class="td_rect">
+                                <div class="td_rect ">
                                 {{$classroom->id}}
                                 </div>
                             </td>
@@ -53,7 +53,7 @@
                             </td>
                             <td>
                                 <a href="{{route('classrooms.restore',$classroom->id)}}" class="btn save-button btn-success  w-25 me-1 ms-1">
-                                    <i class="fa-solid fa-trash-can-arrow-up"></i> 
+                                    <i class="fa-solid fa-trash-can-arrow-up"></i>
                                     {{-- {{__('public.restore')}} --}}
                                 </a>
                                 <button class="btn clear-button btn-danger  w-25 me-1 ms-1" data-bs-toggle="modal"
@@ -68,18 +68,20 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">{{__('public.force delete')}}</h5>
+                                                <div class="modal-title">
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                </div>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body form-label">
                                                 {{__('public.are you sure you want to completely delete').$classroom->name}}
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
                                                 <form method="post" action="{{route('classrooms.forceDelete',$classroom->id)}}">
                                                     @method('get')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-primary">{{__('public.ok')}}</button>
+                                                    <button type="submit" class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
                                                 </form>
                                             </div>
                                         </div>

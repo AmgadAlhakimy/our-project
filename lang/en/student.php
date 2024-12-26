@@ -68,6 +68,8 @@ return [
 
     'choose parents'=>'Choose Parents',
     'create student'=>'Create Student',
+    'create parents'=>'Create Parents',
+
 
     "father name"=>"father name",
     "father work"=>"father work",
