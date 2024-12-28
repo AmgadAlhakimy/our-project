@@ -113,14 +113,6 @@
                         </div>
                         <!-- 2 -->
 
-                        <div class="box  col-lg-6 col-md-12">
-                            <label for="t-salary">{{__('teacher.salary')}}</label>
-                            <input type="number" class="form-control" id='t-salary' name="salary"
-                                   placeholder="in dollars $" value="{{$teacher->salary}}">
-                            @error('salary')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
                         <!-- 3 -->
                         <div class="box row">
                             <label for="t-address">{{__('teacher.major in english')}}</label>

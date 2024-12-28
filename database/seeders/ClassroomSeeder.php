@@ -20,7 +20,6 @@ class ClassroomSeeder extends Seeder
                     'en'=>"classroom $i",
                     'ar'=>"الفصل $i",
                 ],
-                'cost'=>200+$i,
                 'edu_id'=>$levels->random()->id,
             ]);
         }

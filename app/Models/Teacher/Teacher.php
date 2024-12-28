@@ -16,7 +16,7 @@ class Teacher extends Model
     use HasTranslations;
 
     protected $fillable= ['name','photo','gender','contact','address',
-                          'qualification','salary','major','note'];
+                          'qualification','major','note'];
 
     public array $translatable = ['name','gender','address',
                                     'qualification','major'];

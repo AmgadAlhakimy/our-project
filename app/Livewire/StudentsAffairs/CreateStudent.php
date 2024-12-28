@@ -6,6 +6,7 @@ use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Parents;
 use App\Models\Student;
+use App\Traits\PhotoTrait;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -13,6 +14,7 @@ use Livewire\WithFileUploads;
 class CreateStudent extends Component
 {
     use WithFileUploads;
+    use PhotoTrait;
 
     #[Rule('required|exists:parents,id')]
     public $parent_id;
@@ -74,7 +76,7 @@ class CreateStudent extends Component
                     'en' => $this->name,
                     'ar' => $this->name_ar
                 ],
-                'photo'=>$this->insertImage(),
+                'photo'=>$this->insertImageWithLivewire(0),
                 'address' => [
                     'en' => $this->address,
                     'ar' => $this->address_ar
@@ -105,7 +107,7 @@ class CreateStudent extends Component
                 'parents_id' => $this->parent_id,
 
             ]);
-            $this->deletePhoto();
+            $this->photo->delete();
             return redirect()->route('create-student')->with(['success' => __('message.success')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -137,21 +139,7 @@ class CreateStudent extends Component
         return $this->classrooms = Classroom::
         where('edu_id', $this->selectedLevel)->get();
     }
-    public function insertImage()
-    {
-        if($this->photo){
-            $filename = time() . '.' . $this->photo->getClientOriginalExtension();
-            // Store in storage/app/public/students
-            return $this->photo->storeAs('images/students', $filename, 'public');
-        }
-    }
-    public function deletePhoto()
-    {
-        if ($this->photo) {
-            $this->photo->delete(); // Delete the temporary file
-            $this->photo = null; // Reset the photo property
-        }
-    }
+
 
     public function messages(): array
     {

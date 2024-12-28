@@ -25,8 +25,7 @@ class DisplayTeachers extends Component
                 ->orwhere('major->ar','like',"%$this->search%")
                 ->orwhere('contact','like',"%$this->search%")
                 ->orwhere('qualification->en','like',"%$this->search%")
-                ->orwhere('qualification->ar','like',"%$this->search%")
-                ->orwhere('salary','like',"%$this->search%")->get();
+                ->orwhere('qualification->ar','like',"%$this->search%")->get();
             $teachers = $this->queryData("App\Models\Teacher\Teacher", $myQuery);
 
             return view('employees-affairs.teachers.display-teachers', [

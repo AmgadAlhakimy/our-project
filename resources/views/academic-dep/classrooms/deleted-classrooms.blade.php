@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
- 
+
 
         <div class="table-header">
             {{-- the title and search --}}
@@ -17,7 +17,6 @@
                     <tr>
                         <th><div class=" form-label">{{__('public.id')}}</div></th>
                         <th><div class="th-head-3 form-label">{{__('public.name')}}</div></th>
-                        <th><div class="th-head-1 form-label">{{__('public.cost')}}</div></th>
                         <th><div class="th-head-2 form-label">{{__('public.created at')}}</div></th>
                         <th><div class="th-head-2 form-label">{{__('public.updated at')}}</div></th>
                         <th colspan=""><div class="th-head-3 form-label">{{__('public.processes')}}</div></th>
@@ -38,11 +37,6 @@
                             </td>
                             <td>
                                 <div class="td_rect">
-                                {{$classroom->cost}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="td_rect">
                                 {{$classroom->created_at}}
                                 </div>
                             </td>
@@ -58,7 +52,7 @@
                                 </a>
                                 <button class="btn clear-button btn-danger  w-25 me-1 ms-1" data-bs-toggle="modal"
                                         data-bs-target="#delete{{$classroom->id}}">
-                                    <i class="fa-solid fa-trash"></i> 
+                                    <i class="fa-solid fa-trash"></i>
                                     {{-- {{__('public.force delete')}} --}}
                                 </button>
                                 <!-- Modal -->
@@ -69,7 +63,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <div class="modal-title">
-                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>
                                                 </div>
                                             </div>
                                             <div class="modal-body form-label">

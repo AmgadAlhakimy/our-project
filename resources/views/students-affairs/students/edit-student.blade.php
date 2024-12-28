@@ -49,6 +49,8 @@
             <!-- End parent info  -->
             <form wire:submit="update" enctype="multipart/form-data">
                 @csrf
+
+                hello world {{$current_photo}} {{$id}}
                 <!-- Start personal info  -->
                 <h3 class="container-title">{{__('student.create student')}}</h3>
                 <div class="container containers-style">
@@ -189,11 +191,12 @@
                             <label for="classroom">{{__('classroom.classroom')}}</label>
                             <select id="classroom" class="form-control"
                                     wire:model.live.debounce.500ms="classroom_id">
-                                <option value="" selected>{{__('student.select educational level first')}}</option>
                                 @if(!is_null($selectedLevel))
                                     @foreach($classrooms as $classroom)
                                         <option value="{{$classroom->id}}">{{$classroom->name}}</option>
                                     @endforeach
+                                @else
+                                <option value="" selected>{{__('student.select educational level first')}}</option>
                                 @endif
                             </select>
                             @error('classroom_id')

@@ -103,27 +103,20 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <!-- 2 -->
-
+                        <!-- 2-->
                         <div class="box  col-lg-6 col-md-12">
-                            <label for="t-salary">{{__('teacher.salary')}}</label>
-                            <input type="number" class="form-control" id='t-salary' name="salary"
-                                value="{{old('salary')}}">
-                            @error('salary')
+                            <label for="t-major">{{__('teacher.major in english')}}</label>
+                            <input type="text" class="form-control" id='t-major' name="major"
+                                    value="{{old('major')}}">
+                            @error('major')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <!-- 3 -->
-                        <div class="box col-lg-6 col-md-12">
-                            <label for="major">{{__('major.major')}}</label>
-                            <select class="form-control" id="major" name="major">
-                                <option value="" disabled {{ old('major') ? '' : 'selected' }}>{{ __('major.please select the major') }}</option>
-                            @foreach($majors as $major)
-                                    <option class="text-center" value="{{$major->id}}"
-                                        {{ old('major') }}>{{$major->name}}</option>
-                                @endforeach
-                            </select>
-                            @error('major')
+                        <div class="box  col-lg-6 col-md-12">
+                            <label for="t-major_ar">{{__('teacher.major in arabic')}}</label>
+                            <input type="text" class="form-control" id='t-major_ar' name="major_ar"
+                                    value="{{old('major_ar')}}">
+                            @error('major_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>

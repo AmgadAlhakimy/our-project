@@ -12,36 +12,37 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
-        $gender_en = ['male','female','male','female','male','female','male','female','male','female'];
-        $gender_ar = ['ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى','ذكر','أنثى'];
+        $my_gender = 0;
+        $gender_en = ['male', 'female'];
+        $gender_ar = ['ذكر', 'أنثى'];
 
-        for($i = 1; $i<=10; $i++ ){
+        for ($i = 1; $i <= 10; $i++) {
             Teacher::create([
-                'name'=> [
-                    'en'=>"Teacher $i",
-                    'ar'=>"مدرس $i",
+                'name' => [
+                    'en' => "Teacher $i",
+                    'ar' => "مدرس $i",
                 ],
-                'photo'=>'photo',
-                'address'=> [
-                    'en'=>"Al-thlatheen $i",
-                    'ar'=>"الثلاثين $i",
+                'photo' => 'photo',
+                'address' => [
+                    'en' => "Al-thlatheen $i",
+                    'ar' => "الثلاثين $i",
                 ],
-                'gender'=> [
-                    'en'=>$gender_en[$i-1],
-                    'ar'=>$gender_ar[$i-1],
+                'gender' => [
+                    'en' => $gender_en[$my_gender],
+                    'ar' => $gender_ar[$my_gender],
                 ],
-                'contact'=>772342332+$i,
-                'qualification'=> [
-                    'en'=>"qualification $i",
-                    'ar'=>"مؤهل $i",
+                'contact' => 772342332 + $i,
+                'qualification' => [
+                    'en' => "qualification $i",
+                    'ar' => "مؤهل $i",
                 ],
-                'salary'=>234+$i,
                 'major' => [
                     'en' => "major $i",
-                    'ar' =>"$i مجال",
+                    'ar' => "$i مجال",
                 ],
-                'note'=>'no note',
+                'note' => 'no note',
             ]);
+            $my_gender = ($my_gender == 0) ? 1 : 0;
         }
     }
 }

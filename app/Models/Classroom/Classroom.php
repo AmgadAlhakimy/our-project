@@ -20,12 +20,9 @@ class Classroom extends Model
     use HasTranslations;
 
     public array $translatable = ['name'];
-    protected $fillable = ['name','cost','edu_id'];
+    protected $fillable = ['name','edu_id'];
 
-    public function scopeCost($query){
 
-        return $query->where('cost',100);
-    }
     public function level(){
         return $this->belongsTo(EducationalLevel::class,'edu_id');
     }

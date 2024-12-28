@@ -20,7 +20,6 @@ return new class extends Migration
             $table->json('address');
             $table->json('qualification');
             $table->json('major');
-            $table->double('salary');
             $table->text('note')->nullable();
             $table->softDeletes();
             $table->timestamps();

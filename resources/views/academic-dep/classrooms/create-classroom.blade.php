@@ -16,7 +16,7 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="c-name_ar">{{__('classroom.classroom name in arabic')}}</label>
                             <input type="text" id="c-name_ar" class="form-control" name="name_ar"
-                            value="{{old('name_ar')}}">
+                                   value="{{old('name_ar')}}">
                             @error('name_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -33,24 +33,26 @@
                         <div class="box col-lg-6 col-md-12">
                             <label for="level">{{__('classroom.educational Level')}}</label>
                             <select class="form-control" id="level" name="level">
+                                <option value=""
+                                        disabled {{ old('Level') ? '' : 'selected' }}>{{ __('public.please select educational level') }}</option>
+                                    <?php $i = 0 ?>
                                 @foreach($levels as $Level)
-                                    <option class="text-center" value="{{$Level->id}}">{{$Level->name}}</option>
+                                        <?php $i++ ?>
+                                    <option class="text-center"
+                                            value="{{$Level->id}}" {{ old('level') == $Level->id ? 'selected' : '' }}
+                                    >{{$Level->name}}</option>
                                 @endforeach
                             </select>
-                            @error('Level')
+                            @if($i==0)
+                                <small class="form-text text-danger">
+                                    {{__('eduLevel.Sorry! you have to create Educational Level first')}}
+                                </small>
+                            @endif
+                            @error('level')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         {{-- 3 --}}
-                        <div class="box col-lg-6 col-md-12 ">
-                            <label for="cost">{{__('classroom.classroom cost')}}</label>
-                            <input type="number" id="cost" class="form-control" name="cost" minlength="0"
-                                    placeholder="$"
-                                    value="{{old('cost')}}">
-                            @error('cost')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
                     </div>
                 </div>
                 {{-- 4 --}}

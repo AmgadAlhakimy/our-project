@@ -3,12 +3,14 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Facades\Storage;
+
 trait PhotoTrait
 {
     public function insertImage($request, $index, $model, $folder)
     {
         try {
-            if ($request->photo != NULL) {
+            if ($request->photo) {
                 if ($index > 0) {
                     $this->deleteImage($index, $model);
                 }
@@ -28,6 +30,20 @@ trait PhotoTrait
         } catch (\Exception $e) {
             return $e;
         }
+    }
+
+    public function insertImageWithLivewire($index)
+    {
+        if ($this->photo) {
+                if ($index > 0) {
+                    Storage::disk('public')->delete($this->current_photo);
+                }
+            $filename = time() . '.' . $this->photo->getClientOriginalExtension();
+            return $this->photo->storeAs('images/students', $filename, 'public');
+        }else{
+            return null;
+        }
+
     }
 
     public function deleteImage($id, $model)

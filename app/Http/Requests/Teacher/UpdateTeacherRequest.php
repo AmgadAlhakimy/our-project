@@ -2,7 +2,10 @@
 
 namespace App\Http\Requests\Teacher;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+
 
 class UpdateTeacherRequest extends FormRequest
 {
@@ -17,12 +20,52 @@ class UpdateTeacherRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
+        $id = $this->route('teacher');
         return [
-            //
+            'name'=>['required','max:50',
+                Rule::unique('teachers',
+                    'name->en')->ignore($id),
+                'regex:/^[a-zA-Z-\s]+$/',
+            ],
+            'name_ar'=>['required','max:50',
+                Rule::unique('teachers',
+                    'name->ar')->ignore($id),
+                'regex:/^[\p{Arabic}\s]+$/u',
+
+            ],
+            'contact' => ['required', 'numeric'],
+            'gender'=>'required',
+            'address' => [
+                'required', 'max:100',
+                'regex:/^[A-Za-z-\s]+[A-Za-z0-9]*$/',
+            ],
+            'address_ar' => [
+                'required', 'max:100',
+                'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
+            ],
+            'qualification' => ['required', 'max:100'],
+            'qualification_ar' => ['required', 'max:100'],
+            'major' => ['required', 'max:100'],
+            'major_ar' => ['required', 'max:100'],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages(): array
+    {
+        return [
+            'name.regex' => __('validation.english letters'),
+            'name_ar.regex' => __('validation.arabic letters'),
+            'address.regex' => __('validation.english letters'),
+            'address_ar.regex' => __('validation.arabic letters'),
         ];
     }
 }
