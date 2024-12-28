@@ -489,6 +489,9 @@ body[dir="rtl"] .search .search1 {
 }
 
 /* margin */
+.ms-E {
+    margin-left: 1px;
+}
 .ms-50 {
     margin-left: 50px;
 }
@@ -502,6 +505,9 @@ body[dir="rtl"] .search .search1 {
     margin-left: 200px;
 }
 
+.me-E {
+    margin-right: 1px;
+}
 .me-50 {
     margin-right: 50px;
 }

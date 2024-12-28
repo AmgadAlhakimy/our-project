@@ -682,6 +682,15 @@ body[dir="rtl"] .border-left{
     border-radius: 10px;
 }
 
+
+/* --------------------- pargraph style */
+.p-der{
+    text-align: start;
+}
+body[dir="rtl"].p-der{
+    text-align: end;
+}
+
 /* __________________ end fremwork shortcats */
 
 .center_row_up{

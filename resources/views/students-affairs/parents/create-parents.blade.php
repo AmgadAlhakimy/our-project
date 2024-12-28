@@ -7,7 +7,7 @@
     <h3 class="container-title">{{__('student.create parents')}}</h3>
     <div class="container  containers-style ">
         <form wire:submit="save" action="">
-            @csrf
+            @csrf 
             <div class="row">
                 <!-- father name  -->
                 <div class="box col-lg-6 col-md-12">

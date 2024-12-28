@@ -11,6 +11,7 @@
     border: 4px solid white;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin: 5PX;
 
 }
 .personal_img:hover{
@@ -19,11 +20,10 @@
 .cards_info_style{
     transition: width 0.3s;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     transition: all 1s ease;
     background-color: #fff;
-    margin: 5px;
     border: .5px solid var(--border-color);
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 

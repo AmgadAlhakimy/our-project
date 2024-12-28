@@ -235,7 +235,7 @@
                             </div>
                         </button>
                     </th>
-                    <th colspan="">
+                    <th colspan="2">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
                 </tr>
@@ -328,12 +328,12 @@
                         </td>
                         <td>
                             <a href="{{route('edit-student',$student->id)}}"
-                               class="btn save-button btn-success  w-25 me-1 ms-1 ">
+                               class="btn save-button btn-success  w-50 me-1 ms-1 ">
                                 <i class="fa-solid fa-pen-to-square"></i>
 
                             </a>
                             <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger w-25 me-1 ms-1 "
+                                    class="btn clear-button btn-danger w-50 me-1 ms-1 "
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$student->id}}">
                                 <i class="fa-solid fa-trash"></i>
@@ -366,6 +366,12 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- MORE INFO --}}
+                        </td>
+                        <td>
+                            <a href="{{route('student-more-info',$student->id)}}" class="btn save-button btn-info w-50 me-1 ms-1 ">
+                                {{__('student.more info')}} 
+                            </a>
                         </td>
                     </tr>
                 @endforeach

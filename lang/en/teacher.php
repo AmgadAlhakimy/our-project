@@ -45,6 +45,7 @@ return [
 
     'subject'=>'Subject',
     'absent reason'=>'Absent Reason',
+    'absent'=>'Absent',
     'time attendance'=>'Time Attendance',
     'departure time'=>'Departure Time',
     'please select a teacher'=>'Please Select a Teacher',

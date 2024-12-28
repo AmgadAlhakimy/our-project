@@ -44,6 +44,7 @@ return [
     'TO TAKE HOME'=>'تؤخذ للبيت ',
     'NOTE'=>'ملاحظات',
     'absent reason'=>'سبب الغياب ',
+    'absent'=>'الغياب',
 
     'subject'=>'الموضوع',
     'show the absent children'=>'عرض الأطفال الغائبين',
