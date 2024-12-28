@@ -50,18 +50,7 @@
                             </div>
                         </button>
                     </th>
-                    <th>
-                        <button wire:click="ordering('cost')" class="">
-                            <div class="table_test form-label ">
-                                {{__('public.cost')}}
-                                @if($arrow and $showArrow === 'cost')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'cost')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </div>
-                        </button>
-                    </th>
+
                     <th>
                             <div class="table_test form-label ">
                                 {{__('eduLevel.educational level')}}
@@ -111,11 +100,6 @@
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$classroom->cost}}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td_rect">
                                 {{$classroom->Level->name}}
                             </div>
                         </td>
@@ -150,7 +134,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>
                                             </div>
                                         </div>
                                         <div class="modal-body form-label">
@@ -184,7 +168,7 @@
                     </div>
                 @endif
             </div>
-            
+
                 <!-- pagination down code -->
                 @include('layouts.paginations.pagination_down')
 

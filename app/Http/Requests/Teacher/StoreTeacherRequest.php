@@ -44,7 +44,6 @@ class StoreTeacherRequest extends FormRequest
             ],
             'qualification' => ['required', 'max:100'],
             'qualification_ar' => ['required', 'max:100'],
-            'salary' => ['required', 'numeric'],
             'major' => ['required', 'max:100'],
             'major_ar' => ['required', 'max:100'],
         ];

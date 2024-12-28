@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 @section('content')
 <div class="my-table mt-5">
-    <!-- table-hover table-striped --> 
+    <!-- table-hover table-striped -->
     <div class="table-header">
         {{-- the title and search --}}
         <div class="row first-card ">
@@ -11,9 +11,9 @@
         <!-- table-hover table-striped -->
         <div class=" shadow-none mt-4 ">
             <div class="table-section card  ">
-                
+
                 <table class=" ">
-                    <thead>  
+                    <thead>
                     <tr>
                         <th><div class="th-head-1 form-label">{{__('public.id')}}</div></th>
                         <th><div class="th-head-2 form-label">{{__('public.name')}}</div></th>
@@ -22,7 +22,6 @@
                         <th><div class="th-head-2 form-label">{{__('public.gender')}}</div></th>
                         <th><div class="th-head-2 form-label">{{__('public.address')}}</div></th>
                         <th><div class="th-head-2 form-label">{{__('public.qualification')}}</div></th>
-                        <th><div class="th-head-2 form-label">{{__('public.salary')}}</div></th>
                         <th><div class="th-head-2 form-label">{{__('public.major')}}</div></th>
                         <th><div class="th-head-3 form-label">{{__('public.note')}}</div></th>
                         <th><div class="th-head-3 form-label">{{__('public.created at')}}</div></th>
@@ -68,11 +67,6 @@
                             </td>
                             <td>
                                 <div class="td_rect">
-                                    {{$teacher->salary}}
-                                </div>
-                            </td>
-                            <td>
-                                <div class="td_rect">
                                     {{$teacher->major}}
                                 </div>
                             </td>
@@ -96,7 +90,7 @@
                                    class="btn save-button btn-success w-25 me-1 ms-1 ">
                                    <i class="fa-solid fa-trash-can-arrow-up"></i>                                     {{-- {{__('public.restore')}} --}}
                                      </a>
-                            
+
                                 <button class="btn clear-button btn-danger w-25 me-1 ms-1" data-bs-toggle="modal"
                                         data-bs-target="#delete{{$teacher->id}}">
                                     <i class="fa-solid fa-trash"></i>
@@ -105,12 +99,12 @@
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$teacher->id}}"
                                      tabindex="-1" aria-labelledby="exampleModalLabel"
-                                     aria-hidden="true"> 
+                                     aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <div class="modal-title">
-                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>
                                                 </div>
                                             </div>
                                             <div class="modal-body form-label">

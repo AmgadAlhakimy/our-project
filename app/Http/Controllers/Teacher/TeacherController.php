@@ -71,7 +71,6 @@ class TeacherController extends Controller
                     'en' => $request->qualification,
                     'ar' => $request->qualification_ar,
                 ],
-                'salary' => $request->salary,
                 'major' => [
                     'en' => $request->major,
                     'ar' => $request->major_ar,
@@ -142,7 +141,6 @@ class TeacherController extends Controller
                         'en' => $request->qualification,
                         'ar' => $request->qualification_ar,
                     ],
-                    'salary' => $request->salary,
                     'major' => [
                         'en' => $request->major,
                         'ar' => $request->major_ar,

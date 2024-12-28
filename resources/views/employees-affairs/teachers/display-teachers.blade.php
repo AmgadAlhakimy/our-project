@@ -102,18 +102,6 @@
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('salary')" class="">
-                            <div class="table_test form-label ">
-                                {{__('public.salary')}}
-                                @if($arrow and $showArrow === 'salary')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'salary')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </div>
-                        </button>
-                    </th>
-                    <th>
                         <button wire:click="ordering('major')" class="">
                             <div class="table_test form-label ">
                                 {{__('public.major')}}
@@ -207,11 +195,6 @@
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$teacher->salary}}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td_rect">
                                 {{$teacher->major}}
                             </div>
                         </td>
@@ -251,7 +234,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>
                                             </div>
                                         </div>
                                         <div class="modal-bodyform-label">
@@ -273,7 +256,7 @@
                             </div>
                         </td>
                     </tr>
-                @endforeach 
+                @endforeach
                 </tbody>
             </table>
         </div>
@@ -285,7 +268,7 @@
                     </div>
                 @endif
             </div>
-            
+
             {{-- pagination down code --}}
                 @include('layouts.paginations.pagination_down')
 

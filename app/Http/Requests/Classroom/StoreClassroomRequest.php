@@ -35,7 +35,6 @@ class StoreClassroomRequest extends FormRequest
                 'max:100',
                 'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
             ],
-            'cost'=>'required',
             'level'=>'required',
         ];
     }
@@ -50,7 +49,6 @@ class StoreClassroomRequest extends FormRequest
         return [
             'name.regex' => __('validation.english letters'),
             'name_ar.regex' => __('validation.arabic letters'),
-            'level.required'=>__('eduLevel.Sorry! you have to create Educational Level first'),
         ];
     }
 }

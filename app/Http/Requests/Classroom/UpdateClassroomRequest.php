@@ -39,7 +39,6 @@ class UpdateClassroomRequest extends FormRequest
                 'max:50',
                 'regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u',
             ],
-            'cost' => 'required',
         ];
     }
 

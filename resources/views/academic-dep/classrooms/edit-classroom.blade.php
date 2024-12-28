@@ -43,14 +43,6 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <div class="box col-lg-6 col-md-12 ">
-                            <label for="cost">{{__('classroom.classroom cost')}}</label>
-                            <input type="number" id="cost" class="form-control" name="cost" minlength="0" placeholder="$"
-                                   value="{{$classroom->cost}}">
-                            @error('cost')
-                            <small class="form-text text-danger">{{$message}}</small>
-                            @enderror
-                        </div>
                     </div>
                 </div>
                 <div class="row mt-2">

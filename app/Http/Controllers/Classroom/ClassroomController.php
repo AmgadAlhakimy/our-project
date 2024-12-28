@@ -57,7 +57,6 @@ class ClassroomController extends Controller
                 'ar' => $request->name_ar
             ],
             'edu_id'=>$request->level,
-            'cost'=>$request->cost,
        ]);
         return redirect()->back()->with(['success'=>'saved successfully']);
         }catch (Exception $e){
@@ -108,7 +107,6 @@ class ClassroomController extends Controller
                 'ar' => $request->name_ar
             ],
             'edu_id'=>$request->level,
-            'cost'=>$request->cost,
         ]);
         return redirect()->route('display-classrooms')
             ->with(['success' => __('message.update')]);
@@ -189,8 +187,7 @@ class ClassroomController extends Controller
                 return $this->index();
             $classrooms = Classroom::where(function ($query) use ($search){
                 $query->where('name->en','like',"%$search%")
-                    ->orwhere('name->ar','like',"%$search%")
-                    ->orwhere('cost','like',"%$search%");
+                    ->orwhere('name->ar','like',"%$search%");
             })->orWhereHas('Level',function ($query) use ($search){
                 $query->where('name->en','like',"%$search%")
                     ->orwhere('name->ar','like',"%$search%");

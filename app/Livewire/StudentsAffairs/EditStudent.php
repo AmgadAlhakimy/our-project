@@ -6,6 +6,7 @@ use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Parents;
 use App\Models\Student;
+use App\Traits\PhotoTrait;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
@@ -15,9 +16,10 @@ use function Laravel\Prompts\error;
 class EditStudent extends Component
 {
     use WithFileUploads;
+    use PhotoTrait;
 
     public $id;
-    public $current_photo;
+    public string $current_photo = '';
 
     #[Rule('required|exists:parents,id')]
     public $parents_id;
@@ -206,22 +208,7 @@ class EditStudent extends Component
     public function updateImage()
     {
         if ($this->photo) {
-//            $student = Student::
-            $student = Student::findorFail($this->id);
-            // Delete the existing image if it exists
-//            Storage::disk('public')->delete('images/students/' . $this->currnt_photo);
-//            Storage::delete(asset('storage/'.$this->current_photo));
-//dd('hello');
-            $path = 'public/storage/' . $this->current_photo;
-            if (Storage::exists($path)) {
-                Storage::delete($path);
-                // Update the images list after deletion
-//                $this->images = array_diff($this->images, [$image]);
-//                $this->dispatchBrowserEvent('imageDeleted'); // Optional event
-            }
-
-            $filename = time() . '.' . $this->photo->getClientOriginalExtension();
-            return $this->photo->storeAs('images/students', $filename, 'public');
+            return $this->insertImageWithLivewire($this->id);
         }
         else{
             return $this->current_photo;
