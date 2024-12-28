@@ -672,6 +672,10 @@ input[type="checkbox"].toggle:checked + input.test1 {
 .border-left {
     border-left: 1px solid var(--border-color);
 }
+body[dir="rtl"] .border-left{
+    border-left: none;
+    border-right: 1px solid var(--border-color);
+}
 /* __________________ start fremwork shortcats */
 
 .radus-10{
@@ -680,6 +684,16 @@ input[type="checkbox"].toggle:checked + input.test1 {
 
 /* __________________ end fremwork shortcats */
 
+.center_row_up{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.center_up{
+    display: flex;
+    
+    align-items: center;    
+}
 
 
 /* start message style */
@@ -1282,7 +1296,17 @@ body[dir="rtl"] .modal-dialog{
 
 /* TESTING CODE  */
 .test_1{
-    border: solid 2px red;
+
+}
+.test_green{
+    background-color: green;
+}
+.test_red{
+    background-color: red;
 }
 .test_2{
-background-color: red;}
+    
+    /* margin-top: 0px; */
+    
+}
+

@@ -272,7 +272,7 @@ class StudentController extends Controller
     public function more($id)
     {
         try {
-            $student = Student::findorFail($id);
+            $student = Student::findorFail(101);
             return view('students-affairs/students.student_more_info',
                 compact('student',));
 

@@ -59,7 +59,8 @@
                 <ul class="menuLang sub_head_menu ">
                     {{-- HOME --}}
                     <li>
-                        <a class="ph-home_m pe-3 ps-3 " aria-current="page" href='/'>{{__('sidebar.home')}}</a>
+                        <a class="ph-home_m pe-3 ps-3 " aria-current="page" href='/'>
+                            {{__('sidebar.home')}}</a>
                     </li>
                     {{-- 1 --}}
                     <hr class="ph-home_m">
