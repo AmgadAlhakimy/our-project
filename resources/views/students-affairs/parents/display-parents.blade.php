@@ -9,8 +9,8 @@
                         <label class="col">
                             <div class="search p-relative">
                                 <input wire:model.live.debounce.500ms="search"
-                                        type="text" class="form-control " name="search"
-                                        placeholder="{{__('sidebar.search')}}">
+                                       type="text" class="form-control " name="search"
+                                       placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
                     </div>
@@ -18,8 +18,8 @@
             </div>
         </div>
     </div>
-        <!-- pagination up code -->
-        @include('layouts.paginations.pagination_up')
+    <!-- pagination up code -->
+    @include('layouts.pagination.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -218,7 +218,7 @@
                 <tbody>
                 @foreach($parents as $parent)
                     <tr>
-                        <td >
+                        <td>
                             <div class="td_rect">
                                 {{$parent->id}}
                             </div>
@@ -290,8 +290,8 @@
                         </td>
                         <td>
                             <a href="{{route('edit-parents',$parent->id)}}"
-                                class="btn save-button btn-success  w-25 me-1 ms-1 ">
-                                    <i class="fa-solid fa-pen-to-square"></i>
+                               class="btn save-button btn-success  w-25 me-1 ms-1 ">
+                                <i class="fa-solid fa-pen-to-square"></i>
                                 {{-- {{__('public.edit')}} --}}
                             </a>
                             <button wire:confirm="are you sure you want to delete"
@@ -299,30 +299,32 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$parent->id}}">
                                 <i class="fa-solid fa-trash"></i>
-                                    {{-- {{__('public.delete')}} --}}
+                                {{-- {{__('public.delete')}} --}}
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$parent->id}}"
-                                tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
+                                 tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>
                                             </div>
                                         </div>
                                         <div class="modal-body form-label">
                                             {{__('public.are you sure you want to delete').$parent->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2"
+                                                    data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}
                                             </button>
                                             <form method="post" action="{{route('parents.forceDelete',$parent->id)}}">
                                                 @method('GET')
                                                 @csrf
-                                                <button type="submit" class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
+                                                <button type="submit"
+                                                        class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>
@@ -342,9 +344,9 @@
                     </div>
                 @endif
             </div>
-            
+
             {{-- pagination down code --}}
-            @include('layouts.paginations.pagination_down')
+            @include('layouts.pagination.pagination_down')
 
         </div>
     </div>

@@ -2,11 +2,11 @@
 
 namespace App\Livewire\StudentsAffairs;
 
-use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Parents;
 use App\Models\Student;
 use App\Traits\PhotoTrait;
+use App\Traits\StudentTrait;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -15,6 +15,7 @@ class CreateStudent extends Component
 {
     use WithFileUploads;
     use PhotoTrait;
+    use StudentTrait;
 
     #[Rule('required|exists:parents,id')]
     public $parent_id;
@@ -38,33 +39,20 @@ class CreateStudent extends Component
     public string $place_of_birth_ar;
     #[Rule('required')]
     public $classroom_id;
-    #[Rule('nullable')]
-    public $take_medicine;
     #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $medicine_desc= "";
+    public string $medicine_desc = "";
     #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $medicine_desc_ar= "";
-    #[Rule('nullable')]
-    public $have_allergy;
+    public string $medicine_desc_ar = "";
     #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $allergy_desc= "";
+    public string $allergy_desc = "";
     #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $allergy_desc_ar= "";
-    #[Rule('nullable')]
-    public $have_health_problem;
+    public string $allergy_desc_ar = "";
     #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $health_problem_desc= "";
+    public string $health_problem_desc = "";
     #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $health_problem_desc_ar= "";
+    public string $health_problem_desc_ar = "";
     #[Rule('nullable')]
-    public string $note= "";
-
-
-
-    public $checks = [false, false, false];
-    public $selectedLevel = null;
-    public $classrooms;
-    public string $search = "";
+    public string $note = "";
 
 
     public function save()
@@ -76,7 +64,7 @@ class CreateStudent extends Component
                     'en' => $this->name,
                     'ar' => $this->name_ar
                 ],
-                'photo'=>$this->insertImageWithLivewire(0),
+                'photo' => $this->insertImageWithLivewire(0),
                 'address' => [
                     'en' => $this->address,
                     'ar' => $this->address_ar
@@ -90,13 +78,25 @@ class CreateStudent extends Component
                     'en' => $this->place_of_birth,
                     'ar' => $this->place_of_birth_ar,
                 ],
+                'takes_medicine' => [
+                    'en' => __('public.' . $this->checkValue($this->checks[0])),
+                    'ar' => __('public.' . $this->checkValue($this->checks[0]) . '1'),
+                ],
                 'medicine_desc' => [
                     'en' => $this->medicine_desc,
                     'ar' => $this->medicine_desc_ar,
                 ],
+                'has_allergy' => [
+                    'en' => __('public.' . $this->checkValue($this->checks[1])),
+                    'ar' => __('public.' . $this->checkValue($this->checks[1]) . '1'),
+                ],
                 'allergy_desc' => [
                     'en' => $this->allergy_desc,
                     'ar' => $this->allergy_desc_ar,
+                ],
+                'has_health_problem' => [
+                    'en' => __('public.' . $this->checkValue($this->checks[2])),
+                    'ar' => __('public.' . $this->checkValue($this->checks[2]) . '1'),
                 ],
                 'health_problem_desc' => [
                     'en' => $this->health_problem_desc,
@@ -116,49 +116,11 @@ class CreateStudent extends Component
 
     public function render()
     {
-        $fathers =  Parents::orderBy('created_at', 'desc')->get();
-
-        if (strlen($this->search) > 0) {
-            $fathers = Parents::where('father_name->en', 'like', "%$this->search%")
-                ->orwhere('father_name->ar', 'like', "%$this->search%")->get();
-        }
-
+        $fathers = Parents::orderBy('created_at', 'desc')->get();
         $levels = EducationalLevel::all();
         return view('students-affairs.students.create-student',
             compact('levels', 'fathers')
         )->title('Create Student');
-    }
-
-    public function flip($check)
-    {
-        $this->checks[$check] = !$this->checks[$check];
-    }
-
-    public function updatedSelectedLevel()
-    {
-        return $this->classrooms = Classroom::
-        where('edu_id', $this->selectedLevel)->get();
-    }
-
-
-    public function messages(): array
-    {
-        return [
-            'name.regex' => __('validation.english letters'),
-            'name_ar.regex' => __('validation.arabic letters'),
-            'address.regex' => __('validation.english letters'),
-            'address_ar.regex' => __('validation.arabic letters'),
-            'place_of_birth.regex' => __('validation.english letters'),
-            'place_of_birth_ar.regex' => __('validation.arabic letters'),
-            'medicine_desc.regex' => __('validation.english letters'),
-            'medicine_desc_ar.regex' => __('validation.arabic letters'),
-            'allergy_desc.regex' => __('validation.english letters'),
-            'allergy_desc_ar.regex' => __('validation.arabic letters'),
-            'health_problem_desc.regex' => __('validation.english letters'),
-            'health_problem_desc_ar.regex' => __('validation.arabic letters'),
-            'class.required' => __('CreateStudent.first you have to add classrooms'),
-            'relative_id.exists' => __('student.please select from the list and the number of father only'),
-        ];
     }
 
 }

@@ -19,8 +19,8 @@
             </div>
         </div>
     </div>
-                    <!-- pagination up code -->
-                    @include('layouts.paginations.pagination_up')
+    <!-- pagination up code -->
+    @include('layouts.pagination.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -52,9 +52,9 @@
                     </th>
 
                     <th>
-                            <div class="table_test form-label ">
-                                {{__('eduLevel.educational level')}}
-                            </div>
+                        <div class="table_test form-label ">
+                            {{__('eduLevel.educational level')}}
+                        </div>
                     </th>
                     <th>
                         <button wire:click="ordering('created_at')" class=" ">
@@ -124,7 +124,7 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$classroom->id}}">
                                 <i class="fa-solid fa-trash"></i>
-                                 {{-- {{__('public.delete')}} --}}
+                                {{-- {{__('public.delete')}} --}}
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$classroom->id}}"
@@ -141,7 +141,8 @@
                                             {{__('public.are you sure you want to delete').$classroom->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class=" btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
+                                            <button type="button" class=" btn btn-danger clear-button ms-2 me-2"
+                                                    data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
                                                   action="{{route('classrooms.destroy',$classroom->id)}}">
@@ -169,8 +170,8 @@
                 @endif
             </div>
 
-                <!-- pagination down code -->
-                @include('layouts.paginations.pagination_down')
+            <!-- pagination down code -->
+            @include('layouts.pagination.pagination_down')
 
         </div>
     </div>

@@ -20,9 +20,9 @@
         </div>
     </div>
     <!-- table-hover table-striped -->
-            
-                <!-- pagination up code -->
-                @include('layouts.paginations.pagination_up')
+
+    <!-- pagination up code -->
+    @include('layouts.pagination.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -103,9 +103,9 @@
                 @endif
             </div>
 
-                        
-                <!-- pagination down code -->
-                @include('layouts.paginations.pagination_down')
+
+            <!-- pagination down code -->
+            @include('layouts.pagination.pagination_down')
 
         </div>
     </div>

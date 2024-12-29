@@ -60,6 +60,7 @@ return [
     'other info'=>'Other Info',
     'note'=>'NOTE:',
     'first you have to add classrooms'=>'first you have to add classrooms',
+    'now select a classroom'=>'Now Select a Classroom',
     'parents'=>'Parents',
     'more info'=>'More info',
 
@@ -102,6 +103,8 @@ return [
     'please select from the list and the number of father only'=>
     'please select from the list and the number of father only',
     'select educational level first'=>'Select Educational Level First',
+    'this father does not exist check the list'=>
+        'This father does not exist check Spelling, Change Language or Choose from the list',
 
     'parents info'=> 'parents info',
     'edit parents'=> 'Edit Parents',
