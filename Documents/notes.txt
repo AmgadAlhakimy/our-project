@@ -11,3 +11,21 @@
  جداول العرض كامله
  تعديل الحركات الخاصة بالصورة في العرض حيث تقوم بعمل حركة عند التأشير على الصف كامل
  //////////////////////////////////////////////////
+
+ضع الكود التالي بال js
+              function setParentId(input) {
+                                const list = document.getElementById('fathersList');
+                                const options = list.getElementsByTagName('option');
+                                for (let option of options) {
+                                    if (option.value === input.value) {
+                                    @this.set('parent_id', option.getAttribute('data-id'));
+                                        break;
+                                    }else {
+                                    @this.set('parent_id', 0);
+                                    }
+                                }
+                            }
+ =========================================================================
+
+
+

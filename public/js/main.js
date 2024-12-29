@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     function setToggleStyles(isActive) {
-        if (window.innerWidth >= 560) { 
+        if (window.innerWidth >= 560) {
             if (body.dir === "rtl") {
                 my_toggle.style.transition = "all .5s ease";
                 if (isActive) {
@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", function () {
         setToggleStyles(isActive);
     });
 
-    
+
     setToggleStyles(false);
 });
 
@@ -83,7 +83,7 @@ window.addEventListener("DOMContentLoaded", function () {
 //     var my_toggle = document.getElementById("my_toggle");
 //     const _clicked = document.getElementById("_clicked");
 
-    
+
 //     function checkScreenWidth() {
 //         if (window.innerWidth < 560) {
 //             my_toggle.style.margin = "0px 0px 0px 0px";
@@ -95,7 +95,7 @@ window.addEventListener("DOMContentLoaded", function () {
 //     });
 // });
 
-// (function () { 
+// (function () {
 // document.addEventListener("DOMContentLoaded", function () {
 //     const _clicked = document.getElementById("_clicked");
 //     const my_toggle = document.getElementById("my_toggle");
@@ -104,7 +104,7 @@ window.addEventListener("DOMContentLoaded", function () {
 //     if (body.dir === "rtl") {
 //         my_toggle.style.margin = "0px 240px 0px 0px";
 //         my_toggle.style.transition = "all .5s ease";
-        
+
 //         _clicked.addEventListener("click", () => {
 //             if (my_toggle.classList.contains("active")) {
 //                 my_toggle.classList.remove("active");
@@ -137,7 +137,7 @@ window.addEventListener("DOMContentLoaded", function () {
 //         });
 //     }
 // });
-// })(); 
+// })();
 
 // --------------------------------------------------------------------------------
 
