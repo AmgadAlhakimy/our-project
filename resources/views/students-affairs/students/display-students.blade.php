@@ -369,7 +369,7 @@
                             {{-- MORE INFO --}}
                         </td>
                         <td>
-                            <a href="{{route('student-more-info',$student->id)}}" class="btn save-button btn-info w-50 me-1 ms-1 ">
+                            <a href="{{route('student-more-info',103)}}" class="btn save-button btn-info w-50 me-1 ms-1 ">
                                 {{__('student.more info')}} 
                             </a>
                         </td>

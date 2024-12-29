@@ -12,7 +12,7 @@
                     <!-- father name  -->
                     <div class="row box">
                         <div class="box w-100">
-                            <input type="text"
+                            <input type="text" class="form-control"
                                    id="fatherSearch"
                                    list="fathersList"
                                    wire:model.live.debounce.500ms="search"
@@ -49,8 +49,7 @@
             <!-- End parent info  -->
             <form wire:submit="update" enctype="multipart/form-data">
                 @csrf
-
-                hello world {{$current_photo}} {{$id}}
+                    {{$current_photo}} {{$id}}
                 <!-- Start personal info  -->
                 <h3 class="container-title">{{__('student.create student')}}</h3>
                 <div class="container containers-style">
@@ -188,7 +187,7 @@
                         </div>
 
                         <div class="box col-lg-6 col-md-6">
-                            <label for="classroom">{{__('classroom.classroom')}}</label>
+                            <label for="classroom" class="form-label">{{__('classroom.classroom')}}</label>
                             <select id="classroom" class="form-control"
                                     wire:model.live.debounce.500ms="classroom_id">
                                 @if(!is_null($selectedLevel))

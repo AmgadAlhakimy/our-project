@@ -13,9 +13,14 @@
     text-align: center;
     margin: 5PX;
 
+    transition: all 2s ease;
 }
 .personal_img:hover{
+    
     border-color: var(--S-Color-8);
+    transition: all 2s ease;
+    border-radius: 50%;
+
 }
 .cards_info_style{
     transition: width 0.3s;
@@ -23,6 +28,9 @@
     transition: all 1s ease;
     background-color: #fff;
     border: .5px solid var(--border-color);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+body[dir="rtl"] .cards_info_style{
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 

@@ -177,7 +177,7 @@
                         </div>
 
                         <div class="box col-lg-6 col-md-6">
-                            <label for="classroom">{{__('classroom.classroom')}}</label>
+                            <label for="classroom"class="form-label">{{__('classroom.classroom')}}</label>
                             <select id="classroom" class="form-control"
                                     wire:model.live.debounce.500ms="classroom_id">
                                 @if(!is_null($selectedLevel))
@@ -256,18 +256,18 @@
                             @if($checks[1])
                                 <div class="row">
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                           wire:model.live.debounce.500ms="allergy_desc"
-                                           id="std_allergy_desc_1"
-                                           aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
-                                           placeholder="desc in english">
+                                            wire:model.live.debounce.500ms="allergy_desc"
+                                            id="std_allergy_desc_1"
+                                            aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
+                                            placeholder="desc in english">
                                     @error('allergy_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                           wire:model.live.debounce.500ms="allergy_desc_ar"
-                                           id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
-                                           aria-label="Text input with radio button" placeholder="desc in arabic">
+                                            wire:model.live.debounce.500ms="allergy_desc_ar"
+                                            id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
+                                            aria-label="Text input with radio button" placeholder="desc in arabic">
                                     @error('allergy_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror

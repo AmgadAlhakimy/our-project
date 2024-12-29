@@ -110,6 +110,10 @@ input::-webkit-inner-spin-button {
     border-radius: 0.25rem;
     margin-bottom: 20px;
 }
+
+body[dir="rtl"] .containers-style{
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);    
+}
 /* Start topic names and titles */
 .title-1 {
     color: var(--blue-alt-color);
