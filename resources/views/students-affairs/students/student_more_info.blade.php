@@ -97,28 +97,61 @@
                                         {{--  --}}
                                         <div class="row mb-3">
                                             <div class="col s_info_1">
+                                                <label class=" mb-1 form-label p-der">
+                                                    {{__('student.have an allergy ?')}}
+                                                </label>
+                                            </div>
+                                            <div class="col  s_info_1">
+                                                <label class=" mb-1 title-3">{{$student->has_allergy}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col s_info_1">
                                                 <label class=" mb-1 form-label p-der">{{__('student.student allergy')}}</label>
                                             </div>
                                             <div class="col  s_info_1">
-                                                <label class=" mb-1 title-3">{{$student->chick_allergy}}</label>
+                                                <label class=" mb-1 title-3">{{$student->allergy_desc}}</label>
                                             </div>
                                         </div>
                                         {{-- 2 --}}
                                         <div class="row mb-3">
                                             <div class="col s_info_1">
+                                                <label class=" mb-1 form-label p-der"> 
+                                                    {{__('student.have any health problem ?')}}
+                                                </label>
+                                            </div>
+                                            <div class="col  s_info_1">
+                                                <label class=" mb-1 title-3">{{$student->has_health_problem}}</label>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col s_info_1">
                                                 <label class=" mb-1 form-label p-der"> {{__('student.student health problem')}}</label>
                                             </div>
                                             <div class="col  s_info_1">
-                                                <label class=" mb-1 title-3">{{$student->chick_health_problem}}</label>
+                                                <label class=" mb-1 title-3">{{$student->health_problem_desc}}</label>
                                             </div>
                                         </div>
                                         {{-- 3 --}}
                                         <div class="row mb-3">
                                             <div class="col s_info_1">
-                                                <label class=" mb-1 form-label p-der">{{__('student.student medicines')}} </label>
+                                                <label class=" mb-1 form-label p-der">
+                                                    {{__('student.take any medicine ?')}}
+                                                </label>
                                             </div>
                                             <div class="col  s_info_1">
-                                                <label class=" mb-1 title-3">{{$student->chick_medicine}}
+                                                <label class=" mb-1 title-3">{{$student->takes_medicine}}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col s_info_1">
+                                                <label class=" mb-1 form-label p-der">
+                                                    {{__('student.student medicines')}}
+                                                </label>
+                                            </div>
+                                            <div class="col  s_info_1">
+                                                <label class=" mb-1 title-3">{{$student->medicine_desc}}
                                                 </label>
                                             </div>
                                         </div>
@@ -255,7 +288,7 @@
                         {{-- =====معلومات اضافية ===== --}}
                                 <div class=" row">
                                     {{-- 1 --}}
-                                    <label class="col-12 form-label text-center ">{{__('student.note')}}</label>
+                                    <label class="col-12 form-label text-center ">{{__('public.note')}}</label>
                                         <div class="box col-lg-12 col-md-12 mt-3">
                                             <label class=" title-3">{{$student->note}}</label>
                                         </div>
@@ -264,21 +297,7 @@
                         </div>
                     </div>
 
-                        {{-- ==================================================== --}}
-
-                    <div class="col-12 row ">
-                        <div class="col-lg-6 col-md-6 col-ms-12 mb-3">
-
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-ms-12 mb-3">
-                            
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-ms-12 mb-3">
-
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-ms-12 mb-3">
-
-                        </div>
+                        {{-- ==================================================== --}}v>
                     </div>
                 </div>
         </section>

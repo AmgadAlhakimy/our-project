@@ -9,8 +9,8 @@
                         <label class="col">
                             <div class="search p-relative">
                                 <input wire:model.live.debounce.500ms="search"
-                                       type="text" class="form-control " name="search"
-                                       placeholder="{{__('sidebar.search')}}">
+                                    type="text" class="form-control " name="search"
+                                    placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
                     </div>
@@ -113,22 +113,10 @@
                     <th>
                         <button wire:click="ordering('takes_medicine')" class="">
                             <div class="table_test form-label ">
-                                {{__('student.take any medicine ?')}}
+                                {{__('student.take any medicine ? 2')}}
                                 @if($arrow and $showArrow === 'takes_medicine')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'takes_medicine')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </div>
-                        </button>
-                    </th>
-                    <th>
-                        <button wire:click="ordering('medicine_desc')" class="">
-                            <div class="table_test form-label ">
-                                {{__('student.student medicines')}}
-                                @if($arrow and $showArrow === 'medicine_desc')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'medicine_desc')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
@@ -138,22 +126,10 @@
                     <th>
                         <button wire:click="ordering('has_allergy')" class="">
                             <div class="table_test form-label ">
-                                {{__('student.have an allergy ?')}}
+                                {{__('student.have an allergy? 2')}}
                                 @if($arrow and $showArrow === 'has_allergy')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'has_allergy')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </div>
-                        </button>
-                    </th>
-                    <th>
-                        <button wire:click="ordering('allergy_desc')" class="">
-                            <div class="table_test form-label ">
-                                {{__('student.student allergy')}}
-                                @if($arrow and $showArrow === 'allergy_desc')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'allergy_desc')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
@@ -163,22 +139,10 @@
                     <th>
                         <button wire:click="ordering('health_problem_desc')" class="">
                             <div class="table_test form-label ">
-                                {{__('student.have any health problem ?')}}
+                                {{__('student.have any health problem ? 2')}}
                                 @if($arrow and $showArrow === 'health_problem_desc')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'health_problem_desc')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </div>
-                        </button>
-                    </th>
-                    <th>
-                        <button wire:click="ordering('has_health_problem')" class="">
-                            <div class="table_test form-label ">
-                                {{__('student.student health problem')}}
-                                @if($arrow and $showArrow === 'has_health_problem')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'has_health_problem')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
@@ -283,27 +247,12 @@
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$student->medicine_desc}}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td_rect">
                                 {{$student->has_allergy}}
                             </div>
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$student->allergy_desc}}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td_rect">
                                 {{$student->has_health_problem}}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td_rect">
-                                {{$student->health_problem_desc}}
                             </div>
                         </td>
                         <td>
@@ -337,7 +286,7 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$student->id}}">
                                 <i class="fa-solid fa-trash"></i>
-                                {{--                                     {{__('public.delete')}}--}}
+                            
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$student->id}}"
@@ -373,8 +322,8 @@
                         <td>                                
                             <a href="{{route('student-more-info',$student->id)}}"
                                class="btn save-button btn-info me-3 ms-3 ">
-                                {{__('student.more info')}}
-                            </>
+                                    {{__('student.more info')}}
+                            </a>
                         </td>
                     </tr>
                 @endforeach
