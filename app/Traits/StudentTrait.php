@@ -7,11 +7,11 @@ use App\Models\Classroom\Classroom;
 
 trait StudentTrait
 {
-    public $checks = [false, false, false];
+    public array $checks = [false, false, false];
     public $selectedLevel = null;
     public $classrooms;
     public string $search = "";
-    public function flip($check)
+    public function flip($check): void
     {
         $this->checks[$check] = !$this->checks[$check];
     }

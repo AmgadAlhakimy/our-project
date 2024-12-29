@@ -19,9 +19,9 @@ class CreateStudent extends Component
 
     #[Rule('required|exists:parents,id')]
     public $parent_id;
-    #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
+    #[Rule('required|unique:students,name->en|max:100|regex:/^[a-zA-Z\s]+$/')]
     public string $name;
-    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
+    #[Rule('required|unique:students,name->ar|max:100|regex:/^[\p{Arabic}\s]+$/u')]
     public string $name_ar;
     #[Rule('required|image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
     public $photo;
