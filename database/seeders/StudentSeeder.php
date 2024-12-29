@@ -20,8 +20,8 @@ class StudentSeeder extends Seeder
         $gender_en = ['male', 'female'];
         $gender_ar = ['ذكر', 'أنثى'];
 
-        $chick_en = ['yes', 'no'];
-        $chick_ar = ['نعم', 'لا'];
+        $check_en = ['yes', 'no'];
+        $check_ar = ['نعم', 'لا'];
 
         $classrooms = Classroom::all();
         $parents = Parents::all();
@@ -45,25 +45,25 @@ class StudentSeeder extends Seeder
                     'en' => "place $i",
                     'ar' => "مكان $i",
                 ],
-                'chick_medicine' => [
-                    'en' => $chick_en[$array_num],
-                    'ar' => $chick_ar[$array_num],
+                'takes_medicine' => [
+                    'en' => $check_en[$array_num],
+                    'ar' => $check_ar[$array_num],
                 ],
                 'medicine_desc' => [
                     'en' => "he doesn't take anything $i",
                     'ar' => "هو لا ياخذ اي علاج $i",
                 ],
-                'chick_allergy' => [
-                    'en' => $chick_en[$array_num],
-                    'ar' => $chick_ar[$array_num],
+                'has_allergy' => [
+                    'en' => $check_en[$array_num],
+                    'ar' => $check_ar[$array_num],
                 ],
                 'allergy_desc' => [
                     'en' => "He have a allergy $i",
                     'ar' => "لدية حساسية من الفول الفلافل $i",
                 ],
-                'chick_health_problem' => [
-                    'en' => $chick_en[$array_num],
-                    'ar' => $chick_ar[$array_num],
+                'has_health_problem' => [
+                    'en' => $check_en[$array_num],
+                    'ar' => $check_ar[$array_num],
                 ],
                 'health_problem_desc' => [
                     'en' => "he can't walk like any kid $i",

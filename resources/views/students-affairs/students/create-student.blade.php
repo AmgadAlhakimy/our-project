@@ -12,11 +12,14 @@
                     <!-- father name  -->
                     <div class="row box">
                         <div class="box w-100">
-                            <input type="text" id="fatherSearch" list="fathersList" placeholder="{{ __('student.search for father') }}"
-                                class="form-control"   wire:model.live.debounce.500ms="search"   oninput="setParentId(this)">
+                            <input type="text" id="fatherSearch" list="fathersList"
+                                   placeholder="{{ __('student.search for father') }}"
+                                   class="form-control" wire:model.live.debounce.500ms="search"
+                                   oninput="setParentId(this)">
                             <datalist id="fathersList" class="">
                                 @foreach($fathers as $father)
-                                    <option value="{{ $father->father_name }}" data-id="{{ $father->id }}">{{ $father->father_name }}</option>
+                                    <option value="{{ $father->father_name }}"
+                                            data-id="{{ $father->id }}">{{ $father->father_name }}</option>
                                 @endforeach
                             </datalist>
                             @error('parent_id')
@@ -31,11 +34,12 @@
                                     if (option.value === input.value) {
                                     @this.set('parent_id', option.getAttribute('data-id'));
                                         break;
+                                    }else {
+                                    @this.set('parent_id', 0);
                                     }
                                 }
                             }
                         </script>
-
 
 
                     </div>
@@ -181,11 +185,12 @@
                             <select id="classroom" class="form-control"
                                     wire:model.live.debounce.500ms="classroom_id">
                                 @if(!is_null($selectedLevel))
+                                    <option value="" selected>{{__('student.now select a classroom')}}</option>
                                     @foreach($classrooms as $classroom)
                                         <option value="{{$classroom->id}}">{{$classroom->name}}</option>
                                     @endforeach
                                 @else
-                                <option value="" selected>{{__('student.select educational level first')}}</option>
+                                    <option value="" selected>{{__('student.select educational level first')}}</option>
                                 @endif
                             </select>
                             @error('classroom_id')
@@ -205,12 +210,9 @@
                             <label class="col d-flex justify-content-end">{{__('student.take any medicine ?')}}</label>
                             <div class="col mt-2 d-flex justify-content-start">
                                 <input class="toggle" type="checkbox" wire:click="flip(0)"
-                                       id="takeMedicineE"
-                                       value="{{old('take_medicine')}}">
+                                       id="takeMedicineE" name="checked">
                                 <label class="form-label  rounded" for="takeMedicineE"></label>
                             </div>
-                            {{-- ---- --}}
-
                             @error('take_medicine')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror

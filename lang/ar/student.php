@@ -68,6 +68,7 @@ return [
     'other info'=>'معلومات أخرى',
     'note'=>'ملاحظة',
     'first you have to add classrooms'=>'يجب إضافة فصول أولا',
+    'now select a classroom'=>'الآن قم بإختيار صف',
     'parents'=>'الآباء',
     'more info'=>'المزيد',
     'birth date'=> 'تاريخ الميلاد',
@@ -105,6 +106,8 @@ return [
     'please select from the list and the number of father only'=>
         'يرجى الاختيار من القائمة ويجب أن يكون رقم الأب فقط',
     'select educational level first'=>'يرجى اختيار مرحلة دارسية أولا',
+    'this father does not exist check the list'=>
+        'لا يوجد أب بهذا الاسم تحقق من الاسم أو قم بتغيير اللغة أو قم بالإختيار من القائمة',
 
     'parents info'=> 'معلومات الآبـــاء',
     'edit parents'=> 'تعديل الآبـــــاء',

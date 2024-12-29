@@ -19,9 +19,9 @@
             </div>
         </div>
     </div>
-            
-                <!-- pagination up code -->
-                @include('layouts.paginations.pagination_up')
+
+    <!-- pagination up code -->
+    @include('layouts.pagination.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -100,9 +100,9 @@
                     </div>
                 @endif
             </div>
-            
+
             {{-- pagination down code --}}
-            @include('layouts.paginations.pagination_down')
+            @include('layouts.pagination.pagination_down')
 
         </div>
     </div>

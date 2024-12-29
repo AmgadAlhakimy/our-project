@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}
-                    <h4 class="col container-title mt-2">Subject Information</h4>
+        <h4 class="col container-title mt-2">Subject Information</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -15,14 +15,14 @@
                                        placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
-                    </div> 
+                    </div>
                 </label>
             </div>
         </div>
     </div>
-            
-                <!-- pagination up code -->
-                @include('layouts.paginations.pagination_up')
+
+    <!-- pagination up code -->
+    @include('layouts.pagination.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -79,7 +79,7 @@
                     <th colspan="">
                         <div class="th-head-4 form-label">{{__('public.processes')}} </div>
                     </th>
-                    
+
                 </tr>
                 </thead>
                 <tbody>
@@ -107,7 +107,7 @@
                         </td>
                         <td>
                             <a href="{{route('subjects.edit',$subject->id)}}"
-                                class="btn save-button btn-success  w-25 me-1 ms-1">
+                               class="btn save-button btn-success  w-25 me-1 ms-1">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{-- {{__('public.edit')}} --}}
                             </a>
@@ -120,23 +120,24 @@
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$subject->id}}"
-                                    tabindex="-1" aria-labelledby="exampleModalLabel"
-                                    aria-hidden="true">
+                                 tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>
                                             </div>
                                         </div>
                                         <div class="modal-body form-label">
                                             {{__('public.are you sure you want to delete').$subject->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2 " data-bs-dismiss="modal">
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2 "
+                                                    data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
-                                                    action="{{route('subjects.destroy',$subject->id)}}">
+                                                  action="{{route('subjects.destroy',$subject->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit"
@@ -160,8 +161,8 @@
                     </div>
                 @endif
             </div>
-                <!-- pagination down code -->
-                @include('layouts.paginations.pagination_down')
+            <!-- pagination down code -->
+            @include('layouts.pagination.pagination_down')
 
         </div>
     </div>

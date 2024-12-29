@@ -20,7 +20,7 @@
     </div>
 
     <!-- pagination up code -->
-    @include('layouts.paginations.pagination_up')
+    @include('layouts.pagination.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -111,12 +111,12 @@
 
 
                     <th>
-                        <button wire:click="ordering('chick_medicine')" class="">
+                        <button wire:click="ordering('takes_medicine')" class="">
                             <div class="table_test form-label ">
                                 {{__('student.take any medicine ?')}}
-                                @if($arrow and $showArrow === 'chick_medicine')
+                                @if($arrow and $showArrow === 'takes_medicine')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'chick_medicine')
+                                @elseif(!$arrow and $showArrow === 'takes_medicine')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
@@ -136,12 +136,12 @@
                     </th>
                     {{-- 1 --}}
                     <th>
-                        <button wire:click="ordering('chick_allergy')" class="">
+                        <button wire:click="ordering('has_allergy')" class="">
                             <div class="table_test form-label ">
                                 {{__('student.have an allergy ?')}}
-                                @if($arrow and $showArrow === 'chick_allergy')
+                                @if($arrow and $showArrow === 'has_allergy')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'chick_allergy')
+                                @elseif(!$arrow and $showArrow === 'has_allergy')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
@@ -173,12 +173,12 @@
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('chick_health_problem')" class="">
+                        <button wire:click="ordering('has_health_problem')" class="">
                             <div class="table_test form-label ">
                                 {{__('student.student health problem')}}
-                                @if($arrow and $showArrow === 'chick_health_problem')
+                                @if($arrow and $showArrow === 'has_health_problem')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'chick_health_problem')
+                                @elseif(!$arrow and $showArrow === 'has_health_problem')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
                                 @endif
                             </div>
@@ -278,7 +278,7 @@
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$student->chick_medicine}}
+                                {{$student->takes_medicine}}
                             </div>
                         </td>
                         <td>
@@ -288,7 +288,7 @@
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$student->chick_allergy}}
+                                {{$student->has_allergy}}
                             </div>
                         </td>
                         <td>
@@ -298,7 +298,7 @@
                         </td>
                         <td>
                             <div class="td_rect">
-                                {{$student->chick_health_problem}}
+                                {{$student->has_health_problem}}
                             </div>
                         </td>
                         <td>
@@ -347,20 +347,22 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                <i class="fa-solid fa-trash-can danger_msg"></i>
                                             </div>
                                         </div>
                                         <div class="modal-body form-label">
                                             {{__('public.are you sure you want to delete').$student->name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2"
+                                                    data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}
                                             </button>
                                             <form method="post" action="{{route('students.forceDelete',$student->id)}}">
                                                 @method('GET')
                                                 @csrf
-                                                <button type="submit" class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
+                                                <button type="submit"
+                                                        class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>
@@ -368,10 +370,11 @@
                             </div>
                             {{-- MORE INFO --}}
                         </td>
-                        <td>
-                            <a href="{{route('student-more-info',103)}}" class="btn save-button btn-info w-50 me-1 ms-1 ">
-                                {{__('student.more info')}} 
-                            </a>
+                        <td>                                
+                            <a href="{{route('student-more-info',$student->id)}}"
+                               class="btn save-button btn-info me-3 ms-3 ">
+                                {{__('student.more info')}}
+                            </>
                         </td>
                     </tr>
                 @endforeach
@@ -389,7 +392,7 @@
         </div>
 
         {{-- pagination down code --}}
-        @include('layouts.paginations.pagination_down')
+        @include('layouts.pagination.pagination_down')
 
     </div>
 </div>

@@ -20,7 +20,7 @@
         </div>
     </div>
     <!-- pagination up code -->
-    @include('layouts.paginations.pagination_up')
+    @include('layouts.pagination.pagination_up')
 
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
@@ -224,7 +224,7 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$teacher->id}}">
                                 <i class="fa-solid fa-trash"></i>
-                                 {{-- {{__('public.delete')}} --}}
+                                {{-- {{__('public.delete')}} --}}
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$teacher->id}}"
@@ -241,7 +241,8 @@
                                             {{__('public.are you sure you want to delete').$teacher->name}}
                                         </div>
                                         <div class="modal-footer form-label">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2"
+                                                    data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
                                                   action="{{route('teachers.destroy',$teacher->id)}}">
@@ -270,7 +271,7 @@
             </div>
 
             {{-- pagination down code --}}
-                @include('layouts.paginations.pagination_down')
+            @include('layouts.pagination.pagination_down')
 
         </div>
     </div>
