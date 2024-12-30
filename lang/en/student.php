@@ -34,7 +34,7 @@ return [
     'place of birth in english'=>'Place of birth in English',
     'class'=>'Class',
     'parent info'=>'Parent Info',
-    'the parents'=>'the Parents',
+    'superior'=>'Superior',
     "father's name in arabic"=>"Father's name in Arabic",
     "father's name in english"=>"Father's name in English",
     "father's work in arabic"=>"Father's work in Arabic",
@@ -63,15 +63,15 @@ return [
     'other info'=>'Other Info',
     'first you have to add classrooms'=>'first you have to add classrooms',
     'now select a classroom'=>'Now Select a Classroom',
-    'parents'=>'Parents',
+    'superior'=>'superior',
     'more info'=>'More info',
 
     'student information'=>'student Information',
     'personal info'=>'personal Information',
 
-    'choose parents'=>'Choose Parents',
-    'create student'=>'Create Student',
-    'create parents'=>'Create Parents',
+    'choose superior'=>'Choose a Superior',
+    'new student'=>'New Student',
+    'new superior'=>'New Superior',
 
 
     "father name"=>"father name",
@@ -108,8 +108,7 @@ return [
     'this father does not exist check the list'=>
         'This father does not exist check Spelling, Change Language or Choose from the list',
 
-    'parents info'=> 'parents info',
-    'edit parents'=> 'Edit Parents',
-    'delete parent'=> 'Deleted Parents'
-
+    'superior info'=> 'Superior Information',
+    'edit superior'=> 'Edit Superior',
+    'deleted superiors'=> 'Deleted Superiors'
 ];

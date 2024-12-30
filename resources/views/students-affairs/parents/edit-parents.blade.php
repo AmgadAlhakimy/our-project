@@ -4,7 +4,7 @@
             {{Session::get('success')}}
         </div>
     @endif
-    <h3 class="container-title">{{__('student.edit parents')}}</h3>
+    <h3 class="container-title">{{__('student.edit superior')}}</h3>
     <div class="container  containers-style ">
         <form wire:submit="update" action="">
             @csrf
@@ -160,21 +160,19 @@
                 </div>
             </div>
 
-        </div> 
+        </div>
         <div class=" row">
             <div class="box col">
                 <button type="submit" class=" save-button">
-                    {{__('public.save')}}
+                    {{__('public.update')}}
                     <div wire:loading class="spinner-border spinner-border-sm"></div>
                 </button>
             </div>
-            <div class="box col">
-                <button type="reset" class=" clear-button">
-                    {{__('public.clear')}}
-                    <div wire:loading class="spinner-border spinner-border-sm"></div>
-                </button>
+            <div class="box  col">
+                <a href="{{route('display-parents')}}" class="btn clear-button"><i
+                        class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
             </div>
         </div>
     </form>
-    
+
 </div>

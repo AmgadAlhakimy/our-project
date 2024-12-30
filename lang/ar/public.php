@@ -62,8 +62,10 @@ return [
     'major'=>'التخصص',
     'educational Level'=>'المرحلة الدراسية',
     'are you sure you want to delete'=>'هل أنت متأكد من حذف: ',
+    'are you sure you want to delete permanently'=>'هل أنت متأكد من الحذف بشكل نهائي: ',
     'restore'=>'إستعادة',
     'force delete'=>'حذف نهائي',
+    'permanently'=>'بشكل نهائي',
 
     'classroom'=>'الفصل',
     'subject'=>'المادة',

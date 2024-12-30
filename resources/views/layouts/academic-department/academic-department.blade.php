@@ -14,10 +14,10 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a id="" href="{{route('educational-levels.create')}}" class="li-link ">{{__('sidebar.add educational Level')}}</a>
-                <a id="" href="{{route('classrooms.create')}}" class="li-link">{{__('sidebar.add a class')}}</a>
-                <a href="{{route('subjects.create')}}" class="li-link">{{__('sidebar.add Subject')}}</a>
-                <a href="{{route('activities.create')}}" class="li-link">{{__('sidebar.add Activity')}}</a>
+                <a id="" href="{{route('educational-levels.create')}}" class="li-link ">{{__('sidebar.new educational level')}}</a>
+                <a id="" href="{{route('classrooms.create')}}" class="li-link">{{__('sidebar.new classroom')}}</a>
+                <a href="{{route('subjects.create')}}" class="li-link">{{__('sidebar.new subject')}}</a>
+                <a href="{{route('activities.create')}}" class="li-link">{{__('sidebar.new activity')}}</a>
             </div>
         </div>
     </li>
@@ -28,16 +28,16 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-clipboard-list"></i>
-                <span class="menu-name"> {{__('sidebar.academic department review')}} </span>
+                <span class="menu-name"> {{__('sidebar.display')}} </span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href="{{route('display-levels')}}" class="li-link">{{__('sidebar.review of educational Level')}}</a>
-                <a href="{{route('display-classrooms')}}" class="li-link">{{__('sidebar.review of classrooms')}}</a>
-                <a href="{{route('display-subjects')}}" class="li-link"> {{__('sidebar.review of subjects')}}</a>
-                <a href="{{route('display-activities')}}" class="li-link">{{__('sidebar.review activities')}}</a>
+                <a href="{{route('display-levels')}}" class="li-link">{{__('sidebar.display educational levels')}}</a>
+                <a href="{{route('display-classrooms')}}" class="li-link">{{__('sidebar.display classrooms')}}</a>
+                <a href="{{route('display-subjects')}}" class="li-link"> {{__('sidebar.display subjects')}}</a>
+                <a href="{{route('display-activities')}}" class="li-link">{{__('sidebar.display activities')}}</a>
             </div>
         </div>
     </li>
@@ -48,13 +48,13 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-trash-can"></i>
-                <span class="menu-name">{{__('sidebar.trash')}} </span>
+                <span class="menu-name">{{__('sidebar.recycle bin')}} </span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href="{{route('educational-levels.show','deleted')}}" class="li-link">{{__('sidebar.deleted educational Level')}}</a>
+                <a href="{{route('educational-levels.show','deleted')}}" class="li-link">{{__('sidebar.deleted educational levels')}}</a>
                 <a href="{{route('classrooms.show','deleted')}}" class="li-link">{{__('sidebar.deleted classrooms')}}</a>
                 <a href="{{route('subjects.show','deleted')}}" class="li-link">{{__('sidebar.deleted subjects')}}</a>
                 <a href="{{route('activities.show','deleted')}}" class="li-link">{{__('sidebar.deleted activities')}}</a>

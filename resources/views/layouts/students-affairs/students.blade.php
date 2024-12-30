@@ -5,17 +5,17 @@
     <a href="#" class="li-link title-4">
         <i class="icon-1 fa-solid fa-children"></i>
 
-        <span class="menu-name">{{__('sidebar.parents')}}</span>
+        <span class="menu-name">{{__('sidebar.superior')}}</span>
         <i class="icon-1 fa-solid fa-chevron-down"></i>
     </a>
 </div>
 <div class="submenu">
     <div class="line-black">
         {{-- Add Student --}}
-        <a href='{{route("create-parents")}}' class="li-link">{{__('sidebar.create parents')}}</a>
+        <a href='{{route("create-parents")}}' class="li-link">{{__('sidebar.new superior')}}</a>
         {{-- review students --}}
-        <a href="{{route('display-parents')}}" class="li-link">{{__('sidebar.display parents')}}</a>
-        <a href="{{route('parents.show','deleted')}}" class="li-link">{{__('sidebar.deleted parents')}}</a>
+        <a href="{{route('display-parents')}}" class="li-link">{{__('sidebar.display superiors')}}</a>
+        <a href="{{route('parents.show','deleted')}}" class="li-link">{{__('sidebar.deleted superiors')}}</a>
     </div>
 </div>
 </li>
@@ -30,18 +30,9 @@
 </div>
 <div class="submenu">
     <div class="line-black">
-        {{-- Add Student --}}
-        <a href='{{route("create-student")}}' class="li-link">{{__('sidebar.add a new student')}}</a>
-        {{-- view students --}}
-        <a href="{{route('display-students')}}" class="li-link">{{__('sidebar.view students')}}</a>
-        <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted Student')}}</a>
-        <a href='/absence' class="li-link">{{__('sidebar.Student absence')}}</a>
-
-
-        <a href="{{route('student-more-info',1)}}" class="li-link">معلومات lllllllllllll</a>
-
-
-        <a href="#" class="li-link">الطلاب الأوائل</a>
+        <a href='{{route("create-student")}}' class="li-link">{{__('sidebar.new student')}}</a>
+        <a href="{{route('display-students')}}" class="li-link">{{__('sidebar.display students')}}</a>
+        <a href="{{route('students.show','deleted')}}" class="li-link">{{__('sidebar.deleted students')}}</a>
     </div>
 </div>
 </li>

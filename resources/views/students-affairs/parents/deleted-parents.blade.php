@@ -4,7 +4,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('student.delete parent')}}</h4>
+                <h4 class="col container-title mt-2">{{__('student.deleted superiors')}}</h4>
             </div>
         </div>
         <!-- table-hover table-striped -->
@@ -140,7 +140,7 @@
                             <td>
                                 <a href="{{route('parents.restore',$parent->id)}}"
                                    class="btn save-button btn-success  w-25 me-1 ms-1">
-                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <i class="fa-solid fa-trash-can-arrow-up"></i>
                                     {{-- {{__('public.restore')}} --}}
                                 </a>
                                 <button class="btn clear-button btn-danger  w-25 me-1 ms-1" data-bs-toggle="modal"
@@ -156,11 +156,11 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <div class="modal-title">
-                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>
                                                 </div>
                                             </div>
                                             <div class="modal-body form-label">
-                                                {{__('public.are you sure you want to delete').$parent->name}}
+                                                {{__('public.are you sure you want to delete permanently').$parent->father_name}}
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
