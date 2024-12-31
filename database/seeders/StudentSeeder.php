@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Classroom\Classroom;
-use App\Models\Parents;
-use App\Models\Relative;
-use App\Models\Student;
+use App\Models\Parents\Parents;
+use App\Models\Student\Student;
 use Illuminate\Database\Seeder;
 
 class StudentSeeder extends Seeder
@@ -27,6 +26,7 @@ class StudentSeeder extends Seeder
         $parents = Parents::all();
         for ($i = 1; $i <= 100; $i++) {
             Student::create([
+                'id'=>rand(1000000000,9000000000),
                 'name' => [
                     'en' => "Student $i",
                     'ar' => "الطالب $i",

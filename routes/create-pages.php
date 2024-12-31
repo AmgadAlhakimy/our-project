@@ -1,7 +1,7 @@
 <?php
 
-use App\Livewire\StudentsAffairs\CreateParents;
-use App\Livewire\StudentsAffairs\CreateStudent;
+use App\Livewire\StudentsAffairs\Parents\CreateParents;
+use App\Livewire\StudentsAffairs\Student\CreateStudent;
 use Illuminate\Support\Facades\Route;
 
 

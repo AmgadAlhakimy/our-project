@@ -5,7 +5,7 @@ namespace App\Models\Classroom;
 use App\Models\Activity\Activity;
 use App\Models\EducationalLevel;
 use App\Models\Mark;
-use App\Models\Student;
+use App\Models\Student\Student;
 use App\Models\Subject\Subject;
 use App\Models\Teacher\Teacher;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

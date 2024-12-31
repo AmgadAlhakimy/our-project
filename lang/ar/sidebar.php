@@ -40,6 +40,7 @@ return [
     'deleted activities'=>'الأنشطة المحذوفة',
 
     'students affairs'=>'شؤون الطلاب',
+    'student'=>'الطالب',
     'new student'=>'طالب جديد',
 
     'display students'=>'عرض الطلاب',

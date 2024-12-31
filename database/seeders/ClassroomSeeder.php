@@ -17,8 +17,8 @@ class ClassroomSeeder extends Seeder
         for($i = 1; $i<=12; $i++ ){
             Classroom::create([
                 'name'=> [
-                    'en'=>"classroom $i",
-                    'ar'=>"الفصل $i",
+                    'en'=>"class $i",
+                    'ar'=>"الصف $i",
                 ],
                 'edu_id'=>$levels->random()->id,
             ]);

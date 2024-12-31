@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\FollowUpStudent\StoreFollowUpStudentRequest;
 use App\Http\Requests\FollowUpStudent\UpdateFollowUpStudentRequest;
 use App\Models\FollowUpStudent;
-use App\Models\Student;
+use App\Models\Student\Student;
 
 class FollowUpStudentController extends Controller
 {

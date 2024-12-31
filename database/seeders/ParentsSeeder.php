@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Parents;
+use App\Models\Parents\Parents;
 use Illuminate\Database\Seeder;
 
 class ParentsSeeder extends Seeder
