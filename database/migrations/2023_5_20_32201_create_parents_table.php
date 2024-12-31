@@ -16,7 +16,7 @@ return new class extends Migration
             $table->json('father_name');
             $table->json('father_work');
             $table->bigInteger('father_contact1');
-            $table->bigInteger('father_contact2');
+            $table->bigInteger('father_contact2')->nullable()->default(0);
             $table->json('mother_name');
             $table->json('mother_work');
             $table->bigInteger('mother_contact1');

@@ -34,7 +34,7 @@ return [
     'place of birth in english'=>'مكان الميلاد بالإنجليزية',
     'class'=>'الصف',
     'parent info'=>'معلومات الأباء',
-    'the parents'=>'الآباء',
+    'superior'=>'ولي الأمر',
 
     "father's name in arabic"=>"اسم الأب بالعربي",
     "father's name in english"=>"اسم الأب بالإنجليزية",
@@ -47,9 +47,9 @@ return [
     "mother's work in english"=>"عمل الأم بالإنجليزية",
 
 
-    'choose parents'=>'قم بالختيار اب للطالب الجديد',
-    'create student'=>'تسجيل طالب جديد',
-    'create parents'=>'تسجيل آبــــاء جدد',
+    'choose superior'=>'قم بإختيار ولي أمر للطالب',
+    'new student'=>'طالب جديد',
+    'new superior'=>'ولي أمر جديد',
 
 
     "mother's contacts"=>"أرقام الأم",
@@ -72,7 +72,7 @@ return [
     'note'=>'ملاحظة',
     'first you have to add classrooms'=>'يجب إضافة فصول أولا',
     'now select a classroom'=>'الآن قم بإختيار صف',
-    'parents'=>'الآباء',
+    'superior'=>'ولي الأمر',
     'more info'=>'المزيد',
     'birth date'=> 'تاريخ الميلاد',
     'birth place'=> 'مكان الميلاد',
@@ -112,10 +112,8 @@ return [
     'this father does not exist check the list'=>
         'لا يوجد أب بهذا الاسم تحقق من الاسم أو قم بتغيير اللغة أو قم بالإختيار من القائمة',
 
-    'parents info'=> 'معلومات الآبـــاء',
-    'edit parents'=> 'تعديل الآبـــــاء',
-    'delete parent'=> 'الاباء المحذوفين'
-
-
+    'superior info'=> 'معلومات ولي الأمر',
+    'edit superior'=> 'تعديل ولي الأمر',
+    'deleted superiors'=> 'أولياء الأمور المحذوفة'
 
 ];

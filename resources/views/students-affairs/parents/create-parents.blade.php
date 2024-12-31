@@ -4,10 +4,10 @@
             {{Session::get('success')}}
         </div>
     @endif
-    <h3 class="container-title">{{__('student.create parents')}}</h3>
+    <h3 class="container-title">{{__('student.new superior')}}</h3>
     <div class="container  containers-style ">
         <form wire:submit="save" action="">
-            @csrf 
+            @csrf
             <div class="row">
 
                 <!-- father name  -->

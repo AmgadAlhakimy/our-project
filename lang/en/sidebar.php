@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
- 
+
     'search'=>'SEARCH',
     'Lang' => 'English',
     'short_lang' => 'E',
@@ -24,37 +24,37 @@ return [
     'Admin' => 'Admin',
     'academic department' => 'Academic Department',
     'addition' => 'Addition',
-    'add educational Level' => 'Add Educational Level',
-    'add a class' => 'Add A Class',
-    'add Subject' => 'Add Subject',
-    'add Activity' => 'Add activities',
+    'new educational level' => 'New Educational Level',
+    'new classroom' => 'New Class',
+    'new subject' => 'New Subject',
+    'new activity' => 'New Activity',
 
-    'academic department review'=>'View',
-    'review of educational Level'=>'View Educational Level',
-    'review of classrooms'=>'View Classes ',
-    'review of subjects'=>'View Subjects',
-    'review activities'=>'View Activities',
+    'display'=>'Display',
+    'display educational levels'=>'Display Educational Levels',
+    'display classrooms'=>'Display Classes',
+    'display subjects'=>'Display Subjects',
+    'display activities'=>'Display Activities',
 
-    'trash'=>'trash',
-    'deleted educational Level'=>'Deleted Educational Level ',
-    'deleted classrooms'=>'Deleted Class',
+    'recycle bin'=>'Recycle Bin',
+    'deleted educational levels'=>'Deleted Educational Levels',
+    'deleted classrooms'=>'Deleted Classes',
     'deleted subjects'=>'Deleted Subjects',
     'deleted activities'=>'Deleted Activities',
 
 
-    
+
         // students affairs
         'students affairs'=>'Students Affairs',
-        'create parents'=>'Create Parents',
-        'display parents'=>'Display Parents',
-        'deleted parents'=>'Deleted Parents',
-        'parents'=>'Parents',
-        'add a new student'=>'add a New Student',
-        'view students'=>'view Students',
-        'deleted Student'=>'deleted Student',
+        'new superior'=>'New superior',
+        'display superiors'=>'Display superiors',
+        'deleted superiors'=>'Deleted superiors',
+        'superior'=>'superior',
+        'new student'=>'New Student',
+        'display students'=>'Display Students',
+        'deleted students'=>'Deleted Students',
         'Student absence'=>'Student Absence',
 
-    
+
     // my be deleted
 
         // relationships
@@ -80,23 +80,23 @@ return [
         'monthly marks'=>'Monthly Marks',
         'final marks'=>'Final Marks',
 
-        'add new teacher'=>'Add a New Teacher',
-        'add new major'=>'Add a New Major',
+        'new teacher'=>'New Teacher',
+        'new major'=>'New Major',
         'view teachers'=>'View Teachers',
         'view majors'=>'View Majors',
         'deleted teachers'=>'Deleted Teachers',
         'deleted majors'=>'Deleted Majors',
-        'add new emb'=>'Add a New Emb',
+        'new employee'=>'New Employee',
         'view emb'=>'View Emb',
         'deleted emb'=>'Deleted Emb',
         'emb and teachers absent'=>'Emb And Teachers Absent',
-        
+
         'control section'=>'Control Section',
         'monthly income'=>'Monthly Income',
         'first term income'=>'First Term Income',
         'second term income'=>'Second Term Income',
         'the first students'=>'The First Students',
-        
+
 
 
 

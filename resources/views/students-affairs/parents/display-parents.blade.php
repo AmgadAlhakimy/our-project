@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
 
-        <h4 class="form-group container-title">{{__('student.parents info')}}</h4>
+        <h4 class="form-group container-title">{{__('student.superior info')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -313,18 +313,18 @@
                                             </div>
                                         </div>
                                         <div class="modal-body form-label">
-                                            {{__('public.are you sure you want to delete').$parent->name}}
+                                            {{__('public.are you sure you want to delete').$parent->father_name}}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2"
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2 "
                                                     data-bs-dismiss="modal">
-                                                {{__('public.cancel')}}
-                                            </button>
-                                            <form method="post" action="{{route('parents.forceDelete',$parent->id)}}">
-                                                @method('GET')
+                                                {{__('public.cancel')}}</button>
+                                            <form method="post"
+                                                  action="{{route('parents.destroy',$parent->id)}}">
+                                                @method('DELETE')
                                                 @csrf
                                                 <button type="submit"
-                                                        class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
+                                                        class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>
