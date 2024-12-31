@@ -15,6 +15,7 @@
     <link href="{{URL::asset('css/sidebar-bottuns.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/cards_info.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/toggle.css')}}" rel="stylesheet">
 </head>
 
 

@@ -9,6 +9,7 @@
         <form wire:submit="save" action="">
             @csrf 
             <div class="row">
+
                 <!-- father name  -->
                 <div class="box col-lg-6 col-md-12">
                     <label for="father">{{__("student.father's name in english")}}</label>

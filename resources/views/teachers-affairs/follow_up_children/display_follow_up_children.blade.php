@@ -5,7 +5,9 @@
     <div class="my-table">
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
-        <div class="table-header">
+        <div class="table-header">  
+
+
             {{-- the title and search --}}
             <div class="row first-card  ">
                 <h4 class="col container-title mt-2">{{__('teacher.Absence and Daily Book')}}</h4>
@@ -85,5 +87,6 @@
                 </table>
             </div>
         </div>
+        <div></div>
     </div>
 @endsection
