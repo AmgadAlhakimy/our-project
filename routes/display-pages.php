@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Student\StudentController;
 use App\Livewire\AcademicDep\DisplayActivities;
 use App\Livewire\AcademicDep\DisplayActivityClassrooms;
 use App\Livewire\AcademicDep\DisplayClassrooms;
@@ -11,8 +11,8 @@ use App\Livewire\AcademicDep\DisplaySubjects;
 use App\Livewire\AcademicDep\DisplaySubjectTeachers;
 use App\Livewire\DisplayMajors;
 use App\Livewire\DisplayTeachers;
-use App\Livewire\StudentsAffairs\DisplayParents;
-use App\Livewire\StudentsAffairs\DisplayStudents;
+use App\Livewire\StudentsAffairs\Parents\DisplayParents;
+use App\Livewire\StudentsAffairs\Student\DisplayStudents;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/activity-classrooms',DisplayActivityClassrooms::class)->name('display-activity-classrooms');

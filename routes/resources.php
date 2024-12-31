@@ -1,24 +1,24 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FollowUpChild\FollowUpChildController;
 use App\Http\Controllers\Activity\ActivityClassroomController;
+use App\Http\Controllers\Activity\ActivityController;
+use App\Http\Controllers\Classroom\ClassroomController;
 use App\Http\Controllers\Classroom\ClassroomSubjectController;
 use App\Http\Controllers\Classroom\ClassroomTeacherController;
-use App\Http\Controllers\Subject\SubjectTeacherController;
-use App\Http\Controllers\Level\EducationalLevelController;
-use App\Http\Controllers\Classroom\ClassroomController;
-use App\Http\Controllers\Activity\ActivityController;
-use App\Http\Controllers\Teacher\TeacherController;
-use App\Http\Controllers\FollowUpStudentController;
-use App\Http\Controllers\Subject\SubjectController;
-use App\Http\Controllers\SemesterController;
-use App\Http\Controllers\RelativeController;
 use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\ParentsController;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\FollowUpChild\FollowUpChildController;
+use App\Http\Controllers\FollowUpStudentController;
+use App\Http\Controllers\Level\EducationalLevelController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\MarkController;
+use App\Http\Controllers\Parents\ParentsController;
+use App\Http\Controllers\RelativeController;
+use App\Http\Controllers\SemesterController;
+use App\Http\Controllers\Student\StudentController;
+use App\Http\Controllers\Subject\SubjectController;
+use App\Http\Controllers\Subject\SubjectTeacherController;
+use App\Http\Controllers\Teacher\TeacherController;
+use Illuminate\Support\Facades\Route;
 
 Route::resource('activity-classrooms', ActivityClassroomController::class);
 Route::resource('educational-levels', EducationalLevelController::class);

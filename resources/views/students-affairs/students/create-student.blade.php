@@ -6,51 +6,53 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-            <h3 class="container-title">{{__('student.choose parents')}}</h3>
-            <div class="container  containers-style">
-                <div class="">
-                    <!-- father name  -->
-                    <div class="row box">
-                        <div class="box w-100">
-                            <input type="text" id="fatherSearch" list="fathersList"
-                                   placeholder="{{ __('student.search for father') }}"
-                                   class="form-control" wire:model.live.debounce.500ms="search"
-                                   oninput="setParentId(this)">
-                            <datalist id="fathersList" class="">
-                                @foreach($fathers as $father)
-                                    <option value="{{ $father->father_name }}"
-                                            data-id="{{ $father->id }}">{{ $father->father_name }}</option>
-                                @endforeach
-                            </datalist>
-                            @error('parent_id')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <script>
-                            function setParentId(input) {
-                                const list = document.getElementById('fathersList');
-                                const options = list.getElementsByTagName('option');
-                                for (let option of options) {
-                                    if (option.value === input.value) {
-                                    @this.set('parent_id', option.getAttribute('data-id'));
-                                        break;
-                                    }else {
-                                    @this.set('parent_id', 0);
-                                    }
-                                }
-                            }
-                        </script>
-
-
-                    </div>
-                    <!-- garden number  -->
-                </div>
-            </div>
-            <!-- End parent info  -->
             <form wire:submit="save" enctype="multipart/form-data">
                 @csrf
+                <h3 class="container-title">{{__('student.choose superior')}}</h3>
+                <div class="container  containers-style">
+                    <div class="">
+                        <!-- father name  -->
+                        <div class="row box">
+                            <div class="box w-100">
+                                <input type="text" id="fatherSearch" list="fathersList"
+                                       placeholder="{{ __('student.write the superior here') }}"
+                                       class="form-control" wire:model.live.debounce.500ms="search"
+                                       oninput="setParentId(this)">
+                                <datalist id="fathersList" class="">
+                                    @foreach($fathers as $father)
+                                        <option value="{{ $father->father_name }}"
+                                                data-id="{{ $father->id }}">{{ $father->father_name }}</option>
+                                    @endforeach
+                                </datalist>
+                                @error('parents_id')
+                                <small class="form-text text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                            <script>
+                                function setParentId(input) {
+                                    const list = document.getElementById('fathersList');
+                                    const options = list.getElementsByTagName('option');
+                                    for (let option of options) {
+                                        if (option.value === input.value) {
+                                        @this.set('parents_id', option.getAttribute('data-id'))
+                                            ;
+                                            break;
+                                        } else {
+                                        @this.set('parents_id', 0)
+                                            ;
+                                        }
+                                    }
+                                }
+                            </script>
+
+
+                        </div>
+                        <!-- garden number  -->
+                    </div>
+                </div>
+                <!-- End parent info  -->
                 <!-- Start personal info  -->
-                <h3 class="container-title">{{__('student.create student')}}</h3>
+                <h3 class="container-title">{{__('student.new student')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         {{-- 1 --}}
@@ -181,7 +183,7 @@
                         </div>
 
                         <div class="box col-lg-6 col-md-6">
-                            <label for="classroom"class="form-label">{{__('classroom.classroom')}}</label>
+                            <label for="classroom" class="form-label">{{__('classroom.classroom')}}</label>
                             <select id="classroom" class="form-control"
                                     wire:model.live.debounce.500ms="classroom_id">
                                 @if(!is_null($selectedLevel))
@@ -207,31 +209,33 @@
                     <div class="row">
                         <div class="box col-lg-12 col-md-12 row">
                             {{-- 1 --}}
-                            <label class="col d-flex justify-content-end">{{__('student.take any medicine ?')}}</label>
+                            <label class="col d-flex justify-content-end">{{__('student.takes any medicine?')}}</label>
                             <div class="col mt-2 d-flex justify-content-start">
                                 <input class="toggle" type="checkbox" wire:click="flip(0)"
-                                       id="takeMedicineE" name="checked">
-                                <label class="form-label  rounded" for="takeMedicineE"></label>
+                                       id="takesMedicineE" name="checked">
+                                <label class="form-label  rounded" for="takesMedicineE"></label>
                             </div>
-                            @error('take_medicine')
+                            @error('takes_medicine')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                             {{-- -*- --}}
                             {{-- -*- --}}
                             @if($checks[0])
                                 <div class="row">
+                                    <label>{{__('student.medicine name in English')}}</label>
                                     <input type="text" class=" form-control ms-1 me-1 col"
                                            wire:model.live.debounce.500ms="medicine_desc"
                                            id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
-                                           aria-label="Text input with radio button" placeholder="desc in english">
+                                           aria-label="Text input with radio button">
                                     @error('medicine_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
+                                    <label>{{__('student.medicine name in Arabic')}}</label>
                                     <input type="text" class=" form-control ms-1 me-1 col"
                                            wire:model.live.debounce.500ms="medicine_desc_ar"
                                            id="" value="{{old('medicine_desc_ar')}}"
-                                           aria-label="Text input with radio button" placeholder="desc in arabic">
+                                           aria-label="Text input with radio button">
                                     @error('medicine_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -240,36 +244,38 @@
 
                             {{-- 2 --}}
                             {{-- -------------------------------- --}}
-                            <label class="mt-4">{{__('student.have an allergy ?')}}</label>
+                            <label class="mt-4">{{__('student.has allergy?')}}</label>
                             {{-- ---- --}}
                             <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                 <input class="toggle col" type="checkbox" wire:click="flip(1)"
-                                       id="haveAllergy"
-                                       value="{{old('have_allergy')}}">
+                                       id="hasAllergy"
+                                value="{{old('has_allergy')}}">
 
-                                <label class="form-label col rounded" for="haveAllergy"></label>
+                                <label class="form-label col rounded" for="hasAllergy"></label>
                             </div>
-                            @error('have_allergy')
+                            @error('has_allergy')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
 
                             {{-- -*- --}}
                             {{-- -*- --}}
-                            @if($checks[1])
+                        @if($checks[1])
                                 <div class="row">
+                                    <label>{{__('student.allergy description in English')}}</label>
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                            wire:model.live.debounce.500ms="allergy_desc"
-                                            id="std_allergy_desc_1"
-                                            aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
-                                            placeholder="desc in english">
+                                           wire:model.live.debounce.500ms="allergy_desc"
+                                           id="std_allergy_desc_1"
+                                           aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
+                                    >
                                     @error('allergy_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
+                                    <label>{{__('student.allergy description in Arabic')}}</label>
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                            wire:model.live.debounce.500ms="allergy_desc_ar"
-                                            id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
-                                            aria-label="Text input with radio button" placeholder="desc in arabic">
+                                           wire:model.live.debounce.500ms="allergy_desc_ar"
+                                           id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
+                                    aria-label="Text input with radio button" >
                                     @error('allergy_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -277,37 +283,38 @@
                             @endif
                             {{-- 3 --}}
                             {{-- -------------------------------- --}}
-                            <label class="mt-4">{{__('student.have any health problem ?')}}</label>
+                            <label class="mt-4">{{__('student.has any health problem?')}}</label>
                             {{-- ---- --}}
                             <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                 <input class="toggle col" type="checkbox" wire:click="flip(2)"
-                                       id="healthProblem" value="{{old('have_health_problem')}}"
+                                       id="healthProblem" value="{{old('has_health_problem')}}"
                                 >
                                 <label class="form-label col rounded" for="healthProblem"
-                                       id="healthProblem"></label>
+                                id="healthProblem"></label>
                             </div>
-                            @error('have_health_problem')
+                            @error('has_health_problem')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                             {{-- -*- --}}
                             {{-- -*- --}}
-                            @if($checks[2])
+                        @if($checks[2])
                                 <div class="row">
+                                    <label>{{__('student.health problem description in English')}}</label>
                                     <input type="text" class=" form-control ms-1 me-1 col"
                                            wire:model.live.debounce.500ms="health_problem_desc"
                                            id="std_health_desc_1"
                                            aria-label="Text input with radio button"
-                                           value="{{old('health_problem_desc')}}"
-                                           placeholder="desc in english">
+                                    value="{{old('health_problem_desc')}}">
                                     @error('health_problem_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
+                                    <label>{{__('student.health problem description in English')}}</label>
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                           wire:model.live.debounce.500ms="health_problem_desc_ar"
-                                           id="std_health_desc_2"
-                                           value="{{old('health_problem_desc_ar')}}"
-                                           aria-label="Text input with radio button" placeholder="desc in arabic">
+                                    wire:model.live.debounce.500ms="health_problem_desc_ar"
+                                    id="std_health_desc_2"
+                                    value="{{old('health_problem_desc_ar')}}"
+                                    aria-label="Text input with radio button">
                                     @error('health_problem_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror

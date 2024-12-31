@@ -20,6 +20,7 @@ return [
 
     "student's name in arabic"=>'اسم الطالب بالعربي',
     "student's name in english"=>'اسم الطالب بالإنجليزية',
+    'write the superior here'=>'قم بكتابة ولي الأمر هنا',
     'photo'=>'صورة',
     'addresses'=>'العناوين',
     "student's address in arabic"=>'عنوان الطالب بالعربي',
@@ -60,14 +61,12 @@ return [
     'kin relationship in english'=>'علاقة هذا القريب بالطالب بالإنجليزية',
     'health info'=>'المعلومات الصحية',
     'does the Student'=>'هل الطالب',
-    'take any medicine ?'=>'هل يأخذ علاج؟',
-    'take any medicine ? 2'=>'علاج؟',
+    'takes any medicine?'=>'هل يأخذ علاج؟',
     'no'=>'لا',
     'yes'=>'نعم',
-    'have an allergy ?'=>'هل لديه حساسية؟',
-    'have an allergy? 2'=>'حساسية؟',
-    'have any health problem ?'=>'هل لديه مشاكل صحية؟',
-    'have any health problem ? 2'=>'مشاكل صحية؟',
+    'has allergy ?'=>'هل لديه حساسية؟',
+    'has any health problem ?'=>'هل لديه مشاكل صحية؟',
+    'has any health problem ? 2'=>'مشاكل صحية؟',
     'other info'=>'معلومات أخرى',
     'note'=>'ملاحظة',
     'first you have to add classrooms'=>'يجب إضافة فصول أولا',
@@ -109,11 +108,20 @@ return [
     'please select from the list and the number of father only'=>
         'يرجى الاختيار من القائمة ويجب أن يكون رقم الأب فقط',
     'select educational level first'=>'يرجى اختيار مرحلة دارسية أولا',
-    'this father does not exist check the list'=>
-        'لا يوجد أب بهذا الاسم تحقق من الاسم أو قم بتغيير اللغة أو قم بالإختيار من القائمة',
+    'this superior does not exist check the list'=>
+        'لا يوجد ولي أمر بهذا الاسم تحقق من الاسم أو قم بتغيير اللغة أو قم بالإختيار من القائمة',
 
     'superior info'=> 'معلومات ولي الأمر',
     'edit superior'=> 'تعديل ولي الأمر',
-    'deleted superiors'=> 'أولياء الأمور المحذوفة'
+    'deleted superiors'=> 'أولياء الأمور المحذوفة',
+
+    'medicine name in English'=>'اسم الدواء بالإنجليزية',
+    'medicine name in Arabic'=>'اسم الدواء بالعربية',
+
+    'allergy description in English'=>'وصف الحساسية بالإنجليزية',
+    'allergy description in Arabic'=>'وصف الحساسية العربي',
+
+    'health problem description in English'=>'وصف المشكلة الصحية بالإنجليزية',
+    'health problem description in Arabic'=>'وصف المشكلة الصحية بالعربية',
 
 ];

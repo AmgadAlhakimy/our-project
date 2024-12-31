@@ -16,7 +16,9 @@ return [
     //create student
 
     'Register a new student'=>'Register a new student',
+    'write the superior here'=>'Write the superior here',
     'student info'=>'student info',
+//    'new student'=>'New Student',
     "student's name in arabic"=>"Student's name in Arabic",
     "student's name in english"=>"Student's name in English",
     'photo'=>'Photo',
@@ -52,14 +54,11 @@ return [
     'kin contact'=>'kin Contact',
     'health info'=>'Health Info',
     'does the student'=>'Does the student',
-    'take any medicine ?'=>'Take any Medicine?',
-    'take any medicine ? 2'=>'Medicine?',
+    'takes any medicine?'=>'Takes any Medicine?',
     'no'=>'No',
     'yes'=>'Yes',
-    'have an allergy?'=>'Have an Allergy?',
-    'have an allergy? 2'=>'Allergy?',
-    'have any health problem ?'=>'Have any Health Problem?',
-    'have any health problem ? 2'=>'Health Problem?',
+    'has allergy?'=>'Has Allergy?',
+    'has any health problem?'=>'Has any Health Problem?',
     'other info'=>'Other Info',
     'first you have to add classrooms'=>'first you have to add classrooms',
     'now select a classroom'=>'Now Select a Classroom',
@@ -105,10 +104,16 @@ return [
     'please select from the list and the number of father only'=>
     'please select from the list and the number of father only',
     'select educational level first'=>'Select Educational Level First',
-    'this father does not exist check the list'=>
-        'This father does not exist check Spelling, Change Language or Choose from the list',
+    'this superior does not exist check the list'=>
+        'This superior does not exist check Spelling, Change Language or Choose from the list',
 
     'superior info'=> 'Superior Information',
     'edit superior'=> 'Edit Superior',
-    'deleted superiors'=> 'Deleted Superiors'
+    'deleted superiors'=> 'Deleted Superiors',
+    'medicine name in English'=>'Medicine name in English',
+    'medicine name in Arabic'=>'Medicine name in Arabic',
+    'allergy description in English'=>'Allergy description in English',
+    'allergy description in Arabic'=>'Allergy description in Arabic',
+    'health problem description in English'=>'Health problem description in English',
+    'health problem description in Arabic'=>'Health problem description in Arabic',
 ];

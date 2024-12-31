@@ -24,7 +24,7 @@
 <div class="sidebar-title">
     <a href="#" class="li-link title-4">
         <i class="icon-1 fa-solid fa-graduation-cap"></i>
-        <span class="menu-name">{{__('sidebar.students affairs')}}</span>
+        <span class="menu-name">{{__('sidebar.student')}}</span>
         <i class="icon-1 fa-solid fa-chevron-down"></i>
     </a>
 </div>

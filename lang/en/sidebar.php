@@ -45,6 +45,7 @@ return [
 
         // students affairs
         'students affairs'=>'Students Affairs',
+        'student'=>'Student',
         'new superior'=>'New superior',
         'display superiors'=>'Display superiors',
         'deleted superiors'=>'Deleted superiors',

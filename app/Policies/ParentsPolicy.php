@@ -2,8 +2,7 @@
 
 namespace App\Policies;
 
-use Illuminate\Auth\Access\Response;
-use App\Models\Parents;
+use App\Models\Parents\Parents;
 use App\Models\User;
 
 class ParentsPolicy

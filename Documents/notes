@@ -8,12 +8,17 @@
 11-The initialization 0 value should be removed.(A)
 12-When there is a filed left the page should return directly to that field(A)
 14-the classroom select in student page is not in the right position(KH)
-15- create a new section for deletd items for all project
-16-make a new page for pagenation of table rows.
+15- create a new section for deleted items for all project
+16-make a new page for pagination of table rows.
 
 ==========================================
 ======== Things I should finish them =====
 ==========================================
+search with level name in classroom table.
+the unique in edit parents
+the table in the deleted parents
+the page should go back to the error filed
+
 
 
 

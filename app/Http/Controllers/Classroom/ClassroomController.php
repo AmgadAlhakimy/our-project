@@ -7,7 +7,7 @@ use App\Http\Requests\Classroom\StoreClassroomRequest;
 use App\Http\Requests\Classroom\UpdateClassroomRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
-use App\Models\Student;
+use App\Models\Student\Student;
 use Exception;
 use Illuminate\Http\Request;
 use Livewire\WithPagination;

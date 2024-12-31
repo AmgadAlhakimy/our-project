@@ -4,9 +4,46 @@
 namespace App\Traits;
 
 use App\Models\Classroom\Classroom;
+use Livewire\Attributes\Rule;
 
 trait StudentTrait
 {
+    #[Rule('required|exists:parents,id')]
+    public $parents_id;
+    #[Rule('required|unique:students,name->en|max:100|regex:/^[a-zA-Z\s]+$/')]
+    public string $name;
+    #[Rule('required|unique:students,name->ar|max:100|regex:/^[\p{Arabic}\s]+$/u')]
+    public string $name_ar;
+    #[Rule('required|image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
+    public $photo;
+    #[Rule('required|max:100|regex:/^[A-Za-z-\s]+[A-Za-z-0-9]*$/')]
+    public string $address;
+    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+    public string $address_ar;
+    #[Rule('required')]
+    public $gender;
+    #[Rule('required')]
+    public $birthdate;
+    #[Rule('required|max:100|regex:/^[A-Za-z-\s]+[A-Za-z-0-9]*$/')]
+    public string $place_of_birth;
+    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+    public string $place_of_birth_ar;
+    #[Rule('required')]
+    public $classroom_id;
+    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+    public string $medicine_desc = "";
+    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+    public string $medicine_desc_ar = "";
+    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+    public string $allergy_desc = "";
+    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+    public string $allergy_desc_ar = "";
+    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+    public string $health_problem_desc = "";
+    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+    public string $health_problem_desc_ar = "";
+    #[Rule('nullable')]
+    public string $note = "";
     public array $checks = [false, false, false];
     public $selectedLevel = null;
     public $classrooms;
@@ -46,7 +83,7 @@ trait StudentTrait
             'health_problem_desc.regex' => __('validation.english letters'),
             'health_problem_desc_ar.regex' => __('validation.arabic letters'),
             'class.required' => __('CreateStudent.first you have to add classrooms'),
-            'parent_id.exists' => __('student.this father does not exist check the list'),
+            'parents_id.exists' => __('student.this superior does not exist check the list'),
         ];
     }
 
