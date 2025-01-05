@@ -20,7 +20,7 @@ const icons = [
         position: { left: '75%', top: '15%' }
     },
     {
-        src: "assets/icons/book.png",
+        src: "assets/icons/shape.png",
         position: { left: '65%', top: '85%' }
     }
 ];
