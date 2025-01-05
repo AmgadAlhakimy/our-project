@@ -16,19 +16,19 @@
                     <thead>
                     <tr>
                         <th>
-                            <div class=" form-label">{{__('public.id')}}</div>
+                            <div class="th-head-1 form-label">{{__('public.id')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-3 form-label">{{__('public.name')}}</div>
+                            <div class="th-head-4 form-label">{{__('public.name')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2 form-label">{{__('public.created at')}}</div>
+                            <div class="th-head-3 form-label">{{__('public.created at')}}</div>
                         </th>
                         <th>
-                            <div class="th-head-2 form-label">{{__('public.updated at')}}</div>
+                            <div class="th-head-3 form-label">{{__('public.updated at')}}</div>
                         </th>
                         <th colspan="">
-                            <div class="th-head-3 form-label">{{__('public.processes')}}</div>
+                            <div class="th-head-4 form-label">{{__('public.processes')}}</div>
                         </th>
                     </tr>
                     </thead>
@@ -79,8 +79,13 @@
                                                     <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
                                                 </div>
                                             </div>
-                                            <div class="modal-body form-label">
-                                                {{__('public.are you sure you want to delete').$subject->name}}
+                                            <div class="modal-body form-label row">
+                                                <div class="col-12">
+                                                    {{__('public.are you sure you want to delete')}}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{$subject->name}}
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">

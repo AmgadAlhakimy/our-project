@@ -10,7 +10,7 @@
     </div>
     <div class="submenu">
         <div class="line-black">
-            <a href="{{route('teachers.create')}}" class="li-link">{{__('sidebar.add new teacher')}}</a>
+            <a href="{{route('teachers.create')}}" class="li-link">{{__('teacher.add new teacher')}}</a>
             <a href="{{route('display-teachers')}}" class="li-link">{{__('sidebar.view teachers')}}</a>
             <a href="{{route('teachers.show','deleted')}}" class="li-link">{{__('sidebar.deleted teachers')}}</a>
         </div>

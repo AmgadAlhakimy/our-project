@@ -15,33 +15,33 @@
                     <thead>
                     <tr>
                         <th>
-                            <div class=" form-label">
+                            <div class="th-head-1 form-label">
                                 {{__('public.id')}}
                             </div>
                         </th>
                         <th class="th-head-3 form-label">
                             {{__('public.name')}}
                         </th>
-                        <th class="th-head-2 form-label">
+                        <th class="th-head-4 form-label">
                             {{__('public.location')}}
                         </th>
-                        <th class="th-head-2 form-label">
+                        <th class="th-head-3 form-label">
                             {{__('public.contact')}}
                         </th>
-                        <th class="th-head-2 form-label">
+                        <th class="th-head-3 form-label">
                             {{__('public.date')}}
                         </th>
-                        <th class="th-head-3 form-label">
+                        <th class="th-head-4 form-label">
                             {{__('public.note')}}
                         </th>
-                        <th class="th-head-2 form-label">
+                        <th class="th-head-4 form-label">
                             {{__('public.created at')}}
                         </th>
-                        <th class="th-head-2 form-label">
+                        <th class="th-head-4 form-label">
                             {{__('public.updated at')}}
                         </th>
                         <th colspan="">
-                            <div class="th-head-3 form-label">{{__('public.processes')}}</div>
+                            <div class="th-head-4 form-label">{{__('public.processes')}}</div>
                         </th> 
                     </tr>
                     </thead>
@@ -110,8 +110,13 @@
                                                     <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
                                                 </div>
                                             </div>
-                                            <div class="modal-body form-label">
-                                                {{__('public.are you sure you want to delete').$activity->name}}
+                                            <div class="modal-body form-label row">
+                                                <div class="col-12">
+                                                    {{__('public.are you sure you want to delete')}}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{$activity->name}}
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">

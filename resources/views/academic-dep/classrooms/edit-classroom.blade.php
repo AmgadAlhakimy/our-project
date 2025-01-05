@@ -30,7 +30,7 @@
                             @enderror
                         </div>
                         <!-- 2 -->
-                        <div class="box col-lg-6 col-md-12">
+                        <div class="box col-lg-12 col-md-12">
                             <label for="level">{{__('classroom.educational Level')}}</label>
                             <select class="form-control" id="level" name="level">
                                 @foreach($levels as $Level)

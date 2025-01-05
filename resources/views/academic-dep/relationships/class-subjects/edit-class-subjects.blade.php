@@ -12,9 +12,9 @@
                     <div class="">
                         <div class="row">
                             <!-- 1 -->
-                            <div class="box col-12 ">
+                            <div class="box col-12 title-3">
                                 <label for="level-class">{{__('relationships.classes')}}</label>
-                             {{$classroom->name}}
+                                {{$classroom->name}}
                                 @error('classroom_id')
                                 <small class="form-text text-danger">{{$message}}</small>
                                 @enderror

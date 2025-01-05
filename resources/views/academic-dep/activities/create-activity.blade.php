@@ -11,7 +11,7 @@
             @endif
             <form action="{{route('activities.store')}}" method="post">
                 @csrf
-                <h3 class="container-title">{{__('Activity.Activity info')}}</h3>
+                <h3 class="container-title">{{__('activity.activity info')}}</h3>
                 <div class="container  containers-style ">
                     <div class="row">
                         <!-- 1 -->

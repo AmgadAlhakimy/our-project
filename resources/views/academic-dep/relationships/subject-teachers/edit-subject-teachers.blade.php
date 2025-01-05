@@ -11,7 +11,7 @@
                     <div class="">
                         <div class="row">
                             <!-- 1 -->
-                            <div class="box col-12 ">
+                            <div class="box col-12 title-3">
                                 <label for="teacher"> {{__('relationships.teacher')}}</label>
                                 {{$teacher->name}}
                                 @error('teacher_id')

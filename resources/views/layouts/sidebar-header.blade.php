@@ -1,6 +1,6 @@
 <!-- Start head  -->
 <!-- Start content  -->
-<div class="content">
+<div class="content"> 
     <div class="head " dir="">
         <div class="head_1">
             <!-- ============= logo ================== -->

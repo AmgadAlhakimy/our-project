@@ -13,7 +13,6 @@
             ></i>
             <span class="menu-name">{{__('sidebar.parent')}}</span>
             <i class="icon-1 fa-solid fa-chevron-down"></i>
-            <i class="fa-solid fa-person-half-dress"></i>
         </a>
     </div>
     <div class="submenu">

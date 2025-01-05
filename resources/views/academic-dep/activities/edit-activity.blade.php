@@ -2,11 +2,10 @@
 @section('content')
     <main class="main">
         <section class="section">
-            <h1 class="p-relative title-1">{{__('Activity.update Activity'). $activity->name}}</h1>
             <form method="post" action="{{route('activities.update',$activity->id)}}">
                 @method('PUT')
                 @csrf
-                <h3 class="container-title">{{__('Activity.update Activity')}}</h3>
+                <h3 class="container-title">{{__('Activity.update Activity'). $activity->name}}</h3>
             <div class="container containers-style ">
                 <div class="row">
                     <!-- 1 -->
@@ -63,7 +62,7 @@
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="form-label" for="std_Note">{{__('Activity.note')}}</label>
+                            <label class="form-label" for="std_Note">{{__('public.note')}}</label>
                     <textarea class="form-control" id="std_Note" cols="50" rows="5"  name="note">{{$activity->note}}</textarea>
                             @error('note')
                             <small class="form-text text-danger">{{$message}}</small>

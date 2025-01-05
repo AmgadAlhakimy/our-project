@@ -14,9 +14,11 @@ return [
     */
 
     'teachers info'=>'Teacher Info',
+    'add new teacher'=>'Add New Teacher',
+    'update teacher'=>'update teacher: ',
     'deleted teachers'=>'Deleted Teacher',
-    'teacher name in english'=>"Teacher's Name in English",
-    'teacher name in arabic'=>"Teacher's Name in Arabic",
+    'teachers name in english'=>"Teacher's Name in English",
+    'teachers name in arabic'=>"Teacher's Name in Arabic",
     'photo'=>'Photo',
     'contact'=>'Contact',
     'address in english'=>'Address in English',

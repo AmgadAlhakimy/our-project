@@ -6,9 +6,11 @@
                 <div class="alert alert-success" role="alert">
                     {{Session::get('success')}}
                 </div>
-            @endif
+            @endif 
             <!-- Start personal info  -->
-            <h3 class="container-title">{{('teacher.update teacher: ').$teacher->name}}</h3>
+            <div class="container-title">
+                {{__('teacher.update teacher').$teacher->name}}
+            </div>
             <form method="post" action="{{route('teachers.update', $teacher->id)}}" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
@@ -32,18 +34,20 @@
                             @enderror
                         </div>
                         <!-- 2 -->
-                        <div class="box row me-2 mb-3 col-lg-6 col-md-12 ">
+                        <div class="box col-lg-12 col-md-12 ">
                             <label class="" for="photo">{{__('change teacher photo')}}</label>
                             <input type="file" class="form-control col-8" id="photo" name="photo"
                                    value="{{$teacher->photo}}">
-                            <img src="{{asset($teacher->photo)}}"
-                                 class="student-img col-4" alt="no photo">
+                            <div class="text-center mt-2">
+                                <img src="{{asset($teacher->photo)}}"
+                                     class="student-img col-4" alt="no photo">
+                            </div>
                             @error('photo')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
                         <!-- 3 -->
-                        <div class="box col-lg-6 col-md-6 ">
+                        <div iv class="box col-lg-12 col-md-12 ">
                             <label for="gender">{{__('public.gender')}}</label>
                             <select class="col form-select form-control" id="gender" name="gender">
                                 <option class="text-center"
@@ -60,10 +64,10 @@
                             @enderror
                         </div>
                         <!-- 4 -->
-                        <div class="box ">
+                        <div class="box col-lg-12 col-md-12 ">
                             <label for="t-numbers">{{__('teacher.contact')}}</label>
-                            <div class="row">
-                                <input type="number" class="col form-control ms-2 me-2" id='t-numbers'
+                            <div class="">
+                                <input type="number" class="col form-control    " id='t-numbers'
                                        placeholder="only numbers" name="contact" value="{{$teacher->contact}}">
                                 @error('contact')
                                 <small class="form-text text-danger">{{$message}}</small>
