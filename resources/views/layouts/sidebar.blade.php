@@ -11,7 +11,7 @@
 
         <!-- ============= LIST ============== -->
         <div class="sidebar-nav">
-            <ul class="list-ul"> 
+            <ul class="list-ul">
 
                 {{-- the serch form shows only with phone style --}}
                 <div class="search p-relative ph-search_m">
@@ -20,15 +20,8 @@
                 </div>
                 <hr class="ph-search_m">
 
-
-                {{-- start the sidebar section --}}
-                @include('layouts.students-affairs.students')
-
-                {{-- -------------شؤون الطلاب---------------  --}}
-                <!-- ======================== STUDENTS ========================== -->
-
-                {{-- academic department --}}
                 @include('layouts.academic-department.academic-department')
+                @include('layouts.students-affairs.students')
                 <!-- ========== 5 ============ -->
                 @include('layouts.control-department.control-department')
                 <!-- ========== 5 ============ -->

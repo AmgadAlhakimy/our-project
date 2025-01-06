@@ -172,7 +172,11 @@
                         <div class="box col-lg-6 col-md-6">
                             <label for="className" class="form-label">{{__('student.level')}}</label>
                             <select class="form-control" wire:model.live.debounce.500ms="selectedLevel">
+                                @if(is_null($levels) )
+                                    <option value="" selected>{{__('where is the level')}}</option>
+                                @else
                                 <option value="" selected>{{__('public.select level')}}</option>
+                                @endif
                                 @foreach($levels as $level)
                                     <option class="text-center" value="{{$level->id}}">{{$level->name}}</option>
                                 @endforeach
@@ -309,7 +313,7 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
-                                    <label>{{__('student.health problem description in English')}}</label>
+                                    <label>{{__('student.health problem description in Arabic')}}</label>
                                     <input type="text" class=" form-control ms-1 me-1 col"
                                     wire:model.live.debounce.500ms="health_problem_desc_ar"
                                     id="std_health_desc_2"
@@ -337,13 +341,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="box">
-                    <button type="submit" class="btn save-button">
-                        {{__('public.save')}}
-                        <div wire:loading class="spinner-border spinner-border-sm"></div>
-                    </button>
+                <div class=" row">
+                    <div class="box col ">
+                        <button type="submit" class=" save-button text-center">
+                            {{__('public.save')}}
+                            <div wire:loading class="spinner-border spinner-border-sm"></div>
+                        </button>
+                    </div>
+                    <div class="box  col">
+                        <button type="reset" class=" clear-button text-center">
+                            {{__('public.clear')}}
+                        </button>
+                    </div>
                 </div>
-                <!-- End final box -->
             </form>
         </div>
     </section>

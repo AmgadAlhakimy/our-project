@@ -34,13 +34,13 @@
                             <label for="level">{{__('classroom.educational Level')}}</label>
                             <select class="form-control" id="level" name="level">
                                 <option value=""
-                                        disabled {{ old('Level') ? '' : 'selected' }}>{{ __('public.please select educational level') }}</option>
+                                        disabled {{ old('Level') ? '' : 'selected' }}>{{ __('public.select level') }}</option>
                                     <?php $i = 0 ?>
                                 @foreach($levels as $Level)
                                         <?php $i++ ?>
                                     <option class="text-center"
-                                            value="{{$Level->id}}" {{ old('level') == $Level->id ? 'selected' : '' }}
-                                    >{{$Level->name}}</option>
+                                            value="{{$Level->id}}" {{ old('level') == $Level->id ? 'selected' : '' }}>
+                                        {{$Level->name}}</option>
                                 @endforeach
                             </select>
                             @if($i==0)

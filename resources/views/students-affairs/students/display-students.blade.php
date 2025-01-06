@@ -113,7 +113,7 @@
                     <th>
                         <button wire:click="ordering('takes_medicine')" class="">
                             <div class="table_test form-label ">
-                                {{__('student.take any medicine ? 2')}}
+                                {{__('student.takes any medicine?')}}
                                 @if($arrow and $showArrow === 'takes_medicine')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'takes_medicine')
@@ -126,7 +126,7 @@
                     <th>
                         <button wire:click="ordering('has_allergy')" class="">
                             <div class="table_test form-label ">
-                                {{__('student.have an allergy? 2')}}
+                                {{__('student.has allergy?')}}
                                 @if($arrow and $showArrow === 'has_allergy')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'has_allergy')
@@ -139,7 +139,7 @@
                     <th>
                         <button wire:click="ordering('health_problem_desc')" class="">
                             <div class="table_test form-label ">
-                                {{__('student.have any health problem ? 2')}}
+                                {{__('student.has any health problem?')}}
                                 @if($arrow and $showArrow === 'health_problem_desc')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'health_problem_desc')
@@ -165,7 +165,7 @@
                     <th>
                         <button wire:click="ordering('classroom_id')" class="">
                             <div class="table_test form-label ">
-                                {{__('classroom.classroom id')}}
+                                {{__('classroom.classroom')}}
                                 @if($arrow and $showArrow === 'classroom_id')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                                 @elseif(!$arrow and $showArrow === 'classroom_id')
@@ -286,7 +286,7 @@
                                     data-bs-toggle="modal"
                                     data-bs-target="#delete{{$student->id}}">
                                 <i class="fa-solid fa-trash"></i>
-                            
+
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$student->id}}"
@@ -319,7 +319,7 @@
                             </div>
                             {{-- MORE INFO --}}
                         </td>
-                        <td>                                
+                        <td>
                             <a href="{{route('student-more-info',$student->id)}}"
                                class="btn save-button btn-info me-3 ms-3 ">
                                     {{__('student.more info')}}

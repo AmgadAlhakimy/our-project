@@ -98,7 +98,7 @@
                                         <div class="row mb-3">
                                             <div class="col s_info_1">
                                                 <label class=" mb-1 form-label p-der">
-                                                    {{__('student.have an allergy ?')}}
+                                                    {{__('student.has allergy?')}}
                                                 </label>
                                             </div>
                                             <div class="col  s_info_1">
@@ -116,8 +116,8 @@
                                         {{-- 2 --}}
                                         <div class="row mb-3">
                                             <div class="col s_info_1">
-                                                <label class=" mb-1 form-label p-der"> 
-                                                    {{__('student.have any health problem ?')}}
+                                                <label class=" mb-1 form-label p-der">
+                                                    {{__('student.has any health problem?')}}
                                                 </label>
                                             </div>
                                             <div class="col  s_info_1">
@@ -136,7 +136,7 @@
                                         <div class="row mb-3">
                                             <div class="col s_info_1">
                                                 <label class=" mb-1 form-label p-der">
-                                                    {{__('student.take any medicine ?')}}
+                                                    {{__('student.takes any medicine?')}}
                                                 </label>
                                             </div>
                                             <div class="col  s_info_1">
@@ -155,7 +155,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -301,5 +301,5 @@
                     </div>
                 </div>
         </section>
-        
+
 @endsection

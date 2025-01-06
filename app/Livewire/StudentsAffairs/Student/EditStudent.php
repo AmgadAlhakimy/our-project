@@ -21,42 +21,42 @@ class EditStudent extends Component
     public $id;
     public string $current_photo = '';
 
-    #[Rule('required|exists:parents,id')]
-    public $parent_id = 0;
-    #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
-    public string $name;
-    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
-    public string $name_ar;
+//    #[Rule('required|exists:parents,id')]
+//    public $parent_id = 0;
+//    #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
+//    public string $name;
+//    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
+//    public string $name_ar;
     #[Rule('nullable|image|mimes:jpeg,png,jpg,gif|max:2048')]
     public $photo;
-    #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $address;
-    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $address_ar;
-    #[Rule('required')]
-    public $gender;
-    #[Rule('required')]
-    public $birthdate;
-    #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $place_of_birth;
-    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $place_of_birth_ar;
-    #[Rule('required')]
-    public $classroom_id;
-    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $medicine_desc = "";
-    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $medicine_desc_ar = "";
-    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $allergy_desc = "";
-    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $allergy_desc_ar = "";
-    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
-    public string $health_problem_desc = "";
-    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
-    public string $health_problem_desc_ar = "";
-    #[Rule('nullable')]
-    public string $note = "";
+//    #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+//    public string $address;
+//    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+//    public string $address_ar;
+//    #[Rule('required')]
+//    public $gender;
+//    #[Rule('required')]
+//    public $birthdate;
+//    #[Rule('required|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+//    public string $place_of_birth;
+//    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+//    public string $place_of_birth_ar;
+//    #[Rule('required')]
+//    public $classroom_id;
+//    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+//    public string $medicine_desc = "";
+//    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+//    public string $medicine_desc_ar = "";
+//    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+//    public string $allergy_desc = "";
+//    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+//    public string $allergy_desc_ar = "";
+//    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+//    public string $health_problem_desc = "";
+//    #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
+//    public string $health_problem_desc_ar = "";
+//    #[Rule('nullable')]
+//    public string $note = "";
 
     public function mount()
     {

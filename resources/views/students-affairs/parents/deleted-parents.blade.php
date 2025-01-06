@@ -8,19 +8,6 @@
             </div>
         </div>
         <!-- table-hover table-striped -->
-
-        @if(empty($parents))
-            {{$parents}}
-            <div class="table-header">
-                {{-- the title and search --}}
-                <div class="row first-card ">
-                    <h4 class="col container-title mt-2">{{__('no parents')}}</h4>
-                </div>
-            </div>
-        @else
-            {{$parents}}
-            <h4 class="col container-title mt-2">{{__('This is the table')}}</h4>
-        @endif
         <div class="shadow-none mt-4">
             <div class="table-section card">
                 <table id="check_table">
