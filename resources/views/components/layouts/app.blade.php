@@ -9,8 +9,8 @@
 <div class="side-container" @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
     <div class="sidebar my-scroll">
 
-        <!-- ============= LIST ============== --> 
-        <div class="sidebar-nav"> 
+        <!-- ============= LIST ============== -->
+        <div class="sidebar-nav">
             <ul class="list-ul">
                                 {{-- the serch form shows only with phone style --}}
                                 <div class="search p-relative ph-search_m">
@@ -18,8 +18,8 @@
                                     placeholder="{{__('sidebar.search')}}" id="rtl" />
                                 </div>
                                 <hr class="ph-search_m">
-                @include('layouts.students-affairs.students')
                 @include('layouts.academic-department.academic-department')
+                @include('layouts.students-affairs.students')
                 @include('layouts.control-department.control-department')
                 @include('layouts.teachers.teachers')
                 @include('layouts.parents.parents')

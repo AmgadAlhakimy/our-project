@@ -322,11 +322,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="box">
-                    <button type="submit" class="btn save-button">
-                        {{__('public.save')}}
-                        <div wire:loading class="spinner-border spinner-border-sm"></div>
-                    </button>
+                <div class=" row">
+                    <div class="box col">
+                        <button type="submit" class=" save-button">
+                            {{__('public.update')}}
+                            <div wire:loading class="spinner-border spinner-border-sm"></div>
+                        </button>
+                    </div>
+                    <div class="box  col">
+                        <a href="{{route('display-students')}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                    </div>
                 </div>
                 <!-- End final box -->
             </form>
