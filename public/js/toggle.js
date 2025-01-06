@@ -13,15 +13,15 @@ const icons = [
     },
     {
         src: "assets/icons/pen.png",
-        position: { left: '550%', top: '30%' }
+        position: { left: '55%', top: '30%' }
     },
     {
         src: "assets/icons/study.png",
-        position: { left: '75%', top: '15%' }
+        position: { left: '70%', top: '15%' }
     },
     {
         src: "assets/icons/shape.png",
-        position: { left: '65%', top: '85%' }
+        position: { left: '85%', top: '85%' }
     }
 ];
 

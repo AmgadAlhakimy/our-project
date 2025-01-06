@@ -52,7 +52,8 @@
 .icon {
     width: 3vw; 
     height: auto; 
-    animation: move 2s infinite alternate;
+    animation: move 1s infinite alternate;
+    z-index: -1;
 }
 
 @keyframes move {
