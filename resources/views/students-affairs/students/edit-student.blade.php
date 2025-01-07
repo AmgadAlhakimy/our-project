@@ -6,7 +6,7 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-            <h3 class="container-title">{{__('student.choose parents')}}</h3>
+            <h3 class="container-title">{{__('student.choose superior')}}</h3>
             <div class="container  containers-style">
                 <div class="">
                     <div class="row box">
@@ -21,7 +21,7 @@
                                             data-id="{{ $father->id }}">{{ $father->father_name }}</option>
                                 @endforeach
                             </datalist>
-                            @error('parent_id')
+                            @error('parents_id')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                         </div>
@@ -31,10 +31,10 @@
                                 const options = list.getElementsByTagName('option');
                                 for (let option of options) {
                                     if (option.value === input.value) {
-                                    @this.set('parent_id', option.getAttribute('data-id'));
+                                    @this.set('parents_id', option.getAttribute('data-id'));
                                         break;
                                     }else {
-                                    @this.set('parent_id', 0);
+                                    @this.set('parents_id', 0);
                                     }
                                 }
                             }
@@ -47,7 +47,7 @@
             <form wire:submit="update" enctype="multipart/form-data">
                 @csrf
                 <!-- Start personal info  -->
-                <h3 class="container-title">{{__('student.create student')}}</h3>
+                <h3 class="container-title">{{__('student.edit student')}}</h3>
                 <div class="container containers-style">
                     <div class="row">
                         {{-- 1 --}}
@@ -315,7 +315,7 @@
                 <div class="container containers-style">
                     <div class="row">
                         <div class="box col-lg-12 col-md-12">
-                            <label class="form-label" for="std_Note">{{__('student.note')}}</label>
+                            <label class="form-label" for="std_Note">{{__('public.note')}}</label>
                             <textarea wire:model.live.debounce.500ms="note" class="form-control" id="std_Note"
                                       cols="50"
                                       rows="5">{{old('note')}}</textarea>

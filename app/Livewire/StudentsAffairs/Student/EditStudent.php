@@ -21,11 +21,11 @@ class EditStudent extends Component
     public $id;
     public string $current_photo = '';
 
-//    #[Rule('required|exists:parents,id')]
-//    public $parent_id = 0;
-//    #[Rule('required|max:100|regex:/^[a-zA-Z\s]+$/')]
-//    public string $name;
-//    #[Rule('required|max:100|regex:/^[\p{Arabic}\s]+$/u')]
+//    #[Rule('required')]
+//    public $parents_id;
+    #[Rule("required|u)|max:100|regex:/^[a-zA-Z\s]+$/")]
+    public string $name;
+//    #[Rule("required|max:100|regex:/^[\p{Arabic}\s]+$/u")]
 //    public string $name_ar;
     #[Rule('nullable|image|mimes:jpeg,png,jpg,gif|max:2048')]
     public $photo;
@@ -82,7 +82,7 @@ class EditStudent extends Component
             $this->health_problem_desc_ar = $student->getTranslation('health_problem_desc', 'ar');
             $this->note = $student->note;
             $this->classroom_id = $student->classroom_id;
-            $this->parent_id = $student->parents_id;
+            $this->parents_id = $student->parents_id;
             $this->search = $student->parents->father_name;
         } catch (\Exception $e) {
             error($e);
@@ -92,6 +92,7 @@ class EditStudent extends Component
     public function update()
     {
         $this->validate();
+//        dd('hello world');
         try {
             $student = Student::findorFail($this->id);
             $student->update([
@@ -139,7 +140,7 @@ class EditStudent extends Component
                 ],
                 'note' => $this->note,
                 'classroom_id' => $this->classroom_id,
-                'parents_id' => $this->parent_id,
+                'parents_id' => $this->parents_id,
 
             ]);
             if ($this->photo) {

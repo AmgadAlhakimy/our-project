@@ -44,9 +44,29 @@ class EditParents extends Component
             throw new ($e);
         }
     }
+    public function rules()
+    {
+        $rules = [
+            'father_name' => [
+                'required',
+                'max:50',
+                'regex:/^[a-zA-Z\s]+$/',
+                Rule::unique('your_table_name', 'father_name')->ignore($this->id),
+            ],
+//            'father_name_ar' => [
+//                'required',
+//                'max:50',
+//                'regex:/^[\p{Arabic}\s]+$/u',
+//                Rule::unique('your_table_name', 'father_name_ar')
+//                    ->ignore($this->route('id')), // Ignore the current ID
+//            ],
+        ];
 
+        return $rules;
+    }
     public function update()
     {
+        $this->rules();
         $this->validate();
         $this->set_nullable();
         try {
