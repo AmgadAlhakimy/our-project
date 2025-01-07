@@ -8,7 +8,7 @@
                 </div>
             @endif
             <form method="post" action="{{route('subjects.update',$subject->id)}}">
-                @method('PUT')
+                @method('PUT') 
                 @csrf
                 <h3 class="container-title">{{__('Subject.update Subject')}}</h3>
                 <div class="container containers-style">

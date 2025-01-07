@@ -159,8 +159,13 @@
                                                     <i class="fa-solid fa-trash-can danger_msg"></i>
                                                 </div>
                                             </div>
-                                            <div class="modal-body form-label">
-                                                {{__('public.are you sure you want to delete permanently').$parent->father_name}}
+                                            <div class="modal-body form-label row">
+                                                <div class="col-12">
+                                                    {{__('public.are you sure you want to delete')}}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{$parent->father_name}}
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">

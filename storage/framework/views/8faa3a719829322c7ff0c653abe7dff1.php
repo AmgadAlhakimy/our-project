@@ -11,7 +11,7 @@
 
         <!-- ============= LIST ============== -->
         <div class="sidebar-nav">
-            <ul class="list-ul"> 
+            <ul class="list-ul">
 
                 
                 <div class="search p-relative ph-search_m">
@@ -20,15 +20,8 @@
                 </div>
                 <hr class="ph-search_m">
 
-
-                
-                <?php echo $__env->make('layouts.students-affairs.students', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-
-                
-                <!-- ======================== STUDENTS ========================== -->
-
-                
                 <?php echo $__env->make('layouts.academic-department.academic-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('layouts.students-affairs.students', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <!-- ========== 5 ============ -->
                 <?php echo $__env->make('layouts.control-department.control-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <!-- ========== 5 ============ -->

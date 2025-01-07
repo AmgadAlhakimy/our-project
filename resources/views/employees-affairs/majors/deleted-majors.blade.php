@@ -76,8 +76,13 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">{{__('public.force delete')}}</h5>
                                             </div>
-                                            <div class="modal-body">
-                                                {{__('public.are you sure you want to delete').$major->name}}
+                                            <div class="modal-body form-label row">
+                                                <div class="col-12">
+                                                    {{__('public.are you sure you want to delete')}}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{$major->name}}
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

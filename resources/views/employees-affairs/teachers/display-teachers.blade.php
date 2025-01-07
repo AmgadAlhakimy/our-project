@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}
-        <h4 class="form-group container-title">{{__('teacher.fggfgf info')}}</h4>
+        <h4 class="form-group container-title">{{__('teacher.teachers info')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -237,8 +237,13 @@
                                                 <i class="fa-solid fa-trash-can danger_msg"></i>
                                             </div>
                                         </div>
-                                        <div class="modal-bodyform-label">
-                                            {{__('public.are you sure you want to delete').$teacher->name}}
+                                        <div class="modal-body form-label row">
+                                            <div class="col-12">
+                                                {{__('public.are you sure you want to delete')}}
+                                            </div>
+                                            <div class="col-12">
+                                                {{$teacher->name}}
+                                            </div>
                                         </div>
                                         <div class="modal-footer form-label">
                                             <button type="button" class="btn btn-danger clear-button ms-2 me-2"
