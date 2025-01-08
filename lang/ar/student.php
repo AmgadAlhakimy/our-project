@@ -112,6 +112,7 @@ return [
 
     'superior info'=> 'معلومات ولي الأمر',
     'edit superior'=> 'تعديل ولي الأمر',
+    'edit student'=> 'تعديل الطالب',
     'deleted superiors'=> 'أولياء الأمور المحذوفة',
 
     'medicine name in English'=>'اسم الدواء بالإنجليزية',
