@@ -16,8 +16,9 @@
         </div>
     </div>
 </li>
-<li class="dropdown">
-    <!-- ========== 2 ============ -->
+<li></li>
+<!-- ========== MAJOR ============ -->
+{{-- <li class="dropdown">
     <div class="sidebar-title">
         <a href="#" class="li-link title-4">
             <i class="icon-1 fa-solid fa-user-tie"></i>
@@ -32,9 +33,9 @@
             <a href="{{route('majors.show','deleted')}}" class="li-link">{{__('sidebar.deleted majors')}}</a>
         </div>
     </div>
-</li>
-<li class="dropdown">
-    <!-- ========== 2 ============ -->
+</li> --}}
+<!-- ========== EMPLOYEE ============ -->
+{{-- <li class="dropdown">
     <div class="sidebar-title">
         <a href="#" class="li-link title-4">
             <i class="icon-1 fa-solid fa-user-tie"></i>
@@ -49,9 +50,9 @@
             <a href="#" class="li-link">{{__('sidebar.deleted emb')}}</a>
         </div>
     </div>
-</li>
-<li class="dropdown">
-    <!-- ========== 2 ============ -->
+</li> --}}
+<!-- ========== EMPLOYEES AND TEACHERS RECORDS ============ -->
+{{-- <li class="dropdown">
     <div class="sidebar-title">
         <a href="#" class="li-link title-4">
             <i class="icon-1 fa-solid fa-user-tie"></i>
@@ -62,8 +63,7 @@
     <div class="submenu">
         <div class="line-black">
             <a href="#" class="li-link">{{__('sidebar.emb and teachers absent')}}</a>
-            {{-- translate --}}
             <a href="#" class="li-link">{{__('personnel-affairs.personnel records')}}</a>
         </div>
     </div>
-</li>
+</li> --}}

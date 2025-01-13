@@ -44,6 +44,7 @@
             </div>
             {{-- THE DROPDOWN MENEU 2 --}}
             {{-- home --}}
+            
             <div class=" me-1 ms-1 ph-home border-left">
                 <a class="card-info  " aria-current="page" href='/'>
                     <i class="mt-2 h2 icon-1 fa-solid fa-home-lg-alt"></i>
@@ -58,8 +59,8 @@
                 </div>
                 <ul class="menuLang sub_head_menu ">
                     {{-- HOME --}}
-                    <li>
-                        <a class="ph-home_m pe-3 ps-3 " aria-current="page" href='/'>
+                    <li class="ph-home_m">
+                        <a class=" pe-3 ps-3 " aria-current="page" href='/'>
                             {{__('sidebar.home')}}</a>
                     </li>
                     {{-- 1 --}}

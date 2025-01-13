@@ -2,24 +2,19 @@ const icons = [
     {
         src: "assets/icons/book.png",
         position: { left: '10%', top: '20%' },
-    },
-    {
+    },{
         src: "assets/icons/hand.png",
         position: { left: '30%', top: '40%' }
-    },
-    {
+    },{
         src: "assets/icons/leters.png",
         position: { left: '20%', top: '80%' }
-    },
-    {
+    },{
         src: "assets/icons/pen.png",
         position: { left: '55%', top: '30%' }
-    },
-    {
+    },{
         src: "assets/icons/study.png",
         position: { left: '70%', top: '15%' }
-    },
-    {
+    },{
         src: "assets/icons/shape.png",
         position: { left: '85%', top: '85%' }
     }
@@ -33,7 +28,7 @@ icons.forEach(icon => {
     img.alt = "أيقونة";
     img.classList.add('icon');
     
-    // تعيين الموضع
+    // تعيين موقع الصور
     img.style.position = 'absolute';
     img.style.left = icon.position.left;
     img.style.top = icon.position.top;
