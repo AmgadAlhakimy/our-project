@@ -24,7 +24,7 @@ return [
     'date of Activity'=>'Date of Activity',
     'other info'=>'Other Info',
     'activity'=>'Activity',
-    'DELETED ACTIVITIES'=>'DELETED ACTIVITIES',
+    'DELETED ACTIVITIES'=>'Deleted Activities',
     'activities'=>'Activities',
     'update Activity'=>'Update Activity: ',
     'please select an activity'=>'Please Select an Activity',

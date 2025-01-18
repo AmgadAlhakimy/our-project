@@ -46,6 +46,7 @@ Route::group(
         include 'create-pages.php';
         include 'edit-pages.php';
         include 'display-pages.php';
+        
 
 
         Route::get('/classrooms/{educationalLevelId}', function ($educationalLevelId) {
@@ -82,6 +83,10 @@ Route::group(
         Route::get('absence_class', function () {
             return view('teachers-affairs/absence/absent_student_class');
         });
+        // 
+        Route::get('check_out', function () {
+            return view(view: 'teachers-affairs/check-out/creat_check_out');
+        });
         // -----------------------
         // student_info
         Route::get('student_info', function () {
@@ -93,6 +98,10 @@ Route::group(
         // absence
         Route::get('absence', function () {
             return view('students-affairs/absence/absent_students');
+        });
+        // Distribution_of_powers.blade
+        Route::get('Distribution_of_powers', function () {
+            return view('layouts/powers/Distribution_of_powers');
         });
 
         // ========================

@@ -72,7 +72,7 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href='/absence_class' class="li-link">{{__('sidebar.تحضير طلاب الروضة')}}</a>
+                <a href={{route('absents.create')}} class="li-link">{{__('sidebar.تحضير طلاب الروضة')}}</a>
                 <a href='/index_absence' class="li-link">{{__('sidebar.عرض غياب طلاب الروضة')}}</a>
                 <a href='#' class="li-link">ثالث</a>
                 <a href='#' class="li-link">رابع</a>
@@ -80,4 +80,21 @@
             </div>
         </div>
     </li>
-    {{-- ---الآباء--- --}}
+    {{-- الانصراف --}}
+    <p class="title">{{__('sidebar.check out section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
+    {{-- check out section --}}
+    <li class="dropdown">
+        <div class="sidebar-title">
+            <a href="#" class="li-link title-4">
+                <i class="icon-1 fa-solid fa-list-check"></i>
+                <span class="menu-name"> التحضير والغياب  </span>
+                <i class="icon-1 fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+        <div class="submenu">
+            <div class="line-black">
+                <a href='/check_out' class="li-link">{{__('sidebar.create check out')}}</a>
+                <a href='/' class="li-link">{{__('sidebar.display check out')}}</a>
+            </div>
+        </div>
+    </li>

@@ -217,9 +217,10 @@
                                 {{$student->name}}
                             </div>
                         </td>
-                        <td><img
+                            <td><img
                                 src="{{asset('storage/'.$student->photo)}}"
-                                class="student-img" alt="photo"></td>
+                                class="student-img" alt="photo">
+                            </td>
                         <td>
                             <div class="td_rect">
                                 {{$student->address}}

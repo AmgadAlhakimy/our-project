@@ -81,7 +81,7 @@
                                 @endif
                             </div>
                         </button>
-                    </th>
+                    </th> 
                     <th colspan="">
                         <div class="th-head-4 form-label">{{__('public.processes')}} </div>
                     </th>
@@ -115,7 +115,7 @@
                         </td>
                         <td>
                             <a href="{{route('educational-levels.edit',$Level->id)}}"
-                               class="btn save-button btn-success w-25 me-1 ms-1 ">
+                                class="btn save-button btn-success w-25 me-1 ms-1 ">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{-- {{__('public.edit')}} --}}
                             </a>
@@ -129,8 +129,8 @@
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$Level->id}}"
-                                 tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
+                                    tabindex="-1" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">

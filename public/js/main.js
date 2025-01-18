@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded", function () {
     const body = document.querySelector("body");
 
     function checkScreenWidth() {
-        if (window.innerWidth < 560) {
+        if (window.innerWidth < 585) {
             my_toggle.style.margin = "0px 0px 0px 0px";
             my_toggle.classList.remove("active");
         }
@@ -318,7 +318,10 @@ function populateClassrooms() {
     this.value = this.value.replace(/\s+/g, '');
 });
 
-
-
 // -----------------------------
 
+var modal = document.getElementById("infoModal");
+var btn = document.getElementById("triggerModal");
+var span = document.getElementById("closeModal");
+
+// عند النقر على الزر، يتم عرض الـ Modal

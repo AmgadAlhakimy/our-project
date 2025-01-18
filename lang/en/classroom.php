@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'create new class'=>'CREATE NEW CLASS',
+    'create new class'=>'Create New Class',
     'delete classrooms'=>'delete classrooms',
 
     'classroom name in english'=>'Class Name in English',

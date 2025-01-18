@@ -2,9 +2,9 @@
 @section('content')
     <main class="main ">
         <section class="section card-body">
-            @if(Session::has('success'))
+            @if(Session::has('success')) 
                 <div class="alert alert-success" role="alert">
-                    {{Session::get('success')}}
+                    {{Session::get('success')}} 
                 </div>
             @endif
             <form method="post" action="{{route('educational-levels.store')}}">

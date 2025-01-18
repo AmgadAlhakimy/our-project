@@ -45,11 +45,18 @@
             {{-- THE DROPDOWN MENEU 2 --}}
             {{-- home --}}
             
+            {{--  --}}
+            <div class=" me-1 ms-1 ph-home ">
+                <a class="card-info  " aria-current="page" href='/Distribution_of_powers'>
+                    <i class="mt-2 h1 icon-1 fa-solid fa-gear"></i>
+                </a>
+            </div>
             <div class=" me-1 ms-1 ph-home border-left">
                 <a class="card-info  " aria-current="page" href='/'>
                     <i class="mt-2 h2 icon-1 fa-solid fa-home-lg-alt"></i>
                 </a>
             </div>
+
             {{-- -------------------- --}}
             <div class=" dropDownLang sec_menu ">
                 <div class="select shadow-none border-none">

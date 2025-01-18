@@ -50,6 +50,7 @@ ul {
     --school-color-6: #f7cf28;
     --school-color-7: #488bb3;
     --school-color-8: #3dbbc8;
+    --school-green: #4CAF50;
     --sidebar-bg: #fff;
     --sidebar-head-bg: #fff;
     --border-color: #eee;
@@ -317,6 +318,19 @@ body[dir="rtl"] .clear-button{
 .save-button {
     color: var(--school-color-3);
 }
+.btn-success:hover {
+    background-color: var(--school-green);
+    border: none;
+}
+.btn-success:hover, .btn-danger:hover {
+    border: none;
+}
+.btn-success.clicked, .btn-danger:active {
+    outline: none;
+}
+
+
+
 .save-button:active {
     color: var(--green-color);
 }
@@ -1159,6 +1173,7 @@ body[dir="rtl"].p-der{
     .clear-button {
         width: 80px;
         font-size: 15px;
+        margin: 0;
     }
     .logo-img{
         width: 110px;
@@ -1254,7 +1269,8 @@ body[dir="rtl"].p-der{
     .save-button,
     .clear-button {
         /* width: 100px; */
-        font-size: 12px;
+        font-size: 10px;
+        margin: 0;
     }
     .logo-img{
         width: 90px;
@@ -1337,5 +1353,11 @@ body[dir="rtl"] .modal-dialog{
     
     /* margin-top: 0px; */
     
+}
+.text_end{
+    text-align: end;
+}
+.text_start{
+    text-align: start;
 }
 

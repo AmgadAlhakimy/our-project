@@ -118,7 +118,7 @@
                                                     {{$activity->name}}
                                                 </div>
                                             </div>
-                                            <div class="modal-footer">
+                                            <div class="modal-footer ">
                                                 <button type="button" class="btn btn-danger clear-button ms-2 me-2" data-bs-dismiss="modal">
                                                     {{__('public.cancel')}}</button>
                                                 <form method="post" action="{{route('activities.forceDelete',$activity->id)}}">

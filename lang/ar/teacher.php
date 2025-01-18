@@ -14,6 +14,10 @@ return [
     */
 
     'teachers info'=>'معلومات المعلم',
+    'teachers'=>'المعلمين',
+    'add new teacher'=>'اضافة معلم جديد',
+    'update teacher'=>'تعديل معلم ',
+
     'deleted teachers'=>'المعلمين المحذوفين',
     'teacher name in english'=>'اسم المعلم بالإنجليزية',
     'teacher name in arabic'=>'اسم المعلم بالعربية',
@@ -21,7 +25,7 @@ return [
     'phone'=>'الهاتف',
     'address'=>'العنوان',
     'functional data'=>'المعلومات الوظيفية',
-    'qualification'=>'المؤهل',
+    'qualification'=>'المؤهل', 
     'high school'=>'ثانوية عامة',
     'diploma'=>'دبلوم',
     'bachelor'=>'بكالوريوس',

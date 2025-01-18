@@ -8,7 +8,7 @@
 }
 .personal_img{
     border-radius: 15px;
-    border: 4px solid white;
+    border: 4px solid white; 
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 5PX;
@@ -33,5 +33,17 @@
 body[dir="rtl"] .cards_info_style{
     box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.1);
 }
-
+.permission {
+    /* margin: 10px 0; */
+}
+.sub-permissions {
+    display: flex;
+    flex-direction: column;
+}
+/* text-box dir */
+body[dir="rtl"] .sub-permissions .check_style i {
+    left: 20px;
+}.sub-permissions .check_style i {
+    left: -20px;
+}
 

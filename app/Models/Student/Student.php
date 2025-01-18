@@ -2,6 +2,7 @@
 
 namespace App\Models\Student;
 
+use App\Models\Absent;
 use App\Models\Classroom\Classroom;
 use App\Models\FollowUpChild;
 use App\Models\Mark;
@@ -30,7 +31,7 @@ class Student extends Model
         'has_allergy', 'allergy_desc',
         'has_health_problem', 'health_problem_desc',];
 
-    public function classroom()
+    public function classroom( )
     {
         return $this->belongsTo(Classroom::class);
     }
@@ -51,4 +52,8 @@ class Student extends Model
 
         return $this->hasMany(FollowUpChild::class);
     }
+    
+    public function absents(){
+        return $this->hasMany(Absent::class);
+}
 }

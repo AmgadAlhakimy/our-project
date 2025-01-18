@@ -14,7 +14,9 @@ return [
     */
 
     //create educational Level
-    'create new educational Level'=>'إدخال مرحلة دراسية جديدة',
+    'educational Level'=>'المرحلة الدراسية',
+
+    'create new educational Level'=>'إدخال مرحلة دراسية',
     'update educational Level'=>'تعديل المرحلة الدراسية',
     'DELETED EDUCATIONAL LEVELS'=>'حذف مرحلة دراسية',
 

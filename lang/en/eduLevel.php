@@ -15,6 +15,7 @@ return [
 
     
     //create educational Level
+    'educational Level'=>'EDUCATIONAL LEVEL',
     'create new educational Level'=>'CREATE NEW EDUCATIONAL LEVEL',
     'update educational Level'=>'Update Educational Level',
     'DELETED EDUCATIONAL LEVELS'=>'DELETED EDUCATIONAL LEVELS',
