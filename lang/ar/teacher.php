@@ -61,5 +61,10 @@ return [
     'you have already chosen this teacher and classroom'=>
         'لقد تم توزيع الصفوف لهذا المعلم مسبقاً لايمكنك الأن سوى التعديل عليه',
 
+    'new check out'=>'تسجيل الانصراف',
+    'display check out'=>'عرض الانصراف',
+    'dispaly absent children'=>'عرض الأطفال الغائبين',
+
+
 
 ];

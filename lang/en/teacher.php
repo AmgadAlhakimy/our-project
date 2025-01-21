@@ -43,7 +43,8 @@ return [
     'TO TAKE HOME'=>'TAKE HOME',
     'NOTE'=>'NOTE',
     'for all students'=>'Add For All Students',
-    'show the absent children'=>'Show the Absent Children',
+    
+    'dispaly absent children'=>'Display Absent Children',
     'absent children'=>'Absent Children',
 
     'subject'=>'Subject',
@@ -56,6 +57,11 @@ return [
     Teacher Have Already Been Distributed, and You Can Now Only Modify Them',
     'you have already chosen this teacher and classroom'=>'The Classrooms for this
     Teacher Have Already Been Distributed, and You Can Now Only Modify Them',
+    
+    
+    'new check out'=>'New Check Out',
+    'display check out'=>'Display Check Out',
+
 
 
 

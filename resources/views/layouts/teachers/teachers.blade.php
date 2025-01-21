@@ -5,9 +5,9 @@
             {{-- ---المعلمين--- --}}
     
     <!-- ======================== TEACHERS ========================== -->
-    <li class="dropdown">
     <!-- ========== 1 ============ -->
     <!-- دفتر المتابعة المدرسة -->
+    {{-- <li class="dropdown">
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-children"></i>
@@ -22,64 +22,101 @@
                 <a href='#' class="li-link">تقارير دفتر المتابعة</a>
             </div>
         </div>
-    </li>
-    <li class="dropdown">
+    </li> --}}
     <!-- ========== 2 ============ -->
-    <!-- دفتر المتابعة الروضة -->
+    <!--انشاء دفتر المتابعة الروضة -->
+    <li class="dropdown">
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-baby"></i>
-                <span class="menu-name">دفتر متابعة روضة</span>
+                <span class="menu-name">{{__('student.Daily Follow-Up')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">KG1</a>
-                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('sidebar.عرض دفتر المابعة (الروضة)')}}</a>
-                <a href='#' class="li-link"> تقارير دفتر المتابعة</a>
+                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.Reception')}}</a>
+                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.Nursery')}}</a>
+                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.KG1')}}</a>
+                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.KG2')}}</a>
+            </div>
+        </div>
+    </li>
+    <!-- عرض دفتر المتابعة الروضة -->
+    <li class="dropdown">
+        <div class="sidebar-title">
+            <a href="#" class="li-link title-4">
+                <i class="icon-1 fa-solid fa-baby"></i>
+                <span class="menu-name">{{__('student.Display Daily Follow-Up')}}</span>
+                <i class="icon-1 fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+        <div class="submenu">
+            <div class="line-black">
+                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.Reception')}}</a>
+                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.Nursery')}}</a>
+                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.KG1')}}</a>
+                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.KG2')}}</a>
             </div>
         </div>
     </li>
     <!-- ========== 2 ============ -->
     <!-- اضافة درجات / المحصلة -->
-        <li class="dropdown">
-        <div class="sidebar-title">
-            <a href="#" class="li-link title-4">
-                <i class="icon-1 fa-solid fa-marker"></i>
-                <span class="menu-name"> اضافة الدرجات </span>
-                <i class="icon-1 fa-solid fa-chevron-down"></i>
-            </a>
-        </div>
-        <div class="submenu">
-            <div class="line-black">
-                {{-- <a href="{{route('marks.insertMarks',2)}}" class="li-link">رياضيات \ ثالث</a> --}}
-                <a href='{{route('marks.insert',1)}}' class="li-link">علوم الحاسوب \ اول</a>
-
-                <a href="#" class="li-link"> تقارير </a>
+        {{-- <li class="dropdown">
+            <div class="sidebar-title">
+                <a href="#" class="li-link title-4">
+                    <i class="icon-1 fa-solid fa-marker"></i>
+                    <span class="menu-name"> اضافة الدرجات </span>
+                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                </a>
             </div>
-        </div>
-    </li>
+            <div class="submenu">
+                <div class="line-black">
+                    <a href="{{route('marks.insertMarks',2)}}" class="li-link">رياضيات \ ثالث</a>
+                    <a href='{{route('marks.insert',1)}}' class="li-link">علوم الحاسوب \ اول</a>
+                    <a href="#" class="li-link"> تقارير </a>
+                </div>
+            </div>
+        </li> --}}
     <!-- ========== 3 ============ -->
     <!-- التحضير والغياب -->
     <li class="dropdown">
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name"> التحضير والغياب  </span>
+                <span class="menu-name">{{__('teacher.absent children')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href={{route('absents.create')}} class="li-link">{{__('sidebar.تحضير طلاب الروضة')}}</a>
-                <a href='/index_absence' class="li-link">{{__('sidebar.عرض غياب طلاب الروضة')}}</a>
-                <a href='#' class="li-link">ثالث</a>
-                <a href='#' class="li-link">رابع</a>
-                <a href='#' class="li-link">تقارير الغياب</a>
+                <a href={{route('absents.create')}} class="li-link">{{__('public.Reception')}}</a>
+                <a href={{route('absents.create')}} class="li-link">{{__('public.Nursery')}}</a>
+                <a href={{route('absents.create')}} class="li-link">{{__('public.KG1')}}</a>
+                <a href={{route('absents.create')}} class="li-link">{{__('public.KG2')}}</a>
             </div>
         </div>
     </li>
+    <!-- ========== 3 ============ -->
+    <!-- عرض التحضير والغياب -->
+    <li class="dropdown">
+        <div class="sidebar-title">
+            <a href="#" class="li-link title-4">
+                <i class="icon-1 fa-solid fa-list-check"></i>
+                <span class="menu-name">{{__('teacher.dispaly absent children')}}</span>
+                <i class="icon-1 fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+        <div class="submenu">
+            <div class="line-black">
+                <a href='/index_absence' class="li-link">{{__('public.Reception')}}</a>
+                <a href='/index_absence' class="li-link">{{__('public.Nursery')}}</a>
+                <a href='/index_absence' class="li-link">{{__('public.KG1')}}</a>
+                <a href='/index_absence' class="li-link">{{__('public.KG2')}}</a>
+            </div>
+        </div>
+    </li>
+    <!-- ========== 3 ============ -->
     {{-- الانصراف --}}
     <p class="title">{{__('sidebar.check out section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
     {{-- check out section --}}
@@ -87,14 +124,33 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name"> التحضير والغياب  </span>
+                <span class="menu-name">{{__('teacher.new check out')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href='/check_out' class="li-link">{{__('sidebar.create check out')}}</a>
-                <a href='/' class="li-link">{{__('sidebar.display check out')}}</a>
+                <a href='/check_out' class="li-link">{{__('public.Reception')}}</a>
+                <a href='/check_out' class="li-link">{{__('public.Nursery')}}</a>
+                <a href='/check_out' class="li-link">{{__('public.KG1')}}</a>
+                <a href='/check_out' class="li-link">{{__('public.KG2')}}</a>
+            </div>
+        </div>
+    </li>
+    <li class="dropdown">
+        <div class="sidebar-title">
+            <a href="#" class="li-link title-4">
+                <i class="icon-1 fa-solid fa-list-check"></i>
+                <span class="menu-name">{{__('teacher.display check out')}}</span>
+                <i class="icon-1 fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+        <div class="submenu">
+            <div class="line-black">
+                <a href='#' class="li-link">{{__('public.Reception')}}</a>
+                <a href='#' class="li-link">{{__('public.Nursery')}}</a>
+                <a href='#' class="li-link">{{__('public.KG1')}}</a>
+                <a href='#' class="li-link">{{__('public.KG2')}}</a>
             </div>
         </div>
     </li>

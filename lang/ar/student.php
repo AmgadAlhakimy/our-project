@@ -74,7 +74,6 @@ return [
     'more info'=>'المزيد',
     'birth date'=> 'تاريخ الميلاد',
     'birth place'=> 'مكان الميلاد',
-    'Daily Follow-Up' => 'دفتر المتابعة',
     'level'=>'المرحلة الدراسية',
 
     'student info'=>'معلومات الطالب',
@@ -123,5 +122,9 @@ return [
 
     'health problem description in English'=>'وصف المشكلة الصحية بالإنجليزية',
     'health problem description in Arabic'=>'وصف المشكلة الصحية بالعربية',
+
+    'Daily Follow-Up' => 'دفتر المتابعه',
+    'Display Daily Follow-Up' => 'عرض دفتر المتابعه',
+
 
 ];

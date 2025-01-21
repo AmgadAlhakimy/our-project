@@ -15,10 +15,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('eduLevel.educational Level')}}
                         </div>
                     </label>
@@ -79,10 +81,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('classroom.classroom')}}
                         </div>
                     </label>
@@ -142,10 +146,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('activity.activity')}}
                         </div>
                     </label>
@@ -205,10 +211,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('subject.subjects')}}
                         </div>
                     </label>
@@ -268,10 +276,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('teacher.teachers')}}
                         </div>
                     </label>
@@ -338,10 +348,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('public.ولي_امر')}}
                         </div>
                     </label>
@@ -401,10 +413,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('public.طالب')}}
                         </div>
                     </label>
@@ -471,10 +485,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('public.دفتر_المتابعه')}}
                         </div>
                     </label>
@@ -545,10 +561,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('public.تحضير')}}
                         </div>
                     </label>
@@ -594,10 +612,12 @@
                 <div class="cards_info_style">
                     <label class="mt-2">
                         <div class="form-label row ">
-                                <label class="check_style col mt-2 me-1 ms-1 " >
+                            <div class="check_div mt-2">  
+                                <label class="check_style col me-1 ms-1 " >
                                     <input type="checkbox" class="" id="classMain" >
                                     <i class=""></i>
                                 </label>
+                            </div>
                                 {{__('public.الانصراف')}}
                         </div>
                     </label>

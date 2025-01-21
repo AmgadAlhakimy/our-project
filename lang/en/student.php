@@ -75,13 +75,13 @@ return [
 
     "father name"=>"father name",
     "father work"=>"father work",
-    "father contact 1"=>"father contact 1",
-    "father contact 2"=>"father contact 2",
+    "father contact 1"=>"father contact1",
+    "father contact 2"=>"father contact2",
 
     "mother name"=>"Mother name",
     "mother work"=>"Mother work",
-    "mother contact 1"=>"mother contacts 1",
-    "mother contact 2"=>"mother contacts 2",
+    "mother contact 1"=>"mother contacts1",
+    "mother contact 2"=>"mother contacts2",
 
     'student allergy'=>'student allergy',
     'student health problem'=>'student health problem',
@@ -117,4 +117,7 @@ return [
     'allergy description in Arabic'=>'Allergy description in Arabic',
     'health problem description in English'=>'Health problem description in English',
     'health problem description in Arabic'=>'Health problem description in Arabic',
+
+    'Daily Follow-Up'=> 'Daily Follow Up ',
+    'Display Daily Follow-Up' => 'Display Daily Follow Up',
 ];

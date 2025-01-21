@@ -103,4 +103,11 @@ return [
     
     'home text'=>'Kindergarten and schools of PLANET JUNIORS ACADEMY',
 
+
+
+
+    'Reception'=>'Reception',
+    'Nursery'=>'Nursery',
+    'KG1'=>'KG1',
+    'KG2'=>'KG2',
 ];

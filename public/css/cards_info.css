@@ -46,4 +46,8 @@ body[dir="rtl"] .sub-permissions .check_style i {
 }.sub-permissions .check_style i {
     left: -20px;
 }
+.check_div{
+    width: auto;
+    height: 25px;
+}
 
