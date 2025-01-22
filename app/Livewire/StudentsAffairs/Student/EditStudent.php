@@ -57,11 +57,14 @@ class EditStudent extends Component
 //    public string $health_problem_desc_ar = "";
 //    #[Rule('nullable')]
 //    public string $note = "";
+    public  $classroom_name;
+
 
     public function mount()
     {
         try {
             $student = Student::findorFail($this->id);
+            $this->classroom_name=$student->classroom->name;
             $this->name = $student->getTranslation('name', 'en');
             $this->name_ar = $student->getTranslation('name', 'ar');
             $this->current_photo = $student->photo;

@@ -5,7 +5,7 @@
 
         {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
         {{-- the table header with bottuns and search input --}}
-        
+
         <div class="table-header">
             {{-- the title and search --}}
             <form method="post" action="{{route('students.search')}}">
@@ -22,7 +22,7 @@
 
             <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
-                    <h4 class=" text-center Names">frist grade</h4>
+                    <h4 class=" text-center Names">{{$class_name}}</h4>
                 </div>
                 <div class="card-info card-info_2 col ">
                     <h4 class="text-center ">Month</h4>
@@ -42,7 +42,7 @@
                         <th class="th-head-1 form-label">{{__('public.photo')}}</th>
                         <th class="th-head-1 form-label ">{{__('public.absent')}}</th>
                         <th class="th-head-3 form-label">{{__('teacher.absent reason')}}</th>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
@@ -80,7 +80,7 @@
             </table>
             </div>
         </div>
-        
+
         <div class=" mt-5">
             <div class="box row ">
                 <div class="col">
@@ -91,6 +91,6 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 @endsection

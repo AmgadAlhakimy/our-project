@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Absent;
+use App\Models\Classroom\Classroom;
 use App\Models\Student\Student;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreAbsentRequest;
@@ -21,19 +22,43 @@ class AbsentController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($id)
     {
-        
+
         try {
-            $students = Student::where('classroom_id',1) -> get();
+            $students = Student::where('classroom_id',$id) -> get();
             return view('teachers-affairs/absence/absent_student_class',
                 compact("students"));
-            
+
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
 
     }
+    public function newAbsent($id)
+    {
+
+        try {
+            $students = Student::where('classroom_id',$id) -> get();
+//            $classroom = Classroom::where('id',$id) -> get();
+            $classroom = Classroom::select('name')->where('id', $id)->first();
+            if ($classroom) {
+                $class_name = $classroom->name;
+            } else {
+                $class_name = '';
+                // Handle the case where the classroom is not found
+            }
+            return view('teachers-affairs/absence/absent_student_class',
+                compact("students",'class_name'));
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+
+    }
+
+
+
 
     /**
      * Store a newly created resource in storage.

@@ -264,4 +264,10 @@ class FollowUpChildController extends Controller
     {
         //
     }
+
+    public function displayClasses()
+    {
+        return $classrooms = Classroom::all();
+
+    }
 }

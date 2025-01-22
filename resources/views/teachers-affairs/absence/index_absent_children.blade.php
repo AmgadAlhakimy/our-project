@@ -1,4 +1,4 @@
-{{------------ واجهة عرض دفتر المتابعة الخاص بطلاب الروضة ----------------}}
+                {{------------ واجهة عرض دفتر المتابعة الخاص بطلاب الروضة ----------------}}
 @extends('layouts.sidebar')
 @section('content')
     <?php $counter = 1 ?>
@@ -44,7 +44,7 @@
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none"> 
+        <div class="table-section shadow-none">
             <div class="card table-section ">
                 <table  >
                     <thead >
@@ -69,7 +69,7 @@
                             <td>
                                 {{-- {{$student->name}} --}}
                             </td>
-                            <td><img class="student-img" 
+                            <td><img class="student-img"
                                 {{-- src="{{$student->photo}}" alt="" --}}></td>
                             <td>
                                 <div class="mt-2 check_style">
@@ -77,7 +77,7 @@
                                         <input class=" " type="checkbox" name=""  id="" value="{{old('')}}"  >
                                         <i></i>
                                     </label>
-                                </div> 
+                                </div>
                             </td>
                             <td><label for="">7:30am</label></td>
                             <td><label for="">he was stupid</label></td>

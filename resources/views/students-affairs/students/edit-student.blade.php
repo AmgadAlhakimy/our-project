@@ -31,10 +31,12 @@
                                 const options = list.getElementsByTagName('option');
                                 for (let option of options) {
                                     if (option.value === input.value) {
-                                    @this.set('parents_id', option.getAttribute('data-id'));
+                                    @this.set('parents_id', option.getAttribute('data-id'))
+                                        ;
                                         break;
-                                    }else {
-                                    @this.set('parents_id', 0);
+                                    } else {
+                                    @this.set('parents_id', 0)
+                                        ;
                                     }
                                 }
                             }
@@ -171,10 +173,11 @@
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="className" class="form-label">{{__('student.level')}}</label>
-                            <select class="form-control" wire:model.live.debounce.500ms="selectedLevel">
+                            <select class="form-control" wire:model.live.debounce.500ms="selectedLevel" >
                                 <option value="" selected>{{__('public.select level')}}</option>
                                 @foreach($levels as $level)
-                                    <option class="text-center" value="{{$level->id}}">{{$level->name}}</option>
+                                    <option class="text-center"
+                                            value="{{$level->id}}">{{$level->name}}</option>
                                 @endforeach
                             </select>
                             @error('selectedLevel')
@@ -183,7 +186,9 @@
                         </div>
 
                         <div class="box col-lg-6 col-md-6">
-                            <label for="classroom" class="form-label">{{__('classroom.classroom')}}</label>
+                            <label for="classroom" class="form-label">{{__('classroom.classroom')}}:
+                                <span class="title-3"> {{$classroom_name}}</span>
+                            </label>
                             <select id="classroom" class="form-control"
                                     wire:model.live.debounce.500ms="classroom_id">
                                 @if(!is_null($selectedLevel))
@@ -191,7 +196,7 @@
                                         <option value="{{$classroom->id}}">{{$classroom->name}}</option>
                                     @endforeach
                                 @else
-                                <option value="" selected>{{__('student.select educational level first')}}</option>
+                                    <option value="" selected>{{__('student.select educational level first')}}</option>
                                 @endif
                             </select>
                             @error('classroom_id')
@@ -242,7 +247,7 @@
                             {{-- ---- --}}
                             <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                 <input class="toggle col" type="checkbox" wire:click="flip(1)"
-                                       id="haveAllergy"  {{($checks[1]) ? 'checked' :''}}
+                                       id="haveAllergy" {{($checks[1]) ? 'checked' :''}}
                                        value="{{old('have_allergy')}}">
 
                                 <label class="form-label col rounded" for="haveAllergy"></label>

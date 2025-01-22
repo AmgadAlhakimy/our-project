@@ -25,8 +25,9 @@
                 <!-- ========== 5 ============ -->
                     {{-- @include('layouts.control-department.control-department') --}}
                 <!-- ========== 5 ============ -->
-                    @include('layouts.teachers.teachers')
+{{--                    @include('layouts.teachers.teachers')--}}
 
+                @livewire('follow-up')
                 <!-- ======================== PARENTS ========================== -->
                     @include('layouts.parents.parents')
 

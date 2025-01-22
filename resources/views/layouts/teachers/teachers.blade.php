@@ -1,9 +1,10 @@
 
 {{--                                    teachers                             --}}
-            
+<div>
+
     <p class="title">{{__('sidebar.teacher section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
             {{-- ---المعلمين--- --}}
-    
+
     <!-- ======================== TEACHERS ========================== -->
     <!-- ========== 1 ============ -->
     <!-- دفتر المتابعة المدرسة -->
@@ -14,7 +15,7 @@
                 <span class="menu-name">دفتر متابعة مدرسة</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
-        </div> 
+        </div>
         <div class="submenu">
             <div class="line-black">
                 <a href='/school' class="li-link">علوم \ سادس </a>
@@ -25,7 +26,7 @@
     </li> --}}
     <!-- ========== 2 ============ -->
     <!--انشاء دفتر المتابعة الروضة -->
-    <li class="dropdown">
+    <li class="dropdown" >
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-baby"></i>
@@ -35,10 +36,11 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.Reception')}}</a>
-                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.Nursery')}}</a>
-                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.KG1')}}</a>
-                <a href="{{route('follow_up_children.writingFollowUp',1)}}" class="li-link">{{__('public.KG2')}}</a>
+
+                @foreach($classrooms as $classroom)
+                <a href="{{route('follow_up_children.writingFollowUp',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
+                @endforeach
+
             </div>
         </div>
     </li>
@@ -53,10 +55,9 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.Reception')}}</a>
-                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.Nursery')}}</a>
-                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.KG1')}}</a>
-                <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="li-link">{{__('public.KG2')}}</a>
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('follow_up_children.displayAllChildren',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
+                @endforeach
             </div>
         </div>
     </li>
@@ -90,10 +91,9 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href={{route('absents.create')}} class="li-link">{{__('public.Reception')}}</a>
-                <a href={{route('absents.create')}} class="li-link">{{__('public.Nursery')}}</a>
-                <a href={{route('absents.create')}} class="li-link">{{__('public.KG1')}}</a>
-                <a href={{route('absents.create')}} class="li-link">{{__('public.KG2')}}</a>
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('newAbsent',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
+                @endforeach
             </div>
         </div>
     </li>
@@ -154,3 +154,4 @@
             </div>
         </div>
     </li>
+</div>

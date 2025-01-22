@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\AbsentController;
 use App\Http\Controllers\FollowUpChild\FollowUpChildController;
 use App\Http\Controllers\FollowUpStudentController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,10 @@ Route::get('follow-up-children/editAllChildren/{classroom_id}',
     [FollowUpChildController::class, 'editAllChildren'])
     ->name('follow_up_children.editAllChildren');
 
+Route::get('follow-up-children/absent/{classroom_id}',
+    [AbsentController::class, 'newAbsent'])
+    ->name('newAbsent');
+
 Route::get('follow-up-children/updateAllChildren/{classroom_id}',
     [FollowUpChildController::class, 'updateAllChildren'])
     ->name('follow_up_children.updateAllChildren');
@@ -37,4 +42,8 @@ Route::get('follow-up-children/updateAllChildren/{classroom_id}',
 Route::get('follow-up-children/display/{classroom_id}',
     [FollowUpChildController::class, 'displayAllChildren'])
     ->name('follow_up_children.displayAllChildren');
+
+Route::get('follow-up-children/display-classes',
+    [FollowUpChildController::class, 'displayClasses'])
+    ->name('follow_up_children.display-classes');
 
