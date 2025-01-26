@@ -25,8 +25,24 @@
                 <!-- ========== 5 ============ -->
                     
                 <!-- ========== 5 ============ -->
-                    <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
+
+                <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('follow-up');
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-3043576435-0', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
                 <!-- ======================== PARENTS ========================== -->
                     <?php echo $__env->make('layouts.parents.parents', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
