@@ -712,6 +712,9 @@ body[dir="rtl"] .border-left{
 .radus-10{
     border-radius: 10px;
 }
+.btn-danger,.btn-success,.btn-info{
+    border-radius: 15px;
+}
 
 
 /* --------------------- pargraph style */

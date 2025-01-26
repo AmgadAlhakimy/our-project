@@ -92,6 +92,10 @@ Route::group(
         Route::get('student_info', function () {
             return view('parents/student_info');
         });
+        // tested
+        Route::get('/follow_up_date', function () {
+            return view('teachers-affairs/follow_up_children/follow_up_children_date');
+        })->name('follow-up-date');
 
 
         // you have check on this code
