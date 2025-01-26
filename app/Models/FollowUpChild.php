@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Classroom\Classroom;
 use App\Models\Student\Student;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ class FollowUpChild extends Model
 
 
     protected $fillable = ['subject','homework', 'bath', 'snack',
-                            'food','student_id','note'];
+                            'food','student_id','note','classroom_id'];
     protected $translatable = ['bath', 'snack', 'food'];
     protected $casts =[
         'subject' => 'array',
@@ -24,4 +25,9 @@ class FollowUpChild extends Model
     {
         return $this->belongsTo(Student::class);
     }
+
+//    public function classroom()
+//    {
+//        return $this->belongsTo(Classroom::class);
+//    }
 }

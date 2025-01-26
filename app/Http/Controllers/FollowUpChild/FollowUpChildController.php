@@ -42,7 +42,9 @@ class FollowUpChildController extends Controller
             $classroom = Classroom::findorfail($classroom_id);
             $month = Carbon::now()->format('F j');
             $date = Carbon::now()->format('Y-m-d');
-            $follow_up = FollowUpChild::where('created_at', 'like', "%$date%")->get();
+            $follow_up = FollowUpChild::where('created_at', 'like', "%$date%" )
+                ->where('classroom_id',$classroom_id)
+                ->get();
 
             return view('teachers-affairs/follow_up_children.display_follow_up_children',
                 compact('classroom', 'follow_up', 'month'));
@@ -58,6 +60,7 @@ class FollowUpChildController extends Controller
             if (count($classroom->subjects) === 0) {
                 return redirect()->back()->with(['error' => __('follow_up.sorry this classroom does not have subjects')]);
             }
+
             $month = Carbon::now()->format('F j');
             return view('teachers-affairs/follow_up_children.writing_in_follow_up_children',
                 compact('classroom', 'month'));
@@ -100,7 +103,7 @@ class FollowUpChildController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function storeChild(StoreFollowUpChildRequest $request, $student_id)
+    public function storeChild(StoreFollowUpChildRequest $request, $student_id,$classroom_id)
     {
         try {
             FollowUpChild::create([
@@ -118,6 +121,7 @@ class FollowUpChildController extends Controller
                     'ar' => __('public.' . $request->food . '1'),
                 ],
                 'student_id' => $student_id,
+                'classroom_id' => $classroom_id,
                 'note' => $request->note,
             ]);
             return true;
@@ -135,16 +139,17 @@ class FollowUpChildController extends Controller
     {
         try {
             $date = Carbon::now()->format('Y-m-d');
-            if (FollowUpChild::where('created_at', 'like', "%$date%")->exists()) {
-                return redirect()->route('follow_up_children.displayAllChildren', $classroom_id)
+            if (FollowUpChild::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)
+                ->exists()) {
+                return redirect()->back()
                     ->with(['error' => __('message.homework already exists')]);
-
             } else {
                 $students = Student::where('classroom_id', $classroom_id)->get();
                 foreach ($students as $student) {
-                    $this->storeChild($request, $student->id);
+                    $this->storeChild($request, $student->id,$classroom_id);
                 }
-                return redirect()->route('follow_up_children.displayAllChildren', $classroom_id)
+                return redirect()->back()
                     ->with(['success' => __('message.success')]);
             }
         } catch (\Exception $e) {
@@ -219,16 +224,20 @@ class FollowUpChildController extends Controller
      */
     public function editAllChildren($classroom_id)
     {
-
         try {
             $subjects = [];
             $classroom = Classroom::findorfail($classroom_id);
-            foreach ($classroom->subjects as $subject) {
-                array_push($subjects, $subject->name);
-            }
             $month = Carbon::now()->format('F j');
-            $child = FollowUpChild::findorFail(1);
+            $date = Carbon::now()->format('Y-m-d');
+            foreach ($classroom->subjects as $subject) {
+                $subjects[] = $subject->name;
+            }
+            $child = FollowUpChild::where('created_at', 'like', "%$date%" )
+                ->where('classroom_id',$classroom_id)
+                ->first();
             $homework = $child->homework;
+
+//            return  $homework;
             $subjects_homework = array_combine($subjects, $homework);
             return view('teachers-affairs/follow_up_children.editing_in_follow_up_children',
                 compact('classroom', 'month', 'subjects_homework', 'child'));

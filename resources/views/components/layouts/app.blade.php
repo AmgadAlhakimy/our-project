@@ -18,10 +18,11 @@
                                     placeholder="{{__('sidebar.search')}}" id="rtl" />
                                 </div>
                                 <hr class="ph-search_m">
-                @include('layouts.academic-department.academic-department')
-                @include('layouts.students-affairs.students')
+{{--                @include('layouts.academic-department.academic-department')--}}
+{{--                @include('layouts.students-affairs.students')--}}
                 {{-- @include('layouts.control-department.control-department') --}}
-                @include('layouts.teachers.teachers')
+{{--                @include('layouts.teachers.teachers')--}}
+                @livewire('follow-up')
                 @include('layouts.parents.parents')
                 @include('layouts.personnel-affairs.personnel-affairs')
             </ul>

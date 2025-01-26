@@ -123,8 +123,8 @@ return [
     'health problem description in English'=>'وصف المشكلة الصحية بالإنجليزية',
     'health problem description in Arabic'=>'وصف المشكلة الصحية بالعربية',
 
-    'Daily Follow-Up' => 'دفتر المتابعه',
-    'Display Daily Follow-Up' => 'عرض دفتر المتابعه',
+    'followup notebook' => 'دفتر المتابعة',
+    'display followup notebook' => 'عرض دفتر المتابعة',
 
 
 ];

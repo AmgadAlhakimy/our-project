@@ -17,7 +17,7 @@ class AbsentSeeder extends Seeder
 
         for($i = 1; $i<=10; $i++ ){
             Absent::create([
-                'absent'=> "true",
+                'absent'=> true,
                 'reason'=> "anything $i",
                 'student_id' => $students->random()->id,
             ]);

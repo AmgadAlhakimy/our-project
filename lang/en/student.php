@@ -62,7 +62,6 @@ return [
     'other info'=>'Other Info',
     'first you have to add classrooms'=>'first you have to add classrooms',
     'now select a classroom'=>'Now Select a Classroom',
-    'superior'=>'superior',
     'more info'=>'More info',
 
     'student information'=>'student Information',
@@ -93,7 +92,7 @@ return [
 
     'birth date'=> ' Birth Date',
     'birth place'=> 'Birth Place ',
-    'Daily Follow-Up'=> 'Daily Follow-Up ',
+    'followup notebook'=> 'Followup Notebook ',
     'level'=>'Educational level',
     'please select the father'=>'Please Select the Father',
     'if the father exists write it here'=>'If the Father Exists Write it Here',
@@ -117,7 +116,5 @@ return [
     'allergy description in Arabic'=>'Allergy description in Arabic',
     'health problem description in English'=>'Health problem description in English',
     'health problem description in Arabic'=>'Health problem description in Arabic',
-
-    'Daily Follow-Up'=> 'Daily Follow Up ',
-    'Display Daily Follow-Up' => 'Display Daily Follow Up',
+    'display followup notebook' => 'Display Daily Follow Up',
 ];
