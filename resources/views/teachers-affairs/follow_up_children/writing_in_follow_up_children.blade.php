@@ -11,7 +11,6 @@
             @csrf
             {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
             {{-- the table header with bottuns and search input --}}
-            <h4 class="col container-title mt-2">{{__('follow_up.for all students')}}</h4>
             <div class="table-header container mt-2">
 
                 {{-- the thacher name and the month --}}

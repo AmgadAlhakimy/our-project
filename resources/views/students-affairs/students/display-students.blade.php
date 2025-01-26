@@ -9,8 +9,8 @@
                         <label class="col">
                             <div class="search p-relative">
                                 <input wire:model.live.debounce.500ms="search"
-                                    type="text" class="form-control " name="search"
-                                    placeholder="{{__('sidebar.search')}}">
+                                       type="text" class="form-control " name="search"
+                                       placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
                     </div>
@@ -217,10 +217,10 @@
                                 {{$student->name}}
                             </div>
                         </td>
-                            <td><img
+                        <td><img
                                 src="{{asset('storage/'.$student->photo)}}"
                                 class="student-img" alt="photo">
-                            </td>
+                        </td>
                         <td>
                             <div class="td_rect">
                                 {{$student->address}}
@@ -323,7 +323,7 @@
                         <td>
                             <a href="{{route('student-more-info',$student->id)}}"
                                class="btn save-button btn-info me-3 ms-3 ">
-                                    {{__('student.more info')}}
+                                {{__('student.more info')}}
                             </a>
                         </td>
                     </tr>

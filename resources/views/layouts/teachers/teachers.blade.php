@@ -30,7 +30,7 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-baby"></i>
-                <span class="menu-name">{{__('student.Daily Follow-Up')}}</span>
+                <span class="menu-name">{{__('student.followup notebook')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
@@ -49,14 +49,14 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-baby"></i>
-                <span class="menu-name">{{__('student.Display Daily Follow-Up')}}</span>
+                <span class="menu-name">{{__('student.display followup notebook')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
                 @foreach($classrooms as $classroom)
-                    <a href="{{route('follow_up_children.displayAllChildren',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
+                    <a href="{{route('follow_up_children-display',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
                 @endforeach
             </div>
         </div>
