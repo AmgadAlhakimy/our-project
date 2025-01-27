@@ -23,7 +23,7 @@ class StoreAbsentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "absent_reason.*"  => 'nullable',
         ];
     }
 }

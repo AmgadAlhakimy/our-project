@@ -30,12 +30,16 @@
 
                 <div class="cards-container mt-4 third-card row">
                     <div class="card-info card-info_2 col ">
-                        <h4 class=" text-center">
+                        <h4 class="text-center ">{{__('public.class')}}</h4>
+                        <h4 class="Names">
                             {{$classroom->name}}
                         </h4>
                     </div>
                     <div class="card-info card-info_2 col ">
-                        <h4 class=" Names">{{$month}}</h4>
+                        <h4 class="text-center ">{{__('public.date')}}</h4>
+                        <h4 class="Names">
+                            {{$month}}
+                        </h4>
                     </div>
                 </div>
             </div>

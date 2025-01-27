@@ -61,6 +61,7 @@ return [
     'force delete'=>'Force Delete',
     'permanently'=>'permanently',
     'classroom'=>'Classroom',
+    'class'=>'Class',
     'subject'=>'Subject',
     'teacher'=>'Teacher',
     'activity'=>'Activity',
@@ -98,9 +99,9 @@ return [
     'Showing'=>'Showing',
     'to'=>'to',
     'of'=>'of',
-    'number of rows:'=>'Number of Rows:', 
-    
-    
+    'number of rows:'=>'Number of Rows:',
+
+
     'home text'=>'Kindergarten and schools of PLANET JUNIORS ACADEMY',
 
 

@@ -20,13 +20,16 @@ class Classroom extends Model
     use HasTranslations;
 
     public array $translatable = ['name'];
-    protected $fillable = ['name','edu_id'];
+    protected $fillable = ['name', 'edu_id'];
 
 
-    public function level(){
-        return $this->belongsTo(EducationalLevel::class,'edu_id');
+    public function level()
+    {
+        return $this->belongsTo(EducationalLevel::class, 'edu_id');
     }
-    public function students(){
+
+    public function students()
+    {
         return $this->hasMany(Student::class);
     }
 
@@ -34,16 +37,24 @@ class Classroom extends Model
     {
         return $this->belongsToMany(Subject::class, 'classroom_subject_pivot');
     }
+
     public function teachers()
     {
         return $this->belongsToMany(Teacher::class, 'classroom_teacher_pivot');
     }
+
     public function activities()
     {
         return $this->belongsToMany(Activity::class, 'activity_classroom_pivot');
     }
+
     public function marks()
     {
         return $this->hasMany(Mark::class);
+    }
+
+    public function absent()
+    {
+        return $this->hasMany(Absent::class);
     }
 }

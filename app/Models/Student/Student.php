@@ -31,7 +31,7 @@ class Student extends Model
         'has_allergy', 'allergy_desc',
         'has_health_problem', 'health_problem_desc',];
 
-    public function classroom( )
+    public function classroom()
     {
         return $this->belongsTo(Classroom::class);
     }
@@ -52,7 +52,8 @@ class Student extends Model
         return $this->hasMany(FollowUpChild::class);
     }
 
-    public function absent(){
+    public function absent()
+    {
         return $this->hasMany(Absent::class);
-}
+    }
 }

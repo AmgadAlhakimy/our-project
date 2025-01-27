@@ -20,8 +20,14 @@ class FollowUpChildController extends Controller
     {
         try {
             $classroom = Classroom::findorfail($classroom_id);
+            $date = Carbon::now()->format('Y-m-d');
             $month = Carbon::now()->format('F j');
-
+            if (FollowUpChild::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)
+                ->exists()) {
+                return redirect()->back()
+                    ->with(['error' => __('follow_up.come on yo! did not you just saved the homework for today')]);
+            }
             if (count($classroom->subjects) === 0) {
                 return redirect()->back()->with(['error' => __('follow_up.sorry this classroom does not have subjects')]);
             }
@@ -45,14 +51,14 @@ class FollowUpChildController extends Controller
                 ->exists()) {
                 return redirect()->back()
                     ->with(['error' => __('follow_up.come on yo! did not you just saved the homework for today')]);
-            } else {
+            }
                 $students = Student::where('classroom_id', $classroom_id)->get();
                 foreach ($students as $student) {
                     $this->storeChild($request, $student->id, $classroom_id);
                 }
                 return redirect()->back()
                     ->with(['success' => __('message.success')]);
-            }
+
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

@@ -2,19 +2,20 @@
 
 namespace App\Models;
 
+use App\Models\Classroom\Classroom;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Student\Student;
 
 class Absent extends Model
 {
     use HasFactory;
-    use SoftDeletes;
 
-    protected $fillable = ['absent','reason'];
+    protected $fillable = ['absent','absent_reason','student_id','classroom_id'];
 
-    public function studnts(){
+    public function student(){
         return $this->belongsTo(Student::class,'student_id');
+    }public function classroom(){
+        return $this->belongsTo(Classroom::class,'classroom_id');
     }
 }

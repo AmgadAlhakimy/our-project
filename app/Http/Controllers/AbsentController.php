@@ -28,10 +28,16 @@ class AbsentController extends Controller
             $students = Student::where('classroom_id', $classroom_id)->get();
             $classroom = Classroom::where('id', $classroom_id)->first();
             $month = Carbon::now()->format('F j');
-            if (count($classroom->subjects) === 0) {
-                return redirect()->back()->with(['error' => __('follow_up.sorry this classroom does not have subjects')]);
+            $date = Carbon::now()->format('Y-m-d');
+
+            if (Absent::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)->exists()) {
+                return redirect()->back()->with(['error' => __('absent.come on yo! did not you just present students for today')]);
             }
-            return view('teachers-affairs/absence/new-presenting',
+            if (!count($classroom->students)) {
+                return redirect()->back()->with(['error' => __('absent.sorry this classroom does not have students')]);
+            }
+            return view('teachers-affairs.absence.new-presenting',
                 compact('students', 'classroom', 'month'));
 
         } catch (\Exception $e) {
@@ -42,65 +48,104 @@ class AbsentController extends Controller
 
     public function storeAbsent(StoreAbsentRequest $request, $classroom_id)
     {
-
         try {
-
-
-            $date = Carbon::now()->format('Y-m-d');
-            if (Absent::where('created_at', 'like', "%$date%")
-                ->where('classroom_id', $classroom_id)
-                ->exists()) {
-                return redirect()->back()->with(['error' => __('absent.come on yo! did not you just saved the homework for today')]);
-            } else {
-                $students = Student::where('classroom_id', $classroom_id)->get();
-                foreach ($students as $student) {
-                    $this->storeChild($request, $student->id, $classroom_id);
-                }
-                return redirect()->back()
-                    ->with(['success' => __('message.success')]);
-            }
-
-
-            if ($request->absent){
-                return redirect()->back()->with(['success' => __('absent.that is cool no absent students today')]);
-            }
             $students = Student::where('classroom_id', $classroom_id)->get();
+            $classroom = Classroom::where('id', $classroom_id)->first();
+            $date = Carbon::now()->format('Y-m-d');
 
-            return $request;
+            if (Absent::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)->exists()) {
+                return redirect()->back()->with(['error' => __('absent.come on yo! did not you just present students for today')]);
+            }
+            if (count($request->absent) === count($classroom->students)) {
+                return redirect()->route('absent.display', $classroom_id)->with(['success' => __('absent.that is cool no absent students today')]);
+            }
+
+            $absents = [];
+            foreach ($request->absent as $key => $value) {
+                $absents [] = $key;
+            }
+
+            $index = 0;
+            foreach ($students as $student) {
+                if (!in_array($index, $absents)) {
+                    Absent::create([
+                        'absent' => true,
+                        'absent_reason' => $request->absent_reason[$index],
+                        'student_id' => $student->id,
+                        'classroom_id' => $classroom_id,
+                    ]);
+                }
+                $index++;
+            }
+            return redirect()->route('absent.display', $classroom_id)
+                ->with(['success' => __('message.success')]);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Absent $absent)
+    public function displayAbsent($classroom_id)
     {
-        //
+        try {
+            $absentStudents = Absent::where('classroom_id', $classroom_id)->get();
+            $classroom = Classroom::where('id', $classroom_id)->first();
+            $month = Carbon::now()->format('F j');
+
+            return view('teachers-affairs.absence.display-absent-children',
+                compact('absentStudents', 'classroom', 'month'));
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Absent $absent)
+    public function editAbsent($classroom_id)
     {
-        //
+        try {
+            $students = Student::where('classroom_id', $classroom_id)->get();
+            $date = Carbon::now()->format('Y-m-d');
+            $classroom = Classroom::where('id', $classroom_id)->first();
+            $month = Carbon::now()->format('F j');
+
+            $absent = Absent::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)->get();
+
+            if (empty(Absent::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)->first())) {
+                return redirect()->back()->with(['error' =>
+                    __('absent.you can not edit absent children while there is no one absent')]);
+            }
+
+            $absent_children = [];
+            foreach ($absent as $ab) {
+                $absent_children [] = $ab->student->id;
+            }
+
+            return view('teachers-affairs.absence.edit-absent-children',
+                compact('students', 'classroom', 'month', 'absent_children'));
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateAbsentRequest $request, Absent $absent)
+    public function updateAbsent(StoreAbsentRequest $request, $classroom_id)
     {
-        //
-    }
+        try {
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Absent $absent)
-    {
-        //
+            $date = Carbon::now()->format('Y-m-d');
+            $absent = Absent::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)->get();
+
+            foreach ($absent as $ab) {
+                Absent::destroy($ab->id);
+            }
+
+            return $this->storeAbsent($request, $classroom_id);
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 }

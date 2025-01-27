@@ -93,7 +93,8 @@
         <div class="submenu">
             <div class="line-black">
                 @foreach($classrooms as $classroom)
-                    <a href="{{route('absent.newPresenting',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
+                    <a href="{{route('absent.newPresenting',$classroom->id)}}"
+                       class="li-link">{{$classroom->name}}</a>
                 @endforeach
 
             </div>
@@ -105,16 +106,35 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name">{{__('teacher.dispaly absent children')}}</span>
+                <span class="menu-name">{{__('absent.display absent children')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href='/index_absence' class="li-link">{{__('public.Reception')}}</a>
-                <a href='/index_absence' class="li-link">{{__('public.Nursery')}}</a>
-                <a href='/index_absence' class="li-link">{{__('public.KG1')}}</a>
-                <a href='/index_absence' class="li-link">{{__('public.KG2')}}</a>
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('absent.display',$classroom->id)}}"
+                       class="li-link">{{$classroom->name}}</a>
+                @endforeach
+            </div>
+        </div>
+    </li>
+    <!-- ========== 3 ============ -->
+    <!-- تعديل التحضير والغياب -->
+    <li class="dropdown">
+        <div class="sidebar-title">
+            <a href="#" class="li-link title-4">
+                <i class="icon-1 fa-solid fa-list-check"></i>
+                <span class="menu-name">{{__('absent.edit absent children')}}</span>
+                <i class="icon-1 fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+        <div class="submenu">
+            <div class="line-black">
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('absent.editAbsent',$classroom->id)}}"
+                       class="li-link">{{$classroom->name}}</a>
+                @endforeach
             </div>
         </div>
     </li>

@@ -8,16 +8,17 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     */ 
+     */
     public function up(): void
     {
         Schema::create('absents', function (Blueprint $table) {
             $table->id();
             $table->boolean('absent');
-            $table->string('reason');
-            $table->softDeletes();
-            $table->timestamps();            
+            $table->string('absent_reason')->nullable();
+            $table->timestamps();
             $table->foreignId('student_id')
+                ->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('classroom_id')
                 ->constrained()->cascadeOnUpdate()->cascadeOnDelete();
         });
     }

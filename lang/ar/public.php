@@ -68,6 +68,7 @@ return [
     'permanently'=>'بشكل نهائي',
 
     'classroom'=>'الفصل',
+    'class'=>'الصف',
     'subject'=>'المادة',
     'teacher'=>'الاستاذ',
     'activity'=>'النشاط',
@@ -96,7 +97,7 @@ return [
     'delete all' => 'حذف الكل',
     'num'=>'م',
     'absent'=>'الغياب',
-    'description'=>'سبب الغياب', 
+    'description'=>'سبب الغياب',
     'please select the gender'=>'الرجاء اختيار النوع',
     'please select the educational level'=>'الرجاء اختيار المرحلة الدراسية',
     'number of rows:'=>'عدد الصفوف:',
@@ -105,12 +106,12 @@ return [
     'Showing'=>'اضهار',
     'to'=>'إلى',
     'of'=>'من',
-    
-    
+
+
     'home text'=>'رياض ومدارس كوكب الصغار',
-    
-    
-    
+
+
+
     'Reception'=>'التمهيدي',
     'Nursery'=>'الروضة',
     'KG1'=>'الروضة الأولى',
