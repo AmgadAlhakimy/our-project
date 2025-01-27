@@ -30,6 +30,7 @@ return [
     'please select the quantity of food'=>'Please, Select The Quantity of Food',
     'homework field is required'=>'This Homework Field is Required At least write there is none',
     'sorry this classroom does not have subjects'=>'Sorry, this Classroom Does Not Have Subjects',
+    'come on yo! did not you just saved the homework for today'=>"Come on Yo! Didn't just saved the homework for today",
 
-    'click her' => 'CLICK HER',
+    'click here' => 'CLICK HERE',
 ];

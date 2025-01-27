@@ -36,10 +36,10 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-
-                {{-- @foreach($classrooms as $classroom)
-                <a href="{{route('follow_up_children.writingFollowUp',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
-                @endforeach --}}
+                @foreach($classrooms as $classroom)
+                <a href="{{route('follow_up_children.writingFollowUp',$classroom->id)}}"
+                   class="li-link">{{$classroom->name}}</a>
+                @endforeach
 
             </div>
         </div>
@@ -55,9 +55,10 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                {{-- @foreach($classrooms as $classroom)
-                    <a href="{{route('follow_up_children.displayAllChildren',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
-                @endforeach --}}
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('follow_up_children-display',$classroom->id)}}"
+                       class="li-link">{{$classroom->name}}</a>
+                @endforeach
             </div>
         </div>
     </li>
@@ -85,15 +86,16 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name">{{__('teacher.absent children')}}</span>
+                <span class="menu-name">{{__('absent.presenting children')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                {{-- @foreach($classrooms as $classroom)
-                    <a href="{{route('newAbsent',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
-                @endforeach --}}
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('absent.newPresenting',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
+                @endforeach
+
             </div>
         </div>
     </li>

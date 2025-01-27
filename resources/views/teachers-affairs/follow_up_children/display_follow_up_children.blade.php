@@ -22,23 +22,22 @@
                 </div>
 
 
-
-            <div class="cards-container mt-4 third-card row">
-                <div class="card-info card-info_2 col ">
-                    <h4 class="Names ">{{$classroom->name}}</h4>
-                </div>
-                <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}"
-                   class="card-info card-info_2 col btn save-button">
-                    <h4 class="topic-title mt-2">{{__('follow_up.edit for all students')}}</h4>
-                    <p class="text-center ">{{__('follow_up.click her')}}</p>
-                </a>
-                <div class="card-info card-info_2 col ">
-                    <h4 class=" Names">{{$month}}</h4>
+                <div class="cards-container mt-4 third-card row">
+                    <div class="card-info card-info_2 col ">
+                        <h4 class="Names ">{{$classroom->name}}</h4>
+                    </div>
+                    <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}"
+                       class="card-info card-info_2 col btn save-button">
+                        <h4 class="topic-title mt-2">{{__('follow_up.edit for all students')}}</h4>
+                        <p class="text-center ">{{__('follow_up.click here')}}</p>
+                    </a>
+                    <div class="card-info card-info_2 col ">
+                        <h4 class=" Names">{{$month}}</h4>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
 
     {{-- pagination up code --}}
     @include('layouts.pagination.pagination_up')
@@ -65,10 +64,10 @@
                         </button>
                     </th>
                     <th>
-                            <div class="table_test form-label ">
-                                {{__('public.name')}}
+                        <div class="table_test form-label ">
+                            {{__('public.name')}}
 
-                            </div>
+                        </div>
                     </th>
                     <th>
                         <div class="table_test form-label ">
@@ -217,53 +216,12 @@
                         <td>
                         </td>
                         <td>
-                            <a href="{{route('educational-levels.edit',$followup->id)}}"
+                            <a href="{{route('follow_up_children.editChild',
+                                            ['child_id' => $followup->id, 'classroom_id' => $classroom->id])}}"
                                class="btn save-button btn-success w-25 me-1 ms-1 ">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{-- {{__('public.edit')}} --}}
                             </a>
-
-                            <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger  w-25 me-1 ms-1 "
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$followup->id}}">
-                                <i class="fa-solid fa-trash"></i>
-                                {{-- {{__('public.delete')}} --}}
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="delete{{$followup->id}}"
-                                 tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>
-                                            </div>
-                                        </div>
-                                        <div class="modal-body form-label row">
-                                            <div class="col-12">
-                                                {{__('public.are you sure you want to delete')}}
-                                            </div>
-                                            <div class="col-12">
-                                                {{$followup->name}}
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2 "
-                                                    data-bs-dismiss="modal">
-                                                {{__('public.cancel')}}</button>
-                                            <form method="post"
-                                                  action="{{route('educational-levels.destroy',$followup->id)}}">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button type="submit"
-                                                        class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </td>
                     </tr>
                 @endforeach
@@ -278,11 +236,8 @@
                     </div>
                 @endif
             </div>
-
             {{-- pagination down code --}}
             @include('layouts.pagination.pagination_down')
-
-
         </div>
     </div>
 </div>

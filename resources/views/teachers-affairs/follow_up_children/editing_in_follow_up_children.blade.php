@@ -131,8 +131,7 @@
                 <div class=" ">
                     <div class="box">
                         <input class="save-button " type="submit" value="{{__('public.update')}}">
-
-                        <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="btn clear-button"><i
+                        <a href="{{route('follow_up_children-display',$classroom->id)}}" class="btn clear-button"><i
                                 class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                     </div>
                 </div>

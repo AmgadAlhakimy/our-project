@@ -37,4 +37,4 @@ Route::resource('teachers', TeacherController::class);
 Route::resource('parents', ParentsController::class);
 Route::resource('majors', MajorController::class);
 Route::resource('marks', MarkController::class);
-Route::resource('absents', AbsentController::class);
+Route::resource('absent', AbsentController::class);

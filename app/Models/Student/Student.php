@@ -49,11 +49,10 @@ class Student extends Model
 
     public function followUpChildren()
     {
-
         return $this->hasMany(FollowUpChild::class);
     }
-    
-    public function absents(){
+
+    public function absent(){
         return $this->hasMany(Absent::class);
 }
 }

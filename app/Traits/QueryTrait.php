@@ -3,6 +3,7 @@
 
 namespace App\Traits;
 
+use Carbon\Carbon;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 trait QueryTrait
@@ -16,7 +17,8 @@ trait QueryTrait
     public string $orderBy = 'id';
 
     public bool $isPaginate;
-    public function queryData($myModel,$myQuery)
+
+    public function queryData($myModel, $myQuery)
     {
         $lang = LaravelLocalization::setLocale();
 

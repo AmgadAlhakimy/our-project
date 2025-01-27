@@ -26,4 +26,5 @@ return [
     "delete_relative_error"=>"you cannot delete this relative first delete it's students",
     "restore_student_error"=>"you cannot restore this student first restore it's class",
     "restore_classroom_error"=>"you cannot restore this classroom first restore it's educational level",
+    "this class is empty nothing to edit"=>"This Classroom is Empty Nothing to Edit",
 ];
