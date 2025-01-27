@@ -199,8 +199,11 @@
                             </div>
                         </button>
                     </th>
-                    <th colspan="2">
+                    <th colspan="3">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
+                    </th>
+                    <th colspan="">
+                        <div class="th-head-3 form-label">{{__('student.display followup notebook')}} </div>
                     </th>
                 </tr>
                 </thead>
@@ -278,17 +281,18 @@
                         </td>
                         <td>
                             <a href="{{route('edit-student',$student->id)}}"
-                               class="btn save-button btn-success  w-50 me-1 ms-1 ">
+                               class="btn save-button btn-success w-50 me-1 ms-1 btn-sm">
                                 <i class="fa-solid fa-pen-to-square"></i>
 
                             </a>
                             <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger w-50 me-1 ms-1 "
+                                    class="btn clear-button btn-danger w-50 me-1 ms-1 btn-sm"
                                     data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$student->id}}">
-                                <i class="fa-solid fa-trash"></i>
-
+                                    data-bs-target="#delete{{$student->id}} ">
+                                <i class="fa-solid fa-trash"> </i>
                             </button>
+                        </td>
+                        <td>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$student->id}}"
                                  tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -322,8 +326,16 @@
                         </td>
                         <td>
                             <a href="{{route('student-more-info',$student->id)}}"
-                               class="btn save-button btn-info me-3 ms-3 ">
-                                {{__('student.more info')}}
+                                class="btn save-button btn-info w-100 me-1 ms-1 btn-sm">
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                        </td>
+                        {{-- daily book --}}
+                        <td>
+                            <a href="{{route('follow-up-date',$student->id)}}"
+                               class="btn save-button btn-light btn-sm w-50 me-1 ms-1 ">
+                               <i class="fas fa-clipboard"></i>
+                                {{-- {{__('student.display followup notebook')}} --}}
                             </a>
                         </td>
                     </tr>

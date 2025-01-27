@@ -625,11 +625,7 @@ body[dir="rtl"] .clear-button{
     color: #fff;
     box-shadow: 0 2px 20px var(--S-Color-6);
 }
-.btn-container
-    .btn-l-container
-    .btn-l-label:nth-child(10n + 11)
-    input[type="checkbox"]:checked
-    ~ .btn-l-text {
+.btn-container.btn-l-container .btn-l-label:nth-child(10n + 11) input[type="checkbox"]:checked ~ .btn-l-text {
     background: var(--broun-bg);
     box-shadow: 0 2px 20px var(--broun-bg);
 }
@@ -715,6 +711,9 @@ body[dir="rtl"] .border-left{
 
 .radus-10{
     border-radius: 10px;
+}
+.btn-danger,.btn-success,.btn-info{
+    border-radius: 15px;
 }
 
 

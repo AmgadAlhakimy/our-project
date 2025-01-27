@@ -17,7 +17,7 @@ return [
     //create educational Level
     'create new Subject'=>'Create New Subject',
     'update Subject'=>'Update Subject',
-    'DELETED SUBJECTS'=>'Delete subject',
+    'DELETED SUBJECTS'=>'Deleted subject',
     'Subject name in english'=>'Subject Name in English',
     'Subject name in arabic'=>'Subject Name in Arabic',
     'Subject info'=>'Subject Info',

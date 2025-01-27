@@ -2,6 +2,10 @@ const icons = [
     {
         src: "assets/icons/book.png",
         position: { left: '10%', top: '20%' },
+        
+        
+        // animation: {move: "1s". infinite, alternate} 
+
     },{
         src: "assets/icons/hand.png",
         position: { left: '30%', top: '40%' }

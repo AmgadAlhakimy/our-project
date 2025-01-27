@@ -43,7 +43,8 @@ class FollowUpChildController extends Controller
             if (FollowUpChild::where('created_at', 'like', "%$date%")
                 ->where('classroom_id', $classroom_id)
                 ->exists()) {
-                return redirect()->back()->with(['error' => __('follow_up.come on yo! did not you just saved the homework for today')]);
+                return redirect()->back()
+                    ->with(['error' => __('follow_up.come on yo! did not you just saved the homework for today')]);
             } else {
                 $students = Student::where('classroom_id', $classroom_id)->get();
                 foreach ($students as $student) {
