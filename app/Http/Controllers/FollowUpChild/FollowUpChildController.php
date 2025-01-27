@@ -45,7 +45,6 @@ class FollowUpChildController extends Controller
             $follow_up = FollowUpChild::where('created_at', 'like', "%$date%" )
                 ->where('classroom_id',$classroom_id)
                 ->get();
-
             return view('teachers-affairs/follow_up_children.display_follow_up_children',
                 compact('classroom', 'follow_up', 'month'));
         } catch (\Exception  $e) {
