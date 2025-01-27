@@ -37,9 +37,9 @@
         <div class="submenu">
             <div class="line-black">
 
-                @foreach($classrooms as $classroom)
+                {{-- @foreach($classrooms as $classroom)
                 <a href="{{route('follow_up_children.writingFollowUp',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
-                @endforeach
+                @endforeach --}}
 
             </div>
         </div>
@@ -55,9 +55,9 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                @foreach($classrooms as $classroom)
+                {{-- @foreach($classrooms as $classroom)
                     <a href="{{route('follow_up_children.displayAllChildren',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
-                @endforeach
+                @endforeach --}}
             </div>
         </div>
     </li>
@@ -91,9 +91,9 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                @foreach($classrooms as $classroom)
+                {{-- @foreach($classrooms as $classroom)
                     <a href="{{route('newAbsent',$classroom->id)}}" class="li-link">{{$classroom->name}}</a>
-                @endforeach
+                @endforeach --}}
             </div>
         </div>
     </li>

@@ -125,6 +125,9 @@
                     <th colspan="">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
+                    <th >
+                        <div class="th-head-2 form-label">{{__('public.share')}} </div>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -220,6 +223,12 @@
 
                                 </div>
                             </div>
+                        </td>
+                        <td>
+                            <a href=""
+                               class="btn save-button btn-light btn-sm w-50 me-1 ms-1 ">
+                               <i class="fas fa-share-alt"></i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
