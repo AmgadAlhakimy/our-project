@@ -18,41 +18,44 @@ class DisplayFollowUp extends Component
 
     public int $classroom_id;
     public bool $isPaginate;
+    public string $date;
+
     public function render()
     {
         try {
+
+            $month = Carbon::now()->format('F j');
+            $this->date = Carbon::now()->format('Y-m-d');
             $lang = LaravelLocalization::setLocale();
             $classroom = Classroom::findorfail($this->classroom_id);
-            $month = Carbon::now()->format('F j');
-            $date = Carbon::now()->format('Y-m-d');
             if (strlen($this->search) >= 1) {
                 $this->isPaginate = false;
-                $followups = FollowUpChild::where('homework', 'like', "%$this->search%")
-                    ->where('created_at', 'like', "%$date%")
-                    ->where('classroom_id', $this->classroom_id)
-                    ->orwhere('bath->en', 'like', "%$this->search%")
-                    ->where('created_at', 'like', "%$date%")
-                    ->where('classroom_id', $this->classroom_id)
-                    ->orwhere('bath->ar', 'like', "%$this->search%")
-                    ->where('created_at', 'like', "%$date%")
-                    ->where('classroom_id', $this->classroom_id)
-                    ->orwhere('snack->en', 'like', "%$this->search%")
-                    ->where('created_at', 'like', "%$date%")
-                    ->where('classroom_id', $this->classroom_id)
-                    ->orwhere('snack->ar', 'like', "%$this->search%")
-                    ->where('created_at', 'like', "%$date%")
-                    ->where('classroom_id', $this->classroom_id)
-                    ->orwhere('food->en', 'like', "%$this->search%")
-                    ->where('created_at', 'like', "%$date%")
-                    ->where('classroom_id', $this->classroom_id)
-                    ->orwhere('food->ar', 'like', "%$this->search%")
-                    ->where('created_at', 'like', "%$date%")
-                    ->where('classroom_id', $this->classroom_id)
+                $followups = FollowUpChild::where('classroom_id', $this->classroom_id)
+                    ->where(function ($query) {
+                        $query->where('created_at', 'like', "%$this->date%")
+                            ->where(function ($subQuery) {
+                                $subQuery->where('homework', 'like', "%$this->search%")
+                                    ->orWhere('bath->en', 'like', "%$this->search%")
+                                    ->orWhere('bath->ar', 'like', "%$this->search%")
+                                    ->orWhere('snack->en', 'like', "%$this->search%")
+                                    ->orWhere('snack->ar', 'like', "%$this->search%")
+                                    ->orWhere('food->en', 'like', "%$this->search%")
+                                    ->orWhere('food->ar', 'like', "%$this->search%");
+                            });
+                    })
+                    ->orWhereHas('student', function ($query) {
+                        $query->where('classroom_id', $this->classroom_id)
+                            ->where('created_at', 'like', "%$this->date%")
+                            ->where(function ($subQuery) {
+                                $subQuery->where('name->en', 'like', "%$this->search%")
+                                    ->orWhere('name->ar', 'like', "%$this->search%");
+                            });
+                    })
                     ->get();
 
             } else {
                 $this->isPaginate = true;
-                $followups = FollowUpChild::where('created_at', 'like', "%$date%")
+                $followups = FollowUpChild::where('created_at', 'like', "%$this->date%")
                     ->where('classroom_id', $this->classroom_id)->orderBy(
                         ($this->orderBy) == 'bath' ? 'bath->' . $lang : $this->orderBy,
                         $this->sortOrder)->paginate($this->pagination);

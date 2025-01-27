@@ -29,7 +29,11 @@ class DisplayStudents extends Component
                 ->orwhere('allergy_desc->en', 'like', "%$this->search%")
                 ->orwhere('allergy_desc->ar', 'like', "%$this->search%")
                 ->orwhere('health_problem_desc->en', 'like', "%$this->search%")
-                ->orwhere('health_problem_desc->ar', 'like', "%$this->search%")->get();
+                ->orwhere('health_problem_desc->ar', 'like', "%$this->search%")
+                ->orwhereHas('parents', function ($query) {
+                    $query->where('father_name->en', 'like', "%$this->search%")
+                        ->orwhere('father_name->ar', 'like', "%$this->search%");
+                })->get();
 
             $students = $this->queryData("\App\Models\Student\Student", $myQuery);
             return view('students-affairs.Students.display-Students', [

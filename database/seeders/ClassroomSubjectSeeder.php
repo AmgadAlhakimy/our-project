@@ -16,12 +16,23 @@ class ClassroomSubjectSeeder extends Seeder
     {
         $classrooms = Classroom::all();
         $subjects = Subject::all();
+        foreach ($classrooms as $classroom) {
+            $usedSubjectIds = [];
 
-        for($i = 1; $i<=80; $i++ ){
-            ClassroomSubject::create([
-            'classroom_id'=>$classrooms->random()->id,
-            'subject_id'=>$subjects->random()->id,
+            for ($i = 1; $i <= 5; $i++) {
+                do {
+                    $randomSubject = $subjects->random();
+                    $subjectId = $randomSubject->id;
+                } while (in_array($subjectId, $usedSubjectIds));
+
+                $usedSubjectIds[] = $subjectId;
+
+                ClassroomSubject::create([
+                    'classroom_id' => $classroom->id,
+                    'subject_id' => $subjectId,
                 ]);
+            }
         }
     }
+
 }

@@ -116,5 +116,5 @@ return [
     'allergy description in Arabic'=>'Allergy description in Arabic',
     'health problem description in English'=>'Health problem description in English',
     'health problem description in Arabic'=>'Health problem description in Arabic',
-    'display followup notebook' => 'Display Daily Follow Up',
+    'display followup notebook' => 'Display Follow Up Notebook',
 ];

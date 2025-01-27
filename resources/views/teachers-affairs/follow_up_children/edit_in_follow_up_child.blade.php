@@ -6,8 +6,9 @@
                 {{Session::get('success')}}
             </div>
         @endif
-        <form method="post" action="{{route('follow_up_children.update', $child->id)}}">
-            @method('PUT')
+        <form method="post" action="{{route('follow_up_children.updateChild',
+                                    ['child_id' => $child->id, 'classroom_id' => $classroom->id])}}">
+            @method('HEAD')
             @csrf
             {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
             {{-- the table header with bottuns and search input --}}
@@ -143,7 +144,7 @@
                 <div class="box">
                     <input class="save-button " type="submit" value="{{__('public.update')}}">
 
-                    <a href="{{route('follow_up_children.displayAllChildren',1)}}" class="btn clear-button"><i
+                    <a href="{{route('follow_up_children-display',$classroom->id)}}" class="btn clear-button"><i
                         class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                 </div>
             </div>

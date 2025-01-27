@@ -20,8 +20,8 @@
                 </div>
                 <hr class="ph-search_m">
 
-{{--                    @include('layouts.academic-department.academic-department')--}}
-{{--                    @include('layouts.students-affairs.students')--}}
+                    @include('layouts.academic-department.academic-department')
+                    @include('layouts.students-affairs.students')
                 <!-- ========== 5 ============ -->
                     {{-- @include('layouts.control-department.control-department') --}}
                 <!-- ========== 5 ============ -->

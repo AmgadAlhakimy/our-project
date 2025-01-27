@@ -31,7 +31,9 @@ return [
     'please select the quantity of food'=>'الرجاء تحديد كمية الطعام',
     'homework field is required'=>'حقل الواجب مطلوب على الأقل اكتب لا يوجد',
     'sorry this classroom does not have subjects'=>'عذراً هذا الصف ليس فيه مواد',
+    'come on yo! did not you just saved the homework for today'=>"هيا ماهو! عادك الا كتبت الواجب حق اليوم",
 
-    'click her' => 'اضغط هنا',
+
+    'click here' => 'اضغط هنا',
 
 ];
