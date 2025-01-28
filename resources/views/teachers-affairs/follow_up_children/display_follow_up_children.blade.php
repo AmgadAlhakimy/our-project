@@ -20,23 +20,28 @@
                         </div>
                     </label>
                 </div>
-
-
                 <div class="cards-container mt-4 third-card row">
-                    <div class="card-info card-info_2 col ">
-                        <h4 class="Names ">{{$classroom->name}}</h4>
+                    <div class=" col text-center ">
+                        <div class="cards_sup_title">{{$classroom->name}}</div>
                     </div>
-                    <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}"
-                       class="card-info card-info_2 col btn save-button">
-                        <h4 class="topic-title mt-2">{{__('follow_up.edit for all students')}}</h4>
-                        <p class="text-center ">{{__('follow_up.click here')}}</p>
-                    </a>
-                    <div class="card-info card-info_2 col ">
-                        <h4 class=" Names">{{$month}}</h4>
+                    <div class=" col text-center ">
+                        <div class="cards_title">{{$month}}</div>
                     </div>
                 </div>
-            </div>
 
+            </div>
+        </div>
+        <div class="table-header mt-3">
+            <div class="col-12  row">
+                <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}"
+                    class=" save-button col me-1 ms-1 p-0">
+                     <div class="form-label mt-">{{__('follow_up.edit for all students')}}</div>
+                 </a>
+                <a href="{{ route('followUpDate') }}"
+                    class="save-button col me-1 ms-1 p-0">
+                    <div class="form-label mt-">{{ __('follow_up.Search by date') }}</div>
+                </a>
+            </div>
         </div>
 
     {{-- pagination up code --}}
@@ -48,11 +53,8 @@
             <table class=" " id="check_table">
                 <thead>
                 <tr>
-                    <th>
-                        <label for="" class="form-label ">
-                            {{__('public.num')}}
-                        </label>
-                    </th>
+                    <th class="num_table ">{{__('public.num')}}</th>
+                   
                     <th>
                         <button id="arrowButton" wire:click="ordering('student_id')" class="th-head-1 form-label ">
                             {{__('public.id')}}
@@ -154,18 +156,18 @@
                         </button>
                     </th>
 
-                    <th colspan="2">
-                        <div class="th-head-4 form-label">{{__('public.processes')}} </div>
+                    <th colspan="">
+                        <div class="th-head-2 form-label">{{__('public.processes')}} </div>
                     </th>
 
                 </tr>
                 </thead>
-                <tbody>
-                @foreach($followups as $followup)
+                <tbody> 
+                    <?php $counter = 1 ?>
+                    @foreach($followups as $followup)
                     <tr>
-                        <td>
-                            <div for="" class="td_rect "> 1</div>
-                        </td>
+                        <td class="num_table ">{{$counter}}</td>
+                        <?php $counter++ ?>
                         <td>
                             <div class="td_rect">
                                 {{$followup->student->id}}
@@ -181,7 +183,11 @@
                                 class="student-img" alt="photo">
                         </td>
                         @foreach($followup->homework as $homework)
-                            <td class="th-head-1">{{$homework}}</td>
+                            <td >
+                                <div class="td_rect ">
+                                    {{$homework}}
+                                </div>
+                            </td>
                         @endforeach
                         <td>
                             <div class="td_rect">
@@ -214,11 +220,9 @@
                             </div>
                         </td>
                         <td>
-                        </td>
-                        <td>
                             <a href="{{route('follow_up_children.editChild',
                                             ['child_id' => $followup->id, 'classroom_id' => $classroom->id])}}"
-                               class="btn save-button btn-success w-25 me-1 ms-1 ">
+                               class="btn save-button btn-success w-50 me-1 ms-1 ">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{-- {{__('public.edit')}} --}}
                             </a>

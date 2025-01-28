@@ -27,11 +27,10 @@
             <table class=" " id="check_table">
                 <thead>
                 <tr>
+                    <th class="num_table ">{{__('public.num')}}</th>
                     <th>
-
                         <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label ">
                             {{__('public.id')}}
-
                             @if($arrow and $showArrow === 'id')
                                 <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
                             @elseif(!$arrow and $showArrow === 'id')
@@ -216,8 +215,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($parents as $parent)
+                    <?php $counter = 1 ?>
+                    @foreach($parents as $parent)
                     <tr>
+                        <td class="num_table ">{{$counter}}</td>
+                        <?php $counter++ ?>
                         <td>
                             <div class="td_rect">
                                 {{$parent->id}}

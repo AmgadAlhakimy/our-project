@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> 
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class="table-section shadow-none">
@@ -41,7 +41,7 @@
                     </thead>
                     <tbody>
                     @foreach($leftStudents  as $leftStudent )
-                        <tr class="test_1 ">
+                        <tr class="">
                             <td class="num_table ">{{$counter}}</td>
                             <td>
                                 {{$leftStudent->student->id}}

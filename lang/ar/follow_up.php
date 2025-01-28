@@ -35,5 +35,7 @@ return [
 
 
     'click here' => 'اضغط هنا',
+    'Search by date' => 'البحث بالتاريخ',
+
 
 ];

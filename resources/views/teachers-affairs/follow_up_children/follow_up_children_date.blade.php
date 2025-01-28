@@ -1,23 +1,26 @@
 {{--   واجهة معلومات الطالب كاملة --}}
 @extends('layouts.sidebar')
 @section('content')
-    <div class="my-table  ">
+    <div class="section  ">
         <!-- Start personal info  -->
         <div class="row ">
-            <label class="col-12 container-title  mt-5 mb-3">{{__('student.personal info')}}</label>
+            <label class="col-12 container-title mb-2">{{__('student.personal info')}}</label>
             {{-- name and photo --}}
             <div class="col-12 mb-5 ">
-                <div class="cards_info_style row me-1 ms-1 pt-4 pb-4">
+                <div class="table-header row mt-1 me-1 ms-1 pt-4 pb-4">
                     {{-- 1 --}}
                     <div class="center_row_up col-4">
                         <img src="" class="personal_img " alt="photo"></td>
                     </div>
                     <div class="center_row_up col row ">
-                        <div class="col-4">
-                            <label class=" col-12 text-center me-2 ms-2  cards_sup_title">3298791245</label>
-                            <label class=" col-12 text-center  cards_sup_title">frist grade</label>
-                        </div>
-                        <label class="col  cards_title  text-center"> khaled abulnaser mansor abdulsafi</label>
+                        <label class="col-12  cards_title  text-center">                            
+                            شمنيستب
+                        </label>
+                    </div>
+                    <div class="col-12 text-center mt-3">
+                        <label class="  text-center cards_sup_title">3298791245</label>
+                        <label for="" class="cards_sup_title me-2 ms-2">|</label>
+                        <label class="  text-center  cards_sup_title">frist grade</label>
                     </div>
                 </div>
             </div>
@@ -39,8 +42,6 @@
                         {{__('public.show')}}
                         <div wire:loading class="spinner-border spinner-border-sm"></div>
                     </button>
-                </div>
-                <div class="box  col">
                     <button type="reset" class=" clear-button text-center">
                         {{__('public.clear')}}
                     </button>

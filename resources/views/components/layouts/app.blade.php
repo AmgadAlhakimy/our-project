@@ -12,14 +12,16 @@
         <!-- ============= LIST ============== -->
         <div class="sidebar-nav">
             <ul class="list-ul">
-                                {{-- the serch form shows only with phone style --}}
-                                <div class="search p-relative ph-search_m">
-                                    <input class="search1 ms-2 me-2 " type="search"
-                                    placeholder="{{__('sidebar.search')}}" id="rtl" />
-                                </div>
-                                <hr class="ph-search_m">
-{{--                @include('layouts.academic-department.academic-department')--}}
-{{--                @include('layouts.students-affairs.students')--}}
+                    {{-- the serch form shows only with phone style --}}
+                    <div class="search p-relative ph-search_m">
+                        <input class="search1 ms-2 me-2 " type="search" placeholder="{{__('sidebar.search')}}" id="rtl" />
+                    </div>
+                    <hr class="ph-search_m">
+
+
+                    
+            @include('layouts.academic-department.academic-department')
+            @include('layouts.students-affairs.students')
                 {{-- @include('layouts.control-department.control-department') --}}
                 @livewire('follow-up')
                 @include('layouts.parents.parents')

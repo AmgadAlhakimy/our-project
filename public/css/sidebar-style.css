@@ -110,6 +110,9 @@
     border-radius: 8px;
     transition: all 0.5s;
 }
+.li-link:hover .icon-1 {
+    animation: shakeX .4s;
+}
 .sidebar-title {
     display: flex;
     justify-content: safe;
@@ -427,6 +430,9 @@ body[dir="rtl"] .search .search1 {
     border-radius: 50%;
     border: 2px solid var(--color_dark2);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.head:hover  .logo-img {
+    animation: shake .5s;
 }
 /* End content */
 /* Start Box  */

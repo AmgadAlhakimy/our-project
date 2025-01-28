@@ -16,6 +16,15 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class FollowUpChildController extends Controller
 {
 
+
+
+    public function followUpDate()
+{
+    return view('teachers-affairs/follow_up_children.follow_up_children_date'); 
+}
+
+
+
     public function writingFollowUp($classroom_id)
     {
         try {
