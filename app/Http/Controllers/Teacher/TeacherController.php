@@ -77,7 +77,7 @@ class TeacherController extends Controller
                 ],
                 'note' => $request->note,
             ]);
-            return redirect()->back()->with(['success' => 'saved successfully']);
+            return redirect()->back()->with(['success' => 'message.saved']);
 
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

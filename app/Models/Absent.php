@@ -11,11 +11,15 @@ class Absent extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['absent','absent_reason','student_id','classroom_id'];
+    protected $fillable = ['absent', 'absent_reason', 'student_id', 'classroom_id'];
 
-    public function student(){
-        return $this->belongsTo(Student::class,'student_id');
-    }public function classroom(){
-        return $this->belongsTo(Classroom::class,'classroom_id');
+    public function student()
+    {
+        return $this->belongsTo(Student::class, 'student_id');
+    }
+
+    public function classroom()
+    {
+        return $this->belongsTo(Classroom::class, 'classroom_id');
     }
 }

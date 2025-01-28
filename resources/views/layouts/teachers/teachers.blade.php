@@ -26,42 +26,42 @@
     </li> --}}
     <!-- ========== 2 ============ -->
     <!--انشاء دفتر المتابعة الروضة -->
-    <li class="dropdown" >
-        <div class="sidebar-title">
-            <a href="#" class="li-link title-4">
-                <i class="icon-1 fa-solid fa-baby"></i>
-                <span class="menu-name">{{__('student.followup notebook')}}</span>
-                <i class="icon-1 fa-solid fa-chevron-down"></i>
-            </a>
-        </div>
-        <div class="submenu">
-            <div class="line-black">
-                @foreach($classrooms as $classroom)
-                <a href="{{route('follow_up_children.writingFollowUp',$classroom->id)}}"
-                   class="li-link">{{$classroom->name}}</a>
-                @endforeach
+{{--    <li class="dropdown" >--}}
+{{--        <div class="sidebar-title">--}}
+{{--            <a href="#" class="li-link title-4">--}}
+{{--                <i class="icon-1 fa-solid fa-baby"></i>--}}
+{{--                <span class="menu-name">{{__('student.followup notebook')}}</span>--}}
+{{--                <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--        <div class="submenu">--}}
+{{--            <div class="line-black">--}}
+{{--                @foreach($classrooms as $classroom)--}}
+{{--                <a href="{{route('follow_up_children.writingFollowUp',$classroom->id)}}"--}}
+{{--                   class="li-link">{{$classroom->name}}</a>--}}
+{{--                @endforeach--}}
 
-            </div>
-        </div>
-    </li>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </li>--}}
     <!-- عرض دفتر المتابعة الروضة -->
-    <li class="dropdown">
-        <div class="sidebar-title">
-            <a href="#" class="li-link title-4">
-                <i class="icon-1 fa-solid fa-baby"></i>
-                <span class="menu-name">{{__('student.display followup notebook')}}</span>
-                <i class="icon-1 fa-solid fa-chevron-down"></i>
-            </a>
-        </div>
-        <div class="submenu">
-            <div class="line-black">
-                @foreach($classrooms as $classroom)
-                    <a href="{{route('follow_up_children-display',$classroom->id)}}"
-                       class="li-link">{{$classroom->name}}</a>
-                @endforeach
-            </div>
-        </div>
-    </li>
+{{--    <li class="dropdown">--}}
+{{--        <div class="sidebar-title">--}}
+{{--            <a href="#" class="li-link title-4">--}}
+{{--                <i class="icon-1 fa-solid fa-baby"></i>--}}
+{{--                <span class="menu-name">{{__('student.display followup notebook')}}</span>--}}
+{{--                <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--        <div class="submenu">--}}
+{{--            <div class="line-black">--}}
+{{--                @foreach($classrooms as $classroom)--}}
+{{--                    <a href="{{route('follow_up_children-display',$classroom->id)}}"--}}
+{{--                       class="li-link">{{$classroom->name}}</a>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </li>--}}
     <!-- ========== 2 ============ -->
     <!-- اضافة درجات / المحصلة -->
         {{-- <li class="dropdown">
@@ -82,62 +82,62 @@
         </li> --}}
     <!-- ========== 3 ============ -->
     <!-- التحضير والغياب -->
-    <li class="dropdown">
-        <div class="sidebar-title">
-            <a href="#" class="li-link title-4">
-                <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name">{{__('absent.presenting children')}}</span>
-                <i class="icon-1 fa-solid fa-chevron-down"></i>
-            </a>
-        </div>
-        <div class="submenu">
-            <div class="line-black">
-                @foreach($classrooms as $classroom)
-                    <a href="{{route('absent.newPresenting',$classroom->id)}}"
-                       class="li-link">{{$classroom->name}}</a>
-                @endforeach
+{{--    <li class="dropdown">--}}
+{{--        <div class="sidebar-title">--}}
+{{--            <a href="#" class="li-link title-4">--}}
+{{--                <i class="icon-1 fa-solid fa-list-check"></i>--}}
+{{--                <span class="menu-name">{{__('absent.presenting children')}}</span>--}}
+{{--                <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--        <div class="submenu">--}}
+{{--            <div class="line-black">--}}
+{{--                @foreach($classrooms as $classroom)--}}
+{{--                    <a href="{{route('absent.newPresenting',$classroom->id)}}"--}}
+{{--                       class="li-link">{{$classroom->name}}</a>--}}
+{{--                @endforeach--}}
 
-            </div>
-        </div>
-    </li>
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </li>--}}
     <!-- ========== 3 ============ -->
     <!-- عرض التحضير والغياب -->
-    <li class="dropdown">
-        <div class="sidebar-title">
-            <a href="#" class="li-link title-4">
-                <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name">{{__('absent.display absent children')}}</span>
-                <i class="icon-1 fa-solid fa-chevron-down"></i>
-            </a>
-        </div>
-        <div class="submenu">
-            <div class="line-black">
-                @foreach($classrooms as $classroom)
-                    <a href="{{route('absent.display',$classroom->id)}}"
-                       class="li-link">{{$classroom->name}}</a>
-                @endforeach
-            </div>
-        </div>
-    </li>
+{{--    <li class="dropdown">--}}
+{{--        <div class="sidebar-title">--}}
+{{--            <a href="#" class="li-link title-4">--}}
+{{--                <i class="icon-1 fa-solid fa-list-check"></i>--}}
+{{--                <span class="menu-name">{{__('absent.display absent children')}}</span>--}}
+{{--                <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--        <div class="submenu">--}}
+{{--            <div class="line-black">--}}
+{{--                @foreach($classrooms as $classroom)--}}
+{{--                    <a href="{{route('absent.display',$classroom->id)}}"--}}
+{{--                       class="li-link">{{$classroom->name}}</a>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </li>--}}
     <!-- ========== 3 ============ -->
     <!-- تعديل التحضير والغياب -->
-    <li class="dropdown">
-        <div class="sidebar-title">
-            <a href="#" class="li-link title-4">
-                <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name">{{__('absent.edit absent children')}}</span>
-                <i class="icon-1 fa-solid fa-chevron-down"></i>
-            </a>
-        </div>
-        <div class="submenu">
-            <div class="line-black">
-                @foreach($classrooms as $classroom)
-                    <a href="{{route('absent.editAbsent',$classroom->id)}}"
-                       class="li-link">{{$classroom->name}}</a>
-                @endforeach
-            </div>
-        </div>
-    </li>
+{{--    <li class="dropdown">--}}
+{{--        <div class="sidebar-title">--}}
+{{--            <a href="#" class="li-link title-4">--}}
+{{--                <i class="icon-1 fa-solid fa-list-check"></i>--}}
+{{--                <span class="menu-name">{{__('absent.edit absent children')}}</span>--}}
+{{--                <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--        <div class="submenu">--}}
+{{--            <div class="line-black">--}}
+{{--                @foreach($classrooms as $classroom)--}}
+{{--                    <a href="{{route('absent.editAbsent',$classroom->id)}}"--}}
+{{--                       class="li-link">{{$classroom->name}}</a>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </li>--}}
     <!-- ========== 3 ============ -->
     {{-- الانصراف --}}
     <p class="title">{{__('sidebar.check out section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
@@ -146,16 +146,16 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name">{{__('teacher.new check out')}}</span>
+                <span class="menu-name">{{__('leaving.leaving')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href='/check_out' class="li-link">{{__('public.Reception')}}</a>
-                <a href='/check_out' class="li-link">{{__('public.Nursery')}}</a>
-                <a href='/check_out' class="li-link">{{__('public.KG1')}}</a>
-                <a href='/check_out' class="li-link">{{__('public.KG2')}}</a>
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('leaving.newLeaving',$classroom->id)}}"
+                       class="li-link">{{$classroom->name}}</a>
+                @endforeach
             </div>
         </div>
     </li>
@@ -163,16 +163,16 @@
         <div class="sidebar-title">
             <a href="#" class="li-link title-4">
                 <i class="icon-1 fa-solid fa-list-check"></i>
-                <span class="menu-name">{{__('teacher.display check out')}}</span>
+                <span class="menu-name">{{__('leaving.display leaving')}}</span>
                 <i class="icon-1 fa-solid fa-chevron-down"></i>
             </a>
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href='#' class="li-link">{{__('public.Reception')}}</a>
-                <a href='#' class="li-link">{{__('public.Nursery')}}</a>
-                <a href='#' class="li-link">{{__('public.KG1')}}</a>
-                <a href='#' class="li-link">{{__('public.KG2')}}</a>
+                @foreach($classrooms as $classroom)
+                    <a href="{{route('leaving.display',$classroom->id)}}"
+                       class="li-link">{{$classroom->name}}</a>
+                @endforeach
             </div>
         </div>
     </li>

@@ -35,6 +35,7 @@ Route::group(
 
         include 'follow_up.php';
         include 'absent.php';
+        include 'leaving.php';
         include 'marks.php';
         include 'search.php';
         include 'resources.php';
@@ -82,7 +83,7 @@ Route::group(
 //        });
 //        //
 //        Route::get('check_out', function () {
-//            return view(view: 'teachers-affairs/check-out/creat_check_out');
+//            return view(view: 'teachers-affairs/leaving/creat_check_out');
 //        });
 //        // -----------------------
 //        // student_info

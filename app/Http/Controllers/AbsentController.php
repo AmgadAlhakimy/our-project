@@ -12,14 +12,6 @@ use Carbon\Carbon;
 class AbsentController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function newPresenting($classroom_id)
@@ -53,6 +45,9 @@ class AbsentController extends Controller
             $classroom = Classroom::where('id', $classroom_id)->first();
             $date = Carbon::now()->format('Y-m-d');
 
+            if ($request->absent === null) {
+                return redirect()->back()->with(['error' => __('leaving.sorry you have not checked any student')]);
+            }
             if (Absent::where('created_at', 'like', "%$date%")
                 ->where('classroom_id', $classroom_id)->exists()) {
                 return redirect()->back()->with(['error' => __('absent.come on yo! did not you just present students for today')]);

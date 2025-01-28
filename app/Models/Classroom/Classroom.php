@@ -2,8 +2,10 @@
 
 namespace App\Models\Classroom;
 
+use App\Models\Absent;
 use App\Models\Activity\Activity;
 use App\Models\EducationalLevel;
+use App\Models\Leaving;
 use App\Models\Mark;
 use App\Models\Student\Student;
 use App\Models\Subject\Subject;
@@ -56,5 +58,9 @@ class Classroom extends Model
     public function absent()
     {
         return $this->hasMany(Absent::class);
+    }
+    public function leaving()
+    {
+        return $this->hasMany(Leaving::class);
     }
 }

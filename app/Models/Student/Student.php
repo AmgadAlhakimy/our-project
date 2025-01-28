@@ -5,6 +5,7 @@ namespace App\Models\Student;
 use App\Models\Absent;
 use App\Models\Classroom\Classroom;
 use App\Models\FollowUpChild;
+use App\Models\Leaving;
 use App\Models\Mark;
 use App\Models\Parents\Parents;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -55,5 +56,9 @@ class Student extends Model
     public function absent()
     {
         return $this->hasMany(Absent::class);
+    }
+    public function leaving()
+    {
+        return $this->hasMany(Leaving::class);
     }
 }
