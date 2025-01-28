@@ -17,6 +17,7 @@ return [
     'leaving time'=>'وقت الإنصراف',
     'updated leaving time'=>'وقت تعديل الإنصراف',
     'display leaving'=>'عرض الإنصراف',
+    'edit left children'=>'تعديل الطلاب المنصرفين',
     'left children today'=>'الطلاب المنصرفين لليوم',
     'check leaving student'=>'التأشير على الطلاب المنصرفين',
     'sorry you have not checked any student'=>'عذراً ولكن لم تقم بتأشير أي طالب',

@@ -6,13 +6,14 @@
                 {{Session::get('success')}}
             </div>
         @endif
-        <form method="post" action="{{route('absent.updateAbsent',$classroom->id)}}">
+        <form method="post" action="{{route('leaving.updateLeaving',$classroom->id)}}">
             @method('GET')
             @csrf
             {{-- -------***********START THE HEAD OF TABLES***********-------- --}}
             {{-- the table header with bottuns and search input --}}
 
             <div class="table-header">
+            <div class="container-title">{{__('leaving.edit left children')}}</div>
                 <div class="cards-container mt-4 third-card row">
                     <div class="card-info card-info_2 col ">
                         <h4 class="text-center ">{{__('public.class')}}</h4>

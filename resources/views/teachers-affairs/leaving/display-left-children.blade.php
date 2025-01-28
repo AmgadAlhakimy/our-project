@@ -37,7 +37,6 @@
                         <th class="th-head-1">{{__('public.photo')}}</th>
                         <th class="th-head-1 ">{{__('leaving.leaving')}}</th>
                         <th class="th-head-1 ">{{__('leaving.leaving time')}}</th>
-                        <th class="th-head-1 ">{{__('leaving.updated leaving time')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -64,13 +63,6 @@
                                 <div class="mt-2 check_style">
                                     <label>
                                         {{$leftStudent->created_at->setTimezone('Asia/Aden')->format('H:i:s A')}}
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="mt-2 check_style">
-                                    <label>
-                                        {{$leftStudent->updated_at->setTimezone('Asia/Aden')->format('H:i:s A')}}
                                     </label>
                                 </div>
                             </td>

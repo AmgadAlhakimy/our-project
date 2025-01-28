@@ -24,7 +24,7 @@
 {{--                    @include('layouts.students-affairs.students')--}}
                 <!-- ========== 5 ============ -->
                     {{-- @include('layouts.control-department.control-department') --}}
-                <!-- ========== 5 ============ -->
+gi                <!-- ========== 5 ============ -->
 
                 @livewire('follow-up')
                 <!-- ======================== PARENTS ========================== -->
