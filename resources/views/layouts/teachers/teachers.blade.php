@@ -64,7 +64,7 @@
     </li>
     <!-- ========== 2 ============ -->
     <!-- اضافة درجات / المحصلة -->
-         <li class="dropdown">
+         {{-- <li class="dropdown">
             <div class="sidebar-title">
                 <a href="#" class="li-link title-4">
                     <i class="icon-1 fa-solid fa-marker"></i>
@@ -79,7 +79,7 @@
                     <a href="#" class="li-link"> تقارير </a>
                 </div>
             </div>
-        </li>
+        </li> --}}
     <!-- ========== 3 ============ -->
     <!-- التحضير والغياب -->
     <li class="dropdown">

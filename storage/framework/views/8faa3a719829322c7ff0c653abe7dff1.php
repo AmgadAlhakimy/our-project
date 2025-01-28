@@ -20,12 +20,11 @@
                 </div>
                 <hr class="ph-search_m">
 
-                    
-                    
+
+
                 <!-- ========== 5 ============ -->
                     
                 <!-- ========== 5 ============ -->
-                    <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                 <?php
 $__split = function ($name, $params = []) {
