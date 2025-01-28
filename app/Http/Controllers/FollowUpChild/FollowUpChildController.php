@@ -56,7 +56,7 @@ class FollowUpChildController extends Controller
                 foreach ($students as $student) {
                     $this->storeChild($request, $student->id, $classroom_id);
                 }
-                return redirect()->back()
+                return redirect()->route('follow_up_children-display',$classroom_id)
                     ->with(['success' => __('message.success')]);
 
         } catch (\Exception $e) {

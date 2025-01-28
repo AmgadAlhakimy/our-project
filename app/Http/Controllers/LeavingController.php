@@ -140,9 +140,23 @@ class LeavingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLeavingRequest $request, Leaving $leaving)
+    public function updateLeaving(StoreLeavingRequest $request, $classroom_id)
     {
-        //
+        try {
+
+            $date = Carbon::now()->format('Y-m-d');
+            $left = Leaving::where('created_at', 'like', "%$date%")
+                ->where('classroom_id', $classroom_id)->get();
+
+            foreach ($left as $le) {
+                Leaving::destroy($le->id);
+            }
+
+            return $this->storeLeaving($request,$classroom_id);
+
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     /**

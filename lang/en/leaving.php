@@ -17,6 +17,7 @@ return [
     'leaving time'=>'Leaving Time',
     'updated leaving time'=>'Updated Leaving Time',
     'display leaving'=>'Display Leaving',
+    'edit left children'=>'Edit Left Children',
     'left children today'=>'Left Children Today',
     'check leaving student'=>'Check Leaving Student',
     'you can not edit left children while there is no one left'=>'You Can Not Edit Left Children while there is no one left',

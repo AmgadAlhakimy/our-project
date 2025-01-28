@@ -64,22 +64,22 @@
     </li>
     <!-- ========== 2 ============ -->
     <!-- اضافة درجات / المحصلة -->
-         <li class="dropdown">
-            <div class="sidebar-title">
-                <a href="#" class="li-link title-4">
-                    <i class="icon-1 fa-solid fa-marker"></i>
-                    <span class="menu-name"> اضافة الدرجات </span>
-                    <i class="icon-1 fa-solid fa-chevron-down"></i>
-                </a>
-            </div>
-            <div class="submenu">
-                <div class="line-black">
-                    <a href="{{route('marks.insertMarks',2)}}" class="li-link">رياضيات \ ثالث</a>
-                    <a href='{{route('marks.insert',1)}}' class="li-link">علوم الحاسوب \ اول</a>
-                    <a href="#" class="li-link"> تقارير </a>
-                </div>
-            </div>
-        </li>
+{{--         <li class="dropdown">--}}
+{{--            <div class="sidebar-title">--}}
+{{--                <a href="#" class="li-link title-4">--}}
+{{--                    <i class="icon-1 fa-solid fa-marker"></i>--}}
+{{--                    <span class="menu-name"> اضافة الدرجات </span>--}}
+{{--                    <i class="icon-1 fa-solid fa-chevron-down"></i>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--            <div class="submenu">--}}
+{{--                <div class="line-black">--}}
+{{--                    <a href="{{route('marks.insertMarks',2)}}" class="li-link">رياضيات \ ثالث</a>--}}
+{{--                    <a href='{{route('marks.insert',1)}}' class="li-link">علوم الحاسوب \ اول</a>--}}
+{{--                    <a href="#" class="li-link"> تقارير </a>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </li>--}}
     <!-- ========== 3 ============ -->
     <!-- التحضير والغياب -->
     <li class="dropdown">
