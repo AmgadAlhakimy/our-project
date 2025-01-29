@@ -68,17 +68,15 @@
                                             class="student-img" alt="photo">
                                     </td>
                                     <td class="">
-                                        <div class="mt-2 check_style">
                                             <label>
-                                                <input class="" type="checkbox"
-                                                       name="leaving[{{$index}}]"
-                                                       value={{("leaving.$index") ? 'present' : 'absent' }}>
+                                                <input class="" type="checkbox"name="leaving[{{$index}}]"
+                                                value={{("leaving.$index") ? 'present' : 'absent' }}>
+                                                <div class="absent-checkbox"></div>
+                                                
                                                 @error("leaving.$index")
                                                 <small class="form-text text-danger">{{$message}}</small>
                                                 @enderror
-                                                <i></i>
                                             </label>
-                                        </div>
                                     </td>
                                 </tr>
                                     <?php $index++ ?>
