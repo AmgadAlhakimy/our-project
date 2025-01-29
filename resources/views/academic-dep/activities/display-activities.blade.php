@@ -28,16 +28,8 @@
             <table class=" " id="check_table">
                 <thead>
                 <tr>
-                    <th>
-                        <button id="arrowButton" wire:click="ordering('id')" class="th-head-1 form-label ">
-                            {{__('public.id')}}
-                            @if($arrow and $showArrow === 'id')
-                                <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                            @elseif(!$arrow and $showArrow === 'id')
-                                <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                            @endif
-                        </button>
-                    </th>
+                    <th class="num_table ">{{__('public.num')}}</th>
+
                     <th>
                         <button wire:click="ordering('name')" class="">
                             <div class="table_test form-label ">
@@ -131,13 +123,11 @@
                 </tr>
                 </thead>
                 <tbody>
+                    <?php $counter = 1 ?>
                 @foreach($activities as $activity)
                     <tr>
-                        <td>
-                            <div class="td_rect">
-                                {{$activity->id}}
-                            </div>
-                        </td>
+                        <td class="num_table ">{{$counter}}</td>
+
                         <td>
                             <div class="td_rect">
                                 {{$activity->name}}
@@ -231,6 +221,7 @@
                             </a>
                         </td>
                     </tr>
+                    <?php $counter++ ?>
                 @endforeach
                 </tbody>
             </table>

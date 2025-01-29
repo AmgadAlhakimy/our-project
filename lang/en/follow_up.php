@@ -33,4 +33,5 @@ return [
     'come on yo! did not you just saved the homework for today'=>"Come on Yo! Didn't just saved the homework for today",
 
     'click here' => 'CLICK HERE',
+    'Search by date' => 'Search By Date',
 ];

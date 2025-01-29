@@ -15,6 +15,14 @@
             {{-- the thacher name and the month --}}
 
             <div class="cards-container mt-4 third-card row">
+                <div class=" col text-center ">
+                    <div class="cards_sup_title">{{$classroom->name}}</div>
+                </div>
+                <div class=" col text-center ">
+                    <div class="cards_title">{{$month}}</div>
+                </div>
+            </div>
+            <div class="cards-container mt-4 third-card row">
                 <div class="card-info card-info_2 col ">
                     <h4 class="text-center ">{{__('public.class')}}</h4>
                     <h4 class="Names">
@@ -27,45 +35,51 @@
                          {{$month}}
                     </h4>
                 </div>
+                <div class="col-12 mt-2 row">
+                    <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}"
+                        class=" save-button col btn p-0">
+                         <div class="form-label ">{{__('follow_up.Search by date')}}</div>
+                     </a>
+                </div>
             </div>
             {{-- the select input --}}
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
-        <div class="table-section shadow-none">
-            <div class="card table-section ">
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
                 <table  >
                     <thead >
                     <tr >
-                        <th class="num_table ">{{__('public.num')}}</th>
-                        <th class="th-head-1">{{__('public.id')}}</th>
-                        <th class="th-head-1">{{__('public.name')}}</th>
-                        <th class="th-head-1">{{__('public.photo')}}</th>
-                        <th class="th-head-1 ">{{__('absent.absent')}}</th>
-                        <th class="th-head-1">{{__('teacher.absent reason')}}</th>
+                        <th class="th-head-1 num_table form-label">{{__('public.num')}}</th>
+                        <th class="th-head-3 form-label">{{__('public.name')}}</th>
+                        <th class="th-head-2 form-label">{{__('public.photo')}}</th>
+                        <th class="th-head-1 form-label ">{{__('absent.absent')}}</th>
+                        <th class="th-head-3 form-label">{{__('teacher.absent reason')}}</th>
                     </tr>
                     </thead>
                     <tbody>
                      @foreach($absentStudents  as $absentStudent )
-                        <tr class="test_1 ">
+                        <tr class=" ">
                             <td class="num_table ">{{$counter}}</td>
-                            <td>
-                                 {{$absentStudent->student->id}}
-                            </td>
-                            <td>
-                                 {{$absentStudent->student->name}}
+                            <td >
+                                <div class="td_rect">
+                                    {{$absentStudent->student->name}}
+                                </div>
                             </td>
                             <td><img
                                      src="{{asset('storage/'.$absentStudent->student->photo)}}"
                                      class="student-img" alt="photo" ></td>
                             <td>
-                                <div class="mt-2 check_style">
-                                    <label >
+                                <div >
+                                    <div class="td_rect">
                                        {{trans('public.yes')}}
-                                    </label>
+                                    </div>
                                 </div>
                             </td>
-                            <td><label for="">{{$absentStudent->absent_reason}}</label></td>
+                            <td class="">
+                                <div class="td_rect">{{$absentStudent->absent_reason}}</div></td>
                             <?php $counter++ ?>
                         </tr>
                      @endforeach

@@ -66,18 +66,16 @@
                                         class="absentStudent-img" alt="photo">
                                 </td>
                                 <td class="">
-                                    <div class="mt-2 check_style">
-                                        <label>
-                                            <input class="" type="checkbox"
-                                                   name="leaving[{{$index}}]"
-                                                   value={{("leaving.$index") ? 'left' : 'absent' }}
-                                                {{in_array($student->id,$left_children)?'left':'checked'}}>
-                                            @error("leaving.$index")
-                                            <small class="form-text text-danger">{{$message}}</small>
-                                            @enderror
-                                            <i></i>
-                                        </label>
-                                    </div>
+                                    <label>
+                                        <input class="" type="checkbox"
+                                                name="leaving[{{$index}}]"
+                                                value={{("leaving.$index") ? 'left' : 'absent' }}
+                                            {{in_array($student->id,$left_children)?'left':'checked'}}>
+                                            <div class="absent-checkbox"></div>
+                                        @error("leaving.$index")
+                                        <small class="form-text text-danger">{{$message}}</small>
+                                        @enderror
+                                    </label>
                                 </td>
                             </tr>
                                 <?php $index++; ?>

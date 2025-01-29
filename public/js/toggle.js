@@ -32,10 +32,12 @@ icons.forEach(icon => {
     img.alt = "أيقونة";
     img.classList.add('icon');
     
-    // تعيين موقع الصور
+    
     img.style.position = 'absolute';
     img.style.left = icon.position.left;
     img.style.top = icon.position.top;
     
     iconContainer.appendChild(img);
 });
+
+

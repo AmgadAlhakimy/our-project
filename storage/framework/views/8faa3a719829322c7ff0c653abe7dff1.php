@@ -20,12 +20,11 @@
                 </div>
                 <hr class="ph-search_m">
 
-                    
-                    
+                <?php echo $__env->make('layouts.academic-department.academic-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                <?php echo $__env->make('layouts.students-affairs.students', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 <!-- ========== 5 ============ -->
                     
                 <!-- ========== 5 ============ -->
-                    <?php echo $__env->make('layouts.teachers.teachers', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                 <?php
 $__split = function ($name, $params = []) {
