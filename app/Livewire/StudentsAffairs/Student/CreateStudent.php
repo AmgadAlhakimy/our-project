@@ -7,7 +7,6 @@ use App\Models\Parents\Parents;
 use App\Models\Student\Student;
 use App\Traits\PhotoTrait;
 use App\Traits\StudentTrait;
-use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 

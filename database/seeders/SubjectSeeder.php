@@ -12,13 +12,24 @@ class SubjectSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i = 1; $i<=7; $i++ ){
+        $subjects = [
+            ['en' => 'Mathematics', 'ar' => 'الرياضيات'],
+            ['en' => 'Science', 'ar' => 'العلوم'],
+            ['en' => 'English', 'ar' => 'اللغة الإنجليزية'],
+            ['en' => 'Arabic', 'ar' => 'اللغة العربية'],
+            ['en' => 'Social Studies', 'ar' => 'الدراسات الاجتماعية'],
+            ['en' => 'Islamic Studies', 'ar' => 'التربية الإسلامية'],
+            ['en' => 'Physical Education', 'ar' => 'التربية البدنية'],
+            ['en' => 'Computer Science', 'ar' => 'علوم الحاسب'],
+            ['en' => 'Art', 'ar' => 'التربية الفنية'],
+            ['en' => 'Music', 'ar' => 'الموسيقى'],
+        ];
+
+        foreach ($subjects as $subject) {
             Subject::create([
-                'name'=> [
-                    'en'=>"Subject $i",
-                    'ar'=>"المادة $i"
-                ]
+                'name' => $subject
             ]);
         }
+
     }
 }

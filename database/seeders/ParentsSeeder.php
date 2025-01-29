@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Parents\Parents;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class ParentsSeeder extends Seeder
 {
@@ -12,38 +13,53 @@ class ParentsSeeder extends Seeder
      */
     public function run(): void
     {
-        for($i = 1; $i<=10; $i++ ){
-            Parents::create([
-                'father_name'=> [
-                    'en'=>"father$i",
-                    'ar'=>"الأب$i",
-                ],
-                'father_work'=> [
-                    'en'=>"work $i",
-                    'ar'=>"وظيفة $i",
-                ],
-                'father_contact1'=>773215420+$i,
-                'father_contact2'=>775515880+$i,
+        // ✅ Create two Faker instances (English & Arabic)
+        $fakerEn = Faker::create('en_US'); // English Faker
+        $fakerAr = Faker::create('ar_SA'); // Arabic Faker
 
-                'mother_name'=> [
-                    'en'=>"mother$i",
-                    'ar'=>"الأم$i",
+        // ✅ List of Arabic job titles (to ensure proper Arabic words)
+        $arabicJobs = [
+            'طبيب', 'مهندس', 'مدرس', 'محاسب', 'محامي',
+            'ممرض', 'صحفي', 'مبرمج', 'سائق', 'عامل'
+        ];
+        $arabicRelationships = [
+              'أخ', 'أخت', 'جد', 'جدة', 'ابن',
+            'ابنة', 'عم', 'عمة', 'خال', 'خالة'
+        ];
+
+        for ($i = 1; $i <= 10; $i++) {
+            Parents::create([
+                'father_name' => [
+                    'en' => $fakerEn->name('male'),
+                    'ar' => $fakerAr->name('male'),
                 ],
-                'mother_work'=> [
-                    'en'=>"work $i",
-                    'ar'=>"وظيفة $i",
+                'father_work' => [
+                    'en' => $fakerEn->word,
+                    'ar' => $arabicJobs[array_rand($arabicJobs)],
                 ],
-                'mother_contact1'=>773215420+$i,
-                'mother_contact2'=>775515880+$i,
-                'kin_name'=> [
-                    'en'=>"kin$i",
-                    'ar'=>"قريب$i",
+                'father_contact1' => $fakerEn->numerify('77#######'),
+                'father_contact2' => $fakerEn->numerify('77#######'),
+
+                'mother_name' => [
+                    'en' => $fakerEn->name('female'),
+                    'ar' => $fakerAr->name('female'),
                 ],
-                'kin_relationship'=> [
-                    'en'=>"relation $i",
-                    'ar'=>"علاقة $i",
+                'mother_work' => [
+                    'en' => $fakerEn->word,
+                    'ar' => $arabicJobs[array_rand($arabicJobs)],
                 ],
-                'kin_contact'=>775486890+$i,
+                'mother_contact1' => $fakerEn->numerify('77#######'),
+                'mother_contact2' => $fakerEn->numerify('77#######'),
+
+                'kin_name' => [
+                    'en' => $fakerEn->firstName,
+                    'ar' => $fakerAr->firstName,
+                ],
+                'kin_relationship' => [
+                    'en' => $fakerEn->word,
+                    'ar' => $arabicRelationships[array_rand($arabicRelationships)],
+                ],
+                'kin_contact' => $fakerEn->numerify('77#######'),
             ]);
         }
     }

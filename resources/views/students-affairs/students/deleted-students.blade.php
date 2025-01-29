@@ -8,7 +8,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">Deleted students</h4>
+                <h4 class="col container-title mt-2">{{trans('sidebar.deleted students')}}</h4>
             </div>
         </div>
 
@@ -21,11 +21,11 @@
                     <tr>
                         <th ><div class="th-head-1 form-label  " >{{__('public.id')}}</div></th>
                         <th ><div class="th-head-3 form-label" >{{__('public.name')}}</div></th>
-                        <th ><div class="th-head-1 form-label" >photo</div></th>
+                        <th ><div class="th-head-1 form-label" >{{__('public.photo')}}</div></th>
                         <th ><div class="th-head-3 form-label" >{{__('public.address')}}</div></th>
-                        <th ><div class="th-head-1 form-label" >gender</div></th>
-                        <th ><div class="th-head-2 form-label" >birth date</div></th>
-                        <th ><div class="th-head-2 form-label" >birth place</div></th>
+                        <th ><div class="th-head-1 form-label" >{{__('public.gender')}}</div></th>
+                        <th ><div class="th-head-2 form-label" > {{__('student.birthdate')}}</div></th>
+                        <th ><div class="th-head-2 form-label" >{{__('student.birth place')}}</div></th>
                         <th ><div class="th-head-2 form-label" >{{__('public.created at')}}</div></th>
                         <th ><div class="th-head-2 form-label" >{{__('public.updated at')}}</div></th>
                         <th colspan=""><div class="th-head-4 form-label" >{{__('public.processes')}}</div></th>
@@ -63,7 +63,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <div class="modal-title">
-                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>
                                                 </div>
                                             </div>
                                             <div class="modal-body form-label">
@@ -83,7 +83,6 @@
                                     </div>
                                 </div>
                             </td>
-                            {{-- واجهة المعلومات او الاستمارة الكاملة الخاصة بالطالب --}}
                         </tr>
                     @endforeach
                     </tbody>

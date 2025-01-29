@@ -151,10 +151,14 @@ return [
     'ulid' => 'The :attribute field must be a valid ULID.',
     'uuid' => 'The :attribute field must be a valid UUID.',
     'english letters'=>'This filed must be only English letters',
+    'english letters and first name'=>'This filed must be only English letters and only first name',
     'arabic letters'=>'This filed must be only Arabic letters',
     'at lease select one subject'=>'You Have to Select at Least One Subject',
     'at lease select one classroom'=>'You Have to Select at Least One Classroom',
     'at lease select one activity'=>'You Have to Select at Least One Activity',
+    'it should not start with 0'=>'Phone Number Cannot Start with 0',
+    'max first name'=>'This filed should be less than 10 letters',
+    'first name two words'=>'First name should be one word or two like "عبد الرحمن"',
 
     /*
     |--------------------------------------------------------------------------

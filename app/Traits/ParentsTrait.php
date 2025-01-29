@@ -15,9 +15,9 @@ trait ParentsTrait
     public $father_work;
     #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public $father_work_ar;
-    #[Rule('required|numeric')]
+    #[Rule('required|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
     public $father_contact1;
-    #[Rule('nullable|numeric')]
+    #[Rule('nullable|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
     public $father_contact2;
     #[Rule('required|max:50|regex:/^[a-zA-Z\s]+$/')]
     public $mother_name;
@@ -27,9 +27,9 @@ trait ParentsTrait
     public $mother_work;
     #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public $mother_work_ar;
-    #[Rule('required|numeric')]
+    #[Rule('required|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
     public  $mother_contact1;
-    #[Rule('nullable|numeric')]
+    #[Rule('nullable|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
     public  $mother_contact2;
     #[Rule('nullable|max:50|regex:/^[a-zA-Z\s]+$/')]
     public $kin_name;
@@ -39,7 +39,7 @@ trait ParentsTrait
     public $kin_relationship;
     #[Rule('nullable|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public $kin_relationship_ar;
-    #[Rule('nullable|numeric')]
+    #[Rule('nullable|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
     public  $kin_contact;
 
     public function set_nullable(): void
@@ -71,18 +71,13 @@ trait ParentsTrait
     public function messages(): array
     {
         return [
-            'father_name.regex' => __('validation.english letters'),
-            'father_name_ar.regex' => __('validation.arabic letters'),
-            'mother_name.regex' => __('validation.english letters'),
-            'mother_name_ar.regex' => __('validation.arabic letters'),
-            'father_work.regex' => __('validation.english letters'),
-            'father_work_ar.regex' => __('validation.arabic letters'),
-            'mother_work.regex' => __('validation.english letters'),
-            'mother_work_ar.regex' => __('validation.arabic letters'),
-            'kin_name.regex' => __('validation.english letters'),
-            'kin_name_ar.regex' => __('validation.arabic letters'),
+            '*name.regex' => __('validation.english letters'),
+            '*name_ar.regex' => __('validation.arabic letters'),
+            '*work.regex' => __('validation.english letters'),
+            '*work_ar.regex' => __('validation.arabic letters'),
             'kin_relationship.regex' => __('validation.english letters'),
             'kin_relationship_ar.regex' => __('validation.arabic letters'),
+            '*contact*.regex' => __('validation.it should not start with 0'),
         ];
     }
 }

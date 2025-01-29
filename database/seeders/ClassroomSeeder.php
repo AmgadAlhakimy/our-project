@@ -14,13 +14,29 @@ class ClassroomSeeder extends Seeder
     public function run(): void
     {
         $levels = EducationalLevel::all();
-        for($i = 1; $i<=10; $i++ ){
+
+        $classNames = [
+            ['en' => 'Kindergarten One', 'ar' => 'الروضة الأولى'],
+            ['en' => 'Kindergarten Two', 'ar' => 'الروضة الثانية'],
+            ['en' => 'First Grade', 'ar' => 'الصف الأول'],
+            ['en' => 'Second Grade', 'ar' => 'الصف الثاني'],
+            ['en' => 'Third Grade', 'ar' => 'الصف الثالث'],
+            ['en' => 'Fourth Grade', 'ar' => 'الصف الرابع'],
+            ['en' => 'Fifth Grade', 'ar' => 'الصف الخامس'],
+            ['en' => 'Sixth Grade', 'ar' => 'الصف السادس'],
+            ['en' => 'Seventh Grade', 'ar' => 'الصف السابع'],
+            ['en' => 'Eighth Grade', 'ar' => 'الصف الثامن'],
+            ['en' => 'Ninth Grade', 'ar' => 'الصف التاسع'],
+            ['en' => 'Tenth Grade', 'ar' => 'الصف العاشر'],
+            ['en' => 'Eleventh Grade', 'ar' => 'الصف الحادي عشر'],
+            ['en' => 'Twelfth Grade', 'ar' => 'الصف الثاني عشر'],
+        ];
+
+
+        foreach ($classNames as $class) {
             Classroom::create([
-                'name'=> [
-                    'en'=>"class $i",
-                    'ar'=>"الصف $i",
-                ],
-                'edu_id'=>$levels->random()->id,
+                'name' => $class,
+                'edu_id' => $levels->random()->id, // Assign to a random educational level
             ]);
         }
     }

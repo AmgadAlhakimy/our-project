@@ -202,9 +202,6 @@
                     <th colspan="3">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
-                    <th colspan="">
-                        <div class="th-head-3 form-label">{{__('student.display followup notebook')}} </div>
-                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -286,13 +283,12 @@
 
                             </a>
                             <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger w-50 me-1 ms-1 btn-sm"
+                                    class="btn clear-button btn-danger w-25 me-1 ms-1 "
                                     data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$student->id}} ">
-                                <i class="fa-solid fa-trash"> </i>
+                                    data-bs-target="#delete{{$student->id}}">
+                                <i class="fa-solid fa-trash"></i>
+                                {{-- {{__('public.delete')}} --}}
                             </button>
-                        </td>
-                        <td>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$student->id}}"
                                  tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -304,19 +300,24 @@
                                                 <i class="fa-solid fa-trash-can danger_msg"></i>
                                             </div>
                                         </div>
-                                        <div class="modal-body form-label">
-                                            {{__('public.are you sure you want to delete').$student->name}}
+                                        <div class="modal-body form-label row">
+                                            <div class="col-12">
+                                                {{__('public.are you sure you want to delete')}}
+                                            </div>
+                                            <div class="col-12">
+                                                {{$student->name}}
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2"
+                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2 "
                                                     data-bs-dismiss="modal">
-                                                {{__('public.cancel')}}
-                                            </button>
-                                            <form method="post" action="{{route('students.forceDelete',$student->id)}}">
-                                                @method('GET')
+                                                {{__('public.cancel')}}</button>
+                                            <form method="post"
+                                                  action="{{route('students.destroy',$student->id)}}">
+                                                @method('DELETE')
                                                 @csrf
                                                 <button type="submit"
-                                                        class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
+                                                        class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
                                             </form>
                                         </div>
                                     </div>
@@ -331,13 +332,7 @@
                             </a>
                         </td>
                         {{-- daily book --}}
-                        <td>
-                            <a href="{{route('follow-up-date',$student->id)}}"
-                               class="btn save-button btn-light btn-sm w-50 me-1 ms-1 ">
-                               <i class="fas fa-clipboard"></i>
-                                {{-- {{__('student.display followup notebook')}} --}}
-                            </a>
-                        </td>
+
                     </tr>
                 @endforeach
                 </tbody>

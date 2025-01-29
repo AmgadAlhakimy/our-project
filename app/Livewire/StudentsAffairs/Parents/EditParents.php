@@ -3,6 +3,7 @@
 namespace App\Livewire\StudentsAffairs\Parents;
 
 use App\Models\Parents\Parents;
+use App\Rules\UniqueValueIgnore;
 use App\Traits\ParentsTrait;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
@@ -12,9 +13,8 @@ class EditParents extends Component
     use ParentsTrait;
     public $id;
 
-//    #[Rule('required|max:50|regex:/^[a-zA-Z\s]+$/')]
+
     public $father_name;
-    #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+$/u')]
     public $father_name_ar;
     /**
      * @throws \Exception
@@ -44,28 +44,18 @@ class EditParents extends Component
             throw new ($e);
         }
     }
+
     public function rules()
     {
-        $rules = [
-//            'father_name' => [
-//                'required',
-//                'max:50',
-//                'regex:/^[a-zA-Z\s]+$/',
-//                Rule::unique('your_table_name', 'father_name')->ignore($this->id),
-//            ],
-//            'father_name' =>[
-//                'en'=>'required|unique:parents,father_name->en,' . $this->id.'|regex:/^[a-zA-Z\s]+$/',
-//                'ar'=>'required|unique:parents,father_name->ar,' . $this->id.'|regex:/^[\p{Arabic}\s]+$/u',
-//            ]
+        return [
+            'father_name' => 'required|max:50|regex:/^[a-zA-Z\s]+$/|unique:parents,father_name->en,' . $this->id,
+            'father_name_ar' => 'required|max:50|regex:/^[\p{Arabic}\s]+$/u|unique:parents,father_name->ar,' . $this->id,
         ];
-
-        return $rules;
     }
+
     public function update()
     {
-        $this->rules();
         $this->validate();
-        dd('hello world');
         $this->set_nullable();
         try {
             $parents = Parents::findorFail($this->id);
