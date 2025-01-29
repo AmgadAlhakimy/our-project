@@ -37,7 +37,7 @@
                     class=" save-button col me-1 ms-1 p-0">
                      <div class="form-label mt-">{{__('follow_up.edit for all students')}}</div>
                  </a>
-                <a href="{{ route('followUpDate') }}"
+                <a href="{{ route('display-followUpMonthly',$classroom->id) }}"
                     class="save-button col me-1 ms-1 p-0">
                     <div class="form-label mt-">{{ __('follow_up.Search by date') }}</div>
                 </a>
@@ -54,7 +54,7 @@
                 <thead>
                 <tr>
                     <th class="num_table ">{{__('public.num')}}</th>
-                   
+
                     <th>
                         <button id="arrowButton" wire:click="ordering('student_id')" class="th-head-1 form-label ">
                             {{__('public.id')}}
@@ -162,7 +162,7 @@
 
                 </tr>
                 </thead>
-                <tbody> 
+                <tbody>
                     <?php $counter = 1 ?>
                     @foreach($followups as $followup)
                     <tr>

@@ -18,13 +18,18 @@ trait QueryTrait
 
     public bool $isPaginate;
 
-    public function queryData($myModel, $myQuery)
+    public function queryData($myModel, $myQuery, $where = '')
     {
         $lang = LaravelLocalization::setLocale();
 
         if (strlen($this->search) >= 1) {
             $this->isPaginate = false;
             $data = $myQuery;
+        } elseif ($where > 0) {
+            $this->isPaginate = true;
+            $data = $myModel::$where->orderBy(
+                ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
+                $this->sortOrder)->paginate($this->pagination);
         } else {
             $this->isPaginate = true;
             $data = $myModel::orderBy(

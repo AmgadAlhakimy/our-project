@@ -10,6 +10,7 @@ use App\Livewire\AcademicDep\DisplayEducationalLevels;
 use App\Livewire\AcademicDep\DisplaySubjects;
 use App\Livewire\AcademicDep\DisplaySubjectTeachers;
 use App\Livewire\DisplayFollowUp;
+use App\Livewire\DisplayFollowUpMonthly;
 use App\Livewire\DisplayMajors;
 use App\Livewire\DisplayTeachers;
 use App\Livewire\StudentsAffairs\Parents\DisplayParents;
@@ -29,4 +30,7 @@ Route::get('/students',DisplayStudents::class)->name('display-students');
 Route::get('/majors',DisplayMajors::class)->name('display-majors');
 Route::get('/parents',DisplayParents::class)->name('display-parents');
 Route::get('/student/{id}',[StudentController::class,"more"])->name('student-more-info');
-Route::get('/followup-children/{classroom_id}',DisplayFollowUp::class)->name('follow_up_children-display');
+Route::get('/followup-children/{classroom_id}',DisplayFollowUp::class)
+    ->name('follow_up_children-display');
+Route::get('/display-followUpMonthly/{classroom_id}',DisplayFollowUpMonthly::class)
+    ->name('display-followUpMonthly');

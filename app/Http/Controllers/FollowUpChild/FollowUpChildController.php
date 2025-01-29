@@ -17,14 +17,6 @@ class FollowUpChildController extends Controller
 {
 
 
-
-    public function followUpDate()
-{
-    return view('teachers-affairs/follow_up_children.follow_up_children_date'); 
-}
-
-
-
     public function writingFollowUp($classroom_id)
     {
         try {
@@ -61,12 +53,12 @@ class FollowUpChildController extends Controller
                 return redirect()->back()
                     ->with(['error' => __('follow_up.come on yo! did not you just saved the homework for today')]);
             }
-                $students = Student::where('classroom_id', $classroom_id)->get();
-                foreach ($students as $student) {
-                    $this->storeChild($request, $student->id, $classroom_id);
-                }
-                return redirect()->route('follow_up_children-display',$classroom_id)
-                    ->with(['success' => __('message.success')]);
+            $students = Student::where('classroom_id', $classroom_id)->get();
+            foreach ($students as $student) {
+                $this->storeChild($request, $student->id, $classroom_id);
+            }
+            return redirect()->route('follow_up_children-display', $classroom_id)
+                ->with(['success' => __('message.success')]);
 
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -209,4 +201,17 @@ class FollowUpChildController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
+
+    public function displayFollowUp($classroom_id)
+    {
+        try {
+            $classroom = Classroom::findorfail($classroom_id);
+
+            return view('teachers-affairs/follow_up_children.follow_up_children_date',
+                compact('classroom'));
+        } catch (ModelNotFoundException|\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
+
 }

@@ -111,6 +111,7 @@ return [
     'Nursery'=>'Nursery',
     'KG1'=>'KG1',
     'KG2'=>'KG2',
+    'share'=>'Share',
 
 
     'show'=>'Show',

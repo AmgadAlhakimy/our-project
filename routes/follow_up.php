@@ -25,21 +25,17 @@ Route::get('follow-up-children/editChild/{child_id}/{classroom_id}',
 Route::get('follow-up-children/updateAllChildren/{classroom_id}',
     [FollowUpChildController::class, 'updateAllChildren'])
     ->name('follow_up_children.updateAllChildren');
-    
-    
+
+
     Route::get('follow-up-children/updateChild/{child_id}/{classroom_id}',
     [FollowUpChildController::class, 'updateChild'])
     ->name('follow_up_children.updateChild');
-    
 
-    Route::get('followUpDate',
-     [FollowUpChildController::class, 'followUpDate'])
-    ->name('followUpDate');
-
-
-    Route::get('index',
-     [FollowUpChildController::class, 'index'])
-    ->name('index');
+    Route::get('follow-up-children/displayFollowUp/{classroom_id}',
+    [FollowUpChildController::class, 'displayFollowUp'])
+    ->name('follow_up_children.displayFollowUp');
 
 
-        
+
+
+

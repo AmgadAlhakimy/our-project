@@ -31,8 +31,6 @@
                 <thead>
                 <tr>
                     <th class="num_table ">{{__('public.num')}}</th>
-                    
-                    <th>
 
                     <th>
                         <button wire:click="ordering('name')" class="">
