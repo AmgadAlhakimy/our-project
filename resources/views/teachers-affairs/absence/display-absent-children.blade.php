@@ -22,27 +22,12 @@
                     <div class="cards_title">{{$month}}</div>
                 </div>
             </div>
-            <div class="cards-container mt-4 third-card row">
-                <div class="card-info card-info_2 col ">
-                    <h4 class="text-center ">{{__('public.class')}}</h4>
-                    <h4 class="Names">
-                         {{$classroom->name}}
-                    </h4>
-                </div>
-                <div class="card-info card-info_2 col ">
-                    <h4 class="text-center ">{{__('public.date')}}</h4>
-                    <h4 class="Names">
-                         {{$month}}
-                    </h4>
-                </div>
-                <div class="col-12 mt-2 row">
-                    <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}"
-                        class=" save-button col btn p-0">
-                         <div class="form-label ">{{__('follow_up.Search by date')}}</div>
-                     </a>
-                </div>
+            <div class="w-100 mt-2 row">
+                <a href="{{route('hi',$classroom->id)}}"
+                    class="w-100 save-button col btn p-0">
+                        <div class="form-label ">{{__('follow_up.disply absent for this month')}}</div>
+                    </a>
             </div>
-            {{-- the select input --}}
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->

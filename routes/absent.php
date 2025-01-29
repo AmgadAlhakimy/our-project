@@ -23,3 +23,8 @@ Route::get('editPresenting/{classroom_id}',
 Route::get('updatePresenting/{classroom_id}',
     [AbsentController::class, 'updateAbsent'])
     ->name('absent.updateAbsent');
+
+
+Route::get('display/{classroom_id}',
+    [AbsentController::class, 'displyAbsentMonthly'])
+    ->name('hi');

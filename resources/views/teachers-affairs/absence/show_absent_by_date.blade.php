@@ -2,23 +2,14 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="section  ">
-        <!-- Start personal info  -->
-        <div class="row ">
-            <label class="col-12 container-title mb-2">{{__('student.personal info')}}</label>
-            {{-- name and photo --}}
-            <div class="col-12 mb-5 ">
-                <div class="table-header row mt-1 me-1 ms-1 pt-4 pb-4">
-                    {{-- 1 --}}
-                    <div class="center_row_up col-4">
-                        <img src="" class="personal_img " alt="photo"></td>
+        <div class="table-header">
+                <div class="col container-title mt-2 ">{{__('absent.absent children today')}}</div>
+                <div class="cards-container mt-1 third-card row">
+                    <div class=" col text-center ">
+                        <div class="cards_sup_title">{{$classroom->name}}</div>
                     </div>
-                    <div class="center_row_up col row ">
-                        <label class="col-12  cards_title  text-center"> khaled abulnaser mansor abdulsafi</label>
-                    </div>
-                    <div class="col-12 text-center mt-3">
-                        <label class="  text-center cards_sup_title">3298791245</label>
-                        <label for="" class="cards_sup_title me-2 ms-2">|</label>
-                        <label class="  text-center  cards_sup_title">frist grade</label>
+                    <div class=" col text-center ">
+                        <div class="cards_title">{{$month}}</div>
                     </div>
                 </div>
             </div>
@@ -26,27 +17,70 @@
 
             {{-- ---------------------------------- --}}
 
-            <div class="col-12 ">
-                <div class="cards_info_style ">
+            <div class="col-12 mt-4">
+                <div class="cards_info_style me-3 ms-3">
                     <div class=" pt-3 pb-3 me-4 ms-4">
                         {{-- 1 --}}
                         <input type="date" class="form-control  cards_title  text-center  "></input>
                     </div>
-                </div>
-            </div>
-            <div class="mt-5 row">
-                <div class="box col ">
-                    <button type="submit" class=" save-button text-center">
-                        {{__('public.show')}}
-                        <div wire:loading class="spinner-border spinner-border-sm"></div>
-                    </button>
-                    <button type="reset" class=" clear-button text-center">
-                        {{__('public.clear')}}
-                    </button>
+                    <div class="mt-3 row">
+                        <div class="box col ">
+                            <button type="submit" class=" save-button text-center">
+                                {{__('public.show')}}
+                                <div wire:loading class="spinner-border spinner-border-sm"></div>
+                            </button>
+                            <button type="reset" class=" clear-button text-center">
+                                {{__('public.clear')}}
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- table-hover table-striped -->
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
+                <table  >
+                    <thead >
+                    <tr >
+                        <th class="th-head-1 num_table form-label">{{__('public.num')}}</th>
+                        <th class="th-head-3 form-label">{{__('public.name')}}</th>
+                        <th class="th-head-2 form-label">{{__('public.photo')}}</th>
+                        <th class="th-head-1 form-label ">{{__('absent.absent')}}</th>
+                        <th class="th-head-3 form-label">{{__('teacher.absent reason')}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php $counter = 1; ?>
+                     @foreach($classroom->students  as $student )
+                        <tr class=" ">
+                            <td class="num_table ">{{$counter}}</td>
+                            <td >
+                                <div class="td_rect">
+                                    {{$student->name}}
+                                </div>
+                            </td>
+                            <td><img
+                                    src="{{asset('storage/'.$student->photo)}}"
+                                    class="student-img" alt="photo" ></td>
+                            <td>
+                                <div >
+                                    <div class="td_rect">
+                                    {{trans('public.yes')}}
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="">
+                                {{-- <div class="td_rect">{{$student->absent_reason}}</div></td> --}}
+                            <?php $counter++ ?>
+                        </tr>
+                     @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </section>
 
 @endsection
