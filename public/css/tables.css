@@ -338,16 +338,16 @@ tbody tr:hover .num_table {
 input[type="checkbox"] {
     display: none;
 }
-input[type="checkbox"]:checked + .absent-checkbox {
+input[type="checkbox"]:not(:checked) + .absent-checkbox {
     color: var(--o-title-1); 
     border-color: var(--o-title-1); 
     animation: bounce_checked 1s infinite;
     transform: scale(1.2); 
 }
-input[type="checkbox"]:checked + .absent-checkbox:before {
+input[type="checkbox"]:not(:checked) + .absent-checkbox:before {
     content: '✖'; 
 }
-input[type="checkbox"]:not(:checked) + .absent-checkbox:before {
+input[type="checkbox"]:checked  + .absent-checkbox:before {
     content: '✔'; 
     color: var(--green-color); /
 }
