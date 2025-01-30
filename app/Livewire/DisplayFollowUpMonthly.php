@@ -20,6 +20,8 @@ class DisplayFollowUpMonthly extends Component
     {
         $month = Carbon::now()->format('F j');
         $classroom=Classroom::where('id',$this->classroom_id)->first();
+        $whereClause = ['classroom_id' => $this->classroom_id];
+
 
         try {
             $myQuery = Student::where('id', 'like', "%$this->search%")
@@ -42,8 +44,8 @@ class DisplayFollowUpMonthly extends Component
                         ->orwhere('father_name->ar', 'like', "%$this->search%");
                 })->get();
 
-            $students = $this->queryData("\App\Models\Student\Student", $myQuery);
-            return view('teachers-affairs.follow_up_children.follow_up_children_date',
+            $students = $this->queryData("\App\Models\Student\Student", $myQuery,$whereClause);
+            return view('teachers-affairs.follow_up_children.follow-up-students',
                 compact('students','classroom','month'));
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

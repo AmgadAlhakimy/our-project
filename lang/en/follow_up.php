@@ -25,6 +25,8 @@ return [
     'bath'=>'Bathroom',
     'food'=>'Food',
     'snack'=>'Snack',
+    'whole notebook'=>'Whole Notebook',
+    'follow-up notebook'=>'Follow-up Notebook',
     'please select how many times'=>'Please, Select How Many Times',
     'please select the quantity of snack'=>'Please, Select The Quantity of Snack',
     'please select the quantity of food'=>'Please, Select The Quantity of Food',

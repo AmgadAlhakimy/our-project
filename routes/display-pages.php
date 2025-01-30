@@ -13,6 +13,7 @@ use App\Livewire\DisplayFollowUp;
 use App\Livewire\DisplayFollowUpMonthly;
 use App\Livewire\DisplayMajors;
 use App\Livewire\DisplayTeachers;
+use App\Livewire\FollowUpNoteBook;
 use App\Livewire\StudentsAffairs\Parents\DisplayParents;
 use App\Livewire\StudentsAffairs\Student\DisplayStudents;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,5 @@ Route::get('/followup-children/{classroom_id}',DisplayFollowUp::class)
     ->name('follow_up_children-display');
 Route::get('/display-followUpMonthly/{classroom_id}',DisplayFollowUpMonthly::class)
     ->name('display-followUpMonthly');
+Route::get('/display-followUpNoteBook/{student_id}/{classroom_id}',FollowUpNoteBook::class)
+    ->name('display-follow-up-notebook');

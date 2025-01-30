@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class FollowUp extends Component
 {
-    public $test = 1;
 
     public function render()
     {

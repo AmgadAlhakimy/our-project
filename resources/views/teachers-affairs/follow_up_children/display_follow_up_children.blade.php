@@ -39,7 +39,7 @@
                  </a>
                 <a href="{{ route('display-followUpMonthly',$classroom->id) }}"
                     class="save-button col me-1 ms-1 p-0">
-                    <div class="form-label mt-">{{ __('follow_up.Search by date') }}</div>
+                    <div class="form-label mt-">{{ __('follow_up.whole notebook') }}</div>
                 </a>
             </div>
         </div>
