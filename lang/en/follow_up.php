@@ -23,7 +23,7 @@ return [
     'note'=>'Note',
     'homework'=>'Homework',
     'bath'=>'Bathroom',
-    'food'=>'Food',
+    'food'=>'Food', 
     'snack'=>'Snack',
     'whole notebook'=>'Whole Notebook',
     'follow-up notebook'=>'Follow-up Notebook',
@@ -33,7 +33,16 @@ return [
     'homework field is required'=>'This Homework Field is Required At least write there is none',
     'sorry this classroom does not have subjects'=>'Sorry, this Classroom Does Not Have Subjects',
     'come on yo! did not you just saved the homework for today'=>"Come on Yo! Didn't just saved the homework for today",
-
+    
     'click here' => 'CLICK HERE',
     'Search by date' => 'Search By Date',
+
+    'How many times did the student go to the bathroom?'=>'How many times did the student go to the bathroom? ',
+    'Did the student eat the food?'=>'Did the student eat the food? ',
+    'Did the student eat the snack?'=>'Did the student eat the snack? ',
+    'snack'=>'Snack',
+    'snack'=>'Snack',
+
+
+
 ];

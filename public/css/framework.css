@@ -206,7 +206,6 @@ body[dir="rtl"] .containers-style{
     font-weight: bold;
     text-align: center;
     align-items: center;
-    white-space: pre-line;
     
 }
 td .td_rect{
@@ -1364,6 +1363,7 @@ body[dir="rtl"] .modal-dialog{
     text-align: start;
 }
 .pre-line{
-    white-space: pre-line;
+        white-space: pre-line;
+
 }
 

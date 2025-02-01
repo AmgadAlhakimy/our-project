@@ -25,7 +25,7 @@
             <div class="w-100 mt-2 row">
                 <a href="{{route('hi',$classroom->id)}}"
                     class="w-100 save-button col btn p-0">
-                        <div class="form-label ">{{__('follow_up.disply absent for this month')}}</div>
+                        <div class="form-label ">{{__('absent.disply absent for this month')}}</div>
                     </a>
             </div>
         </div>

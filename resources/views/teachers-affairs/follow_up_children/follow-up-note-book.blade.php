@@ -44,7 +44,7 @@
             <div class="container-title">{{__(key: 'follow_up.homework')}}</div>
             <div class=" shadow-none mt-4 ">
                 <div class="table-section card  ">
-                    <table class=" " id="check_table">
+                    <table class=" " id="check_table_FollowUp">
                         <tr>
                             <th class=" num_follow_table stuck">{{__('subject.subject')}}</th>
                             @foreach($classroom->subjects as $subject)
@@ -68,25 +68,24 @@
             </div>
             
             <div class="row mb-2">
-                <div class="container-title">{{__(key: 'follow_up.preckfast & lunch')}}</div>
                 <div class="col-lg-4 col-md-4 mt-1 col-ms-12  ">
                     <div class="cards_info_style mt-4 p-2 h-100">
-                        <div class="form-label mb-4">Food</div>
-                        <p class=" form-label"><strong class="title-3">Did the student eat the food? </strong> {{ $student_notebook->food }}</p>
+                        <div class="form-label mb-4">{{ __('follow_up.food') }}</div>
+                        <p class=" form-label"><strong class="title-3">{{ __('follow_up.Did the student eat the food?') }}</strong> {{ $student_notebook->food }}</p>
                     </div>
                 </div>
     
                 <div class="col-lg-4 col-md-4 mt-1 col-ms-12  ">
                     <div class="cards_info_style mt-4 p-2 h-100">
-                        <div class="form-label mb-4">Snack</div>
-                        <p class=" form-label"><strong class="title-3">Did the student eat the snack? </strong> {{ $student_notebook->snack }}</p>
+                        <div class="form-label mb-4">{{ __('follow_up.snack') }}</div>
+                        <p class=" form-label"><strong class="title-3">{{ __('follow_up.Did the student eat the snack?') }}</strong> {{ $student_notebook->snack }}</p>
                     </div>
                 </div>
     
                 <div class="col-lg-4 col-md-4 mt-1 col-ms-12  ">
                     <div class="cards_info_style mt-4 p-2 h-100">
-                        <div class="form-label mb-4">Bathroom</div>
-                        <p class=" form-label"><strong class="title-3">How many times did the student go to the bathroom? </strong>{{ $student_notebook->bath }}</p>
+                        <div class="form-label mb-4">{{ __('follow_up.bath') }}</div>
+                        <p class=" form-label"><strong class="title-3">{{ __('follow_up.How many times did the student go to the bathroom?') }}</strong>{{ $student_notebook->bath }}</p>
                     </div>
                 </div>
             </div>

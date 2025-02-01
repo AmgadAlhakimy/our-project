@@ -44,6 +44,9 @@
             </div>
         </div>
     </li>
+
+
+
     <!-- عرض دفتر المتابعة الروضة -->
     <li class="dropdown">
         <div class="sidebar-title">
@@ -62,6 +65,25 @@
             </div>
         </div>
     </li>
+    <!-- عرض دفتر المتابعة الروضة السابق لكل الطلاب  -->
+    <li class="dropdown">
+        <div class="sidebar-title">
+            <a href="#" class="li-link title-4">
+                <i class="icon-1 fa-solid fa-baby"></i>
+                <span class="menu-name">{{ __('follow_up.whole notebook') }}</span>
+                <i class="icon-1 fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+        <div class="submenu">
+            <div class="line-black">
+                @foreach($classrooms as $classroom)
+                <a href="{{ route('display-followUpMonthly',$classroom->id) }}"
+                   class="li-link">{{$classroom->name}}</a>
+                @endforeach
+            </div>
+        </div>
+    </li>
+
     <!-- ========== 2 ============ -->
     <!-- اضافة درجات / المحصلة -->
 
@@ -123,6 +145,25 @@
             </div>
         </div>
     </li>
+            <!-- عرض جميع الغياب الخاص بطلاب الفصل الواحد خلال الشهر  -->
+            <li class="dropdown">
+                <div class="sidebar-title">
+                    <a href="#" class="li-link title-4">
+                        <i class="icon-1 fa-solid fa-baby"></i>
+        
+                        <span class="menu-name">{{ __('absent.disply absent for this month') }}</span>
+                        <i class="icon-1 fa-solid fa-chevron-down"></i>
+                    </a>
+                </div>
+                <div class="submenu">
+                    <div class="line-black">
+                        @foreach($classrooms as $classroom)
+                        <a href="{{route('hi',$classroom->id)}}"
+                           class="li-link">{{$classroom->name}}</a>
+                        @endforeach
+                    </div>
+                </div>
+            </li>
     <!-- ========== 3 ============ -->
     {{-- الانصراف --}}
     <p class="title">{{__('sidebar.check out section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
@@ -161,4 +202,5 @@
             </div>
         </div>
     </li>
+
 </div>

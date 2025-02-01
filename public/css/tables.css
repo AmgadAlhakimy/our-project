@@ -192,10 +192,10 @@ tr:hover img {
 
 
 }
-#check_table {
-    overflow-x: auto; /* لتمكين التمرير الجانبي */
-    display: block; /* تحويل الجدول إلى كتلة لتمكين التمرير */
-    white-space: nowrap; /* منع التفاف النص */
+#check_table_FollowUp {
+    overflow-x: auto; 
+    display: block; 
+    white-space: nowrap;
 }
 
 /*  عمواد مائل افقيا */

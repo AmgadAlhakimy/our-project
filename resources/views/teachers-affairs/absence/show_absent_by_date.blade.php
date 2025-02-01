@@ -14,11 +14,9 @@
                 </div>
             </div>
 
-
             {{-- ---------------------------------- --}}
-
-            <div class="col-12 mt-4">
-                <div class="cards_info_style me-3 ms-3">
+            <div class=" mt-4">
+                <div class="cards_info_style">
                     <div class=" pt-3 pb-3 me-4 ms-4">
                         {{-- 1 --}}
                         <input type="date" class="form-control  cards_title  text-center  "></input>
@@ -36,7 +34,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
 
         <!-- table-hover table-striped -->
         <div class=" shadow-none mt-4 ">
@@ -48,8 +46,7 @@
                         <th class="th-head-1 num_table form-label">{{__('public.num')}}</th>
                         <th class="th-head-3 form-label">{{__('public.name')}}</th>
                         <th class="th-head-2 form-label">{{__('public.photo')}}</th>
-                        <th class="th-head-1 form-label ">{{__('absent.absent')}}</th>
-                        <th class="th-head-3 form-label">{{__('teacher.absent reason')}}</th>
+                        <th class="th-head-1 form-label ">{{__('absent.days of absence')}}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -66,21 +63,17 @@
                                     src="{{asset('storage/'.$student->photo)}}"
                                     class="student-img" alt="photo" ></td>
                             <td>
-                                <div >
-                                    <div class="td_rect">
-                                    {{trans('public.yes')}}
+                                    <div class="title-3 ">
+                                            12
                                     </div>
-                                </div>
                             </td>
-                            <td class="">
-                                {{-- <div class="td_rect">{{$student->absent_reason}}</div></td> --}}
                             <?php $counter++ ?>
-                        </tr>
                      @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
+    </div>
     </section>
 
 @endsection
