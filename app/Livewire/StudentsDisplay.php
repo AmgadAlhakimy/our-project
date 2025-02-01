@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Livewire;
+
+use App\Models\Classroom\Classroom;
+use Livewire\Component;
+
+class StudentsDisplay extends Component
+{
+    public function render()
+    {
+        $classrooms= Classroom::all();
+        return view('layouts.students-affairs.students',compact('classrooms'));
+    }
+}

@@ -27,9 +27,6 @@ trait QueryTrait
             $data = $myQuery;
         } elseif ($whereClause > 0) {
             $this->isPaginate = true;
-//            $data = $myModel::where($whereClause)->orderBy(
-//                ($this->orderBy) == 'name' ? 'name->' . $lang : $this->orderBy,
-//                $this->sortOrder)->paginate($this->pagination);
 
             $data = $myModel::where($whereClause)->orderBy(
                     ($this->orderBy == 'name') ? 'name->' . $lang : $this->orderBy,

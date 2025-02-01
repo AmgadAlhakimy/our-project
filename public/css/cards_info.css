@@ -22,7 +22,10 @@
     border-radius: 50%;
 
 }
-.cards_info_style{
+
+
+
+.cards_info_style{ 
     transition: width 0.3s;
     border-radius: 5px;
     transition: all 1s ease;

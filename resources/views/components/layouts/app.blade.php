@@ -18,7 +18,7 @@
                 </div>
                 <hr class="ph-search_m">
                 @include('layouts.academic-department.academic-department')
-                @include('layouts.students-affairs.students')
+                @livewire('students-display')
                 @livewire('follow-up')
                 @include('layouts.parents.parents')
                 @include('layouts.personnel-affairs.personnel-affairs')

@@ -57,7 +57,7 @@
             <div class="line-black">
                 @foreach($classrooms as $classroom)
                     <a href="{{route('follow_up_children-display',$classroom->id)}}"
-                       class="li-link">{{$classroom->name}}</a>
+                        class="li-link">{{$classroom->name}}</a>
                 @endforeach
             </div>
         </div>

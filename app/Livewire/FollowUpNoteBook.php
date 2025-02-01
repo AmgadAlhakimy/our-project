@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Classroom\Classroom;
 use App\Models\FollowUpChild;
+use App\Models\Student\Student;
 use Livewire\Component;
 
 class FollowUpNoteBook extends Component
@@ -37,9 +38,11 @@ class FollowUpNoteBook extends Component
                 ->get();
         } else {
 
+            $student = Student::where('id',$this->student_id)->first();
+            
             $student_notebooks = FollowUpChild::where('student_id', $this->student_id)->get();
         }
         return view('teachers-affairs.follow_up_children.follow-up-note-book',
-            compact('student_notebooks', 'classroom'));
+            compact('student_notebooks', 'classroom', 'student'));
     }
 }

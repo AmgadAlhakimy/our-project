@@ -22,8 +22,14 @@ class StoreAbsentRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            "absent_reason.*"  => 'nullable',
-        ];
+        if("absent[0]" === 'present'){
+            return [
+                "absent_reason.*"  => 'required',
+            ];
+        } else{
+            return [
+                "absent_reason.*"  => 'nullable',
+            ];
+        }
     }
 }

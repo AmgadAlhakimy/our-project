@@ -8,7 +8,7 @@ Route::get('follow-up/writingFollowUp/{classroom_id}',
     [FollowUpChildController::class, 'writingFollowUp'])
     ->name('follow_up_children.writingFollowUp');
 
-Route::get('follow-up-children/storeAll/{classroom_id}',
+Route::get('follow-up-children/storeAll/{classroom_id}', 
     [FollowUpChildController::class, 'storeAll'])
     ->name('follow_up_children.storeAll');
 

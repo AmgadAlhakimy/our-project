@@ -21,9 +21,9 @@
                 <hr class="ph-search_m">
 
                     @include('layouts.academic-department.academic-department')
-                    @include('layouts.students-affairs.students')
+                    @livewire('students-display')
                 <!-- ========== 5 ============ -->
-                @livewire('follow-up')
+                    @livewire('follow-up')
                 <!-- ======================== PARENTS ========================== -->
                     @include('layouts.parents.parents')
 
