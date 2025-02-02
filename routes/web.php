@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -29,10 +32,19 @@ Route::group(
             return Route::post('/livewire/update', $handle);
         });
 
+        Route::get('/dashboard', function () {
+            return view('welcome');
+        });
         Route::get('/', function () {
             return view('layouts/home');
         });
+//        Route::get('/home', 'HomeController@index')->name('home');
 
+        Route::group(['middleware' => ['auth']], function() {
+            Route::resource('roles',RoleController::class);
+            Route::resource('users', UserController::class);
+
+        });
         include 'follow_up.php';
         include 'absent.php';
         include 'leaving.php';
@@ -57,3 +69,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

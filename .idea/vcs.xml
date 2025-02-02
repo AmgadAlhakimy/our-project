@@ -3,11 +3,12 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/codezero/laravel-unique-translation" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/laravel/fortify" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/laravel/jetstream" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/laravel/prompts" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/livewire/livewire" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/mcamara/laravel-localization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/php-flasher/flasher" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/php-flasher/flasher-laravel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/spatie/laravel-package-tools" vcs="Git" />

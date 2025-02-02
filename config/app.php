@@ -172,6 +172,8 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
         Livewire\LivewireServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ])->toArray(),
 
@@ -188,6 +190,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ])->toArray(),
 
 ];

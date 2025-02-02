@@ -781,9 +781,30 @@
     </style>
 </head>
 <body class="antialiased">
-{{--    @livewire('clicker')--}}
 <br>
-{{--    @livewire('counter')--}}
-
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
+hello world hello world hello world hello world hello world hello world hello world hello world
 </body>
 </html>

@@ -1,121 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{-- ********** *********** --}}
-    <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/New folder/login-signup-style.css')}}" rel="stylesheet">
-    <title> Login </title>
+@extends('layouts.app')
 
-</head>
-<body>
-    <section class="x-section">
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
 
-        <div class="imgBx">
-            <img src="{{URL::asset('assets/images/layouts/1.jpg')}}" alt="">
-        </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-        <div class="contentBx" >
-            <div name = "logo">
-                 <x-authentication-card-logo />
-            </div>
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
-{{--            <x-validation-errors class="" />--}}
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-            <div class="formBx">
-
-                @if (session('status'))
-                    <div class="">
-                        {{ session('status') }}
-                    </div>
-                @endif
-
-                <h1>Login</h1>
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-
-                    <div class="inputBx">
-                        <x-label class="textBX" for="id" value="{{ __('ID') }}" />
-                        <x-input id="name" class="form-control " type="number" name="student_id" :value="old('id')"  autofocus autocomplete="id" />
-                        @error('student_id')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-                    {{-- -- --}}
-
-                    <div class="inputBx">
-                        <x-label class="textBX" for="password" value="{{ __('Password') }}" />
-                        <x-input id="password" class="form-control" type="password" name="password"  autocomplete="current-password" />
-                        @error('password')
-                        <small class="form-text text-danger">{{$message}}</small>
-                        @enderror
-                    </div>
-
-                    <div class="remember">
-                        <label for="remember_me" class="flex items-center">
-                            <x-checkbox id="remember_me" name="remember" />
-                            <span class="textBX">{{ __('Remember me') }}</span>
-                        </label>
-                    </div>
-
-                    <x-button class="input-x">
-                        {{ __('Login') }}
-                    </x-button>
-
-                    <div class="inputBx">
-                        @if (Route::has('password.request'))
-                            <a class="textBxInfo ml-5" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
-                            </a>
-                        @endif
-
-                    </div>
-                    {{-- -- --}}
-
-<<<<<<< HEAD
-=======
-
-
-                    @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                        <div class="mt-4 ">
-                            <x-label for="terms">
-                                <div class="flex items-center">
-                                    <x-checkbox name="terms" id="terms" required />
-
-                                    <div class="ml-2">
-                                        {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                                'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">'.__('Terms of Service').'</a>',
-                                                'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">'.__('Privacy Policy').'</a>',
-                                        ]) !!}
-                                    </div>
-                                </div>
-                            </x-label>
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                         </div>
-                    @endif
 
-                    <div class="">
+                        <div class="row mb-3">
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                        <h3 class="textBxInfo">Login with social media</h3>
-                        <ul class="sci">
-                            <a href=""></a>
-                            <li><a href="https://m.facebook.com/login/?locale=ar_AR&refsrc=deprecated"><img src="../../../public/assets/images/layouts/f.jpg" alt=""></a></li>
-                            <li><a href="https://web.whatsapp.com"><img src="../../../public/assets/images/layouts/w.jpg"  alt=""></a></li>
-                            <li><a href="https://www.instagram.com/accounts/login/?hl=ar"><img src="../../../public/assets/images/layouts/insta.jpg" alt=""></a></li>
-                            {{-- <li><img src="X" alt=""></li>
-                            <li><img src="telegram" alt=""></li> --}}
-                        </ul>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
-                    </div>
->>>>>>> ae1cabe06bdc6f4defec2caa02040f8ab6913ffa
-                </form>
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                    <label class="form-check-label" for="remember">
+                                        {{ __('Remember Me') }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Login') }}
+                                </button>
+
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </section>
-</body>
-</html>
-
+    </div>
+</div>
+@endsection

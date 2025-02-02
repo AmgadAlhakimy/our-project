@@ -1,5 +1,5 @@
 @extends('layouts.sidebar')
-@section('content') 
+@section('content')
     <div class="my-table mt-5">
         @if(Session::has('success'))
             <div class="alert alert-success" role="alert">
@@ -64,15 +64,16 @@
                                         class="student-img" alt="photo">
                                 </td>
                                 <td class="">
-                                        <label>
-                                            <input class="" type="checkbox" name="absent[{{$index}}]" value={{("absent.$index") ? 'present' : 'absent' }} checked>
-                                            <div class="absent-checkbox"></div>
-                                            <div class="mt-2 check_style">
-                                                @error("absent.$index")
-                                                <small class="form-text text-danger">{{$message}}</small>
-                                                @enderror
-                                        </label>
-                                    </div>
+                                    <label>
+                                        <input class="" type="checkbox" name="absent[{{$index}}]"
+                                               value={{("absent.$index") ? 'present' : 'absent' }} checked>
+                                        <div class="absent-checkbox"></div>
+                                        <div class="mt-2 check_style">
+                                            @error("absent.$index")
+                                            <small class="form-text text-danger">{{$message}}</small>
+                                        @enderror
+                                    </label>
+
                                 </td>
                                 <td>
                                     <input type="text" class="form-control"
@@ -88,7 +89,6 @@
                     </table>
                 </div>
             </div>
-
             <div class=" mt-5">
                 <div class="box row ">
                     <div class="col">
@@ -96,9 +96,9 @@
                     </div>
                     <div class="col">
                         <input class="clear-button " type="reset" value="{{__('public.clear')}}">
+                    </div>
                 </div>
             </div>
-        </div>
         </form>
     </div>
 @endsection

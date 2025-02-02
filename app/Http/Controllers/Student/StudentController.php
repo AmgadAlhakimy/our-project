@@ -3,52 +3,17 @@
 namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Student\StoreStudentRequest;
-use App\Http\Requests\Student\UpdateStudentRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Relative;
 use App\Models\Student\Student;
 use App\Traits\PhotoTrait;
 use Exception;
-use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     use PhotoTrait;
 
-    /**
-     * Display students.
-     */
-    public function index()
-    {
-        try {
-        $students = Student::paginate(20);
-        $classrooms= Classroom::all();
-        return view('students-affairs/students.show_students',
-            compact('students', 'classrooms'));
-
-        }catch (\Exception  $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
-
-    /**
-     * Show creating new CreateStudent page.
-     */
-    public function create()
-    {
-        try {
-        $classrooms = Classroom::all();
-        $relatives = Relative::all();
-        $levels = EducationalLevel::all();
-        return view('students-affairs/students.create_student',
-            compact('classrooms','relatives', 'levels'));
-
-        }catch (Exception $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
 
     /**
      * Display deleted students.
@@ -58,29 +23,12 @@ class StudentController extends Controller
         try {
             $students = Student::onlyTrashed()->get();
             return view('students-affairs/students.deleted-students',
-                compact('students', ));
+                compact('students',));
 
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
-
-    /**
-     * Show the form for editing CreateStudent page.
-     */
-    public function edit($id)
-    {
-        try {
-            $student = Student::findorFail($id);
-            $classrooms = Classroom::all();
-            return view('students-affairs/students.edit_student',
-                compact('student','classrooms'));
-
-        }catch (\Exception $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
-
 
 
     /**
@@ -107,14 +55,14 @@ class StudentController extends Controller
         try {
             $classroom_id = Student::withTrashed()->select('classroom_id')->where('id', $id)->get();
             $classroom = Classroom::where('id', $classroom_id)->pluck('id');
-            if($classroom->count() > 0){
-            Student::withTrashed()->where('id', $id)->restore();
-            return redirect()->back()
-                ->with(['success' => trans('message.restore')]);
-            }else{
-                return redirect()->back() ->with(['error' => trans('message.restore_student_error')]);
+            if ($classroom->count() > 0) {
+                Student::withTrashed()->where('id', $id)->restore();
+                return redirect()->back()
+                    ->with(['success' => trans('message.restore')]);
+            } else {
+                return redirect()->back()->with(['error' => trans('message.restore_student_error')]);
             }
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -125,13 +73,13 @@ class StudentController extends Controller
     public function forceDelete($id)
     {
         try {
-            $this->deleteImage($id,"App\Models\Student\Student");
+            $this->deleteImage($id, "App\Models\Student\Student");
 
             Student::withTrashed()->where('id', $id)->forceDelete();
             return redirect()->back()
                 ->with(['warning' => trans('message.force delete')]);
 
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -146,17 +94,8 @@ class StudentController extends Controller
             return view('students-affairs/students.student_more_info',
                 compact('student',));
 
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
-    }
-
-    /**
-     * get classrooms according to educational level.
-     */
-    public function getClassrooms($id)
-    {
-        return Classroom::where('edu_id', $id)->pluck("name", "id");
-
     }
 }

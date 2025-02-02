@@ -70,7 +70,7 @@
                                         <input class="" type="checkbox"
                                                 name="leaving[{{$index}}]"
                                                 value={{("leaving.$index") ? 'left' : 'absent' }}
-                                            {{in_array($student->id,$left_children)?'left':'checked'}}>
+                                            {{in_array($student->id,$left_children)?'checked':'left'}}>
                                             <div class="absent-checkbox"></div>
                                         @error("leaving.$index")
                                         <small class="form-text text-danger">{{$message}}</small>
