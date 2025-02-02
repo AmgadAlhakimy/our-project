@@ -46,7 +46,7 @@
     transition: all 1s ease;
 }
 thead th,
-thead th button {
+thead th button .follow_table {
     top: 0;
     background-color: var(--container-color);
     padding: 10px;
@@ -170,8 +170,9 @@ tr:hover img {
 }
 .card_btn:hover::before {
     transform: rotateX(0);
-}
-.num_table {
+} 
+.num_table ,
+.num_follow_table {
     background-color: var(--S-Color-8);
     color: #fff;
     width: 1px;
@@ -179,6 +180,24 @@ tr:hover img {
     font-size: 15px;
     border-bottom: 1px solid var(--border-color);
 }
+.stuck{
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    width: 150px;
+    background-color: var(--S-Color-8);
+    color: #fff;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border-color);
+
+
+}
+#check_table_FollowUp {
+    overflow-x: auto; 
+    display: block; 
+    white-space: nowrap;
+}
+
 /*  عمواد مائل افقيا */
 .static_c {
     writing-mode: vertical-rl;
@@ -369,4 +388,10 @@ input[type="checkbox"]:checked  + .absent-checkbox:before {
     50% { transform: translateY(3px); }
     75% { transform: translateY(-3px); }
     100% { transform: translateY(0); }
+}
+
+
+.border-lr{
+    border-left: 2px solid var(--border-color);
+    border-right: 2px solid var(--border-color);
 }

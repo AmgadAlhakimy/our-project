@@ -50,7 +50,7 @@
                     </th>
                     <th>
                         <button wire:click="ordering('created_at')" class=" ">
-                            <div class="table_test form-label ">
+                            <div class=" form-label ">
                                 {{__('public.created at')}}
                                 @if($arrow and $showArrow === 'created_at')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>

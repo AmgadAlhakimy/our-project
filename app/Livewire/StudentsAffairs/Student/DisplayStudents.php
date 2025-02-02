@@ -2,6 +2,7 @@
 
 namespace App\Livewire\StudentsAffairs\Student;
 
+use App\Models\Classroom\Classroom;
 use App\Models\Student\Student;
 use App\Traits\QueryTrait;
 use Livewire\Component;
@@ -12,8 +13,13 @@ class DisplayStudents extends Component
     use WithPagination;
     use QueryTrait;
 
+    
+    public $classroom_id;
+    
     public function render()
     {
+        $whereClause = ['classroom_id' => $this->classroom_id];
+        $classroom =Classroom::where('id',$this->classroom_id)->first();
         try {
             $myQuery = Student::where('id', 'like', "%$this->search%")
                 ->orwhere('name->en', 'like', "%$this->search%")
@@ -35,9 +41,10 @@ class DisplayStudents extends Component
                         ->orwhere('father_name->ar', 'like', "%$this->search%");
                 })->get();
 
-            $students = $this->queryData("\App\Models\Student\Student", $myQuery);
+            $students = $this->queryData("\App\Models\Student\Student", $myQuery,$whereClause);
             return view('students-affairs.Students.display-Students', [
                 'students' => $students,
+                'classroom' => $classroom,
             ])->title('Students');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

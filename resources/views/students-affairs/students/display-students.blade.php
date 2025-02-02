@@ -1,7 +1,7 @@
 <div class="my-table mt-5">
     <div class="table-header ">
         {{-- the title and search --}}
-        <h4 class="form-group container-title">{{__('student.student info')}}</h4>
+            <h4 class="form-group container-title ">{{__('student.student info')}}</h4>
         <div class="row first-card mt-4">
             <div class="row">
                 <label class="col">
@@ -9,8 +9,8 @@
                         <label class="col">
                             <div class="search p-relative">
                                 <input wire:model.live.debounce.500ms="search"
-                                       type="text" class="form-control " name="search"
-                                       placeholder="{{__('sidebar.search')}}">
+                                    type="text" class="form-control " name="search"
+                                    placeholder="{{__('sidebar.search')}}">
                             </div>
                         </label>
                     </div>
@@ -18,10 +18,14 @@
             </div>
         </div>
     </div>
-
+    
     <!-- pagination up code -->
-    @include('layouts.pagination.pagination_up')
-
+    <div class="row">
+        <div class="col text-center mt-3 form-label">{{$classroom->name}}</div>
+        <div class="col">
+            @include('layouts.pagination.pagination_up')
+        </div>
+    </div>
     {{-- the table --}}
     <div class=" shadow-none mt-4 ">
         <div class="table-section card  ">
@@ -110,8 +114,6 @@
                         </button>
                     </th>
                     {{-- 1 --}}
-
-
                     <th>
                         <button wire:click="ordering('takes_medicine')" class="">
                             <div class="table_test form-label ">
@@ -153,7 +155,7 @@
                     {{-- 1 --}}
                     <th>
                         <button wire:click="ordering('note')" class="">
-                            <div class="table_test form-label ">
+                            <div class="table_test form-label">
                                 {{__('public.note')}}
                                 @if($arrow and $showArrow === 'note')
                                     <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
@@ -283,7 +285,7 @@
                         </td>
                         <td>
                             <a href="{{route('edit-student',$student->id)}}"
-                               class="btn save-button btn-success w-50 me-1 ms-1 btn-sm">
+                                class="btn save-button btn-success w-50 me-1 ms-1 btn-sm">
                                 <i class="fa-solid fa-pen-to-square"></i>
 
                             </a>
@@ -296,8 +298,8 @@
                             </button>
                             <!-- Modal -->
                             <div class="modal fade" id="delete{{$student->id}}"
-                                 tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
+                                tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -318,7 +320,7 @@
                                                     data-bs-dismiss="modal">
                                                 {{__('public.cancel')}}</button>
                                             <form method="post"
-                                                  action="{{route('students.destroy',$student->id)}}">
+                                                action="{{route('students.destroy',$student->id)}}">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit"

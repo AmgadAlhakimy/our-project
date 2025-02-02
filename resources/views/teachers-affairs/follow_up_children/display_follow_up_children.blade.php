@@ -54,7 +54,6 @@
                 <thead>
                 <tr>
                     <th class="num_table ">{{__('public.num')}}</th>
-
                     <th>
                         <button id="arrowButton" wire:click="ordering('student_id')" class="th-head-1 form-label ">
                             {{__('public.id')}}

@@ -21,15 +21,30 @@
                 <hr class="ph-search_m">
 
                     <?php echo $__env->make('layouts.academic-department.academic-department', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
-                    <?php echo $__env->make('layouts.students-affairs.students', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                    <?php
+$__split = function ($name, $params = []) {
+    return [$name, $params];
+};
+[$__name, $__params] = $__split('students-display');
+
+$__html = app('livewire')->mount($__name, $__params, 'lw-3043576435-0', $__slots ?? [], get_defined_vars());
+
+echo $__html;
+
+unset($__html);
+unset($__name);
+unset($__params);
+unset($__split);
+if (isset($__slots)) unset($__slots);
+?>
                 <!-- ========== 5 ============ -->
-                <?php
+                    <?php
 $__split = function ($name, $params = []) {
     return [$name, $params];
 };
 [$__name, $__params] = $__split('follow-up');
 
-$__html = app('livewire')->mount($__name, $__params, 'lw-3043576435-0', $__slots ?? [], get_defined_vars());
+$__html = app('livewire')->mount($__name, $__params, 'lw-3043576435-1', $__slots ?? [], get_defined_vars());
 
 echo $__html;
 

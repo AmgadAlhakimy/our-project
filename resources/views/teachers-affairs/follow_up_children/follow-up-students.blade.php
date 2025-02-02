@@ -1,9 +1,6 @@
 
 <div class="my-table mt-5">
         <!-- Start personal info  -->
-        <div class="row ">
-            <label class="col-12 container-title mb-2">{{__('student.personal info')}}</label>
-
             <div class="table-header ">
                 {{-- the title and search --}}
                 <h4 class="form-group container-title">{{__('follow_up.follow-up notebook')}}</h4>
@@ -67,8 +64,8 @@
                                     </div>
                                 </th>
 
-                                <th colspan="">
-                                    <div class="th-head-2 form-label">{{__('public.processes')}} </div>
+                                <th colspan="" class="">
+                                    <div class="th-head-3 text-center form-label">{{__('public.processes')}} </div>
                                 </th>
 
                             </tr>
@@ -97,7 +94,7 @@
                                     <td>
                                         <a href="{{route('display-follow-up-notebook',
                                             ['student_id' => $student->id, 'classroom_id' => $classroom->id])}}"
-                                           class="btn save-button btn-success w-50 me-1 ms-1 ">
+                                           class="btn save-button btn-success w-100 me-1 ms-1 ">
                                             <i class="fa-solid fa-book"></i>
                                              {{__('follow_up.follow-up notebook')}}
                                         </a>
@@ -119,5 +116,4 @@
                     @include('layouts.pagination.pagination_down')
                 </div>
             </div>
-        </div>
     </div>

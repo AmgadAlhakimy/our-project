@@ -335,7 +335,7 @@
                         </button>
                     </div>
                     <div class="box  col">
-                        <a href="{{route('display-students')}}" class="btn clear-button"><i
+                        <a href="{{route('display-students',$classroom_id)}}" class="btn clear-button"><i
                                 class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
                     </div>
                 </div>

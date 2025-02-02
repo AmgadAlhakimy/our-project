@@ -29,7 +29,8 @@ Route::get('/activities',DisplayActivities::class)->name('display-activities');
 Route::get('/levels',DisplayEducationalLevels::class)->name('display-levels');
 Route::get('/subjects',DisplaySubjects::class)->name('display-subjects');
 Route::get('/teachers',DisplayTeachers::class)->name('display-teachers');
-Route::get('/students',DisplayStudents::class)->name('display-students');
+Route::get('/student/{classroom_id}',DisplayStudents::class)->name('display-students');
+
 Route::get('/majors',DisplayMajors::class)->name('display-majors');
 Route::get('/parents',DisplayParents::class)->name('display-parents');
 Route::get('/student/{id}',[StudentController::class,"more"])->name('student-more-info');
@@ -41,3 +42,4 @@ Route::get('/display-followUpNoteBook/{student_id}/{classroom_id}',FollowUpNoteB
     ->name('display-follow-up-notebook');
 Route::get('/display-users', DisplayUsers::class)->name('display-users');
 Route::get('/display-roles', DisplayRoles::class)->name('display-roles');
+

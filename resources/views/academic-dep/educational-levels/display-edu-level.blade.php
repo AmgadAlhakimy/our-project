@@ -1,4 +1,4 @@
-<div class="my-table mt-5">
+<div class="my-table mt-5"> 
     <div class="table-header ">
         {{-- the title and search --}}
         <h4 class="form-group container-title">{{__('eduLevel.educational Level info')}}</h4>

@@ -40,5 +40,8 @@ return [
     'click here' => 'اضغط هنا',
     'Search by date' => 'البحث بالتاريخ',
 
+    'How many times did the student go to the bathroom?'=>' كم مرات استخدم الطفل الحمام ؟',
+    'Did the student eat the food?'=>'هل تناول الطفل الطعام ؟',
+    'Did the student eat the snack?'=>'هل تناول الطفل المقبلات ؟ ',
 
 ];
