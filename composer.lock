@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "1bf1a64665b72fc556eb18356ad294a6",
-=======
     "content-hash": "1131815da7d3ae6fc043cb15ad0edde1",
->>>>>>> 63c6d51dd4deb5414903c01aa9306d7a58a003e7
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1153,16 +1149,16 @@
         },
         {
             "name": "guzzlehttp/uri-template",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/uri-template.git",
-                "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c"
+                "reference": "30e286560c137526eccd4ce21b2de477ab0676d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/ecea8feef63bd4fef1f037ecb288386999ecc11c",
-                "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c",
+                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/30e286560c137526eccd4ce21b2de477ab0676d2",
+                "reference": "30e286560c137526eccd4ce21b2de477ab0676d2",
                 "shasum": ""
             },
             "require": {
@@ -1219,7 +1215,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/uri-template/issues",
-                "source": "https://github.com/guzzle/uri-template/tree/v1.0.3"
+                "source": "https://github.com/guzzle/uri-template/tree/v1.0.4"
             },
             "funding": [
                 {
@@ -1235,7 +1231,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-12-03T19:50:20+00:00"
+            "time": "2025-02-03T10:55:03+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -2138,8 +2134,6 @@
             "time": "2024-09-21T08:32:55+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "livewire/livewire",
             "version": "v3.5.2",
             "source": {
@@ -2216,7 +2210,6 @@
             "time": "2024-07-03T17:22:45+00:00"
         },
         {
->>>>>>> 63c6d51dd4deb5414903c01aa9306d7a58a003e7
             "name": "mcamara/laravel-localization",
             "version": "V1.8.0",
             "source": {
@@ -4115,16 +4108,16 @@
         },
         {
             "name": "spatie/laravel-translatable",
-            "version": "6.10.1",
+            "version": "6.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-translatable.git",
-                "reference": "2bf4dcd7b348f7bb113acfc73c23ee8dff964fba"
+                "reference": "6150f6d55f4712279883d56490406f8a92a9c72a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/2bf4dcd7b348f7bb113acfc73c23ee8dff964fba",
-                "reference": "2bf4dcd7b348f7bb113acfc73c23ee8dff964fba",
+                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/6150f6d55f4712279883d56490406f8a92a9c72a",
+                "reference": "6150f6d55f4712279883d56490406f8a92a9c72a",
                 "shasum": ""
             },
             "require": {
@@ -4186,7 +4179,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-translatable/issues",
-                "source": "https://github.com/spatie/laravel-translatable/tree/6.10.1"
+                "source": "https://github.com/spatie/laravel-translatable/tree/6.10.2"
             },
             "funding": [
                 {
@@ -4194,7 +4187,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-01-31T11:04:34+00:00"
+            "time": "2025-02-03T08:49:09+00:00"
         },
         {
             "name": "symfony/console",
@@ -9310,12 +9303,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
