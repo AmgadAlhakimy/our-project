@@ -29,11 +29,12 @@ Route::get('/activities',DisplayActivities::class)->name('display-activities');
 Route::get('/levels',DisplayEducationalLevels::class)->name('display-levels');
 Route::get('/subjects',DisplaySubjects::class)->name('display-subjects');
 Route::get('/teachers',DisplayTeachers::class)->name('display-teachers');
-Route::get('/student/{classroom_id}',DisplayStudents::class)->name('display-students');
+Route::get('/student_more_info/{classroom_id}',DisplayStudents::class)->name('display-students');
 
 Route::get('/majors',DisplayMajors::class)->name('display-majors');
 Route::get('/parents',DisplayParents::class)->name('display-parents');
 Route::get('/student/{id}',[StudentController::class,"more"])->name('student-more-info');
+
 Route::get('/followup-children/{classroom_id}',DisplayFollowUp::class)
     ->name('follow_up_children-display');
 Route::get('/display-followUpMonthly/{classroom_id}',DisplayFollowUpMonthly::class)

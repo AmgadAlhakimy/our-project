@@ -13,11 +13,12 @@ class AbsentController extends Controller
 {
     /**
      * Show the form for creating a new resource.
-     */
+     */ 
     public function newPresenting($classroom_id)
     {
         try {
             $students = Student::where('classroom_id', $classroom_id)->get();
+            
             $classroom = Classroom::where('id', $classroom_id)->first();
             $month = Carbon::now()->format('F j');
             $date = Carbon::now()->format('Y-m-d');
@@ -90,7 +91,8 @@ class AbsentController extends Controller
     {
         try {
             $absentStudents = Absent::where('classroom_id', $classroom_id)->get();
-            $classroom = Classroom::where('id', $classroom_id)->first();
+            
+            $classroom = Classroom::findorFail($classroom_id);
             $month = Carbon::now()->format('F j');
 
             return view(
@@ -157,6 +159,8 @@ class AbsentController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
+
+
     public function displyAbsentMonthly($classroom_id)
     {
         try {

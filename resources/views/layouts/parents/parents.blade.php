@@ -1,6 +1,6 @@
 
 
-{{--                    parents                          --}}
+{{--    parents    --}}
 
 <p class="title">{{__('sidebar.parent section')}}<i class="ms-1 me-1 fa-solid fa-people-roof"></i></p>
 <li class="dropdown">
@@ -14,7 +14,7 @@
             <span class="menu-name">{{__('sidebar.parent')}}</span>
             <i class="icon-1 fa-solid fa-chevron-down"></i>
         </a>
-    </div>
+    </div> 
     <div class="submenu">
         <div class="line-black">
             <a href='/student_info' class="li-link">{{__('sidebar.son info')}}</a>
@@ -25,3 +25,14 @@
         </div>
     </div>
 </li>
+    <!-- ========== student ifno ============ -->
+    <li class="dropdown">
+        <div class="sidebar-title">
+            {{-- <a href="{{route('student-more-info',$student->id)}}" class="li-link title-4"> --}}
+                <i class="icon-1 fa-solid fa-graduation-cap"></i>
+                <span class="menu-name">
+                    {{__('sidebar.son info')}}
+                </span>
+            </a>
+        </div>
+    </li>
