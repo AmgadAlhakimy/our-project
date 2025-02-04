@@ -78,28 +78,47 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
+
+                        <script>
+                            // Pass the localized messages to JavaScript
+                            window.localizedMessages = {
+                                imageError: "{{ __('validation.image') }}",
+                                requiredError: "{{ __('validation.required') }}"
+                            };
+                        </script>
+
                         {{-- 3 --}}
                         <div class="">
                             <div class="row">
                                 <div class="box col">
                                     <label class="" for="photo">{{__('student.photo')}}</label>
-                                    <input type="file" class="form-control" id="photo"
-                                           wire:model.live.debounce.500ms="photo"
+                                    <input type="file" class="form-control"
+
+                                           id="fileInput" wire:model.live.debounce.500ms="photo" accept="image/*" onchange="validateFile(event)"
                                            value="{{old('photo')}}">
+
+                                    <small class="form-text text-danger" id="fileError"></small>
                                     @error('photo')
-                                    <small class="form-text text-danger">{{$message}}</small>
+                                    <small class="form-text text-danger" id="photoError">{{$message}}</small>
                                     @enderror
                                 </div>
                             </div>
                         </div>
 
-                        @if($photo)
+                        @if ($photo && $isValidImage)
                             <div class="box d-flex justify-content-center">
                                 <img class="personal_img mt-4" alt="photo"
                                      src="{{$photo->temporaryUrl()}}">
                             </div>
                         @endif
                         {{-- 4 --}}
+
+                        <script>
+                            window.localizedMessages = {
+                                imageError: "{{ __('validation.image') }}",
+                            };
+                        </script>
+
 
                         <div class="box col-lg-6 col-md-6">
                             <label for="address">{{__("student.student's address in arabic")}}</label>

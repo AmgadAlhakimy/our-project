@@ -8,7 +8,7 @@
                 </div>
             @endif
             <form method="post" action="{{route('subjects.update',$subject->id)}}">
-                @method('PUT') 
+                @method('PUT')
                 @csrf
                 <h3 class="container-title">{{__('Subject.update Subject')}}</h3>
                 <div class="container containers-style">
@@ -39,13 +39,17 @@
                 </div>
                 <div class="row mt-2">
                     <div class=" row">
-                        <div class="box col ">
-                            <input class="save-button" type="submit" value="{{__('public.update')}}">
-                        </div>
-                        <div class="box  col">
-                            <a href="{{route('display-subjects')}}" class="btn clear-button"><i
-                                    class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                        </div>
+                        @can('update subject')
+                            <div class="box col ">
+                                <input class="save-button" type="submit" value="{{__('public.update')}}">
+                            </div>
+                        @endcan
+                        @can('display subjects')
+                            <div class="box  col">
+                                <a href="{{route('display-subjects')}}" class="btn clear-button"><i
+                                        class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                            </div>
+                        @endcan
                     </div>
                 </div>
             </form>

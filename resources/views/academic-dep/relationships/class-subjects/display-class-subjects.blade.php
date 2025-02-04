@@ -30,7 +30,7 @@
                 <thead>
                 <tr>
                     <th class="num_table ">{{__('public.num')}}</th>
-                    
+
                     <th>
                         <button wire:click="ordering('name')" class="">
                             <div class="table_test form-label ">
@@ -54,12 +54,12 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <?php $counter = 1 ?>
-                    @foreach($classrooms as $classroom)
+                <?php $counter = 1 ?>
+                @foreach($classrooms as $classroom)
                     <tr>
                         <td class="num_table ">{{$counter}}</td>
-                        <?php $counter++ ?>
- 
+                            <?php $counter++ ?>
+
                         <td>
                             <div class="td_rect">
                                 {{$classroom->name}}
@@ -72,12 +72,14 @@
                                 @endforeach
                             </div>
                         </td>
-                        <td>
-                            <a href="{{route('class-subjects.edit',$classroom->id)}}"
-                               class="btn save-button btn-success w-100">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                {{__('public.edit')}}</a>
-                        </td>
+                        @can('edit subjects-classes')
+                            <td>
+                                <a href="{{route('class-subjects.edit',$classroom->id)}}"
+                                   class="btn save-button btn-success w-100">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    {{__('public.edit')}}</a>
+                            </td>
+                        @endcan
                     </tr>
                 @endforeach
                 </tbody>

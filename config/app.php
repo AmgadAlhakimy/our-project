@@ -1,7 +1,9 @@
 <?php
 
+use Flasher\Laravel\Support\ServiceProvider;
 use Illuminate\Support\Facades\Facade;
-use Illuminate\Support\ServiceProvider;
+
+//use Illuminate\Support\ServiceProvider;
 
 return [
 
@@ -169,11 +171,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
-        App\Providers\JetstreamServiceProvider::class,
         Yoeunes\Toastr\ToastrServiceProvider::class,
         Livewire\LivewireServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
 
     ])->toArray(),
 
@@ -184,14 +184,12 @@ return [
     |
     | This array of class aliases will be registered when this application
     | is started. However, feel free to register as many as you wish as
-    | the aliases are "lazy" loaded so they don't hinder performance.
+    | the aliases are "lazy" loaded, so they don't hinder performance.
     |
     */
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
     ])->toArray(),
 
 ];

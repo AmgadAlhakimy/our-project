@@ -16,7 +16,7 @@ return [
     'user'=>'المستخدم',
     'users'=>'المستخدمين',
     'user name' => 'اسم المستخدم',
-    'edit user' => 'تعديل المستخدم',
+    'edit user' => 'تعديل المستخدم: ',
     'user email' => 'البريد الإلكتروني',
     'deleted users' => 'المستخدمين المحذوفين',
     'user password' => 'كلمة المرور الخاصة بالمستخدم',
@@ -32,5 +32,7 @@ return [
     'enabled'=>'مفعل',
     'disabled'=>'غير مفعل',
     'please select the status'=>'يرجى إختيار الحالة',
+    'change the password of'=>'تغيير كلمة المرور الخاصة بالمستخدم: ',
+
 
 ];

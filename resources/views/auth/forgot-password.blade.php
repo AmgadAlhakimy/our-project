@@ -1,58 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {{-- ********** *********** --}}
-    <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('css/New folder/login-signup-style.css')}}" rel="stylesheet">
+<x-guest-layout>
+    <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+    </div>
 
-</head>
-<body>
-    <section class="x-section">
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <div class="imgBx">
-            <img src="{{('../../../public/assets/images/layouts/1.jpg')}}" alt="">
+    <form method="POST" action="{{ route('password.email') }}">
+        @csrf
+
+        <!-- Email Address -->
+        <div>
+            <x-input-label for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
-    
-        <div class="contentBx">
-            <div name="logo">
-                {{-- <x-authentication-card-logo /> --}}
-            </div> 
 
-            <x-validation-errors class="" />
-
-
-            <div class="formBx">
-                
-                @if (session('status'))
-                    <div class="">
-                        {{ session('status') }}
-                    </div>
-                @endif
-                <h1>Forgot </h1>
-                <form method="POST" action="{{ route('password.email') }}">
-                    @csrf
-
-                    {{-- -- --}}
-                    <div class="textBxInfo">
-                        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-                    </div>
-                    {{-- -- --}}
-                    <div class="inputBx">
-                        <x-label class="textBX" for="email" value="{{ __('Email') }}" />
-                        <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-                    </div>
-                    {{-- -- --}}
-                        <x-button class="input-x">
-                            {{ __('Email Password Reset Link') }}
-                        </x-button>
-                    {{-- -- --}}
-
-                </form>
-            </div>
+        <div class="flex items-center justify-end mt-4">
+            <x-primary-button>
+                {{ __('Email Password Reset Link') }}
+            </x-primary-button>
         </div>
-    </section>
-</body>
-</html>
+    </form>
+</x-guest-layout>

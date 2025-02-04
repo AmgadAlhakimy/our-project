@@ -14,6 +14,7 @@ return [
     */
 
     'role' => 'Role',
+    'back' => 'Back',
     'roles' => 'Roles',
     'new role' => 'New Role',
     'edit role' => 'Edit Role',
@@ -22,5 +23,8 @@ return [
     'role info' => 'Role Info',
     'roles info' => 'Roles Info',
     'display roles' => 'Display Roles',
+    'permission' => 'Permission',
+    'permissions' => 'Permissions',
+    'no permissions assigned' => 'No Permissions Assigned',
 
 ];

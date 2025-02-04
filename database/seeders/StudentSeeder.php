@@ -35,8 +35,8 @@ class StudentSeeder extends Seeder
             Student::create([
                 'id' => rand(1000000000, 9000000000),
                 'name' => [
-                    'en' => $fakerEn->firstName . ' ' . $fakerEn->lastName,
-                    'ar' => $fakerAr->firstName . ' ' . $fakerAr->lastName,
+                    'en' => $fakerEn->firstName,
+                    'ar' => $fakerAr->firstName,
                 ],
                 'photo' => 'photo',
                 'address' => [
@@ -57,24 +57,24 @@ class StudentSeeder extends Seeder
                     'ar' => $check_ar[$array_num],
                 ],
                 'medicine_desc' => [
-                    'en' => $array_num ? "No medication needed" : "Takes medicine regularly",
-                    'ar' => $array_num ? "لا يحتاج إلى دواء" : "يتناول الدواء بانتظام",
+                    'en' => $array_num ? "" : "Takes medicine regularly",
+                    'ar' => $array_num ? "" : "يتناول الدواء بانتظام",
                 ],
                 'has_allergy' => [
                     'en' => $check_en[$array_num],
                     'ar' => $check_ar[$array_num],
                 ],
                 'allergy_desc' => [
-                    'en' => $array_num ? "No allergies detected" : "Allergic to peanuts",
-                    'ar' => $array_num ? "لا توجد حساسية معروفة" : "حساسية من الفول السوداني",
+                    'en' => $array_num ? "" : "Allergic to peanuts",
+                    'ar' => $array_num ? "" : "حساسية من الفول السوداني",
                 ],
                 'has_health_problem' => [
                     'en' => $check_en[$array_num],
                     'ar' => $check_ar[$array_num],
                 ],
                 'health_problem_desc' => [
-                    'en' => $array_num ? "Healthy with no conditions" : "Has mild asthma",
-                    'ar' => $array_num ? "صحي ولا يعاني من مشاكل" : "يعاني من ربو خفيف",
+                    'en' => $array_num ? "" : "Has mild asthma",
+                    'ar' => $array_num ? "" : "يعاني من ربو خفيف",
                 ],
                 'classroom_id' => $classrooms->random()->id,
                 'parents_id' => $parents->random()->id,

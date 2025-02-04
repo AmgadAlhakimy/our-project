@@ -1,6 +1,6 @@
 <!-- Start head  -->
 <!-- Start content  -->
-<div class="content"> 
+<div class="content">
     <div class="head " dir="">
         <div class="head_1">
             <!-- ============= logo ================== -->
@@ -15,7 +15,7 @@
             <div class=" search p-relative ph-search">
                 <label for="rtl"></label> <input class="search1" type="search"
                     placeholder="{{__('sidebar.search')}}" id="rtl" />
-            </div> 
+            </div>
         </div>
         <div class="head_1">
             <div class=" icons ph-account">
@@ -44,7 +44,7 @@
             </div>
             {{-- THE DROPDOWN MENEU 2 --}}
             {{-- home --}}
-            
+
             {{--  --}}
             <div class=" me-1 ms-1 ph-home ">
                 <a class="card-info  " aria-current="page" href='/Distribution_of_powers'>
@@ -93,7 +93,7 @@
                     <hr class="">
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li class="">
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}" 
+                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
                             class=" ps-4 pe-5 4-2">
                                 {{ $properties['native'] }}
                             </a>

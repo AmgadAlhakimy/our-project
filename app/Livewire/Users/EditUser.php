@@ -14,13 +14,14 @@ class EditUser extends Component
     public $id;
     public $name;
     public $email;
+    public $password;
+    public $confirm_password;
     public function mount()
     {
         $this->allRoles = Role::pluck('name', 'name')->toArray();
         $user = User::findorFail($this->id);
         $this->name = $user->name;
         $this->email = $user->email;
-        $this->password = $user->password;
         $this->status = $user->status;
         $this->roles_name = $user->roles_name;
 
@@ -41,13 +42,13 @@ class EditUser extends Component
             $user->update([
                 'name' => $this->name,
                 'email' => $this->email,
-                'password' => Hash::make($this->password),
                 'roles_name' => $this->roles_name,
                 'status' => $this->status,
             ]);
 
             // Assign role
-            $user->assignRole($this->roles_name);
+            $user->syncRoles($this->roles_name);
+
 
             $this->reset();
             return redirect()->route('display-users')->with(['success' => __('message.update')]);
@@ -58,6 +59,7 @@ class EditUser extends Component
 
     public function render()
     {
+
         return view('users.edit-user');
     }
 }

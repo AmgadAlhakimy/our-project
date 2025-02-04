@@ -7,8 +7,10 @@ use App\Models\Parents\Parents;
 use App\Models\Student\Student;
 use App\Traits\PhotoTrait;
 use App\Traits\StudentTrait;
+use Illuminate\Http\UploadedFile;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Validator;
 
 class CreateStudent extends Component
 {
@@ -16,13 +18,12 @@ class CreateStudent extends Component
     use PhotoTrait;
     use StudentTrait;
 
-
     public function save()
     {
         $this->validate();
         try {
             Student::create([
-                'id'=>rand(1000000000,9000000000),
+                'id' => rand(1000000000, 9000000000),
                 'name' => [
                     'en' => $this->name,
                     'ar' => $this->name_ar

@@ -97,6 +97,8 @@ return [
     'first term income'=>'محصلة الترم الأول',
     'second term income'=>'محصلة الترم الثاني',
     'the first students'=>'الطلاب الأوائل',
+    'academic distribution management'=>'إدارة التوزيع الدراسي',
+    'display academic distribution'=>'عرض التوزيع الدراسي',
 
     'teacher section' => 'قسم المعلمين',
     'major section' => 'قسم التخصصات',

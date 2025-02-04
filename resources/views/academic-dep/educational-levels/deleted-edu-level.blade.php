@@ -1,21 +1,21 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="my-table mt-5">
-        <div class="table-header"> 
+        <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
                 <h4 class="col container-title mt-2">{{__('edulevel.DELETED EDUCATIONAL LEVELS')}}</h4>
             </div>
         </div>
-        
+
         <!-- table-hover table-striped -->
-    {{-- the table --}}
-    <div class=" shadow-none mt-4 ">
-        <div class="table-section card  ">
-            <table class=" " id="check_table">
+        {{-- the table --}}
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
                     <thead>
                     <tr>
-                        
+
                         <th>
                             <div class=" th-head-1 form-label">{{__('public.id')}}</div>
                         </th>
@@ -38,70 +38,75 @@
                         <tr>
                             <td>
                                 <div class="td_rect">
-                                {{$Level->id}}
+                                    {{$Level->id}}
                                 </div>
                             </td>
                             <td>
                                 <div class="td_rect">
-                                {{$Level->name}}
+                                    {{$Level->name}}
                                 </div>
                             </td>
                             <td>
                                 <div class="td_rect">
-                                {{$Level->created_at}}
+                                    {{$Level->created_at}}
                                 </div>
                             </td>
                             <td>
                                 <div class="td_rect">
-                                {{$Level->updated_at}}
+                                    {{$Level->updated_at}}
                                 </div>
                             </td>
                             <td>
-                                <a href="{{route('educational-levels.restore',$Level->id)}}"
-                                    class="btn save-button btn-success  w-25 me-1 ms-1">
-                                    <i class="fa-solid fa-trash-can-arrow-up"></i>
+                                @can('restore educational-level')
+                                    <a href="{{route('educational-levels.restore',$Level->id)}}"
+                                       class="btn save-button btn-success  w-25 me-1 ms-1">
+                                        <i class="fa-solid fa-trash-can-arrow-up"></i>
 
                                         {{-- {{__('public.restore')}}  --}}
                                     </a>
-                                <button class="btn clear-button btn-danger  w-25 me-1 ms-1" data-bs-toggle="modal"
-                                        data-bs-target="#delete{{$Level->id}}">
-                                    <i class="fa-solid fa-trash"></i>
-                                     {{-- {{__('public.force delete')}} --}}
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="delete{{$Level->id}}"
-                                        tabindex="-1" aria-labelledby="exampleModalLabel"
-                                        aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <div class="modal-title">
-                                                    <i class="fa-solid fa-trash-can danger_msg"></i>                                                    
+                                @endcan
+                                @can('forceDelete educational-level')
+                                    <button class="btn clear-button btn-danger  w-25 me-1 ms-1" data-bs-toggle="modal"
+                                            data-bs-target="#delete{{$Level->id}}">
+                                        <i class="fa-solid fa-trash"></i>
+                                        {{-- {{__('public.force delete')}} --}}
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="delete{{$Level->id}}"
+                                         tabindex="-1" aria-labelledby="exampleModalLabel"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <div class="modal-title">
+                                                        <i class="fa-solid fa-trash-can danger_msg"></i>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-body form-label row">
-                                                <div class="col-12">
-                                                    {{__('public.are you sure you want to delete')}}
+                                                <div class="modal-body form-label row">
+                                                    <div class="col-12">
+                                                        {{__('public.are you sure you want to delete')}}
+                                                    </div>
+                                                    <div class="col-12">
+                                                        {{$Level->name}}
+                                                    </div>
                                                 </div>
-                                                <div class="col-12">
-                                                    {{$Level->name}}
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger clear-button ms-2 me-2 "
+                                                            data-bs-dismiss="modal">
+                                                        {{__('public.cancel')}}</button>
+                                                    <form method="post"
+                                                          action="{{route('educational-levels.forceDelete',$Level->id)}}">
+                                                        @method('get')
+                                                        @csrf.
+                                                        <button type="submit"
+                                                                class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}
+                                                        </button>
+                                                    </form>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-danger clear-button ms-2 me-2 " data-bs-dismiss="modal">
-                                                    {{__('public.cancel')}}</button>
-                                                <form method="post"
-                                                        action="{{route('educational-levels.forceDelete',$Level->id)}}">
-                                                    @method('get')
-                                                    @csrf.
-                                                    <button type="submit"
-                                                            class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}
-                                                    </button>
-                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

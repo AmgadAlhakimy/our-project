@@ -16,7 +16,7 @@ return [
     'users' => 'Users',
     'email' => 'Email',
     'new user' => 'New User',
-    'edit user' => 'Edit User',
+    'edit user' => 'Edit User: ',
     'user name' => 'User Name',
     'user password' => 'User Password',
     'deleted users' => 'Deleted Users',
@@ -30,6 +30,7 @@ return [
     'enabled'=>'Enabled',
     'disabled'=>'Disabled',
     'please select the status'=>'Please Select the Status',
+    'change the password of'=>'Change The Password Of: ',
     'email verified at'=>'Email Verified at',
 
 ];

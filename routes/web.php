@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -18,7 +18,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-// routes/web.php
 
 Route::group(
     [
@@ -33,18 +32,32 @@ Route::group(
         });
 
         Route::get('/dashboard', function () {
-            return view('welcome');
-        });
-        Route::get('/', function () {
-            return view('layouts/home');
-        });
-//        Route::get('/home', 'HomeController@index')->name('home');
+            return view('dashboard');
+        })->middleware(['auth', 'verified'])->name('dashboard');
 
-        Route::group(['middleware' => ['auth']], function() {
-            Route::resource('roles',RoleController::class);
+        Route::get('/home', function () {
+            return view('layouts/home');
+        })->name('home');
+        Route::get('/', function () {
+            return view('auth.login');
+        });
+
+        Route::group(['middleware' => ['auth']], function () {
+            Route::resource('roles', RoleController::class);
             Route::resource('users', UserController::class);
 
         });
+
+
+
+        Route::middleware('auth')->group(function () {
+            Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+            Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+            Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+        });
+
+        require __DIR__ . '/auth.php';
+
         include 'follow_up.php';
         include 'absent.php';
         include 'leaving.php';
@@ -55,21 +68,5 @@ Route::group(
         include 'create-pages.php';
         include 'edit-pages.php';
         include 'display-pages.php';
+
     });
-
-
-/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

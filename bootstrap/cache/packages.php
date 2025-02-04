@@ -6,18 +6,18 @@
       0 => 'CodeZero\\UniqueTranslation\\UniqueTranslationServiceProvider',
     ),
   ),
+  'laravel/breeze' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Breeze\\BreezeServiceProvider',
+    ),
+  ),
   'laravel/fortify' => 
   array (
     'providers' => 
     array (
       0 => 'Laravel\\Fortify\\FortifyServiceProvider',
-    ),
-  ),
-  'laravel/jetstream' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Jetstream\\JetstreamServiceProvider',
     ),
   ),
   'laravel/sail' => 
@@ -39,25 +39,6 @@
     'providers' => 
     array (
       0 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    ),
-  ),
-  'laravel/ui' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Laravel\\Ui\\UiServiceProvider',
-    ),
-  ),
-  'laravelcollective/html' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Collective\\Html\\HtmlServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Form' => 'Collective\\Html\\FormFacade',
-      'Html' => 'Collective\\Html\\HtmlFacade',
     ),
   ),
   'livewire/livewire' => 
@@ -112,6 +93,17 @@
     'providers' => 
     array (
       0 => 'Flasher\\Laravel\\FlasherServiceProvider',
+    ),
+  ),
+  'spatie/laravel-html' => 
+  array (
+    'aliases' => 
+    array (
+      'Html' => 'Spatie\\Html\\Facades\\Html',
+    ),
+    'providers' => 
+    array (
+      0 => 'Spatie\\Html\\HtmlServiceProvider',
     ),
   ),
   'spatie/laravel-ignition' => 

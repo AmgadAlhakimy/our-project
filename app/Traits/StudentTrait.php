@@ -5,6 +5,7 @@ namespace App\Traits;
 
 use App\Models\Classroom\Classroom;
 use App\Rules\ArabicFirstName;
+use Illuminate\Support\Facades\Validator;
 use Livewire\Attributes\Rule;
 
 trait StudentTrait
@@ -15,7 +16,7 @@ trait StudentTrait
     public string $name;
     #[Rule(new ArabicFirstName)]
     public string $name_ar;
-    #[Rule('required|image|mimes:jpeg,png,jpg,gif|max:2048|max:1024')]
+    #[Rule('required|image|max:2048|mimes:jpeg,png,jpg,gif')]
     public $photo;
     #[Rule('required|max:100')]
     public string $address;
@@ -66,6 +67,31 @@ trait StudentTrait
     {
         return $this->classrooms = Classroom::
         where('edu_id', $this->selectedLevel)->get();
+    }
+
+
+    public $isValidImage = false;
+
+    public function updatedPhoto()
+    {
+
+        try {
+
+            $validator = Validator::make(
+                ['photo' => $this->photo],
+                ['photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048']
+            );
+
+            if ($validator->fails()) {
+                $this->photo->delete();
+                $this->isValidImage = false;
+            } else {
+                $this->isValidImage = true;
+            }
+            return true;
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
     }
 
     public function messages(): array

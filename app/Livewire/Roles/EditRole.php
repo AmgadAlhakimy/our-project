@@ -4,30 +4,34 @@ namespace App\Livewire\Roles;
 
 use App\Traits\RoleTrait;
 use Illuminate\Support\Facades\DB;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+
 class EditRole extends Component
 {
-    use RoleTrait;
     public $roleId;
     public $name;
-    public $selectedPermissions = [];
+    #[Rule('required|array')]
+    public  $selectedPermissions = [];
+    public  $permissions = [];
+
 
     public function mount($id)
     {
         $role = Role::findOrFail($id);
         $this->roleId = $role->id;
         $this->name = $role->name;
-        $this->permission = Permission::all();
+        $this->permissions = Permission::all();
 
         // Fetch selected permissions
         $this->selectedPermissions = DB::table("role_has_permissions")
             ->where("role_has_permissions.role_id", $this->roleId)
             ->pluck('role_has_permissions.permission_id')
             ->toArray();
-
     }
+
     public function rules()
     {
         return [
@@ -45,8 +49,7 @@ class EditRole extends Component
             ]);
 
             // Assign role
-            $role->syncPermissions($this->selectedPermissions);
-//            $role->syncPermissions(array_map('intval', $this->permission));
+            $role->syncPermissions(array_map('intval', $this->selectedPermissions));
 
             $this->reset();
             return redirect()->route('display-roles')->with(['success' => __('message.update')]);
@@ -57,13 +60,6 @@ class EditRole extends Component
 
     public function render()
     {
-        $role = Role::findorFail($this->roleId);
-        $permissions = Permission::all();
-        $rolePermissions = DB::table("role_has_permissions")->where("role_has_permissions.role_id",$this->roleId)
-            ->pluck('role_has_permissions.permission_id','role_has_permissions.permission_id')
-            ->all();
-        return view('roles.edit-role',
-        compact('role','permissions','rolePermissions')
-        );
+        return view('roles.edit-role');
     }
 }

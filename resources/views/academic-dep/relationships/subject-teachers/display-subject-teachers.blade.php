@@ -30,7 +30,7 @@
                 <thead>
                 <tr>
                     <th class="num_table ">{{__('public.num')}}</th>
-                    
+
                     <th>
                         <button wire:click="ordering('name')" class="">
                             <div class="table_test form-label ">
@@ -84,10 +84,12 @@
                             </div>
                         </td>
                         <td>
+                            @can('edit teachers-subjects')
                             <a href="{{route('subject-teachers.edit',$teacher->id)}}"
                                class="btn save-button btn-success w-100">
                                 <i class="fa-solid fa-pen-to-square"></i>
                                 {{__('public.edit')}}</a>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach

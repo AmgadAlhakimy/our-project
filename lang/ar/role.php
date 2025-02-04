@@ -23,6 +23,10 @@ return [
     'role info' => 'معلومات الصلاحية',
     'roles info' => 'معلومات الصلاحيات',
     'display roles' => 'عرض الصلاحيات',
+    'back' => 'رجوع',
+    'permission' => 'الأذن',
+    'permissions' => 'الأذونات',
+    'no permissions assigned' => 'لا يوجد أذونات',
 
 
 ];
