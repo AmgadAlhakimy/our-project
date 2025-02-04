@@ -25,7 +25,7 @@ return [
     'phone'=>'الهاتف',
     'address'=>'العنوان',
     'functional data'=>'المعلومات الوظيفية',
-    'qualification'=>'المؤهل', 
+    'qualification'=>'المؤهل',
     'high school'=>'ثانوية عامة',
     'diploma'=>'دبلوم',
     'bachelor'=>'بكالوريوس',
@@ -63,7 +63,10 @@ return [
 
     'new check out'=>'تسجيل الانصراف',
     'display check out'=>'عرض الانصراف',
-    'dispaly absent children'=>'عرض الأطفال الغائبين',
+    'display absent children'=>'عرض الأطفال الغائبين',
+    'new teacher'=>'معلم جديد',
+    'edit teacher'=>'تعديل المعلم',
+    'display teachers'=>'عرض المعلمين',
 
 
 

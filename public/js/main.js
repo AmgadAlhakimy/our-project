@@ -223,6 +223,7 @@ checkboxItems.forEach(function (checkbox) {
         selectAllCheckbox.checked = allChecked;
     });
 });
+
 // select_bt button
 function toggleCheckboxes() {
     var checkboxes = document.querySelectorAll("input[type='checkbox']");
@@ -260,16 +261,16 @@ function populateClassrooms() {
         $.ajax({
             url: '/classrooms/' + educationalLevelId,
             type: 'GET',
-            success: function(data) {
+            success: function (data) {
                 // Ensure the response data is an array
                 if (Array.isArray(data)) {
                     // Populate classrooms based on the response
-                    data.forEach(function(classroom) {
+                    data.forEach(function (classroom) {
                         classroomSelect.innerHTML += '<option value="' + classroom.id + '">' + classroom.name + '</option>';
                     });
                 }
             },
-            error: function(xhr, status, error) {
+            error: function (xhr, status, error) {
                 console.error(error);
             }
         });
@@ -279,42 +280,42 @@ function populateClassrooms() {
 
 // parent list code
 
-    function showOptions() {
-        const select = document.getElementById('parent');
-        select.style.display = 'block';
+function showOptions() {
+    const select = document.getElementById('parent');
+    select.style.display = 'block';
+}
+
+function hideOptions() {
+    const select = document.getElementById('parent');
+    select.style.display = 'none';
+}
+
+function filterOptions() {
+    const input = document.getElementById('customInput');
+    const select = document.getElementById('parent');
+    const options = select.options;
+
+    for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        option.style.display = option.text.toLowerCase().includes(input.value.toLowerCase()) ? 'block' : 'none';
     }
+}
 
-    function hideOptions() {
-        const select = document.getElementById('parent');
-        select.style.display = 'none';
-    }
+function selectParent() {
+    const select = document.getElementById('parent');
+    const input = document.getElementById('customInput');
+    input.value = select.options[select.selectedIndex].text;
+    hideOptions();
+}
 
-    function filterOptions() {
-        const input = document.getElementById('customInput');
-        const select = document.getElementById('parent');
-        const options = select.options;
-
-        for (let i = 0; i < options.length; i++) {
-            const option = options[i];
-            option.style.display = option.text.toLowerCase().includes(input.value.toLowerCase()) ? 'block' : 'none';
-        }
-    }
-
-    function selectParent() {
-        const select = document.getElementById('parent');
-        const input = document.getElementById('customInput');
-        input.value = select.options[select.selectedIndex].text;
+document.addEventListener('click', (event) => {
+    if (!event.target.closest('.parents_dropdown')) {
         hideOptions();
     }
-
-    document.addEventListener('click', (event) => {
-        if (!event.target.closest('.parents_dropdown')) {
-            hideOptions();
-        }
-    });
+});
 
 // wratting a single name with out space for stuedents name
-    document.getElementById('singleWordInput').addEventListener('input', function() {
+document.getElementById('singleWordInput').addEventListener('input', function () {
     this.value = this.value.replace(/\s+/g, '');
 });
 
@@ -325,3 +326,33 @@ var btn = document.getElementById("triggerModal");
 var span = document.getElementById("closeModal");
 
 // عند النقر على الزر، يتم عرض الـ Modal
+
+
+// validate the image or photo
+
+function validateFile(event) {
+    const file = event.target.files[0];
+    const errorDiv = document.getElementById("fileError");
+    const errorLiv = document.getElementById("photoError");
+
+    // Check if file is empty (no file selected)
+    if (!file) {
+        errorDiv.style.display = "block"; // Show error message
+        return;
+    }
+
+    // List of allowed image extensions (Accept only these)
+    const allowedExtensions = ['jpeg', 'jpg', 'png', 'gif'];
+    const extension = file.name.split('.').pop().toLowerCase();
+
+    // Check if the file extension is NOT in the allowed list
+    if (!allowedExtensions.includes(extension)) {
+        event.target.value = ""; // Clear the file input
+        errorLiv.innerText = ""; // Localized invalid file type message
+        errorDiv.innerText = window.localizedMessages.imageError; // Localized invalid file type message
+        errorDiv.style.display = "block"; // Show error message
+    } else {
+        errorDiv.innerText = ""; // Clear error message if file is valid
+        errorDiv.style.display = "none"; // Hide error message
+    }
+}

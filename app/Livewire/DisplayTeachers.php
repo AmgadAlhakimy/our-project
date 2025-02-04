@@ -28,7 +28,7 @@ class DisplayTeachers extends Component
                 ->orwhere('qualification->ar','like',"%$this->search%")->get();
             $teachers = $this->queryData("App\Models\Teacher\Teacher", $myQuery);
 
-            return view('employees-affairs.teachers.display-teachers', [
+            return view('academic-dep.teachers.display-teachers', [
                 'teachers' => $teachers,
             ])->title('Teachers');
         } catch (\Exception $e) {

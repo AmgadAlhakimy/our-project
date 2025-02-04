@@ -1,4 +1,3 @@
-
 @extends('layouts.sidebar')
 @section('content')
     <main class="main ">
@@ -8,7 +7,7 @@
                     {{Session::get('success')}}
                 </div>
             @endif
-                <form method="post" action="{{route('educational-levels.update',$level->id)}}">
+            <form method="post" action="{{route('educational-levels.update',$level->id)}}">
                 @method('PUT')
                 @csrf
                 <h3 class="container-title">{{__('eduLevel.update educational Level')}}</h3>
@@ -40,13 +39,17 @@
                 </div>
                 <div class="row mt-2">
                     <div class=" row">
-                        <div class="box col ">
-                            <input class="save-button" type="submit" value="{{__('public.update')}}">
-                        </div>
-                        <div class="box  col">
-                            <a href="{{route('display-levels')}}" class="btn clear-button"><i
-                                    class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                        </div>
+                        @can('update educational-level')
+                            <div class="box col ">
+                                <input class="save-button" type="submit" value="{{__('public.update')}}">
+                            </div>
+                        @endcan
+                        @can('display educational-levels')
+                            <div class="box  col">
+                                <a href="{{route('display-levels')}}" class="btn clear-button"><i
+                                        class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                            </div>
+                        @endcan
                     </div>
                 </div>
             </form>

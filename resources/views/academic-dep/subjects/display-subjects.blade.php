@@ -75,11 +75,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <?php $counter = 1 ?>
-                    @foreach($subjects as $subject)
+                <?php $counter = 1 ?>
+                @foreach($subjects as $subject)
                     <tr>
                         <td class="num_table ">{{$counter}}</td>
-                        <?php $counter++ ?>
+                            <?php $counter++ ?>
 
                         <td>
                             <div class="td_rect">
@@ -97,52 +97,56 @@
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('subjects.edit',$subject->id)}}"
-                               class="btn save-button btn-success  w-25 me-1 ms-1">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                {{-- {{__('public.edit')}} --}}
-                            </a>
-                            <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger  w-25 me-1 ms-1"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$subject->id}}">
-                                <i class="fa-solid fa-trash"></i>
-                                {{-- {{__('public.delete')}} --}}
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="delete{{$subject->id}}"
-                                 tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>
+                            @can('edit subject')
+                                <a href="{{route('subjects.edit',$subject->id)}}"
+                                   class="btn save-button btn-success  w-25 me-1 ms-1">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    {{-- {{__('public.edit')}} --}}
+                                </a>
+                            @endcan
+                            @can('delete subject')
+                                <button wire:confirm="are you sure you want to delete"
+                                        class="btn clear-button btn-danger  w-25 me-1 ms-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#delete{{$subject->id}}">
+                                    <i class="fa-solid fa-trash"></i>
+                                    {{-- {{__('public.delete')}} --}}
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="delete{{$subject->id}}"
+                                     tabindex="-1" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <div class="modal-title">
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-body form-label row">
-                                            <div class="col-12">
-                                                {{__('public.are you sure you want to delete')}}
+                                            <div class="modal-body form-label row">
+                                                <div class="col-12">
+                                                    {{__('public.are you sure you want to delete')}}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{$subject->name}}
+                                                </div>
                                             </div>
-                                            <div class="col-12">
-                                                {{$subject->name}}
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger clear-button ms-2 me-2 "
+                                                        data-bs-dismiss="modal">
+                                                    {{__('public.cancel')}}</button>
+                                                <form method="post"
+                                                      action="{{route('subjects.destroy',$subject->id)}}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit"
+                                                            class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
+                                                </form>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2 "
-                                                    data-bs-dismiss="modal">
-                                                {{__('public.cancel')}}</button>
-                                            <form method="post"
-                                                  action="{{route('subjects.destroy',$subject->id)}}">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button type="submit"
-                                                        class="btn btn-primary save-button ms-2 me-2 ">{{__('public.ok')}}</button>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach

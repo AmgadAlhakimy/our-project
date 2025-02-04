@@ -38,11 +38,11 @@
                                 </label>
                             @endforeach
                             <!-- End buttons -->
+                            @error('permission')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
-                    @error('permission')
-                    <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
             </div>
 
             <!-- Buttons -->

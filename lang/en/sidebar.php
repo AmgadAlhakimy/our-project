@@ -97,6 +97,8 @@ return [
         'first term income'=>'First Term Income',
         'second term income'=>'Second Term Income',
         'the first students'=>'The First Students',
+        'academic distribution management'=>'Academic Distribution Management',
+        'display academic distribution'=>'Display Academic Distribution',
 
 
 

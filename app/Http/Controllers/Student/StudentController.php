@@ -37,8 +37,9 @@ class StudentController extends Controller
     public function destroy($id)
     {
         try {
+            $classroom_id = Student::findorFail($id)->classroom->id;
             Student::destroy($id);
-            return redirect()->route('display-students')
+            return redirect()->route('display-students',$classroom_id)
                 ->with(['warning' => trans('message.delete')]);
 
         } catch (\Exception $e) {
@@ -91,8 +92,8 @@ class StudentController extends Controller
     {
         try {
             $student = Student::findorFail($id);
-            return view('students-affairs/students.student_more_info',
-                compact('student',));
+            return view('students-affairs.students.student_more_info',
+                compact('student'));
 
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

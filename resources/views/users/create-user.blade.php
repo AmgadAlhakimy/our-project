@@ -61,7 +61,7 @@
                         <option value="enabled">{{ __('user.enabled') }}</option>
                         <option value="disabled">{{ __('user.disabled') }}</option>
                     </select>
-                    @error('gender')
+                    @error('status')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>

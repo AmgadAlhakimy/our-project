@@ -20,16 +20,16 @@
                 </div>
                 <hr class="ph-search_m">
 
+                    @include('layouts.personnel-affairs.personnel-affairs')
                     @include('layouts.academic-department.academic-department')
                     @livewire('students-display')
                 <!-- ========== 5 ============ -->
-                    @livewire('follow-up')
+                    @livewire('FollowUp.follow-up')
                 <!-- ======================== PARENTS ========================== -->
                     @include('layouts.parents.parents')
 
                 {{-- ---شؤون الموظفين--- --}}
                 <!-- ======================== EMB ========================== -->
-                    @include('layouts.personnel-affairs.personnel-affairs')
             </ul>
         </div>
     </div>

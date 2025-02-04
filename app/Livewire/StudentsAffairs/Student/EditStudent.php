@@ -51,6 +51,7 @@ class EditStudent extends Component
             $this->health_problem_desc_ar = $student->getTranslation('health_problem_desc', 'ar');
             $this->note = $student->note;
             $this->classroom_id = $student->classroom_id;
+            $this->class_id = $student->classroom_id;
             $this->parents_id = $student->parents_id;
             $this->search = $student->parents->father_name;
         } catch (\Exception $e) {
@@ -114,11 +115,18 @@ class EditStudent extends Component
             if ($this->photo) {
                 $this->photo->delete();
             }
-            $this->reset();
-            return redirect()->route('display-students')->with(['success' => __('message.update')]);
+            $this->reset($this->photo);
+            return redirect()->route('display-students',$this->classroom_id)->with(['success' => __('message.update')]);
+
+
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
+    }
+
+    public function test()
+    {
+
     }
 
     public function render()

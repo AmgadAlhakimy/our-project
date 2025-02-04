@@ -161,18 +161,21 @@
             </div>
 
             <div class=" row">
-                <div class="box col">
-                    <button type="submit" class=" save-button">
-                        {{__('public.update')}}
-                        <div wire:loading class="spinner-border spinner-border-sm"></div>
-                    </button>
-                </div>
-                <div class="box  col">
-                    <a href="{{route('display-parents')}}" class="btn clear-button"><i
-                            class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                </div>
+                @can('update superior')
+                    <div class="box col">
+                        <button type="submit" class=" save-button">
+                            {{__('public.update')}}
+                            <div wire:loading class="spinner-border spinner-border-sm"></div>
+                        </button>
+                    </div>
+                @endcan
+                @can('display superiors')
+                    <div class="box  col">
+                        <a href="{{route('display-parents')}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                    </div>
+                @endcan
             </div>
         </form>
-
     </div>
 </div>

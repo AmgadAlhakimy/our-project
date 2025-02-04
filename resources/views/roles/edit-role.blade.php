@@ -5,10 +5,9 @@
         </div>
     @endif
 
-    <form wire:submit="save" action="">
+    <form wire:submit="update" action="">
         @csrf
-        <h3 class="container-title">{{ __('role.new role') }}</h3>
-
+        <h3 class="container-title">{{ __('role.edit role') }}</h3>
         <div class="container containers-style">
             <div class="row">
                 <!-- Name -->
@@ -29,35 +28,38 @@
                     <div class="btn-container">
                         <div class="btn-l-container row">
                             <!-- Start buttons -->
-                            @foreach($permissions as $index => $permission)
+                            @foreach($permissions as $permission)
                                 <label class="btn-l-label col">
                                     <input class="light-btn" type="checkbox"
-                                           wire:model.live.debounce.500ms="permission"
+                                           wire:model.live.debounce.500ms="selectedPermissions"
                                            value="{{ $permission->id }}">
                                     <span class="btn-l-text">{{ $permission->name }}</span>
                                 </label>
                             @endforeach
-                            <!-- End buttons -->
+
+                            @error('selectedPermissions')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
                     </div>
-                    @error('permission')
-                    <small class="form-text text-danger">{{ $message }}</small>
-                    @enderror
                 </div>
+            </div>
 
-                <!-- Buttons -->
-                <div class=" row">
-                    <div class="box col ">
-                        <button type="submit" class=" save-button text-center">
-                            {{__('public.save')}}
-                            <div wire:loading class="spinner-border spinner-border-sm"></div>
-                        </button>
-                    </div>
-                    <div class="box  col">
-                        <button type="reset" class=" clear-button text-center">
-                            {{__('public.clear')}}
-                        </button>
-                    </div>
+            <!-- Buttons -->
+
+            <!-- Buttons -->
+            <div class=" row">
+                <div class="box col">
+                    <button type="submit" class=" save-button">
+                        {{__('public.update')}}
+                        <div wire:loading class="spinner-border spinner-border-sm"></div>
+                    </button>
                 </div>
+                <div class="box  col">
+                    <a href="{{route('display-roles')}}" class="btn clear-button"><i
+                            class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                </div>
+            </div>
+        </div>
     </form>
 </div>

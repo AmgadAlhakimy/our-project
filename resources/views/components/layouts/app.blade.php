@@ -17,11 +17,11 @@
                     <input class="search1 ms-2 me-2 " type="search" placeholder="{{__('sidebar.search')}}" id="rtl"/>
                 </div>
                 <hr class="ph-search_m">
+                @include('layouts.personnel-affairs.personnel-affairs')
                 @include('layouts.academic-department.academic-department')
                 @livewire('students-display')
-                @livewire('follow-up')
+                @livewire('FollowUp.follow-up')
                 @include('layouts.parents.parents')
-                @include('layouts.personnel-affairs.personnel-affairs')
             </ul>
         </div>
     </div>

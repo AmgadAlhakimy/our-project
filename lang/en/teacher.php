@@ -18,8 +18,8 @@ return [
     'add new teacher'=>'Add New Teacher',
     'update teacher'=>'update teacher ',
     'deleted teachers'=>'Deleted Teacher',
-    'teachers name in english'=>"Teacher's Name in English",
-    'teachers name in arabic'=>"Teacher's Name in Arabic",
+    'teacher name in english'=>"Teacher's Name in English",
+    'teacher name in arabic'=>"Teacher's Name in Arabic",
     'photo'=>'Photo',
     'contact'=>'Contact',
     'address in english'=>'Address in English',
@@ -43,7 +43,7 @@ return [
     'TO TAKE HOME'=>'TAKE HOME',
     'NOTE'=>'NOTE',
     'for all students'=>'Add For All Students',
-    
+
     'dispaly absent children'=>'Display Absent Children',
     'absent children'=>'Absent Children',
 
@@ -57,10 +57,14 @@ return [
     Teacher Have Already Been Distributed, and You Can Now Only Modify Them',
     'you have already chosen this teacher and classroom'=>'The Classrooms for this
     Teacher Have Already Been Distributed, and You Can Now Only Modify Them',
-    
-    
+
+
     'new check out'=>'New Check Out',
     'display check out'=>'Display Check Out',
+
+    'new teacher'=>'New Teacher',
+    'edit teacher'=>'Edit Teacher',
+    'display teachers'=>'Display Teachers',
 
 
 

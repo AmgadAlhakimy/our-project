@@ -3,15 +3,17 @@
 namespace App\Livewire\Roles;
 
 use App\Traits\RoleTrait;
+use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class CreateRole extends Component
 {
-    use RoleTrait;
-
-
+    #[Rule('required|max:50|string|unique:roles,name')]
+    public $name;
+    #[Rule('required|array|min:1')]
+    public $permission = [];
     public function save()
     {
 

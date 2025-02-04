@@ -1,6 +1,20 @@
 {{-- اضافة نشاط جديد --}}
 {{-- @extends('layouts.master') --}}
 @extends('layouts.sidebar')
+
+
+
+
+{{--composer dump-autoload--}}
+{{--php artisan cache:clear--}}
+{{--php artisan config:clear--}}
+{{--php artisan config:cache--}}
+{{--php artisan view:clear--}}
+
+
+
+
+
 @section('content')
     <main class="main">
         <section class="section">

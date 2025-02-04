@@ -5,31 +5,15 @@ namespace App\Http\Controllers\Teacher;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Teacher\StoreTeacherRequest;
 use App\Http\Requests\Teacher\UpdateTeacherRequest;
-use App\Models\Major;
 use App\Models\Teacher\Teacher;
 use App\Traits\EmployeeTrait;
 use App\Traits\PhotoTrait;
-use Illuminate\Http\Request;
 
 class TeacherController extends Controller
 {
     use EmployeeTrait;
     use PhotoTrait;
 
-    /**
-     * Display teachers.
-     */
-    public function index()
-    {
-        try {
-            $teachers = Teacher::all();
-            return view('employees-affairs.teachers.display-teachers',
-                compact('teachers'));
-
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
 
     /**
      * Show creating a new teacher page.
@@ -37,9 +21,7 @@ class TeacherController extends Controller
     public function create()
     {
         try {
-            $majors = Major::all();
-            return view('employees-affairs.teachers.create-teacher',
-                compact('majors'));
+            return view('academic-dep.teachers.create-teacher',);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
@@ -91,7 +73,7 @@ class TeacherController extends Controller
     {
         try {
             $teachers = Teacher::onlyTrashed()->get();
-            return view('employees-affairs.teachers.deleted-teachers',
+            return view('academic-dep.teachers.deleted-teachers',
                 compact('teachers', ));
 
         }catch (\Exception $e){
@@ -106,7 +88,7 @@ class TeacherController extends Controller
     {
         try {
             $teacher = Teacher::findorFail($id);
-            return view('employees-affairs.teachers.edit-teacher',
+            return view('academic-dep.teachers.edit-teacher',
                 compact('teacher'));
 
         } catch (\Exception $e) {

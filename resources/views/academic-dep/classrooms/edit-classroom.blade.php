@@ -8,15 +8,16 @@
                 </div>
             @endif
             <h3 class="container-title">{{__('classroom.update classroom').$classroom->name}}</h3>
-                <form method="post" action="{{route('classrooms.update',$classroom->id)}}">
-                    @method('PUT')
-                    @csrf
+            <form method="post" action="{{route('classrooms.update',$classroom->id)}}">
+                @method('PUT')
+                @csrf
                 <div class="container containers-style">
                     <div class="row">
                         <!-- 1 -->
                         <div class="box col-lg-6 col-md-12">
                             <label for="c-name">{{__('classroom.classroom name in english')}}</label>
-                            <input type="text" id="c-name" class="form-control " name="name" value="{{$classroom->getTranslation('name','en')}}">
+                            <input type="text" id="c-name" class="form-control " name="name"
+                                   value="{{$classroom->getTranslation('name','en')}}">
                             @error('name')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -35,7 +36,7 @@
                             <select class="form-control" id="level" name="level">
                                 @foreach($levels as $Level)
                                     <option class="text-center" value="{{$Level->id}}"
-                                    @if($Level->id==$classroom->edu_id) selected @endif>
+                                            @if($Level->id==$classroom->edu_id) selected @endif>
                                         {{$Level->name}}</option>
                                 @endforeach
                             </select>
@@ -47,13 +48,17 @@
                 </div>
                 <div class="row mt-2">
                     <div class=" row">
-                        <div class="box col ">
-                            <input class="save-button" type="submit" value="{{__('public.update')}}">
-                        </div>
-                        <div class="box  col">
-                            <a href="{{route('display-classrooms')}}" class="btn clear-button"><i
-                                    class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                        </div>
+                        @can('update classroom')
+                            <div class="box col ">
+                                <input class="save-button" type="submit" value="{{__('public.update')}}">
+                            </div>
+                        @endcan
+                        @can('display classrooms')
+                            <div class="box  col">
+                                <a href="{{route('display-classrooms')}}" class="btn clear-button"><i
+                                        class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                            </div>
+                        @endcan
                     </div>
                 </div>
             </form>

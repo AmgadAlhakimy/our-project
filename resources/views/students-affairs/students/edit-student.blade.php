@@ -77,6 +77,11 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
+                        <script>
+                            window.localizedMessages = {
+                                imageError: "{{ __('validation.image') }}",
+                            };
+                        </script>
                         {{-- 3 --}}
                         <div class="">
                             <div class="row">
@@ -84,9 +89,11 @@
                                     <label class="" for="photo">{{__('student.photo')}}</label>
                                     <input type="file" class="form-control" id="photo"
                                            wire:model.live.debounce.500ms="photo"
+                                           accept="image/*" onchange="validateFile(event)"
                                            value="{{old('photo')}}">
+                                    <small class="form-text text-danger" id="fileError"></small>
                                     @error('photo')
-                                    <small class="form-text text-danger">{{$message}}</small>
+                                    <small class="form-text text-danger" id="photoError">{{$message}}</small>
                                     @enderror
                                 </div>
                             </div>
@@ -96,13 +103,12 @@
                                 <img class="personal_img mt-4" alt="photo"
                                      src="{{asset('storage/'.$current_photo)}}">
                             </div>
-                        @elseif($photo != null and $photo != $student->photo)
+                        @elseif($photo != null and $photo != $student->photo and $isValidImage)
                             <div class="box d-flex justify-content-center">
                                 <img class="personal_img mt-4" alt="photo"
                                      src="{{$photo->temporaryUrl()}}">
                             </div>
                         @endif
-
                         <div class="box col-lg-6 col-md-6">
                             <label for="address">{{__("student.student's address in arabic")}}</label>
                             <input type="text" class=" form-control" id='address'
@@ -173,7 +179,7 @@
                         {{-- 8 --}}
                         <div class="box col-lg-6 col-md-6">
                             <label for="className" class="form-label">{{__('student.level')}}</label>
-                            <select class="form-control" wire:model.live.debounce.500ms="selectedLevel" >
+                            <select class="form-control" wire:model.live.debounce.500ms="selectedLevel">
                                 <option value="" selected>{{__('public.select level')}}</option>
                                 @foreach($levels as $level)
                                     <option class="text-center"
@@ -328,16 +334,20 @@
                     </div>
                 </div>
                 <div class=" row">
-                    <div class="box col">
-                        <button type="submit" class=" save-button">
-                            {{__('public.update')}}
-                            <div wire:loading class="spinner-border spinner-border-sm"></div>
-                        </button>
-                    </div>
-                    <div class="box  col">
-                        <a href="{{route('display-students',$classroom_id)}}" class="btn clear-button"><i
-                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                    </div>
+                    @can('update student')
+                        <div class="box col">
+                            <button type="submit" class=" save-button">
+                                {{__('public.update')}}
+                                <div wire:loading class="spinner-border spinner-border-sm"></div>
+                            </button>
+                        </div>
+                    @endcan
+                    @can('display students')
+                        <div class="box  col">
+                            <a href="{{route('display-students',$classroom_id)}}" class="btn clear-button"><i
+                                    class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                        </div>
+                    @endcan
                 </div>
                 <!-- End final box -->
             </form>

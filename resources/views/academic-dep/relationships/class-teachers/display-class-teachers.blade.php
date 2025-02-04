@@ -30,7 +30,7 @@
                 <thead>
                 <tr>
                     <th class="num_table ">{{__('public.num')}}</th>
-                    
+
                     <th>
                         <button wire:click="ordering('name')" class="">
                             <div class="table_test form-label ">
@@ -60,11 +60,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <?php $counter = 1 ?>
-                    @foreach($teachers as $teacher)
+                <?php $counter = 1 ?>
+                @foreach($teachers as $teacher)
                     <tr>
                         <td class="num_table ">{{$counter}}</td>
-                        <?php $counter++ ?>
+                            <?php $counter++ ?>
 
                         <td>
                             <div class="td_rect">
@@ -84,10 +84,12 @@
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('class-teachers.edit',$teacher->id)}}"
-                               class="btn save-button btn-success w-100">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                {{__('public.edit')}}</a>
+                            @can('edit teachers-classes')
+                                <a href="{{route('class-teachers.edit',$teacher->id)}}"
+                                   class="btn save-button btn-success w-100">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    {{__('public.edit')}}</a>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach
@@ -102,8 +104,6 @@
                     </div>
                 @endif
             </div>
-
-            <!-- pagination down code -->
             @include('layouts.pagination.pagination_down')
 
         </div>

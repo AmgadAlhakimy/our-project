@@ -7,7 +7,7 @@
 
     <form wire:submit="update" action="">
         @csrf
-        <h3 class="container-title">{{ __('user.edit user') }}</h3>
+        <h3 class="container-title">{{ __('user.edit user').$name }}</h3>
 
         <div class="container containers-style">
             <div class="row">
@@ -24,23 +24,6 @@
                     <input type="email" class="form-control" id="email" wire:model.live.debounce.500ms="email">
                     @error('email') <small class="form-text text-danger">{{ $message }}</small> @enderror
                 </div>
-
-                <!-- Password -->
-                <div class="box col-lg-6 col-md-6">
-                    <label class="form-text" for="password">{{ __('user.password') }}</label>
-                    <input type="password" class="form-control" id="password"
-                           wire:model.live.debounce.500ms="password">
-                    @error('password') <small class="form-text text-danger">{{ $message }}</small> @enderror
-                </div>
-
-                <!-- Confirm Password -->
-                <div class="box col-lg-6 col-md-6">
-                    <label class="form-text" for="confirm_password">{{ __('user.confirm password') }}</label>
-                    <input type="password" class="form-control" id="confirm_password"
-                           wire:model.live.debounce.500ms="confirm_password">
-                    @error('confirm_password') <small class="form-text text-danger">{{ $message }}</small> @enderror
-                </div>
-
                 <!-- Roles Selection -->
                 <div class="box col-lg-6 col-md-6">
                     <label class="form-text">{{ __('role.roles') }}</label>
@@ -51,7 +34,6 @@
                     </select>
                     @error('roles_name') <small class="form-text text-danger">{{ $message }}</small> @enderror
                 </div>
-
                 <!-- Status -->
                 <div class="box col-lg-6 col-md-6">
                     <label for="gender">{{__('user.status')}}</label>
@@ -61,7 +43,7 @@
                         <option value="enabled">{{ __('user.enabled') }}</option>
                         <option value="disabled">{{ __('user.disabled') }}</option>
                     </select>
-                    @error('gender')
+                    @error('status')
                     <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
@@ -70,16 +52,19 @@
 
         <!-- Buttons -->
         <div class=" row">
-            <div class="box col ">
-                <button type="submit" class=" save-button text-center">
+            <div class="box col">
+                <button type="submit" class=" save-button">
                     {{__('public.update')}}
                     <div wire:loading class="spinner-border spinner-border-sm"></div>
                 </button>
             </div>
+            <div class="box  col-6">
+                <a href="{{route('change-password',$id)}}" class="btn clear-button">
+                    <i class="fa-solid fa-key"></i> {{__('user.password')}}</a>
+            </div>
             <div class="box  col">
-                <button type="reset" class=" clear-button text-center">
-                    {{__('public.clear')}}
-                </button>
+                <a href="{{route('display-users')}}" class="btn clear-button"><i
+                        class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
             </div>
         </div>
     </form>
