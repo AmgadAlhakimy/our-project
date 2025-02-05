@@ -3,8 +3,6 @@
 @extends('layouts.sidebar')
 
 
-
-
 {{--composer dump-autoload--}}
 {{--php artisan cache:clear--}}
 {{--php artisan config:clear--}}

@@ -14,6 +14,7 @@ class PermissionTableSeeder extends Seeder
     {
         $permissions = [
 
+            'ACADEMIC DEPARTMENT',
             'academic addition',
             'academic display',
             'academic trash',
@@ -88,6 +89,7 @@ class PermissionTableSeeder extends Seeder
             'update teachers-subjects',
             'update classes-activities',
 
+            'STUDENT AFFAIRS',
             'superiors',
             'create superior',
             'display superiors',
@@ -108,17 +110,26 @@ class PermissionTableSeeder extends Seeder
             'restore student',
             'forceDelete student',
 
+            'followup notebook',
             'create followup notebook',
             'display followup notebook',
             'edit followup notebook for all children',
+            'update followup notebook for all children',
+            'update followup notebook individually',
             'edit followup notebook individually',
             'whole notebook with all students in class',
             'whole notebook for specific student',
+
+
+            'absent children',
             'presenting children',
             'display absent children',
-            'edit absent children',
-            'display absent children this month',
+            'display absent children of all time',
+            'edit absent for all children',
+            'edit absent individually',
+            'update absent children',
 
+            'leaving children',
             'check leaving children',
             'display left children',
             'edit leaving children',
@@ -142,6 +153,8 @@ class PermissionTableSeeder extends Seeder
             'display roles permissions',
             'update role',
             'delete role',
+
+            'PARENTS'
 
 
         ];

@@ -57,6 +57,7 @@ Route::group(
         });
 
         require __DIR__ . '/auth.php';
+        require __DIR__.'/../vendor/autoload.php';
 
         include 'follow_up.php';
         include 'absent.php';

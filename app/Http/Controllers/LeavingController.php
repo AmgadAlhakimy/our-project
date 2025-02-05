@@ -11,6 +11,15 @@ use Carbon\Carbon;
 
 class LeavingController extends Controller
 {
+
+    function __construct()
+    {
+//        $this->middleware('permission:check leaving children',['only'=>['newLeaving']]);
+        $this->middleware('auth');
+    }
+
+
+
     /**
      * Display a listing of the resource.
      */
@@ -62,25 +71,18 @@ class LeavingController extends Controller
             if ($request->leaving === null) {
                 return redirect()->back()->with(['error' => __('leaving.sorry you have not checked any student')]);
             }
-            if (count($request->leaving) === count($classroom->students)) {
-                return redirect()->route('leaving.display', $classroom_id)->with(['success' => __('absent.that is cool no absent students today')]);
-            }
-
             $leaving = [];
             foreach ($request->leaving as $key => $value) {
                 $leaving [] = $key;
             }
-
-            $index = 0;
-            foreach ($students as $student) {
-                if (in_array($index, $leaving)) {
+            foreach ($students as $key => $student) {
+                if (in_array($key, $leaving)) {
                     Leaving::create([
                         'leaving' => true,
                         'student_id' => $student->id,
                         'classroom_id' => $classroom_id,
                     ]);
                 }
-                $index++;
             }
             return redirect()->route('leaving.display', $classroom_id)
                 ->with(['success' => __('message.success')]);

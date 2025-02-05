@@ -52,7 +52,7 @@
                 </a>
             </div>
             <div class=" me-1 ms-1 ph-home border-left">
-                <a class="card-info  " aria-current="page" href='/'>
+                <a class="card-info  " aria-current="page" href="/home">
                     <i class="mt-2 h2 icon-1 fa-solid fa-home-lg-alt"></i>
                 </a>
             </div>

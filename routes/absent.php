@@ -25,6 +25,6 @@ Route::get('updatePresenting/{classroom_id}',
     ->name('absent.updateAbsent');
 
 
-Route::get('display/{classroom_id}',
-    [AbsentController::class, 'displyAbsentMonthly'])
-    ->name('hi');
+Route::get('display-absent-monthly/{classroom_id}',
+    [AbsentController::class, 'displayAbsentMonthly'])
+    ->name('absent-monthly');

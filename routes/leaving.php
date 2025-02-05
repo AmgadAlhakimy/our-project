@@ -4,6 +4,9 @@
 use App\Http\Controllers\LeavingController;
 use Illuminate\Support\Facades\Route;
 
+
+Route::group(['middleware' => ['auth']], function () {
+
 Route::get('newLeaving/{classroom_id}',
     [LeavingController::class, 'newLeaving'])
     ->name('leaving.newLeaving');
@@ -23,3 +26,4 @@ Route::get('editLeaving/{classroom_id}',
 Route::get('updateLeaving/{classroom_id}',
     [LeavingController::class, 'updateLeaving'])
     ->name('leaving.updateLeaving');
+});

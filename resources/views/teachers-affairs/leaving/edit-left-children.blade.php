@@ -13,7 +13,7 @@
             {{-- the table header with bottuns and search input --}}
 
             <div class="table-header">
-            <div class="container-title">{{__('leaving.edit left children')}}</div>
+                <div class="container-title">{{__('leaving.edit left children')}}</div>
                 <div class="cards-container mt-4 third-card row">
                     <div class="card-info card-info_2 col ">
                         <h4 class="text-center ">{{__('public.class')}}</h4>
@@ -68,10 +68,10 @@
                                 <td class="">
                                     <label>
                                         <input class="" type="checkbox"
-                                                name="leaving[{{$index}}]"
-                                                value={{("leaving.$index") ? 'left' : 'absent' }}
-                                            {{in_array($student->id,$left_children)?'checked':'left'}}>
-                                            <div class="absent-checkbox"></div>
+                                               name="leaving[{{$index}}]"
+                                               value={{("leaving.$index") ? 'left' : 'absent' }}
+                                            {{in_array($student->id,$left_children)? 'checked':'left'}}>
+                                        <div class="absent-checkbox"></div>
                                         @error("leaving.$index")
                                         <small class="form-text text-danger">{{$message}}</small>
                                         @enderror
@@ -86,13 +86,14 @@
             </div>
 
             <div class=" mt-5">
-                <div class="box row ">
-                    <div class="col">
-                        <input class="save-button" type="submit" value="{{__('public.save')}}">
-                    </div>
-                    <div class="col">
-                        <input class="clear-button " type="reset" value="{{__('public.clear')}}">
-                    </div>
+                <div class="box">
+                    @can('update leaving children')
+                        <input class="save-button " type="submit" value="{{__('public.update')}}">
+                    @endcan
+                    @can('display absent children')
+                        <a href="{{route('absent.display',$classroom->id)}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                    @endcan
                 </div>
             </div>
         </form>

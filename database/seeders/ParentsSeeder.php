@@ -13,11 +13,11 @@ class ParentsSeeder extends Seeder
      */
     public function run(): void
     {
-        // ✅ Create two Faker instances (English & Arabic)
+
         $fakerEn = Faker::create('en_US'); // English Faker
         $fakerAr = Faker::create('ar_SA'); // Arabic Faker
 
-        // ✅ List of Arabic job titles (to ensure proper Arabic words)
+
         $arabicJobs = [
             'طبيب', 'مهندس', 'مدرس', 'محاسب', 'محامي',
             'ممرض', 'صحفي', 'مبرمج', 'سائق', 'عامل'

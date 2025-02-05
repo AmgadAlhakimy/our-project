@@ -1,48 +1,51 @@
-
 <div class="my-table mt-5">
-        <div class="table-header ">
-            {{-- the title and search --}}
-            <h4 class="form-group container-title">{{__('student.followup notebook')}}</h4>
-            <div class="row first-card mt-4">
-                <div class="row">
-                    <label class="col">
-                        <div class="row">
+    <div class="table-header ">
+        {{-- the title and search --}}
+        <h4 class="form-group container-title">{{__('student.followup notebook')}}</h4>
+        <div class="row first-card mt-4">
+            <div class="row">
+                <label class="col">
+                    <div class="row">
 
-                            <label class="col">
-                                <div class="search p-relative">
-                                    {{-- <i class="fa-solid fa-magnifying-glass"></i> --}}
-                                    <input wire:model.live.debounce.500ms="search"
-                                           type="text" class="form-control " name="search"
-                                           placeholder="{{__('sidebar.search')}}">
-                                </div>
-                            </label>
+                        <label class="col">
+                            <div class="search p-relative">
+                                {{-- <i class="fa-solid fa-magnifying-glass"></i> --}}
+                                <input wire:model.live.debounce.500ms="search"
+                                       type="text" class="form-control " name="search"
+                                       placeholder="{{__('sidebar.search')}}">
+                            </div>
+                        </label>
 
-                        </div>
-                    </label>
-                </div>
-                <div class="cards-container mt-4 third-card row">
-                    <div class=" col text-center ">
-                        <div class="cards_sup_title">{{$classroom->name}}</div>
                     </div>
-                    <div class=" col text-center ">
-                        <div class="cards_title">{{$month}}</div>
-                    </div>
-                </div>
-
+                </label>
             </div>
+            <div class="cards-container mt-4 third-card row">
+                <div class=" col text-center ">
+                    <div class="cards_sup_title">{{$classroom->name}}</div>
+                </div>
+                <div class=" col text-center ">
+                    <div class="cards_title">{{$month}}</div>
+                </div>
+            </div>
+
         </div>
-        <div class="table-header mt-3">
-            <div class="col-12  row">
+    </div>
+    <div class="table-header mt-3">
+        <div class="col-12  row">
+            @can('edit followup notebook for all children')
                 <a href="{{route('follow_up_children.editAllChildren',$classroom->id)}}"
-                    class=" save-button col me-1 ms-1 p-0">
-                     <div class="form-label mt-">{{__('follow_up.edit for all students')}}</div>
-                 </a>
+                   class=" save-button col me-1 ms-1 p-0">
+                    <div class="form-label mt-">{{__('follow_up.edit for all students')}}</div>
+                </a>
+            @endcan
+            @can('whole notebook with all students in class')
                 <a href="{{ route('display-followUpMonthly',$classroom->id) }}"
-                    class="save-button col me-1 ms-1 p-0">
+                   class="save-button col me-1 ms-1 p-0">
                     <div class="form-label mt-">{{ __('follow_up.whole notebook') }}</div>
                 </a>
-            </div>
+            @endcan
         </div>
+    </div>
 
     {{-- pagination up code --}}
     @include('layouts.pagination.pagination_up')
@@ -163,10 +166,10 @@
                 </thead>
                 <tbody>
                     <?php $counter = 1 ?>
-                    @foreach($followups as $followup)
+                @foreach($followups as $followup)
                     <tr>
                         <td class="num_table ">{{$counter}}</td>
-                        <?php $counter++ ?>
+                            <?php $counter++ ?>
                         <td>
                             <div class="td_rect">
                                 {{$followup->student->id}}
@@ -182,7 +185,7 @@
                                 class="student-img" alt="photo">
                         </td>
                         @foreach($followup->homework as $homework)
-                            <td >
+                            <td>
                                 <div class="td_rect ">
                                     {{$homework}}
                                 </div>
@@ -219,12 +222,14 @@
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('follow_up_children.editChild',
+                            @can('edit followup notebook individually')
+                                <a href="{{route('follow_up_children.editChild',
                                             ['child_id' => $followup->id, 'classroom_id' => $classroom->id])}}"
-                               class="btn save-button btn-success w-50 me-1 ms-1 ">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                {{-- {{__('public.edit')}} --}}
-                            </a>
+                                   class="btn save-button btn-success w-50 me-1 ms-1 ">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    {{-- {{__('public.edit')}} --}}
+                                </a>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach

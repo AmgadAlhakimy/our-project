@@ -92,12 +92,14 @@
                                     </td>
 
                                     <td>
+                                        @can('whole notebook for specific student')
                                         <a href="{{route('display-follow-up-notebook',
                                             ['student_id' => $student->id, 'classroom_id' => $classroom->id])}}"
                                            class="btn save-button btn-success w-100 me-1 ms-1 ">
                                             <i class="fa-solid fa-book"></i>
                                              {{__('follow_up.follow-up notebook')}}
                                         </a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

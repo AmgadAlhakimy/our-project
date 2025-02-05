@@ -76,8 +76,10 @@
 
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control"
-                                           name="absent_reason[{{$index}}]" value="{{ old("absent_reason.$index") }}">
+                                    <label>
+                                        <input type="text" class="form-control"
+                                               name="absent_reason[{{$index}}]" value="{{ old("absent_reason.$index") }}">
+                                    </label>
                                     @error("absent_reason.$index")
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror

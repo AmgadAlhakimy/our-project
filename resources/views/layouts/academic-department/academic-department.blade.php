@@ -1,5 +1,5 @@
 {{--                             academic department                                  --}}
-
+@can('ACADEMIC DEPARTMENT')
 <p class="title">{{__('sidebar.academic department')}}<i class="ms-1 me-1 fa-solid fa-school"></i></p>
 {{-- القسم الأكاديمي --}}
 {{-- اضافة الاقسام الأكاديمية --}}
@@ -192,6 +192,7 @@
             </div>
         </div>
     </li>
+@endcan
 @endcan
 
 

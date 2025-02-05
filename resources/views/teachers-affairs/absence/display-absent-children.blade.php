@@ -1,4 +1,4 @@
-                {{------------ واجهة عرض دفتر المتابعة الخاص بطلاب الروضة ----------------}}
+{{------------ واجهة عرض دفتر المتابعة الخاص بطلاب الروضة ----------------}}
 @extends('layouts.sidebar')
 @section('content')
     <?php $counter = 1 ?>
@@ -22,23 +22,24 @@
                     <div class="cards_title">{{$month}}</div>
                 </div>
             </div>
-            <div class="w-100 mt-2 row">
-                <a href="{{route('hi',$classroom->id)}}"
-                    class="w-100 save-button col btn p-0">
+            @can('display absent children of all time')
+                <div class="w-100 mt-2 row">
+                    <a href="{{route('absent-monthly',$classroom->id)}}"
+                       class="w-100 save-button col btn p-0">
 
                         <div class="form-label ">{{__('absent.display absent for this month')}}</div>
 
                     </a>
-            </div>
+                </div>
+            @endcan
         </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class=" shadow-none mt-4 ">
             <div class="table-section card  ">
                 <table class=" " id="check_table">
-                <table  >
-                    <thead >
-                    <tr >
+                    <thead>
+                    <tr>
                         <th class="th-head-1 num_table form-label">{{__('public.num')}}</th>
                         <th class="th-head-3 form-label">{{__('public.name')}}</th>
                         <th class="th-head-2 form-label">{{__('public.photo')}}</th>
@@ -47,32 +48,32 @@
                     </tr>
                     </thead>
                     <tbody>
-                     @foreach($absentStudents  as $absentStudent )
+                    @foreach($absentStudents  as $absentStudent )
                         <tr class=" ">
                             <td class="num_table ">{{$counter}}</td>
-                            <td >
+                            <td>
                                 <div class="td_rect">
                                     {{$absentStudent->student->name}}
                                 </div>
                             </td>
                             <td><img
-                                     src="{{asset('storage/'.$absentStudent->student->photo)}}"
-                                     class="student-img" alt="photo" ></td>
+                                    src="{{asset('storage/'.$absentStudent->student->photo)}}"
+                                    class="student-img" alt="photo"></td>
                             <td>
-                                <div >
+                                <div>
                                     <div class="td_rect">
-                                       {{trans('public.yes')}}
+                                        {{trans('public.yes')}}
                                     </div>
                                 </div>
                             </td>
                             <td class="">
-                                <div class="td_rect">{{$absentStudent->absent_reason}}</div></td>
-                            <?php $counter++ ?>
+                                <div class="td_rect">{{$absentStudent->absent_reason}}</div>
+                            </td>
+                                <?php $counter++ ?>
                         </tr>
-                     @endforeach
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
 @endsection

@@ -140,16 +140,19 @@
                 <div class="box row">
                     <div class="notes col-lg-12 col-md-12">
                         <textarea class="form-control" name="note" id="note" cols="50"
-                            rows="5">{{$child->note}}</textarea>
+                                  rows="5">{{$child->note}}</textarea>
                     </div>
                 </div>
             </div>
             <div class=" ">
                 <div class="box">
-                    <input class="save-button " type="submit" value="{{__('public.update')}}">
-
-                    <a href="{{route('follow_up_children-display',$classroom->id)}}" class="btn clear-button"><i
-                        class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                    @can('update followup notebook individually')
+                        <input class="save-button " type="submit" value="{{__('public.update')}}">
+                    @endcan
+                    @can('display followup notebook')
+                        <a href="{{route('follow_up_children-display',$classroom->id)}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                    @endcan
                 </div>
             </div>
             <!-- End final box -->

@@ -12,24 +12,25 @@
                     <div class="card-info card-info_2 col ">
                         <h4 class="Names ">{{$classroom->name}}</h4>
                     </div>
+                    @can('edit leaving children')
                     <a href="{{route('leaving.editLeaving',$classroom->id)}}"
                        class="card-info card-info_2 col btn save-button">
                         <h4 class="topic-title mt-2">{{__('follow_up.edit for all students')}}</h4>
                         <p class="text-center ">{{__('follow_up.click here')}}</p>
                     </a>
+                    @endcan
                     <div class="card-info card-info_2 col ">
                         <h4 class=" Names">{{$month}}</h4>
                     </div>
                 </div>
             </div>
 
-        </div> 
+        </div>
         {{-- -------***********END THE HEAD OF TABLES***********-------- --}}
         <!-- table-hover table-striped -->
         <div class=" shadow-none mt-4 ">
             <div class="table-section card  ">
                 <table class=" " id="check_table">
-                <table>
                     <thead>
                     <tr>
                         <th class="num_table ">{{__('public.num')}}</th>
@@ -64,7 +65,7 @@
                             </td>
                             <td>
                                 <div class="td_rect">
-                                    {{$leftStudent->created_at->setTimezone('Asia/Aden')->format('H:i:s A')}}
+                                    {{$leftStudent->created_at->format('H:i:s A')}}
                                 </div>
                             </td>
                         </tr>

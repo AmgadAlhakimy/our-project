@@ -69,10 +69,10 @@
                                     </td>
                                     <td class="">
                                             <label>
-                                                <input class="" type="checkbox"name="leaving[{{$index}}]"
+                                                <input class="" type="checkbox" name="leaving[{{$index}}]"
                                                 value={{("leaving.$index") ? 'present' : 'absent' }}>
                                                 <div class="absent-checkbox"></div>
-                                                
+
                                                 @error("leaving.$index")
                                                 <small class="form-text text-danger">{{$message}}</small>
                                                 @enderror

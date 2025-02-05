@@ -66,7 +66,7 @@
                                         src="{{asset('storage/'.$student->photo)}}"
                                         class="absentStudent-img" alt="photo">
                                 </td>
-                                <td class="">
+                                <td>
                                     <div class="mt-2 check_style">
                                         <label>
                                             <input class="" type="checkbox"
@@ -81,8 +81,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control"
-                                           name="absent_reason[{{$index}}]" value="{{ old("absent_reason.$index") }}">
+                                    <label>
+                                        <input type="text" class="form-control"
+                                               name="absent_reason[{{$index}}]" value="{{ old("absent_reason.$index") }}">
+                                    </label>
                                     @error("absent_reason.$index")
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -96,12 +98,14 @@
             </div>
 
             <div class=" mt-5">
-                <div class="box row ">
-                    <div class="col">
-                        <input class="save-button" type="submit" value="{{__('public.save')}}">
-                    </div>
-                    <div class="col">
-                        <input class="clear-button " type="reset" value="{{__('public.clear')}}">
+                <div class="box">
+                    @can('update absent children')
+                        <input class="save-button " type="submit" value="{{__('public.update')}}">
+                    @endcan
+                    @can('display absent children')
+                        <a  href="{{route('absent.display',$classroom->id)}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                    @endcan
                 </div>
             </div>
         </div>
