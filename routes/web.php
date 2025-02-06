@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
@@ -35,12 +36,23 @@ Route::group(
             return view('dashboard');
         })->middleware(['auth', 'verified'])->name('dashboard');
 
+
         Route::get('/home', function () {
             return view('layouts/home');
         })->name('home');
-        Route::get('/', function () {
-            return view('auth.login');
-        });
+
+
+        Route::get('/', [HomeController::class, 'show'])->name('main_page');
+
+        Route::get('/login_', [HomeController::class, 'login_'])->name('login_');
+        
+        Route::get('/register_', [HomeController::class, 'register_'])->name('register_');
+
+
+
+        // Route::get('/login_', function () {
+        //     return view('auth.login');
+        // });
 
         Route::group(['middleware' => ['auth']], function () {
             Route::resource('roles', RoleController::class);
@@ -57,7 +69,6 @@ Route::group(
         });
 
         require __DIR__ . '/auth.php';
-        require __DIR__.'/../vendor/autoload.php';
 
         include 'follow_up.php';
         include 'absent.php';

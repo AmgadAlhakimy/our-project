@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PhpParser\Builder\FunctionLike;
 
 class HomeController extends Controller
 {
@@ -18,11 +19,22 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
+     * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
         return view('home');
+    }
+
+    public Function show(){
+        return view('main_page');
+    }
+    public Function login_(){
+        return view('auth.login');
+    }
+
+    public Function register_(){
+        return view('auth.register');
     }
 }

@@ -25,7 +25,7 @@
     <!-- ========== student ifno ============ -->
     <li class="dropdown">
         <div class="sidebar-title">
-            {{-- <a href="{{route('student-more-info',$student->id)}}" class="li-link title-4"> --}}
+            <a href="{{route('main_page')}}" class="li-link title-4">
             <i class="icon-1 fa-solid fa-graduation-cap"></i>
             <span class="menu-name">
                     {{__('sidebar.son info')}}

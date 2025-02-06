@@ -38,3 +38,4 @@ Route::resource('parents', ParentsController::class);
 Route::resource('majors', MajorController::class);
 Route::resource('marks', MarkController::class);
 Route::resource('absent', AbsentController::class);
+

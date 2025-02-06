@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 @include('layouts.header')
+
 <body @if(LaravelLocalization::setLocale()=='ar') dir="rtl" @endif>
 
 @include('layouts.sidebar-header')

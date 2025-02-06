@@ -9,7 +9,7 @@
                 <div class="col sidebar-icon">
                     <i class="h4 logo-text-1 fa-solid fa-bars"></i>
                 </div>
-                <img src="{{URL::asset('assets/images/layouts/logo2.png')}}" class="col logo-img" alt="" />
+                <img src="{{URL::asset(path: 'assets/images/layouts/logo2.png')}}" class="col logo-img" alt="" />
             </div>
             {{-- THE MAIN SEARCH OF SIDEBAR --}}
             <div class=" search p-relative ph-search">
