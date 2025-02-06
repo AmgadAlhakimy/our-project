@@ -94,56 +94,62 @@
                             </div>
                         </td>
                         <td>
-                            <a href="{{route('roles.show',$role->id)}}"
-                               class="btn save-button btn-success w-25 me-1 ms-1 ">
-                                <i class="fa-solid fa-list"></i>
+                            @can('display role permissions')
+                                <a href="{{route('roles.show',$role->id)}}"
+                                   class="btn save-button btn-success w-25 me-1 ms-1 ">
+                                    <i class="fa-solid fa-list"></i>
 
-                            </a>
-                            <a href="{{route('edit-role',$role->id)}}"
-                               class="btn save-button btn-success w-25 me-1 ms-1 ">
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                            @endcan
+                            @can('edit role')
+                                <a href="{{route('edit-role',$role->id)}}"
+                                   class="btn save-button btn-success w-25 me-1 ms-1 ">
+                                    <i class="fa-solid fa-pen-to-square"></i>
 
-                            </a>
-                            <button wire:confirm="are you sure you want to delete"
-                                    class="btn clear-button btn-danger w-25 me-1 ms-1"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#delete{{$role->id}}">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="delete{{$role->id}}"
-                                 tabindex="-1" aria-labelledby="exampleModalLabel"
-                                 aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <div class="modal-title">
-                                                <i class="fa-solid fa-trash-can danger_msg"></i>
+                                </a>
+                            @endcan
+                            @can('delete role')
+                                <button wire:confirm="are you sure you want to delete"
+                                        class="btn clear-button btn-danger w-25 me-1 ms-1"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#delete{{$role->id}}">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="delete{{$role->id}}"
+                                     tabindex="-1" aria-labelledby="exampleModalLabel"
+                                     aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <div class="modal-title">
+                                                    <i class="fa-solid fa-trash-can danger_msg"></i>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-body form-label row">
-                                            <div class="col-12">
-                                                {{__('public.are you sure you want to delete')}}
+                                            <div class="modal-body form-label row">
+                                                <div class="col-12">
+                                                    {{__('public.are you sure you want to delete')}}
+                                                </div>
+                                                <div class="col-12">
+                                                    {{$role->name}}
+                                                </div>
                                             </div>
-                                            <div class="col-12">
-                                                {{$role->name}}
+                                            <div class="modal-footer form-label">
+                                                <button type="button" class="btn btn-danger clear-button ms-2 me-2"
+                                                        data-bs-dismiss="modal">
+                                                    {{__('public.cancel')}}</button>
+                                                <form method="post"
+                                                      action="{{route('roles.destroy',$role->id)}}">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button type="submit"
+                                                            class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
+                                                </form>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer form-label">
-                                            <button type="button" class="btn btn-danger clear-button ms-2 me-2"
-                                                    data-bs-dismiss="modal">
-                                                {{__('public.cancel')}}</button>
-                                            <form method="post"
-                                                  action="{{route('roles.destroy',$role->id)}}">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button type="submit"
-                                                        class="btn btn-primary save-button ms-2 me-2">{{__('public.ok')}}</button>
-                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endcan
                         </td>
                     </tr>
                 @endforeach

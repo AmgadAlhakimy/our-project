@@ -31,23 +31,37 @@ Route::group(
             return Route::post('/livewire/update', $handle);
         });
 
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->middleware(['auth', 'verified'])->name('dashboard');
 
-        Route::get('/home', function () {
-            return view('layouts/home');
-        })->name('home');
-        Route::get('/', function () {
+// Redirect guests to login when they try to access home while not authenticated
+        Route::middleware('guest')->get('/login', function () {
             return view('auth.login');
-        });
+        })->name('login');
 
+
+        // These Routes (Only for Authenticated & Verified Users)
         Route::group(['middleware' => ['auth']], function () {
-            Route::resource('roles', RoleController::class);
-            Route::resource('users', UserController::class);
+
+            Route::get('/', function () {
+                return view('layouts.home');
+            })->name('home');
+
+            Route::get('/dashboard', function () {
+                return view('dashboard');
+            })->name('dashboard');
+
+
+            include 'follow_up.php';
+            include 'absent.php';
+            include 'leaving.php';
+            include 'marks.php';
+            include 'resources.php';
+            include 'restore.php';
+            include 'force_delete.php';
+            include 'create-pages.php';
+            include 'edit-pages.php';
+            include 'display-pages.php';
 
         });
-
 
 
         Route::middleware('auth')->group(function () {
@@ -56,18 +70,6 @@ Route::group(
             Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
         });
 
+
         require __DIR__ . '/auth.php';
-        require __DIR__.'/../vendor/autoload.php';
-
-        include 'follow_up.php';
-        include 'absent.php';
-        include 'leaving.php';
-        include 'marks.php';
-        include 'resources.php';
-        include 'restore.php';
-        include 'force_delete.php';
-        include 'create-pages.php';
-        include 'edit-pages.php';
-        include 'display-pages.php';
-
     });

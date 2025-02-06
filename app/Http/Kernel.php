@@ -70,4 +70,10 @@ class Kernel extends HttpKernel
         'localeCookieRedirect'    => \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
         'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
     ];
+
+    protected $routeMiddleware = [
+        // Other middlewares...
+        'permission' => \App\Http\Middleware\PermissionMiddleware::class,
+    ];
+
 }

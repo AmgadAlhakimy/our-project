@@ -49,16 +49,20 @@
 
             <!-- Buttons -->
             <div class=" row">
-                <div class="box col">
-                    <button type="submit" class=" save-button">
-                        {{__('public.update')}}
-                        <div wire:loading class="spinner-border spinner-border-sm"></div>
-                    </button>
-                </div>
-                <div class="box  col">
-                    <a href="{{route('display-roles')}}" class="btn clear-button"><i
-                            class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
-                </div>
+                @can('update role')
+                    <div class="box col">
+                        <button type="submit" class=" save-button">
+                            {{__('public.update')}}
+                            <div wire:loading class="spinner-border spinner-border-sm"></div>
+                        </button>
+                    </div>
+                @endcan
+                @can('display roles')
+                    <div class="box  col">
+                        <a href="{{route('display-roles')}}" class="btn clear-button"><i
+                                class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
+                    </div>
+                @endcan
             </div>
         </div>
     </form>
