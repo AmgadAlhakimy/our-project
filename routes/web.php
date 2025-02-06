@@ -42,15 +42,14 @@ Route::group(
         })->name('home');
 
 
-        Route::get('/', [HomeController::class, 'show'])->name('main_page');
 
-        Route::get('/login_', [HomeController::class, 'login_'])->name('login_');
+        // Route::get('/login', [HomeController::class, 'login_'])->name('login');
         
-        Route::get('/register_', [HomeController::class, 'register_'])->name('register_');
+        // Route::get('/register', [HomeController::class, 'register_'])->name('register_');
 
 
 
-        // Route::get('/login_', function () {
+        // Route::get('/login', function () {
         //     return view('auth.login');
         // });
 

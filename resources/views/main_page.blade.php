@@ -16,28 +16,28 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
-                    <a href="classes.html" class="nav-item nav-link">Classes</a>
+                    <a href="index.html" class="nav-item nav-link active"></a>
+                    <a href="about.html" class="nav-item nav-link">{{ __('من نحن') }}</a>
+                    <a href="classes.html" class="nav-item nav-link">{{ __('فصول') }}</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ __('صفحات') }}</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="facility.html" class="dropdown-item">School Facilities</a>
-                            <a href="team.html" class="dropdown-item">Popular Teachers</a>
-                            <a href="call-to-action.html" class="dropdown-item">Become A Teachers</a>
-                            <a href="appointment.html" class="dropdown-item">Make Appointment</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="facility.html" class="dropdown-item">{{ __('اقسام المدرسة') }}</a>
+                            <a href="team.html" class="dropdown-item">{{ __('الطلاب الاوئل') }}</a>
+                            <a href="call-to-action.html" class="dropdown-item">{{ __('فصول الروضة') }}</a>
+                            <a href="appointment.html" class="dropdown-item">{{ __('حدد موعد') }}</a>
+                            <a href="testimonial.html" class="dropdown-item">{{ __('شهادات نعتز بها') }}</a>
+                            <a href="404.html" class="dropdown-item">{{ __('error 404') }}</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact Us</a>
+                    <a href="contact.html" class="nav-item nav-link">{{ __('تواصل معنا') }}</a>
                 </div>
 
 
                 <a ></a>
 
-                <a href="{{route('login_')}}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block me-s ms-1">{{ __('login') }}<i class="fa-solid fa-right-to-bracket ms-3"></i></a>
-                <a href="{{route('register_')}}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block me-s ms-1">{{ __('Sign up') }}</i><i class="fa-solid fa-user-plus ms-3"></i></a>
+                <a href="{{route('login')}}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block me-s ms-1">{{ __('login') }}<i class="fa-solid fa-right-to-bracket ms-3"></i></a>
+                <a href="{{route('register')}}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block me-s ms-1">{{ __('Sign up') }}</i><i class="fa-solid fa-user-plus ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -53,10 +53,10 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8">
-                                    <h1 class="display-2 text-white animated slideInDown mb-4">The Best Kindergarten School For Your Child</h1>
+                                    <h1 class="display-2 text-white animated slideInDown mb-4">{{ __('افضل روضة في امانة العاصمة') }}</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
-                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a>
+                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">{{ __('اعرف اكثر') }}</a>
+                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">{{ __('فصولنا') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -69,10 +69,10 @@
                         <div class="container">
                             <div class="row justify-content-start">
                                 <div class="col-10 col-lg-8">
-                                    <h1 class="display-2 text-white animated slideInDown mb-4">Make A Brighter Future For Your Child</h1>
+                                    <h1 class="display-2 text-white animated slideInDown mb-4">{{ __('اكتشف ما يحبه طفلك') }}</h1>
                                     <p class="fs-5 fw-medium text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.</p>
-                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">Learn More</a>
-                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">Our Classes</a>
+                                    <a href="" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 me-3 animated slideInLeft">{{ __('المزيد عنا') }}</a>
+                                    <a href="" class="btn btn-dark rounded-pill py-sm-3 px-sm-5 animated slideInRight">{{ __('فصولنا') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -548,9 +548,9 @@
                                 <h3>Full Name</h3>
                                 <p>Designation</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href="____"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary  mx-1" href="____"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary  mx-1" href="____"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -563,9 +563,9 @@
                                 <h3>Full Name</h3>
                                 <p>Designation</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href="____"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary  mx-1" href="____"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary  mx-1" href="____"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -577,9 +577,9 @@
                                 <h3>Full Name</h3>
                                 <p>Designation</p>
                                 <div class="d-flex align-items-center">
-                                    <a class="btn btn-square btn-primary mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-square btn-primary  mx-1" href="https://freewebsitecreate.net/"><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square btn-primary mx-1" href="____"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square btn-primary  mx-1" href="____"><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square btn-primary  mx-1" href="____"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -647,10 +647,10 @@
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
                         <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/groups/freewebsitecode"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/groups/freewebsitecode"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/freewebsitecode"><i class="fab fa-youtube"></i></a>
-                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/freewebsitecode"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/groups/____"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/groups/____"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/____"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.youtube.com/____"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -698,10 +698,10 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="https://freewebsitecreate.net/">Your Site Name</a>, All Right Reserved. 
+                            &copy; <a class="border-bottom" href="____">Your Site Name</a>, All Right Reserved. 
 							
 							
-							Designed By <a class="border-bottom" href="https://freewebsitecreate.net/">Free Website Create</a>
+							Designed By <a class="border-bottom" href="____">Free Website Create</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">

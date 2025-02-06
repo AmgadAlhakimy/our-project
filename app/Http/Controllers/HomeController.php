@@ -14,27 +14,23 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('show');
     }
 
     /**
-     * Show the application dashboard.
+     * Show the application dashboard.hf
      * 
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+
+        public function index()
     {
         return view('home');
     }
 
-    public Function show(){
+        public Function show()
+    {
         return view('main_page');
     }
-    public Function login_(){
-        return view('auth.login');
-    }
 
-    public Function register_(){
-        return view('auth.register');
-    }
 }
