@@ -15,6 +15,12 @@ class DisplayStudents extends Component
 
 
     public $classroom_id;
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('display students')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
 
     public function render()
     {

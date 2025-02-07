@@ -10,6 +10,16 @@ use Carbon\Carbon;
 
 class AbsentController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:presenting children', ['only' => ['newPresenting', 'storeAbsent']]);
+        $this->middleware('permission:display absent children', ['only' => ['displayAbsent']]);
+        $this->middleware('permission:edit absent for all children', ['only' => ['editAbsent']]);
+        $this->middleware('permission:update absent children', ['only' => ['updateAbsent']]);
+        $this->middleware('permission:display absent children of all time', ['only' => ['displayAbsentMonthly']]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

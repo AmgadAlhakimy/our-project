@@ -9,25 +9,18 @@ use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Student\Student;
 use Exception;
-use Illuminate\Http\Request;
-use Livewire\WithPagination;
 
 class ClassroomController extends Controller
 {
-    use WithPagination;
-    /**
-     * Display classrooms.
-     */
-    public function index()
+    function __construct()
     {
-        try {
-            $classrooms = Classroom::paginate(5);
-            return view('academic-dep/classrooms.display-classrooms',
-                compact('classrooms'));
-
-        }catch (Exception $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+        $this->middleware('permission:create classroom', ['only' => ['create','store']]);
+        $this->middleware('permission:edit classroom', ['only' => ['edit']]);
+        $this->middleware('permission:update classroom', ['only' => ['update']]);
+        $this->middleware('permission:delete classroom', ['only' => ['destroy']]);
+        $this->middleware('permission:display deleted classrooms', ['only' => ['show']]);
+        $this->middleware('permission:restore classroom', ['only' => ['restore']]);
+        $this->middleware('permission:forceDelete classroom', ['only' => ['forceDelete']]);
     }
 
     /**
@@ -175,28 +168,4 @@ class ClassroomController extends Controller
         }
     }
 
-
-    /**
-     * show classrooms according to the search.
-     */
-    public function search(Request $request)
-    {
-        try {
-            $search = $request->search;
-            if(strtolower($search) == 'all' or $search == 'الكل')
-                return $this->index();
-            $classrooms = Classroom::where(function ($query) use ($search){
-                $query->where('name->en','like',"%$search%")
-                    ->orwhere('name->ar','like',"%$search%");
-            })->orWhereHas('Level',function ($query) use ($search){
-                $query->where('name->en','like',"%$search%")
-                    ->orwhere('name->ar','like',"%$search%");
-            })->get();
-            return view('academic-dep/classrooms.display_classrooms',
-                compact('search','classrooms'));
-
-        }catch (\Exception $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
 }

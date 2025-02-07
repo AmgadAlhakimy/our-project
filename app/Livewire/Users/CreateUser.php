@@ -5,7 +5,7 @@ namespace App\Livewire\Users;
 use App\Models\User;
 use App\Traits\UserTrait;
 use Illuminate\Support\Facades\Hash;
-use Livewire\Attributes\Rule;
+use Spatie\Permission\Exceptions\UnauthorizedException;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
@@ -14,11 +14,15 @@ class CreateUser extends Component
    use UserTrait;
     public function mount()
     {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('create user')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
         $this->allRoles = Role::pluck('name', 'name')->toArray(); // Fetch roles from DB
     }
 
     public function save()
     {
+
         $this->validate();
         try {
             $user = User::create([

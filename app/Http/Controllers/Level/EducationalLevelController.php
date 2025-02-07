@@ -7,26 +7,18 @@ use App\Http\Requests\Level\StoreEducationalLevelRequest;
 use App\Http\Requests\Level\UpdateEducationalLevelRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
-use Illuminate\Http\Request;
-use Livewire\WithPagination;
 
 class EducationalLevelController extends Controller
 {
-    use WithPagination;
-
-    /**
-     * Display Educational levels.
-     */
-    public function index()
+    function __construct()
     {
-        try {
-            $levels = EducationalLevel::paginate(5);
-            return view('academic-dep/educational-levels.display-edu-level',
-                compact('levels'));
-
-        } catch (\Exception $e) {
-                    return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+        $this->middleware('permission:create educational-level', ['only' => ['create','store']]);
+        $this->middleware('permission:edit educational-level', ['only' => ['edit']]);
+        $this->middleware('permission:update educational-level', ['only' => ['update']]);
+        $this->middleware('permission:delete educational-level', ['only' => ['destroy']]);
+        $this->middleware('permission:display deleted educational-levels', ['only' => ['show']]);
+        $this->middleware('permission:restore educational-level', ['only' => ['restore']]);
+        $this->middleware('permission:forceDelete educational-level', ['only' => ['forceDelete']]);
     }
 
     /**
@@ -34,6 +26,7 @@ class EducationalLevelController extends Controller
      */
     public function create()
     {
+//        dd('hello');
         try {
         return view('academic-dep/educational-levels.create-edu-level');
         } catch (\Exception $e) {
@@ -156,24 +149,4 @@ class EducationalLevelController extends Controller
         }
     }
 
-    /**
-     * show Educational levels according to the search.
-     */
-    public function search(Request $request)
-    {
-        try {
-        $search = $request->search;
-        if(strtolower($search) == 'all' or $search == 'الكل')
-            return $this->index();
-        $levels = EducationalLevel::where(function ($query) use ($search){
-            $query->where('name->en','like',"%$search%")
-            ->orwhere('name->ar','like',"%$search%");
-        })->get();
-        return view('academic-dep/educational-levels.display-edu-level',
-            compact('search','levels'));
-
-        }catch (\Exception $e){
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
 }

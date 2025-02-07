@@ -12,19 +12,11 @@ use Exception;
 
 class SubjectTeacherController extends Controller
 {
-    /**
-     * Display the all teachers with their subjects.
-     */
-    public function index()
+    function __construct()
     {
-        try {
-            $teachers = Teacher::all();
-            return view('academic-dep/relationships/subject-teachers.display-subject-teachers',
-                compact('teachers'));
-
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+        $this->middleware('permission:create teachers-subjects', ['only' => ['create','store']]);
+        $this->middleware('permission:edit teachers-subjects', ['only' => ['edit']]);
+        $this->middleware('permission:update teachers-subjects', ['only' => ['update']]);
     }
 
     /**
@@ -61,15 +53,6 @@ class SubjectTeacherController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(SubjectTeacher $teacherSubject)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -106,13 +89,5 @@ class SubjectTeacherController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(SubjectTeacher $teacherSubject)
-    {
-        //
     }
 }

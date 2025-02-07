@@ -17,5 +17,7 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     "Don't have an account?" => "Don't have an account? how ",
+    'your account is disabled'=>'Your account is disabled. Please contact us.',
+    'unauthorized access'=>'Unauthorized Access'
 
 ];

@@ -21,6 +21,11 @@ class EditParents extends Component
      */
     public function mount()
     {
+
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('edit superior')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+
         try {
             $parent = Parents::findorFail($this->id);
             $this->father_name = $parent->getTranslation('father_name', 'en');

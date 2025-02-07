@@ -20,9 +20,8 @@ class RoleController extends Controller
      */
     function __construct()
     {
-        $this->middleware('permission:check leaving children', ['only' => ['show']]);
-        $this->middleware('permission:role-edit', ['only' => ['edit','update']]);
-        $this->middleware('permission:role-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:display role permissions', ['only' => ['show']]);
+        $this->middleware('permission:delete role', ['only' => ['destroy']]);
     }
 
     /**

@@ -12,19 +12,11 @@ use Exception;
 
 class ActivityClassroomController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    function __construct()
     {
-        try {
-            $classrooms = Classroom::all();
-            return view('academic-dep/relationships/activity-classrooms.display-activity-classrooms',
-                compact('classrooms'));
-
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+        $this->middleware('permission:create classes-activities', ['only' => ['create','store']]);
+        $this->middleware('permission:edit classes-activities', ['only' => ['edit']]);
+        $this->middleware('permission:update classes-activities', ['only' => ['update']]);
     }
 
     /**
@@ -34,8 +26,9 @@ class ActivityClassroomController extends Controller
     {
         try {
             $classrooms = Classroom::all();
+            $activities = Activity::all();
             return view('academic-dep/relationships/activity-classrooms.create-activity-classrooms',
-                compact('classrooms'));
+                compact('classrooms','activities'));
 
         } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -61,13 +54,7 @@ class ActivityClassroomController extends Controller
     }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(ActivityClassroom $activityClassroom)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -107,11 +94,5 @@ class ActivityClassroomController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(ActivityClassroom $activityClassroom)
-    {
-        //
-    }
+
 }

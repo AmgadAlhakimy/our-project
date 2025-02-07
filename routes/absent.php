@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\AbsentController;
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 
 Route::get('newPresenting/{classroom_id}',
     [AbsentController::class, 'newPresenting'])

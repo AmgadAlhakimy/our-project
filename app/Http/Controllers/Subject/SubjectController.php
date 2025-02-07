@@ -10,18 +10,15 @@ use Illuminate\Http\Request;
 
 class SubjectController extends Controller
 {
-    /**
-     * Display subjects.
-     */
-    public function index()
+    function __construct()
     {
-        try {
-            $subjects = Subject::all();
-            return view('academic-dep/subjects.display-subjects',
-                compact('subjects'));
-        } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+        $this->middleware('permission:create subject', ['only' => ['create','store']]);
+        $this->middleware('permission:edit subject', ['only' => ['edit']]);
+        $this->middleware('permission:update subject', ['only' => ['update']]);
+        $this->middleware('permission:delete subject', ['only' => ['destroy']]);
+        $this->middleware('permission:display deleted subjects', ['only' => ['show']]);
+        $this->middleware('permission:restore subject', ['only' => ['restore']]);
+        $this->middleware('permission:forceDelete subject', ['only' => ['forceDelete']]);
     }
 
 

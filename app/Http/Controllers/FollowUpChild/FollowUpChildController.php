@@ -16,6 +16,14 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class FollowUpChildController extends Controller
 {
 
+    function __construct()
+    {
+        $this->middleware('permission:create followup notebook', ['only' => ['writingFollowUp', 'storeAll', 'storeChild']]);
+        $this->middleware('permission:edit followup notebook for all children', ['only' => ['editAllChildren']]);
+        $this->middleware('permission:edit followup notebook individually', ['only' => ['editChild']]);
+        $this->middleware('permission:update followup notebook for all children', ['only' => ['updateAllChildren']]);
+        $this->middleware('permission:update followup notebook individually', ['only' => ['updateChild']]);
+    }
 
     public function writingFollowUp($classroom_id)
     {
@@ -198,18 +206,6 @@ class FollowUpChildController extends Controller
 
 
         } catch (ModelNotFoundException $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
-    }
-
-    public function displayFollowUp($classroom_id)
-    {
-        try {
-            $classroom = Classroom::findorfail($classroom_id);
-
-            return view('teachers-affairs/follow_up_children.follow_up_children_date',
-                compact('classroom'));
-        } catch (ModelNotFoundException|\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

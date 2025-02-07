@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\LeavingController;
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 
 
 Route::group(['middleware' => ['auth']], function () {

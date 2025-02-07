@@ -11,7 +11,12 @@ class DisplayUsers extends Component
 {
     use WithPagination;
     use QueryTrait;
-
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('display users')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
     public function render()
     {
         try {

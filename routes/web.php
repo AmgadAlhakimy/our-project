@@ -2,11 +2,11 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+//use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use Livewire\Livewire;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+//use Livewire\Livewire;
+//use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,24 +28,17 @@ Route::group(
 
     function () {
 
-        Livewire::setUpdateRoute(function ($handle) {
-            return Route::post('/livewire/update', $handle);
-        });
-
-
 // Redirect guests to login when they try to access home while not authenticated
 //        Route::middleware('guest')->get('/login', function () {
 //            return view('auth.login');
 //        })->name('login');
-
-
-
-
-
-
-
         // These Routes (Only for Authenticated & Verified Users)
-        Route::group(['middleware' => ['auth']], function () {
+//        Route::group(['middleware' => ['auth']], function () {
+
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post('/livewire/update', $handle);
+        });
+
 
             Route::get('/home', function () {
                 return view('layouts/home');
@@ -59,7 +52,6 @@ Route::group(
             include 'follow_up.php';
             include 'absent.php';
             include 'leaving.php';
-            include 'marks.php';
             include 'resources.php';
             include 'restore.php';
             include 'force_delete.php';
@@ -79,4 +71,4 @@ Route::group(
 
         require __DIR__ . '/auth.php';
 
-    });
+//    });
