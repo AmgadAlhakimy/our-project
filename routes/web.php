@@ -37,9 +37,9 @@ Route::group(
         })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-        Route::get('/home', function () {
-            return view('layouts/home');
-        })->name('home');
+        // Route::get('/home', function () {
+        //     return view('layouts/home');
+        // })->name('home');
 
 
 
