@@ -13,7 +13,7 @@
 
 .side-container {
     display: flex;
-    /*  */
+    /*  */ 
 }
 .sidebar {
     position: fixed;
@@ -70,6 +70,10 @@
     display: none;
     transition: all 0.5s;
 }
+.sidebar.close li.dropdown.active .li-link{
+
+    width: 1000px;
+}
 .sidebar.close .list-ul li .sidebar-title .li-link {
     box-shadow: none;
     display: flex;
@@ -91,7 +95,13 @@
 .sidebar.close:hover li.dropdown.active .submenu{
     display: block;
     transition: all 0.5s;
-
+}
+.sidebar li.dropdown .submenu .li-link{
+display: none;
+}
+.sidebar li.dropdown.active .submenu .li-link{
+    display: block;
+    text-align: start;
 }
 .sidebar.close .list-ul {
     /* can be deleted */

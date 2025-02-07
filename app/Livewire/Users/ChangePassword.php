@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Traits\UserTrait;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
+use Illuminate\Support\Facades\Hash;
 
 class ChangePassword extends Component
 {
@@ -29,7 +30,7 @@ class ChangePassword extends Component
         try {
             $user = User::findorFail($this->id);
             $user->update([
-                'password' => $this->password,
+                'password' => Hash::make($this->password),
             ]);
 
             $this->reset();

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
@@ -33,16 +34,21 @@ Route::group(
 
 
 // Redirect guests to login when they try to access home while not authenticated
-        Route::middleware('guest')->get('/login', function () {
-            return view('auth.login');
-        })->name('login');
+//        Route::middleware('guest')->get('/login', function () {
+//            return view('auth.login');
+//        })->name('login');
+
+
+
+
+
 
 
         // These Routes (Only for Authenticated & Verified Users)
         Route::group(['middleware' => ['auth']], function () {
 
-            Route::get('/', function () {
-                return view('layouts.home');
+            Route::get('/home', function () {
+                return view('layouts/home');
             })->name('home');
 
             Route::get('/dashboard', function () {
@@ -72,4 +78,5 @@ Route::group(
 
 
         require __DIR__ . '/auth.php';
+
     });
