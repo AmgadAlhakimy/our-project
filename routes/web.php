@@ -1,12 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-//use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
-//use Livewire\Livewire;
-//use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Livewire\Livewire;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +15,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
+// routes/web.php
 
 Route::group(
     [
@@ -28,17 +25,12 @@ Route::group(
 
     function () {
 
-// Redirect guests to login when they try to access home while not authenticated
-//        Route::middleware('guest')->get('/login', function () {
-//            return view('auth.login');
-//        })->name('login');
-        // These Routes (Only for Authenticated & Verified Users)
-//        Route::group(['middleware' => ['auth']], function () {
-
         Livewire::setUpdateRoute(function ($handle) {
             return Route::post('/livewire/update', $handle);
         });
 
+        //These Routes (Only for Authenticated & Verified Users)
+        Route::group(['middleware' => ['auth']], function () {
 
             Route::get('/home', function () {
                 return view('layouts/home');
@@ -47,7 +39,6 @@ Route::group(
             Route::get('/dashboard', function () {
                 return view('dashboard');
             })->name('dashboard');
-
 
             include 'follow_up.php';
             include 'absent.php';
@@ -59,16 +50,19 @@ Route::group(
             include 'edit-pages.php';
             include 'display-pages.php';
 
+
+            Route::middleware('auth')->group(function () {
+                Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+                Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+                Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+            });
+
         });
-
-
-        Route::middleware('auth')->group(function () {
-            Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-            Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-            Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-        });
-
 
         require __DIR__ . '/auth.php';
 
-//    });
+    });
+
+/** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
+
+

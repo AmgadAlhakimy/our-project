@@ -16,18 +16,18 @@
 
                 {{-- the serch form shows only with phone style --}}
                 <div class="search p-relative ph-search_m">
-                    <input class="search1 ms-2 me-2 " type="search"
-                    placeholder="{{__('sidebar.search')}}" id="rtl" />
+                    <label for="rtl"></label><input class="search1 ms-2 me-2 " type="search" placeholder="{{__('sidebar.search')}}" id="rtl"/>
                 </div>
                 <hr class="ph-search_m">
 
-                    @include('layouts.personnel-affairs.personnel-affairs')
-                    @include('layouts.academic-department.academic-department')
-                    @livewire('students-display')
+                @include('layouts.personnel-affairs.personnel-affairs')
+                @include('layouts.academic-department.academic-department')
+                @livewire('students-affairs.student.students-display-sidebar')
+
                 <!-- ========== 5 ============ -->
-                    @livewire('FollowUp.follow-up')
+                @livewire('FollowUp.follow-up')
                 <!-- ======================== PARENTS ========================== -->
-                    @include('layouts.parents.parents')
+                @include('layouts.parents.parents')
 
                 {{-- ---شؤون الموظفين--- --}}
                 <!-- ======================== EMB ========================== -->

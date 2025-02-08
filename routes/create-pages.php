@@ -10,5 +10,6 @@ use App\Livewire\Roles\CreateRole;
 Route::get('/CreateStudent',CreateStudent::class)->name('create-student');
 Route::get('/CreateParents',CreateParents::class)->name('create-parents');
 Route::get('/CreateUser',CreateUser::class)->name('create-user');
+Route::get('/CreateUser',CreateUser::class)->name('create-user');
 Route::get('/CreateRole',CreateRole::class)->name('create-role');
 

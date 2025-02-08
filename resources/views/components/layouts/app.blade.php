@@ -19,7 +19,7 @@
                 <hr class="ph-search_m">
                 @include('layouts.personnel-affairs.personnel-affairs')
                 @include('layouts.academic-department.academic-department')
-                @livewire('students-display')
+                @livewire('students-affairs.student.students-display-sidebar')
                 @livewire('FollowUp.follow-up')
                 @include('layouts.parents.parents')
             </ul>
