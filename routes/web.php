@@ -29,6 +29,8 @@ Route::group(
             return Route::post('/livewire/update', $handle);
         });
 
+
+
         //These Routes (Only for Authenticated & Verified Users)
         Route::group(['middleware' => ['auth']], function () {
 
@@ -64,5 +66,4 @@ Route::group(
     });
 
 /** OTHER PAGES THAT SHOULD NOT BE LOCALIZED **/
-
 

@@ -8,6 +8,7 @@ class RegisterUser extends Component
 {
     public function render()
     {
-        return view('auth.register');
+        return view('auth.register')->layout('auth.empty');
     }
 }
+

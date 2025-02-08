@@ -502,3 +502,34 @@ h6,
     padding-right: 0;
     border-right: none;
 }
+
+/* start login and sign out styles */
+
+.login_style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; 
+}
+
+.login_container {
+    background-color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    width: 100%; 
+    max-width: 700px; 
+    margin: 0px 30px;
+}
+
+@media (max-width: 576px) {
+    .login_container {
+        padding: 15px; 
+        margin: 0px 5px;
+    }
+}
+
+
+/* end login and sign out styles */

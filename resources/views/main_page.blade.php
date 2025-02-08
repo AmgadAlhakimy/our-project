@@ -36,8 +36,20 @@
 
                 <a ></a>
 
-                <a href="{{route('login')}}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block me-s ms-1">{{ __('login') }}<i class="fa-solid fa-right-to-bracket ms-3"></i></a>
-                <a href="{{route('register')}}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block me-s ms-1">{{ __('Sign up') }}</i><i class="fa-solid fa-user-plus ms-3"></i></a>
+                <a href="{{route('login')}}" class="btn btn-primary outline:none rounded-pill px-3 d-none d-lg-block me-s ms-1">{{__('public.login')}}<i class="fa-solid fa-right-to-bracket ms-3"></i></a>
+                <a href="{{route('register-user')}}" class="btn btn-primary outline:none rounded-pill px-3 d-none d-lg-block me-s ms-1">{{__('public.sign up')}}</i><i class="fa-solid fa-user-plus ms-3"></i></a>
+                <div class="lang_style me-3 ms-3">
+                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                        <div class="text-center">
+                            <a rel="alternate" class="" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }} "
+                            class="">
+                            <div class="form-label">
+                                {{ $properties['native'] }}
+                            </div>
+                            </a>
+                        </dib>
+                    @endforeach
+                </div>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -701,7 +713,7 @@
                             &copy; <a class="border-bottom" href="____">Your Site Name</a>, All Right Reserved. 
 							
 							
-							Designed By <a class="border-bottom" href="____">Free Website Create</a>
+						    صمم بواسطه  <a class="border-bottom" href="____">AK(CONDING)</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">

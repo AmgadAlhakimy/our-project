@@ -33,4 +33,9 @@ class HomeController extends Controller
         return view('main_page');
     }
 
+    //     public Function profile()
+    // {
+    //     return view('profile');
+    // }
+
 }
