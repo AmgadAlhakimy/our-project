@@ -20,6 +20,9 @@ class EditRole extends Component
 
     public function mount($id)
     {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('edit role')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
         $role = Role::findOrFail($id);
         $this->roleId = $role->id;
         $this->name = $role->name;

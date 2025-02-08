@@ -20,6 +20,10 @@ class ChangePassword extends Component
 
     public function mount()
     {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('change users password')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+
         $user = User::findorFail($this->id);
         $this->name = $user->name;
 

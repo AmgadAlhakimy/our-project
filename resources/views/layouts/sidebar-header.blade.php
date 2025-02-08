@@ -1,6 +1,7 @@
 <!-- Start head  -->
 <!-- Start content  -->
 <div class="content">
+
     <div class="head " dir="">
         <div class="head_1">
             <!-- ============= logo ================== -->
@@ -22,7 +23,9 @@
                         <span class="notification p-relative">
                             <i class="fa-regular fa-bell fa-fw "></i>
                         </span>
-                <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
+                {{-- <a href="{{route('profile')}}" class="btn-launch-profile"> --}}
+                    <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills"/>
+                {{-- </a> --}}
             </div>
             {{-- THE DROPDOWN LUNGUAGE --}}
             <div class=" dropDownLang ph-lang">
@@ -52,7 +55,7 @@
                 </a>
             </div>
             <div class=" me-1 ms-1 ph-home border-left">
-                <a class="card-info  " aria-current="page" href="/home">
+                <a class="card-info  " aria-current="page" href="/dashboard">
                     <i class="mt-2 h2 icon-1 fa-solid fa-home-lg-alt"></i>
                 </a>
             </div>

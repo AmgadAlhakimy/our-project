@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Arr;
-use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
 {
 
+    function __construct()
+    {
+        $this->middleware('permission:delete user', ['only' => ['destroy']]);
+        $this->middleware('permission:display deleted users', ['only' => ['show']]);
+        $this->middleware('permission:restore user', ['only' => ['restore']]);
+        $this->middleware('permission:forceDelete user', ['only' => ['forceDelete']]);
+    }
 
     /**
      * Display the specified resource.
@@ -33,42 +31,6 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Show the form for editing the specified resource
-     */
-    public function edit($id)
-    {
-        $user = User::find($id);
-        $roles = Role::pluck('name', 'name')->all();
-        $userRole = $user->roles->pluck('name', 'name')->all();
-        return view('edit-user', compact('user', 'roles', 'userRole'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-
-     */
-    public function update(Request $request, $id)
-    {
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'password' => 'same:confirm-password',
-            'roles' => 'required'
-        ]);
-        $input = $request->all();
-        if (!empty($input['password'])) {
-            $input['password'] = Hash::make($input['password']);
-        } else {
-            $input = Arr::except($input, ['password']);
-        }
-        $user = User::find($id);
-        $user->update($input);
-        DB::table('model_has_roles')->where('model_id', $id)->delete();
-        $user->assignRole($request->input('roles'));
-        return redirect()->route('users.index')
-            ->with('success', 'User updated successfully');
-    }
 
     /**
      * Remove the specified resource from storage.

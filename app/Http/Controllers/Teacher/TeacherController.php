@@ -14,6 +14,16 @@ class TeacherController extends Controller
     use EmployeeTrait;
     use PhotoTrait;
 
+    function __construct()
+    {
+        $this->middleware('permission:create teacher', ['only' => ['create','store']]);
+        $this->middleware('permission:edit teacher', ['only' => ['edit']]);
+        $this->middleware('permission:update teacher', ['only' => ['update']]);
+        $this->middleware('permission:delete teacher', ['only' => ['destroy']]);
+        $this->middleware('permission:display deleted teachers', ['only' => ['show']]);
+        $this->middleware('permission:restore teacher', ['only' => ['restore']]);
+        $this->middleware('permission:forceDelete teacher', ['only' => ['forceDelete']]);
+    }
 
     /**
      * Show creating a new teacher page.

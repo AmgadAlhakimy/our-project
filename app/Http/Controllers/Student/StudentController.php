@@ -14,7 +14,14 @@ class StudentController extends Controller
 {
     use PhotoTrait;
 
-
+    function __construct()
+    {
+        $this->middleware('permission:delete student', ['only' => ['destroy']]);
+        $this->middleware('permission:display deleted students', ['only' => ['show']]);
+        $this->middleware('permission:student more info', ['only' => ['more']]);
+        $this->middleware('permission:restore student', ['only' => ['restore']]);
+        $this->middleware('permission:forceDelete student', ['only' => ['forceDelete']]);
+    }
     /**
      * Display deleted students.
      */

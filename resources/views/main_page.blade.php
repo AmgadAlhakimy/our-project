@@ -701,7 +701,7 @@
                             &copy; <a class="border-bottom" href="____">Your Site Name</a>, All Right Reserved. 
 							
 							
-							Designed By <a class="border-bottom" href="____">Free Website Create</a>
+						    صمم بواسطه  <a class="border-bottom" href="____">AK(CONDING)</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">

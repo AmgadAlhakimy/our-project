@@ -114,9 +114,9 @@ class PermissionTableSeeder extends Seeder
             'create followup notebook',
             'display followup notebook',
             'edit followup notebook for all children',
+            'edit followup notebook individually',
             'update followup notebook for all children',
             'update followup notebook individually',
-            'edit followup notebook individually',
             'whole notebook with all students in class',
             'whole notebook for specific student',
 
@@ -135,9 +135,10 @@ class PermissionTableSeeder extends Seeder
             'edit leaving children',
             'update leaving children',
 
+            'users and roles',
             'users',
             'create user',
-            'display user',
+            'display users',
             'edit user',
             'update user',
             'change users password',
@@ -150,7 +151,7 @@ class PermissionTableSeeder extends Seeder
             'create role',
             'display roles',
             'edit role',
-            'display roles permissions',
+            'display role permissions',
             'update role',
             'delete role',
 

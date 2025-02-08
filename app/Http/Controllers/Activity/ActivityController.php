@@ -6,22 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Activity\StoreActivityRequest;
 use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Models\Activity\Activity;
-use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
-    /**
-     * Display activities.
-     */
-    public function index()
+
+    function __construct()
     {
-        try {
-            $activities= Activity::all();
-            return view('academic-dep/activities.display-activities',
-                compact('activities'));
-        }catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
-        }
+        $this->middleware('permission:create activity', ['only' => ['create','store']]);
+        $this->middleware('permission:edit activity', ['only' => ['edit']]);
+        $this->middleware('permission:update activity', ['only' => ['update']]);
+        $this->middleware('permission:delete activity', ['only' => ['destroy']]);
+        $this->middleware('permission:display deleted activities', ['only' => ['show']]);
+        $this->middleware('permission:restore activity', ['only' => ['restore']]);
+        $this->middleware('permission:forceDelete activity', ['only' => ['forceDelete']]);
     }
 
     /**

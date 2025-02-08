@@ -108,9 +108,9 @@
     text-align: start;
 }
 
-.list-ul::-webkit-scrollbar {
-    /* display: none; */
-}
+/* .list-ul::-webkit-scrollbar {
+    display: none;
+} */
 
 .li-link {
     display: flex;
@@ -643,3 +643,17 @@ body[dir="rtl"] .search .search1 {
 }
 
 /* ________________ End toggle style _________________ */
+.btn-launch-profile {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* إزالة التسطير */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-launch-profile:hover {
+    background-color: #0056b3; /* لون الخلفية عند التمرير */
+}

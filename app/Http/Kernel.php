@@ -71,5 +71,10 @@ class Kernel extends HttpKernel
         'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
     ];
 
+    protected $routeMiddleware = [
+        // Other middlewares...
+        'permission' => \App\Http\Middleware\PermissionMiddleware::class,
+        'check.status' => \App\Http\Middleware\CheckUserStatus::class,
+    ];
 
 }

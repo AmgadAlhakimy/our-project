@@ -7,6 +7,12 @@ use Livewire\Component;
 
 class StudentsDisplay extends Component
 {
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('STUDENT AFFAIRS')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
     public function render()
     {
         $classrooms= Classroom::all();

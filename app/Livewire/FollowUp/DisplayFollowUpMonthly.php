@@ -15,6 +15,12 @@ class DisplayFollowUpMonthly extends Component
     use WithPagination;
     public $classroom_id;
 
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('whole notebook with all students in class')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
     public function render()
     {
         $month = Carbon::now()->format('F j');

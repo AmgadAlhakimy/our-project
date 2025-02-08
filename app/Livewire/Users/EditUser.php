@@ -18,6 +18,10 @@ class EditUser extends Component
     public $confirm_password;
     public function mount()
     {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('edit user')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+
         $this->allRoles = Role::pluck('name', 'name')->toArray();
         $user = User::findorFail($this->id);
         $this->name = $user->name;

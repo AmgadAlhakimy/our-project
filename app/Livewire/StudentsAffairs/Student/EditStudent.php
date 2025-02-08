@@ -28,6 +28,11 @@ class EditStudent extends Component
 
     public function mount()
     {
+
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('edit student')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+
         try {
             $student = Student::findorFail($this->id);
             $this->classroom_name=$student->classroom->name;

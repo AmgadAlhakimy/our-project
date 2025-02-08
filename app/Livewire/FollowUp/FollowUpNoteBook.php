@@ -16,7 +16,12 @@ class FollowUpNoteBook extends Component
     public string $search = '';
     public string $date = '';
 
-
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('whole notebook for specific student')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
     public function render()
     {
         $student = Student::findorFail($this->student_id);

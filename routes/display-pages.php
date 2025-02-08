@@ -9,8 +9,7 @@ use App\Livewire\AcademicDep\DisplayClassTeachers;
 use App\Livewire\AcademicDep\DisplayEducationalLevels;
 use App\Livewire\AcademicDep\DisplaySubjects;
 use App\Livewire\AcademicDep\DisplaySubjectTeachers;
-use App\Livewire\DisplayMajors;
-use App\Livewire\DisplayTeachers;
+use App\Livewire\AcademicDep\DisplayTeachers;
 use App\Livewire\FollowUp\DisplayFollowUp;
 use App\Livewire\FollowUp\DisplayFollowUpMonthly;
 use App\Livewire\FollowUp\FollowUpNoteBook;
@@ -38,6 +37,5 @@ Route::get('/teachers',DisplayTeachers::class)->name('display-teachers');
 Route::get('/display-users', DisplayUsers::class)->name('display-users');
 Route::get('/display-roles', DisplayRoles::class)->name('display-roles');
 Route::get('/parents',DisplayParents::class)->name('display-parents');
-Route::get('/majors',DisplayMajors::class)->name('display-majors');
 
 

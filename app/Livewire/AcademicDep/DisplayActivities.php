@@ -12,20 +12,26 @@ class DisplayActivities extends Component
     use WithPagination;
     use QueryTrait;
 
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('display activities')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
     public function render()
     {
         try {
             $myQuery = Activity::where('name->en', 'like', "%$this->search%")
-                ->orwhere('name->ar','like',"%$this->search%")
-                ->orwhere('location->en','like',"%$this->search%")
-                ->orwhere('location->ar','like',"%$this->search%")
-                ->orwhere('contact','like',"%$this->search%")
-                ->orwhere('date','like',"%$this->search%")->get();
-            $activities =  $this->queryData("\App\Models\Activity\Activity", $myQuery);
+                ->orwhere('name->ar', 'like', "%$this->search%")
+                ->orwhere('location->en', 'like', "%$this->search%")
+                ->orwhere('location->ar', 'like', "%$this->search%")
+                ->orwhere('contact', 'like', "%$this->search%")
+                ->orwhere('date', 'like', "%$this->search%")->get();
+            $activities = $this->queryData("\App\Models\Activity\Activity", $myQuery);
 
             return view('academic-dep.activities.display-activities', [
-                    'activities' => $activities,
-                ])->title('Activities');
+                'activities' => $activities,
+            ])->title('Activities');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

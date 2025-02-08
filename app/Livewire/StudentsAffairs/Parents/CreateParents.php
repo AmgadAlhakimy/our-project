@@ -11,6 +11,12 @@ class CreateParents extends Component
 {
     use ParentsTrait;
 
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('create superior')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
     public function save()
     {
         $this->validate();

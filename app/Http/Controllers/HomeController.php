@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.hf
-     * 
+     *
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
@@ -28,9 +28,14 @@ class HomeController extends Controller
         return view('home');
     }
 
-        public Function myShow()
+        public Function show()
     {
         return view('main_page');
     }
+
+    //     public Function profile()
+    // {
+    //     return view('profile');
+    // }
 
 }

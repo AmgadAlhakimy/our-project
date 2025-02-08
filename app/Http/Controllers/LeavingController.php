@@ -14,19 +14,12 @@ class LeavingController extends Controller
 
     function __construct()
     {
-//        $this->middleware('permission:check leaving children',['only'=>['newLeaving']]);
-        $this->middleware('auth');
+        $this->middleware('permission:check leaving children', ['only' => ['newLeaving', 'storeLeaving']]);
+        $this->middleware('permission:display left children', ['only' => ['displayLeaving']]);
+        $this->middleware('permission:edit leaving children', ['only' => ['editLeaving']]);
+        $this->middleware('permission:update leaving children', ['only' => ['updateLeaving']]);
     }
 
-
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -161,11 +154,4 @@ class LeavingController extends Controller
         }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Leaving $leaving)
-    {
-        //
-    }
 }

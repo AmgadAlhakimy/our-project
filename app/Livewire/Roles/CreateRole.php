@@ -14,6 +14,13 @@ class CreateRole extends Component
     public $name;
     #[Rule('required|array|min:1')]
     public $permission = [];
+
+    public function mount()
+    {
+        if (!auth()->check() || !auth()->user()->hasPermissionTo('create role')) {
+            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        }
+    }
     public function save()
     {
 
