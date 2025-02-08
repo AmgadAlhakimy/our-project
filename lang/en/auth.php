@@ -17,7 +17,12 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     "Don't have an account?" => "Don't have an account? how ",
-    'your account is disabled'=>'Your account is disabled. Please contact us.',
-    'unauthorized access'=>'Unauthorized Access'
+    'your account is disabled' => 'Your account is disabled. Please contact us.',
+    'unauthorized access' => 'Unauthorized Access',
+    'min' => 'Minimum 8 characters',
+    'uppercase' => 'At least one uppercase letter',
+    'lowercase' => 'At least one lowercase letter',
+    'number' => 'At least one number',
+    'special' => 'At least one special character',
 
 ];

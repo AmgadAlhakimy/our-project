@@ -2,6 +2,20 @@
     @include('layouts.header')
     @include('layouts.main_page_header')
     <x-auth-session-status class="mb-4" :status="session('status')" />
+
+    {{-- <div class="lang_style">
+        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+            <div class="">
+                <a rel="alternate" class="ps-4 pe-4 p-2" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }} "
+                class="">
+                <div class="form-label">
+                    {{ $properties['native'] }}
+                </div>
+                </a>
+            </dib>
+        @endforeach
+    </div> --}}
+    
     <div class="login_container">
         <form method="POST" action="{{ route('login') }}">
             @csrf

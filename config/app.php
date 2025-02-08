@@ -85,7 +85,9 @@ return [
     |
     */
 
-    'locale' => 'en',
+//    'locale' => 'en',
+    'locale' => 'ar',  // Default language (Arabic)
+
 
     /*
     |--------------------------------------------------------------------------
@@ -98,7 +100,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'en', // Fallback to English if translation is missing
 
     /*
     |--------------------------------------------------------------------------

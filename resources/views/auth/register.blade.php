@@ -1,6 +1,4 @@
 <div class="login_style">
-    @include('layouts.header')
-    @include('layouts.main_page_header')
     <div class="login_container">
         <form method="POST" action="{{ route('register') }}">
             @csrf

@@ -5,8 +5,9 @@
     
     <link href="{{URL::asset('css/all.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/font-awesome.css')}}" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="{{URL::asset('css/framework.css')}}" rel="stylesheet">
 
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
         <!-- Favicon -->
         <link href="{{URL::asset('img/favicon.ico')}}" rel="icon">

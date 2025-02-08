@@ -22,11 +22,12 @@
             </div>
         </div>
     </li>
-    <!-- ========== student ifno ============ -->
+    <!-- ========== student info ============ -->
     <li class="dropdown">
         <div class="sidebar-title">
             <a href="{{route('main_page')}}" class="li-link title-4">
-            <i class="icon-1 fa-solid fa-graduation-cap"></i>
+                <i class="icon-1 fa-solid fa-graduation-cap"></i>
+            </a>
             <span class="menu-name">
                     {{__('sidebar.son info')}}
                 </span>

@@ -20,6 +20,35 @@ class CreateUser extends Component
         $this->allRoles = Role::pluck('name', 'name')->toArray(); // Fetch roles from DB
     }
 
+
+
+
+
+    public $passwordRequirements = [
+        'min' => false,
+        'uppercase' => false,
+        'lowercase' => false,
+        'number' => false,
+        'special' => false,
+    ];
+
+
+    public function updatedPassword($value)
+    {
+        $this->passwordRequirements['min'] = strlen($value) >= 8;
+        $this->passwordRequirements['uppercase'] = preg_match('/[A-Z]/', $value);
+        $this->passwordRequirements['lowercase'] = preg_match('/[a-z]/', $value);
+        $this->passwordRequirements['number'] = preg_match('/[0-9]/', $value);
+        $this->passwordRequirements['special'] = preg_match('/[\W]/', $value);
+    }
+
+    public function getProgressProperty()
+    {
+        // Calculate progress percentage
+        $completed = array_filter($this->passwordRequirements);
+        return (count($completed) / count($this->passwordRequirements)) * 100;
+    }
+
     public function save()
     {
 

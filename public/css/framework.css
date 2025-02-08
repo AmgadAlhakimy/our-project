@@ -241,8 +241,8 @@ td .td_rect {
 }
 
 .navbar-collapse {
-    display: flex;
-    background-color: red;
+    /* display: flex; */
+    /* background-color: red; */
 }
 
 .relation-title {

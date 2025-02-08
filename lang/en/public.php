@@ -116,6 +116,13 @@ return [
 
     'show'=>'Show',
     'date :'=>'Date :',
+    
+    
+    
+    
+    
+    'login'=>'Longin',
+    'sign up'=>'Sign Up',
 
 
 ];
