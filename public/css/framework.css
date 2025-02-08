@@ -1180,7 +1180,9 @@ body[dir="rtl"].p-der {
     }
 
     .n_rect,
-    .form-label {
+    .form-label,
+    .text-danger, 
+    .text-success {
         font-size: 16px;
     }
 
@@ -1320,7 +1322,9 @@ body[dir="rtl"].p-der {
     }
 
     .n_rect,
-    .form-label {
+    .form-label,
+    .text-danger, 
+    .text-success {
         font-size: 15px;
     }
 
@@ -1403,6 +1407,8 @@ body[dir="rtl"].p-der {
     }
 
     .form-label,
+    .text-danger, 
+    .text-success,
     .container label {
         font-size: 14px;
     }
@@ -1452,7 +1458,9 @@ body[dir="rtl"].p-der {
     }
 
     .n_rect,
-    .form-label {
+    .form-label,
+    .text-danger, 
+    .text-success {
         font-size: 13px;
     }
 

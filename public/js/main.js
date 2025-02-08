@@ -364,3 +364,16 @@ function validateFile(event) {
         errorDiv.style.display = "none"; // Hide error message
     }
 }
+
+
+// for passowrd rols
+const input1 = document.getElementById('input1');
+const text1 = document.getElementById('text1');
+
+input1.addEventListener('focus', () => {
+    text1.classList.remove('hidden');
+});
+
+input1.addEventListener('blur', () => {
+    text1.classList.add('hidden');
+});
