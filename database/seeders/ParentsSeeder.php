@@ -30,8 +30,8 @@ class ParentsSeeder extends Seeder
         for ($i = 1; $i <= 10; $i++) {
             Parents::create([
                 'father_name' => [
-                    'en' => $fakerEn->name('male'),
-                    'ar' => $fakerAr->name('male'),
+                    'en' => $fakerEn->firstName('male') . ' ' . $fakerEn->firstName('male') . ' ' . $fakerEn->lastName(),
+                    'ar' => $fakerAr->firstName('male') . ' ' . $fakerAr->firstName('male') . ' ' . $fakerAr->lastName(),
                 ],
                 'father_work' => [
                     'en' => $fakerEn->word,

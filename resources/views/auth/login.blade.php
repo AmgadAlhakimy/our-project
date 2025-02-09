@@ -15,7 +15,7 @@
             </dib>
         @endforeach
     </div> --}}
-    
+
     <div class="login_container">
         <form method="POST" action="{{ route('login') }}">
             @csrf
@@ -26,7 +26,8 @@
                     <x-input-label for="email" class="form-label " :value="__('Email')" />
                     <x-text-input id="email" class="block mt-1 w-full form-control" type="email" name="email"
                         :value="old('email')" required autofocus autocomplete="username" />
-                    <x-input-error class="" :messages="$errors->get('email')" class="mt-2" />
+{{--                    <x-input-error class="pink_color" :messages="$errors->get('email')" class="mt-2" />--}}
+                    @error('email')<small class="form-text text-danger">{{$message}}</small>@enderror
                 </div>
 
                 <!-- Password -->
@@ -34,7 +35,7 @@
                     <x-input-label for="password" class="form-label " :value="__('Password')" />
                     <x-text-input id="password" class="block mt-1 w-full form-control" type="password" name="password"
                         required autocomplete="current-password" />
-                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                    @error('password')<small class="form-text text-danger">{{$message}}</small>@enderror
                 </div>
 
                 <!-- Remember Me -->

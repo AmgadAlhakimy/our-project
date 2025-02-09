@@ -4,7 +4,6 @@
 namespace App\Traits;
 
 use App\Models\Classroom\Classroom;
-use App\Rules\ArabicFirstName;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Attributes\Rule;
 
@@ -14,25 +13,20 @@ trait StudentTrait
     public $parents_id;
     #[Rule('required|max:10|regex:/^[A-Za-z]+$/')]
     public string $name;
-    #[Rule(new ArabicFirstName)]
     public string $name_ar;
     #[Rule('required|image|max:2048|mimes:jpeg,png,jpg,gif')]
     public $photo;
-    #[Rule('required|max:100')]
     public string $address;
-    #[Rule('required|max:100')]
     public string $address_ar;
     #[Rule('required')]
     public $gender;
     #[Rule('required')]
     public $birthdate;
-    #[Rule('required|max:100')]
     public string $place_of_birth;
-    #[Rule('required|max:100')]
     public string $place_of_birth_ar;
     #[Rule('required')]
     public $classroom_id;
-    #[Rule('nullable|max:100|regex:/^[A-Za-z\s]+[A-Za-z0-9]*$/')]
+    #[Rule("nullable|max:100|regex:/^[A-Za-z\s']+[A-Za-z0-9\s']*$/")]
     public string $medicine_desc = "";
     #[Rule('nullable|max:100|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public string $medicine_desc_ar = "";

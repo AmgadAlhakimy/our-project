@@ -9,7 +9,9 @@
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="index.html" class="navbar-brand">
-                <h1 class="m-0 text-primary"><i class="fa fa-book-reader me-3"></i>Preschool</h1>
+                <h1 class="m-0 text-primary"><img src="http://127.0.0.1:8000/assets/images/layouts/logo2.png" class="col logo-img">
+{{--                    {{trans('public.kindergarten')}}--}}
+                </h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -710,9 +712,9 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="____">Your Site Name</a>, All Right Reserved. 
-							
-							
+                            &copy; <a class="border-bottom" href="____">Your Site Name</a>, All Right Reserved.
+
+
 						    صمم بواسطه  <a class="border-bottom" href="____">AK(CONDING)</a>
                         </div>
                         <div class="col-md-6 text-center text-md-end">

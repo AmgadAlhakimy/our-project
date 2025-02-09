@@ -14,6 +14,8 @@ return [
     */
 
     //shared in many pages
+
+    'kindergarten'=>'Kindergarten',
     'title'=>'Planet Of Juniors Academy',
     'save'=>'Save',
     'add'=>'Add',
@@ -116,11 +118,11 @@ return [
 
     'show'=>'Show',
     'date :'=>'Date :',
-    
-    
-    
-    
-    
+
+
+
+
+
     'login'=>'Longin',
     'sign up'=>'Sign Up',
 

@@ -17,6 +17,9 @@ use App\Livewire\Users\RegisterUser;
 Route::middleware('guest')->group(function () {
     // Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     // Route::post('register', [RegisteredUserController::class, 'store']);
+    Route::get('/welcome-user', function () {
+        return view('auth.welcome-user');
+    })->name('auth.welcome');
     Route::get('/', [HomeController::class, 'show'])->name('main_page');
     Route::get('/register',RegisterUser::class)->name('register-user');
     Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');

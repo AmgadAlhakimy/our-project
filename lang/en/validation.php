@@ -157,8 +157,10 @@ return [
     'at lease select one classroom'=>'You Have to Select at Least One Classroom',
     'at lease select one activity'=>'You Have to Select at Least One Activity',
     'it should not start with 0'=>'Phone Number Cannot Start with 0',
-    'max first name'=>'This filed should be less than 10 letters',
+    'max first name'=>'This filed should be less than 15 letters',
     'first name two words'=>'First name should be one word or two like "عبد الرحمن"',
+    'reject arabic letters'=>'The :attribute should not contain Arabic letters.',
+    'reject english letters'=>'The :attribute should not contain English letters.',
 
     /*
     |--------------------------------------------------------------------------

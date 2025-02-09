@@ -20,9 +20,13 @@ return [
     'your account is disabled' => 'Your account is disabled. Please contact us.',
     'unauthorized access' => 'Unauthorized Access',
     'min' => 'Minimum 8 characters',
-    'uppercase' => 'At least one uppercase letter',
-    'lowercase' => 'At least one lowercase letter',
-    'number' => 'At least one number',
-    'special' => 'At least one special character',
+    'uppercase' => 'At least one uppercase letter: (A-Z)',
+    'lowercase' => 'At least one lowercase letter: (a-z)',
+    'number' => 'At least one number: (0-9)',
+    'special' => 'At least one special character: (!@#$%^&*)',
+    'welcome'=>'Welcome!',
+    'your account is currently disabled'=>'Your account is currently disabled.',
+    'please contact us to enable it'=>'Please contact us to enable it.',
+
 
 ];

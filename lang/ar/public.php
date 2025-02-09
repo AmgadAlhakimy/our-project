@@ -14,6 +14,7 @@ return [
     */
 
     //shared in many pages
+    'kindergarten'=>'روضة',
     'title'=>'روضة كوكب الصغار',
     'save'=>'حفظ',
     'add'=>'إضافة',

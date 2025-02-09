@@ -27,9 +27,7 @@ class DisplayStudents extends Component
         $whereClause = ['classroom_id' => $this->classroom_id];
         $classroom = Classroom::findorFail($this->classroom_id);
         try {
-            $myQuery = Student::where('classroom_id', $this->classroom_id)
-                ->where(function ($query) {
-                    $query->where('id', 'like', "%$this->search%")
+            $myQuery = Student::where('id', 'like', "%$this->search%")
                         ->orWhere('name->en', 'like', "%$this->search%")
                         ->orWhere('name->ar', 'like', "%$this->search%")
                         ->orWhere('address->en', 'like', "%$this->search%")
@@ -47,7 +45,7 @@ class DisplayStudents extends Component
                         ->orWhereHas('parents', function ($query) {
                             $query->where('father_name->en', 'like', "%$this->search%")
                                 ->orWhere('father_name->ar', 'like', "%$this->search%");
-                        });
+
                 })->get();
 
             $students = $this->queryData("\App\Models\Student\Student", $myQuery, $whereClause);

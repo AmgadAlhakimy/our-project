@@ -5,12 +5,13 @@ namespace App\Livewire\StudentsAffairs\Student;
 use App\Models\EducationalLevel;
 use App\Models\Parents\Parents;
 use App\Models\Student\Student;
+use App\Rules\ArabicFirstName;
+use App\Rules\RejectArabicLetters;
+use App\Rules\RejectEnglishLetters;
 use App\Traits\PhotoTrait;
 use App\Traits\StudentTrait;
-use Illuminate\Http\UploadedFile;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Validator;
 
 class CreateStudent extends Component
 {
@@ -24,15 +25,33 @@ class CreateStudent extends Component
             return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
         }
     }
+    public function rules()
+    {
+        return [
+            'name_ar' => ['required', new ArabicFirstName()],
+            'address' => ['required', 'max:100', new RejectArabicLetters()],
+            'address_ar' => ['required', 'max:100', new RejectEnglishLetters()],
+            'place_of_birth' => ['required', 'max:100', new RejectArabicLetters()],
+            'place_of_birth_ar' => ['required', 'max:100', new RejectEnglishLetters()],
+        ];
+    }
+
+    // Automatically validate when the field is updated
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);  // Validate only the updated field
+    }
+
     public function save()
     {
         $this->validate();
         try {
+            $parents = Parents::findOrFail($this->parents_id);
             Student::create([
-                'id' => rand(1000000000, 9000000000),
+                'id' =>date('Y') . str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT),
                 'name' => [
-                    'en' => $this->name,
-                    'ar' => $this->name_ar
+                    'en' => $this->name . ' ' . $parents->getTranslation('father_name', 'en'),
+                    'ar' => $this->name_ar . ' ' . $parents->getTranslation('father_name', 'ar'),
                 ],
                 'photo' => $this->insertImageWithLivewire(0),
                 'address' => [
@@ -74,7 +93,7 @@ class CreateStudent extends Component
                 ],
                 'note' => $this->note,
                 'classroom_id' => $this->classroom_id,
-                'parents_id' => $this->parents_id,
+                'parents_id' => $parents->id,
 
             ]);
             $this->photo->delete();

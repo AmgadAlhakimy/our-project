@@ -19,7 +19,7 @@ class Student extends Model
     use SoftDeletes;
     use HasTranslations;
 
-    protected $fillable = ['name', 'photo', 'address', 'gender',
+    protected $fillable = ['id','name', 'photo', 'address', 'gender',
         'birthdate', 'place_of_birth',
         'takes_medicine', 'medicine_desc',
         'has_allergy', 'allergy_desc',

@@ -3,9 +3,7 @@
 namespace App\Livewire\StudentsAffairs\Parents;
 
 use App\Models\Parents\Parents;
-use App\Rules\UniqueValueIgnore;
 use App\Traits\ParentsTrait;
-use Livewire\Attributes\Rule;
 use Livewire\Component;
 
 class EditParents extends Component

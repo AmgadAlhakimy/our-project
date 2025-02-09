@@ -31,6 +31,7 @@
                     <div class="input-container">
                             <input type="password" class="form-control rols_input" id="password"
                                 wire:model.live.debounce.500ms="password">
+                        @error('password')<small class="form-text text-danger">{{$message}}</small>@enderror
 
                             <div class="conditions-list">
                                 {{-- 1 --}}
@@ -132,6 +133,6 @@
 
 
     <div class="me-5 ms-5 text-end">
-        
+
     </div>
 </div>

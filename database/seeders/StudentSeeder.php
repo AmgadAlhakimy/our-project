@@ -11,6 +11,7 @@ use Faker\Factory as Faker;
 
 class StudentSeeder extends Seeder
 {
+        public $my_parent;
     /**
      * Run the database seeds.
      */
@@ -32,11 +33,13 @@ class StudentSeeder extends Seeder
         $parents = Parents::all();
 
         for ($i = 1; $i <= 100; $i++) {
+                $this->my_parent = $parents->random();
+
             Student::create([
-                'id' => rand(1000000000, 9000000000),
+                'id' =>date('Y') . str_pad(rand(0, 999999), 6, '0', STR_PAD_LEFT),
                 'name' => [
-                    'en' => $fakerEn->firstName,
-                    'ar' => $fakerAr->firstName,
+                    'en' => $fakerEn->firstName. ' ' . $this->my_parent->getTranslation('father_name', 'en'),
+                    'ar' => $fakerAr->firstName. ' ' . $this->my_parent->getTranslation('father_name', 'ar'),
                 ],
                 'photo' => 'photo',
                 'address' => [
@@ -77,7 +80,7 @@ class StudentSeeder extends Seeder
                     'ar' => $array_num ? "" : "يعاني من ربو خفيف",
                 ],
                 'classroom_id' => $classrooms->random()->id,
-                'parents_id' => $parents->random()->id,
+                'parents_id' =>$this->my_parent->id,
                 'note' => 'No additional notes',
             ]);
 

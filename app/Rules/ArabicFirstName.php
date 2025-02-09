@@ -17,12 +17,6 @@ class ArabicFirstName implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        // Ensure it's not empty
-        if (empty($value)) {
-            $fail(trans('validation.required'));
-            return;
-        }
-
         // Ensure it's only Arabic letters and spaces
         if (!preg_match('/^[\p{Arabic}\s]+$/u', $value)) {
             $fail(trans('validation.arabic letters'));
@@ -30,7 +24,7 @@ class ArabicFirstName implements ValidationRule
         }
 
         // Ensure max length of 10 characters
-        if (mb_strlen($value, 'UTF-8') > 10) {
+        if (mb_strlen($value, 'UTF-8') > 15) {
             $fail(trans('validation.max first name'));
             return;
         }
