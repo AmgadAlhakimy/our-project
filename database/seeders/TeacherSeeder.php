@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Teacher\Teacher;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
@@ -13,7 +14,7 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
-
+        $users= User::all();
         $fakerEn = Faker::create('en_US'); // English Faker
         $fakerAr = Faker::create('ar_SA'); // Arabic Faker
 
@@ -74,6 +75,7 @@ class TeacherSeeder extends Seeder
                     'ar' => $major['ar'],
                 ],
                 'note' => 'no note',
+                'user_id' => $users->random()->id,
             ]);
         }
 

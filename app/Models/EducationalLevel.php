@@ -14,10 +14,14 @@ class EducationalLevel extends Model
     use SoftDeletes;
     use HasTranslations;
 
+    protected $fillable = ['name','user_id'];
     public array $translatable = ['name'];
-    protected $fillable = ['name'];
 
     public function classrooms(){
         return $this->hasMany(Classroom::class,'edu_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

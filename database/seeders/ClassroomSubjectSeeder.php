@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Classroom\Classroom;
 use App\Models\Classroom\ClassroomSubject;
 use App\Models\Subject\Subject;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class ClassroomSubjectSeeder extends Seeder
@@ -16,6 +17,7 @@ class ClassroomSubjectSeeder extends Seeder
     {
         $classrooms = Classroom::all();
         $subjects = Subject::all();
+        $users= User::all();
         foreach ($classrooms as $classroom) {
             $usedSubjectIds = [];
 
@@ -30,6 +32,7 @@ class ClassroomSubjectSeeder extends Seeder
                 ClassroomSubject::create([
                     'classroom_id' => $classroom->id,
                     'subject_id' => $subjectId,
+                    'user_id' => $users->random()->id,
                 ]);
             }
         }

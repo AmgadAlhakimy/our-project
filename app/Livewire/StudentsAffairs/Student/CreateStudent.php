@@ -10,6 +10,7 @@ use App\Rules\RejectArabicLetters;
 use App\Rules\RejectEnglishLetters;
 use App\Traits\PhotoTrait;
 use App\Traits\StudentTrait;
+use Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -94,6 +95,7 @@ class CreateStudent extends Component
                 'note' => $this->note,
                 'classroom_id' => $this->classroom_id,
                 'parents_id' => $parents->id,
+                'user_id' =>  Auth::user()->id,
 
             ]);
             $this->photo->delete();

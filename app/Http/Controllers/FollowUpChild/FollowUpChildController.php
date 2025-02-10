@@ -8,6 +8,7 @@ use App\Http\Requests\FollowUpChild\UpdateFollowUpChildRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\FollowUpChild;
 use App\Models\Student\Student;
+use Auth;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -96,6 +97,7 @@ class FollowUpChildController extends Controller
                 'student_id' => $student_id,
                 'classroom_id' => $classroom_id,
                 'note' => $request->note,
+                'user_id' => Auth::id(),
             ]);
             return true;
 
@@ -200,6 +202,7 @@ class FollowUpChildController extends Controller
                     'ar' => __('public.' . $request->food . '1'),
                 ],
                 'note' => $request->note,
+                'user_id' => Auth::id(),
             ]);
             return redirect()->route('follow_up_children-display', $classroom_id)
                 ->with(['success' => __('message.update')]);

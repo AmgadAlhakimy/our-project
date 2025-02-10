@@ -2,6 +2,7 @@
 
 namespace App\Models\Activity;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -14,6 +15,11 @@ class Activity extends Model
     use HasTranslations;
 
 
-    protected $fillable=['name','location','contact','date'];
+    protected $fillable=['name','location','contact','date','user_id'];
     protected array $translatable = ['name','location'];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

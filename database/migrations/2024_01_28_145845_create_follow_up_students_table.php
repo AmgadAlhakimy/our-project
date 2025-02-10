@@ -16,6 +16,7 @@ return new class extends Migration
             $table->json('homework');
             $table->foreignId('student_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->foreignId('subject_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

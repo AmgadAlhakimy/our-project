@@ -45,7 +45,8 @@ class ClassroomTeacherController extends Controller
                 ClassroomTeacher::create([
                     'teacher_id'=>$request->teacher_id,
                     'classroom_id'=>$classroom_id,
-                ]);
+                    'user_id' => Auth::id(),
+                    ]);
             }
             return redirect()->back()->with(['success' => 'message.success']);
 
@@ -84,10 +85,14 @@ class ClassroomTeacherController extends Controller
     public function update(UpdateClassroomTeacherRequest $request, $teacher_id)
     {
         try {
-            $teacher = Teacher::findorfail($teacher_id);
-            $teacher->classrooms()->sync($request->classroom_id);
+            $teacher = Teacher::findOrFail($teacher_id);
+            $teacher->classrooms()->syncWithPivotValues($request->classroom_id, [
+                'user_id' => Auth::id(), // Store the authenticated user's ID
+            ]);
+
             return redirect()->route('display-class-teachers')
                 ->with(['success' => 'message.update']);
+
 
         } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

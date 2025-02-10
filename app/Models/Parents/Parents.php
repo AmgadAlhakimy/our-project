@@ -3,6 +3,7 @@
 namespace App\Models\Parents;
 
 use App\Models\Student\Student;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -22,10 +23,14 @@ class Parents extends Model
         'father_contact1', 'father_contact2',
         'mother_name', 'mother_work', 'mother_contact1',
         'mother_contact2', 'kin_name',
-        'kin_relationship', 'kin_contact'];
+        'kin_relationship', 'kin_contact','user_id'];
 
     public function students()
     {
         return $this->hasMany(Student::class, 'parents_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

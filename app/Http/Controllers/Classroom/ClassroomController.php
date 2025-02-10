@@ -8,6 +8,7 @@ use App\Http\Requests\Classroom\UpdateClassroomRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Student\Student;
+use Auth;
 use Exception;
 
 class ClassroomController extends Controller
@@ -50,6 +51,7 @@ class ClassroomController extends Controller
                 'ar' => $request->name_ar
             ],
             'edu_id'=>$request->level,
+            'user_id' => Auth::id(),
        ]);
         return redirect()->back()->with(['success'=>'saved successfully']);
         }catch (Exception $e){
@@ -100,6 +102,7 @@ class ClassroomController extends Controller
                 'ar' => $request->name_ar
             ],
             'edu_id'=>$request->level,
+            'user_id' => Auth::id(),
         ]);
         return redirect()->route('display-classrooms')
             ->with(['success' => __('message.update')]);

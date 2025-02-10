@@ -14,13 +14,18 @@ class FollowUpChild extends Model
 
 
     protected $fillable = ['subject','homework', 'bath', 'snack',
-                            'food','student_id','note','classroom_id'];
+                            'food','student_id','note','classroom_id','user_id'];
     protected $translatable = ['bath', 'snack', 'food'];
     protected $casts =[
         'subject' => 'array',
         'homework' => 'array',
     ];
 
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function student()
     {
         return $this->belongsTo(Student::class);

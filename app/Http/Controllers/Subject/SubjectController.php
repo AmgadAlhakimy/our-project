@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Subject\StoreSubjectRequest;
 use App\Http\Requests\Subject\UpdateSubjectRequest;
 use App\Models\Subject\Subject;
+use Auth;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -44,7 +45,8 @@ class SubjectController extends Controller
                 'name' => [
                     'en' => $request->name,
                     'ar' => $request->name_ar,
-                ]
+                ],
+                'user_id' => Auth::id(),
             ]);
             return redirect()->back()->with(['success' => 'saved successfully']);
         } catch (\Exception $e) {
@@ -93,6 +95,7 @@ class SubjectController extends Controller
                     'en' => $request->name,
                     'ar' => $request->name_ar,
                 ],
+                'user_id' => Auth::id(),
             ]);
             return redirect()->route('display-subjects')
                 ->with(['success' => __('message.update')]);

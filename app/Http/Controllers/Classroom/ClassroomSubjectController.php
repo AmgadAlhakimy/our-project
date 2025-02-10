@@ -8,6 +8,7 @@ use App\Http\Requests\Classroom\UpdateClassroomSubjectRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\Classroom\ClassroomSubject;
 use App\Models\Subject\Subject;
+use Auth;
 use Exception;
 
 class ClassroomSubjectController extends Controller
@@ -45,6 +46,7 @@ class ClassroomSubjectController extends Controller
                 ClassroomSubject::create([
                     'classroom_id'=>$request->classroom_id,
                     'subject_id'=>$subject_id,
+                    'user_id' => Auth::id(),
                 ]);
             }
             return redirect()->back()->with(['success' => 'message.success']);
@@ -84,9 +86,13 @@ class ClassroomSubjectController extends Controller
     {
         try {
             $classroom = Classroom::findOrFail($classroom_id);
-            $classroom->subjects()->sync($request->subject_id);
+            $classroom->subjects()->syncWithPivotValues($request->subject_id, [
+                'user_id' => Auth::id(), // Store the authenticated user ID
+            ]);
+
             return redirect()->route('display-class-subjects')
                 ->with(['success' => 'message.update']);
+
 
         } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

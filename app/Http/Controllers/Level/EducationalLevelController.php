@@ -7,12 +7,13 @@ use App\Http\Requests\Level\StoreEducationalLevelRequest;
 use App\Http\Requests\Level\UpdateEducationalLevelRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
+use Auth;
 
 class EducationalLevelController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:create educational-level', ['only' => ['create','store']]);
+        $this->middleware('permission:create educational-level', ['only' => ['create', 'store']]);
         $this->middleware('permission:edit educational-level', ['only' => ['edit']]);
         $this->middleware('permission:update educational-level', ['only' => ['update']]);
         $this->middleware('permission:delete educational-level', ['only' => ['destroy']]);
@@ -26,11 +27,10 @@ class EducationalLevelController extends Controller
      */
     public function create()
     {
-//        dd('hello');
         try {
-        return view('academic-dep/educational-levels.create-edu-level');
+            return view('academic-dep/educational-levels.create-edu-level');
         } catch (\Exception $e) {
-                    return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -40,16 +40,17 @@ class EducationalLevelController extends Controller
     public function store(StoreEducationalLevelRequest $request)
     {
         try {
-         EducationalLevel::create([
-             'name' => [
-                 'en' => $request->name,
-                 'ar' => $request->name_ar
-             ],
-         ]);
-        return redirect()->back()->with(['success' => __('message.success')]);
+            EducationalLevel::create([
+                'name' => [
+                    'en' => $request->name,
+                    'ar' => $request->name_ar
+                ],
+                'user_id' => Auth::id(),
+            ]);
+            return redirect()->back()->with(['success' => __('message.success')]);
 
         } catch (\Exception $e) {
-        return redirect()->back()->with(['error' => $e->getMessage()]);
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -62,8 +63,8 @@ class EducationalLevelController extends Controller
             $levels = EducationalLevel::onlyTrashed()->get();
             return view('academic-dep/educational-levels.deleted-edu-level',
                 compact('levels'));
-        }catch (\Exception $e) {
-                    return redirect()->back()->with(['error' => $e->getMessage()]);
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -73,11 +74,11 @@ class EducationalLevelController extends Controller
     public function edit($id)
     {
         try {
-        $level = EducationalLevel::findorFail($id);
-        return view('academic-dep.educational-levels.edit-edu-level',
-            compact('level'));
-        }catch (\Exception $e) {
-                    return redirect()->back()->with(['error' => $e->getMessage()]);
+            $level = EducationalLevel::findorFail($id);
+            return view('academic-dep.educational-levels.edit-edu-level',
+                compact('level'));
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
 
@@ -87,17 +88,18 @@ class EducationalLevelController extends Controller
     public function update(UpdateEducationalLevelRequest $request, $id)
     {
         try {
-        $level = EducationalLevel::findorFail($id);
+            $level = EducationalLevel::findorFail($id);
             $level->name = [
                 'en' => $request->name,
                 'ar' => $request->name_ar
             ];
+            $level->user_id = Auth::id();
             $level->update();
 
             return redirect()->route('display-levels')
                 ->with(['success' => __('message.update')]);
 
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -109,31 +111,34 @@ class EducationalLevelController extends Controller
     {
         try {
             $classroom_id = Classroom::where('edu_id', $id)->pluck('edu_id');
-            if($classroom_id->count() == 0){
-             EducationalLevel::destroy($id);
-            return redirect()->route('display-levels')
-                 ->with(['warning' => trans('message.delete')]);
-            }else{
-                return redirect()->back() ->with(['error' => trans('message.delete_level_error')]);
+            if ($classroom_id->count() == 0) {
+                EducationalLevel::destroy($id);
+                return redirect()->route('display-levels')
+                    ->with(['warning' => trans('message.delete')]);
+            } else {
+                return redirect()->back()->with(['error' => trans('message.delete_level_error')]);
             }
 
-        }catch (\Exception $e) {
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
+
     /**
      * Restore the specified Educational Level.
      */
-    public function restore($id){
+    public function restore($id)
+    {
         try {
             EducationalLevel::withTrashed()->where('id', $id)->restore();
             return redirect()->route('display-levels')
                 ->with(['success' => trans('message.restore')]);
 
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
+
     /**
      * Remove by force the specified Educational Level.
      */
@@ -144,7 +149,7 @@ class EducationalLevelController extends Controller
             return redirect()->back()
                 ->with(['warning' => trans('message.force delete')]);
 
-        } catch (\Exception $e){
+        } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

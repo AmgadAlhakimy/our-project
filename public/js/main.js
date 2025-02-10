@@ -377,3 +377,7 @@ input1.addEventListener('focus', () => {
 input1.addEventListener('blur', () => {
     text1.classList.add('hidden');
 });
+function togglePassword() {
+    var passwordField = document.getElementById("password");
+    passwordField.type = passwordField.type === "password" ? "text" : "password";
+}

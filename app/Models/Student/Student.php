@@ -8,6 +8,7 @@ use App\Models\FollowUpChild;
 use App\Models\Leaving;
 use App\Models\Mark;
 use App\Models\Parents\Parents;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -25,7 +26,7 @@ class Student extends Model
         'has_allergy', 'allergy_desc',
         'has_health_problem',
         'health_problem_desc', 'note',
-        'classroom_id', 'parents_id'];
+        'classroom_id', 'parents_id','user_id'];
 
     public array $translatable = ['name', 'address', 'gender', 'place_of_birth',
         'takes_medicine', 'medicine_desc',
@@ -35,6 +36,10 @@ class Student extends Model
     public function classroom()
     {
         return $this->belongsTo(Classroom::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function parents()

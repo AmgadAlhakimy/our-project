@@ -13,7 +13,7 @@ class ChangePassword extends Component
 
     public $id;
     public $name;
-    #[Rule('required|min:8')]
+    #[Rule('required|min:8|regex:/[A-Z]/|regex:/[a-z]/|regex:/[0-9]/|regex:/[\W]/')]
     public $password;
     #[Rule('required|same:password')]
     public $confirm_password;

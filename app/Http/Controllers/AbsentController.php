@@ -6,6 +6,7 @@ use App\Models\Absent;
 use App\Models\Classroom\Classroom;
 use App\Models\Student\Student;
 use App\Http\Requests\StoreAbsentRequest;
+use Auth;
 use Carbon\Carbon;
 
 class AbsentController extends Controller
@@ -84,6 +85,7 @@ class AbsentController extends Controller
                         'absent_reason' => $request->absent_reason[$index],
                         'student_id' => $student->id,
                         'classroom_id' => $classroom_id,
+                        'user_id' => Auth::id(),
                     ]);
                 }
                 $index++;

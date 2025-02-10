@@ -24,7 +24,6 @@
                     <input type="email" class="form-control" id="email" wire:model.live.debounce.500ms="email">
                     @error('email') <small class="form-text text-danger">{{ $message }}</small> @enderror
                 </div>
-
                 <!-- Password -->
                 <div class="box col-lg-6 col-md-6">
                     <label class="form-text " type="text" for="password">{{ __('user.password') }}</label>

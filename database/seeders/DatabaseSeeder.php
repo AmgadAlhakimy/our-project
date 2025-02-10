@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
+            PermissionTableSeeder::class,
+            CreateAdminUserSeeder::class,
             EducationalLevelSeeder::class,
             ClassroomSeeder::class,
             SubjectSeeder::class,
@@ -29,8 +31,6 @@ class DatabaseSeeder extends Seeder
             TeacherSeeder::class,
             ClassroomSubjectSeeder::class,
             AbsentSeeder::class,
-            PermissionTableSeeder::class,
-            CreateAdminUserSeeder::class,
         ]);
     }
 }

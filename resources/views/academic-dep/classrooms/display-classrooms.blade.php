@@ -72,6 +72,13 @@
                             </div>
                         </button>
                     </th>
+                    @can('who did this')
+                        <th>
+                            <div class="table_test form-label ">
+                                {{__('user.user')}}
+                            </div>
+                        </th>
+                    @endcan
                     <th colspan="">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
@@ -107,6 +114,13 @@
                                 {{$classroom->updated_at}}
                             </div>
                         </td>
+                        @can('who did this')
+                            <td>
+                                <div class="td_rect">
+                                    {{$classroom->user->name}}
+                                </div>
+                            </td>
+                        @endcan
                         <td>
                             @can('edit classroom')
                                 <a href="{{route('classrooms.edit',$classroom->id)}}"

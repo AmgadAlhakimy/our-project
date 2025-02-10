@@ -154,6 +154,7 @@ class PermissionTableSeeder extends Seeder
             'display role permissions',
             'update role',
             'delete role',
+            'who did this',
 
             'PARENTS'
 

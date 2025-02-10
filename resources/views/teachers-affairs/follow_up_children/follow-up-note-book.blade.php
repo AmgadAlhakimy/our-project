@@ -23,7 +23,7 @@
                 <img src="{{asset('storage/'.$student->photo)}}" class="personal_img" alt="photo">
             </div>
             <div class="mt-4 col-8 col-md-9 col-sm-12 row">
-                <div class="col-12 cards_title text-center">{{$student->name." ".$student->parents->father_name}}</div>
+                <div class="col-12 cards_title text-center">{{$student->name}}</div>
                 <div class="col-12 cards_sup_title text-center">{{$student->classroom->name}}</div>
             </div>
         </div>

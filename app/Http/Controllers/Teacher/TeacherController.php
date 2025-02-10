@@ -8,6 +8,7 @@ use App\Http\Requests\Teacher\UpdateTeacherRequest;
 use App\Models\Teacher\Teacher;
 use App\Traits\EmployeeTrait;
 use App\Traits\PhotoTrait;
+use Auth;
 
 class TeacherController extends Controller
 {
@@ -68,6 +69,7 @@ class TeacherController extends Controller
                     'ar' => $request->major_ar,
                 ],
                 'note' => $request->note,
+                'user_id' => Auth::id(),
             ]);
             return redirect()->back()->with(['success' => 'message.saved']);
 
@@ -138,6 +140,7 @@ class TeacherController extends Controller
                         'ar' => $request->major_ar,
                     ],
                     'note' => $request->note,
+                'user_id' => Auth::id(),
                 ]);
             return redirect()->route('display-teachers')
                 ->with(['success' => __('message.update')]);

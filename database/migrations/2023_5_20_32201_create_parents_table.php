@@ -24,6 +24,7 @@ return new class extends Migration
             $table->json('kin_name')->nullable();
             $table->json('kin_relationship')->nullable();
             $table->bigInteger('kin_contact')->nullable();
+            $table->foreignId('user_id');
             $table->softDeletes();
             $table->timestamps();
         });

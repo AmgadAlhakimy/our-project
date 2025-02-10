@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Classroom\Classroom;
 use App\Models\Parents\Parents;
 use App\Models\Student\Student;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
@@ -31,6 +32,7 @@ class StudentSeeder extends Seeder
 
         $classrooms = Classroom::all();
         $parents = Parents::all();
+        $users= User::all();
 
         for ($i = 1; $i <= 100; $i++) {
                 $this->my_parent = $parents->random();
@@ -82,6 +84,7 @@ class StudentSeeder extends Seeder
                 'classroom_id' => $classrooms->random()->id,
                 'parents_id' =>$this->my_parent->id,
                 'note' => 'No additional notes',
+                'user_id' => $users->random()->id,
             ]);
 
             // Toggle gender & boolean values

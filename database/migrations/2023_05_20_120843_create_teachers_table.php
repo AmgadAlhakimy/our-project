@@ -21,6 +21,7 @@ return new class extends Migration
             $table->json('qualification');
             $table->json('major');
             $table->text('note')->nullable();
+            $table->foreignId('user_id');
             $table->softDeletes();
             $table->timestamps();
         });

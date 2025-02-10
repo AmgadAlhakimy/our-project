@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Subject\Subject;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class SubjectSeeder extends Seeder
@@ -12,6 +13,7 @@ class SubjectSeeder extends Seeder
      */
     public function run(): void
     {
+        $users = User::all();
         $subjects = [
             ['en' => 'Mathematics', 'ar' => 'الرياضيات'],
             ['en' => 'Science', 'ar' => 'العلوم'],
@@ -27,7 +29,8 @@ class SubjectSeeder extends Seeder
 
         foreach ($subjects as $subject) {
             Subject::create([
-                'name' => $subject
+                'name' => $subject,
+                'user_id' => $users->random()->id,
             ]);
         }
 
