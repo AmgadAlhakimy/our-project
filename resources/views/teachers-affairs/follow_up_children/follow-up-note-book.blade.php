@@ -93,6 +93,14 @@
                 </div>
             </div>
 
+            <div>
+                الملاحظات
+
+                <div>
+                    {{$student_notebook->note}}
+                </div>
+            </div>
+
             <div class="form-label mt-5 mb-0">
                 page( {{$counter++}} )
             </div>

@@ -48,7 +48,7 @@ class SubjectController extends Controller
                 ],
                 'user_id' => Auth::id(),
             ]);
-            return redirect()->back()->with(['success' => 'saved successfully']);
+            return redirect()->back()->with(['success' => 'message.success']);
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
