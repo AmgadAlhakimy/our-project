@@ -74,17 +74,12 @@
                                 </ul>
                             </div>
                         </div>
-
-
-
-
                 </div>
-
                 <!-- Confirm Password -->
                 <div class="box col-lg-6 col-md-6">
                     <label class="form-text" for="confirm_password">{{ __('user.confirm password') }}</label>
                     <input type="password" class="form-control" id="confirm_password"
-                           wire:model.live.debounce.500ms="confirm_password">
+                            wire:model.live.debounce.500ms="confirm_password">
                     @error('confirm_password') <small class="form-text text-danger">{{ $message }}</small> @enderror
                 </div>
 
