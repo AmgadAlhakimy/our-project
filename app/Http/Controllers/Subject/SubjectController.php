@@ -111,6 +111,9 @@ class SubjectController extends Controller
     public function destroy($id)
     {
         try {
+            $subject = Subject::findorFail($id);
+            $subject->user_id = Auth::id();
+            $subject->update();
             Subject::destroy($id);
             return redirect()->route('display-subjects')
                 ->with(['warning' => trans('message.delete')]);
@@ -127,6 +130,9 @@ class SubjectController extends Controller
     {
         try {
             Subject::withTrashed()->where('id', $id)->restore();
+            $subject = Subject::findorFail($id);
+            $subject->user_id = Auth::id();
+            $subject->update();
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
 

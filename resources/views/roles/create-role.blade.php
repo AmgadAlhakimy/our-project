@@ -27,21 +27,49 @@
                 </div>
                 <div class="box">
                     <div class="btn-container">
+{{--                        <div class="btn-l-container row">--}}
+{{--                            <!-- Start buttons -->--}}
+{{--                            @foreach($permissions as $index => $permission)--}}
+{{--                                <label class="btn-l-label col">--}}
+{{--                                    <input class="light-btn" type="checkbox"--}}
+{{--                                           wire:model.live.debounce.500ms="permission"--}}
+{{--                                           value="{{ $permission->id }}">--}}
+{{--                                    <span class="btn-l-text">{{ $permission->name }}</span>--}}
+{{--                                </label>--}}
+{{--                            @endforeach--}}
+{{--                            <!-- End buttons -->--}}
+{{--                            @error('permission')--}}
+{{--                            <small class="form-text text-danger">{{ $message }}</small>--}}
+{{--                            @enderror--}}
+{{--                        </div>--}}
+
+                        @php
+                            $groupedPermissions = $permissions->groupBy('department');
+                        @endphp
+
                         <div class="btn-l-container row">
-                            <!-- Start buttons -->
-                            @foreach($permissions as $index => $permission)
-                                <label class="btn-l-label col">
-                                    <input class="light-btn" type="checkbox"
-                                           wire:model.live.debounce.500ms="permission"
-                                           value="{{ $permission->id }}">
-                                    <span class="btn-l-text">{{ $permission->name }}</span>
-                                </label>
+                            @foreach($groupedPermissions as $department => $departmentPermissions)
+                                <div class="col-12">
+                                    <h5 class="text-primary mt-3">{{ ucfirst($department) }}</h5> {{-- Department Name --}}
+                                    <hr class="mb-2"> {{-- Separator Line --}}
+                                </div>
+
+                                @foreach($departmentPermissions as $permission)
+                                    <label class="btn-l-label col">
+                                        <input class="light-btn" type="checkbox"
+                                               wire:model.live.debounce.500ms="permission"
+                                               value="{{ $permission->id }}">
+                                        <span class="btn-l-text">{{ $permission->name }}</span>
+                                    </label>
+                                @endforeach
                             @endforeach
-                            <!-- End buttons -->
-                            @error('permission')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                            @enderror
                         </div>
+
+                        @error('permission')
+                        <small class="form-text text-danger">{{ $message }}</small>
+                        @enderror
+
+
                     </div>
             </div>
 

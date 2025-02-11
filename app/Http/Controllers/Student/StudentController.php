@@ -8,6 +8,7 @@ use App\Models\EducationalLevel;
 use App\Models\Relative;
 use App\Models\Student\Student;
 use App\Traits\PhotoTrait;
+use Auth;
 use Exception;
 
 class StudentController extends Controller
@@ -45,6 +46,9 @@ class StudentController extends Controller
     {
         try {
             $classroom_id = Student::findorFail($id)->classroom->id;
+            $student = Student::findorFail($id);
+            $student->user_id = Auth::id();
+            $student->update();
             Student::destroy($id);
             return redirect()->route('display-students',$classroom_id)
                 ->with(['warning' => trans('message.delete')]);
@@ -65,6 +69,9 @@ class StudentController extends Controller
             $classroom = Classroom::where('id', $classroom_id)->pluck('id');
             if ($classroom->count() > 0) {
                 Student::withTrashed()->where('id', $id)->restore();
+                $student = Student::findorFail($id);
+                $student->user_id = Auth::id();
+                $student->update();
                 return redirect()->back()
                     ->with(['success' => trans('message.restore')]);
             } else {

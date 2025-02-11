@@ -149,7 +149,6 @@ class AbsentController extends Controller
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
-
     public function updateAbsent(StoreAbsentRequest $request, $classroom_id)
     {
         try {

@@ -40,6 +40,13 @@
                         <th class="th-head-4 form-label">
                             {{__('public.updated at')}}
                         </th>
+                        @can('who did this')
+                            <th>
+                                <div class="table_test form-label ">
+                                    {{__('user.user')}}
+                                </div>
+                            </th>
+                        @endcan
                         <th colspan="">
                             <div class="th-head-4 form-label">{{__('public.processes')}}</div>
                         </th>
@@ -88,6 +95,13 @@
                                     {{$activity->updated_at}}
                                 </div>
                             </td>
+                            @can('who did this')
+                                <td>
+                                    <div class="td_rect">
+                                        {{$activity->user->name}}
+                                    </div>
+                                </td>
+                            @endcan
                             <td>
                                 @can('restore activity')
                                     <a href="{{route('activities.restore',$activity->id)}}"

@@ -111,6 +111,8 @@ class ActivityController extends Controller
     {
         try {
             $activity= Activity::findorFail($id);
+            $activity->user_id =  Auth::id();
+            $activity->update();
             $activity::destroy($id);
             return redirect()->route('display-activities')
                 ->with(['warning' => trans('message.delete')]);
@@ -126,6 +128,9 @@ class ActivityController extends Controller
     {
         try {
             Activity::withTrashed()->where('id', $id)->restore();
+            $activity= Activity::findorFail($id);
+            $activity->user_id =  Auth::id();
+            $activity->update();
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
 

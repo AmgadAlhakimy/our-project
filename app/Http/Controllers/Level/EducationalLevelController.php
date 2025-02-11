@@ -111,7 +111,12 @@ class EducationalLevelController extends Controller
     {
         try {
             $classroom_id = Classroom::where('edu_id', $id)->pluck('edu_id');
+
+
             if ($classroom_id->count() == 0) {
+                $level = EducationalLevel::findorFail($id);
+                $level->user_id = Auth::id();
+                $level->update();
                 EducationalLevel::destroy($id);
                 return redirect()->route('display-levels')
                     ->with(['warning' => trans('message.delete')]);
@@ -131,6 +136,9 @@ class EducationalLevelController extends Controller
     {
         try {
             EducationalLevel::withTrashed()->where('id', $id)->restore();
+            $level = EducationalLevel::findorFail($id);
+            $level->user_id = Auth::id();
+            $level->update();
             return redirect()->route('display-levels')
                 ->with(['success' => trans('message.restore')]);
 

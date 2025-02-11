@@ -155,6 +155,9 @@ class TeacherController extends Controller
     public function destroy($id)
     {
         try {
+            $teacher = Teacher::findorFail($id);
+            $teacher->user_id = Auth::id();
+            $teacher->update();
             Teacher::destroy($id);
             return redirect()->route('display-teachers')
                 ->with(['warning' => trans('message.delete')]);
@@ -170,6 +173,9 @@ class TeacherController extends Controller
     {
         try {
             Teacher::withTrashed()->where('id', $id)->restore();
+            $teacher = Teacher::findorFail($id);
+            $teacher->user_id = Auth::id();
+            $teacher->update();
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
 
