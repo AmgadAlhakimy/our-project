@@ -9,6 +9,7 @@ use App\Rules\RejectArabicLetters;
 use App\Rules\RejectEnglishLetters;
 use App\Traits\PhotoTrait;
 use App\Traits\StudentTrait;
+use Auth;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -158,6 +159,7 @@ class EditStudent extends Component
                 'note' => $this->note,
                 'classroom_id' => $this->classroom_id,
                 'parents_id' => $this->parents_id,
+                'user_id' =>  Auth::user()->id,
 
             ]);
             if ($this->photo) {

@@ -63,7 +63,13 @@
                                         {{__('public.photo')}}
                                     </div>
                                 </th>
-
+                                @can('who did this')
+                                    <th>
+                                        <div class="table_test form-label ">
+                                            {{__('user.user')}}
+                                        </div>
+                                    </th>
+                                @endcan
                                 <th colspan="" class="">
                                     <div class="th-head-3 text-center form-label">{{__('public.processes')}} </div>
                                 </th>
@@ -90,7 +96,13 @@
                                             src="{{asset('storage/'.$student->photo)}}"
                                             class="student-img" alt="photo">
                                     </td>
-
+                                    @can('who did this')
+                                        <td>
+                                            <div class="td_rect">
+                                                {{$student->user->name}}
+                                            </div>
+                                        </td>
+                                    @endcan
                                     <td>
                                         @can('whole notebook for specific student')
                                         <a href="{{route('display-follow-up-notebook',

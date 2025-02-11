@@ -7,6 +7,7 @@ use App\Models\Leaving;
 use App\Http\Requests\StoreLeavingRequest;
 use App\Http\Requests\UpdateLeavingRequest;
 use App\Models\Student\Student;
+use Auth;
 use Carbon\Carbon;
 
 class LeavingController extends Controller
@@ -74,6 +75,7 @@ class LeavingController extends Controller
                         'leaving' => true,
                         'student_id' => $student->id,
                         'classroom_id' => $classroom_id,
+                        'user_id' => Auth::id(),
                     ]);
                 }
             }

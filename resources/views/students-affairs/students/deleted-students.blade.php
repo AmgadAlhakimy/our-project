@@ -46,6 +46,13 @@
                         <th>
                             <div class="th-head-2 form-label">{{__('public.updated at')}}</div>
                         </th>
+                        @can('who did this')
+                            <th>
+                                <div class="table_test form-label ">
+                                    {{__('user.user')}}
+                                </div>
+                            </th>
+                        @endcan
                         <th colspan="">
                             <div class="th-head-4 form-label">{{__('public.processes')}}</div>
                         </th>
@@ -64,6 +71,13 @@
                             <td>{{$student->place_of_birth}}</td>
                             <td>{{$student->created_at}}</td>
                             <td>{{$student->updated_at}}</td>
+                            @can('who did this')
+                                <td>
+                                    <div class="td_rect">
+                                        {{$student->user->name}}
+                                    </div>
+                                </td>
+                            @endcan
                             <td>
                                 @can('restore student')
                                     <a href="{{route('students.restore',$student->id)}}"

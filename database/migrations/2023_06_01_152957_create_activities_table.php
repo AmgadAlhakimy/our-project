@@ -18,6 +18,7 @@ return new class extends Migration
             $table->bigInteger('contact')->nullable();
             $table->date('date');
             $table->string('note')->nullable();
+            $table->foreignId('user_id');
             $table->softDeletes();
             $table->timestamps();
         });

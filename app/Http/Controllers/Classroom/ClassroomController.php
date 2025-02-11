@@ -8,13 +8,14 @@ use App\Http\Requests\Classroom\UpdateClassroomRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
 use App\Models\Student\Student;
+use Auth;
 use Exception;
 
 class ClassroomController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:create classroom', ['only' => ['create','store']]);
+        $this->middleware('permission:create classroom', ['only' => ['create', 'store']]);
         $this->middleware('permission:edit classroom', ['only' => ['edit']]);
         $this->middleware('permission:update classroom', ['only' => ['update']]);
         $this->middleware('permission:delete classroom', ['only' => ['destroy']]);
@@ -29,14 +30,14 @@ class ClassroomController extends Controller
     public function create()
     {
         try {
-        $levels = EducationalLevel::all();
-        return view('academic-dep/classrooms.create-classroom',
-            compact('levels'));
+            $levels = EducationalLevel::all();
+            return view('academic-dep/classrooms.create-classroom',
+                compact('levels'));
 
-        }catch (Exception $e){
-                return redirect()->back()->with(['error' => $e->getMessage()]);
-          }
+        } catch (Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
         }
+    }
 
     /**
      * Store a new classroom.
@@ -44,15 +45,16 @@ class ClassroomController extends Controller
     public function store(StoreClassroomRequest $request)
     {
         try {
-        Classroom::create([
-            'name' => [
-                'en' => $request->name,
-                'ar' => $request->name_ar
-            ],
-            'edu_id'=>$request->level,
-       ]);
-        return redirect()->back()->with(['success'=>'saved successfully']);
-        }catch (Exception $e){
+            Classroom::create([
+                'name' => [
+                    'en' => $request->name,
+                    'ar' => $request->name_ar
+                ],
+                'edu_id' => $request->level,
+                'user_id' => Auth::id(),
+            ]);
+            return redirect()->back()->with(['success' => 'saved successfully']);
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -63,10 +65,10 @@ class ClassroomController extends Controller
     public function show()
     {
         try {
-        $classrooms = Classroom::onlyTrashed()->get();
-        return view('academic-dep/classrooms.deleted-classrooms',
-            compact('classrooms'));
-        }catch (Exception $e){
+            $classrooms = Classroom::onlyTrashed()->get();
+            return view('academic-dep/classrooms.deleted-classrooms',
+                compact('classrooms'));
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -77,12 +79,12 @@ class ClassroomController extends Controller
     public function edit($id)
     {
         try {
-        $classroom = Classroom::findorFail($id);
-        $levels = EducationalLevel::all();
-        return view('academic-dep/classrooms.edit-classroom',
-            compact('classroom', 'levels'));
+            $classroom = Classroom::findorFail($id);
+            $levels = EducationalLevel::all();
+            return view('academic-dep/classrooms.edit-classroom',
+                compact('classroom', 'levels'));
 
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -93,18 +95,19 @@ class ClassroomController extends Controller
     public function update(UpdateClassroomRequest $request, $id)
     {
         try {
-        $classroom = Classroom::findorFail($id);
-        $classroom->update([
-            'name' => [
-                'en' => $request->name,
-                'ar' => $request->name_ar
-            ],
-            'edu_id'=>$request->level,
-        ]);
-        return redirect()->route('display-classrooms')
-            ->with(['success' => __('message.update')]);
+            $classroom = Classroom::findorFail($id);
+            $classroom->update([
+                'name' => [
+                    'en' => $request->name,
+                    'ar' => $request->name_ar
+                ],
+                'edu_id' => $request->level,
+                'user_id' => Auth::id(),
+            ]);
+            return redirect()->route('display-classrooms')
+                ->with(['success' => __('message.update')]);
 
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -117,15 +120,18 @@ class ClassroomController extends Controller
         try {
             $student_id = Student::where('classroom_id', $id)
                 ->pluck('classroom_id');
-            if($student_id->count() == 0){
-            Classroom::destroy($id);
-            return redirect()->route('display-classrooms')
-                ->with(['warning' => trans('message.delete')]);
-            }else{
-                return redirect()->back() ->with(['error' =>
+            if ($student_id->count() == 0) {
+                $classroom = Classroom::findorFail($id);
+                $classroom->user_id = Auth::id();
+                $classroom->update();
+                Classroom::destroy($id);
+                return redirect()->route('display-classrooms')
+                    ->with(['warning' => trans('message.delete')]);
+            } else {
+                return redirect()->back()->with(['error' =>
                     trans('message.delete_classroom_error')]);
             }
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -135,20 +141,24 @@ class ClassroomController extends Controller
      */
     public function restore($id)
     {
+
         try {
-            $edu_id = Classroom::withTrashed()->select('edu_id')
-                ->where('id', $id)->get();
+            $edu_id = Classroom::withTrashed()
+                ->where('id', $id)->value('edu_id');
             $level = EducationalLevel::where('id', $edu_id)->pluck('id');
 
-            if($level->count() > 0){
-            Classroom::withTrashed()->where('id', $id)->restore();
-            return redirect()->back()
-                ->with(['success' => trans('message.restore')]);
-            }else{
-                return redirect()->back() ->with(['error' =>
+            if ($level->count() > 0) {
+                $classroom = Classroom::withTrashed()->findOrFail($id);
+                $classroom->user_id = Auth::id();
+                $classroom->update();
+                Classroom::withTrashed()->where('id', $id)->restore();
+                return redirect()->back()
+                    ->with(['success' => trans('message.restore')]);
+            } else {
+                return redirect()->back()->with(['error' =>
                     trans('message.restore_classroom_error')]);
             }
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -159,11 +169,11 @@ class ClassroomController extends Controller
     public function forceDelete($id)
     {
         try {
-        Classroom::withTrashed()->where('id', $id)->forceDelete();
-        return redirect()->back()
-            ->with(['warning' => trans('message.force delete')]);
+            Classroom::withTrashed()->where('id', $id)->forceDelete();
+            return redirect()->back()
+                ->with(['warning' => trans('message.force delete')]);
 
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }

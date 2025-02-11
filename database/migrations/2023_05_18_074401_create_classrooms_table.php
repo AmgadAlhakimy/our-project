@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('edu_id')
                 ->constrained('educational_levels')
                 ->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('user_id');
             $table->softDeletes();
             $table->timestamps();
         });

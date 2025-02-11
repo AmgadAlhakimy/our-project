@@ -13,11 +13,11 @@
                         <h4 class="Names ">{{$classroom->name}}</h4>
                     </div>
                     @can('edit leaving children')
-                    <a href="{{route('leaving.editLeaving',$classroom->id)}}"
-                       class="card-info card-info_2 col btn save-button">
-                        <h4 class="topic-title mt-2">{{__('follow_up.edit for all students')}}</h4>
-                        <p class="text-center ">{{__('follow_up.click here')}}</p>
-                    </a>
+                        <a href="{{route('leaving.editLeaving',$classroom->id)}}"
+                           class="card-info card-info_2 col btn save-button">
+                            <h4 class="topic-title mt-2">{{__('follow_up.edit for all students')}}</h4>
+                            <p class="text-center ">{{__('follow_up.click here')}}</p>
+                        </a>
                     @endcan
                     <div class="card-info card-info_2 col ">
                         <h4 class=" Names">{{$month}}</h4>
@@ -39,6 +39,13 @@
                         <th class="th-head-2 form-label">{{__('public.photo')}}</th>
                         <th class="th-head-2 form-label ">{{__('leaving.leaving')}}</th>
                         <th class="th-head-2 form-label ">{{__('leaving.leaving time')}}</th>
+                        @can('who did this')
+                            <th>
+                                <div class="table_test form-label ">
+                                    {{__('user.user')}}
+                                </div>
+                            </th>
+                        @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -52,7 +59,7 @@
                             </td>
                             <td>
                                 <div class="td_rect">
-                                {{$leftStudent->student->name}}
+                                    {{$leftStudent->student->name}}
                                 </div>
                             </td>
                             <td><img
@@ -68,6 +75,13 @@
                                     {{$leftStudent->created_at->format('H:i:s A')}}
                                 </div>
                             </td>
+                            @can('who did this')
+                                <td>
+                                    <div class="td_rect">
+                                        {{$leftStudent->user->name}}
+                                    </div>
+                                </td>
+                            @endcan
                         </tr>
                             <?php $counter++ ?>
                     @endforeach

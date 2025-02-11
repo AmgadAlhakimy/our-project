@@ -25,8 +25,6 @@ return [
     'that is cool no absent students today'=>'رائع لايوجد طلاب غائبين اليوم',
     'come on yo! did not you just present students for today'=>"هيا ماهو! عادك الا حضرت الطلاب هذا اليوم",
     'you can not edit absent children while there is no one absent'=>"عذراً لايمكن تعديل الطلاب الغائبين قبل التحضير",
-
-
-    'disply absent for this month'=>"استعراض الاطفال الغائبين لهذا الشهر",
+    'display absent for this month'=>"استعراض الاطفال الغائبين لهذا الشهر",
 
 ];

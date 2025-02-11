@@ -4,6 +4,7 @@ namespace App\Livewire\StudentsAffairs\Parents;
 
 use App\Models\Parents\Parents;
 use App\Traits\ParentsTrait;
+use Auth;
 use Livewire\Component;
 
 class EditParents extends Component
@@ -92,6 +93,7 @@ class EditParents extends Component
                     'ar' => $this->kin_relationship_ar,
                 ],
                 'kin_contact' => $this->kin_contact,
+                'user_id' => Auth::id(),
             ]);
             $this->reset();
             return redirect()->route('display-parents')->with(['success' => __('message.update')]);

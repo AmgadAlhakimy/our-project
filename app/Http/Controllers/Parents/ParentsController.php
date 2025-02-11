@@ -7,6 +7,7 @@ use App\Http\Requests\Parents\StoreParentsRequest;
 use App\Http\Requests\Parents\UpdateParentsRequest;
 use App\Models\Parents\Parents;
 use App\Models\Student\Student;
+use Auth;
 
 class ParentsController extends Controller
 {
@@ -42,6 +43,9 @@ class ParentsController extends Controller
             $student_id = Student::where('parents_id', $id)
                 ->pluck('parents_id');
             if($student_id->count() == 0){
+                $parent = Parents::findorFail($id);
+                $parent->user_id = Auth::id();
+                $parent->update();
                 Parents::destroy($id);
                 return redirect()->route('display-parents')
                     ->with(['warning' => trans('message.delete')]);
@@ -60,6 +64,9 @@ class ParentsController extends Controller
     public function restore($id){
         try {
             Parents::withTrashed()->where('id', $id)->restore();
+            $parent = Parents::findorFail($id);
+            $parent->user_id = Auth::id();
+            $parent->update();
             return redirect()->route('display-parents')
                 ->with(['success' => trans('message.restore')]);
 

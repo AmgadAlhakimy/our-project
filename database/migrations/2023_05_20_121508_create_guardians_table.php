@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',100)->unique();
             $table->softDeletes();
+            $table->foreignId('user_id');
             $table->timestamps();
         });
     }

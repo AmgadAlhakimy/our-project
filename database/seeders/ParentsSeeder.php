@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Parents\Parents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
@@ -13,7 +14,7 @@ class ParentsSeeder extends Seeder
      */
     public function run(): void
     {
-
+        $users= User::all();
         $fakerEn = Faker::create('en_US'); // English Faker
         $fakerAr = Faker::create('ar_SA'); // Arabic Faker
 
@@ -60,6 +61,7 @@ class ParentsSeeder extends Seeder
                     'ar' => $arabicRelationships[array_rand($arabicRelationships)],
                 ],
                 'kin_contact' => $fakerEn->numerify('77#######'),
+                'user_id' => $users->random()->id,
             ]);
         }
     }

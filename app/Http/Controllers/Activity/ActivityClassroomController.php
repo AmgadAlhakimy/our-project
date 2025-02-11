@@ -8,6 +8,7 @@ use App\Http\Requests\Activity\UpdateActivityClassroomRequest;
 use App\Models\Activity\Activity;
 use App\Models\Activity\ActivityClassroom;
 use App\Models\Classroom\Classroom;
+use Auth;
 use Exception;
 
 class ActivityClassroomController extends Controller
@@ -45,6 +46,7 @@ class ActivityClassroomController extends Controller
             ActivityClassroom::create([
                 'classroom_id'=>$request->classroom_id,
                 'activity_id'=>$activity_id,
+                'user_id' =>  Auth::user()->id,
             ]);
         }
         return redirect()->back()->with(['success' => 'message.success']);
@@ -85,7 +87,11 @@ class ActivityClassroomController extends Controller
     {
         try {
             $classroom = Classroom::findOrFail($classroom_id);
-            $classroom->activities()->sync($request->activity_id);
+            $classroom->activities()->syncWithPivotValues($request->activity_id, [
+                'user_id' => Auth::id(),
+            ]);
+
+
             return redirect()->route('display-activity-classrooms')
                 ->with(['success' => 'message.update']);
 

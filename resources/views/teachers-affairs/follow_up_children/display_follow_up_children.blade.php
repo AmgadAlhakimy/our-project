@@ -157,7 +157,13 @@
                             </div>
                         </button>
                     </th>
-
+                    @can('who did this')
+                        <th>
+                            <div class="table_test form-label ">
+                                {{__('user.user')}}
+                            </div>
+                        </th>
+                    @endcan
                     <th colspan="">
                         <div class="th-head-2 form-label">{{__('public.processes')}} </div>
                     </th>
@@ -221,6 +227,13 @@
                                 {{$followup->updated_at}}
                             </div>
                         </td>
+                        @can('who did this')
+                            <td>
+                                <div class="td_rect">
+                                    {{$followup->user->name}}
+                                </div>
+                            </td>
+                        @endcan
                         <td>
                             @can('edit followup notebook individually')
                                 <a href="{{route('follow_up_children.editChild',

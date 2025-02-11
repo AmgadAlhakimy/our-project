@@ -10,6 +10,7 @@ use App\Models\Mark;
 use App\Models\Student\Student;
 use App\Models\Subject\Subject;
 use App\Models\Teacher\Teacher;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -22,9 +23,13 @@ class Classroom extends Model
     use HasTranslations;
 
     public array $translatable = ['name'];
-    protected $fillable = ['name', 'edu_id'];
+    protected $fillable = ['name', 'edu_id','user_id'];
 
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
     public function level()
     {
         return $this->belongsTo(EducationalLevel::class, 'edu_id');

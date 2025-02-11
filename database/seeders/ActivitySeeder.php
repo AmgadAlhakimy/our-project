@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Activity\Activity;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class ActivitySeeder extends Seeder
@@ -12,6 +13,7 @@ class ActivitySeeder extends Seeder
      */
     public function run(): void
     {
+        $users= User::all();
         $activities = [
             ['en' => 'Sports Day', 'ar' => 'يوم الرياضة'],
             ['en' => 'Science Fair', 'ar' => 'معرض العلوم'],
@@ -35,6 +37,7 @@ class ActivitySeeder extends Seeder
                 'contact' => 772546950 + $index,
                 'date' => "2024-02-" . str_pad($index + 1, 2, '0', STR_PAD_LEFT), // Ensure date format is correct
                 'note' => 'No note',
+                'user_id' => $users->random()->id,
             ]);
         }
 

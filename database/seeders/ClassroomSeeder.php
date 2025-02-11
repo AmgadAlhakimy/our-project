@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class ClassroomSeeder extends Seeder
@@ -14,6 +15,7 @@ class ClassroomSeeder extends Seeder
     public function run(): void
     {
         $levels = EducationalLevel::all();
+        $users= User::all();
 
         $classNames = [
             ['en' => 'Kindergarten One', 'ar' => 'الروضة الأولى'],
@@ -36,7 +38,8 @@ class ClassroomSeeder extends Seeder
         foreach ($classNames as $class) {
             Classroom::create([
                 'name' => $class,
-                'edu_id' => $levels->random()->id, // Assign to a random educational level
+                'edu_id' => $levels->random()->id,
+                'user_id' => $users->random()->id,
             ]);
         }
     }

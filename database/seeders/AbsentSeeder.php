@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Absent;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use App\Models\Student\Student;
 use Faker\Factory as Faker;
@@ -15,6 +16,7 @@ class AbsentSeeder extends Seeder
 
         $faker = Faker::create();
         $students = Student::all();
+        $users= User::all();
 
         $absenceReasons = [
             'Sick leave',
@@ -37,6 +39,7 @@ class AbsentSeeder extends Seeder
                 'absent_reason' => $faker->randomElement($absenceReasons),
                 'student_id' => $student->id,
                 'classroom_id' => $student->classroom->id,
+                'user_id' => $users->random()->id,
             ]);
         }
     }

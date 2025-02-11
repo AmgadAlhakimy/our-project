@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Activity\StoreActivityRequest;
 use App\Http\Requests\Activity\UpdateActivityRequest;
 use App\Models\Activity\Activity;
+use Auth;
 
 class ActivityController extends Controller
 {
@@ -45,6 +46,7 @@ class ActivityController extends Controller
             $activity->contact = $request->contact;
             $activity->date = $request->date;
             $activity->note = $request->note;
+            $activity->user_id = Auth::id();
             $activity->save();
             return redirect()->back()->with(['success' => __('message.success')]);
         }
@@ -93,6 +95,7 @@ class ActivityController extends Controller
             $activity->contact = $request->contact;
             $activity->date = $request->date;
             $activity->note = $request->note;
+            $activity->user_id =  Auth::id();
             $activity->update();
             return redirect()->route('display-activities')
                 ->with(['success' => __('message.update')]);
@@ -108,6 +111,8 @@ class ActivityController extends Controller
     {
         try {
             $activity= Activity::findorFail($id);
+            $activity->user_id =  Auth::id();
+            $activity->update();
             $activity::destroy($id);
             return redirect()->route('display-activities')
                 ->with(['warning' => trans('message.delete')]);
@@ -123,6 +128,9 @@ class ActivityController extends Controller
     {
         try {
             Activity::withTrashed()->where('id', $id)->restore();
+            $activity= Activity::findorFail($id);
+            $activity->user_id =  Auth::id();
+            $activity->update();
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
 

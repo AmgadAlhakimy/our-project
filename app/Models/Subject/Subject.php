@@ -5,6 +5,7 @@ namespace App\Models\Subject;
 use App\Models\Classroom\Classroom;
 use App\Models\Mark;
 use App\Models\Teacher\Teacher;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -17,7 +18,7 @@ class Subject extends Model
     use HasTranslations;
 
     public array $translatable = ['name'];
-    protected $fillable = ['name'];
+    protected $fillable = ['name','user_id'];
 
     public function classrooms()
     {
@@ -26,6 +27,10 @@ class Subject extends Model
     public function teachers()
     {
         return $this->belongsToMany(Teacher::class, 'subject_teacher_pivot');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function marks()

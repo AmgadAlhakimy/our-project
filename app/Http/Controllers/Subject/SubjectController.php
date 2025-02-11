@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Subject\StoreSubjectRequest;
 use App\Http\Requests\Subject\UpdateSubjectRequest;
 use App\Models\Subject\Subject;
+use Auth;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -44,7 +45,8 @@ class SubjectController extends Controller
                 'name' => [
                     'en' => $request->name,
                     'ar' => $request->name_ar,
-                ]
+                ],
+                'user_id' => Auth::id(),
             ]);
             return redirect()->back()->with(['success' => 'saved successfully']);
         } catch (\Exception $e) {
@@ -93,6 +95,7 @@ class SubjectController extends Controller
                     'en' => $request->name,
                     'ar' => $request->name_ar,
                 ],
+                'user_id' => Auth::id(),
             ]);
             return redirect()->route('display-subjects')
                 ->with(['success' => __('message.update')]);
@@ -108,6 +111,9 @@ class SubjectController extends Controller
     public function destroy($id)
     {
         try {
+            $subject = Subject::findorFail($id);
+            $subject->user_id = Auth::id();
+            $subject->update();
             Subject::destroy($id);
             return redirect()->route('display-subjects')
                 ->with(['warning' => trans('message.delete')]);
@@ -124,6 +130,9 @@ class SubjectController extends Controller
     {
         try {
             Subject::withTrashed()->where('id', $id)->restore();
+            $subject = Subject::findorFail($id);
+            $subject->user_id = Auth::id();
+            $subject->update();
             return redirect()->back()
                 ->with(['success' => trans('message.restore')]);
 

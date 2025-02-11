@@ -1,5 +1,29 @@
 @can('users and roles')
     <p class="title">{{__('user.users and roles')}}<i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
+
+    @can('roles')
+        <li class="dropdown">
+            <!-- ========== 1 ============ -->
+            <div class="sidebar-title">
+                <a href="#" class="li-link title-4">
+                    <i class="icon-1 fa-solid fa-school"></i>
+                    <span class="menu-name"> {{__('role.roles')}} </span>
+                    <i class="icon-1 fa-solid fa-chevron-down"></i>
+                </a>
+            </div>
+            <div class="submenu">
+                <div class="line-black">
+                    @can('create role')
+
+                        <a id="" href="{{route('create-role')}}" class="li-link ">{{__('role.new role')}}</a>
+                    @endcan
+                    @can('display roles')
+                        <a id="" href="{{route('display-roles')}}" class="li-link ">{{__('role.display roles')}}</a>
+                    @endcan
+                </div>
+            </div>
+        </li>
+    @endcan
     @can('users')
         <li class="dropdown">
             <!-- ========== 1 ============ -->
@@ -23,29 +47,6 @@
                            class="li-link ">{{__('user.deleted users')}}</a>
                     @endcan
 
-                </div>
-            </div>
-        </li>
-    @endcan
-    @can('roles')
-        <li class="dropdown">
-            <!-- ========== 1 ============ -->
-            <div class="sidebar-title">
-                <a href="#" class="li-link title-4">
-                    <i class="icon-1 fa-solid fa-school"></i>
-                    <span class="menu-name"> {{__('role.roles')}} </span>
-                    <i class="icon-1 fa-solid fa-chevron-down"></i>
-                </a>
-            </div>
-            <div class="submenu">
-                <div class="line-black">
-                    @can('create role')
-
-                        <a id="" href="{{route('create-role')}}" class="li-link ">{{__('role.new role')}}</a>
-                    @endcan
-                    @can('display roles')
-                        <a id="" href="{{route('display-roles')}}" class="li-link ">{{__('role.display roles')}}</a>
-                    @endcan
                 </div>
             </div>
         </li>

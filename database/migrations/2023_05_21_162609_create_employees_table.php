@@ -22,6 +22,7 @@ return new class extends Migration
             $table->bigInteger('contact1');
             $table->bigInteger('contact2')->nullable();
             $table->string('note')->nullable();
+            $table->foreignId('user_id');
             $table->softDeletes();
             $table->timestamps();
         });

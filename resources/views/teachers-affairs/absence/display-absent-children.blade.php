@@ -45,6 +45,13 @@
                         <th class="th-head-2 form-label">{{__('public.photo')}}</th>
                         <th class="th-head-1 form-label ">{{__('absent.absent')}}</th>
                         <th class="th-head-3 form-label">{{__('teacher.absent reason')}}</th>
+                        @can('who did this')
+                            <th>
+                                <div class="table_test form-label ">
+                                    {{__('user.user')}}
+                                </div>
+                            </th>
+                        @endcan
                     </tr>
                     </thead>
                     <tbody>
@@ -69,6 +76,13 @@
                             <td class="">
                                 <div class="td_rect">{{$absentStudent->absent_reason}}</div>
                             </td>
+                            @can('who did this')
+                                <td>
+                                    <div class="td_rect">
+                                        {{$absentStudent->user->name}}
+                                    </div>
+                                </td>
+                            @endcan
                                 <?php $counter++ ?>
                         </tr>
                     @endforeach
