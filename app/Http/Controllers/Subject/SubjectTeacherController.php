@@ -15,8 +15,7 @@ class SubjectTeacherController extends Controller
     function __construct()
     {
         $this->middleware('permission:create teachers-subjects', ['only' => ['create','store']]);
-        $this->middleware('permission:edit teachers-subjects', ['only' => ['edit']]);
-        $this->middleware('permission:update teachers-subjects', ['only' => ['update']]);
+        $this->middleware('permission:edit teachers-subjects', ['only' => ['edit','update']]);
     }
 
     /**

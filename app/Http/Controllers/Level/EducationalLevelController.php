@@ -14,8 +14,7 @@ class EducationalLevelController extends Controller
     function __construct()
     {
         $this->middleware('permission:create educational-level', ['only' => ['create', 'store']]);
-        $this->middleware('permission:edit educational-level', ['only' => ['edit']]);
-        $this->middleware('permission:update educational-level', ['only' => ['update']]);
+        $this->middleware('permission:edit educational-level', ['only' => ['edit','update']]);
         $this->middleware('permission:delete educational-level', ['only' => ['destroy']]);
         $this->middleware('permission:display deleted educational-levels', ['only' => ['show']]);
         $this->middleware('permission:restore educational-level', ['only' => ['restore']]);

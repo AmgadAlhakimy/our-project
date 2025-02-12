@@ -14,8 +14,7 @@ class SubjectController extends Controller
     function __construct()
     {
         $this->middleware('permission:create subject', ['only' => ['create','store']]);
-        $this->middleware('permission:edit subject', ['only' => ['edit']]);
-        $this->middleware('permission:update subject', ['only' => ['update']]);
+        $this->middleware('permission:edit subject', ['only' => ['edit','update']]);
         $this->middleware('permission:delete subject', ['only' => ['destroy']]);
         $this->middleware('permission:display deleted subjects', ['only' => ['show']]);
         $this->middleware('permission:restore subject', ['only' => ['restore']]);

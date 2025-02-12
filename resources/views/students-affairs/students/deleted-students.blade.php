@@ -63,8 +63,10 @@
                         <tr>
                             <td>{{$student->id}}</td>
                             <td>{{$student->name}}</td>
-                            <td><img src="{{asset($student->photo)}}"
-                                     class="student-img" alt="photo"></td>
+                            <td><img
+                                    src="{{asset('storage/'.$student->photo)}}"
+                                    class="student-img" alt="photo">
+                            </td>
                             <td>{{$student->address}}</td>
                             <td>{{$student->gender}}</td>
                             <td>{{$student->birthdate}}</td>

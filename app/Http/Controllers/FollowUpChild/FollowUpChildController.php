@@ -21,9 +21,7 @@ class FollowUpChildController extends Controller
     {
         $this->middleware('permission:create followup notebook', ['only' => ['writingFollowUp', 'storeAll', 'storeChild']]);
         $this->middleware('permission:edit followup notebook for all children', ['only' => ['editAllChildren']]);
-        $this->middleware('permission:edit followup notebook individually', ['only' => ['editChild']]);
-        $this->middleware('permission:update followup notebook for all children', ['only' => ['updateAllChildren']]);
-        $this->middleware('permission:update followup notebook individually', ['only' => ['updateChild']]);
+        $this->middleware('permission:edit followup notebook individually', ['only' => ['editChild','updateAllChildren','updateChild']]);
     }
 
     public function writingFollowUp($classroom_id)

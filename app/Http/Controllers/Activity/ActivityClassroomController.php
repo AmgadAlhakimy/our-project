@@ -16,8 +16,7 @@ class ActivityClassroomController extends Controller
     function __construct()
     {
         $this->middleware('permission:create classes-activities', ['only' => ['create','store']]);
-        $this->middleware('permission:edit classes-activities', ['only' => ['edit']]);
-        $this->middleware('permission:update classes-activities', ['only' => ['update']]);
+        $this->middleware('permission:edit classes-activities', ['only' => ['edit','update']]);
     }
 
     /**
