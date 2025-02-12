@@ -6,7 +6,8 @@
             <!-- ========== 1 ============ -->
             <div class="sidebar-title">
                 <a href="#" class="li-link title-4">
-                    <i class="icon-1 fa-solid fa-school"></i>
+                    {{-- <i class="icon-1 fa-solid fa-school"></i> --}}
+                    <i class="icon-1 fas fa-key"></i>
                     <span class="menu-name"> {{__('role.roles')}} </span>
                     <i class="icon-1 fa-solid fa-chevron-down"></i>
                 </a>
@@ -29,7 +30,7 @@
             <!-- ========== 1 ============ -->
             <div class="sidebar-title">
                 <a href="#" class="li-link title-4">
-                    <i class="icon-1 fa-solid fa-school"></i>
+                    <i class="icon-1 fa-solid fa-users"></i>
                     <span class="menu-name"> {{__('user.users')}} </span>
                     <i class="icon-1 fa-solid fa-chevron-down"></i>
                 </a>

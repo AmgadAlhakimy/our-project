@@ -8,13 +8,22 @@
         <img class="toggle_img" src="{{URL::asset('assets/images/layouts/logo2.png')}}" alt=""/>
         <p class="title-5 mt-5">{{__('public.home text')}}</p>
         <div class="icon-container"></div>
-
+ 
     </div>
+    <div class="user_name">
+        <div class="">
+
+            <span class="title-3">  13/2/2025  </span>
+            <span class="title-3">  9:20:21  </span>
+            <span class=" form-label  ">{{ Auth::user()->name }}</span>
+        </div>
+    </div>
+
     
 <script src="{{URL::asset('js/toggle.js')}}"></script>
 
 
-
+ 
 
     {{-- <div class="row toggle">
 

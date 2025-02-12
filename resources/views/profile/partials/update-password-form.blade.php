@@ -8,7 +8,6 @@
             {{ __('Ensure your account is using a long, random password to stay secure.') }}
         </p>
     </header>
-
     <form wire:submit="updatePassword" class="mt-6 space-y-6">
         @csrf
 
@@ -21,18 +20,14 @@
         <div>
             <x-input-label for="update_password_password" :value="__('New Password')" />
             <x-text-input wire:model.defer="password" id="update_password_password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
-{{--            <x-input-error :messages="$errors->get('password')" class="mt-2" />--}}
+            <x-input-error :messages="$errors->get('password')" class="mt-2" />
             @error('password') <small class="form-text text-red-500">{{ $message }}</small> @enderror
-
-
-
-
 
             <div class="">
                 {{-- 1 --}}
                 <div class="">
                     <div class="rols_bar rounded-full transition-all"
-                         style="width: {{ $this->progress }}%; background-color:
+                        style="width: {{ $this->progress }}%; background-color:
                                         {{ $this->progress < 40 ? '#f87171' : ($this->progress < 80 ? '#facc15' : '#22c55e') }};">
                         {{$this->progress }}
                     </div>
@@ -68,19 +63,14 @@
                     </li>
                 </ul>
             </div>
-
-
         </div>
-
         <div>
             <x-input-label for="update_password_password_confirmation" :value="__('Confirm Password')" />
             <x-text-input wire:model.defer="password_confirmation" id="update_password_password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full" autocomplete="new-password" />
             @error('password_confirmation') <small class="form-text text-red-500">{{ $message }}</small> @enderror
         </div>
-
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
-
             @if ($status === 'password-updated')
                 <p
                     x-data="{ show: true }"
