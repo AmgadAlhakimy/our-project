@@ -334,14 +334,12 @@
                     </div>
                 </div>
                 <div class=" row">
-                    @can('update student')
                         <div class="box col">
                             <button type="submit" class=" save-button">
                                 {{__('public.update')}}
                                 <div wire:loading class="spinner-border spinner-border-sm"></div>
                             </button>
                         </div>
-                    @endcan
                     @can('display students')
                         <div class="box  col">
                             <a href="{{route('display-students',$classroom_id)}}" class="btn clear-button"><i

@@ -52,14 +52,12 @@
 
         <!-- Buttons -->
         <div class=" row">
-            @can('update user')
                 <div class="box col">
                     <button type="submit" class=" save-button">
                         {{__('public.update')}}
                         <div wire:loading class="spinner-border spinner-border-sm"></div>
                     </button>
                 </div>
-            @endcan
             @can('change users password')
                 <div class="box  col-6">
                     <a href="{{route('change-password',$id)}}" class="btn clear-button">

@@ -161,6 +161,7 @@ return [
     'first name two words'=>'First name should be one word or two like "عبد الرحمن"',
     'reject arabic letters'=>'The :attribute should not contain Arabic letters.',
     'reject english letters'=>'The :attribute should not contain English letters.',
+    'wrong phone number'=>'This is Wrong Phone Number',
 
     /*
     |--------------------------------------------------------------------------

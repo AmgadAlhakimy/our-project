@@ -20,20 +20,34 @@
                 @if(!empty($rolePermissions))
                     @php
                         $groupedPermissions = $rolePermissions->groupBy('department');
+                        $lang = App::getLocale(); // Get the current application language
                     @endphp
+
                     @foreach($groupedPermissions as $department => $permissions)
+                        @php
+                            // Get the department name dynamically
+                            $departmentName = $permissions->first();
+                            $displayDepartment = $lang === 'ar' ? $departmentName->department_ar : $departmentName->department;
+                        @endphp
+
                         <div>
-                            <h5 class="text-primary">{{ ucfirst($department) }}</h5>
+                            <h5 class="text-primary">{{ ucfirst($displayDepartment) }}</h5> {{-- Department Name --}}
+
                             @foreach($permissions as $v)
-                                <span class="badge bg-success m-1 p-2">{{ $v->name }}</span>
+                                <span class="badge bg-success m-1 p-2">
+                        {{ $lang === 'ar' ? $v->name_ar : $v->name }}
+                    </span>
                             @endforeach
+
                             <hr class="my-3"> {{-- Separator Line --}}
                         </div>
                     @endforeach
                 @else
-                    <p class="text-muted">{{trans('role.no permissions assigned')}}</p>
+                    <p class="text-muted">{{ __('role.no permissions assigned') }}</p>
                 @endif
             </div>
+
+
         </div>
     </div>
 @endsection

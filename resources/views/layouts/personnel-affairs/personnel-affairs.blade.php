@@ -1,7 +1,29 @@
-@can('users and roles')
+@canany([
+     'create user',
+                'display users',
+                'edit user',
+                'change users password',
+                'display deleted users',
+                'delete user',
+                'restore user',
+                'forceDelete user',
+                'roles',
+                'create role',
+                'display roles',
+                'edit role',
+                'display role permissions',
+                'delete role',
+                'who did this',
+])
     <p class="title">{{__('user.users and roles')}}<i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
 
-    @can('roles')
+@canany([
+                'create role',
+                'display roles',
+                'edit role',
+                'display role permissions',
+                'delete role',
+])
         <li class="dropdown">
             <!-- ========== 1 ============ -->
             <div class="sidebar-title">
@@ -24,8 +46,17 @@
                 </div>
             </div>
         </li>
-    @endcan
-    @can('users')
+@endcanany
+@canany([
+     'create user',
+                'display users',
+                'edit user',
+                'change users password',
+                'display deleted users',
+                'delete user',
+                'restore user',
+                'forceDelete user',
+])
         <li class="dropdown">
             <!-- ========== 1 ============ -->
             <div class="sidebar-title">
@@ -52,7 +83,7 @@
             </div>
         </li>
     @endcan
-@endcan
+@endcanany
 <!-- ========== MAJOR ============ -->
 {{-- <li class="dropdown">
     <div class="sidebar-title">

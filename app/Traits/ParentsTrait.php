@@ -15,9 +15,10 @@ trait ParentsTrait
     public $father_work;
     #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public $father_work_ar;
-    #[Rule('required|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
+    #[Rule('required|numeric|regex:/^[0-9]{7,15}$/')]
     public $father_contact1;
-    #[Rule('nullable|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
+
+    #[Rule('required|numeric|regex:/^[0-9]{7,15}$/')]
     public $father_contact2;
     #[Rule('required|max:50|regex:/^[a-zA-Z\s]+$/')]
     public $mother_name;
@@ -27,9 +28,9 @@ trait ParentsTrait
     public $mother_work;
     #[Rule('required|max:50|regex:/^[\p{Arabic}\s]+[\p{Arabic}0-9]*$/u')]
     public $mother_work_ar;
-    #[Rule('required|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
+    #[Rule('required|numeric|regex:/^[0-9]{7,15}$/')]
     public  $mother_contact1;
-    #[Rule('nullable|numeric|digits:9|regex:/^[1-9][0-9]*$/')]
+    #[Rule('required|numeric|regex:/^[0-9]{7,15}$/')]
     public  $mother_contact2;
     #[Rule('nullable|max:50|regex:/^[a-zA-Z\s]+$/')]
     public $kin_name;
@@ -77,7 +78,7 @@ trait ParentsTrait
             '*work_ar.regex' => __('validation.arabic letters'),
             'kin_relationship.regex' => __('validation.english letters'),
             'kin_relationship_ar.regex' => __('validation.arabic letters'),
-            '*contact*.regex' => __('validation.it should not start with 0'),
+            '*contact*.regex' => __('validation.wrong phone number'),
         ];
     }
 }

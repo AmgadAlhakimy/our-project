@@ -1,6 +1,13 @@
 {{--                                    teachers                             --}}
 <div>
-    @can('followup notebook')
+    @canany([
+                       'create followup notebook',
+                    'display followup notebook',
+                    'edit followup notebook for all children',
+                    'edit followup notebook individually',
+                    'whole notebook with all students in class',
+                    'whole notebook for specific student',
+    ])
         <div class="followup notebook">
             <p class="title">{{__('followup.followup notebook')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i>
             </p>
@@ -68,14 +75,20 @@
                 </li>
             @endcan
         </div>
-    @endcan
+    @endcanany
 
     <!-- ========== 2 ============ -->
     <!-- اضافة درجات / المحصلة -->
 
     <!-- ========== 3 ============ -->
     <!-- التحضير والغياب -->
-    @can('absent children')
+    @canany([
+                  'presenting children',
+                    'display absent children',
+                    'display absent children of all time',
+                    'edit absent for all children',
+                    'edit absent individually',
+    ])
         @can('presenting children')
             <li class="dropdown">
                 <div class="sidebar-title">
@@ -138,7 +151,6 @@
                 </div>
             </li>
         @endcan
-
         <!-- عرض جميع الغياب الخاص بطلاب الفصل الواحد خلال الشهر  -->
         @can('display absent children of all time')
             <li class="dropdown">
@@ -160,10 +172,14 @@
                 </div>
             </li>
         @endcan
-    @endcan
+    @endcanany
     <!-- ========== 3 ============ -->
     {{-- الانصراف --}}
-    @can('leaving children')
+    @canany([
+          'check leaving children',
+                    'display left children',
+                    'edit leaving children',
+    ])
         <p class="title">{{__('sidebar.check out section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
         {{-- check out section --}}
         @can('check leaving children')
@@ -204,5 +220,5 @@
                 </div>
             </li>
         @endcan
-    @endcan
+    @endcanany
 </div>

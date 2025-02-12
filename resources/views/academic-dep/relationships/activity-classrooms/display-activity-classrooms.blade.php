@@ -49,13 +49,6 @@
                             {{__('public.activities')}}
                         </div>
                     </th>
-                    @can('who did this')
-                        <th>
-                            <div class="table_test form-label ">
-                                {{__('user.user')}}
-                            </div>
-                        </th>
-                    @endcan
                     <th colspan="2">
                         <div class="th-head-3 form-label">{{__('public.processes')}} </div>
                     </th>
@@ -80,13 +73,6 @@
                                 @endforeach
                             </div>
                         </td>
-                        @can('who did this')
-                            <td>
-                                <div class="td_rect">
-{{--                                    {{$student->user->name}}--}}
-                                </div>
-                            </td>
-                        @endcan
                         <td>
                             @can('edit classes-activities')
                                 <a href="{{route('activity-classrooms.edit',$classroom->id)}}"
