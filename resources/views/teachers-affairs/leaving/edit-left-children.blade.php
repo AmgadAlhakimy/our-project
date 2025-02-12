@@ -87,9 +87,7 @@
 
             <div class=" mt-5">
                 <div class="box">
-                    @can('update leaving children')
                         <input class="save-button " type="submit" value="{{__('public.update')}}">
-                    @endcan
                     @can('display absent children')
                         <a href="{{route('absent.display',$classroom->id)}}" class="btn clear-button"><i
                                 class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>

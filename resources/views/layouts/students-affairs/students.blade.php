@@ -1,7 +1,31 @@
 <div>
-    @can('STUDENT AFFAIRS')
+@canany([
+          'create superior',
+                'display superiors',
+                'edit superior',
+                'delete superior',
+                'display deleted superiors',
+                'restore superior',
+                'forceDelete superior',
+                'create student',
+                'display students',
+                'edit student',
+                'student more info',
+                'delete student',
+                'display deleted students',
+                'restore student',
+                'forceDelete student',
+])
         <p class="title">{{__('sidebar.students affairs')}}<i class="ms-1 me-1 fa-solid fa-marker"></i></p>
-        @can('superiors')
+        @canany([
+                   'create superior',
+                        'display superiors',
+                        'edit superior',
+                        'delete superior',
+                        'display deleted superiors',
+                        'restore superior',
+                        'forceDelete superior',
+        ])
             <li class="dropdown">
                 <!-- ========== 2 ============ -->
                 <div class="sidebar-title">
@@ -27,50 +51,61 @@
                     </div>
                 </div>
             </li>
-        @endcan
-        <!-- ========== new student ============ -->
-        @can('create student')
-            <li class="dropdown">
-                <div class="sidebar-title">
-                    <a href="{{route("create-student")}}" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-graduation-cap"></i>
-                        <span class="menu-name">
+        @endcanany
+        @canany([
+        'create student',
+                    'display students',
+                    'edit student',
+                    'student more info',
+                    'delete student',
+                    'display deleted students',
+                    'restore student',
+                    'forceDelete student',
+    ])
+            <!-- ========== new student ============ -->
+            @can('create student')
+                <li class="dropdown">
+                    <div class="sidebar-title">
+                        <a href="{{route("create-student")}}" class="li-link title-4">
+                            <i class="icon-1 fa-solid fa-graduation-cap"></i>
+                            <span class="menu-name">
                     {{__('sidebar.new student')}}
                 </span>
-                    </a>
-                </div>
-            </li>
-        @endcan
-
-        <!-- ========== display students ============ -->
-        @can('display students')
-            <li class="dropdown">
-                <div class="sidebar-title">
-                    <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-graduation-cap"></i>
-                        <span class="menu-name">{{__('sidebar.display students')}}</span>
-                        <i class="icon-1 fa-solid fa-chevron-down"></i>
-                    </a>
-                </div>
-                <div class="submenu">
-                    <div class="line-black">
-                        @foreach ($classrooms as $classroom)
-                            <a href="{{route('display-students',$classroom->id)}}"
-                               class="li-link">{{$classroom->name}}</a>
-                        @endforeach
+                        </a>
                     </div>
-                </div>
-            </li>
-        @endcan
-        @can('display deleted students')
-            <li class="dropdown">
-                <div class="sidebar-title">
-                    <a href="{{route('students.show','deleted')}}" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-trash"></i>
-                        <span class="menu-name">{{__('sidebar.deleted students')}}</span>
+                </li>
+            @endcan
+
+            <!-- ========== display students ============ -->
+            @can('display students')
+                <li class="dropdown">
+                    <div class="sidebar-title">
+                        <a href="#" class="li-link title-4">
+                            <i class="icon-1 fa-solid fa-graduation-cap"></i>
+                            <span class="menu-name">{{__('sidebar.display students')}}</span>
+                            <i class="icon-1 fa-solid fa-chevron-down"></i>
+                        </a>
+                    </div>
+                    <div class="submenu">
+                        <div class="line-black">
+                            @foreach ($classrooms as $classroom)
+                                <a href="{{route('display-students',$classroom->id)}}"
+                                   class="li-link">{{$classroom->name}}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                </li>
+            @endcan
+            @can('display deleted students')
+                <li class="dropdown">
+                    <div class="sidebar-title">
+                        <a href="{{route('students.show','deleted')}}" class="li-link title-4">
+                            <i class="icon-1 fa-solid fa-trash"></i>
+                            <span class="menu-name">{{__('sidebar.deleted students')}}</span>
                     </a>
                 </div>
             </li>
         @endcan
-    @endcan
+    @endcanany
+    @endcanany
 </div>

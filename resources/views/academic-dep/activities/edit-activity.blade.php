@@ -79,11 +79,9 @@
                 </div>
                 <div class="row mt-2">
                     <div class=" row">
-                        @can('update activity')
                             <div class="box col ">
                                 <input class="save-button" type="submit" value="{{__('public.update')}}">
                             </div>
-                        @endcan
                         @can('display activities')
                             <div class="box  col">
                                 <a href="{{route('display-activities')}}" class="btn clear-button"><i

@@ -146,9 +146,7 @@
             </div>
             <div class=" ">
                 <div class="box">
-                    @can('update followup notebook individually')
                         <input class="save-button " type="submit" value="{{__('public.update')}}">
-                    @endcan
                     @can('display followup notebook')
                         <a href="{{route('follow_up_children-display',$classroom->id)}}" class="btn clear-button"><i
                                 class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>

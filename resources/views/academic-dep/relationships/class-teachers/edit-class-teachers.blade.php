@@ -52,9 +52,7 @@
 
                     <div class="row">
                         <div class="box">
-                            @can('update teachers-classes')
                                 <input class="save-button" type="submit" value="{{__('public.update')}}">
-                            @endcan
                             @can('display teachers-classes')
                                 <a href="{{route('display-class-teachers')}}" class="btn clear-button">
                                     <i class="fa-solid fa-ban"></i> {{__('public.cancel')}}</a>
