@@ -12,7 +12,7 @@
             <div>
                 <x-input-label for="name" class="form-label" :value="__('Name')" />
                 <x-text-input id="name" class="form-control pink_color" type="text" wire:model.live.debounce.500ms="name" :value="old('name')"  autofocus autocomplete="name" />
-{{--                <x-input-error :messages="$errors->get('name')" class="mt-2" />--}}
+    {{-- <x-input-error :messages="$errors->get('name')" class="mt-2" />--}}
                 @error('name') <small class="form-text text-danger">{{ $message }}</small> @enderror
             </div>
             <!-- Email Address -->
@@ -26,19 +26,14 @@
                 <x-input-label for="password" class="form-label" :value="__('Password')" />
                 <x-text-input id="password" class="form-control "
                                 type="password"
-                              wire:model.live.debounce.500ms="password"
-                                 autocomplete="new-password" />
+                            wire:model.live.debounce.500ms="password"
+                                autocomplete="new-password" />
                 @error('password') <small class="form-text text-danger">{{ $message }}</small> @enderror
-
-
-
-
-
                 <div class="">
                     {{-- 1 --}}
                     <div class="">
                         <div class="rols_bar rounded-full transition-all"
-                             style="width: {{ $this->progress }}%; background-color:
+                            style="width: {{ $this->progress }}%; background-color:
                                         {{ $this->progress < 40 ? '#f87171' : ($this->progress < 80 ? '#facc15' : '#22c55e') }};">
                             {{$this->progress }}
                         </div>
@@ -85,7 +80,7 @@
                 <x-input-label for="password_confirmation" class="form-label"  :value="__('Confirm Password')" />
                 <x-text-input id="password_confirmation" class="form-control "
                                 type="password"
-                              wire:model.live.debounce.500ms="confirm_password"  autocomplete="new-password" />
+                            wire:model.live.debounce.500ms="confirm_password"  autocomplete="new-password" />
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
                 @error('confirm_password') <small class="form-text text-danger">{{ $message }}</small> @enderror
             </div>

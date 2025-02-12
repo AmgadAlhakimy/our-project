@@ -277,7 +277,7 @@ h6,
 .facility-item .facility-icon span {
     position: absolute;
     content: "";
-    width: 15px;
+    width: 15px; 
     height: 30px;
     top: 0;
     left: 0;
@@ -533,3 +533,7 @@ h6,
 
 
 /* end login and sign out styles */
+.gallery_img{
+    height: 100px;
+    max-width: 100px;
+}
