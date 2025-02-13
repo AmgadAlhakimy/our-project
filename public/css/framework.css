@@ -109,6 +109,7 @@ input::-webkit-inner-spin-button {
     flex: 1 1 auto;
     padding: 0 2rem;
     margin-top: 130px;
+    margin-bottom: 20px;
 }
 
 .containers-style {
@@ -123,7 +124,7 @@ input::-webkit-inner-spin-button {
     background-clip: border-box;
     border: 0.5px solid var(--border-color);
     border-radius: 0.25rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 body[dir="rtl"] .containers-style {
@@ -137,7 +138,9 @@ body[dir="rtl"] .containers-style {
     font-weight: bold;
     font-size: 40px;
 }
-
+.main{
+    margin-bottom: 40px;
+}
 .container-title {
     color: var(--o-title-1);
     font-weight: bold;

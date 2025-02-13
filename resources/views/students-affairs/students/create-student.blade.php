@@ -229,11 +229,10 @@
                 <!-- Start health info  -->
                 <h3 class="container-title">{{__('student.health info')}}</h3>
                 <div class="container containers-style mb-5">
-                    <div class="row">
-                        <div class="box col-lg-12 col-md-12 row">
+                        <div class="box row">
                             {{-- 1 --}}
-                            <label class="col d-flex justify-content-end">{{__('student.takes any medicine?')}}</label>
-                            <div class="col mt-2 d-flex justify-content-start">
+                            <label class="col-6 d-flex justify-content-end">{{__('student.takes any medicine?')}}</label>
+                            <div class="col-6 mt-2 d-flex justify-content-start">
                                 <input class="toggle" type="checkbox" wire:click="flip(0)"
                                        id="takesMedicineE" name="checked">
                                 <label class="form-label  rounded" for="takesMedicineE"></label>
@@ -241,12 +240,12 @@
                             @error('takes_medicine')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
-                            {{-- -*- --}}
-                            {{-- -*- --}}
+                                {{-- -*- --}}
                             @if($checks[0])
                                 <div class="row">
-                                    <label>{{__('student.medicine name in English')}}</label>
-                                    <input type="text" class=" form-control ms-1 me-1 col"
+                                    
+                                    <input type="text" class=" form-control ms-1 me-1 col col-ms-12"
+                                    placeholder="{{__('student.medicine name in English')}}"
                                            wire:model.live.debounce.500ms="medicine_desc"
                                            id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
                                            aria-label="Text input with radio button">
@@ -254,8 +253,8 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
-                                    <label>{{__('student.medicine name in Arabic')}}</label>
-                                    <input type="text" class=" form-control ms-1 me-1 col"
+                                    <input type="text" class=" form-control ms-1 me-1 col col-ms-12" 
+                                    placeholder="{{__('student.medicine name in Arabic')}}"
                                            wire:model.live.debounce.500ms="medicine_desc_ar"
                                            id="" value="{{old('medicine_desc_ar')}}"
                                            aria-label="Text input with radio button">
@@ -264,38 +263,34 @@
                                     @enderror
                                 </div>
                             @endif
-
+                            <div class="row">
+                                <hr class="mt-2">
+                            </div>
                             {{-- 2 --}}
-                            {{-- -------------------------------- --}}
-                            <label class="mt-4">{{__('student.has allergy?')}}</label>
-                            {{-- ---- --}}
-                            <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
-                                <input class="toggle col" type="checkbox" wire:click="flip(1)"
-                                       id="hasAllergy"
-                                value="{{old('has_allergy')}}">
-
-                                <label class="form-label col rounded" for="hasAllergy"></label>
+                            <label class="col-6 d-flex justify-content-end">{{__('student.has allergy?')}}</label>
+                            <div class="col-6 mt-2 d-flex justify-content-start">
+                                <input class="toggle " type="checkbox" wire:click="flip(1)"
+                                       id="hasAllergy" value="{{old('has_allergy')}}">
+                                <label class="form-label rounded" for="hasAllergy"></label>
                             </div>
                             @error('has_allergy')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
-
-                            {{-- -*- --}}
                             {{-- -*- --}}
                         @if($checks[1])
                                 <div class="row">
-                                    <label>{{__('student.allergy description in English')}}</label>
-                                    <input type="text" class=" form-control ms-1 me-1 col"
-                                           wire:model.live.debounce.500ms="allergy_desc"
-                                           id="std_allergy_desc_1"
-                                           aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
+                                    <input type="text" class=" form-control ms-1 me-1 col" 
+                                    placeholder="{{__('student.allergy description in English')}}"
+                                            wire:model.live.debounce.500ms="allergy_desc"
+                                            id="std_allergy_desc_1"
+                                            aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
                                     >
                                     @error('allergy_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
-                                    {{-- -*- --}}
-                                    <label>{{__('student.allergy description in Arabic')}}</label>
-                                    <input type="text" class=" form-control ms-1 me-1 col"
+                                    {{-- -*- --}}                               
+                                    <input type="text" class=" form-control ms-1 me-1 col" 
+                                    placeholder="{{__('student.allergy description in Arabic')}}"
                                            wire:model.live.debounce.500ms="allergy_desc_ar"
                                            id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
                                     aria-label="Text input with radio button" >
@@ -304,15 +299,15 @@
                                     @enderror
                                 </div>
                             @endif
+                            <div class="row">
+                                <hr class="mt-2">
+                            </div>
                             {{-- 3 --}}
-                            {{-- -------------------------------- --}}
-                            <label class="mt-4">{{__('student.has any health problem?')}}</label>
-                            {{-- ---- --}}
-                            <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
+                            <label class="col-6 d-flex justify-content-end">{{__('student.has any health problem?')}}</label>
+                            <div class="col-6 mt-2 d-flex justify-content-start">
                                 <input class="toggle col" type="checkbox" wire:click="flip(2)"
-                                       id="healthProblem" value="{{old('has_health_problem')}}"
-                                >
-                                <label class="form-label col rounded" for="healthProblem"
+                                        id="healthProblem" value="{{old('has_health_problem')}}">
+                                <label class="form-label  rounded" for="healthProblem"
                                 id="healthProblem"></label>
                             </div>
                             @error('has_health_problem')
@@ -322,18 +317,19 @@
                             {{-- -*- --}}
                         @if($checks[2])
                                 <div class="row">
-                                    <label>{{__('student.health problem description in English')}}</label>
-                                    <input type="text" class=" form-control ms-1 me-1 col"
-                                           wire:model.live.debounce.500ms="health_problem_desc"
-                                           id="std_health_desc_1"
-                                           aria-label="Text input with radio button"
+                                        <input type="text" class=" form-control ms-1 me-1 col" 
+                                        placeholder="{{__('student.health problem description in English')}}"
+                                            wire:model.live.debounce.500ms="health_problem_desc"
+                                            id="std_health_desc_1"
+                                            aria-label="Text input with radio button"
                                     value="{{old('health_problem_desc')}}">
                                     @error('health_problem_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
-                                    <label>{{__('student.health problem description in Arabic')}}</label>
-                                    <input type="text" class=" form-control ms-1 me-1 col"
+                                    
+                                    <input type="text" class=" form-control ms-1 me-1 col" 
+                                    placeholder="{{__('student.health problem description in Arabic')}}"
                                     wire:model.live.debounce.500ms="health_problem_desc_ar"
                                     id="std_health_desc_2"
                                     value="{{old('health_problem_desc_ar')}}"
@@ -345,7 +341,6 @@
                             @endif
                             {{-- ----------------------------------- --}}
                         </div>
-                    </div>
                 </div>
                 <!-- End health info  -->
                 <!-- Start final box -->

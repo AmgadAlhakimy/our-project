@@ -95,7 +95,7 @@ hr {
     opacity: 0.25;
 }
 hr:not([size]) {
-    height: 1px;
+    height: 2px;
 }
 .h1,
 .h2,

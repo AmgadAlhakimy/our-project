@@ -50,11 +50,12 @@
             {{-- --}}
             <div class=" me-1 ms-1 ph-home ">
                 <a class="card-info  " aria-current="page" href='/Distribution_of_powers'>
+
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <div :href="route('logout')" onclick="event.preventDefault();
                                 this.closest('form').submit();">
-                        <i class="mt-2 h1 icon-1 fa-solid fa-gear"></i>
+                        <i class="mt-2 h1 icon-1 fas fa-sign-out-alt"></i>
                             {{-- {{ __('Log Out') }} --}}
                         </div>
                     </form>
@@ -62,7 +63,7 @@
                 </a>
             </div>
             <div class=" me-1 ms-1 ph-home border-left">
-                <a class="card-info  " aria-current="page" href="/dashboard">
+                <a class="card-info  " aria-current="page" href="{{route('home')}}">
                     <i class="mt-2 h2 icon-1 fa-solid fa-home-lg-alt"></i>
                 </a>
             </div>

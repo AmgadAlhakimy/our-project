@@ -34,6 +34,8 @@
     </div>
 </div>
 <!-- ====================== -->
+
+@include('layouts.users_time')
 @include('layouts.js_links')
 
 </body>
