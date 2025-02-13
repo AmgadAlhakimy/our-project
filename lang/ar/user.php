@@ -33,6 +33,7 @@ return [
     'disabled'=>'غير مفعل',
     'please select the status'=>'يرجى إختيار الحالة',
     'change the password of'=>'تغيير كلمة المرور الخاصة بالمستخدم: ',
+    'users and roles'=>'المستخدمين والصلاحيات',
 
 
 ];

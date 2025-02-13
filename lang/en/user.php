@@ -32,5 +32,6 @@ return [
     'please select the status'=>'Please Select the Status',
     'change the password of'=>'Change The Password Of: ',
     'email verified at'=>'Email Verified at',
+    'users and roles'=>'Users and Roles',
 
 ];

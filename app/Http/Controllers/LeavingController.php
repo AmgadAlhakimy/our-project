@@ -17,8 +17,7 @@ class LeavingController extends Controller
     {
         $this->middleware('permission:check leaving children', ['only' => ['newLeaving', 'storeLeaving']]);
         $this->middleware('permission:display left children', ['only' => ['displayLeaving']]);
-        $this->middleware('permission:edit leaving children', ['only' => ['editLeaving']]);
-        $this->middleware('permission:update leaving children', ['only' => ['updateLeaving']]);
+        $this->middleware('permission:edit leaving children', ['only' => ['editLeaving','updateLeaving']]);
     }
 
     /**

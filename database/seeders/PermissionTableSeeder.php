@@ -147,6 +147,49 @@ class PermissionTableSeeder extends Seeder
                     ['who did this', 'من قام بهذا؟'],
                 ],
             ],
+
+            'followup-notebook' => [
+                'en' => 'Follow-up Notebook',
+                'ar' => 'دفتر المتابعة',
+                'permissions' => [
+                    ['followup notebook', 'دفتر المتابعة'],
+                    ['create followup notebook', 'إنشاء دفتر المتابعة'],
+                    ['display followup notebook', 'عرض دفتر المتابعة'],
+                    ['edit followup notebook for all children', 'تعديل دفتر المتابعة لجميع الأطفال'],
+                    ['edit followup notebook individually', 'تعديل دفتر المتابعة لكل طفل على حدة'],
+                    ['update followup notebook for all children', 'تحديث دفتر المتابعة لجميع الأطفال'],
+                    ['update followup notebook individually', 'تحديث دفتر المتابعة لكل طفل على حدة'],
+                    ['whole notebook with all students in class', 'الدفتر بالكامل لجميع الطلاب في الفصل'],
+                    ['whole notebook for specific student', 'الدفتر بالكامل لطالب معين'],
+                ],
+            ],
+
+            'attendance' => [
+                'en' => 'Attendance',
+                'ar' => 'الحضور',
+                'permissions' => [
+                    ['absent children', 'الأطفال الغائبون'],
+                    ['presenting children', 'الأطفال الحاضرون'],
+                    ['display absent children', 'عرض الأطفال الغائبين'],
+                    ['display absent children of all time', 'عرض جميع الأطفال الغائبين على مدار الوقت'],
+                    ['edit absent for all children', 'تعديل الغياب لجميع الأطفال'],
+                    ['edit absent individually', 'تعديل الغياب لكل طفل على حدة'],
+                    ['update absent children', 'تحديث بيانات الغياب'],
+                ],
+            ],
+
+            'leaving' => [
+                'en' => 'Leaving',
+                'ar' => 'المغادرة',
+                'permissions' => [
+                    ['leaving children', 'الأطفال المغادرون'],
+                    ['check leaving children', 'التحقق من الأطفال المغادرين'],
+                    ['display left children', 'عرض الأطفال الذين غادروا'],
+                    ['edit leaving children', 'تعديل المغادرة للأطفال'],
+                    ['update leaving children', 'تحديث المغادرة للأطفال'],
+                ],
+            ],
+
         ];
 
         foreach ($permissions as $category => $data) {

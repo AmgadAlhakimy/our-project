@@ -65,8 +65,9 @@ class StudentController extends Controller
     public function restore($id)
     {
         try {
-            $classroom_id = Student::withTrashed()->select('classroom_id')->where('id', $id)->get();
+            $classroom_id = Student::withTrashed()->where('id', $id)->value('classroom_id');
             $classroom = Classroom::where('id', $classroom_id)->pluck('id');
+
             if ($classroom->count() > 0) {
                 Student::withTrashed()->where('id', $id)->restore();
                 $student = Student::findorFail($id);

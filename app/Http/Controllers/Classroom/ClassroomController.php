@@ -16,8 +16,7 @@ class ClassroomController extends Controller
     function __construct()
     {
         $this->middleware('permission:create classroom', ['only' => ['create', 'store']]);
-        $this->middleware('permission:edit classroom', ['only' => ['edit']]);
-        $this->middleware('permission:update classroom', ['only' => ['update']]);
+        $this->middleware('permission:edit classroom', ['only' => ['edit','update']]);
         $this->middleware('permission:delete classroom', ['only' => ['destroy']]);
         $this->middleware('permission:display deleted classrooms', ['only' => ['show']]);
         $this->middleware('permission:restore classroom', ['only' => ['restore']]);

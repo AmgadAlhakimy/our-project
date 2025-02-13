@@ -15,8 +15,7 @@ class ClassroomTeacherController extends Controller
     function __construct()
     {
         $this->middleware('permission:create teachers-classes', ['only' => ['create','store']]);
-        $this->middleware('permission:edit teachers-classes', ['only' => ['edit']]);
-        $this->middleware('permission:update teachers-classes', ['only' => ['update']]);
+        $this->middleware('permission:edit teachers-classes', ['only' => ['edit','update']]);
     }
 
     /**
