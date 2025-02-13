@@ -67,16 +67,16 @@
                                         class="absentStudent-img" alt="photo">
                                 </td>
                                 <td>
-                                    <div class="mt-2 check_style">
-                                        <label>
+                                    <div class="">
+                                        <label for="">
                                             <input class="" type="checkbox"
                                                    name="absent[{{$index}}]"
                                                    value={{("absent.$index") ? 'present' : 'absent' }}
                                                 {{in_array($student->id,$absent_children)?'absent':'checked'}}>
+                                            <div class="absent-checkbox"></div>
                                             @error("absent.$index")
                                             <small class="form-text text-danger">{{$message}}</small>
                                             @enderror
-                                            <i></i>
                                         </label>
                                     </div>
                                 </td>

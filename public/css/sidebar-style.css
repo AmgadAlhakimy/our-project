@@ -183,6 +183,7 @@
 /* --------------------- submenu --------------------- */
 .list-ul {
     margin-top: 15px;
+    padding-bottom: 50px;
 }
 
 .list-ul li .submenu {
@@ -649,12 +650,12 @@ body[dir="rtl"] .search .search1 {
     background-color: #007bff;
     color: white;
     padding: 10px 20px;
-    text-decoration: none; /* إزالة التسطير */
+    text-decoration: none; 
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
 }
 
 .btn-launch-profile:hover {
-    background-color: #0056b3; /* لون الخلفية عند التمرير */
+    background-color: #0056b3; 
 }

@@ -67,6 +67,7 @@
                                     <label>
                                         <input class="" type="checkbox" name="absent[{{$index}}]"
                                                value={{("absent.$index") ? 'present' : 'absent' }} checked>
+                                               
                                         <div class="absent-checkbox"></div>
                                         <div class="mt-2 check_style">
                                             @error("absent.$index")
