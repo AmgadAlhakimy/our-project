@@ -38,6 +38,7 @@ class EducationalLevelController extends Controller
      */
     public function store(StoreEducationalLevelRequest $request)
     {
+
         try {
             EducationalLevel::create([
                 'name' => [

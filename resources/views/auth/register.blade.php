@@ -10,20 +10,20 @@
             @csrf
             <!-- Name -->
             <div>
-                <x-input-label for="name" class="form-label" :value="__('Name')" />
+                <x-input-label for="name" class="form-label" :value="__('public.name')" />
                 <x-text-input id="name" class="form-control pink_color" type="text" wire:model.live.debounce.500ms="name" :value="old('name')"  autofocus autocomplete="name" />
     {{-- <x-input-error :messages="$errors->get('name')" class="mt-2" />--}}
                 @error('name') <small class="form-text text-danger">{{ $message }}</small> @enderror
             </div>
             <!-- Email Address -->
             <div class="mt-4">
-                <x-input-label for="email" class="form-label" :value="__('Email')" />
+                <x-input-label for="email" class="form-label" :value="__('user.email')" />
                 <x-text-input id="email" class="form-control " type="email" wire:model.live.debounce.500ms="email" :value="old('email')"  autocomplete="username" />
                 @error('email') <small class="form-text text-danger">{{ $message }}</small> @enderror
             </div>
             <!-- Password -->
             <div class="mt-4">
-                <x-input-label for="password" class="form-label" :value="__('Password')" />
+                <x-input-label for="password" class="form-label" :value="__('user.password')" />
                 <x-text-input id="password" class="form-control "
                                 type="password"
                             wire:model.live.debounce.500ms="password"
@@ -77,7 +77,7 @@
             </div>
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-input-label for="password_confirmation" class="form-label"  :value="__('Confirm Password')" />
+                <x-input-label for="password_confirmation" class="form-label"  :value="__('user.confirm password')" />
                 <x-text-input id="password_confirmation" class="form-control "
                                 type="password"
                             wire:model.live.debounce.500ms="confirm_password"  autocomplete="new-password" />
@@ -86,11 +86,11 @@
             </div>
             <div class="flex items-center justify-end mt-4 box ">
                 <a class="form-label pink_color underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('auth.already registered') }}
                 </a>
                 <button type="submit" class="ms-4 save-button">
                     <div class="title-3">
-                        {{ __('Register') }}
+                        {{ __('auth.register') }}
                     </div>
                 </button>
             </div>
