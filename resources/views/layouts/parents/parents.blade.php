@@ -1,5 +1,8 @@
-@can('PARENTS')
-    <p class="title">{{__('sidebar.parent section')}}<i class="ms-1 me-1 fa-solid fa-people-roof"></i></p>
+@canany([
+     'display followup notebook',
+                    'student information',
+                    'display absence and leaving',
+])    <p class="title">{{__('sidebar.parent section')}}<i class="ms-1 me-1 fa-solid fa-people-roof"></i></p>
     <li class="dropdown">
         <!-- ========== 2 ============ -->
 
@@ -14,7 +17,7 @@
         </div>
         <div class="submenu">
             <div class="line-black">
-                <a href='/student_info' class="li-link">{{__('sidebar.son info')}}</a>
+                <a href="{{route('parent-student-info')}}" class="li-link">{{__('sidebar.son info')}}</a>
                 <a href="#" class="li-link">{{__('sidebar.daily follow up ')}}</a>
                 <a href="#" class="li-link">{{__('sidebar.absent info')}}</a>
                 <a href="#" class="li-link">{{__('sidebar.monthly marks')}}</a>
@@ -33,4 +36,4 @@
                 </span>
         </div>
     </li>
-@endcan
+@endcanany
