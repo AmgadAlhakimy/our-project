@@ -1,27 +1,22 @@
 
 /* R$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 
-.my-table {
-    /* position: absolute; */
-    /* top: 50px; */
-    margin: 0 40px 0 40px;
-    margin-bottom: 40px;
-}
+
 
 .table-header {
     margin-top: 120px;
-    padding: 20px;
+    padding: 10px;
     background-color: var(--container-color);
     border: 1px solid var(--border-color);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .table-section {
     white-space: nowrap;
     height: 100%;
     overflow: auto;
-    margin-top: 5px;
-    border-radius: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     background-color: var(--sidebar-bg);
 }
@@ -72,9 +67,7 @@ th,td {
     word-break: break-all;
     /* font-size: 14px; */
 }
-td {
-    /* border-left: 0.03px double var(--border-color); */
-}
+
 .mark_table th,
 .mark_table td {
     border-left: 1px solid #dddddd;
@@ -143,9 +136,6 @@ tr:hover img {
 .table-section th {
     text-align: center;
 }
-.table-section tbody td {
-}
-
 .card_btn {
     display: inline-block;
     background-color: #007bff;
@@ -231,7 +221,6 @@ tr:hover img {
 }
 .check_style input[type="checkbox"] {
     -webkit-appearance: none;
-    
 }
 /* END THE CHECK BOX STYLE */
 .num_rows {
@@ -312,9 +301,6 @@ tbody tr:hover .num_table {
 .next_text{
     font-size: 10px;
     }
-.table-section{
-    margin-top: -5px;
-}
 /* #f6f9fc the td color */
 
 

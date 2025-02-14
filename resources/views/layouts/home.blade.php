@@ -11,9 +11,9 @@
             <img src="{{URL::asset('assets/icons/book.png')}}"class="icon" style="left: 10%; top: 20%;" />
             <img src="{{URL::asset('assets/icons/hand.png')}}"class="icon" style="left: 30%; top: 40%;" />
             <img src="{{URL::asset('assets/icons/leters.png')}}"  class="icon" style="left: 20%; top: 80%;"/>
-            <img src="{{URL::asset('assets/icons/pen.png')}}"  class="icon" style="left: 55%; top: 30%;" />
+            <img src="{{URL::asset('assets/icons/pen.png')}}"  class="icon" style="left: 55%; top: 25%;" />
             <img src="{{URL::asset('assets/icons/study.png')}}" class="icon" style="left: 70%; top: 15%;" />
-            <img src="{{URL::asset('assets/icons/shape.png')}}" class="icon" style="left: 85%; top: 85%;" />
+            <img src="{{URL::asset('assets/icons/shape.png')}}" class="icon" style="left: 60%; top: 85%;" />
         </div>
  
     </div>

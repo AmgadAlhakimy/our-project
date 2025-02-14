@@ -27,4 +27,6 @@ return [
     'you can not edit absent children while there is no one absent'=>"عذراً لايمكن تعديل الطلاب الغائبين قبل التحضير",
     'display absent for this month'=>"استعراض الاطفال الغائبين لهذا الشهر",
 
+    'days of absence' => 'ايام الغياب',
+
 ];

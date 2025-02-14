@@ -17,7 +17,7 @@
                 <li class="dropdown">
                     <div class="sidebar-title">
                         <a href="#" class="li-link title-4">
-                            <i class="icon-1 fa-solid fa-baby"></i>
+                            <i class="icon-1 fa-solid fa-book-open"></i>
                             <span class="menu-name">{{__('student.followup notebook')}}</span>
                             <i class="icon-1 fa-solid fa-chevron-down"></i>
                         </a>
@@ -39,7 +39,7 @@
                 <li class="dropdown">
                     <div class="sidebar-title">
                         <a href="#" class="li-link title-4">
-                            <i class="icon-1 fa-solid fa-baby"></i>
+                            <i class="icon-1 fa-solid fa-book-open-reader"></i>
                             <span class="menu-name">{{__('student.display followup notebook')}}</span>
                             <i class="icon-1 fa-solid fa-chevron-down"></i>
                         </a>
@@ -59,7 +59,7 @@
                 <li class="dropdown">
                     <div class="sidebar-title">
                         <a href="#" class="li-link title-4">
-                            <i class="icon-1 fa-solid fa-baby"></i>
+                            <i class="icon-1 fa-solid fa-book"></i>
                             <span class="menu-name">{{ __('follow_up.whole notebook') }}</span>
                             <i class="icon-1 fa-solid fa-chevron-down"></i>
                         </a>
@@ -93,7 +93,7 @@
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-list-check"></i>
+                        <i class="icon-1 fa-regular fa-square-check"></i>
                         <span class="menu-name">{{__('absent.presenting children')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -136,7 +136,7 @@
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-list-check"></i>
+                        <i class="icon-1 fa-solid fa-check-double"></i>
                         <span class="menu-name">{{__('absent.edit absent children')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -156,8 +156,7 @@
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-baby"></i>
-
+                        <i class="icon-1 fa-regular fa-address-book"></i>
                         <span class="menu-name">{{ __('absent.display absent for this month') }}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -186,7 +185,7 @@
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-list-check"></i>
+                        <i class="icon-1 fa-solid fa-list-ol"></i>
                         <span class="menu-name">{{__('leaving.leaving')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -206,6 +205,7 @@
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
                         <i class="icon-1 fa-solid fa-list-check"></i>
+                        
                         <span class="menu-name">{{__('leaving.display leaving')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>

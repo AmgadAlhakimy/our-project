@@ -28,4 +28,5 @@ return [
 
 
     'display absent for this month'=>"Review of this month's absent children",
+    'days of absence' => 'days of absence',
 ];
