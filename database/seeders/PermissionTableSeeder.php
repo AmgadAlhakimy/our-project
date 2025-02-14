@@ -190,6 +190,15 @@ class PermissionTableSeeder extends Seeder
                 ],
             ],
 
+            'parents' => [
+                'en' => 'Parents',
+                'ar' => 'الأباء',
+                'permissions' => [
+                    ['student information', 'معلومات الطالب بالكامل'],
+                    ['display absence and leaving', 'عرض الغياب والإنصراف'],
+                ],
+            ],
+
         ];
 
         foreach ($permissions as $category => $data) {

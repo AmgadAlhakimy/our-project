@@ -10,16 +10,15 @@
 
                     <!-- Email Address -->
                     <div class="box">
-                        <x-input-label for="email" class="form-label " :value="__('Email')" />
+                        <x-input-label for="email" class="form-label " :value="__('user.email')" />
                         <x-text-input id="email" class="block mt-1 w-full form-control" type="email" name="email"
                             :value="old('email')" required autofocus autocomplete="username" />
-                        {{-- <x-input-error class="pink_color" :messages="$errors->get('email')" class="mt-2" />--}}
                         @error('email')<small class="form-text text-danger">{{$message}}</small>@enderror
                     </div>
 
                     <!-- Password -->
                     <div class="mt-4 box">
-                        <x-input-label for="password" class="form-label " :value="__('Password')" />
+                        <x-input-label for="password" class="form-label " :value="__('user.password')" />
                         <x-text-input id="password" class="block mt-1 w-full form-control" type="password"
                             name="password" required autocomplete="current-password" />
                         @error('password')<small class="form-text text-danger">{{$message}}</small>@enderror
@@ -32,7 +31,7 @@
                                 class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800"
                                 name="remember">
                             <span
-                                class="ms-2 text-sm text-gray-600 dark:text-gray-400 title-3 ">{{ __('Remember me') }}</span>
+                                class="ms-2 text-sm text-gray-600 dark:text-gray-400 title-3 ">{{ __('auth.remember me') }}</span>
                         </label>
                     </div>
 
@@ -40,12 +39,12 @@
                         @if (Route::has('password.request'))
                             <a class=" form-label pink_color underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800 form-label"
                                 href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                                {{ __('auth.forgot your password') }}
                             </a>
                         @endif
                         <x-primary-button class="ms-3 save-button ">
                             <div class="title-3">
-                                {{ __('Log in') }}
+                                {{ __('auth.log in') }}
                             </div>
                         </x-primary-button>
                     </div>

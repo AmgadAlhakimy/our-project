@@ -27,6 +27,12 @@ return [
     'welcome'=>'Welcome!',
     'your account is currently disabled'=>'Your account is currently disabled.',
     'please contact us to enable it'=>'Please contact us to enable it.',
+    'login'=>'Login',
+    'log in'=>'Log in',
+    'register'=>'Register',
+    'already registered'=>'Already Register?',
+    'remember me'=>'Remember Me',
+    'forgot your password'=>'Forgot your password?',
 
 
 ];

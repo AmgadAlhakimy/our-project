@@ -51,6 +51,7 @@ Route::group(
             include 'create-pages.php';
             include 'edit-pages.php';
             include 'display-pages.php';
+            include 'parents.php';
 
 
             Route::middleware('auth')->group(function () {

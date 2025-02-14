@@ -27,5 +27,11 @@ return [
     'welcome'=>'!مرحبًا بك',
     'your account is currently disabled'=>'حسابك غير مفعل حاليًا',
     'please contact us to enable it'=>'يرجى الاتصال بنا لتفعيله',
+    'login'=>'دخول',
+    'log in'=>'دخول',
+    'register'=>'تسجيل حساب',
+    'already registered'=>'لدي حساب مسبقاً',
+    'remember me'=>'تذكرني',
+    'forgot your password'=>'نسيت كلمة المرور؟',
 
 ];
