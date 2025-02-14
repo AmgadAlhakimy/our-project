@@ -140,7 +140,6 @@ class ClassroomController extends Controller
      */
     public function restore($id)
     {
-
         try {
             $edu_id = Classroom::withTrashed()
                 ->where('id', $id)->value('edu_id');

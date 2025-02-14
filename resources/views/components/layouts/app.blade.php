@@ -35,7 +35,7 @@
 </div>
 <!-- ====================== -->
 
-@include('layouts.users_time')
+@livewire('user-time')
 @include('layouts.js_links')
 
 </body>

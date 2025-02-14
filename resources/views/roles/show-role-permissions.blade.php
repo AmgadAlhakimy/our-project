@@ -33,7 +33,7 @@
                                         $displayDepartment = $lang === 'ar' ? $departmentName->department_ar : $departmentName->department;
                                     @endphp
 
-                    <div class="cards_info_style mb-2">
+                    <div class="containers-style mb-3">
 
                         <span class="col-12 form-label  ">
                             <div class="text-center">
