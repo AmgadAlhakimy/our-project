@@ -1,7 +1,7 @@
 <div class="user_name">
     <div class="">
-        <span class=" form-label  ">{{ Auth::user()->name }}</span>
-        <span class="title-3" id="realTimeClock" ></span>
+        <span class=" form-label fonts-6">{{ Auth::user()->name }}</span>
+        <span class="title-3 fonts-6 " id="realTimeClock" ></span>
         <script>
             function updateClock() {
                 let now = new Date();
@@ -19,4 +19,5 @@
         </script>
 
     </div>
+</div>
 </div>

@@ -129,6 +129,7 @@ return [
     'sign up'=>'حساب جديد',
 
 
+    'display all rols' => 'عرض كل الصلاحيات',
 
 
 

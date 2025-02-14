@@ -923,17 +923,18 @@ body[dir="rtl"].p-der {
         width: 260px;
     }
 
-    .user_name{
-        border-radius: 15px 0px 0px 0;
-        padding: 5px 15px;
-        left: 80%;
-        right: 0;
-    }
-    body[dir="rtl"] .user_name{
-        border-radius: 0px 15px 0px 0;
-        left: 0;
-        right: 80%;
-    }
+.user_name{
+    padding: 5px 15px;
+    left: 60%;
+    right: 0;
+}
+.fonts-6 {
+    font-size: 14px;
+}
+body[dir="rtl"] .user_name{
+    left: 0;
+    right: 60%;
+}
 
     .toggle_icon {
         font-size: 50px;
@@ -1050,15 +1051,16 @@ body[dir="rtl"].p-der {
     }
 
     .user_name{
-        border-radius: 15px 0px 0px 0;
-        padding: 5px 15px;
-        left: 80%;
+        padding: 4px 13px;
+        left: 65%;
         right: 0;
     }
+    .fonts-6 {
+        font-size: 12px;
+    }
     body[dir="rtl"] .user_name{
-        border-radius: 0px 15px 0px 0;
         left: 0;
-        right: 80%;
+        right: 65%;
     }
 
     .topic-name,
@@ -1140,12 +1142,12 @@ body[dir="rtl"].p-der {
     
     .user_name{
         padding: 4px 12px;
-        left: 70%;
+        left: 60%;
         right: 0;
     }
     body[dir="rtl"] .user_name{
         left: 0;
-        right: 70%;
+        right: 60%;
     }
 
     .menu-name,
@@ -1300,12 +1302,12 @@ body[dir="rtl"].p-der {
 
     .user_name{
         padding: 3px 10px;
-        left: 60%;
+        left: 50%;
         right: 0;
     }
     body[dir="rtl"] .user_name{
         left: 0;
-        right: 60%;
+        right: 50%;
     }
 
     .sidebar.close .list-ul {
@@ -1708,4 +1710,15 @@ body[dir="rtl"] .space-y-1 li {
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+/* font size */
+f
+.fs-10 {
+    font-size: 10px;
+}
+.fs-12 {
+    font-size: 12x;
+}
+.fs-15 {
+    font-size: 15px;
 }

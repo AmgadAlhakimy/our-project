@@ -106,25 +106,19 @@ return [
 
     'home text'=>'Kindergarten and schools of PLANET JUNIORS ACADEMY',
 
-
-
-
     'Reception'=>'Reception',
     'Nursery'=>'Nursery',
     'KG1'=>'KG1',
     'KG2'=>'KG2',
     'share'=>'Share',
 
-
     'show'=>'Show',
     'date :'=>'Date :',
 
-
-
-
-
     'login'=>'Longin',
     'sign up'=>'Sign Up',
+
+    'display all rols' => 'display all rols',
 
 
 ];

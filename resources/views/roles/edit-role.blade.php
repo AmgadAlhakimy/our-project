@@ -16,7 +16,7 @@
                     <input type="text" class="form-control" id="name" wire:model.live.debounce.500ms="name">
                     @error('name') <small class="form-text text-danger">{{ $message }}</small> @enderror
                 </div>
-                <div>
+                <div> 
                     <hr class=" ">
                 </div>
                 <!-- 2 -->

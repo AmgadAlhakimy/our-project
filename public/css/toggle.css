@@ -88,3 +88,8 @@
 body[dir="rtl"] .user_name{
     border-radius: 0px 15px 0px 0;
 }
+
+.table-section table thead th div{
+    display: flex;
+    justify-content: center;
+}
