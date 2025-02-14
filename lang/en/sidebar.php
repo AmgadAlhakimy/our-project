@@ -107,5 +107,6 @@ return [
     'teacher section' => 'Teacher Section',
     'major section' => 'Major Section',
     'view records' => 'View Records',
+    'check out section' => 'check out section',
 
 ];

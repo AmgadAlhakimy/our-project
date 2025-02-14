@@ -9,7 +9,7 @@
                     'whole notebook for specific student',
     ])
         <div class="followup notebook">
-            <p class="title">{{__('followup.followup notebook')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i>
+            <p class="title">{{__('follow_up.follow-up notebook')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i>
             </p>
             {{-- ---المعلمين--- --}}
 

@@ -130,6 +130,8 @@ return [
 
 
     'display all rols' => 'عرض كل الصلاحيات',
+    
+    'check out section' => 'قسم الانصراف',
 
 
 

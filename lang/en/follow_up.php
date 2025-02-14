@@ -26,7 +26,7 @@ return [
     'food'=>'Food', 
     'snack'=>'Snack',
     'whole notebook'=>'Whole Notebook',
-    'follow-up notebook'=>'Follow-up Notebook',
+    'follow-up notebook'=>'Follow Up Notebook',
     'please select how many times'=>'Please, Select How Many Times',
     'please select the quantity of snack'=>'Please, Select The Quantity of Snack',
     'please select the quantity of food'=>'Please, Select The Quantity of Food',

@@ -15,7 +15,7 @@ class CreateUser extends Component
     public function mount()
     {
         if (!auth()->check() || !auth()->user()->hasPermissionTo('create user')) {
-            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+            return redirect()->route('home')->with('error', 'auth.unauthorized access');
         }
         $this->allRoles = Role::pluck('name', 'name')->toArray(); // Fetch roles from DB
     }
