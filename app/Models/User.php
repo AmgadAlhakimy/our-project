@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Parents\Parents;
+use App\Models\Teacher\Teacher;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -37,5 +39,25 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'roles_name' => 'array',
     ];
+
+    public function parent()
+    {
+        return $this->belongsTo(Parents::class);
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+
+    public function isParent()
+    {
+        return !is_null($this->parent_id);
+    }
+
+    public function isTeacher()
+    {
+        return !is_null($this->teacher_id);
+    }
 
 }

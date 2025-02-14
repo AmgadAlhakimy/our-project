@@ -32,22 +32,23 @@
                 {{-- ---شؤون الموظفين--- --}}
                 <!-- ======================== EMB ========================== -->
             </ul>
-            
+
         </div>
     </div>
-    
+
 </div>
 
 <div class="section-home mt-5">
     <div id="my_toggle" class="">
-        
+
         <div id="myDive" class="toggle-sidebar">
             @include('layouts.toggle-section.toggle-section')
         </div>
     </div>
 </div>
 
-@include('layouts.users_time')
+{{--@include('layouts.user-time')--}}
+@livewire('user-time')
 @include('layouts.js_links')
 </body>
 </html>

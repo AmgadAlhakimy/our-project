@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->text('roles_name');
             $table->string('status',10);
+            $table->foreignId('parent_id')->nullable()->constrained('parents')->onDelete('cascade');
+            $table->foreignId('teacher_id')->nullable()->constrained('teachers')->onDelete('cascade');
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();
