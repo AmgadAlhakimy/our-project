@@ -7,7 +7,7 @@
 
     <form wire:submit="save" action="">
         @csrf
-        <h3 class="container-title">{{ __('user.new user') }}</h3>
+        {{-- <h3 class="form-label fs-6 display-1">{{ __('user.new user') }}</h3> --}}
 
 
 
@@ -120,7 +120,7 @@
                 </div>
                 <!-- Password --> 
 
-                
+
                 <div class="box col-lg-6 col-md-6">
                     <label class="form-text " type="text" for="password">{{ __('user.password') }}</label>
                     <div class="input-container">

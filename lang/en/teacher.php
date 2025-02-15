@@ -65,6 +65,7 @@ return [
     'new teacher'=>'New Teacher',
     'edit teacher'=>'Edit Teacher',
     'display teachers'=>'Display Teachers',
+    'choose teacher'=>'choose teacher',
 
 
 

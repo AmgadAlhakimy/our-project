@@ -67,6 +67,7 @@ return [
     'new teacher'=>'معلم جديد',
     'edit teacher'=>'تعديل المعلم',
     'display teachers'=>'عرض المعلمين',
+    'choose teacher'=>'اختر المعلمين',
 
 
 
