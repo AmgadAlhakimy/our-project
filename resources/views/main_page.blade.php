@@ -43,10 +43,9 @@
                                     {{ $properties['native'] }}
                                 </div>
                                 </a>
-                            </dib>
+                            </div>
                         @endforeach
                     </div>
-                </div>
             </nav>
             <!-- Navbar End -->
             <div class="container-fluid p-0 mb-5">

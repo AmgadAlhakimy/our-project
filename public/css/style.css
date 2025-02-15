@@ -537,3 +537,17 @@ h6,
     height: 100px;
     max-width: 100px;
 }
+.container_lang{
+    position: absolute;
+    background-color: white; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: auto;
+    left: 0%;
+    top: 0%;
+    margin: 0px 0px;    
+    
+}
+.remember_check{
+    z-index: 9999;
+}

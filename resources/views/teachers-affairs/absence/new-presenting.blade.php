@@ -69,7 +69,7 @@
                                                value={{("absent.$index") ? 'present' : 'absent' }} checked>
                                                
                                         <div class="absent-checkbox"></div>
-                                        <div class="mt-2 check_style">
+                                        <div class="mt-2 check_style"></div>
                                             @error("absent.$index")
                                             <small class="form-text text-danger">{{$message}}</small>
                                         @enderror
