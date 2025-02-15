@@ -15,6 +15,7 @@ return [
 
     'absent'=>'Absent',
     'present'=>'Present',
+    'absent section'=>'Absent Section',
     'absent reason'=>'Absent Reason',
     'absent children'=>'Absent Children',
     'presenting children'=>'Presenting Children',
@@ -25,6 +26,7 @@ return [
     'that is cool no absent students today'=>"Hoo ho That's Cool No Absent Students Today",
     'come on yo! did not you just present students for today'=>"Come on Yo! Didn't just present students for today",
     'you can not edit absent children while there is no one absent'=>"What are you doing? You can not edit absent children while there is no one absent",
+    'no absence records found for this student'=>'No absence records found for this student.',
 
 
     'display absent for this month'=>"Review of this month's absent children",

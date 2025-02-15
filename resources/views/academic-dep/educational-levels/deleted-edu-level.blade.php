@@ -4,7 +4,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('edulevel.DELETED EDUCATIONAL LEVELS')}}</h4>
+                <h4 class="col container-title mt-2">{{__('edulevel.deleted educational levels')}}</h4>
             </div>
         </div>
 

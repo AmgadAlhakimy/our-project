@@ -44,8 +44,6 @@
                                     }
                                 }
                             </script>
-
-
                         </div>
                         <!-- garden number  -->
                     </div>
@@ -243,7 +241,7 @@
                                 {{-- -*- --}}
                             @if($checks[0])
                                 <div class="row">
-                                    
+
                                     <input type="text" class=" form-control ms-1 me-1 col col-ms-12"
                                     placeholder="{{__('student.medicine name in English')}}"
                                            wire:model.live.debounce.500ms="medicine_desc"
@@ -253,7 +251,7 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
-                                    <input type="text" class=" form-control ms-1 me-1 col col-ms-12" 
+                                    <input type="text" class=" form-control ms-1 me-1 col col-ms-12"
                                     placeholder="{{__('student.medicine name in Arabic')}}"
                                            wire:model.live.debounce.500ms="medicine_desc_ar"
                                            id="" value="{{old('medicine_desc_ar')}}"
@@ -279,7 +277,7 @@
                             {{-- -*- --}}
                         @if($checks[1])
                                 <div class="row">
-                                    <input type="text" class=" form-control ms-1 me-1 col" 
+                                    <input type="text" class=" form-control ms-1 me-1 col"
                                     placeholder="{{__('student.allergy description in English')}}"
                                             wire:model.live.debounce.500ms="allergy_desc"
                                             id="std_allergy_desc_1"
@@ -288,8 +286,8 @@
                                     @error('allergy_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
-                                    {{-- -*- --}}                               
-                                    <input type="text" class=" form-control ms-1 me-1 col" 
+                                    {{-- -*- --}}
+                                    <input type="text" class=" form-control ms-1 me-1 col"
                                     placeholder="{{__('student.allergy description in Arabic')}}"
                                            wire:model.live.debounce.500ms="allergy_desc_ar"
                                            id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
@@ -317,7 +315,7 @@
                             {{-- -*- --}}
                         @if($checks[2])
                                 <div class="row">
-                                        <input type="text" class=" form-control ms-1 me-1 col" 
+                                        <input type="text" class=" form-control ms-1 me-1 col"
                                         placeholder="{{__('student.health problem description in English')}}"
                                             wire:model.live.debounce.500ms="health_problem_desc"
                                             id="std_health_desc_1"
@@ -327,8 +325,8 @@
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
-                                    
-                                    <input type="text" class=" form-control ms-1 me-1 col" 
+
+                                    <input type="text" class=" form-control ms-1 me-1 col"
                                     placeholder="{{__('student.health problem description in Arabic')}}"
                                     wire:model.live.debounce.500ms="health_problem_desc_ar"
                                     id="std_health_desc_2"

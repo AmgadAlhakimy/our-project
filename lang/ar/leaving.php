@@ -14,6 +14,7 @@ return [
     */
     'leaving'=>'الإنصراف',
     'left'=>'إنصرف',
+    'left reason'=>'سبب المغادرة',
     'leaving time'=>'وقت الإنصراف',
     'updated leaving time'=>'وقت تعديل الإنصراف',
     'display leaving'=>'عرض الإنصراف',
@@ -23,6 +24,7 @@ return [
     'sorry you have not checked any student'=>'عذراً ولكن لم تقم بتأشير أي طالب',
     'you can not edit left children while there is no one left'=>'عذراً لا يمكنك التعديل على الإنصراف بينما لا يوجد طلاب منصرفين',
     'sorry you have already checked leaving students for this class'=>'عذراً لقد تم التأشير على إنصراف الطلاب لهذا الصف',
+    'no leaving record found for this student'=>'لم يتم العثور على سجل مغادرة لهذا الطالب',
 
 
 ];

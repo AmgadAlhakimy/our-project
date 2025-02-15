@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Student\StudentController;
+use App\Livewire\Absent\AbsentSingleStudent;
 use App\Livewire\AcademicDep\DisplayActivities;
 use App\Livewire\AcademicDep\DisplayActivityClassrooms;
 use App\Livewire\AcademicDep\DisplayClassrooms;
@@ -13,13 +14,13 @@ use App\Livewire\AcademicDep\DisplayTeachers;
 use App\Livewire\FollowUp\DisplayFollowUp;
 use App\Livewire\FollowUp\DisplayFollowUpMonthly;
 use App\Livewire\FollowUp\FollowUpNoteBook;
+use App\Livewire\Leaving\LeftSingleStudent;
 use App\Livewire\Roles\DisplayRoles;
 use App\Livewire\StudentsAffairs\Parents\DisplayParents;
 use App\Livewire\StudentsAffairs\Student\DisplayStudents;
 use App\Livewire\Users\DisplayUsers;
-use Illuminate\Support\Facades\Route;
 
-Route::get('/display-followUpNoteBook/{student_id}/{classroom_id}',FollowUpNoteBook::class)->name('display-follow-up-notebook');
+Route::get('/display-followUpNoteBook/{student_id}',FollowUpNoteBook::class)->name('display-follow-up-notebook');
 Route::get('/display-followUpMonthly/{classroom_id}',DisplayFollowUpMonthly::class)->name('display-followUpMonthly');
 Route::get('/followup-children/{classroom_id}',DisplayFollowUp::class)->name('follow_up_children-display');
 Route::get('/activity-classrooms',DisplayActivityClassrooms::class)->name('display-activity-classrooms');
@@ -37,5 +38,7 @@ Route::get('/teachers',DisplayTeachers::class)->name('display-teachers');
 Route::get('/display-users', DisplayUsers::class)->name('display-users');
 Route::get('/display-roles', DisplayRoles::class)->name('display-roles');
 Route::get('/parents',DisplayParents::class)->name('display-parents');
+Route::get('/parents/absent/child/{student_id}',AbsentSingleStudent::class)->name('absent-single-student');
+Route::get('/parents/left/child/{student_id}',LeftSingleStudent::class)->name('left-single-student');
 
 

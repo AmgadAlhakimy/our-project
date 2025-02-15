@@ -194,8 +194,10 @@ class PermissionTableSeeder extends Seeder
                 'en' => 'Parents',
                 'ar' => 'الأباء',
                 'permissions' => [
-                    ['student information', 'معلومات الطالب بالكامل'],
-                    ['display absence and leaving', 'عرض الغياب والإنصراف'],
+                    ['about children', 'معلومات الطالب بالكامل'],
+                    ['child followup notebook', 'دفتر متابعة الطالب'],
+                    ['absent info', 'عرض الغياب'],
+                    ['leaving info', 'عرض الإنصراف'],
                 ],
             ],
 

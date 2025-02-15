@@ -11,14 +11,14 @@ return [
     | the validator class. Some of these rules have multiple versions such
     | as the size rules. Feel free to tweak each of these messages here.
     |
-    */ 
+    */
 
-    
+
     //create educational Level
     'educational Level'=>'EDUCATIONAL LEVEL',
     'create new educational Level'=>'CREATE NEW EDUCATIONAL LEVEL',
     'update educational Level'=>'Update Educational Level',
-    'DELETED EDUCATIONAL LEVELS'=>'DELETED EDUCATIONAL LEVELS',
+    'deleted educational levels'=>'Deleted Educational Levels',
 
     'educational Level name in english'=>'Educational Level Name in English',
     'educational Level name in arabic'=>'Educational Level Name in Arabic',

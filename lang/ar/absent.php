@@ -16,6 +16,7 @@ return [
     'absent'=>'غائب',
     'present'=>'حاضر',
     'absent reason'=>'سبب الغياب',
+    'absent section'=>'قسم الغياب',
     'absent children'=>'الأطفال الغائبين',
     'presenting children'=>'تحضير الأطفال',
     'display absent children'=>'عرض الأطفال الغائبين',
@@ -26,6 +27,9 @@ return [
     'come on yo! did not you just present students for today'=>"هيا ماهو! عادك الا حضرت الطلاب هذا اليوم",
     'you can not edit absent children while there is no one absent'=>"عذراً لايمكن تعديل الطلاب الغائبين قبل التحضير",
     'display absent for this month'=>"استعراض الاطفال الغائبين لهذا الشهر",
+    'no absence records found for this student'=>'لم يتم العثور على سجلات غياب لهذا الطالب.',
+
+    'days of absence' => 'ايام الغياب',
 
     'days of absence' => 'ايام الغياب',
 

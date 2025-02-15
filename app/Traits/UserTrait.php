@@ -25,8 +25,15 @@ trait UserTrait
     #[Rule('required|array')]
     public $roles_name = [];
 
-    public $allRoles;
 
+    #[Rule('nullable|exists:parents,id')]
+    public $parents_id;
+    #[Rule('nullable|exists:teachers,id')]
+    public $teacher_id;
+
+    public $allRoles;
+    public $father_search = '';
+    public $teacher_search = '';
 
 
     public $passwordRequirements = [
@@ -54,6 +61,14 @@ trait UserTrait
         return (count($completed) / count($this->passwordRequirements)) * 100;
     }
 
+
+    public function messages(): array
+    {
+        return [
+            'parents_id.exists' => __('student.this superior does not exist check the list'),
+            'teacher_id.exists' => __('student.this teacher does not exist check the list'),
+        ];
+    }
 
 
 }

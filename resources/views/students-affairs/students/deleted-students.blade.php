@@ -4,7 +4,7 @@
     <div class="table-header">
         {{-- the title and search --}}
         <div class="row first-card ">
-            <h4 class="col container-title mt-2">{{trans('sidebar.deleted students')}}</h4>
+            <h4 class="col container-title mt-2">{{trans('student.deleted students')}}</h4>
         </div>
     </div>
 
@@ -61,12 +61,11 @@
                             <div class="th-head-3 form-label">{{__('public.processes')}}</div>
                         </th>
                     </tr>
-<<<<<<< HEAD
                 </thead>
                 <tbody>
                     <?php $counter = 1 ?>
 
-                    
+
                     @foreach($students as $student)
                     <tr>
                         <td class="num_table ">{{$counter}}</td>
@@ -121,27 +120,6 @@
                                     {{$student->classroom->name}}
                                 </div>
                             </td>
-
-
-
-=======
-                    </thead>
-                    <tbody>
-                    @foreach($students  as $student )
-                        <tr>
-                            <td>{{$student->id}}</td>
-                            <td>{{$student->name}}</td>
-                            <td><img
-                                    src="{{asset('storage/'.$student->photo)}}"
-                                    class="student-img" alt="photo">
-                            </td>
-                            <td>{{$student->address}}</td>
-                            <td>{{$student->gender}}</td>
-                            <td>{{$student->birthdate}}</td>
-                            <td>{{$student->place_of_birth}}</td>
-                            <td>{{$student->created_at}}</td>
-                            <td>{{$student->updated_at}}</td>
->>>>>>> de1c8a7c890d34d9fe467ac5cfa3884db49ff369
                             @can('who did this')
                                 <td>
                                     <div class="td_rect">

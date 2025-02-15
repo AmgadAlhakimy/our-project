@@ -14,6 +14,7 @@ return [
     */
     'leaving'=>'Leaving',
     'left'=>'Left',
+    'left reason'=>'Left Reason',
     'leaving time'=>'Leaving Time',
     'updated leaving time'=>'Updated Leaving Time',
     'display leaving'=>'Display Leaving',
@@ -23,4 +24,5 @@ return [
     'you can not edit left children while there is no one left'=>'You Can Not Edit Left Children while there is no one left',
     'sorry you have not checked any student'=>'Sorry! you have not checked any student',
     'sorry you have already checked leaving students for this class'=>'Sorry! you have already checked leaving students for this class',
+    'no leaving record found for this student'=>'No leaving record found for this student.',
 ];

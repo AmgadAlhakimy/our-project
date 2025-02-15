@@ -6,7 +6,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('classroom.delete classrooms')}}</h4>
+                <h4 class="col container-title mt-2">{{__('classroom.deleted classrooms')}}</h4>
             </div>
         </div>
         <!-- table-hover table-striped -->

@@ -110,6 +110,7 @@ return [
     'edit superior'=> 'Edit Superior',
     'edit student'=> 'Edit Student',
     'deleted superiors'=> 'Deleted Superiors',
+    'deleted students'=> 'Deleted Students',
     'medicine name in English'=>'Medicine name in English',
     'medicine name in Arabic'=>'Medicine name in Arabic',
     'allergy description in English'=>'Allergy description in English',
