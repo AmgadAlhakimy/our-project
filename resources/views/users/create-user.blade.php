@@ -24,14 +24,15 @@
                     <input type="email" class="form-control" id="email" wire:model.live.debounce.500ms="email">
                     @error('email') <small class="form-text text-danger">{{ $message }}</small> @enderror
                 </div>
-                <!-- Password -->
+                <!-- Password --> 
+
+                
                 <div class="box col-lg-6 col-md-6">
                     <label class="form-text " type="text" for="password">{{ __('user.password') }}</label>
                     <div class="input-container">
                             <input type="password" class="form-control rols_input" id="password"
                                 wire:model.live.debounce.500ms="password">
                         @error('password')<small class="form-text text-danger">{{$message}}</small>@enderror
-
                             <div class="conditions-list">
                                 {{-- 1 --}}
                                 <div class="w-full bg-gray-200 rounded-full h-2 mb-2">
