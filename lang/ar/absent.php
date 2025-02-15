@@ -31,4 +31,6 @@ return [
 
     'days of absence' => 'ايام الغياب',
 
+    'days of absence' => 'ايام الغياب',
+
 ];

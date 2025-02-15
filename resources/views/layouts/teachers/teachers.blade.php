@@ -10,6 +10,7 @@
     ])
         <div class="followup notebook">
             <p class="title">{{__('follow_up.follow-up notebook')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
+
             {{-- ---المعلمين--- --}}
 
             @can('create followup notebook')
@@ -205,7 +206,6 @@
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
                         <i class="icon-1 fa-solid fa-list-check"></i>
-
                         <span class="menu-name">{{__('leaving.display leaving')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
