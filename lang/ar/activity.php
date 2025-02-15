@@ -24,7 +24,7 @@ return [
     'date of Activity'=>'تاريخ النشاط',
     'other info'=>'معلومات أخرى',
     'activity'=>'النشاط',
-    'DELETED ACTIVITIES'=>'حذف النشاط',
+    'deleted activities'=>'الأنشطة المحذوفة',
     'activities'=>'الأنشطة',
     'update Activity'=>'تعديل النشاط: ',
     'please select an activity'=>'الرجاء اختيار نشاط',

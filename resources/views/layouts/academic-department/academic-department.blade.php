@@ -70,7 +70,7 @@
             <!-- ========== 1 ============ -->
             <div class="sidebar-title">
                 <a href="#" class="li-link title-4">
-                    <i class="icon-1 fa-solid fa-school"></i>
+                    <i class="icon-1  fa-solid fa-plus"></i>
                     <span class="menu-name"> {{__('sidebar.addition')}} </span>
                     <i class="icon-1 fa-solid fa-chevron-down"></i>
                 </a>
@@ -107,7 +107,7 @@
             <!-- ========== 2 ============ -->
             <div class="sidebar-title">
                 <a href="#" class="li-link title-4">
-                    <i class="icon-1 fa-solid fa-clipboard-list"></i>
+                    <i class="icon-1 fa-solid fa-display"></i>
                     <span class="menu-name"> {{__('sidebar.display')}} </span>
                     <i class="icon-1 fa-solid fa-chevron-down"></i>
                 </a>
@@ -183,7 +183,8 @@
             <!-- ========== 2 ============ -->
             <div class="sidebar-title">
                 <a href="#" class="li-link title-4">
-                    <i class="icon-1 fa-solid fa-user-tie"></i>
+                    <i class="icon-1 fa-solid fa-person-chalkboard"></i>
+                    {{-- <i class="icon-1 fa-thin fa-person-chalkboard"></i> --}}
                     <span class="menu-name">{{__('personnel-affairs.teachers')}}</span>
                     <i class="icon-1 fa-solid fa-chevron-down"></i>
                 </a>

@@ -113,6 +113,7 @@ return [
     'edit superior'=> 'تعديل ولي الأمر',
     'edit student'=> 'تعديل الطالب',
     'deleted superiors'=> 'أولياء الأمور المحذوفة',
+    'deleted students'=>'الطلاب المحذوفين',
 
     'medicine name in English'=>'اسم الدواء بالإنجليزية',
     'medicine name in Arabic'=>'اسم الدواء بالعربية',

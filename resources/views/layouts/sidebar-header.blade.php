@@ -21,7 +21,7 @@
                 <span class="notification p-relative">
                     <i class="fa-regular fa-bell fa-fw "></i>
                 </span>
-                <a href="{{route('profile.edit')}}" class="btn--profile">
+                <a href="{{route('profile.edit')}}" class="">
                     <img src="{{URL::asset('assets/images/layouts/skills-02.jpg')}}" alt="skills" />
                 </a>
             </div>

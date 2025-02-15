@@ -5,7 +5,7 @@
         <div class="table-header">
             {{-- the title and search --}}
             <div class="row first-card ">
-                <h4 class="col container-title mt-2">{{__('subject.DELETED SUBJECTS')}}</h4>
+                <h4 class="col container-title mt-2">{{__('subject.deleted subjects')}}</h4>
 
             </div>
         </div>

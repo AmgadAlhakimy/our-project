@@ -42,6 +42,11 @@ return [
     'students affairs'=>'شؤون الطلاب',
     'student'=>'الطالب',
     'new student'=>'طالب جديد',
+    'check out section'=>'قسم الإنصراف',
+    'about children'=>'معلومات الطلاب',
+    'followup notebook'=>'دفتر متابعة الطالب',
+    'absent info'=>'الغياب',
+    'leaving info'=>'الإنصراف',
 
     'display students'=>'عرض الطلاب',
     'deleted students'=>'الطلاب المحذوفة',

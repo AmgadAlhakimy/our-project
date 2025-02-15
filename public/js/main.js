@@ -47,19 +47,19 @@ window.addEventListener("DOMContentLoaded", function () {
             if (body.dir === "rtl") {
                 my_toggle.style.transition = "all .5s ease";
                 if (isActive) {
-                    my_toggle.style.margin = "0px 90px 0px 0px";
+                    my_toggle.style.margin = "0px 100px 0px 0px";
                     // my_toggle.style.backgroundColor = "blue";
                 } else {
-                    my_toggle.style.margin = "0px 240px 0px 0px";
+                    my_toggle.style.margin = "0px 250px 0px 0px";
                     // my_toggle.style.backgroundColor = "black";
                 }
             } else {
                 my_toggle.style.transition = "all .5s ease";
                 if (isActive) {
-                    my_toggle.style.margin = "0px 0px 0px 90px";
+                    my_toggle.style.margin = "0px 0px 0px 100px";
                     // my_toggle.style.backgroundColor = "green";
                 } else {
-                    my_toggle.style.margin = "0px 0px 0px 240px";
+                    my_toggle.style.margin = "0px 0px 0px 250px";
                     // my_toggle.style.backgroundColor = "yellow";
                 }
             }

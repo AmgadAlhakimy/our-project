@@ -9,15 +9,14 @@
                     'whole notebook for specific student',
     ])
         <div class="followup notebook">
-            <p class="title">{{__('followup.followup notebook')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i>
-            </p>
+            <p class="title">{{__('follow_up.follow-up notebook')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
             {{-- ---المعلمين--- --}}
 
             @can('create followup notebook')
                 <li class="dropdown">
                     <div class="sidebar-title">
                         <a href="#" class="li-link title-4">
-                            <i class="icon-1 fa-solid fa-baby"></i>
+                            <i class="icon-1 fa-solid fa-book-open"></i>
                             <span class="menu-name">{{__('student.followup notebook')}}</span>
                             <i class="icon-1 fa-solid fa-chevron-down"></i>
                         </a>
@@ -39,7 +38,7 @@
                 <li class="dropdown">
                     <div class="sidebar-title">
                         <a href="#" class="li-link title-4">
-                            <i class="icon-1 fa-solid fa-baby"></i>
+                            <i class="icon-1 fa-solid fa-book-open-reader"></i>
                             <span class="menu-name">{{__('student.display followup notebook')}}</span>
                             <i class="icon-1 fa-solid fa-chevron-down"></i>
                         </a>
@@ -59,7 +58,7 @@
                 <li class="dropdown">
                     <div class="sidebar-title">
                         <a href="#" class="li-link title-4">
-                            <i class="icon-1 fa-solid fa-baby"></i>
+                            <i class="icon-1 fa-solid fa-book"></i>
                             <span class="menu-name">{{ __('follow_up.whole notebook') }}</span>
                             <i class="icon-1 fa-solid fa-chevron-down"></i>
                         </a>
@@ -90,10 +89,11 @@
                     'edit absent individually',
     ])
         @can('presenting children')
+                <p class="title">{{__('absent.absent section')}}<i class="ms-1 me-1 fa-solid fa-person-chalkboard"></i></p>
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-list-check"></i>
+                        <i class="icon-1 fa-regular fa-square-check"></i>
                         <span class="menu-name">{{__('absent.presenting children')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -136,7 +136,7 @@
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-list-check"></i>
+                        <i class="icon-1 fa-solid fa-check-double"></i>
                         <span class="menu-name">{{__('absent.edit absent children')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -156,8 +156,7 @@
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-baby"></i>
-
+                        <i class="icon-1 fa-regular fa-address-book"></i>
                         <span class="menu-name">{{ __('absent.display absent for this month') }}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -186,7 +185,7 @@
             <li class="dropdown">
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
-                        <i class="icon-1 fa-solid fa-list-check"></i>
+                        <i class="icon-1 fa-solid fa-list-ol"></i>
                         <span class="menu-name">{{__('leaving.leaving')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>
@@ -206,6 +205,7 @@
                 <div class="sidebar-title">
                     <a href="#" class="li-link title-4">
                         <i class="icon-1 fa-solid fa-list-check"></i>
+
                         <span class="menu-name">{{__('leaving.display leaving')}}</span>
                         <i class="icon-1 fa-solid fa-chevron-down"></i>
                     </a>

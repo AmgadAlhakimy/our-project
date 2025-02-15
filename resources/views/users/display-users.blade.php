@@ -79,18 +79,6 @@
                         </button>
                     </th>
                     <th>
-                        <button wire:click="ordering('email_verified_at')" class=" ">
-                            <div class="table_test form-label ">
-                                {{__('user.email verified at')}}
-                                @if($arrow and $showArrow === 'email_verified_at')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-down"></i>
-                                @elseif(!$arrow and $showArrow === 'email_verified_at')
-                                    <i class="me-2 ms-2  fa-solid fa-chevron-up"></i>
-                                @endif
-                            </div>
-                        </button>
-                    </th>
-                    <th>
                         <button wire:click="ordering('created_at')" class=" ">
                             <div class="table_test form-label ">
                                 {{__('public.created at')}}
@@ -150,11 +138,6 @@
                         <td>
                             <div class="td_rect">
                                 {{$user->status}}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="td_rect">
-                                {{$user->email_verified_at}}
                             </div>
                         </td>
                         <td>

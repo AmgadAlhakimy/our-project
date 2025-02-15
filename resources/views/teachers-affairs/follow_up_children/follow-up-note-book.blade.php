@@ -44,7 +44,7 @@
                     <table class=" " id="check_table_FollowUp">
                         <tr>
                             <th class=" num_follow_table stuck">{{__('subject.subject')}}</th>
-                            @foreach($classroom->subjects as $subject)
+                            @foreach($student->classroom->subjects as $subject)
                                 <td class="  border-lr ">
                                     <div class="th-head-3 title-3">
                                         {{ $subject->name }}

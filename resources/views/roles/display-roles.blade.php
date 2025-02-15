@@ -54,7 +54,7 @@
                         </button>
                     </th>
 
-                    <th>
+                    <th> 
                         <button wire:click="ordering('updated_at')" class="">
                             <div class="table_test form-label ">
                                 {{__('public.updated at')}}
@@ -67,8 +67,14 @@
                         </button>
                     </th>
 
-                    <th colspan="">
-                        <div class="th-head-3 form-label">{{__('public.processes')}} </div>
+                    <th class="d-flex justify-content-center" >
+                        <div class="th-head-2  form-label">{{__('public.display all rols')}} </div>
+                    </th>
+
+                    <th class="">
+                        <div class="d-flex justify-content-center">
+                            <div class="th-head-3 form-label">{{__('public.processes')}} </div>
+                        </div>
                     </th>
                 </tr>
                 </thead>
@@ -101,6 +107,8 @@
 
                                 </a>
                             @endcan
+                        </td>
+                        <td>
                             @can('edit role')
                                 <a href="{{route('edit-role',$role->id)}}"
                                    class="btn save-button btn-success w-25 me-1 ms-1 ">

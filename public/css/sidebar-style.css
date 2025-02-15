@@ -59,26 +59,28 @@
 
 .sidebar.close:hover {
     width: 250px;
+    transition: all 0.5s;
 }
 
 .sidebar.close:hover .list-ul li .sidebar-title .li-link {
     border-radius: 8px;
     box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.1);
     border: 1px solid var(--border-color);
+    transition: all 1s;
+
 }
 
 .sidebar.close:hover .list-ul li .sidebar-title .li-link .icon-1 {
     font-size: 16px;
+    transition: all 1s;
 }
 
 .sidebar.close li.dropdown.active .submenu {
     display: none;
-    transition: all 0.5s;
+    transition: all 1s ease;
+
 }
 
-.sidebar.close li.dropdown.active .li-link {
-    width: 1000px;
-}
 
 .sidebar.close .list-ul li .sidebar-title .li-link {
     box-shadow: none;
@@ -87,7 +89,26 @@
     align-items: center;
     border-radius: 0px;
     border: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--grey-color);
+
+}
+.sidebar.close .list-ul li .sidebar-title .li-link::after {
+        content: '';
+        position: absolute; 
+        left: 15%; 
+        right: 15%;
+        bottom: 8px;
+        height: 1px;
+        box-shadow: 0 5px 2px rgba(0, 0, 0, 0.3); 
+}
+.sidebar.close:hover .list-ul li .sidebar-title .li-link::after {
+        content: ''; 
+        left: 0; 
+        right: 0;
+        bottom: 0px;
+        height: 0px;
+        transition: all 1s;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3); 
 }
 
 .sidebar.close .list-ul li .sidebar-title .li-link .icon-1 {
@@ -96,7 +117,9 @@
 
 .sidebar.close:hover li.dropdown.active .submenu {
     display: block;
-    transition: all 0.5s;
+    transition: all 0.5s ease;
+
+    
 }
 
 .sidebar li.dropdown .submenu .li-link {
@@ -158,6 +181,8 @@
     /* background-color: var(--green-color); */
     border-color: var(--green-color);
     color: var(--green-color);
+    transition: all 0.5s ease;
+
 }
 
 .list-ul li .sidebar-title .icon-1 {
@@ -198,6 +223,8 @@
     height: unset;
     opacity: 1;
     margin: 0 20px;
+    transition: all 0.5s ease;
+
     /* background-color: #8b0985; */
 }
 

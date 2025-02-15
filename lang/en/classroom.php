@@ -24,6 +24,8 @@ return [
     'classroom'=>'Classroom',
     'classrooms'=>'Classrooms',
     'classroom id'=>'Classroom ID',
+    'deleted classrooms'=>'Deleted Classrooms',
+    'deleted classes'=>'Deleted Classes',
 
     'update classroom'=>'Update Classroom: ',
     'please select a classroom'=>'Please Select a Classroom',

@@ -1,8 +1,6 @@
 <div class="user_name">
     <div class="">
-        <span class=" form-label  ">{{ Auth::user()->name }}</span>
-        <div wire:poll.1s="updateDateTime">
-        <span class="title-3">{{ $dateTime  }}</span>
-        </div>
+        <span class=" form-label fonts-6  ">{{ Auth::user()->name }}</span>
+        <span wire:poll.1s="updateDateTime" class="title-3 fonts-6">{{ $dateTime  }}</span>
     </div>
 </div>
