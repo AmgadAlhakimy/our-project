@@ -32,7 +32,6 @@
                 <thead>
                 <tr>
                     <th class="num_table ">{{__('public.num')}}</th>
-
                     <th>
                         <button wire:click="ordering('name')" class="">
                             <div class="table_test form-label ">
@@ -87,7 +86,6 @@
                     <tr>
                         <td class="num_table ">{{$counter}}</td>
                             <?php $counter++ ?>
-
                         <td>
                             <div class="td_rect">
                                 {{$Level->name}}

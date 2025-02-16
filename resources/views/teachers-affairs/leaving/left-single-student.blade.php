@@ -2,7 +2,8 @@
     <!-- Start Personal Info -->
     <div class="mt-5 mb-5">.</div>
     @if($leftRecords->isEmpty())
-        <p>{{ __('leaving.no leaving record found for this student') }}</p>
+        <p class="container-title ">{{ __('leaving.no leaving record found for this student') }}</p>
+        <i class="form-label mt-5 h2 icon-1 fa-solid fa-hoe-lg-alt"></i>
     @else
         <div class="table-hder">
             <div class="row mt-5">
@@ -16,21 +17,45 @@
             </div>
         </div>
 
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>{{ __('public.date') }}</th>
-                <th>{{ __('leaving.left reason') }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($leftRecords as $leftRecord)
-            <tr>
-                <td>{{ $leftRecord->created_at->format('Y-m-d') }}</td>
-                <td>{{ $leftRecord->leave_reason }}</td>
-            </tr>
-            @endforeach
-            </tbody>
-        </table>
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
+                    <thead>
+                    <tr>
+                        <th class="num_table ">{{__('public.num')}}</th>
+                        <th>
+                            <div class="form-label">
+                                {{ __('public.date') }}
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-label">
+                                {{ __('leaving.left reason') }}
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php $counter = 1 ?>
+                    @foreach($leftRecords as $leftRecord)
+                    <tr>
+                        <td class="num_table ">{{$counter}}</td>
+                            <?php $counter++ ?>
+                        <td>
+                            <div class="td_rect">
+                                {{ $leftRecord->created_at->format('Y-m-d') }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="td_rect">
+                                {{ $leftRecord->leave_reason }}
+                            </div>
+                        </td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+            </div>
     @endif
 </div>

@@ -8,19 +8,19 @@
             <label class="col-md-6 col-sm-12 col-lg-6 ">
                 <div class="search p-relative">
                     <input wire:model.live.debounce.500ms="search" type="text" class="form-control " name="search"
-                           placeholder="{{__('sidebar.search')}}">
+                        placeholder="{{__('sidebar.search')}}">
                 </div>
             </label>
             <div class="col-md-6 col-sm-12 col-lg-6 mt-1">
                 <input type="date" class="form-control cards_title text-center "
-                       wire:model.live.debounce.500ms="search_date">
+                    wire:model.live.debounce.500ms="search_date">
             </div>
         </div>
     </div>
     <div class="table-hder ">
         <div class="row mt-5 ">
             <div class="text-center col-4 col-md-3 col-sm-12 ">
-                <img src="{{asset('storage/'.$student->photo)}}" class="personal_img" alt="photo">
+                <img src="{{asset('storage/' . $student->photo)}}" class="personal_img" alt="photo">
             </div>
             <div class="mt-4 col-8 col-md-9 col-sm-12 row">
                 <div class="col-12 cards_title text-center">{{$student->name}}</div>
@@ -63,26 +63,25 @@
                     </table>
                 </div>
             </div>
-
-            <div class="row mb-2">
+            <div class="row mb-5">
                 <div class="col-lg-4 col-md-4 mt-1 col-ms-12  ">
                     <div class="cards_info_style mt-4 p-2 h-100">
                         <div class="form-label mb-4">{{ __('follow_up.food') }}</div>
                         <p class=" form-label"><strong
-                                class="title-3">{{ __('follow_up.Did the student eat the food?') }}</strong> {{ $student_notebook->food }}
+                                class="title-3">{{ __('follow_up.Did the student eat the food?') }}</strong>
+                            {{ $student_notebook->food }}
                         </p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-4 mt-1 col-ms-12  ">
                     <div class="cards_info_style mt-4 p-2 h-100">
                         <div class="form-label mb-4">{{ __('follow_up.snack') }}</div>
                         <p class=" form-label"><strong
-                                class="title-3">{{ __('follow_up.Did the student eat the snack?') }}</strong> {{ $student_notebook->snack }}
+                                class="title-3">{{ __('follow_up.Did the student eat the snack?') }}</strong>
+                            {{ $student_notebook->snack }}
                         </p>
                     </div>
                 </div>
-
                 <div class="col-lg-4 col-md-4 mt-1 col-ms-12  ">
                     <div class="cards_info_style mt-4 p-2 h-100">
                         <div class="form-label mb-4">{{ __('follow_up.bath') }}</div>
@@ -91,16 +90,15 @@
                         </p>
                     </div>
                 </div>
-            </div>
-
-            <div>
-                الملاحظات
-
-                <div>
-                    {{$student_notebook->note}}
+                <div class="col-12 mt-3">
+                    <div class="cards_info_style mt-4 p-1 ">
+                        <div class="form-label m-4">{{ __('public.note') }}</div>
+                        <div class="box title-3" >
+                            {{$student_notebook->note}}
+                        </div>
+                    </div>
                 </div>
             </div>
-
             <div class="form-label mt-5 mb-0">
                 page( {{$counter++}} )
             </div>
