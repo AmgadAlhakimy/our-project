@@ -18,20 +18,11 @@ class ClassroomSeeder extends Seeder
         $users= User::all();
 
         $classNames = [
-            ['en' => 'Kindergarten One', 'ar' => 'الروضة الأولى'],
-            ['en' => 'Kindergarten Two', 'ar' => 'الروضة الثانية'],
-            ['en' => 'First Grade', 'ar' => 'الصف الأول'],
-            ['en' => 'Second Grade', 'ar' => 'الصف الثاني'],
-            ['en' => 'Third Grade', 'ar' => 'الصف الثالث'],
-            ['en' => 'Fourth Grade', 'ar' => 'الصف الرابع'],
-            ['en' => 'Fifth Grade', 'ar' => 'الصف الخامس'],
-            ['en' => 'Sixth Grade', 'ar' => 'الصف السادس'],
-            ['en' => 'Seventh Grade', 'ar' => 'الصف السابع'],
-            ['en' => 'Eighth Grade', 'ar' => 'الصف الثامن'],
-            ['en' => 'Ninth Grade', 'ar' => 'الصف التاسع'],
-            ['en' => 'Tenth Grade', 'ar' => 'الصف العاشر'],
-            ['en' => 'Eleventh Grade', 'ar' => 'الصف الحادي عشر'],
-            ['en' => 'Twelfth Grade', 'ar' => 'الصف الثاني عشر'],
+            ['en' => 'Nursery', 'ar' => 'الحضانة'],
+            ['en' => 'Pre-K', 'ar' => ' ما قبل الروضة'],
+            ['en' => 'KG1', 'ar' => 'الروضة الأولى'],
+            ['en' => 'KG2', 'ar' => 'الروضة الثانية'],
+            ['en' => 'KG3', 'ar' => 'الروضة الثالثة'],
         ];
 
 

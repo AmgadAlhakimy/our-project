@@ -8,6 +8,7 @@ use App\Http\Requests\Classroom\UpdateClassroomTeacherRequest;
 use App\Models\Classroom\Classroom;
 use App\Models\Classroom\ClassroomTeacher;
 use App\Models\Teacher\Teacher;
+use Auth;
 use Exception;
 
 class ClassroomTeacherController extends Controller
