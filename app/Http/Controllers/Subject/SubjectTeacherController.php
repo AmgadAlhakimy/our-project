@@ -8,6 +8,7 @@ use App\Http\Requests\Subject\UpdateSubjectTeacherRequest;
 use App\Models\Subject\Subject;
 use App\Models\Subject\SubjectTeacher;
 use App\Models\Teacher\Teacher;
+use Auth;
 use Exception;
 
 class SubjectTeacherController extends Controller
@@ -44,6 +45,7 @@ class SubjectTeacherController extends Controller
                 SubjectTeacher::create([
                     'teacher_id' => $request->teacher_id,
                     'subject_id' => $subject_id,
+                    'user_id'=>Auth::id(),
                 ]);
             }
             return redirect()->back()->with(['success' => 'message.success']);

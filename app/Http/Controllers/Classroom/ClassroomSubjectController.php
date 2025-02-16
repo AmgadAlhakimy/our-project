@@ -11,7 +11,7 @@ use App\Models\Subject\Subject;
 use Auth;
 use Exception;
 
-class ClassroomSubjectController extends Controller
+class   ClassroomSubjectController extends Controller
 {
     function __construct()
     {
