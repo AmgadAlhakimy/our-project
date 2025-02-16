@@ -16,9 +16,10 @@ class FollowUpNoteBook extends Component
 
     public function mount()
     {
-        if (!auth()->check() || !auth()->user()->hasPermissionTo('whole notebook for specific student')) {
-            return redirect()->route('dashboard')->with('error', 'auth.unauthorized access');
+        if (!auth()->check() || !auth()->user()->hasAnyPermission(['whole notebook for specific student', 'child followup notebook'])) {
+            return redirect()->route('dashboard')->with('error', __('auth.unauthorized access'));
         }
+
     }
     public function render()
     {

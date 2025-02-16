@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Student;
 use App\Http\Controllers\Controller;
 use App\Models\Classroom\Classroom;
 use App\Models\EducationalLevel;
+use App\Models\Parents\Parents;
 use App\Models\Relative;
 use App\Models\Student\Student;
 use App\Traits\PhotoTrait;
@@ -19,7 +20,6 @@ class StudentController extends Controller
     {
         $this->middleware('permission:delete student', ['only' => ['destroy']]);
         $this->middleware('permission:display deleted students', ['only' => ['show']]);
-        $this->middleware('permission:student more info', ['only' => ['more']]);
         $this->middleware('permission:restore student', ['only' => ['restore']]);
         $this->middleware('permission:forceDelete student', ['only' => ['forceDelete']]);
     }
@@ -105,6 +105,9 @@ class StudentController extends Controller
      */
     public function more($id)
     {
+        if (!auth()->user()->hasAnyPermission(['student more info', 'about children'])) {
+            return redirect()->route('home')->with('error', __('auth.unauthorized access'));
+        }
         try {
             $student = Student::findorFail($id);
             return view('students-affairs.students.student_more_info',

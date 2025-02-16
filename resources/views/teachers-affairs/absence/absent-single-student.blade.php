@@ -2,7 +2,7 @@
     <!-- Start Personal Info -->
     <div class="mt-5 mb-5">.</div>
     @if($absences->isEmpty())
-        <p>{{ __('absent.no absence records found for this student') }}</p>
+        <p class="container-title ">{{ __('absent.no absence records found for this student') }}</p>
     @else
         <div class="table-hder">
             <div class="row mt-5 ">
@@ -15,21 +15,47 @@
                 </div>
             </div>
         </div>
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>{{ __('public.date') }}</th>
-                <th>{{ __('absent.absent reason') }}</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($absences as $absence)
-                <tr>
-                    <td>{{ $absence->created_at->format('Y-m-d') }}</td>
-                    <td>{{ $absence->absent_reason }}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+
+
+        <div class=" shadow-none mt-4 ">
+            <div class="table-section card  ">
+                <table class=" " id="check_table">
+                    <thead>
+                    <tr>
+                        <th class="num_table ">{{__('public.num')}}</th>
+                        <th>
+                            <div class="form-label">
+                                {{ __('public.date') }}
+                            </div>
+                        </th>
+                        <th>
+                            <div class="form-label">
+                                {{ __('absent.absent reason') }}
+                            </div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <?php $counter = 1 ?>
+                    @foreach($absences as $absence)
+                        <tr>
+                            <td class="num_table ">{{$counter}}</td>
+                                <?php $counter++ ?>
+                            <td>
+                                <div class="td_rect">
+                                    {{ $absence->created_at->format('Y-m-d') }}
+                                </div>
+                            </td>
+                            <td>
+                            <div class="td_rect">
+                                {{ $absence->absent_reason }}
+                            </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     @endif
 </div>
