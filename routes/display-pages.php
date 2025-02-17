@@ -15,6 +15,7 @@ use App\Livewire\FollowUp\DisplayFollowUp;
 use App\Livewire\FollowUp\DisplayFollowUpMonthly;
 use App\Livewire\FollowUp\FollowUpNoteBook;
 use App\Livewire\Leaving\LeftSingleStudent;
+use App\Livewire\PromoteStudents;
 use App\Livewire\Roles\DisplayRoles;
 use App\Livewire\StudentsAffairs\Parents\DisplayParents;
 use App\Livewire\StudentsAffairs\Student\DisplayStudents;
@@ -40,5 +41,6 @@ Route::get('/display-roles', DisplayRoles::class)->name('display-roles');
 Route::get('/parents',DisplayParents::class)->name('display-parents');
 Route::get('/parents/absent/child/{student_id}',AbsentSingleStudent::class)->name('absent-single-student');
 Route::get('/parents/left/child/{student_id}',LeftSingleStudent::class)->name('left-single-student');
+Route::get('/students/deportation/next-class',PromoteStudents::class)->name('promote-students');
 
 

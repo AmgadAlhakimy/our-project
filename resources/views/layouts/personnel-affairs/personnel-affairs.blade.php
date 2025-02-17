@@ -17,13 +17,13 @@
 ])
     <p class="title">{{__('user.users and roles')}}<i class="ms-1 me-1 fa-solid fa-users-between-lines"></i></p>
 
-@canany([
-                'create role',
-                'display roles',
-                'edit role',
-                'display role permissions',
-                'delete role',
-])
+    @canany([
+                    'create role',
+                    'display roles',
+                    'edit role',
+                    'display role permissions',
+                    'delete role',
+    ])
         <li class="dropdown">
             <!-- ========== 1 ============ -->
             <div class="sidebar-title">
@@ -46,17 +46,17 @@
                 </div>
             </div>
         </li>
-@endcanany
-@canany([
-     'create user',
-                'display users',
-                'edit user',
-                'change users password',
-                'display deleted users',
-                'delete user',
-                'restore user',
-                'forceDelete user',
-])
+    @endcanany
+    @canany([
+         'create user',
+                    'display users',
+                    'edit user',
+                    'change users password',
+                    'display deleted users',
+                    'delete user',
+                    'restore user',
+                    'forceDelete user',
+    ])
         <li class="dropdown">
             <!-- ========== 1 ============ -->
             <div class="sidebar-title">
@@ -84,53 +84,16 @@
         </li>
     @endcan
 @endcanany
-<!-- ========== MAJOR ============ -->
-{{-- <li class="dropdown">
-    <div class="sidebar-title">
-        <a href="#" class="li-link title-4">
-            <i class="icon-1 fa-solid fa-user-tie"></i>
-            <span class="menu-name">{{__('personnel-affairs.majors')}}</span>
-            <i class="icon-1 fa-solid fa-chevron-down"></i>
-        </a>
-    </div>
-    <div class="submenu">
-        <div class="line-black">
-            <a href="{{route('majors.create')}}" class="li-link">{{__('sidebar.add new major')}}</a>
-            <a href="{{route('display-majors')}}" class="li-link">{{__('sidebar.view majors')}}</a>
-            <a href="{{route('majors.show','deleted')}}" class="li-link">{{__('sidebar.deleted majors')}}</a>
+@can('promote students')
+    <li class="dropdown">
+        <div class="sidebar-title">
+            <a href="{{route("promote-students")}}" class="li-link title-4">
+                <i class="icon-1 fa-solid fa-graduation-cap"></i>
+                <span class="menu-name">
+                    {{__('student.student deportation')}}
+                </span>
+            </a>
         </div>
-    </div>
-</li> --}}
-<!-- ========== EMPLOYEE ============ -->
-{{-- <li class="dropdown">
-    <div class="sidebar-title">
-        <a href="#" class="li-link title-4">
-            <i class="icon-1 fa-solid fa-user-tie"></i>
-            <span class="menu-name">{{__('personnel-affairs.employee affairs')}}</span>
-            <i class="icon-1 fa-solid fa-chevron-down"></i>
-        </a>
-    </div>
-    <div class="submenu">
-        <div class="line-black">
-            <a href="{{route('employees.create')}}" class="li-link">{{__('sidebar.add new emb')}}</a>
-            <a href="#" class="li-link">{{__('sidebar.view emb')}}</a>
-            <a href="#" class="li-link">{{__('sidebar.deleted emb')}}</a>
-        </div>
-    </div>
-</li> --}}
-<!-- ========== EMPLOYEES AND TEACHERS RECORDS ============ -->
-{{-- <li class="dropdown">
-    <div class="sidebar-title">
-        <a href="#" class="li-link title-4">
-            <i class="icon-1 fa-solid fa-user-tie"></i>
-            <span class="menu-name">{{__('personnel-affairs.records and absent')}}</span>
-            <i class="icon-1 fa-solid fa-chevron-down"></i>
-        </a>
-    </div>
-    <div class="submenu">
-        <div class="line-black">
-            <a href="#" class="li-link">{{__('sidebar.emb and teachers absent')}}</a>
-            <a href="#" class="li-link">{{__('personnel-affairs.personnel records')}}</a>
-        </div>
-    </div>
-</li> --}}
+    </li>
+@endcan
+

@@ -27,4 +27,6 @@ return [
     "restore_student_error"=>"you cannot restore this student first restore it's class",
     "restore_classroom_error"=>"you cannot restore this classroom first restore it's educational level",
     "this class is empty nothing to edit"=>"This Classroom is Empty Nothing to Edit",
+    'students successfully migrated'=>'Students successfully migrated!',
+    'please enter the new school year'=>'Please enter the new school year!',
 ];

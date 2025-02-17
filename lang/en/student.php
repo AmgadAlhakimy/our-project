@@ -118,4 +118,6 @@ return [
     'health problem description in English'=>'Health problem description in English',
     'health problem description in Arabic'=>'Health problem description in Arabic',
     'display followup notebook' => 'Display Follow Up Notebook',
+    'transferring students to the new academic year'=>'Transferring students to the new academic year',
+    'student deportation'=>'Student deportation',
 ];
