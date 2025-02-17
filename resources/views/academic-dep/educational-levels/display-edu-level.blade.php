@@ -75,8 +75,13 @@
                             </div>
                         </th>
                     @endcan
-                    <th colspan="">
-                        <div class="th-head-4 form-label">{{__('public.processes')}} </div>
+                    <th colspan="" class="d-flex justify-content-center">
+                        <div class="th-head-3 form-label ">{{__('public.processes')}} </div>
+                    </th>
+                    <th class="">
+                        <div class="th-head-2 form-label d-flex justify-content-center">
+                            print
+                        </div>
                     </th>
                 </tr>
                 </thead>
@@ -117,7 +122,6 @@
                                 </a>
                             @endcan
                             @can('delete educational-level')
-
                                 <button wire:confirm="are you sure you want to delete"
                                         class="btn clear-button btn-danger  w-25 me-1 ms-1 "
                                         data-bs-toggle="modal"
@@ -125,6 +129,7 @@
                                     <i class="fa-solid fa-trash"></i>
                                     {{-- {{__('public.delete')}} --}}
                                 </button>
+                        
                                 <!-- Modal -->
                                 <div class="modal fade" id="delete{{$Level->id}}"
                                      tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -161,6 +166,13 @@
                                 </div>
                             @endcan
                         </td>
+                        <td>
+                            <a href="{{('print')}}"
+                                class="btn save-button btn-success w-25 me-1 ms-1 ">
+                                 <i class="fa-solid fa-pen-to-square"></i>
+                                 {{-- {{__('public.edit')}} --}}
+                             </a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -177,8 +189,6 @@
 
             {{-- pagination down code --}}
             @include('layouts.pagination.pagination_down')
-
-
         </div>
     </div>
 </div>

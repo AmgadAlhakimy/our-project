@@ -219,9 +219,4 @@
             </div>
         </div>
     </form>
-
-
-    <div class="me-5 ms-5 text-end">
-
-    </div>
 </div>

@@ -1182,6 +1182,8 @@ body[dir="rtl"] .user_name{
 
     .container-title {
         font-size: 25px;
+        
+        text-shadow: none;
     }
 
     .title-1 {

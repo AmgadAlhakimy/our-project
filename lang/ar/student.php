@@ -129,5 +129,8 @@ return [
     'transferring students to the new academic year'=>'ترحيل الطلاب للسنة الدراسية الجديدة',
     'student deportation'=>'ترحيل الطلاب',
 
+    
+
+    'search for father'=>'البحث عن اب',
 
 ];

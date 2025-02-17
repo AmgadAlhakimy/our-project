@@ -551,3 +551,6 @@ h6,
 .remember_check{
     z-index: 9999;
 }
+.bg-body{
+    background-color: #fff;
+}
