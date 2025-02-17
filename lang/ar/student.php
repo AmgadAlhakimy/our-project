@@ -127,5 +127,8 @@ return [
     'followup notebook' => 'دفتر المتابعة',
     'display followup notebook' => 'عرض دفتر المتابعة',
 
+    
+
+    'search for father'=>'البحث عن اب',
 
 ];

@@ -7,14 +7,15 @@
 
     <form wire:submit="save" action="">
         @csrf
-        <h3 class="container-title">{{ __('user.change the password of'). $name }}</h3>
+        <h3 class="container-title">{{ __('user.change the password of')}}</h3>
+        <h3 class="display-4 form-label container-title ">{{$name}} </h3>
         <div class="container containers-style">
             <div class="row">
                 <!-- Password -->
                 <div class="box col-lg-6 col-md-6">
                     <label class="form-text" for="password">{{ __('user.password') }}</label>
                     <input type="password" class="form-control" id="password"
-                           wire:model.live.debounce.500ms="password">
+                           wire:model.live.debounce.500ms="password" placeholder="(A-Z) (az) (0-9) (!@#$%)" >
                     @error('password') <small class="form-text text-danger">{{ $message }}</small> @enderror
                 </div>
                 <!-- Confirm Password -->

@@ -16,7 +16,6 @@
                 </div>
             </div>
         </div>
-
         <div class=" shadow-none mt-4 ">
             <div class="table-section card  ">
                 <table class=" " id="check_table">

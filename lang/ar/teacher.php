@@ -68,7 +68,8 @@ return [
     'edit teacher'=>'تعديل المعلم',
     'display teachers'=>'عرض المعلمين',
     'choose teacher'=>'اختر المعلمين',
-
+    
+    'search for teacher'=>'ابحث عن معلم',
 
 
 ];

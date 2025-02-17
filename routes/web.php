@@ -41,6 +41,12 @@ Route::group(
             Route::get('/dashboard', function () {
                 return view('dashboard');
             })->name('dashboard');
+            
+            // print page
+            Route::get('/print', function () {
+                return view('academic-dep.educational-levels/print');
+            });
+
 
             include 'follow_up.php';
             include 'absent.php';
