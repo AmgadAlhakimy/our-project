@@ -71,5 +71,8 @@ return [
     
     'search for teacher'=>'ابحث عن معلم',
 
+    
+    'write the teacher here'=>'اختر المعلم هنا',
+
 
 ];

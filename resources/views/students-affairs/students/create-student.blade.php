@@ -28,22 +28,8 @@
                                 <small class="form-text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            <script>
-                                function setParentId(input) {
-                                    const list = document.getElementById('fathersList');
-                                    const options = list.getElementsByTagName('option');
-                                    for (let option of options) {
-                                        if (option.value === input.value) {
-                                        @this.set('parents_id', option.getAttribute('data-id'))
-                                            ;
-                                            break;
-                                        } else {
-                                        @this.set('parents_id', 0)
-                                            ;
-                                        }
-                                    }
-                                }
-                            </script>
+                            
+
                         </div>
                         <!-- garden number  -->
                     </div>
@@ -77,13 +63,6 @@
                             @enderror
                         </div>
 
-                        <script>
-                            // Pass the localized messages to JavaScript
-                            window.localizedMessages = {
-                                imageError: "{{ __('validation.image') }}",
-                                requiredError: "{{ __('validation.required') }}"
-                            };
-                        </script>
 
                         {{-- 3 --}}
                         <div class="">
@@ -366,6 +345,9 @@
                         </button>
                     </div>
                 </div>
+                {{-- js code --}}
+                @include('layouts.include.users_js')
+
             </form>
         </div>
     </section>

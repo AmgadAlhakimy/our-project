@@ -36,12 +36,17 @@ class FollowUpNoteBook extends Component
                         ->orWhere('food->en', 'like', "%$this->search%")
                         ->orWhere('food->ar', 'like', "%$this->search%");
                 })
+                ->orderBy('created_at', 'desc') 
                 ->get();
-        } elseif ($this->search_date > 0 ) {
+        } elseif ($this->search_date > 0) {
             $student_notebooks = FollowUpChild::where('student_id', $this->student_id)
-                ->where('created_at', 'like', "%$this->search_date%")->get();
+                ->where('created_at', 'like', "%$this->search_date%")
+                ->orderBy('created_at', 'desc') 
+                ->get();
         } else {
-            $student_notebooks = FollowUpChild::where('student_id', $this->student_id)->get();
+            $student_notebooks = FollowUpChild::where('student_id', $this->student_id)
+                ->orderBy('created_at', 'desc')
+                ->get();
         }
         return view('teachers-affairs.follow_up_children.follow-up-note-book',
             compact('student_notebooks', 'student'));

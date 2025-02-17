@@ -8,88 +8,8 @@
     <form wire:submit="update" action="">
         @csrf
 
-        <h3 class="display-4 form-label container-title ">{{ __('user.edit user').$name }}</h3>
-        <div>
-            <hr class="me-5 ms-5 mb-5">
-        </div>
-        <h3 class="container-title">{{__('student.choose superior')}}</h3>
-        <div class="container  containers-style">
-            <div class="">
-                <div class="row box">
-                    <div class="box w-100">
-                        <input type="text" id="fatherSearch" list="fathersList"
-                               placeholder="{{ __('student.search for father') }}"
-                               class="form-control" wire:model.live.debounce.500ms="father_search"
-                               oninput="setParentId(this)">
-                        <datalist id="fathersList" class="">
-                            @foreach($fathers as $father)
-                                <option value="{{ $father->father_name }}"
-                                        data-id="{{ $father->id }}">{{ $father->father_name }}</option>
-                            @endforeach
-                        </datalist>
-                        @error('parents_id')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
-                    <script>
-                        function setParentId(input) {
-                            const list = document.getElementById('fathersList');
-                            const options = list.getElementsByTagName('option');
-                                for (let option of options) {
-                                if (option.value === input.value) {
-                                    @this.set('parents_id', option.getAttribute('data-id'));
-                                    break;
-                                } else if (input.value.trim() === '') {
-                                    @this.set('parents_id', null);
-                                } else {
-                                    @this.set('parents_id', 0);
-                                }
-                            }
-                        }
-                    </script>
-                </div>
-                <!-- garden number  -->
-            </div>
-        </div>
-        <h3 class="container-title">{{__('teacher.choose teacher')}}</h3>
-        <div class="container  containers-style">
-            <div class="">
-                <div class="row box">
-                    <div class="box w-100">
-                        <input type="text" id="teacherSearch" list="teachersList"
-                               placeholder="{{ __('teacher.search for teacher') }}"
-                               class="form-control" wire:model.live.debounce.500ms="teacher_search"
-                               oninput="setTeacherId(this)">
-                        <datalist id="teachersList" class="">
-                            @foreach($teachers as $teacher)
-                                <option value="{{ $teacher->name }}"
-                                        data-id="{{ $teacher->id }}">{{ $teacher->name }}</option>
-                            @endforeach
-                        </datalist>
-                        @error('teacher_id')
-                        <small class="form-text text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
-                    <script>
-                        function setTeacherId(input) {
-                            const list = document.getElementById('teachersList');
-                            const options = list.getElementsByTagName('option');
-                            for (let option of options) {
-                                if (option.value === input.value) {
-                                    @this.set('teacher_id', option.getAttribute('data-id'));
-                                    break;
-                                } else if (input.value.trim() === '') {
-                                    @this.set('teacher_id', null);
-                                } else {
-                                    @this.set('teacher_id', 0);
-                                }
-                            }
-                        }
-                    </script>
-                </div>
-                <!-- garden number  -->
-            </div>
-        </div>
+        <h3 class="container-title ">{{ __('user.edit user').$name }}</h3>
+
         <div class="container containers-style">
             <div class="row">
                 <!-- Name -->
@@ -130,6 +50,50 @@
                 </div>
             </div>
         </div>
+        {{-- -------------------------------------- --}}
+        <div class="box">
+            <span class="container-title ">{{ __('user.optional_2') }}</span>
+            <label class="form-label">({{ __('user.optional') }})</label>
+        </div>
+                <div class="container  containers-style">
+                    <div class="row">
+                            <!-- father name  -->
+                            <div class="box col-sm-12 col-lg-6 col-md-6">
+                                <label class="form-label">{{__('student.choose superior')}}</label>
+                                <input type="text" id="fatherSearch" list="fathersList"
+                                placeholder="{{ __('student.search for father') }}"
+                                class="form-control" wire:model.live.debounce.500ms="father_search"
+                                oninput="setParentId(this)">
+                            <datalist id="fathersList" class="">
+                                @foreach($fathers as $father)
+                                    <option value="{{ $father->father_name }}"
+                                            data-id="{{ $father->id }}">{{ $father->father_name }}</option>
+                                @endforeach
+                            </datalist>
+                            @error('parents_id')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                            </div>
+                        <!-- teacher name  -->
+                            <div class="box col-sm-12 col-lg-6 col-md-6">
+                                <label class="form-label">{{__('teacher.choose teacher')}}</label>
+                                <input type="text" id="teacherSearch" list="teachersList"
+                                placeholder="{{ __('teacher.search for teacher') }}"
+                                class="form-control" wire:model.live.debounce.500ms="teacher_search"
+                                oninput="setTeacherId(this)">
+                            <datalist id="teachersList" class="">
+                                @foreach($teachers as $teacher)
+                                    <option value="{{ $teacher->name }}"
+                                            data-id="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                                @endforeach
+                            </datalist>
+                            @error('teacher_id')
+                            <small class="form-text text-danger">{{ $message }}</small>
+                            @enderror
+                            </div>
+                    </div>
+                </div>
+        {{-- -------------------------------------- --}}
                 <!-- Buttons -->
         <div class="row mb-2  ">
             <div class="box col">
@@ -155,5 +119,9 @@
                 </div>
             @endcan
         </div>
+        
+        {{-- js code --}}
+        @include('layouts.include.users_js')
+
     </form>
 </div>
