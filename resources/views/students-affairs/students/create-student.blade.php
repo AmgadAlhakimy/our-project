@@ -355,7 +355,7 @@
                 </div>
                 <div class=" row">
                     <div class="box col ">
-                        <button type="submit" class=" save-button text-center">
+                        <button type="submit" class="save-button text-center">
                             {{__('public.save')}}
                             <div wire:loading class="spinner-border spinner-border-sm"></div>
                         </button>

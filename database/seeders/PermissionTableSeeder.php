@@ -201,6 +201,14 @@ class PermissionTableSeeder extends Seeder
                 ],
             ],
 
+            'promote students' => [
+                'en' => 'promote students',
+                'ar' => 'ترحيل الطلاب',
+                'permissions' => [
+                    ['promote students', 'ترحيل الطلاب'],
+                ],
+            ],
+
         ];
 
         foreach ($permissions as $category => $data) {

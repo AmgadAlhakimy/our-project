@@ -126,6 +126,8 @@ return [
 
     'followup notebook' => 'دفتر المتابعة',
     'display followup notebook' => 'عرض دفتر المتابعة',
+    'transferring students to the new academic year'=>'ترحيل الطلاب للسنة الدراسية الجديدة',
+    'student deportation'=>'ترحيل الطلاب',
 
     
 

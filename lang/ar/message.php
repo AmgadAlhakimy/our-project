@@ -27,4 +27,6 @@ return [
     'restore_student_error'=>'لايمكن استعادة هذا الطالب أولا يجب استعادة الصف الخاص بالطالب',
     'restore_classroom_error'=>'لايمكن استعادة هذا الصف أولا يجب استعادة المرحلة الدراسية الخاص بالصف',
     "this class is empty nothing to edit"=>"هذا الصف فارغ لايوجد شيء للتعديل",
+    'students successfully migrated'=>'تم ترحيل الطلاب بنجاح!',
+    'please enter the new school year'=>'الرجاء إدخال السنة الدراسية الجديدة!',
 ];
