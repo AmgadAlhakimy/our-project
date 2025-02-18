@@ -84,7 +84,7 @@
                             <i class="icon-1 fa-solid fa-graduation-cap"></i>
                             <span class="menu-name">{{__('sidebar.display students')}}</span>
                             <i class="icon-1 fa-solid fa-chevron-down"></i>
-                        </a>
+                        </a> 
                     </div>
                     <div class="submenu">
                         <div class="line-black">

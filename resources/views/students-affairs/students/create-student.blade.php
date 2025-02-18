@@ -28,8 +28,23 @@
                                 <small class="form-text text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                            
+                    <script>
+                        function setParentId(input) {
+                            const list = document.getElementById('fathersList');
+                            const options = list.getElementsByTagName('option');
 
+                            for (let option of options) {
+                                if (option.value === input.value) {
+                                    this.set('parents_id', option.getAttribute('data-id'));
+                                    break;
+                                } else if (input.value.trim() === '') {
+                                    this.set('parents_id', null);
+                                } else {
+                                    this.set('parents_id', 0);
+                                }
+                            }
+                        }
+                    </script>
                         </div>
                         <!-- garden number  -->
                     </div>
@@ -71,8 +86,8 @@
                                     <label class="" for="photo">{{__('student.photo')}}</label>
                                     <input type="file" class="form-control"
 
-                                           id="fileInput" wire:model.live.debounce.500ms="photo" accept="image/*" onchange="validateFile(event)"
-                                           value="{{old('photo')}}">
+                                        id="fileInput" wire:model.live.debounce.500ms="photo" accept="image/*" onchange="validateFile(event)"
+                                        value="{{old('photo')}}">
 
                                     <small class="form-text text-danger" id="fileError"></small>
                                     @error('photo')
@@ -81,15 +96,13 @@
                                 </div>
                             </div>
                         </div>
-
                         @if ($photo && $isValidImage)
                             <div class="box d-flex justify-content-center">
                                 <img class="personal_img mt-4" alt="photo"
-                                     src="{{$photo->temporaryUrl()}}">
+                                    src="{{$photo->temporaryUrl()}}">
                             </div>
                         @endif
                         {{-- 4 --}}
-
                         <script>
                             window.localizedMessages = {
                                 imageError: "{{ __('validation.image') }}",

@@ -130,14 +130,30 @@
                         @error('parents_id')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
+                <script>
+                    function setParentId(input) {
+                    const list = document.getElementById('fathersList');
+                    const options = list.getElementsByTagName('option');
+                    for (let option of options) {
+                        if (option.value === input.value) {
+                            this.set('parents_id', option.getAttribute('data-id'));
+                            break;
+                        } else if (input.value.trim() === '') {
+                            this.set('parents_id', null);
+                        } else {
+                            this.set('parents_id', 0);
+                        }
+                    }
+                }
+                </script>
                     </div>
-                <!-- teacher name  -->
+                    <!-- teacher name  -->
                     <div class="box col-sm-12 col-lg-6 col-md-6">
                         <label class="form-label">{{__('teacher.choose teacher')}}</label>
                         <input type="text" id="teacherSearch" list="teachersList"
-                               placeholder="{{ __('teacher.write the teacher here') }}"
-                               class="form-control" wire:model.live.debounce.500ms="search"
-                               oninput="setTeacherId(this)">
+                        placeholder="{{ __('teacher.write the teacher here') }}"
+                        class="form-control" wire:model.live.debounce.500ms="search"
+                        oninput="setTeacherId(this)">
                         <datalist id="teachersList" class="">
                             @foreach($teachers as $teacher)
                                 <option value="{{ $teacher->name }}"
@@ -147,7 +163,24 @@
                         @error('teacher_id')
                         <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
+                        
                     </div>
+                <script>
+                    function setTeacherId(input) {
+                    const list = document.getElementById('teachersList');
+                    const options = list.getElementsByTagName('option');
+                    for (let option of options) {
+                        if (option.value === input.value) {
+                            this.set('teacher_id', option.getAttribute('data-id'));
+                            break;
+                        } else if (input.value.trim() === '') {
+                            this.set('teacher_id', null);
+                        } else {
+                            this.set('teacher_id', 0);
+                        }
+                    }
+                }
+                </script>
             </div>
         </div>
         
@@ -170,7 +203,7 @@
             </div>
         </div>
         
-                    {{-- js code --}}
-                    @include('layouts.include.users_js')
     </form>
+    {{-- js code --}}
+    {{-- @include('layouts.include.users_js') --}}
 </div>

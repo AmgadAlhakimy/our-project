@@ -1,8 +1,8 @@
-<div class="my-table mt-5 mb-5">
+<div class="section mt-5 mb-5">
     <!-- Start Personal Info -->
-    <div class="mt-5 mb-5">.</div>
     <h4 class="form-group container-title mt-5 col-12">{{ __('follow_up.follow-up notebook') }}</h4>
 
+    
     <div class="table-header mt-1">
         <div class="row">
             <label class="col-md-6 col-sm-12 col-lg-6 ">
