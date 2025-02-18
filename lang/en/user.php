@@ -15,6 +15,8 @@ return [
     'user' => 'User',
     'users' => 'Users',
     'email' => 'Email',
+    'optional_2' => 'Add permissions',
+    'optional' => 'Optional',
     'new user' => 'New User',
     'edit user' => 'Edit User: ',
     'user name' => 'User Name',

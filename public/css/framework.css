@@ -496,17 +496,19 @@ body[dir="rtl"] .clear-button {
 
 .student-img {
     height: 100px;
-    width: 80px;
+    width: 60px;
     object-fit: cover;
     border-radius: 15px;
     border: 5px solid #ced0d2;
+    transition: all 2s ease;
 }
 
 .student-img:hover {
-    border: none;
-    /* margin-right: 10px; */
-    transition: all 1s ease;
-    transform: rotate(360deg);
+    border: 1px solid #ced0d2;
+    /* border: none; */
+    margin-bottom: 15px;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
 }
 
 /* .CreateStudent-img:hover{

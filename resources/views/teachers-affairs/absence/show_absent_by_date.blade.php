@@ -2,7 +2,7 @@
 @extends('layouts.sidebar')
 @section('content')
     <div class="section  ">
-        <div class="table-header">
+        <div class="table-header mt-0">
             <div class="col container-title mt-2 ">{{__('absent.absent children today')}}</div>
             <div class="cards-container mt-1 third-card row">
                 <div class=" col text-center ">
@@ -19,20 +19,7 @@
             <div class="cards_info_style">
                 <div class=" pt-3 pb-3 me-4 ms-4">
                     {{-- 1 --}}
-                    <label>
                         <input type="date" class="form-control  cards_title  text-center  ">
-                    </label>
-                </div>
-                <div class="mt-3 row">
-                    <div class="box col ">
-                        <button type="submit" class=" save-button text-center">
-                            {{__('public.show')}}
-                            <div wire:loading class="spinner-border spinner-border-sm"></div>
-                        </button>
-                        <button type="reset" class=" clear-button text-center">
-                            {{__('public.clear')}}
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>

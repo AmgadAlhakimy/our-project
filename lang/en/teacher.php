@@ -69,6 +69,7 @@ return [
     
     
     'search for teacher'=>'Search For Teacher',
+    'write the teacher here'=>'write the teacher here',
 
 
 ];

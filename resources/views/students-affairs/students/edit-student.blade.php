@@ -24,23 +24,12 @@
                             @error('parents_id')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
-                        </div>
-                        <script>
-                            function setParentId(input) {
-                                const list = document.getElementById('fathersList');
-                                const options = list.getElementsByTagName('option');
-                                for (let option of options) {
-                                    if (option.value === input.value) {
-                                    @this.set('parents_id', option.getAttribute('data-id'))
-                                        ;
-                                        break;
-                                    } else {
-                                    @this.set('parents_id', 0)
-                                        ;
-                                    }
-                                }
-                            }
-                        </script>
+                        </div> 
+                        
+                    {{-- js code --}}
+                    @include('layouts.include.users_js')
+
+
                     </div>
                     <!-- garden number  -->
                 </div>
@@ -77,11 +66,7 @@
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        <script>
-                            window.localizedMessages = {
-                                imageError: "{{ __('validation.image') }}",
-                            };
-                        </script>
+                        
                         {{-- 3 --}}
                         <div class="">
                             <div class="row">
