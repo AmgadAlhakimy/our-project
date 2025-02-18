@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section ">
     @if(session()->has('success'))
         <div class="alert alert-success" role="alert">
             {{ session('success') }}
@@ -8,7 +8,7 @@
     <form wire:submit="update" action="">
         @csrf
 
-        <h3 class="container-title ">{{ __('user.edit user').$name }}</h3>
+        <h3 class="container-title mt-0">{{ __('user.edit user').$name }}</h3>
 
         <div class="container containers-style">
             <div class="row">
@@ -73,6 +73,23 @@
                             @error('parents_id')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
+                    <script>
+                        function setParentId(input) {
+                        const list = document.getElementById('fathersList');
+                        const options = list.getElementsByTagName('option');
+
+                        for (let option of options) {
+                            if (option.value === input.value) {
+                                this.set('parents_id', option.getAttribute('data-id'));
+                                break;
+                            } else if (input.value.trim() === '') {
+                                this.set('parents_id', null);
+                            } else {
+                                this.set('parents_id', 0);
+                            }
+                        }
+                    }
+                    </script>
                             </div>
                         <!-- teacher name  -->
                             <div class="box col-sm-12 col-lg-6 col-md-6">
@@ -91,6 +108,23 @@
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                             </div>
+                    <script>
+                        function setTeacherId(input) {
+                            const list = document.getElementById('teachersList');
+                            const options = list.getElementsByTagName('option');
+                            for (let option of options) {
+                                if (option.value === input.value) {
+                                    this.set('teacher_id', option.getAttribute('data-id'));
+                                    break;
+                                } else if (input.value.trim() === '') {
+                                    this.set('teacher_id', null);
+                                } else {
+                                    this.set('teacher_id', 0);
+                                }
+                            }
+                        }
+                    </script>
+
                     </div>
                 </div>
         {{-- -------------------------------------- --}}
@@ -120,8 +154,6 @@
             @endcan
         </div>
         
-        {{-- js code --}}
-        @include('layouts.include.users_js')
 
     </form>
 </div>
