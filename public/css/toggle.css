@@ -18,11 +18,10 @@
     max-width: 70%;
     border-radius: 50px;
     /* outline: auto; */
-    /* outline-color: var(--orange-color); */
+    outline-color: var(--orange-color);
     box-shadow: 0px 25px 25px rgba(0, 0, 0, 0.1);
     transition: all 2s ease;
     animation: shakeX 0.5s;
-    /* animation:  0.5s; */
 }
 
 .toggle_img {
@@ -47,22 +46,34 @@
 /* home icons style */
 
 
+.container_icon {
+    position: fixed; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+}
 .icon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 90vw;
+
+}
+.icon_img {
+    position: absolute;
+    width: 3vw;
+    /* height: auto; */
+    animation: move 1s infinite alternate;
+    z-index: 0;
 }
 
-.icon {
-    width: 3vw;
-    height: auto;
-    animation: move 1s infinite alternate;
-    z-index: -1;
-    
-    position: absolute;
-}
 
 @keyframes move {
     0% {

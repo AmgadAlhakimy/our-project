@@ -35,6 +35,9 @@
 
         </div>
     </div>
+     
+    
+    @include('layouts.anmiated.icons')
 
 </div>
 

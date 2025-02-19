@@ -25,6 +25,8 @@
             </ul>
         </div>
     </div>
+
+    @include('layouts.anmiated.icons')
 </div>
 <div class="section-home mt-5">
     <div id="my_toggle" class="">
