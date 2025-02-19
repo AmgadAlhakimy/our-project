@@ -24,27 +24,28 @@
                             @error('parents_id')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
-                        </div> 
-                        
-<script>
-function setParentId(input) {
-    const list = document.getElementById('fathersList');
-    const options = list.getElementsByTagName('option');
+                        </div>
 
-    for (let option of options) {
-        if (option.value === input.value) {
-            this.set('parents_id', option.getAttribute('data-id'));
-            break;
-        } else if (input.value.trim() === '') {
-            this.set('parents_id', null);
-        } else {
-            this.set('parents_id', 0);
-        }
-    }
-}
-</script>
+                        <script>
+                            function setParentId(input) {
+                                const list = document.getElementById('fathersList');
+                                const options = list.getElementsByTagName('option');
 
-                    
+                                for (let option of options) {
+                                    if (option.value === input.value) {
+                                        @this.
+                                        set('parents_id', option.getAttribute('data-id'));
+                                        break;
+                                    } else if (input.value.trim() === '') {
+                                        @this.
+                                        set('parents_id', null); // Clear if the input is empty
+                                    } else {
+                                        @this.
+                                        set('parents_id', 0); // Set default if no match
+                                    }
+                                }
+                            }
+                        </script>
 
 
                     </div>
@@ -83,7 +84,7 @@ function setParentId(input) {
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
                         </div>
-                        
+
                         {{-- 3 --}}
                         <div class="">
                             <div class="row">
@@ -108,14 +109,20 @@ function setParentId(input) {
                         @elseif($photo != null and $photo != $student->photo and $isValidImage)
                             <div class="box d-flex justify-content-center">
                                 <img class="personal_img mt-4" alt="photo"
-                                    src="{{$photo->temporaryUrl()}}">
+                                     src="{{$photo->temporaryUrl()}}">
                             </div>
                         @endif
+                        <script>
+                            window.localizedMessages = {
+                                imageError: "{{ __('validation.image') }}",
+                                requiredError: "{{ __('validation.required') }}"
+                            };
+                        </script>
                         <div class="box col-lg-6 col-md-6">
                             <label for="address">{{__("student.student's address in arabic")}}</label>
                             <input type="text" class=" form-control" id='address'
-                                wire:model.live.debounce.500ms="address_ar"
-                                value="{{old('address_ar')}}">
+                                   wire:model.live.debounce.500ms="address_ar"
+                                   value="{{old('address_ar')}}">
                             @error('address_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -124,8 +131,8 @@ function setParentId(input) {
                         <div class="box col-lg-6 col-md-6">
                             <label for="address">{{__("student.student's address in english")}}</label>
                             <input type="text" class=" form-control" id="address"
-                                wire:model.live.debounce.500ms="address"
-                                value="{{old('address')}}">
+                                   wire:model.live.debounce.500ms="address"
+                                   value="{{old('address')}}">
                             @error('address')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -150,8 +157,8 @@ function setParentId(input) {
                         <div class="box col-lg-6 col-md-6">
                             <label for="age">{{__('student.birthdate')}}</label>
                             <input type="date" class="form-control" id="age"
-                                wire:model.live.debounce.500ms="birthdate"
-                                value="{{old('birthdate')}}">
+                                   wire:model.live.debounce.500ms="birthdate"
+                                   value="{{old('birthdate')}}">
                             @error('birthdate')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -161,8 +168,8 @@ function setParentId(input) {
                             <label for="english-birth-place">{{__('student.place of birth in arabic')}}</label>
                             <input type="text" class="form-control" id="english-birth-place"
 
-                                wire:model.live.debounce.500ms="place_of_birth_ar"
-                                value="{{old('place_of_birth_ar')}}">
+                                   wire:model.live.debounce.500ms="place_of_birth_ar"
+                                   value="{{old('place_of_birth_ar')}}">
                             @error('place_of_birth_ar')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -172,8 +179,8 @@ function setParentId(input) {
                             <label for="arabic-birth-place">{{__('student.place of birth in english')}}</label>
                             <input type="text" class="form-control" id="arabic-birth-place"
 
-                                wire:model.live.debounce.500ms="place_of_birth"
-                                value="{{old('place_of_birth')}}">
+                                   wire:model.live.debounce.500ms="place_of_birth"
+                                   value="{{old('place_of_birth')}}">
                             @error('place_of_birth')
                             <small class="form-text text-danger">{{$message}}</small>
                             @enderror
@@ -224,25 +231,25 @@ function setParentId(input) {
                             <label class="col d-flex justify-content-end">{{__('student.take any medicine ?')}}</label>
                             <div class="col mt-2 d-flex justify-content-start">
                                 <input class="toggle" type="checkbox" wire:click="flip(0)"
-                                    id="takeMedicineE" {{($checks[0]) ? 'checked' :''}}
-                                    value="{{old('takes_medicine')}}">
+                                       id="takeMedicineE" {{($checks[0]) ? 'checked' :''}}
+                                       value="{{old('takes_medicine')}}">
                                 <label class="form-label  rounded" for="takeMedicineE"></label>
                             </div>
                             {{-- -*- --}}
                             @if($checks[0])
                                 <div class="row">
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                        wire:model.live.debounce.500ms="medicine_desc"
-                                        id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
-                                        aria-label="Text input with radio button" placeholder="desc in english">
+                                           wire:model.live.debounce.500ms="medicine_desc"
+                                           id="std_medicine_desc_1" value="{{old('medicine_desc')}}"
+                                           aria-label="Text input with radio button" placeholder="desc in english">
                                     @error('medicine_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                        wire:model.live.debounce.500ms="medicine_desc_ar"
-                                        id="" value="{{old('medicine_desc_ar')}}"
-                                        aria-label="Text input with radio button" placeholder="desc in arabic">
+                                           wire:model.live.debounce.500ms="medicine_desc_ar"
+                                           id="" value="{{old('medicine_desc_ar')}}"
+                                           aria-label="Text input with radio button" placeholder="desc in arabic">
                                     @error('medicine_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -255,8 +262,8 @@ function setParentId(input) {
                             {{-- ---- --}}
                             <div class="col-lg-12 col-md-12 col-ms-12 mt-2">
                                 <input class="toggle col" type="checkbox" wire:click="flip(1)"
-                                    id="haveAllergy" {{($checks[1]) ? 'checked' :''}}
-                                    value="{{old('have_allergy')}}">
+                                       id="haveAllergy" {{($checks[1]) ? 'checked' :''}}
+                                       value="{{old('have_allergy')}}">
 
                                 <label class="form-label col rounded" for="haveAllergy"></label>
                             </div>
@@ -266,18 +273,18 @@ function setParentId(input) {
                             @if($checks[1])
                                 <div class="row">
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                        wire:model.live.debounce.500ms="allergy_desc"
-                                        id="std_allergy_desc_1"
-                                        aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
-                                        placeholder="desc in english">
+                                           wire:model.live.debounce.500ms="allergy_desc"
+                                           id="std_allergy_desc_1"
+                                           aria-label="Text input with radio button" value="{{old('allergy_desc')}}"
+                                           placeholder="desc in english">
                                     @error('allergy_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                        wire:model.live.debounce.500ms="allergy_desc_ar"
-                                        id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
-                                        aria-label="Text input with radio button" placeholder="desc in arabic">
+                                           wire:model.live.debounce.500ms="allergy_desc_ar"
+                                           id="std_allergy_desc_2" value="{{old('allergy_desc_ar')}}"
+                                           aria-label="Text input with radio button" placeholder="desc in arabic">
                                     @error('allergy_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -299,20 +306,20 @@ function setParentId(input) {
                             @if($checks[2])
                                 <div class="row">
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                        wire:model.live.debounce.500ms="health_problem_desc"
-                                        id="std_health_desc_1"
-                                        aria-label="Text input with radio button"
-                                        value="{{old('health_problem_desc')}}"
-                                        placeholder="desc in english">
+                                           wire:model.live.debounce.500ms="health_problem_desc"
+                                           id="std_health_desc_1"
+                                           aria-label="Text input with radio button"
+                                           value="{{old('health_problem_desc')}}"
+                                           placeholder="desc in english">
                                     @error('health_problem_desc')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
                                     {{-- -*- --}}
                                     <input type="text" class=" form-control ms-1 me-1 col"
-                                        wire:model.live.debounce.500ms="health_problem_desc_ar"
-                                        id="std_health_desc_2"
-                                        value="{{old('health_problem_desc_ar')}}"
-                                        aria-label="Text input with radio button" placeholder="desc in arabic">
+                                           wire:model.live.debounce.500ms="health_problem_desc_ar"
+                                           id="std_health_desc_2"
+                                           value="{{old('health_problem_desc_ar')}}"
+                                           aria-label="Text input with radio button" placeholder="desc in arabic">
                                     @error('health_problem_desc_ar')
                                     <small class="form-text text-danger">{{$message}}</small>
                                     @enderror
@@ -336,12 +343,12 @@ function setParentId(input) {
                     </div>
                 </div>
                 <div class=" row">
-                        <div class="box col">
-                            <button type="submit" class=" save-button">
-                                {{__('public.update')}}
-                                <div wire:loading class="spinner-border spinner-border-sm"></div>
-                            </button>
-                        </div>
+                    <div class="box col">
+                        <button type="submit" class=" save-button">
+                            {{__('public.update')}}
+                            <div wire:loading class="spinner-border spinner-border-sm"></div>
+                        </button>
+                    </div>
                     @can('display students')
                         <div class="box  col">
                             <a href="{{route('display-students',$classroom_id)}}" class="btn clear-button"><i

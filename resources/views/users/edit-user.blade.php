@@ -73,23 +73,26 @@
                             @error('parents_id')
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
-                    <script>
-                        function setParentId(input) {
-                        const list = document.getElementById('fathersList');
-                        const options = list.getElementsByTagName('option');
+                                <script>
+                                    function setParentId(input) {
+                                        const list = document.getElementById('fathersList');
+                                        const options = list.getElementsByTagName('option');
 
-                        for (let option of options) {
-                            if (option.value === input.value) {
-                                this.set('parents_id', option.getAttribute('data-id'));
-                                break;
-                            } else if (input.value.trim() === '') {
-                                this.set('parents_id', null);
-                            } else {
-                                this.set('parents_id', 0);
-                            }
-                        }
-                    }
-                    </script>
+                                        for (let option of options) {
+                                            if (option.value === input.value) {
+                                                @this.
+                                                set('parents_id', option.getAttribute('data-id'));
+                                                break;
+                                            } else if (input.value.trim() === '') {
+                                                @this.
+                                                set('parents_id', null); // Clear if the input is empty
+                                            } else {
+                                                @this.
+                                                set('parents_id', 0); // Set default if no match
+                                            }
+                                        }
+                                    }
+                                </script>
                             </div>
                         <!-- teacher name  -->
                             <div class="box col-sm-12 col-lg-6 col-md-6">
@@ -108,22 +111,26 @@
                             <small class="form-text text-danger">{{ $message }}</small>
                             @enderror
                             </div>
-                    <script>
-                        function setTeacherId(input) {
-                            const list = document.getElementById('teachersList');
-                            const options = list.getElementsByTagName('option');
-                            for (let option of options) {
-                                if (option.value === input.value) {
-                                    this.set('teacher_id', option.getAttribute('data-id'));
-                                    break;
-                                } else if (input.value.trim() === '') {
-                                    this.set('teacher_id', null);
-                                } else {
-                                    this.set('teacher_id', 0);
+                        <script>
+                            function setTeacherId(input) {
+                                const list = document.getElementById('teachersList');
+                                const options = list.getElementsByTagName('option');
+
+                                for (let option of options) {
+                                    if (option.value === input.value) {
+                                        @this.
+                                        set('teacher_id', option.getAttribute('data-id'));
+                                        break;
+                                    } else if (input.value.trim() === '') {
+                                        @this.
+                                        set('teacher_id', null); // Clear if the input is empty
+                                    } else {
+                                        @this.
+                                        set('teacher_id', 0); // Set default if no match
+                                    }
                                 }
                             }
-                        }
-                    </script>
+                        </script>
 
                     </div>
                 </div>
@@ -153,7 +160,7 @@
                 </div>
             @endcan
         </div>
-        
+
 
     </form>
 </div>

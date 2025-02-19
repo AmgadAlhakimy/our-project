@@ -105,6 +105,8 @@ return [
     'select educational level first'=>'Select Educational Level First',
     'this superior does not exist check the list'=>
         'This superior does not exist check Spelling, Change Language or Choose from the list',
+ 'this teacher does not exist check the list'=>
+        'This teacher does not exist check Spelling, Change Language or Choose from the list',
 
     'superior info'=> 'Superior Information',
     'edit superior'=> 'Edit Superior',
@@ -118,9 +120,9 @@ return [
     'health problem description in English'=>'Health problem description in English',
     'health problem description in Arabic'=>'Health problem description in Arabic',
     'display followup notebook' => 'Display Follow Up Notebook',
-    
-    
-    
+
+
+
     'search for father'=>'Search For father',
     'transferring students to the new academic year'=>'Transferring students to the new academic year',
     'student deportation'=>'Student deportation',
