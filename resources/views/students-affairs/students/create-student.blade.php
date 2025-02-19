@@ -358,8 +358,6 @@
                         </button>
                     </div>
                 </div>
-                {{-- js code --}}
-                @include('layouts.include.users_js')
             </form>
         </div>
     </section>

@@ -43,7 +43,7 @@ class StudentSeeder extends Seeder
                     'en' => $fakerEn->firstName. ' ' . $this->my_parent->getTranslation('father_name', 'en'),
                     'ar' => $fakerAr->firstName. ' ' . $this->my_parent->getTranslation('father_name', 'ar'),
                 ],
-                'photo' => 'photo',
+                'photo' => 'images/students/1739031684.jpeg',
                 'address' => [
                     'en' => $fakerEn->streetAddress,
                     'ar' => $fakerAr->streetAddress,
