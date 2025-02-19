@@ -61,10 +61,9 @@
                                         {{$student->name}}
                                     </div>
                                 </td>
-                                <td>
-                                    <img
+                                <td><img
                                         src="{{asset('storage/'.$student->photo)}}"
-                                        class="absentStudent-img" alt="photo">
+                                        class="student-img" alt="photo">
                                 </td>
                                 <td>
                                     <div class="">
