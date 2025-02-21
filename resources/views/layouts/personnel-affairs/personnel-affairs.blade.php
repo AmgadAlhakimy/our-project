@@ -84,16 +84,16 @@
         </li>
     @endcan
 @endcanany
-@can('promote students')
-    <li class="dropdown">
-        <div class="sidebar-title">
-            <a href="{{route("promote-students")}}" class="li-link title-4">
-                <i class="icon-1 fa-solid fa-graduation-cap"></i>
-                <span class="menu-name">
-                    {{__('student.student deportation')}}
-                </span>
-            </a>
-        </div>
-    </li>
-@endcan
+{{--@can('promote students')--}}
+{{--    <li class="dropdown">--}}
+{{--        <div class="sidebar-title">--}}
+{{--            <a href="{{route("promote-students")}}" class="li-link title-4">--}}
+{{--                <i class="icon-1 fa-solid fa-graduation-cap"></i>--}}
+{{--                <span class="menu-name">--}}
+{{--                    {{__('student.student deportation')}}--}}
+{{--                </span>--}}
+{{--            </a>--}}
+{{--        </div>--}}
+{{--    </li>--}}
+{{--@endcan--}}
 

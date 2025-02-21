@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('activity_classroom_pivot', function (Blueprint $table) {
             $table->id();
-            $table->integer('activity_id');
-            $table->integer('classroom_id');
-            $table->foreignId('user_id');
+            $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
+            $table->foreignId('activity_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });
