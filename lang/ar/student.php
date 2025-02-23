@@ -35,7 +35,6 @@ return [
     'place of birth in english'=>'مكان الميلاد بالإنجليزية',
     'class'=>'الصف',
     'parent info'=>'معلومات الأباء',
-    'superior'=>'ولي الأمر',
 
     "father's name in arabic"=>"اسم الأب بالعربي",
     "father's name in english"=>"اسم الأب بالإنجليزية",
@@ -108,6 +107,8 @@ return [
     'select educational level first'=>'يرجى اختيار مرحلة دارسية أولا',
     'this superior does not exist check the list'=>
         'لا يوجد ولي أمر بهذا الاسم تحقق من الاسم أو قم بتغيير اللغة أو قم بالإختيار من القائمة',
+    'this teacher does not exist check the list'=>
+        'لا يوجد معلم بهذا الاسم تحقق من الاسم أو قم بتغيير اللغة أو قم بالإختيار من القائمة',
 
     'superior info'=> 'معلومات ولي الأمر',
     'edit superior'=> 'تعديل ولي الأمر',
@@ -129,7 +130,7 @@ return [
     'transferring students to the new academic year'=>'ترحيل الطلاب للسنة الدراسية الجديدة',
     'student deportation'=>'ترحيل الطلاب',
 
-    
+
 
     'search for father'=>'البحث عن اب',
 

@@ -84,7 +84,7 @@ class StudentSeeder extends Seeder
                 'classroom_id' => $classrooms->random()->id,
                 'parents_id' =>$this->my_parent->id,
                 'note' => 'No additional notes',
-                'user_id' => $users->random()->id,
+                // 'user_id' => $users->random()->id,
             ]);
 
             // Toggle gender & boolean values

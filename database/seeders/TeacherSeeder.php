@@ -75,7 +75,7 @@ class TeacherSeeder extends Seeder
                     'ar' => $major['ar'],
                 ],
                 'note' => 'no note',
-                'user_id' => $users->random()->id,
+                // 'user_id' => $users->random()->id,
             ]);
         }
 

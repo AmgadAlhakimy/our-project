@@ -38,8 +38,8 @@ class AbsentSeeder extends Seeder
                 'absent' => true,
                 'absent_reason' => $faker->randomElement($absenceReasons),
                 'student_id' => $student->id,
-                'classroom_id' => $student->classroom->id,
-                'user_id' => $users->random()->id,
+                // 'classroom_id' => $student->classroom->id,
+                // 'user_id' => $users->random()->id,
             ]);
         }
     }

@@ -30,7 +30,7 @@ class ClassroomSeeder extends Seeder
             Classroom::create([
                 'name' => $class,
                 'edu_id' => $levels->random()->id,
-                'user_id' => $users->random()->id,
+                // 'user_id' => $users->random()->id,
             ]);
         }
     }

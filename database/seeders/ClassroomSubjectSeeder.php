@@ -32,7 +32,7 @@ class ClassroomSubjectSeeder extends Seeder
                 ClassroomSubject::create([
                     'classroom_id' => $classroom->id,
                     'subject_id' => $subjectId,
-                    'user_id' => $users->random()->id,
+                    // 'user_id' => $users->random()->id,
                 ]);
             }
         }

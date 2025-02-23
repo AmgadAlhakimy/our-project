@@ -61,7 +61,7 @@ class ParentsSeeder extends Seeder
                     'ar' => $arabicRelationships[array_rand($arabicRelationships)],
                 ],
                 'kin_contact' => $fakerEn->numerify('77#######'),
-                'user_id' => $users->random()->id,
+                // 'user_id' => $users->random()->id,
             ]);
         }
     }

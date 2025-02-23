@@ -24,7 +24,7 @@ class EducationalLevelSeeder extends Seeder
         foreach ($educationalLevels as $level) {
             EducationalLevel::create([
                 'name' => $level,
-                'user_id' => $users->random()->id,
+                // 'user_id' => $users->random()->id,
             ]);
         }
     }

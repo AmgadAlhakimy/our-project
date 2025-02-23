@@ -84,7 +84,7 @@
         </li>
     @endcan
 @endcanany
-@can('promote students')
+{{-- @can('promote students')
     <li class="dropdown">
         <div class="sidebar-title">
             <a href="{{route("promote-students")}}" class="li-link title-4">
@@ -95,5 +95,5 @@
             </a>
         </div>
     </li>
-@endcan
+@endcan --}}
 

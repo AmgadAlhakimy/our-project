@@ -30,7 +30,7 @@ class SubjectSeeder extends Seeder
         foreach ($subjects as $subject) {
             Subject::create([
                 'name' => $subject,
-                'user_id' => $users->random()->id,
+                // 'user_id' => $users->random()->id,
             ]);
         }
 
