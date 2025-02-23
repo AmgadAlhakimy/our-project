@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('activity_classroom_pivot', function (Blueprint $table) {
+        Schema::create('classroom_subject_pivot', function (Blueprint $table) {
             $table->id();
-            $table->integer('activity_id');
-            $table->integer('classroom_id');
-            // $table->foreignId('user_id');
+            $table->foreignId('classroom_id')->constrained()->onDelete('cascade');
+            $table->foreignId('subject_id')->constrained()->onDelete('cascade');
+            // $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('activity_classroom_pivot');
+        Schema::dropIfExists('classroom_subject_pivot');
     }
 };

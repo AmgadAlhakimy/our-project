@@ -117,13 +117,13 @@
 
                             <td>
                                 <div class="td_rect">
-                                    {{$student->classroom->name}}
+                                    {{optional($student->classroom)->name}}
                                 </div>
                             </td>
                             @can('who did this')
                                 <td>
                                     <div class="td_rect">
-                                        {{$student->user->name}}
+                                        {{optional($student->user)->name}}
                                     </div>
                                 </td>
                             @endcan
