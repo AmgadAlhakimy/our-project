@@ -20,13 +20,15 @@ class Student extends Model
     use SoftDeletes;
     use HasTranslations;
 
-    protected $fillable = ['id','name', 'photo', 'address', 'gender',
+    protected $fillable = 
+    ['id','name', 'photo', 'address', 'gender',
         'birthdate', 'place_of_birth',
         'takes_medicine', 'medicine_desc',
         'has_allergy', 'allergy_desc',
         'has_health_problem',
         'health_problem_desc', 'note',
-        'classroom_id', 'parents_id','user_id'];
+        'classroom_id', 'parents_id','user_id'
+    ];
 
     public array $translatable = ['name', 'address', 'gender', 'place_of_birth',
         'takes_medicine', 'medicine_desc',

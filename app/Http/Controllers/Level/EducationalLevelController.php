@@ -19,7 +19,7 @@ class EducationalLevelController extends Controller
         $this->middleware('permission:display deleted educational-levels', ['only' => ['show']]);
         $this->middleware('permission:restore educational-level', ['only' => ['restore']]);
         $this->middleware('permission:forceDelete educational-level', ['only' => ['forceDelete']]);
-    }
+    } 
 
     /**
      * Show creating new educational Level page.
